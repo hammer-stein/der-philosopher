@@ -2,5 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /anbinden.py
 
-# Nach der Veröffentlichung eintragen, falls eine Sitemap angelegt wird:
-# Sitemap: https://IHRE-DOMAIN.de/sitemap.xml
+Sitemap: https://der-philosopher.de/sitemap.xml
