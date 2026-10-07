@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Von 1756 bis 1813 – Deutsche und europäische Geschichte</title>
+<link rel="canonical" href="https://der-philosopher.de/geschichte-1756-1813.html">
+<meta name="description" content="Die Geschichte Deutschlands und Europas vom Siebenjährigen Krieg bis zur Völkerschlacht bei Leipzig – aufgeklärter Absolutismus, Aufklärung, Französische Revolution, Ende des Heiligen Römischen Reiches, Reformen und Befreiungskriege.">
+<style>
+:root{
+  --bg:#f1f2f4; --paper:#ffffff; --ink:#16191f; --muted:#555b66; --line:#d3d7de;
+  --accent:#1f3a5f; --accent-soft:#e6ebf2;
+  --c1:#24566b; --c2:#5a6630; --c3:#4a3f6b; --c4:#7a1e2b; --c5:#2f5a3f;
+  --c1-soft:#e8f0f2; --c2-soft:#eff1e6; --c3-soft:#eeecf3; --c4-soft:#f4e9eb; --c5-soft:#e9f1ec;
+  --shadow:none;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#11141a; --paper:#191d24; --ink:#e4e7ec; --muted:#9aa1ad; --line:#323844;
+    --accent:#8fb3d9; --accent-soft:#1d2836;
+    --c1:#7fb6c6; --c2:#b8c37f; --c3:#b0a5d6; --c4:#e08a97; --c5:#8fc4a0;
+    --c1-soft:#172429; --c2-soft:#22251a; --c3-soft:#211e2b; --c4-soft:#2b1b1f; --c5-soft:#18251d;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+    --bg:#11141a; --paper:#191d24; --ink:#e4e7ec; --muted:#9aa1ad; --line:#323844;
+    --accent:#8fb3d9; --accent-soft:#1d2836;
+    --c1:#7fb6c6; --c2:#b8c37f; --c3:#b0a5d6; --c4:#e08a97; --c5:#8fc4a0;
+    --c1-soft:#172429; --c2-soft:#22251a; --c3-soft:#211e2b; --c4-soft:#2b1b1f; --c5-soft:#18251d;
+    --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;color:var(--ink)}
+h2{font-size:1.85rem;margin:0 0 .4rem;font-weight:600;letter-spacing:.005em}
+h3{font-size:1.32rem;margin:2.2rem 0 .7rem;font-weight:600;padding-bottom:.3rem;border-bottom:1px solid var(--line)}
+h4{font-size:1.08rem;margin:1.2rem 0 .3rem}
+p{margin:.6rem 0}
+ul,ol{padding-left:1.3rem}
+li{margin:.25rem 0}
+strong{font-weight:650}
+
+/* progress */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:50;transition:width .1s}
+
+/* hero */
+.hero{background:#14213a;color:#eef1f5;padding:60px 20px 50px;text-align:center;border-bottom:4px double #8a97ab}
+.hero .kicker{font-family:var(--sans);letter-spacing:.22em;text-transform:uppercase;font-size:.75rem;opacity:.8}
+.hero h1{color:#fff;font-size:clamp(2rem,5vw,3.1rem);font-weight:600;margin:.5rem 0 .8rem}
+.hero p{max-width:720px;margin:0 auto;font-size:1.08rem;opacity:.95}
+.hero .years{font-family:var(--serif);font-size:clamp(1.3rem,3.6vw,1.8rem);letter-spacing:.12em;margin:22px auto 0;padding-top:14px;border-top:1px solid rgba(238,241,245,.35);display:inline-block;opacity:.95}
+
+/* layout */
+.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:36px;max-width:1240px;margin:0 auto;padding:28px 20px 80px}
+nav.toc{font-family:var(--sans);position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:0;padding:16px 14px;box-shadow:var(--shadow);font-size:.92rem}
+nav.toc .toc-title{font-family:var(--sans);font-weight:700;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 10px 8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+nav.toc ol{list-style:none;margin:0;padding:0}
+nav.toc a{display:block;padding:5px 8px;border-radius:0;color:var(--ink);text-decoration:none;line-height:1.35}
+nav.toc a:hover{background:var(--accent-soft)}
+nav.toc a.active{background:var(--accent-soft);color:var(--accent);font-weight:600;box-shadow:inset 3px 0 0 var(--accent)}
+nav.toc .num{display:inline-block;width:1.6em;color:var(--muted)}
+.theme-btn{font-family:var(--sans);margin:12px 6px 2px;font:inherit;font-size:.85rem;background:none;border:1px solid var(--line);color:var(--muted);padding:5px 10px;border-radius:0;cursor:pointer}
+.toc-toggle{display:none}
+main{min-width:0}
+section.chapter{background:var(--paper);border:1px solid var(--line);border-radius:0;padding:34px 38px;margin-bottom:28px;box-shadow:var(--shadow)}
+.chap-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.chap-num{flex:0 0 auto;width:46px;height:46px;border-radius:0;background:transparent;color:var(--accent);border:1.5px solid var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:1.35rem;font-weight:700}
+.span-chip{display:inline-block;font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:0;border-radius:0;background:none;color:var(--muted);margin-bottom:4px}
+.lead{font-size:1.1rem;color:var(--muted);font-style:italic}
+
+/* boxes */
+.box{border-radius:0;padding:14px 18px;margin:20px 0;border:1px solid var(--line);border-left:4px solid}
+.box .box-title{font-family:var(--sans);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.box.kurz{background:var(--c1-soft);border-color:var(--c1)}
+.box.kurz .box-title{color:var(--c1)}
+.box.merke{background:var(--c5-soft);border-color:var(--c5)}
+.box.merke .box-title{color:var(--c5)}
+.box.warum{background:var(--c3-soft);border-color:var(--c3)}
+.box.warum .box-title{color:var(--c3)}
+.box.achtung{background:var(--c2-soft);border-color:var(--c2)}
+.box.achtung .box-title{color:var(--c2)}
+.box ul{margin:.3rem 0}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:14px 0}
+.card{background:var(--bg);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:0;padding:14px 16px}
+.card h4{margin:.1rem 0 .3rem;font-weight:600}
+.card .yr{font-family:var(--serif);font-weight:700;color:var(--accent);font-size:1.05rem}
+.card p{margin:.3rem 0;font-size:.95rem}
+
+/* era bar */
+.erabar{font-family:var(--sans);display:flex;border-radius:0;overflow:hidden;margin:18px 0 6px;font-size:.78rem;color:#fff;font-weight:600;min-height:58px}
+.erabar div{padding:8px 8px;display:flex;flex-direction:column;justify-content:center;line-height:1.2}
+.erabar small{font-weight:400;opacity:.9}
+.era-a{background:#24566b;flex:7}
+.era-b{background:#4a3f6b;flex:26}
+.era-c{background:#5a6630;flex:17}
+.era-d{background:#7a1e2b;flex:7}
+.erascale{font-family:var(--sans);display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}
+
+/* chain: vertical numbered sequence */
+.chain{list-style:none;margin:18px 0 20px;padding:0;position:relative;border-top:1px solid var(--line)}
+.chain::before{content:"";position:absolute;left:17px;top:22px;bottom:22px;width:1px;background:var(--accent);opacity:.55}
+.chain li{position:relative;display:grid;grid-template-columns:36px minmax(170px,250px) 1fr;align-items:center;gap:18px;margin:0;padding:10px 0;border-bottom:1px solid var(--line)}
+.chain .n{position:relative;z-index:1;width:36px;height:36px;display:grid;place-items:center;background:var(--paper);border:1.5px solid var(--accent);color:var(--accent);font-family:var(--sans);font-size:.85rem;font-weight:700}
+.chain b{font-family:var(--serif);font-weight:600;color:var(--accent);font-size:1.02rem}
+.chain .desc{color:var(--muted);font-size:.97rem}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:.95rem;min-width:540px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-family:var(--serif);font-size:1rem;font-weight:600;border-bottom:1px solid var(--ink)}
+tr:last-child td{border-bottom:none}
+
+/* phases */
+.phase{border:1px solid var(--line);border-left:4px solid var(--c4);border-radius:0;margin:16px 0;overflow:hidden}
+.phase-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;align-items:baseline;padding:12px 18px;background:var(--c4-soft);border-bottom:1px solid var(--line)}
+.phase-head h4{margin:0;font-size:1.12rem;font-weight:600}
+.phase-head .yr{font-family:var(--serif);font-weight:700;color:var(--c4)}
+.phase-body{padding:6px 18px 12px}
+.mini-tl{list-style:none;padding:0;margin:8px 0}
+.mini-tl li{display:grid;grid-template-columns:108px 1fr;gap:12px;padding:5px 0;border-bottom:1px solid var(--line)}
+.mini-tl li:last-child{border-bottom:none}
+.mini-tl .d{font-family:var(--sans);font-size:.92rem;padding-top:2px;font-weight:700;color:var(--c4);font-variant-numeric:tabular-nums}
+
+/* details */
+details{background:var(--bg);border:1px solid var(--line);border-radius:0;padding:10px 14px;margin:12px 0}
+details summary{cursor:pointer;font-weight:600;color:var(--accent)}
+details[open] summary{margin-bottom:6px}
+
+/* quote */
+blockquote{margin:14px 0;padding:8px 16px;border-left:3px solid var(--accent);font-family:var(--serif);font-style:italic;color:var(--muted)}
+
+/* timeline */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.filters button{font:inherit;font-family:var(--sans);font-size:.88rem;padding:6px 13px;border-radius:0;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.filters button.on{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.tl{position:relative;list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:6px 0 10px 12px}
+.tl li::before{content:"";position:absolute;left:-29px;top:14px;width:10px;height:10px;border-radius:0;background:var(--paper);border:3px solid var(--muted)}
+.tl li.reich::before{border-color:var(--c1)}
+.tl li.religion::before{border-color:var(--c3)}
+.tl li.europa::before{border-color:var(--c2)}
+.tl li.krieg::before{border-color:var(--c4)}
+.tl li.kultur::before{border-color:var(--c5)}
+.tl .y{font-family:var(--serif);font-weight:700;font-size:1.05rem;margin-right:6px}
+.tl .tag{font-family:var(--sans);text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;font-weight:600;padding:1px 8px;border-radius:0;margin-left:6px;vertical-align:2px}
+.tag.reich{background:var(--c1-soft);color:var(--c1)}
+.tag.religion{background:var(--c3-soft);color:var(--c3)}
+.tag.europa{background:var(--c2-soft);color:var(--c2)}
+.tag.krieg{background:var(--c4-soft);color:var(--c4)}
+.tag.kultur{background:var(--c5-soft);color:var(--c5)}
+.tl li.hide{display:none}
+
+/* people */
+.people{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.person{background:var(--bg);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:0;padding:14px 16px}
+.person h4{margin:0}
+.person .life{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin-bottom:4px}
+.person .role{font-family:var(--sans);font-size:.7rem;letter-spacing:.12em;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+.person p{font-size:.93rem;margin:.35rem 0 0}
+
+/* glossary */
+dl.gloss{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:0;margin:0}
+dl.gloss dt,dl.gloss dd{padding:9px 6px;border-bottom:1px solid var(--line);margin:0}
+dl.gloss dt{font-weight:700;font-family:var(--serif)}
+.g{text-decoration:underline dotted;text-underline-offset:3px;color:inherit;cursor:help}
+
+.sources li{margin:.4rem 0}
+footer{font-family:var(--sans);text-align:center;color:var(--muted);font-size:.8rem;letter-spacing:.04em;padding:22px 20px 30px;border-top:1px solid var(--line);max-width:1240px;margin:0 auto}
+#top{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border-radius:0;border:1px solid var(--accent);background:var(--accent);color:var(--paper);font-size:1.3rem;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s}
+#top.show{opacity:1;pointer-events:auto}
+
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr;padding:16px 16px 70px;gap:16px}
+  nav.toc{position:relative;top:0;max-height:none}
+  nav.toc ol{display:none}
+  nav.toc.open ol{display:block}
+  .toc-toggle{display:block;width:100%;font:inherit;font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;background:none;border:none;color:var(--ink);text-align:left;cursor:pointer;padding:2px 6px}
+  nav.toc .toc-title{display:none}
+  .toc-toggle::after{content:"+";float:right;font-weight:400}
+  nav.toc.open .toc-toggle::after{content:"\2013"}
+  section.chapter{padding:22px 18px}
+  h2{font-size:1.55rem}
+  dl.gloss{grid-template-columns:1fr}
+  dl.gloss dt{border-bottom:none;padding-bottom:0}
+  .mini-tl li{grid-template-columns:1fr;gap:0}
+  .chain li{grid-template-columns:36px 1fr;gap:4px 14px}
+  .chain .n{grid-row:span 2}
+  .chain .desc{grid-column:2}
+}
+@media print{
+  nav.toc,#top,#progress,.filters,.theme-btn{display:none!important}
+  .layout{display:block;padding:0}
+  section.chapter{box-shadow:none;break-inside:auto;border:none;padding:10px 0}
+  details{display:block}
+  details>*{display:block}
+  .hero{background:none;color:#000}
+  .hero h1{color:#000}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<!-- Der Philosopher: Leiste -->
+<style>
+.ph-bar{background:var(--paper);border-bottom:1px solid var(--line);font-family:var(--sans)}
+.ph-bar .ph-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:baseline;gap:6px 18px;flex-wrap:wrap}
+.ph-brand{font-family:var(--serif);font-size:1.35rem;font-weight:600;line-height:1.2;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.ph-brand i{font-weight:400;font-size:.72em;color:var(--muted);margin-right:.18em}
+.ph-links{display:flex;gap:18px;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.ph-links a{color:var(--muted);text-decoration:none}
+.ph-links a:hover{color:var(--accent);text-decoration:underline}
+footer .ph-foot a{color:var(--muted)}
+@media (max-width:700px){.ph-bar .ph-in{padding:8px 16px}}
+@media print{.ph-bar{display:none}}
+</style>
+<nav class="ph-bar" aria-label="Der Philosopher"><div class="ph-in">
+  <a class="ph-brand" href="index.html"><i>Der</i>Philosopher</a>
+  <div class="ph-links"><a href="index.html#geschichte">Geschichte</a><a href="index.html">Titelseite</a></div>
+</div></nav>
+
+
+<header class="hero">
+  <div class="kicker">Deutsche und europäische Geschichte</div>
+  <h1>Vom Siebenjährigen Krieg zur Völkerschlacht bei Leipzig</h1>
+  <p>Wie das Alte Reich unterging: der Kampf zwischen Preußen und Österreich, Reformen von oben und die Aufklärung, die Französische Revolution, Napoleons Herrschaft über Deutschland – und der Aufbruch von 1813.</p>
+  <div class="years">1756 – 1813</div>
+</header>
+
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Inhaltsverzeichnis">
+  <button class="toc-toggle" id="tocToggle" aria-expanded="false">Inhaltsverzeichnis</button>
+  <div class="toc-title">Inhalt</div>
+  <ol>
+    <li><a href="#ueberblick"><span class="num">1</span>Überblick: Worum geht es?</a></li>
+    <li><a href="#um1756"><span class="num">2</span>Die Welt um 1756</a></li>
+    <li><a href="#siebenjaehrig"><span class="num">3</span>Der Siebenjährige Krieg</a></li>
+    <li><a href="#aufgeklaert"><span class="num">4</span>Der aufgeklärte Absolutismus</a></li>
+    <li><a href="#europa"><span class="num">5</span>Europa im Wandel</a></li>
+    <li><a href="#aufklaerung"><span class="num">6</span>Aufklärung, Gesellschaft und Kultur</a></li>
+    <li><a href="#revolution"><span class="num">7</span>Die Französische Revolution und Deutschland</a></li>
+    <li><a href="#napoleon"><span class="num">8</span>Napoleon und das Ende des Reiches</a></li>
+    <li><a href="#preussen"><span class="num">9</span>Zusammenbruch und Reformen</a></li>
+    <li><a href="#befreiung"><span class="num">10</span>Widerstand und Befreiungskriege</a></li>
+    <li><a href="#bilanz"><span class="num">11</span>Bilanz: Was hat sich verändert?</a></li>
+    <li><a href="#zeitleiste"><span class="num">12</span>Zeitleiste</a></li>
+    <li><a href="#personen"><span class="num">13</span>Wichtige Personen</a></li>
+    <li><a href="#glossar"><span class="num">14</span>Glossar</a></li>
+    <li><a href="#quellen"><span class="num">15</span>Quellen &amp; Weiterlesen</a></li>
+  </ol>
+  <button class="theme-btn" id="themeBtn" type="button">Darstellung: hell / dunkel</button>
+</nav>
+
+<main>
+
+<!-- ============ 1 ÜBERBLICK ============ -->
+<section class="chapter" id="ueberblick">
+  <div class="chap-head"><div class="chap-num">1</div><div>
+    <span class="span-chip">Einstieg</span>
+    <h2>Überblick: Worum geht es?</h2>
+  </div></div>
+  <p class="lead">Die knapp sechs Jahrzehnte zwischen 1756 und 1813 gehören zu den bewegtesten der deutschen Geschichte. Sie beginnen in einer Welt der Fürsten, Stände und Kabinettskriege und enden in einer Zeit der Revolutionen, der Volksheere und des erwachenden Nationalbewusstseins. Dazwischen geht das Heilige Römische Reich nach über 800 Jahren unter.</p>
+
+  <h3>Warum gerade 1756 und 1813?</h3>
+  <div class="grid">
+    <div class="card"><div class="yr">1756</div><h4>Der Kampf um Schlesien geht weiter</h4><p>Österreich und Frankreich, jahrhundertelang Feinde, werden Verbündete. Preußen kommt einem Angriff zuvor und marschiert am 29. August 1756 in Sachsen ein. Der Siebenjährige Krieg beginnt – ein Krieg, der in Europa, Amerika und Indien ausgetragen wird. Im selben Jahr wird in Salzburg Wolfgang Amadeus Mozart geboren.</p></div>
+    <div class="card"><div class="yr">1813</div><h4>Napoleons Macht zerbricht</h4><p>Nach der Katastrophe in Russland erheben sich Preußen, Russland, Österreich und Schweden gegen Napoleon. In der Völkerschlacht bei Leipzig (16.–19. Oktober 1813) wird er entscheidend geschlagen. Die französische Herrschaft über Deutschland endet – und mit ihr eine ganze Epoche.</p></div>
+  </div>
+
+  <h3>Die Zeit in vier Abschnitten</h3>
+  <div class="erabar" role="img" aria-label="Zeitbalken mit vier Epochen von 1756 bis 1813">
+    <div class="era-a">Siebenjähriger Krieg<small>1756–1763</small></div>
+    <div class="era-b">Aufgeklärter Absolutismus<small>1763–1789</small></div>
+    <div class="era-c">Revolution und Ende des Reiches<small>1789–1806</small></div>
+    <div class="era-d">Napoleon und Befreiung<small>1806–1813</small></div>
+  </div>
+  <div class="erascale"><span>1756</span><span>1763</span><span>1789</span><span>1806</span><span>1813</span></div>
+
+  <div class="box kurz"><div class="box-title">Kurz gesagt – die ganze Epoche in fünf Sätzen</div>
+    <ol>
+      <li>Im <strong>Siebenjährigen Krieg</strong> (1756–1763) behauptet sich Preußen gegen eine Übermacht und wird endgültig zur Großmacht neben Österreich.</li>
+      <li>Danach reformieren Herrscher wie Friedrich II. und Joseph II. ihre Staaten im Geist der Vernunft – als <strong>aufgeklärte Absolutisten</strong>, aber ohne die Macht zu teilen.</li>
+      <li>Die <strong>Aufklärung</strong> schafft eine neue bürgerliche Öffentlichkeit; Literatur, Philosophie und Musik erleben eine Blütezeit.</li>
+      <li>Die <strong>Französische Revolution</strong> von 1789 und die folgenden Kriege führen unter <strong>Napoleon</strong> zur Neuordnung Deutschlands und 1806 zum <strong>Ende des Heiligen Römischen Reiches</strong>.</li>
+      <li>Besiegt und besetzt, erneuern sich Preußen und die Rheinbundstaaten durch <strong>Reformen</strong>; 1813 wird Napoleon in den <strong>Befreiungskriegen</strong> geschlagen.</li>
+    </ol>
+  </div>
+
+  <h3>Der rote Faden: Eine Kette von Ursachen und Folgen</h3>
+  <p>Viele Ereignisse dieser Zeit hängen direkt zusammen. Wer diese Kette versteht, versteht die ganze Epoche:</p>
+  <ol class="chain" aria-label="Abfolge von Ursachen und Folgen">
+    <li><span class="n">1</span><b>Siebenjähriger Krieg</b><span class="desc">Preußen behauptet sich</span></li>
+    <li><span class="n">2</span><b>Aufgeklärter Absolutismus</b><span class="desc">Reformen von oben</span></li>
+    <li><span class="n">3</span><b>Aufklärung</b><span class="desc">Vernunft und Öffentlichkeit</span></li>
+    <li><span class="n">4</span><b>Französische Revolution</b><span class="desc">Freiheit, Gleichheit – und Krieg</span></li>
+    <li><span class="n">5</span><b>Napoleons Vorherrschaft</b><span class="desc">Ende des Alten Reiches</span></li>
+    <li><span class="n">6</span><b>Reformen</b><span class="desc">Preußen und Rheinbund modernisieren</span></li>
+    <li><span class="n">7</span><b>Befreiungskriege</b><span class="desc">Napoleons Niederlage 1813</span></li>
+  </ol>
+  <p>Daneben läuft ein zweiter Faden: Aus den Untertanen der Fürsten werden langsam <strong>Bürger</strong>, die lesen, diskutieren und mitreden wollen. Und aus der Erfahrung von Fremdherrschaft und Krieg entsteht ein neues Gefühl, zu einer <strong>deutschen Nation</strong> zu gehören – eine Idee, die das ganze 19. Jahrhundert bestimmen wird.</p>
+</section>
+
+<!-- ============ 2 UM 1756 ============ -->
+<section class="chapter" id="um1756">
+  <div class="chap-head"><div class="chap-num">2</div><div>
+    <span class="span-chip">Ausgangslage um 1756</span>
+    <h2>Die Welt um 1756</h2>
+  </div></div>
+  <p class="lead">Um 1756 hat sich das Reich vom Dreißigjährigen Krieg erholt. Doch in seiner Mitte stehen sich zwei Großmächte unversöhnlich gegenüber – und in Europa ordnen sich die Bündnisse völlig neu.</p>
+
+  <h3>Das Reich: Zwei Großmächte und viele Kleine</h3>
+  <p>Das Heilige Römische Reich bestand noch immer aus mehreren Hundert Herrschaften – vom Kurfürstentum bis zur winzigen Reichsritterschaft. Der Immerwährende Reichstag tagte in Regensburg, die Reichsgerichte schlichteten Streit. Politisch bestimmt wurde das Reich aber von zwei Mächten:</p>
+  <div class="grid">
+    <div class="card"><h4>Österreich</h4><p>Maria Theresia regierte die habsburgischen Länder, ihr Mann Franz I. war Kaiser. Österreich hatte den Verlust Schlesiens (1742/45) nie verwunden und reformierte Heer und Verwaltung, um es zurückzugewinnen.</p></div>
+    <div class="card"><h4>Preußen</h4><p>Friedrich II. besaß mit Schlesien nun ein reiches Land und eine der schlagkräftigsten Armeen Europas – aber nur wenige Millionen Einwohner und lange, schwer zu verteidigende Grenzen.</p></div>
+    <div class="card"><h4>Die Mittelstaaten</h4><p>Sachsen (verbunden mit Polen), Hannover (verbunden mit Großbritannien) und Bayern waren wichtige Mitspieler, mussten sich aber zwischen Wien und Berlin entscheiden.</p></div>
+    <div class="card"><h4>Die geistlichen Staaten und Reichsstädte</h4><p>Fürstbistümer, Abteien und Reichsstädte hingen besonders am Reich und am Kaiser, denn nur das Reich schützte sie vor den Großen.</p></div>
+  </div>
+
+  <h3>Die „Umkehrung der Bündnisse“ 1756</h3>
+  <p>Österreichs Staatskanzler Kaunitz verfolgte ein kühnes Ziel: Er wollte den alten Feind Frankreich als Verbündeten gegen Preußen gewinnen. Den Anlass lieferte Preußen selbst. Um Hannover vor einem französischen Angriff zu schützen, schloss Friedrich II. am 16. Januar 1756 mit Großbritannien die Westminster-Konvention. Frankreich fühlte sich verraten und verbündete sich am 1. Mai 1756 mit Österreich. Auch Russland stellte sich auf Österreichs Seite.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Vor 1756</th><th>Ab 1756</th></tr>
+    <tr><td>Österreich und Großbritannien gegen Frankreich und Preußen</td><td>Österreich, Frankreich und Russland (dazu Schweden, Sachsen und das Reich) gegen Preußen und Großbritannien-Hannover</td></tr>
+  </table></div>
+
+  <div class="box warum"><div class="box-title">Warum ist das wichtig?</div>
+    <p>Die Gegnerschaft zwischen Habsburg und Frankreich hatte Europa seit über 200 Jahren geprägt. Dass sie 1756 endete, zeigt, wie sehr die Politik nun vom <a class="g" href="#g-dualismus">Dualismus</a> zwischen Österreich und Preußen und vom Weltmachtkampf zwischen Großbritannien und Frankreich bestimmt wurde – nicht mehr von alten Feindschaften oder Konfessionen.</p>
+  </div>
+
+  <h3>Gesellschaft um 1756</h3>
+  <p>Die Gesellschaft war weiter eine <strong>Ständegesellschaft</strong>: Adel, Geistlichkeit, Bürger und Bauern hatten unterschiedliche Rechte. Mindestens vier von fünf Menschen lebten auf dem Land. Östlich der Elbe herrschte die <a class="g" href="#g-gutsherrschaft">Gutsherrschaft</a>, viele Bauern waren an die Scholle gebunden. Doch die Bevölkerung wuchs wieder stetig, und in den Städten entstand ein lesendes, gebildetes Bürgertum, das sich für die Ideen der <a class="g" href="#g-aufklaerung">Aufklärung</a> begeisterte.</p>
+
+  <h3>Europa um 1756 – die Nachbarn</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Land</th><th>Lage um 1756</th></tr>
+    <tr><td><strong>Frankreich</strong></td><td>Unter Ludwig XV. noch die größte Macht des Kontinents, aber hoch verschuldet. Mit Großbritannien kämpft es in Nordamerika und Indien um Kolonien.</td></tr>
+    <tr><td><strong>Großbritannien</strong></td><td>Parlamentarische Monarchie, führende See- und Handelsmacht. Sein König Georg II. ist zugleich Kurfürst von Hannover.</td></tr>
+    <tr><td><strong>Russland</strong></td><td>Unter Zarin Elisabeth eine aufsteigende Großmacht, die sich immer stärker in Mitteleuropa einmischt.</td></tr>
+    <tr><td><strong>Polen-Litauen</strong></td><td>Großes, aber schwaches Adelsreich; sein König ist zugleich Kurfürst von Sachsen. Seine Nachbarn mischen sich immer offener ein.</td></tr>
+    <tr><td><strong>Schweden</strong></td><td>Keine Großmacht mehr, besitzt aber noch Teile Pommerns.</td></tr>
+    <tr><td><strong>Osmanisches Reich</strong></td><td>Hat 1739 Belgrad von Österreich zurückgewonnen; sein Hauptgegner ist nun Russland, das ans Schwarze Meer drängt.</td></tr>
+  </table></div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li>Um 1756 bestimmen <strong>Österreich und Preußen</strong> die Politik im Reich – der Dualismus.</li>
+      <li><strong>1756:</strong> Umkehrung der Bündnisse → Österreich, Frankreich und Russland gegen Preußen und Großbritannien.</li>
+      <li>Die Gesellschaft ist ständisch und ländlich, doch ein <strong>lesendes Bürgertum</strong> wächst heran.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 3 SIEBENJÄHRIGER KRIEG ============ -->
+<section class="chapter" id="siebenjaehrig">
+  <div class="chap-head"><div class="chap-num">3</div><div>
+    <span class="span-chip">1756 – 1763</span>
+    <h2>Der Siebenjährige Krieg</h2>
+  </div></div>
+  <p class="lead">Sieben Jahre lang kämpfte Preußen gegen die drei größten Mächte des Kontinents. Dass es am Ende überlebte, verdankte es seiner Armee, britischem Geld – und einem Zufall in Russland.</p>
+
+  <h3>Ein Krieg auf zwei Ebenen</h3>
+  <div class="grid">
+    <div class="card"><h4>In Europa</h4><p>Österreich wollte Schlesien zurückerobern; Russland, Frankreich und Schweden wollten Preußen schwächen oder Gebiete gewinnen. Das Reich erklärte Preußen wegen des Überfalls auf Sachsen den Reichskrieg (<a class="g" href="#g-reichsexekution">Reichsexekution</a>).</p></div>
+    <div class="card"><h4>In der Welt</h4><p>Großbritannien und Frankreich kämpften in Nordamerika, in der Karibik, in Indien und auf den Meeren um ihre Kolonialreiche. Manche Historiker sprechen deshalb von einem frühen „Weltkrieg“.</p></div>
+  </div>
+  <p>Preußen wurde vor allem von Großbritannien mit <a class="g" href="#g-subsidien">Subsidien</a> unterstützt; ein britisch-hannoversches Heer deckte seine Westflanke. Ansonsten stand Friedrich allein.</p>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Phase I: Präventivschlag und Wechselfälle</h4><span class="yr">1756–1757</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">29.8.1756</span><span>Preußen marschiert ohne Kriegserklärung in Sachsen ein. Das sächsische Heer wird bei Pirna eingeschlossen und muss im Oktober kapitulieren; viele Soldaten werden in die preußische Armee gezwungen.</span></li>
+        <li><span class="d">17.1.1757</span><span>Der Reichstag beschließt den Reichskrieg gegen Preußen.</span></li>
+        <li><span class="d">18.6.1757</span><span>Nach einem Sieg bei Prag erleidet Friedrich bei <strong>Kolin</strong> seine erste schwere Niederlage und muss Böhmen räumen.</span></li>
+        <li><span class="d">5.11.1757</span><span><strong>Roßbach</strong> (Sachsen): Friedrich schlägt ein weit größeres französisches und Reichsheer in kurzer Zeit.</span></li>
+        <li><span class="d">5.12.1757</span><span><strong>Leuthen</strong> (Schlesien): Mit dem Sieg über die Österreicher sichert er Schlesien vorerst.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase II: Am Rand des Untergangs</h4><span class="yr">1758–1760</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1758</span><span>Blutige Schlacht gegen die Russen bei Zorndorf; Niederlage gegen die Österreicher bei Hochkirch.</span></li>
+        <li><span class="d">1.8.1759</span><span>Das britisch-hannoversche Heer besiegt die Franzosen bei Minden.</span></li>
+        <li><span class="d">12.8.1759</span><span><strong>Kunersdorf</strong>: Russen und Österreicher vernichten das preußische Heer fast vollständig. Friedrich hält den Krieg für verloren. Doch die Sieger sind uneins und marschieren nicht auf Berlin – Friedrich spricht vom „Mirakel des Hauses Brandenburg“.</span></li>
+        <li><span class="d">1760</span><span>Siege bei Liegnitz und Torgau; zugleich besetzen russische und österreichische Truppen kurzzeitig Berlin.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase III: Erschöpfung und Frieden</h4><span class="yr">1761–1763</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1761</span><span>Preußen ist militärisch und finanziell am Ende. Großbritannien stellt 1762 seine Zahlungen ein.</span></li>
+        <li><span class="d">5.1.1762</span><span>Zarin Elisabeth stirbt. Ihr Nachfolger Peter III. verehrt Friedrich, schließt im Mai Frieden und gibt alle Eroberungen zurück. Seine Nachfolgerin Katharina II. hält am Frieden fest.</span></li>
+        <li><span class="d">10.2.1763</span><span>Frieden von Paris zwischen Großbritannien und Frankreich.</span></li>
+        <li><span class="d">15.2.1763</span><span><strong>Frieden von Hubertusburg</strong> (Sachsen) zwischen Preußen, Österreich und Sachsen.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> In Europa bleibt alles beim Alten – Schlesien bleibt preußisch. In der Welt verliert Frankreich fast sein ganzes Kolonialreich in Nordamerika und Indien an Großbritannien.</p>
+    </div>
+  </div>
+
+  <div class="box achtung"><div class="box-title">Die Bilanz</div>
+    <p>In Europa starben schätzungsweise rund 550.000 Soldaten, davon etwa 180.000 Preußen, 140.000 Österreicher und 120.000 Russen. Hinzu kamen hohe Verluste der Zivilbevölkerung durch Hunger, Seuchen und Plünderungen, vor allem in Sachsen und Pommern. Dresden wurde 1760 von preußischen Truppen beschossen und schwer zerstört. Um den Krieg zu bezahlen, ließ Friedrich minderwertige Münzen prägen – eine verdeckte Steuer, die die Ersparnisse vieler Menschen entwertete.</p>
+  </div>
+  <div class="box warum"><div class="box-title">Warum ist das wichtig?</div>
+    <p>Preußen hatte bewiesen, dass es sich gegen ganz Europa behaupten konnte. Seine Stellung als <strong>fünfte Großmacht</strong> neben Frankreich, Großbritannien, Österreich und Russland war nun unbestritten. Zugleich wurde Friedrich II. zur Legende („der Große“, „der Alte Fritz“). Der Krieg gilt als einer der letzten großen <a class="g" href="#g-kabinettskrieg">Kabinettskriege</a>: Er wurde von Fürsten um Macht und Land geführt, nicht von Völkern für Ideen.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>1756:</strong> Preußen überfällt Sachsen → Beginn des Siebenjährigen Krieges.</li>
+      <li><strong>1757:</strong> Roßbach und Leuthen; <strong>1759:</strong> Katastrophe von Kunersdorf.</li>
+      <li><strong>1762:</strong> Russlands Ausscheiden rettet Preußen („Mirakel des Hauses Brandenburg“).</li>
+      <li><strong>1763:</strong> Hubertusburg → Schlesien bleibt preußisch; Großbritannien wird Weltmacht.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 4 AUFGEKLÄRTER ABSOLUTISMUS ============ -->
+<section class="chapter" id="aufgeklaert">
+  <div class="chap-head"><div class="chap-num">4</div><div>
+    <span class="span-chip">1763 – 1790</span>
+    <h2>Der aufgeklärte Absolutismus</h2>
+  </div></div>
+  <p class="lead">Nach dem Krieg wollten viele Herrscher ihre Staaten nach den Grundsätzen der Vernunft neu ordnen: mit besseren Schulen, gerechteren Gerichten und mehr religiöser Duldung. Die Macht teilen wollten sie aber nicht.</p>
+
+  <h3>4.1 Was heißt „aufgeklärter Absolutismus“?</h3>
+  <p>Der <a class="g" href="#g-aufgeklaert">aufgeklärte Absolutismus</a> verband zwei Dinge: Der Fürst blieb unumschränkter Herrscher, verstand sich aber als Diener des Gemeinwohls. Friedrich II. nannte sich selbst den „ersten Diener des Staates“. Ein oft zitierter Grundsatz dieser Zeit lautet: „Alles für das Volk, nichts durch das Volk.“ Reformen kamen also <strong>von oben</strong> – die Untertanen sollten profitieren, aber nicht mitbestimmen.</p>
+
+  <h3>4.2 Preußen unter Friedrich II. nach 1763</h3>
+  <div class="grid">
+    <div class="card"><h4>Wiederaufbau</h4><p>Der König ließ Saatgetreide und Pferde an die Bauern verteilen, gründete Kreditanstalten für Gutsbesitzer und siedelte Zehntausende Kolonisten in trockengelegten Flussniederungen an. Den Anbau der Kartoffel förderte er schon seit 1746 mit Anweisungen an seine Beamte („Kartoffelbefehle“).</p></div>
+    <div class="card"><h4>Schule und Wirtschaft</h4><p>Das Generallandschulreglement von 1763 schrieb eine Schulpflicht für Kinder vom 5. bis 13./14. Lebensjahr vor, auch wenn es an Lehrern und Schulen mangelte. Manufakturen wurden gefördert; 1763 kaufte der König die Berliner Porzellanmanufaktur.</p></div>
+    <div class="card"><h4>Recht</h4><p>Die Folter war schon 1740 weitgehend abgeschafft worden. Friedrich ließ ein einheitliches Gesetzbuch ausarbeiten, das 1794 als <strong>Allgemeines Landrecht</strong> in Kraft trat – mit über 19.000 Vorschriften ein großer Versuch der <a class="g" href="#g-kodifikation">Kodifikation</a>.</p></div>
+    <div class="card"><h4>Toleranz</h4><p>Religiöse Minderheiten wurden geduldet, wenn sie dem Staat nützten. Juden blieben jedoch stark benachteiligt und mussten hohe Abgaben zahlen.</p></div>
+  </div>
+  <div class="box achtung"><div class="box-title">Die Grenzen der Reformen</div>
+    <p>Friedrich rührte die Macht des Adels nicht an: Offiziersstellen und Rittergüter blieben dem Adel vorbehalten, die Gutsherrschaft über die Bauern blieb bestehen. Auch das Allgemeine Landrecht hielt an der Ständeordnung fest. Neue Steuern auf Kaffee, Tabak und andere Waren, die von französischen Beamten eingetrieben wurden, machten den König beim Volk unbeliebt. Und der Monarch griff selbst in Gerichtsverfahren ein, wenn ihm ein Urteil ungerecht schien – ein Zeichen, dass es keine unabhängige Justiz gab.</p>
+  </div>
+
+  <h3>4.3 Österreich: Maria Theresia und Joseph II.</h3>
+  <p>Maria Theresia hatte schon nach 1749 Verwaltung und Heer reformiert. 1774 führte sie mit der Allgemeinen Schulordnung die Schulpflicht ein. Ihr Sohn <strong>Joseph II.</strong> (Kaiser ab 1765, Alleinherrscher in den habsburgischen Ländern 1780–1790) ging viel weiter und schneller – er gilt als der radikalste aufgeklärte Herrscher:</p>
+  <div class="phase">
+    <div class="phase-head"><h4>Die Reformen Josephs II.</h4><span class="yr">1780–1790</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1781</span><span><strong><a class="g" href="#g-toleranzpatent">Toleranzpatent</a>:</strong> Protestanten und Orthodoxe dürfen ihren Glauben ausüben und Ämter bekleiden.</span></li>
+        <li><span class="d">1781</span><span>Aufhebung der <a class="g" href="#g-leibeigenschaft">Leibeigenschaft</a> in Böhmen und weiteren Ländern: Bauern dürfen heiraten, wegziehen und einen Beruf wählen.</span></li>
+        <li><span class="d">ab 1782</span><span>Toleranzpatente für Juden; Hunderte Klöster, die nicht in Schule oder Krankenpflege tätig sind, werden aufgehoben.</span></li>
+        <li><span class="d">1784</span><span>Eröffnung des Allgemeinen Krankenhauses in Wien; Deutsch wird Amtssprache in der ganzen Monarchie.</span></li>
+        <li><span class="d">1787</span><span>Die Todesstrafe wird im ordentlichen Strafverfahren abgeschafft.</span></li>
+        <li><span class="d">1789/90</span><span>Aufstände in den Österreichischen Niederlanden und Widerstand in Ungarn. Kurz vor seinem Tod muss Joseph viele Reformen zurücknehmen.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>4.4 Reformen in anderen Staaten</h3>
+  <p>Auch kleinere Fürsten regierten im Geist der Aufklärung. Markgraf Karl Friedrich von Baden schaffte 1783 die Leibeigenschaft ab. In Sachsen wurde nach dem Krieg der Wiederaufbau systematisch organisiert. In Sachsen-Weimar holte Herzog Carl August Goethe und andere Gelehrte an seinen Hof. Selbst in manchen geistlichen Fürstentümern, etwa in Mainz, wurden Schulen und Universitäten reformiert.</p>
+
+  <h3>4.5 Das Reich: Rivalität ohne großen Krieg</h3>
+  <p>Zwischen Österreich und Preußen blieb es gespannt. Als 1777 die bayerische Linie der Wittelsbacher ausstarb, wollte Joseph II. große Teile Bayerns für Österreich erwerben. Preußen zog dagegen ins Feld. Im <strong>Bayerischen Erbfolgekrieg</strong> (1778/79) kam es zu keiner einzigen großen Schlacht; die Soldaten litten vor allem unter Hunger und gruben sich ihr Essen auf den Feldern aus – daher der Spottname „Kartoffelkrieg“. Im Frieden von Teschen (1779) erhielt Österreich nur das Innviertel. Als Joseph 1785 Bayern gegen die Österreichischen Niederlande tauschen wollte, gründete Friedrich mit anderen Reichsfürsten den <strong>Fürstenbund</strong> und verhinderte den Plan.</p>
+
+  <div class="box warum"><div class="box-title">Warum kam die Revolution in Deutschland nicht?</div>
+    <p>Historiker nennen mehrere Gründe: Viele Missstände wurden durch Reformen von oben gemildert. Das Reich war in viele kleine Staaten zersplittert, es gab keine Hauptstadt wie Paris, in der sich Unmut bündeln konnte. Und die Reichsgerichte boten Untertanen die Möglichkeit, gegen ihre Herren zu klagen. Die Reformbereitschaft der Fürsten wirkte so – zumindest eine Zeit lang – wie ein Ventil.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Aufgeklärter Absolutismus:</strong> Reformen im Namen der Vernunft und des Gemeinwohls – aber ohne Mitbestimmung.</li>
+      <li><strong>Preußen:</strong> Wiederaufbau, Schulpflicht 1763, Allgemeines Landrecht 1794.</li>
+      <li><strong>Österreich:</strong> Joseph II. → Toleranzpatent und Aufhebung der Leibeigenschaft 1781.</li>
+      <li><strong>Reich:</strong> Bayerischer Erbfolgekrieg 1778/79, Fürstenbund 1785 → Dualismus ohne großen Krieg.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 5 EUROPA ============ -->
+<section class="chapter" id="europa">
+  <div class="chap-head"><div class="chap-num">5</div><div>
+    <span class="span-chip">1763 – 1795</span>
+    <h2>Europa im Wandel: Polen, Amerika und Großbritannien</h2>
+  </div></div>
+  <p class="lead">Nach 1763 verschwand ein ganzer Staat von der Landkarte, jenseits des Atlantiks entstand eine neue Republik, und in England begann eine Umwälzung der Arbeit. Alle drei Entwicklungen betrafen auch Deutschland.</p>
+
+  <h3>5.1 Russland unter Katharina II.</h3>
+  <p><strong>Katharina II.</strong> war eine deutsche Prinzessin aus Anhalt-Zerbst. 1762 kam sie durch einen Staatsstreich gegen ihren Mann Peter III. auf den Zarenthron und regierte bis 1796. Sie korrespondierte mit Aufklärern wie Voltaire, baute Russland aber zugleich zur Großmacht aus: Es gewann Gebiete am Schwarzen Meer und auf der Krim. 1763 lud sie mit einem Manifest Ausländer zur Ansiedlung ein; Tausende Deutsche, vor allem aus Hessen, der Pfalz und Südwestdeutschland, gründeten an der Wolga über hundert Dörfer – die Vorfahren der Wolgadeutschen.</p>
+
+  <h3>5.2 Die Teilungen Polens</h3>
+  <p>Polen-Litauen war durch Kriege und eine Verfassung geschwächt, in der jeder Adlige im Reichstag Beschlüsse blockieren konnte. Russland behandelte das Land fast wie ein Protektorat. Seine Nachbarn nutzten diese Schwäche:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Teilung</th><th>Preußen erhält</th><th>Österreich erhält</th><th>Russland erhält</th></tr>
+    <tr><td><strong>1772</strong></td><td>Westpreußen (ohne Danzig und Thorn) – die Landbrücke nach Ostpreußen</td><td>Galizien mit Lemberg</td><td>Polnisch-Livland und Teile Weißrusslands</td></tr>
+    <tr><td><strong>1793</strong></td><td>Danzig, Thorn und Großpolen („Südpreußen“)</td><td>–</td><td>Große Teile Weißrusslands, Litauens und der Ukraine</td></tr>
+    <tr><td><strong>1795</strong></td><td>Das Gebiet um Warschau („Neuostpreußen“)</td><td>Westgalizien mit Krakau</td><td>Den gesamten Rest östlich von Memel und Bug, dazu Kurland</td></tr>
+  </table></div>
+  <p>Polen versuchte sich zu erneuern: Am <strong>3. Mai 1791</strong> verabschiedete es eine der ersten modernen Verfassungen Europas. Russland und Preußen unterdrückten diesen Reformversuch jedoch, und ein Aufstand unter Tadeusz Kościuszko wurde 1794 niedergeschlagen. 1795 verschwand Polen von der Landkarte.</p>
+  <div class="box achtung"><div class="box-title">Ein Staat wird ausgelöscht</div>
+    <p>Die Teilungen waren ein reiner Machtakt: Drei Großmächte bedienten sich am Gebiet eines schwächeren Nachbarn und begründeten dies mit dem „Gleichgewicht der Mächte“. Preußen erhielt Millionen polnischer Untertanen – und mit ihnen ein Problem, das die deutsche Geschichte bis ins 20. Jahrhundert begleiten sollte. Die „polnische Frage“ blieb offen; Napoleon schuf 1807 mit dem Herzogtum Warschau vorübergehend wieder einen polnischen Staat.</p>
+  </div>
+
+  <h3>5.3 Die Amerikanische Revolution</h3>
+  <p>Die britischen Kolonien in Nordamerika wehrten sich gegen Steuern, über die sie im Londoner Parlament nicht mitbestimmen durften. 1775 begann der Krieg, am <strong>4. Juli 1776</strong> erklärten die 13 Kolonien ihre Unabhängigkeit. Die Unabhängigkeitserklärung berief sich auf unveräußerliche Rechte jedes Menschen: Leben, Freiheit und das Streben nach Glück. 1783 erkannte Großbritannien die Vereinigten Staaten an, 1787 gaben sie sich eine Verfassung.</p>
+  <div class="grid">
+    <div class="card"><h4>Deutsche Soldaten für Großbritannien</h4><p>Deutsche Fürsten, vor allem der Landgraf von Hessen-Kassel, stellten Großbritannien rund 30.000 Soldaten gegen hohe Zahlungen zur Verfügung. Kritiker wie Friedrich Schiller prangerten diesen „Soldatenhandel“ an, etwa in „Kabale und Liebe“ (1784).</p></div>
+    <div class="card"><h4>Deutsche auf der anderen Seite</h4><p>Der ehemalige preußische Offizier Friedrich Wilhelm von Steuben drillte die amerikanische Armee. Viele deutschstämmige Siedler in Pennsylvania kämpften für die Unabhängigkeit.</p></div>
+    <div class="card"><h4>Wirkung in Europa</h4><p>Gebildete Leser in Deutschland verfolgten die Ereignisse mit großem Interesse. Zum ersten Mal hatte ein Volk eine Republik auf der Grundlage von Menschenrechten gegründet. Frankreich, das die Amerikaner unterstützt hatte, stürzte dagegen noch tiefer in die Schulden.</p></div>
+  </div>
+
+  <h3>5.4 Großbritannien und der Beginn der Industrialisierung</h3>
+  <p>In Großbritannien begann um 1760–1780 die <strong>Industrielle Revolution</strong>: Wasser- und Dampfkraft trieben Spinnmaschinen an, James Watt verbesserte die Dampfmaschine. Waren wurden nun in Fabriken in großer Menge hergestellt. Nach Deutschland kam diese Entwicklung erst langsam: 1783/84 entstand in Ratingen bei Düsseldorf mit der Textilfabrik „Cromford“ eine der ersten Fabriken auf dem Kontinent. Noch arbeiteten die meisten Menschen in Landwirtschaft, Handwerk und Heimgewerbe.</p>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>1772, 1793, 1795:</strong> Teilungen Polens → Preußen, Österreich und Russland teilen das Land unter sich auf.</li>
+      <li><strong>1776:</strong> Unabhängigkeitserklärung der USA → erstes Beispiel einer Republik auf Grundlage von Menschenrechten.</li>
+      <li><strong>Großbritannien</strong> wird Weltmacht und Ursprungsland der Industrialisierung.</li>
+      <li><strong>Frankreichs Schulden</strong> aus den Kriegen werden zur Ursache der Revolution.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 6 AUFKLÄRUNG ============ -->
+<section class="chapter" id="aufklaerung">
+  <div class="chap-head"><div class="chap-num">6</div><div>
+    <span class="span-chip">ca. 1750 – 1806</span>
+    <h2>Aufklärung, Gesellschaft und Kultur</h2>
+  </div></div>
+  <p class="lead">In der zweiten Hälfte des 18. Jahrhunderts wurde Deutschland zum Land der Dichter und Denker. Zugleich lebten die meisten Menschen weiter in Armut auf dem Land. Beides gehört zum Bild dieser Zeit.</p>
+
+  <h3>6.1 Alltag: Wachstum und Not</h3>
+  <ul>
+    <li><strong>Mehr Menschen:</strong> Ab etwa 1750 wuchs die Bevölkerung stetig. Gründe waren weniger Kriege im Inneren des Reiches, das Ende der Pest und neue Nahrungsmittel wie die Kartoffel.</li>
+    <li><strong>Land und Armut:</strong> Mindestens 80 Prozent lebten auf dem Land. Etwa 40 Prozent der Landbevölkerung besaßen kein oder nur sehr wenig Land und mussten sich als Tagelöhner, Knechte oder im Heimgewerbe verdingen.</li>
+    <li><strong>Hunger:</strong> Nach Missernten kam es 1770–1772 in weiten Teilen Mitteleuropas zu einer schweren Hungerkrise mit vielen Toten.</li>
+    <li><strong>Heimgewerbe:</strong> In Schlesien, Sachsen, Westfalen und anderen Regionen spannen und webten Hunderttausende Menschen in ihren Häusern im Auftrag von Kaufleuten.</li>
+    <li><strong>Auswanderung:</strong> Viele suchten ihr Glück in der Fremde – an der Wolga, in Ungarn und im Banat oder in Nordamerika.</li>
+  </ul>
+
+  <h3>6.2 „Habe Mut, dich deines eigenen Verstandes zu bedienen!“</h3>
+  <p>So fasste der Königsberger Philosoph <strong>Immanuel Kant</strong> 1784 die Aufklärung zusammen. Sie sei der „Ausgang des Menschen aus seiner selbstverschuldeten Unmündigkeit“. Jeder Mensch solle selbst denken, statt sich blind auf Autoritäten zu verlassen. Seine „Kritik der reinen Vernunft“ (1781) veränderte die Philosophie grundlegend.</p>
+  <div class="grid">
+    <div class="card"><h4>Gotthold Ephraim Lessing</h4><p>Der Dichter warb in seinem Drama „Nathan der Weise“ (1779) mit der berühmten Ringparabel für Toleranz zwischen Judentum, Christentum und Islam.</p></div>
+    <div class="card"><h4>Moses Mendelssohn</h4><p>Der jüdische Philosoph aus Dessau, Lessings Freund, wurde zum Vorbild der jüdischen Aufklärung (Haskala). Er übersetzte die Tora ins Deutsche und trat für Religionsfreiheit ein.</p></div>
+    <div class="card"><h4>Christian Wilhelm Dohm</h4><p>Der preußische Beamte forderte 1781 in einer Schrift die rechtliche Gleichstellung der Juden – eine Idee, die erst Jahrzehnte später schrittweise umgesetzt wurde (<a class="g" href="#g-emanzipation">Emanzipation</a>).</p></div>
+  </div>
+
+  <h3>6.3 Eine neue Öffentlichkeit</h3>
+  <p>Immer mehr Menschen konnten lesen. Zeitungen und Zeitschriften wie die „Berlinische Monatsschrift“ (ab 1783), in der Kants Aufsatz erschien, verbreiteten neue Ideen. In vielen Städten gründeten Bürger <a class="g" href="#g-lesegesellschaft">Lesegesellschaften</a>, in denen sie Bücher teilten und diskutierten. Zeitgenossen sprachen spöttisch von einer „Lesewut“. Auch Freimaurerlogen und gelehrte Gesellschaften wurden zu Orten des Austauschs. In Berlin luden gebildete jüdische Frauen wie Henriette Herz und Rahel Levin zu literarischen <a class="g" href="#g-salon">Salons</a>, in denen sich Adlige, Bürger, Christen und Juden trafen.</p>
+  <div class="box achtung"><div class="box-title">Grenzen der Freiheit</div>
+    <p>Die Zensur blieb bestehen. Unter Friedrich Wilhelm II. (1786–1797), dem Nachfolger Friedrichs II., schränkte das Religionsedikt von 1788 die Freiheit der Lehre wieder ein; selbst Kant erhielt Schwierigkeiten mit der Zensur. Frauen blieben von Universitäten und Ämtern ausgeschlossen, und die Masse der Landbevölkerung wurde von der Aufklärung kaum erreicht.</p>
+  </div>
+
+  <h3>6.4 Literatur und Musik</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Strömung</th><th>Zeit</th><th>Merkmale und Beispiele</th></tr>
+    <tr><td><strong><a class="g" href="#g-sturm">Sturm und Drang</a></strong></td><td>ca. 1765–1785</td><td>Junge Dichter rebellieren gegen starre Regeln und feiern Gefühl, Natur und Freiheit: Goethes „Götz von Berlichingen“ (1773) und „Die Leiden des jungen Werthers“ (1774), Schillers „Die Räuber“ (1781/82).</td></tr>
+    <tr><td><strong><a class="g" href="#g-klassik">Weimarer Klassik</a></strong></td><td>ca. 1786–1805</td><td>Goethe und Schiller, ab 1794 eng befreundet, streben nach Harmonie, Maß und Humanität nach antikem Vorbild. Weimar, eine kleine Residenzstadt, wird zum geistigen Zentrum Deutschlands.</td></tr>
+    <tr><td><strong>Frühromantik</strong></td><td>ab ca. 1798</td><td>Dichter wie Novalis und die Brüder Schlegel entdecken das Unendliche, das Gefühl, das Mittelalter und die Volkspoesie.</td></tr>
+    <tr><td><strong>Wiener Klassik</strong></td><td>ca. 1770–1827</td><td>Joseph Haydn, Wolfgang Amadeus Mozart und Ludwig van Beethoven prägen Sinfonie, Oper und Kammermusik bis heute.</td></tr>
+  </table></div>
+
+  <div class="box warum"><div class="box-title">Kulturnation statt Staatsnation</div>
+    <p>Ein deutscher Nationalstaat existierte nicht. Gerade deshalb verstanden viele Gebildete die Deutschen als eine <strong>Kulturnation</strong>: verbunden durch Sprache, Literatur, Philosophie und Musik, nicht durch einen gemeinsamen Staat. Dieses Selbstbild wurde nach 1806 zu einer wichtigen Grundlage des deutschen <a class="g" href="#g-nationalismus">Nationalismus</a>.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Gesellschaft:</strong> Bevölkerungswachstum, aber viel Armut; Hungerkrise 1770–1772.</li>
+      <li><strong>Aufklärung:</strong> Kant (1784: „Was ist Aufklärung?“), Lessing, Mendelssohn → Vernunft und Toleranz.</li>
+      <li><strong>Öffentlichkeit:</strong> Zeitschriften, Lesegesellschaften und Salons.</li>
+      <li><strong>Kultur:</strong> Sturm und Drang, Weimarer Klassik, Wiener Klassik → Deutschland als „Kulturnation“.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 7 REVOLUTION ============ -->
+<section class="chapter" id="revolution">
+  <div class="chap-head"><div class="chap-num">7</div><div>
+    <span class="span-chip">1789 – 1801</span>
+    <h2>Die Französische Revolution und Deutschland</h2>
+  </div></div>
+  <p class="lead">1789 stürzte das französische Volk die alte Ordnung. Was in Deutschland zunächst viele begeisterte, führte bald zu Krieg – und am Ende verlor das Reich das gesamte linke Rheinufer.</p>
+
+  <h3>7.1 Die Revolution in Frankreich</h3>
+  <p>Frankreich war nach vielen Kriegen bankrott. Um neue Steuern zu beschließen, berief König Ludwig XVI. 1789 die Generalstände ein. Daraus entwickelte sich eine Revolution:</p>
+  <ul>
+    <li><strong>14. Juli 1789:</strong> Pariser Bürger stürmen die Bastille, ein Gefängnis und Symbol der königlichen Willkür.</li>
+    <li><strong>26. August 1789:</strong> Die Nationalversammlung verkündet die <a class="g" href="#g-menschenrechte">Erklärung der Menschen- und Bürgerrechte</a>: Alle Menschen sind frei und gleich an Rechten geboren. Die Souveränität liegt beim Volk (<a class="g" href="#g-volkssouveraenitaet">Volkssouveränität</a>).</li>
+    <li><strong>1791:</strong> Frankreich wird konstitutionelle Monarchie; Adelsvorrechte und Feudalabgaben werden abgeschafft.</li>
+    <li><strong>1792/93:</strong> Die Monarchie wird gestürzt, Ludwig XVI. am 21. Januar 1793 hingerichtet. Unter den radikalen <a class="g" href="#g-jakobiner">Jakobinern</a> folgt die „Schreckensherrschaft“ mit Zehntausenden Todesopfern.</li>
+  </ul>
+
+  <h3>7.2 Die Reaktion in Deutschland</h3>
+  <div class="grid">
+    <div class="card"><h4>Begeisterung</h4><p>Viele Gebildete feierten 1789 den Beginn eines Zeitalters der Freiheit – Dichter wie Klopstock, Philosophen wie Kant, junge Studenten in Tübingen und anderswo.</p></div>
+    <div class="card"><h4>Unruhen</h4><p>Es kam zu örtlichen Protesten, etwa 1790 zu einem Bauernaufstand in Sachsen. Eine Revolution nach französischem Vorbild blieb aber aus.</p></div>
+    <div class="card"><h4>Ernüchterung</h4><p>Die Hinrichtung des Königs und die Schreckensherrschaft schockierten die meisten deutschen Anhänger. Viele wandten sich ab; die Fürsten verschärften Zensur und Überwachung.</p></div>
+  </div>
+
+  <h3>7.3 Die Revolutionskriege</h3>
+  <p>Die Monarchen Europas fürchteten, dass die Revolution übergreifen könnte. Frankreich wiederum wollte die Revolution verbreiten und sah sich bedroht. Es folgten die <a class="g" href="#g-koalitionskriege">Koalitionskriege</a> – Kriege wechselnder Bündnisse gegen Frankreich.</p>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase I: Erster Koalitionskrieg</h4><span class="yr">1792–1797</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">8/1791</span><span>Pillnitzer Erklärung: Der Kaiser und der preußische König drohen Frankreich mit einem Eingreifen zugunsten Ludwigs XVI.</span></li>
+        <li><span class="d">20.4.1792</span><span>Frankreich erklärt Österreich den Krieg; Preußen tritt an Österreichs Seite.</span></li>
+        <li><span class="d">20.9.1792</span><span><strong>Kanonade von Valmy</strong>: Die preußisch-österreichische Armee bricht ihren Vormarsch auf Paris ab. Goethe, der dabei war, schrieb später: „Von hier und heute geht eine neue Epoche der Weltgeschichte aus.“</span></li>
+        <li><span class="d">21.10.1792</span><span>Französische Truppen besetzen Mainz.</span></li>
+        <li><span class="d">18.3.1793</span><span>In Mainz wird ein Rheinisch-Deutscher Freistaat ausgerufen, die <strong>Mainzer Republik</strong> – oft als erste Republik auf deutschem Boden bezeichnet. Nach der Rückeroberung durch preußische Truppen endet sie im Juli 1793.</span></li>
+        <li><span class="d">5.4.1795</span><span><strong>Frieden von Basel</strong>: Preußen scheidet aus dem Krieg aus und überlässt Frankreich vorläufig das linke Rheinufer. Norddeutschland bleibt für zehn Jahre neutral.</span></li>
+        <li><span class="d">17.10.1797</span><span><strong>Frieden von Campo Formio</strong>: Das von Napoleon Bonaparte besiegte Österreich verzichtet auf Belgien und stimmt in geheimen Artikeln der Abtretung des linken Rheinufers zu.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase II: Zweiter Koalitionskrieg</h4><span class="yr">1799–1801</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1797–1799</span><span>Auf dem Rastatter Kongress verhandeln Reich und Frankreich ergebnislos über einen Frieden.</span></li>
+        <li><span class="d">1799</span><span>Österreich, Russland und Großbritannien kämpfen erneut gegen Frankreich. In Paris übernimmt Napoleon als Erster Konsul die Macht.</span></li>
+        <li><span class="d">9.2.1801</span><span><strong>Frieden von Lunéville</strong>: Kaiser und Reich erkennen die Abtretung des gesamten linken Rheinufers an Frankreich an.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> Das Rheinland mit Köln, Aachen, Mainz und Trier wird für fast 20 Jahre französisch – mit französischem Recht, ohne Adelsprivilegien und ohne Zünfte.</p>
+    </div>
+  </div>
+
+  <div class="box warum"><div class="box-title">Warum ist das wichtig?</div>
+    <p>Mit dem Frieden von Basel verließ Preußen das Reich im Krieg – ein schwerer Schlag für den Zusammenhalt. Und der Verlust des linken Rheinufers stellte eine Frage, die das Reich nicht überleben sollte: Wie sollten die Fürsten entschädigt werden, die dort ihre Länder verloren hatten?</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>1789:</strong> Französische Revolution → Menschen- und Bürgerrechte, Volkssouveränität.</li>
+      <li><strong>Deutschland:</strong> erst Begeisterung, dann Ernüchterung; keine Revolution, aber die Mainzer Republik 1793.</li>
+      <li><strong>1795:</strong> Frieden von Basel → Preußen neutral; <strong>1801:</strong> Lunéville → linkes Rheinufer französisch.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 8 NAPOLEON ============ -->
+<section class="chapter" id="napoleon">
+  <div class="chap-head"><div class="chap-num">8</div><div>
+    <span class="span-chip">1801 – 1806</span>
+    <h2>Napoleon und das Ende des Heiligen Römischen Reiches</h2>
+  </div></div>
+  <p class="lead">In nur fünf Jahren wurde die politische Landkarte Deutschlands völlig neu gezeichnet. Hunderte kleiner Herrschaften verschwanden, neue Königreiche entstanden – und am Ende hörte das Reich auf zu bestehen.</p>
+
+  <h3>8.1 Napoleon Bonaparte</h3>
+  <p>Der Korse <strong>Napoleon Bonaparte</strong> stieg in den Revolutionskriegen zum erfolgreichsten General Frankreichs auf. 1799 übernahm er durch einen Staatsstreich als Erster Konsul die Macht, am 2. Dezember 1804 krönte er sich zum Kaiser der Franzosen. Im selben Jahr trat der <a class="g" href="#g-code-civil">Code civil</a> in Kraft, ein modernes Gesetzbuch, das Gleichheit vor dem Gesetz, Eigentum und Vertragsfreiheit garantierte. Napoleon verband die Errungenschaften der Revolution mit persönlicher Alleinherrschaft – und mit dem Anspruch, Europa zu beherrschen.</p>
+
+  <h3>8.2 Der Reichsdeputationshauptschluss 1803</h3>
+  <p>Die Fürsten, die links des Rheins Gebiete verloren hatten, sollten rechts des Rheins entschädigt werden. Ein Ausschuss des Reichstags (die Reichsdeputation) arbeitete unter dem Druck Frankreichs und Russlands einen Plan aus. Am <strong>25. Februar 1803</strong> beschloss er den <a class="g" href="#g-rdhs">Reichsdeputationshauptschluss</a>, das letzte große Gesetz des Reiches.</p>
+  <div class="grid">
+    <div class="card"><h4>Säkularisation</h4><p>Fast alle geistlichen Fürstentümer – Erzbistümer, Bistümer und Reichsabteien – wurden aufgelöst und weltlichen Fürsten zugeschlagen (<a class="g" href="#g-saekularisation">Säkularisation</a>). Unzählige Klöster wurden aufgehoben, ihre Güter, Kunstschätze und Bibliotheken eingezogen.</p></div>
+    <div class="card"><h4>Mediatisierung</h4><p>Die meisten Reichsstädte verloren ihre Selbstständigkeit und wurden größeren Staaten unterstellt (<a class="g" href="#g-mediatisierung">Mediatisierung</a>). Nur sechs blieben übrig: Augsburg, Nürnberg, Frankfurt, Hamburg, Bremen und Lübeck. 1805/06 folgten die Reichsritter.</p></div>
+    <div class="card"><h4>Gewinner</h4><p>Preußen, Bayern, Württemberg und Baden erhielten weit mehr Land, als sie verloren hatten. Rund 45.000 Quadratkilometer mit fast fünf Millionen Menschen bekamen neue Herren.</p></div>
+  </div>
+  <div class="box warum"><div class="box-title">Warum war 1803 ein Wendepunkt?</div>
+    <p>Mit den geistlichen Staaten und den Reichsstädten verschwanden die treuesten Stützen von Kaiser und Reich. Übrig blieben vor allem mittelgroße, „abgerundete“ Staaten, die Napoleon ihren Gewinn verdankten. Die Zahl der Reichsstände sank von mehreren Hundert auf wenige Dutzend. Die katholische Kirche in Deutschland verlor ihre weltliche Macht, Universitäten und viele Schulen. Historiker streiten, ob der Reichsdeputationshauptschluss ein letzter Rettungsversuch für das Reich war oder schon sein Todesurteil.</p>
+  </div>
+
+  <h3>8.3 Austerlitz und der Rheinbund</h3>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase III: Dritter Koalitionskrieg und Ende des Reiches</h4><span class="yr">1804–1806</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">11.8.1804</span><span>Kaiser Franz II. nimmt zusätzlich den Titel „Kaiser von Österreich“ an – er rechnet bereits mit dem Ende des alten Reiches.</span></li>
+        <li><span class="d">1805</span><span>Österreich, Russland und Großbritannien ziehen erneut gegen Napoleon. Bayern, Württemberg und Baden kämpfen auf französischer Seite.</span></li>
+        <li><span class="d">2.12.1805</span><span><strong>Schlacht bei Austerlitz</strong> („Dreikaiserschlacht“, in Mähren): Napoleon besiegt Österreicher und Russen vernichtend.</span></li>
+        <li><span class="d">26.12.1805</span><span><strong>Frieden von Pressburg</strong>: Österreich verliert Tirol und Vorarlberg an Bayern und Venetien an das von Napoleon beherrschte Königreich Italien.</span></li>
+        <li><span class="d">1.1.1806</span><span>Bayern und Württemberg werden Königreiche, Baden wird Großherzogtum.</span></li>
+        <li><span class="d">12.7.1806</span><span>16 deutsche Staaten gründen unter dem „Protektorat“ Napoleons den <a class="g" href="#g-rheinbund">Rheinbund</a> und treten am 1. August aus dem Reich aus.</span></li>
+        <li><span class="d">6.8.1806</span><span>Unter dem Druck eines französischen Ultimatums legt Franz II. die Kaiserkrone nieder und erklärt das Heilige Römische Reich für aufgelöst.</span></li>
+      </ul>
+    </div>
+  </div>
+  <p>Der Rheinbund wuchs bis 1808 auf rund 39 Mitglieder; fast alle deutschen Staaten außer Österreich und Preußen gehörten dazu. Seine Mitglieder mussten Napoleon Truppen stellen – Bayern allein 30.000 Mann – und waren in der Außenpolitik von Frankreich abhängig.</p>
+  <div class="box achtung"><div class="box-title">Ein stilles Ende</div>
+    <p>Das Reich, das seit dem Mittelalter über 800 Jahre bestanden hatte, ging ohne großen Widerstand unter. Viele Zeitgenossen nahmen das Ende kaum zur Kenntnis; überliefert ist, dass Goethe in seinem Tagebuch einen Streit seines Kutschers für bemerkenswerter hielt. Andere empfanden es als tiefen Einschnitt. Für die kleinen Herrschaften, die Reichsgerichte und das Gefühl einer gemeinsamen Ordnung war es ein Verlust; für die mittleren Staaten wie Bayern oder Württemberg bedeutete es volle Souveränität.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>1803:</strong> Reichsdeputationshauptschluss → Säkularisation und Mediatisierung, Gewinner sind die Mittelstaaten.</li>
+      <li><strong>1804:</strong> Napoleon wird Kaiser; Franz II. wird zusätzlich Kaiser von Österreich.</li>
+      <li><strong>1805:</strong> Austerlitz → Bayern und Württemberg werden 1806 Königreiche.</li>
+      <li><strong>1806:</strong> Rheinbund (12. Juli) → Ende des Heiligen Römischen Reiches (6. August).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 9 PREUSSEN ============ -->
+<section class="chapter" id="preussen">
+  <div class="chap-head"><div class="chap-num">9</div><div>
+    <span class="span-chip">1806 – 1812</span>
+    <h2>Zusammenbruch und Reformen</h2>
+  </div></div>
+  <p class="lead">1806 brach der Staat Friedrichs des Großen in wenigen Wochen zusammen. Die Niederlage zwang Preußen zu tiefgreifenden Reformen. Auch die Rheinbundstaaten modernisierten sich – nach französischem Vorbild.</p>
+
+  <h3>9.1 Jena und Auerstedt</h3>
+  <p>Seit dem Frieden von Basel war Preußen neutral geblieben. 1806 fühlte es sich von Napoleon herausgefordert und erklärte ihm – fast ohne Verbündete – den Krieg. Am <strong>14. Oktober 1806</strong> wurde die preußische Armee in der Doppelschlacht von <strong>Jena und Auerstedt</strong> (Thüringen) vernichtend geschlagen. Festungen ergaben sich kampflos, am 27. Oktober zog Napoleon in Berlin ein. Der Berliner Stadtkommandant ließ verkünden: „Der König hat eine Bataille verloren. Jetzt ist Ruhe die erste Bürgerpflicht.“ Die Königsfamilie floh nach Ostpreußen.</p>
+
+  <h3>9.2 Der Frieden von Tilsit 1807</h3>
+  <p>Nach weiteren Kämpfen in Ostpreußen schloss Napoleon im Juli 1807 in Tilsit Frieden mit Russland und Preußen. Die Bedingungen für Preußen waren hart:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Bereich</th><th>Folge für Preußen</th></tr>
+    <tr><td><strong>Gebiet</strong></td><td>Verlust etwa der Hälfte des Staatsgebiets. Die Einwohnerzahl sinkt von rund 9,75 auf etwa 4,5 Millionen.</td></tr>
+    <tr><td><strong>Westen</strong></td><td>Alle Gebiete westlich der Elbe gehen an das neue <strong>Königreich Westphalen</strong> unter Napoleons Bruder Jérôme.</td></tr>
+    <tr><td><strong>Osten</strong></td><td>Aus den polnischen Gebieten entsteht das <strong>Herzogtum Warschau</strong> unter dem König von Sachsen.</td></tr>
+    <tr><td><strong>Geld</strong></td><td>120 Millionen Franc <a class="g" href="#g-kontribution">Kontribution</a> (Kriegsentschädigung); bis zur Zahlung bleiben französische Truppen im Land.</td></tr>
+    <tr><td><strong>Armee</strong></td><td>Begrenzung auf 42.000 Mann (1808).</td></tr>
+  </table></div>
+  <p>Königin <strong>Luise</strong> bat Napoleon persönlich um mildere Bedingungen – vergeblich. Ihr früher Tod 1810 machte sie zu einer Symbolfigur des preußischen Widerstands. Zudem verhängte Napoleon am 21. November 1806 die <a class="g" href="#g-kontinentalsperre">Kontinentalsperre</a>: Kein Land auf dem Kontinent durfte mehr mit Großbritannien handeln.</p>
+
+  <h3>9.3 Die preußischen Reformen</h3>
+  <p>Eine Gruppe von Reformbeamten und Offizieren war überzeugt: Preußen konnte nur überleben, wenn seine Bürger zu Mitträgern des Staates wurden. Minister <strong>Karl vom Stein</strong> und Staatskanzler <strong>Karl August von Hardenberg</strong> leiteten die Reformen. Hardenberg schrieb 1807, man brauche „eine Revolution im guten Sinn“ – durch die Weisheit der Regierung, nicht durch Gewalt von unten.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Bereich</th><th>Reform</th><th>Inhalt</th></tr>
+    <tr><td><strong>Bauern</strong></td><td>Oktoberedikt (9.10.1807)</td><td>Ende der Erbuntertänigkeit (<a class="g" href="#g-bauernbefreiung">Bauernbefreiung</a>): freie Berufswahl, freier Erwerb von Land für alle Stände.</td></tr>
+    <tr><td><strong>Städte</strong></td><td>Städteordnung (19.11.1808)</td><td>Gewählte Stadtverordnete und Magistrate – Beginn der kommunalen <a class="g" href="#g-selbstverwaltung">Selbstverwaltung</a>.</td></tr>
+    <tr><td><strong>Verwaltung</strong></td><td>Ministerien (1808)</td><td>Fachministerien für Inneres, Finanzen, Justiz, Krieg und Äußeres ersetzen die alten Behörden.</td></tr>
+    <tr><td><strong>Wirtschaft</strong></td><td>Gewerbefreiheit (1810/11)</td><td>Jeder darf ein Gewerbe ausüben; die Zünfte verlieren ihr Monopol (<a class="g" href="#g-gewerbefreiheit">Gewerbefreiheit</a>).</td></tr>
+    <tr><td><strong>Juden</strong></td><td>Emanzipationsedikt (11.3.1812)</td><td>Juden werden preußische Staatsbürger mit weitgehend gleichen Rechten – aber ohne Zugang zu Offiziers- und höheren Staatsämtern.</td></tr>
+    <tr><td><strong>Militär</strong></td><td>Heeresreform (ab 1807)</td><td>Scharnhorst, Gneisenau und Boyen schaffen die Prügelstrafe ab und öffnen die Offizierslaufbahn für Bürgerliche. Mit dem „Krümpersystem“ werden mehr Männer ausgebildet, als die 42.000-Mann-Grenze erlaubt. 1813/14 folgt die <a class="g" href="#g-wehrpflicht">allgemeine Wehrpflicht</a>.</td></tr>
+    <tr><td><strong>Bildung</strong></td><td>Bildungsreform (1809/10)</td><td>Wilhelm von Humboldt erneuert Schulen und Gymnasien; 1810 wird die Universität Berlin gegründet – mit der Einheit von Forschung und Lehre.</td></tr>
+  </table></div>
+  <div class="box achtung"><div class="box-title">Die Grenzen der Reformen</div>
+    <p>Die Bauern wurden zwar persönlich frei, mussten ihre Gutsherren aber mit Land oder Geld entschädigen, um Eigentümer ihrer Höfe zu werden (Regulierungsedikt 1811). Viele kleine Bauern verloren dadurch Land und wurden zu Landarbeitern. Der Adel behielt viele Vorrechte. Eine versprochene Volksvertretung für ganz Preußen kam nicht zustande – Preußen erhielt erst 1848 ein Parlament.</p>
+  </div>
+
+  <h3>9.4 Reformen im Rheinbund</h3>
+  <p>Auch die Rheinbundstaaten modernisierten sich, oft schneller als Preußen, und meist nach französischem Vorbild:</p>
+  <div class="grid">
+    <div class="card"><h4>Königreich Westphalen</h4><p>Der Musterstaat Napoleons erhielt 1807 die erste geschriebene Verfassung auf deutschem Boden, den Code civil, gleiche Rechte für Juden (1808) und die Abschaffung der Leibeigenschaft. Zugleich litt er unter hohen Steuern und Aushebungen.</p></div>
+    <div class="card"><h4>Bayern</h4><p>Minister Maximilian von Montgelas formte aus vielen neuen Gebieten einen zentral verwalteten Staat. 1808 erhielt Bayern eine Verfassung; die Leibeigenschaft wurde aufgehoben, Protestanten und Katholiken gleichgestellt.</p></div>
+    <div class="card"><h4>Baden und andere</h4><p>Baden übernahm den Code civil als „Badisches Landrecht“ (1810). Überall wurden Verwaltung, Steuern und Rechtsprechung vereinheitlicht.</p></div>
+  </div>
+  <div class="box warum"><div class="box-title">Zwei Wege der Modernisierung</div>
+    <p>Lange galten vor allem die preußischen Reformen als Beginn des modernen Deutschlands. Heute betonen Historiker, dass die Reformen in den Rheinbundstaaten mindestens ebenso wichtig waren. In beiden Fällen kam die Modernisierung „von oben“ – durch Beamte und Minister, nicht durch eine Revolution des Volkes. Dieses Muster prägte die deutsche Geschichte im 19. Jahrhundert.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>1806:</strong> Jena und Auerstedt → Zusammenbruch Preußens.</li>
+      <li><strong>1807:</strong> Tilsit → Preußen verliert die Hälfte seines Gebiets.</li>
+      <li><strong>1807–1812:</strong> Preußische Reformen (Stein, Hardenberg, Scharnhorst, Humboldt): Bauernbefreiung, Städteordnung, Gewerbefreiheit, Judenemanzipation, Heeres- und Bildungsreform.</li>
+      <li><strong>Rheinbund:</strong> Verfassungen, Code civil und Rechtsgleichheit → Modernisierung nach französischem Vorbild.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 10 BEFREIUNGSKRIEGE ============ -->
+<section class="chapter" id="befreiung">
+  <div class="chap-head"><div class="chap-num">10</div><div>
+    <span class="span-chip">1806 – 1813</span>
+    <h2>Widerstand und Befreiungskriege</h2>
+  </div></div>
+  <p class="lead">Die französische Herrschaft brachte Reformen, aber auch Besatzung, Steuern und Krieg. Aus dem Widerstand dagegen entstand ein neues Nationalgefühl. 1813 wendete sich das Blatt.</p>
+
+  <h3>10.1 Leben unter Napoleon</h3>
+  <ul>
+    <li><strong>Lasten:</strong> Einquartierungen französischer Soldaten, hohe Steuern und Kriegsabgaben belasteten die Bevölkerung.</li>
+    <li><strong>Kriegsdienst:</strong> Die Rheinbundstaaten mussten Zehntausende Soldaten für Napoleons Feldzüge stellen.</li>
+    <li><strong>Kontinentalsperre:</strong> Der Handel mit Großbritannien war verboten. Hafenstädte wie Hamburg litten, Kaffee und Zucker wurden teuer, der Schmuggel blühte. Manche Gewerbe auf dem Festland profitierten dagegen vom Ausfall der britischen Konkurrenz.</li>
+  </ul>
+
+  <h3>10.2 Das Erwachen des Nationalgefühls</h3>
+  <p>Gerade die Erfahrung der Fremdherrschaft weckte bei vielen Gebildeten den Wunsch nach einem gemeinsamen Vaterland. Der Philosoph <strong>Johann Gottlieb Fichte</strong> hielt im französisch besetzten Berlin seine „Reden an die deutsche Nation“ (1807/08). Ernst Moritz Arndt verfasste Kampfschriften und Lieder gegen Napoleon, Friedrich Ludwig Jahn gründete 1811 in Berlin den ersten Turnplatz, um die Jugend körperlich und geistig auf den Kampf vorzubereiten. Die Romantiker sammelten Volkslieder und Märchen – die Brüder Grimm veröffentlichten 1812 ihre „Kinder- und Hausmärchen“.</p>
+
+  <h3>10.3 1809: Erste Aufstände</h3>
+  <div class="grid">
+    <div class="card"><div class="yr">1809</div><h4>Österreichs Krieg</h4><p>Österreich wagte allein den Krieg. Bei <strong>Aspern</strong> (Mai 1809) erlitt Napoleon seine erste Niederlage in einer großen Schlacht, siegte aber im Juli bei Wagram. Im Frieden von Schönbrunn verlor Österreich über drei Millionen Untertanen. 1810 heiratete Napoleon die Kaisertochter Marie-Louise.</p></div>
+    <div class="card"><div class="yr">1809</div><h4>Der Tiroler Aufstand</h4><p>Tirol war 1805 an Bayern gefallen. Bayerische Reformen, Eingriffe in das kirchliche Leben und die Wehrpflicht lösten einen Aufstand unter <strong>Andreas Hofer</strong> aus. Die Tiroler siegten mehrmals am Bergisel bei Innsbruck, wurden aber schließlich besiegt. Hofer wurde am 20. Februar 1810 in Mantua erschossen.</p></div>
+    <div class="card"><div class="yr">1809</div><h4>Einzelne Erhebungen</h4><p>Der preußische Major Ferdinand von Schill zog mit seinem Regiment eigenmächtig gegen die Franzosen und fiel in Stralsund. Der Herzog von Braunschweig schlug sich mit seiner „Schwarzen Schar“ bis an die Nordsee durch.</p></div>
+  </div>
+
+  <h3>10.4 1812: Die Katastrophe in Russland</h3>
+  <p>Im Juni 1812 überschritt Napoleon mit über 400.000 Mann die Memel, um Russland zur Einhaltung der Kontinentalsperre zu zwingen. Weit über 100.000 Soldaten kamen aus den Rheinbundstaaten, dazu Hilfskorps aus Preußen und Österreich. Nach der blutigen Schlacht bei Borodino (7. September) erreichte er Moskau – doch die Stadt brannte, und der Zar verhandelte nicht. Auf dem Rückzug im russischen Winter, beim Übergang über die Beresina Ende November und durch Hunger, Kälte und Seuchen ging die Armee zugrunde. Nur wenige Zehntausend Mann kehrten zurück.</p>
+
+  <h3>10.5 1813: Die Befreiungskriege</h3>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase I: Preußens Erhebung</h4><span class="yr">Dezember 1812 – Juni 1813</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">30.12.1812</span><span>Der preußische General Yorck schließt ohne Wissen seines Königs mit den Russen die <strong>Konvention von Tauroggen</strong> und bringt sein Korps aus dem Krieg.</span></li>
+        <li><span class="d">2/1813</span><span>Vertrag von Kalisch: Bündnis zwischen Preußen und Russland.</span></li>
+        <li><span class="d">10.3.1813</span><span>Stiftung des Eisernen Kreuzes – des ersten Ordens, den Soldaten aller Dienstgrade erhalten können.</span></li>
+        <li><span class="d">17.3.1813</span><span>Preußen erklärt Frankreich den Krieg. Im Aufruf <strong>„An mein Volk“</strong> wendet sich der König erstmals direkt an seine Untertanen. Eine <a class="g" href="#g-landwehr">Landwehr</a> wird aufgestellt, Freiwillige bilden <a class="g" href="#g-freikorps">Freikorps</a> wie das Lützowsche.</span></li>
+        <li><span class="d">5/1813</span><span>Napoleon siegt bei Großgörschen und Bautzen, kann die Verbündeten aber nicht entscheidend schlagen. Im Juni wird ein Waffenstillstand geschlossen.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase II: Die große Koalition</h4><span class="yr">August – Oktober 1813</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">11.8.1813</span><span>Österreich tritt unter seinem Außenminister Metternich der Koalition aus Russland, Preußen, Großbritannien und Schweden bei.</span></li>
+        <li><span class="d">8–9/1813</span><span>Siege der Verbündeten bei Großbeeren, an der Katzbach (unter Blücher), bei Kulm und Dennewitz; Napoleon siegt ein letztes Mal bei Dresden.</span></li>
+        <li><span class="d">8.10.1813</span><span>Im Vertrag von Ried wechselt Bayern auf die Seite der Verbündeten.</span></li>
+        <li><span class="d">16.–19.10.</span><span><strong>Völkerschlacht bei Leipzig</strong>: Rund 600.000 Soldaten kämpfen vier Tage lang – bis zum Ersten Weltkrieg die größte Schlacht der europäischen Geschichte. Während der Kämpfe laufen sächsische und württembergische Truppen zu den Verbündeten über. Napoleon wird geschlagen und zieht sich über den Rhein zurück.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> Der Rheinbund zerfällt, die französische Herrschaft in Deutschland ist beendet.</p>
+    </div>
+  </div>
+  <div class="box achtung"><div class="box-title">Die Bilanz von Leipzig</div>
+    <p>In der Völkerschlacht wurden schätzungsweise rund 90.000 Soldaten getötet oder verwundet; die Angaben in den Quellen schwanken. Die Stadt Leipzig und die umliegenden Dörfer waren verwüstet, Tausende Verwundete starben in den Wochen danach an Seuchen. Wie viele Menschen in den napoleonischen Kriegen insgesamt umkamen, lässt sich nur schätzen; für ganz Europa werden mehrere Millionen genannt.</p>
+  </div>
+  <div class="box warum"><div class="box-title">Volkskrieg oder Krieg der Kabinette?</div>
+    <p>Spätere Generationen verklärten 1813 als „Volkserhebung“ aller Deutschen. Die Wirklichkeit war vielschichtiger: In Preußen war die Begeisterung groß, doch die Freiwilligen stellten nur etwa zwölf Prozent der Armee. In Österreich und vielen Rheinbundstaaten war die nationale Stimmung schwächer; dort wechselten die Fürsten aus Berechnung die Seiten. Liberale sprachen später von „Freiheitskriegen“ und hofften auf Einheit und Verfassung, Konservative von „Befreiungskriegen“ gegen die französische Vorherrschaft. Der Kampf von 1813 gilt dennoch als Geburtsstunde des modernen deutschen Nationalismus.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Nationalgefühl:</strong> Fichte, Arndt, Jahn und die Romantik → Wunsch nach einem deutschen Vaterland.</li>
+      <li><strong>1809:</strong> Österreichs Krieg und der Tiroler Aufstand scheitern.</li>
+      <li><strong>1812:</strong> Untergang der Grande Armée in Russland.</li>
+      <li><strong>1813:</strong> Tauroggen, „An mein Volk“, Völkerschlacht bei Leipzig → Ende der französischen Herrschaft.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 11 BILANZ ============ -->
+<section class="chapter" id="bilanz">
+  <div class="chap-head"><div class="chap-num">11</div><div>
+    <span class="span-chip">Zusammenfassung</span>
+    <h2>Bilanz: Was hat sich verändert?</h2>
+  </div></div>
+  <p class="lead">Kaum eine andere Epoche hat Deutschland in so kurzer Zeit so grundlegend verändert. Wer 1756 geboren wurde und 1813 noch lebte, hatte das Ende einer jahrhundertealten Welt erlebt.</p>
+
+  <div class="tablewrap"><table>
+    <tr><th>Bereich</th><th>Um 1756</th><th>Um 1813</th></tr>
+    <tr><td><strong>Reich</strong></td><td>Heiliges Römisches Reich mit Kaiser, Reichstag und Reichsgerichten; mehrere Hundert Herrschaften.</td><td>Das Reich existiert nicht mehr (seit 1806). Die Zahl der deutschen Staaten ist auf wenige Dutzend geschrumpft.</td></tr>
+    <tr><td><strong>Landkarte</strong></td><td>Geistliche Fürstentümer, Reichsstädte und Reichsritter neben den großen Territorien.</td><td>Abgerundete Mittelstaaten wie die Königreiche Bayern und Württemberg; das linke Rheinufer ist französisch.</td></tr>
+    <tr><td><strong>Großmächte</strong></td><td>Österreich und Preußen ringen um Schlesien.</td><td>Beide wurden von Napoleon besiegt; Preußen ist verkleinert, aber reformiert. Gemeinsam mit Russland und Großbritannien schlagen sie Napoleon.</td></tr>
+    <tr><td><strong>Gesellschaft</strong></td><td>Ständeordnung; Gutsherrschaft und Leibeigenschaft; Zünfte.</td><td>In vielen Staaten Bauernbefreiung, Gewerbefreiheit und Gleichheit vor dem Gesetz – wenn auch mit Einschränkungen.</td></tr>
+    <tr><td><strong>Staat und Recht</strong></td><td>Absolutistische Herrschaft, unterschiedliche Rechte in jedem Gebiet.</td><td>Ministerien, einheitliche Verwaltung, erste Verfassungen (Westphalen 1807, Bayern 1808), Code civil.</td></tr>
+    <tr><td><strong>Religion</strong></td><td>Konfessionelle Ordnung von 1648; Juden stark benachteiligt.</td><td>Kirchen verlieren ihre weltliche Herrschaft (Säkularisation); Toleranz wächst; erste Schritte zur Gleichstellung der Juden.</td></tr>
+    <tr><td><strong>Denken und Kultur</strong></td><td>Aufklärung beginnt sich in der Öffentlichkeit durchzusetzen.</td><td>Blüte von Philosophie, Literatur und Musik (Kant, Goethe, Schiller, Beethoven); Romantik; neues Nationalbewusstsein.</td></tr>
+    <tr><td><strong>Krieg</strong></td><td>Kabinettskriege mit Berufsheeren.</td><td>Massenheere, Wehrpflicht und Kriege, in denen ganze Völker mobilisiert werden.</td></tr>
+  </table></div>
+
+  <h3>Sechs große Entwicklungslinien</h3>
+  <div class="grid">
+    <div class="card"><h4>1. Vom Reich zu den Einzelstaaten</h4><p>Das Heilige Römische Reich geht unter; an seine Stelle treten souveräne Staaten mittlerer Größe.</p></div>
+    <div class="card"><h4>2. Von der Ständegesellschaft zur Bürgergesellschaft</h4><p>Bauernbefreiung, Gewerbefreiheit und Rechtsgleichheit lösen die alte Ordnung schrittweise auf.</p></div>
+    <div class="card"><h4>3. Von der Reform von oben zur Mitsprache</h4><p>Aufgeklärte Herrscher und Reformbeamte modernisieren den Staat – und wecken damit den Wunsch nach Verfassungen und Mitbestimmung.</p></div>
+    <div class="card"><h4>4. Von der Kulturnation zum Nationalismus</h4><p>Aus der gemeinsamen Sprache und Kultur und der Erfahrung der Fremdherrschaft entsteht die Idee eines deutschen Nationalstaats.</p></div>
+    <div class="card"><h4>5. Vom Kabinettskrieg zum Volkskrieg</h4><p>Kriege werden größer, ideologischer und totaler; Bürger werden zu Soldaten.</p></div>
+    <div class="card"><h4>6. Von der Kirche zur Säkularisierung</h4><p>Die Kirchen verlieren ihre weltliche Macht; Toleranz und Religionsfreiheit gewinnen an Boden.</p></div>
+  </div>
+
+  <div class="box kurz"><div class="box-title">Ausblick: Wie geht es nach 1813 weiter?</div>
+    <p>1814 erobern die Verbündeten Paris, Napoleon wird nach Elba verbannt. Auf dem <strong>Wiener Kongress</strong> (1814/15) ordnen die Großmächte Europa neu; Napoleons Rückkehr endet 1815 bei <strong>Waterloo</strong>. An die Stelle des alten Reiches tritt der <strong>Deutsche Bund</strong>, ein lockerer Staatenbund unter österreichischer Führung. Preußen erhält das Rheinland und Westfalen. Die Hoffnungen vieler Kämpfer von 1813 auf Einheit und Verfassung werden jedoch enttäuscht – es beginnt die Zeit der Restauration und des Vormärz.</p>
+  </div>
+</section>
+
+<!-- ============ 12 ZEITLEISTE ============ -->
+<section class="chapter" id="zeitleiste">
+  <div class="chap-head"><div class="chap-num">12</div><div>
+    <span class="span-chip">Zum Nachschlagen</span>
+    <h2>Zeitleiste 1756–1813</h2>
+  </div></div>
+  <p>Die wichtigsten Daten auf einen Blick. Mit den Schaltflächen lässt sich nach Themen filtern.</p>
+  <div class="filters" id="filters">
+    <button class="on" data-f="alle">Alle</button>
+    <button data-f="reich">Reich &amp; Politik</button>
+    <button data-f="religion">Religion &amp; Gesellschaft</button>
+    <button data-f="europa">Europa &amp; Welt</button>
+    <button data-f="krieg">Kriege</button>
+    <button data-f="kultur">Kultur &amp; Wissen</button>
+  </div>
+  <ol class="tl" id="timeline"></ol>
+</section>
+
+<!-- ============ 13 PERSONEN ============ -->
+<section class="chapter" id="personen">
+  <div class="chap-head"><div class="chap-num">13</div><div>
+    <span class="span-chip">Wer war wer?</span>
+    <h2>Wichtige Personen</h2>
+  </div></div>
+  <div class="people">
+    <div class="person"><div class="role">Staatskanzler</div><h4>Wenzel Anton von Kaunitz</h4><div class="life">1711 – 1794</div><p>Leitete fast 40 Jahre die österreichische Außenpolitik; Architekt des Bündnisses mit Frankreich von 1756.</p></div>
+    <div class="person"><div class="role">König</div><h4>Friedrich II. (der Große)</h4><div class="life">1712 – 1786</div><p>Behauptete Preußen im Siebenjährigen Krieg; Vorbild des aufgeklärten Absolutismus, aber zugleich rücksichtsloser Machtpolitiker.</p></div>
+    <div class="person"><div class="role">Herrscherin</div><h4>Maria Theresia</h4><div class="life">1717 – 1780</div><p>Regierte die habsburgischen Länder; reformierte Verwaltung und Schule, konnte Schlesien aber nicht zurückgewinnen.</p></div>
+    <div class="person"><div class="role">Philosoph</div><h4>Immanuel Kant</h4><div class="life">1724 – 1804</div><p>Königsberger Philosoph; seine Antwort auf die Frage „Was ist Aufklärung?“ (1784) wurde zum Leitspruch der Epoche.</p></div>
+    <div class="person"><div class="role">Dichter</div><h4>Gotthold Ephraim Lessing</h4><div class="life">1729 – 1781</div><p>Dichter und Kritiker der Aufklärung; warb in „Nathan der Weise“ für religiöse Toleranz.</p></div>
+    <div class="person"><div class="role">Philosoph</div><h4>Moses Mendelssohn</h4><div class="life">1729 – 1786</div><p>Bedeutendster jüdischer Aufklärer; trat für Religionsfreiheit und die Bildung der Juden ein.</p></div>
+    <div class="person"><div class="role">Zarin</div><h4>Katharina II. (die Große)</h4><div class="life">1729 – 1796</div><p>Deutsche Prinzessin auf dem russischen Thron; dehnte Russland aus und war an allen drei Teilungen Polens beteiligt.</p></div>
+    <div class="person"><div class="role">Kaiser</div><h4>Joseph II.</h4><div class="life">1741 – 1790</div><p>Radikaler Reformer: Toleranzpatent und Aufhebung der Leibeigenschaft 1781; viele Reformen musste er zurücknehmen.</p></div>
+    <div class="person"><div class="role">Feldherr</div><h4>Gebhard Leberecht von Blücher</h4><div class="life">1742 – 1819</div><p>Preußischer Feldmarschall, wegen seines Draufgängertums „Marschall Vorwärts“ genannt; Sieger an der Katzbach.</p></div>
+    <div class="person"><div class="role">Dichter</div><h4>Johann Wolfgang von Goethe</h4><div class="life">1749 – 1832</div><p>Bedeutendster deutscher Dichter; vom Sturm und Drang zur Weimarer Klassik, zugleich Minister in Sachsen-Weimar.</p></div>
+    <div class="person"><div class="role">Staatskanzler</div><h4>Karl August von Hardenberg</h4><div class="life">1750 – 1822</div><p>Ab 1810 preußischer Staatskanzler; setzte Gewerbefreiheit und Judenemanzipation durch.</p></div>
+    <div class="person"><div class="role">General</div><h4>Gerhard von Scharnhorst</h4><div class="life">1755 – 1813</div><p>Kopf der preußischen Heeresreform; starb an einer Verwundung aus der Schlacht bei Großgörschen.</p></div>
+    <div class="person"><div class="role">Komponist</div><h4>Wolfgang Amadeus Mozart</h4><div class="life">1756 – 1791</div><p>Salzburger Komponist der Wiener Klassik; Opern wie „Die Zauberflöte“ und „Figaros Hochzeit“.</p></div>
+    <div class="person"><div class="role">Reformer</div><h4>Karl vom Stein</h4><div class="life">1757 – 1831</div><p>Leitender Minister Preußens 1807/08; Oktoberedikt und Städteordnung. Später Berater des Zaren gegen Napoleon.</p></div>
+    <div class="person"><div class="role">Dichter</div><h4>Friedrich Schiller</h4><div class="life">1759 – 1805</div><p>Dramatiker und Freund Goethes; „Die Räuber“, „Kabale und Liebe“, „Wilhelm Tell“.</p></div>
+    <div class="person"><div class="role">Minister</div><h4>Maximilian von Montgelas</h4><div class="life">1759 – 1838</div><p>Leitender Minister Bayerns; schuf aus vielen Gebieten einen modernen, zentral verwalteten Staat.</p></div>
+    <div class="person"><div class="role">Philosoph</div><h4>Johann Gottlieb Fichte</h4><div class="life">1762 – 1814</div><p>Philosoph des deutschen Idealismus; seine „Reden an die deutsche Nation“ (1807/08) prägten das Nationalgefühl.</p></div>
+    <div class="person"><div class="role">Gelehrter</div><h4>Wilhelm von Humboldt</h4><div class="life">1767 – 1835</div><p>Gelehrter und Staatsmann; Reformer des preußischen Bildungswesens und Mitbegründer der Universität Berlin.</p></div>
+    <div class="person"><div class="role">Freiheitskämpfer</div><h4>Andreas Hofer</h4><div class="life">1767 – 1810</div><p>Anführer des Tiroler Aufstands von 1809 gegen Bayern und Frankreich; in Mantua hingerichtet.</p></div>
+    <div class="person"><div class="role">Kaiser</div><h4>Franz II. / I.</h4><div class="life">1768 – 1835</div><p>Letzter Kaiser des Heiligen Römischen Reiches (bis 1806) und ab 1804 erster Kaiser von Österreich.</p></div>
+    <div class="person"><div class="role">Kaiser</div><h4>Napoleon Bonaparte</h4><div class="life">1769 – 1821</div><p>Kaiser der Franzosen; beherrschte fast ganz Europa und ordnete Deutschland neu. 1813 bei Leipzig geschlagen.</p></div>
+    <div class="person"><div class="role">Komponist</div><h4>Ludwig van Beethoven</h4><div class="life">1770 – 1827</div><p>In Bonn geboren, in Wien tätig; vollendete die Wiener Klassik und öffnete der Musik den Weg in die Romantik.</p></div>
+    <div class="person"><div class="role">König</div><h4>Friedrich Wilhelm III.</h4><div class="life">1770 – 1840</div><p>König von Preußen ab 1797; erlebte den Zusammenbruch von 1806 und rief 1813 zum Krieg gegen Napoleon auf.</p></div>
+    <div class="person"><div class="role">Staatsmann</div><h4>Klemens von Metternich</h4><div class="life">1773 – 1859</div><p>Ab 1809 österreichischer Außenminister; führte Österreich 1813 in die Koalition gegen Napoleon.</p></div>
+    <div class="person"><div class="role">Königin</div><h4>Luise von Preußen</h4><div class="life">1776 – 1810</div><p>Frau Friedrich Wilhelms III.; bat 1807 Napoleon vergeblich um Schonung und wurde zur Symbolfigur des preußischen Widerstands.</p></div>
+  </div>
+</section>
+
+<!-- ============ 14 GLOSSAR ============ -->
+<section class="chapter" id="glossar">
+  <div class="chap-head"><div class="chap-num">14</div><div>
+    <span class="span-chip">Wichtige Begriffe</span>
+    <h2>Glossar</h2>
+  </div></div>
+  <dl class="gloss" id="gloss">
+    <dt id="g-wehrpflicht">Allgemeine Wehrpflicht</dt><dd>Pflicht aller wehrfähigen Männer, Militärdienst zu leisten – im Gegensatz zu Berufs- und Söldnerheeren. In Preußen 1813/14 eingeführt.</dd>
+    <dt id="g-aufgeklaert">Aufgeklärter Absolutismus</dt><dd>Herrschaftsform, in der ein unumschränkter Fürst den Staat nach den Ideen der Aufklärung reformiert, ohne die Untertanen mitbestimmen zu lassen.</dd>
+    <dt id="g-aufklaerung">Aufklärung</dt><dd>Geistige Bewegung des 17. und 18. Jahrhunderts, die auf Vernunft, Kritik, Toleranz und die Rechte des Einzelnen setzte.</dd>
+    <dt id="g-bauernbefreiung">Bauernbefreiung</dt><dd>Aufhebung der persönlichen Abhängigkeit der Bauern von ihren Gutsherren und Übergang der Höfe in bäuerliches Eigentum, meist gegen Entschädigung.</dd>
+    <dt id="g-code-civil">Code civil</dt><dd>Französisches Zivilgesetzbuch von 1804 („Code Napoléon“); garantiert Rechtsgleichheit, Eigentum und Vertragsfreiheit. Galt auch in Teilen Deutschlands.</dd>
+    <dt id="g-dualismus">Dualismus</dt><dd>Die Rivalität der beiden deutschen Großmächte Österreich und Preußen von 1740 bis 1866.</dd>
+    <dt id="g-emanzipation">Emanzipation</dt><dd>Befreiung aus rechtlicher Abhängigkeit; hier vor allem die Gleichstellung der Juden mit den übrigen Bürgern.</dd>
+    <dt id="g-freikorps">Freikorps</dt><dd>Freiwilligenverbände, die neben dem regulären Heer kämpften, etwa das Lützowsche Freikorps 1813.</dd>
+    <dt id="g-gewerbefreiheit">Gewerbefreiheit</dt><dd>Recht jedes Einzelnen, ein Handwerk oder Gewerbe frei auszuüben, ohne Mitglied einer Zunft sein zu müssen.</dd>
+    <dt id="g-gutsherrschaft">Gutsherrschaft</dt><dd>Agrarordnung östlich der Elbe: Der adlige Gutsherr war zugleich Grund-, Gerichts- und Polizeiherr seiner Bauern.</dd>
+    <dt id="g-jakobiner">Jakobiner</dt><dd>Radikale politische Gruppe der Französischen Revolution; in Deutschland Bezeichnung für Anhänger revolutionärer Ideen.</dd>
+    <dt id="g-kabinettskrieg">Kabinettskrieg</dt><dd>Krieg, den Fürsten und ihre Ratgeber mit Berufsheeren um Land und Macht führten, ohne die Bevölkerung zu mobilisieren.</dd>
+    <dt id="g-koalitionskriege">Koalitionskriege</dt><dd>Die Kriege wechselnder europäischer Bündnisse (Koalitionen) gegen das revolutionäre und napoleonische Frankreich, 1792–1815.</dd>
+    <dt id="g-kodifikation">Kodifikation</dt><dd>Zusammenfassung des geltenden Rechts in einem einheitlichen, geschriebenen Gesetzbuch, etwa dem Allgemeinen Landrecht von 1794.</dd>
+    <dt id="g-kontinentalsperre">Kontinentalsperre</dt><dd>Napoleons Handelsverbot gegen Großbritannien ab 1806: Kein Land des Kontinents durfte britische Waren einführen.</dd>
+    <dt id="g-kontribution">Kontribution</dt><dd>Zwangsabgabe oder Kriegsentschädigung, die ein Sieger einem besiegten Land auferlegt.</dd>
+    <dt id="g-landwehr">Landwehr</dt><dd>1813 in Preußen aufgestellte Truppe aus wehrpflichtigen Bürgern, die das stehende Heer ergänzte.</dd>
+    <dt id="g-leibeigenschaft">Leibeigenschaft</dt><dd>Persönliche Abhängigkeit von Bauern von ihrem Herrn: Sie durften ohne Erlaubnis weder wegziehen noch heiraten und mussten Dienste leisten.</dd>
+    <dt id="g-lesegesellschaft">Lesegesellschaften</dt><dd>Vereinigungen von Bürgern, die gemeinsam Bücher und Zeitschriften anschafften, lasen und diskutierten – wichtige Orte der Aufklärung.</dd>
+    <dt id="g-mediatisierung">Mediatisierung</dt><dd>Unterstellung bisher reichsunmittelbarer Herrschaften (z. B. Reichsstädte, Reichsritter) unter einen anderen Landesherrn, besonders 1803–1806.</dd>
+    <dt id="g-menschenrechte">Menschen- und Bürgerrechte</dt><dd>Grundrechte, die jedem Menschen von Natur aus zustehen, etwa Freiheit, Gleichheit und Eigentum; in Frankreich 1789 feierlich erklärt.</dd>
+    <dt id="g-nationalismus">Nationalismus</dt><dd>Überzeugung, dass Menschen gleicher Sprache und Kultur eine Nation bilden, die in einem eigenen Staat vereint sein soll.</dd>
+    <dt id="g-rdhs">Reichsdeputationshauptschluss</dt><dd>Letztes großes Gesetz des Reiches (1803): Entschädigung der Fürsten für ihre linksrheinischen Verluste durch Säkularisation und Mediatisierung.</dd>
+    <dt id="g-reichsexekution">Reichsexekution</dt><dd>Militärisches Vorgehen des Reiches gegen einen Reichsstand, der den Landfrieden gebrochen hatte – etwa 1757 gegen Preußen.</dd>
+    <dt id="g-rheinbund">Rheinbund</dt><dd>1806 unter dem Schutz Napoleons gegründeter Bund deutscher Staaten, die aus dem Reich austraten; zerfiel 1813.</dd>
+    <dt id="g-saekularisation">Säkularisation</dt><dd>Einziehung kirchlicher Herrschaftsgebiete und Güter durch den Staat, vor allem 1803.</dd>
+    <dt id="g-salon">Salon</dt><dd>Regelmäßige gesellige Zusammenkunft in einem Privathaus, meist von einer Frau geleitet, zum Gespräch über Literatur, Kunst und Politik.</dd>
+    <dt id="g-selbstverwaltung">Selbstverwaltung</dt><dd>Recht von Gemeinden oder Städten, ihre eigenen Angelegenheiten durch gewählte Vertreter zu regeln.</dd>
+    <dt id="g-sturm">Sturm und Drang</dt><dd>Literarische Bewegung junger Dichter (ca. 1765–1785), die Gefühl, Natur, Genie und Freiheit über Regeln stellte.</dd>
+    <dt id="g-subsidien">Subsidien</dt><dd>Geldzahlungen einer Macht an eine verbündete Macht zur Unterstützung ihrer Kriegführung.</dd>
+    <dt id="g-toleranzpatent">Toleranzpatent</dt><dd>Erlass Josephs II. von 1781, der Protestanten und Orthodoxen in der Habsburgermonarchie private Religionsausübung und bürgerliche Rechte gewährte.</dd>
+    <dt id="g-volkssouveraenitaet">Volkssouveränität</dt><dd>Grundsatz, dass alle Staatsgewalt vom Volk ausgeht und nicht vom Fürsten oder von Gott.</dd>
+    <dt id="g-klassik">Weimarer Klassik</dt><dd>Epoche der deutschen Literatur (ca. 1786–1805), geprägt von Goethe und Schiller, mit dem Ideal von Harmonie und Humanität.</dd>
+  </dl>
+</section>
+
+<!-- ============ 15 QUELLEN ============ -->
+<section class="chapter" id="quellen">
+  <div class="chap-head"><div class="chap-num">15</div><div>
+    <span class="span-chip">Zum Weiterlesen</span>
+    <h2>Quellen &amp; Weiterlesen</h2>
+  </div></div>
+  <p>Dieses Dokument fasst den Forschungsstand in eigenen Worten zusammen. Für Zahlen (z. B. Heeresstärken, Verluste, Bevölkerung) gibt es oft nur Schätzungen; die hier genannten Werte sind gängige Größenordnungen aus den folgenden Quellen.</p>
+  <ul class="sources">
+    <li><a href="https://germanhistorydocs.org/de/das-heilige-roemische-reich-1648-1815/einleitung">German History in Documents and Images: Das Heilige Römische Reich (1648–1815), Einleitung</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Siebenj%C3%A4hriger_Krieg">Wikipedia: Siebenjähriger Krieg</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Kartoffelbefehl">Wikipedia: Kartoffelbefehl</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Allgemeines_Landrecht_f%C3%BCr_die_Preu%C3%9Fischen_Staaten">Wikipedia: Allgemeines Landrecht für die Preußischen Staaten</a></li>
+    <li><a href="https://www.habsburger.net/de/personen/habsburger-herrscher/joseph-ii">habsburger.net: Joseph II.</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Bayerischer_Erbfolgekrieg">Wikipedia: Bayerischer Erbfolgekrieg</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Teilungen_Polens">Wikipedia: Teilungen Polens</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Wolgadeutsche">Wikipedia: Wolgadeutsche</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Soldatenhandel">Wikipedia: Soldatenhandel</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Mainzer_Republik">Wikipedia: Mainzer Republik</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Reichsdeputationshauptschluss">Wikipedia: Reichsdeputationshauptschluss</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Rheinbund">Wikipedia: Rheinbund</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Frieden_von_Tilsit">Wikipedia: Frieden von Tilsit</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Preu%C3%9Fische_Reformen">Wikipedia: Preußische Reformen</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Andreas_Hofer">Wikipedia: Andreas Hofer</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Russlandfeldzug_1812">Wikipedia: Russlandfeldzug 1812</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Befreiungskriege">Wikipedia: Befreiungskriege</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/V%C3%B6lkerschlacht_bei_Leipzig">Wikipedia: Völkerschlacht bei Leipzig</a></li>
+  </ul>
+  <h3>Bücher zum Vertiefen</h3>
+  <ul>
+    <li>Thomas Nipperdey: <em>Deutsche Geschichte 1800–1866. Bürgerwelt und starker Staat</em>.</li>
+    <li>Christopher Clark: <em>Preußen. Aufstieg und Niedergang 1600–1947</em>.</li>
+    <li>Joachim Whaley: <em>Das Heilige Römische Reich deutscher Nation und seine Territorien</em>, Bd. 2 (1648–1806).</li>
+    <li>Barbara Stollberg-Rilinger: <em>Das Heilige Römische Reich Deutscher Nation</em> (kurz und gut lesbar).</li>
+    <li>Johannes Kunisch: <em>Friedrich der Große. Der König und seine Zeit</em>.</li>
+    <li>Adam Zamoyski: <em>1812. Napoleons Feldzug in Russland</em>.</li>
+  </ul>
+</section>
+
+</main>
+</div>
+
+<footer>Deutsche und europäische Geschichte 1756–1813 · Zusammengestellt als Lern- und Überblicksdokument · Stand: Oktober 2026<span class="ph-foot"> · <a href="index.html">Der Philosopher</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></footer>
+<button id="top" aria-label="Nach oben">↑</button>
+
+<script>
+(function(){
+  // ---- Timeline data ----
+  var T = [
+    ["1756", "europa", "Umkehrung der Bündnisse: Preußen verbündet sich mit Großbritannien, Österreich mit Frankreich."],
+    ["1756", "krieg", "Preußen marschiert in Sachsen ein (29. August) – Beginn des Siebenjährigen Krieges."],
+    ["1756", "kultur", "Geburt Wolfgang Amadeus Mozarts in Salzburg; Friedrich II. fördert den Kartoffelanbau („Kartoffelbefehl“)."],
+    ["1757", "reich", "Der Reichstag beschließt den Reichskrieg gegen Preußen."],
+    ["1757", "krieg", "Niederlage Preußens bei Kolin; Siege bei Roßbach (5. November) und Leuthen (5. Dezember)."],
+    ["1759", "krieg", "Schwere preußische Niederlage bei Kunersdorf (12. August); Sieg der Alliierten bei Minden."],
+    ["1760", "krieg", "Russische und österreichische Truppen besetzen kurzzeitig Berlin; Dresden wird beschossen."],
+    ["1762", "europa", "Tod der Zarin Elisabeth; Russland schließt Frieden mit Preußen. Katharina II. wird Zarin."],
+    ["1763", "krieg", "Frieden von Paris (10. Februar) und Hubertusburg (15. Februar): Schlesien bleibt preußisch."],
+    ["1763", "religion", "Preußisches Generallandschulreglement: allgemeine Schulpflicht."],
+    ["1763", "europa", "Katharina II. lädt Ausländer zur Ansiedlung in Russland ein – Beginn der Wolgadeutschen."],
+    ["1765", "reich", "Joseph II. wird Kaiser und Mitregent seiner Mutter Maria Theresia."],
+    ["1770–1772", "religion", "Schwere Hungerkrise in Mitteleuropa."],
+    ["1772", "europa", "Erste Teilung Polens: Preußen erhält Westpreußen, Österreich Galizien."],
+    ["1773", "kultur", "Goethes „Götz von Berlichingen“ – Höhepunkt des Sturm und Drang."],
+    ["1774", "kultur", "Goethes „Die Leiden des jungen Werthers“ wird ein europäischer Erfolg."],
+    ["1774", "religion", "Maria Theresia führt mit der Allgemeinen Schulordnung die Schulpflicht ein."],
+    ["1776", "europa", "Unabhängigkeitserklärung der Vereinigten Staaten (4. Juli); rund 30.000 deutsche Soldaten kämpfen für Großbritannien."],
+    ["1778/79", "krieg", "Bayerischer Erbfolgekrieg („Kartoffelkrieg“); Frieden von Teschen 1779."],
+    ["1779", "kultur", "Lessings „Nathan der Weise“ mit der Ringparabel."],
+    ["1781", "religion", "Toleranzpatent Josephs II. und Aufhebung der Leibeigenschaft in Böhmen."],
+    ["1781", "kultur", "Kants „Kritik der reinen Vernunft“; Dohm fordert die Gleichstellung der Juden."],
+    ["1782", "kultur", "Uraufführung von Schillers „Die Räuber“ in Mannheim."],
+    ["1783", "religion", "Baden hebt die Leibeigenschaft auf."],
+    ["1783", "europa", "Großbritannien erkennt die Unabhängigkeit der USA an."],
+    ["1784", "kultur", "Kant: „Beantwortung der Frage: Was ist Aufklärung?“"],
+    ["1785", "reich", "Friedrich II. gründet mit anderen Fürsten den Fürstenbund gegen die Pläne Josephs II."],
+    ["1786", "reich", "Tod Friedrichs II.; Nachfolger wird Friedrich Wilhelm II."],
+    ["1787", "religion", "Joseph II. schafft die Todesstrafe im ordentlichen Strafverfahren ab."],
+    ["1788", "religion", "Das preußische Religionsedikt schränkt die Freiheit der Lehre ein."],
+    ["1789", "europa", "Beginn der Französischen Revolution: Sturm auf die Bastille (14. Juli), Erklärung der Menschenrechte (26. August)."],
+    ["1790", "reich", "Tod Josephs II.; viele seiner Reformen sind bereits zurückgenommen. Bauernaufstand in Sachsen."],
+    ["1791", "europa", "Pillnitzer Erklärung; Polen gibt sich am 3. Mai eine moderne Verfassung."],
+    ["1792", "krieg", "Beginn der Koalitionskriege; Kanonade von Valmy (20. September); Franzosen besetzen Mainz."],
+    ["1793", "europa", "Hinrichtung Ludwigs XVI.; Zweite Teilung Polens."],
+    ["1793", "reich", "Mainzer Republik (März–Juli) – erste Republik auf deutschem Boden."],
+    ["1794", "reich", "Das Allgemeine Landrecht für die Preußischen Staaten tritt in Kraft (1. Juni)."],
+    ["1794", "kultur", "Beginn der Freundschaft zwischen Goethe und Schiller – Weimarer Klassik."],
+    ["1795", "reich", "Frieden von Basel: Preußen scheidet aus dem Krieg aus; Norddeutschland wird neutral."],
+    ["1795", "europa", "Dritte Teilung Polens – Polen verschwindet von der Landkarte."],
+    ["1797", "krieg", "Frieden von Campo Formio: Österreich stimmt geheim der Abtretung des linken Rheinufers zu."],
+    ["1797", "reich", "Friedrich Wilhelm III. wird König von Preußen."],
+    ["1799", "europa", "Napoleon Bonaparte übernimmt als Erster Konsul die Macht in Frankreich."],
+    ["1801", "krieg", "Frieden von Lunéville: Das linke Rheinufer wird französisch."],
+    ["1803", "reich", "Reichsdeputationshauptschluss (25. Februar): Säkularisation und Mediatisierung."],
+    ["1804", "europa", "Napoleon krönt sich zum Kaiser der Franzosen; der Code civil tritt in Kraft."],
+    ["1804", "reich", "Franz II. nimmt den Titel „Kaiser von Österreich“ an."],
+    ["1805", "krieg", "Dreikaiserschlacht bei Austerlitz (2. Dezember); Frieden von Pressburg."],
+    ["1805", "kultur", "Tod Friedrich Schillers in Weimar."],
+    ["1806", "reich", "Bayern und Württemberg werden Königreiche (1. Januar)."],
+    ["1806", "reich", "Gründung des Rheinbunds (12. Juli); Franz II. legt die Kaiserkrone nieder – Ende des Reiches (6. August)."],
+    ["1806", "krieg", "Preußen wird bei Jena und Auerstedt geschlagen (14. Oktober); Napoleon zieht in Berlin ein."],
+    ["1806", "europa", "Napoleon verhängt die Kontinentalsperre gegen Großbritannien (21. November)."],
+    ["1807", "krieg", "Frieden von Tilsit: Preußen verliert die Hälfte seines Gebiets."],
+    ["1807", "reich", "Königreich Westphalen mit erster Verfassung auf deutschem Boden; Oktoberedikt in Preußen (Bauernbefreiung)."],
+    ["1807/08", "kultur", "Fichtes „Reden an die deutsche Nation“ im besetzten Berlin."],
+    ["1808", "reich", "Preußische Städteordnung; Verfassung für Bayern."],
+    ["1808", "religion", "Gleichstellung der Juden im Königreich Westphalen."],
+    ["1809", "krieg", "Österreichs Krieg gegen Napoleon: Aspern und Wagram; Tiroler Aufstand unter Andreas Hofer."],
+    ["1810", "kultur", "Gründung der Universität Berlin."],
+    ["1810", "religion", "Hinrichtung Andreas Hofers in Mantua; Tod Königin Luises."],
+    ["1810/11", "religion", "Gewerbefreiheit in Preußen."],
+    ["1811", "kultur", "Jahn eröffnet in Berlin den ersten Turnplatz."],
+    ["1812", "religion", "Preußisches Emanzipationsedikt für die Juden (11. März)."],
+    ["1812", "kultur", "Die Brüder Grimm veröffentlichen ihre „Kinder- und Hausmärchen“."],
+    ["1812", "krieg", "Napoleons Russlandfeldzug endet in einer Katastrophe; Konvention von Tauroggen (30. Dezember)."],
+    ["1813", "reich", "Aufruf „An mein Volk“ (17. März); Preußen erklärt Frankreich den Krieg; Stiftung des Eisernen Kreuzes."],
+    ["1813", "europa", "Österreich tritt der Koalition gegen Napoleon bei (11. August); Bayern wechselt die Seiten (8. Oktober)."],
+    ["1813", "krieg", "Völkerschlacht bei Leipzig (16.–19. Oktober): Napoleon wird geschlagen, der Rheinbund zerfällt."]
+  ];
+  var names = {reich:"Reich",religion:"Religion & Gesellschaft",europa:"Europa & Welt",krieg:"Krieg",kultur:"Kultur & Wissen"};
+  var tl = document.getElementById("timeline");
+  T.forEach(function(e){
+    var li = document.createElement("li");
+    li.className = e[1];
+    li.innerHTML = '<span class="y">'+e[0]+'</span><span class="tag '+e[1]+'">'+names[e[1]]+'</span><br>'+e[2];
+    tl.appendChild(li);
+  });
+  document.getElementById("filters").addEventListener("click", function(ev){
+    var b = ev.target.closest("button"); if(!b) return;
+    var f = b.getAttribute("data-f");
+    this.querySelectorAll("button").forEach(function(x){x.classList.toggle("on", x===b);});
+    tl.querySelectorAll("li").forEach(function(li){
+      li.classList.toggle("hide", f!=="alle" && !li.classList.contains(f));
+    });
+  });
+
+  // ---- Progress bar & top button ----
+  var prog = document.getElementById("progress"), topBtn = document.getElementById("top");
+  function onScroll(){
+    var h = document.documentElement;
+    var p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+    prog.style.width = (p*100) + "%";
+    topBtn.classList.toggle("show", h.scrollTop > 600);
+  }
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+  topBtn.addEventListener("click", function(){ window.scrollTo({top:0}); });
+
+  // ---- Active TOC ----
+  var links = {};
+  document.querySelectorAll("nav.toc a").forEach(function(a){ links[a.getAttribute("href").slice(1)] = a; });
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          Object.keys(links).forEach(function(k){ links[k].classList.remove("active"); });
+          var a = links[en.target.id]; if(a) a.classList.add("active");
+        }
+      });
+    }, {rootMargin:"-30% 0px -60% 0px"});
+    document.querySelectorAll("section.chapter").forEach(function(s){ io.observe(s); });
+  }
+
+  // ---- Mobile TOC toggle ----
+  var toc = document.getElementById("toc"), tt = document.getElementById("tocToggle");
+  tt.addEventListener("click", function(){
+    var open = toc.classList.toggle("open"); tt.setAttribute("aria-expanded", open);
+  });
+  toc.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toc.classList.remove("open"); tt.setAttribute("aria-expanded", false); }); });
+
+  // ---- Theme toggle ----
+  var root = document.documentElement;
+  document.getElementById("themeBtn").addEventListener("click", function(){
+    var dark = root.getAttribute("data-theme") ? root.getAttribute("data-theme")==="dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    root.setAttribute("data-theme", dark ? "light" : "dark");
+  });
+
+  // ---- Glossary links: tooltip with definition ----
+  document.querySelectorAll("a.g").forEach(function(a){
+    a.title = (function(){ var dt=document.querySelector(a.getAttribute("href")); return dt && dt.nextElementSibling ? dt.nextElementSibling.textContent : ""; })();
+  });
+})();
+</script>
+</body>
+</html>

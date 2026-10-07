@@ -57,6 +57,27 @@ window.PHILOSOPHER = {
 
   artikel: [
     {
+      datei: "geschichte-1756-1813.html",
+      ressort: "geschichte",
+      reihe: "deutsche-geschichte", teil: 3,
+      dachzeile: "Deutsche und europäische Geschichte",
+      titel: "Vom Siebenjährigen Krieg zur Völkerschlacht bei Leipzig",
+      teaser: "Wie das Alte Reich unterging: der Kampf zwischen Preußen und Österreich, Reformen von oben und die Aufklärung, die Französische Revolution, Napoleons Herrschaft über Deutschland – und der Aufbruch von 1813.",
+      von: 1756, bis: 1813, kapitel: 15,
+      veroeffentlicht: "2026-10-07", stand: "Oktober 2026",
+      inhalt: [
+        ["2",  "um1756",        "Die Welt um 1756"],
+        ["3",  "siebenjaehrig", "Der Siebenjährige Krieg"],
+        ["4",  "aufgeklaert",   "Der aufgeklärte Absolutismus"],
+        ["5",  "europa",        "Europa im Wandel"],
+        ["6",  "aufklaerung",   "Aufklärung, Gesellschaft und Kultur"],
+        ["7",  "revolution",    "Die Französische Revolution und Deutschland"],
+        ["8",  "napoleon",      "Napoleon und das Ende des Reiches"],
+        ["9",  "preussen",      "Zusammenbruch und Reformen"],
+        ["10", "befreiung",     "Widerstand und Befreiungskriege"]
+      ]
+    },
+    {
       datei: "wirtschaft-zinsen-2008-2026.html",
       ressort: "wirtschaft",
       dachzeile: "Deutsche und europäische Wirtschaftsgeschichte",
