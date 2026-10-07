@@ -2,8 +2,8 @@
    DER PHILOSOPHER – Beitragsregister
    ---------------------------------------------------------------------
    Diese Datei ist die einzige Stelle, die beim Hinzufügen eines neuen
-   Dossiers geändert werden muss. Die Titelseite, die Ressortseiten,
-   das Archiv und die Zeitachse werden daraus automatisch aufgebaut.
+   Dossiers geändert werden muss. Die Titelseite, die Ressortseiten
+   und das Archiv werden daraus automatisch aufgebaut.
 
    Neues Dossier hinzufügen:
    1. HTML-Datei in denselben Ordner wie index.html legen.

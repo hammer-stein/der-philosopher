@@ -6,7 +6,7 @@ Statische Website ohne Datenbank und ohne Server-Programmierung. Sie besteht nur
 
 | Datei | Zweck |
 |---|---|
-| `index.html` | Titelseite mit Ressortleiste, Aufmacher, Zeitachse, Reihe, Ressortblöcken, Ressortseiten (`index.html#geschichte` …) und Archiv mit Suche (`index.html#archiv`) |
+| `index.html` | Titelseite mit Ressortleiste, Aufmacher, Reihe, Ressortblöcken, Ressortseiten (`index.html#geschichte` …) und Archiv mit Suche (`index.html#archiv`) |
 | `register.js` | **Beitragsregister** – die einzige Datei, die beim Hinzufügen eines Dossiers geändert wird |
 | `philosopher.css` | Gestaltung der Titelseite und der Nebenseiten |
 | `impressum.html`, `datenschutz.html` | Vorlagen, vor der Veröffentlichung ausfüllen |

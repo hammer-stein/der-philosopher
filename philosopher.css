@@ -1,7 +1,7 @@
 /* =====================================================================
    Der Philosopher – gemeinsame Gestaltung der Titelseite und Nebenseiten
    Layout: Zeitungskopf mit Wortmarke, Ressortleiste, Aufmacher mit
-   Nebenspalte, Zeitachse, Reihen- und Ressortblöcke, Fußzeile.
+   Nebenspalte, Reihen- und Ressortblöcke, Fußzeile.
    Farben und Schriften folgen den Dossiers (Preußischblau, Serife,
    eckige Formen, keine Schatten).
    ===================================================================== */
@@ -127,23 +127,6 @@ main > *, #ansicht > *{min-width:0}
 .side-item h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .side-item p{font-size:.95rem;color:var(--muted);line-height:1.5}
 
-/* ---------- Zeitachse ---------- */
-.zeitachse{background:var(--paper);border:1px solid var(--line);padding:22px 24px 18px}
-.zeitachse .scroll{overflow-x:auto}
-.za{min-width:720px;display:grid;grid-template-columns:118px minmax(0,1fr);row-gap:8px}
-.za-label{font-family:var(--sans);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rc);align-self:center}
-.za-track{position:relative;height:34px;background-color:var(--bg);background-image:linear-gradient(to right,var(--line) 1px,transparent 1px);background-size:calc(100% * 50 / 580) 100%}
-.za-bar{position:absolute;top:4px;bottom:4px;background:var(--rc);color:var(--paper);font-family:var(--sans);font-size:.74rem;font-weight:600;display:flex;align-items:center;padding:0 8px;text-decoration:none;white-space:nowrap;border-right:2px solid var(--paper);min-width:6px}
-.za-bar:hover,.za-bar:focus-visible{filter:brightness(1.12)}
-.za-bar .t{overflow:hidden;text-overflow:ellipsis}
-.za-bar.out .t{position:absolute;color:var(--ink);font-weight:600}
-.za-bar.out-l .t{right:calc(100% + 8px)}
-.za-bar.out-r .t{left:calc(100% + 8px)}
-.za-axis{position:relative;height:20px;font-family:var(--sans);font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
-.za-axis span{position:absolute;transform:translateX(-50%)}
-.za-axis span:first-child{transform:none}
-.za-note{font-family:var(--sans);font-size:.8rem;color:var(--muted);margin-top:12px}
-
 /* ---------- Reihe ---------- */
 .reihe-box{background:var(--paper);border:1px solid var(--line);padding:24px}
 .reihe-strip{display:flex;min-height:54px;font-family:var(--sans);font-size:.76rem;font-weight:600;margin:6px 0 6px}
@@ -241,7 +224,7 @@ main > *, #ansicht > *{min-width:0}
   .lead-story{padding:26px 20px 24px}
   .lead-inhalt ol{grid-template-columns:1fr}
   .side-col{padding:18px 20px}
-  .zeitachse,.reihe-box{padding:18px 16px}
+  .reihe-box{padding:18px 16px}
   .row{grid-template-columns:1fr;gap:10px;padding:18px 16px}
   .row-years{font-size:1.2rem;border-top-width:2px}
   .textseite{padding:24px 18px}

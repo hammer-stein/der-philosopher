@@ -140,37 +140,6 @@
   }).join("");
 
   // ---------- Titelseite ----------
-  function zeitachse(){
-    var START = 1450, ENDE = 2030, SPANNE = ENDE - START;
-    function pos(j){ return ((j - START) / SPANNE * 100).toFixed(3); }
-    var html = '<section class="zeitachse" aria-labelledby="za-h">' +
-      '<div class="section-head"><h2 id="za-h">Das Archiv auf der Zeitachse</h2><a class="more" href="#archiv">Alle Dossiers</a></div>' +
-      '<p class="section-intro">Jedes Dossier steht an der Stelle des Zeitraums, den es behandelt. Die Lücken zeigen, was noch geschrieben werden will.</p>' +
-      '<div class="scroll"><div class="za" role="list">';
-    mitInhalt.forEach(function(r){
-      // Überlappende Dossiers eines Ressorts auf mehrere Spuren verteilen
-      var spuren = [];
-      imRessort(r.id).slice().sort(function(x,y){ return x.von - y.von; }).forEach(function(a){
-        for (var i=0;i<spuren.length;i++){ if (spuren[i].ende < a.von){ spuren[i].ende = a.bis; spuren[i].liste.push(a); return; } }
-        spuren.push({ende:a.bis, liste:[a]});
-      });
-      spuren.forEach(function(s, i){
-        html += '<div class="za-label r-' + esc(r.id) + '">' + (i===0 ? esc(r.name) : '') + '</div><div class="za-track r-' + esc(r.id) + '" role="listitem">';
-        s.liste.forEach(function(a){
-          var l = parseFloat(pos(a.von)), w = Math.max(parseFloat(pos(a.bis)) - l, 0.9);
-          var cls = "za-bar";
-          if (w < 12) cls += (l + w > 70) ? " out out-l" : " out out-r";
-          html += '<a class="' + cls + '" style="left:' + l + '%;width:' + w + '%" href="' + esc(a.datei) + '" title="' + esc(a.titel) + '" aria-label="' + esc(a.titel) + ', ' + zeitraum(a) + '"><span class="t">' + zeitraum(a) + (w >= 22 ? ' · ' + esc(a.titel) : '') + '</span></a>';
-        });
-        html += '</div>';
-      });
-    });
-    html += '<div></div><div class="za-axis" aria-hidden="true">';
-    for (var j = START; j <= 2000; j += 50) html += '<span style="left:' + pos(j) + '%">' + j + '</span>';
-    html += '</div></div></div></section>';
-    return html;
-  }
-
   function reihenBlock(re){
     var teile = artikel.filter(function(a){ return a.reihe === re.id; }).sort(function(x,y){ return x.von - y.von; });
     if (!teile.length) return "";
@@ -224,7 +193,6 @@
         }).join("") +
       '</aside></section>';
 
-    html += zeitachse();
     P.reihen.forEach(function(re){ html += reihenBlock(re); });
 
     mitInhalt.forEach(function(r){
