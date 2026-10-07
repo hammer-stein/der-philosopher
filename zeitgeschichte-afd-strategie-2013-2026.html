@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Die Strategie der AfD 2013 bis 2026 – Deutsche Zeitgeschichte</title>
+<meta name="description" content="Lern- und Überblicksdokument zum strategischen Weg der AfD von der Gründung 2013 bis Oktober 2026 – mit den internen Strategiepapieren, dem Verhältnis zur Union, dem Migrationswahlkampf 2025, dem Angriff auf die Wirtschaftskompetenz, dem Kulturkampf und den Plänen für eine Minderheitsregierung.">
+<style>
+:root{
+  --bg:#f1f2f4; --paper:#ffffff; --ink:#16191f; --muted:#555b66; --line:#d3d7de;
+  --accent:#1f3a5f; --accent-soft:#e6ebf2;
+  --c1:#24566b; --c2:#5a6630; --c3:#4a3f6b; --c4:#7a1e2b; --c5:#2f5a3f;
+  --c1-soft:#e8f0f2; --c2-soft:#eff1e6; --c3-soft:#eeecf3; --c4-soft:#f4e9eb; --c5-soft:#e9f1ec;
+  --shadow:none;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#11141a; --paper:#191d24; --ink:#e4e7ec; --muted:#9aa1ad; --line:#323844;
+    --accent:#8fb3d9; --accent-soft:#1d2836;
+    --c1:#7fb6c6; --c2:#b8c37f; --c3:#b0a5d6; --c4:#e08a97; --c5:#8fc4a0;
+    --c1-soft:#172429; --c2-soft:#22251a; --c3-soft:#211e2b; --c4-soft:#2b1b1f; --c5-soft:#18251d;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+    --bg:#11141a; --paper:#191d24; --ink:#e4e7ec; --muted:#9aa1ad; --line:#323844;
+    --accent:#8fb3d9; --accent-soft:#1d2836;
+    --c1:#7fb6c6; --c2:#b8c37f; --c3:#b0a5d6; --c4:#e08a97; --c5:#8fc4a0;
+    --c1-soft:#172429; --c2-soft:#22251a; --c3-soft:#211e2b; --c4-soft:#2b1b1f; --c5-soft:#18251d;
+    --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;color:var(--ink)}
+h2{font-size:1.85rem;margin:0 0 .4rem;font-weight:600;letter-spacing:.005em}
+h3{font-size:1.32rem;margin:2.2rem 0 .7rem;font-weight:600;padding-bottom:.3rem;border-bottom:1px solid var(--line)}
+h4{font-size:1.08rem;margin:1.2rem 0 .3rem}
+p{margin:.6rem 0}
+ul,ol{padding-left:1.3rem}
+li{margin:.25rem 0}
+strong{font-weight:650}
+
+/* progress */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:50;transition:width .1s}
+
+/* hero */
+.hero{background:#14213a;color:#eef1f5;padding:60px 20px 50px;text-align:center;border-bottom:4px double #8a97ab}
+.hero .kicker{font-family:var(--sans);letter-spacing:.22em;text-transform:uppercase;font-size:.75rem;opacity:.8}
+.hero h1{color:#fff;font-size:clamp(2rem,5vw,3.1rem);font-weight:600;margin:.5rem 0 .8rem}
+.hero p{max-width:720px;margin:0 auto;font-size:1.08rem;opacity:.95}
+.hero .years{font-family:var(--serif);font-size:clamp(1.3rem,3.6vw,1.8rem);letter-spacing:.12em;margin:22px auto 0;padding-top:14px;border-top:1px solid rgba(238,241,245,.35);display:inline-block;opacity:.95}
+
+/* layout */
+.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:36px;max-width:1240px;margin:0 auto;padding:28px 20px 80px}
+nav.toc{font-family:var(--sans);position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:0;padding:16px 14px;box-shadow:var(--shadow);font-size:.92rem}
+nav.toc .toc-title{font-family:var(--sans);font-weight:700;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 10px 8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+nav.toc ol{list-style:none;margin:0;padding:0}
+nav.toc a{display:block;padding:5px 8px;border-radius:0;color:var(--ink);text-decoration:none;line-height:1.35}
+nav.toc a:hover{background:var(--accent-soft)}
+nav.toc a.active{background:var(--accent-soft);color:var(--accent);font-weight:600;box-shadow:inset 3px 0 0 var(--accent)}
+nav.toc .num{display:inline-block;width:1.6em;color:var(--muted)}
+.theme-btn{font-family:var(--sans);margin:12px 6px 2px;font:inherit;font-size:.85rem;background:none;border:1px solid var(--line);color:var(--muted);padding:5px 10px;border-radius:0;cursor:pointer}
+.toc-toggle{display:none}
+main{min-width:0}
+section.chapter{background:var(--paper);border:1px solid var(--line);border-radius:0;padding:34px 38px;margin-bottom:28px;box-shadow:var(--shadow)}
+.chap-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.chap-num{flex:0 0 auto;width:46px;height:46px;border-radius:0;background:transparent;color:var(--accent);border:1.5px solid var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:1.35rem;font-weight:700}
+.span-chip{display:inline-block;font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:0;border-radius:0;background:none;color:var(--muted);margin-bottom:4px}
+.lead{font-size:1.1rem;color:var(--muted);font-style:italic}
+
+/* boxes */
+.box{border-radius:0;padding:14px 18px;margin:20px 0;border:1px solid var(--line);border-left:4px solid}
+.box .box-title{font-family:var(--sans);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.box.kurz{background:var(--c1-soft);border-color:var(--c1)}
+.box.kurz .box-title{color:var(--c1)}
+.box.merke{background:var(--c5-soft);border-color:var(--c5)}
+.box.merke .box-title{color:var(--c5)}
+.box.warum{background:var(--c3-soft);border-color:var(--c3)}
+.box.warum .box-title{color:var(--c3)}
+.box.achtung{background:var(--c2-soft);border-color:var(--c2)}
+.box.achtung .box-title{color:var(--c2)}
+.box ul{margin:.3rem 0}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:14px 0}
+.card{background:var(--bg);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:0;padding:14px 16px}
+.card h4{margin:.1rem 0 .3rem;font-weight:600}
+.card .yr{font-family:var(--serif);font-weight:700;color:var(--accent);font-size:1.05rem}
+.card p{margin:.3rem 0;font-size:.95rem}
+
+/* era bar */
+.erabar{font-family:var(--sans);display:flex;border-radius:0;overflow:hidden;margin:18px 0 6px;font-size:.78rem;color:#fff;font-weight:600;min-height:58px}
+.erabar div{padding:8px 8px;display:flex;flex-direction:column;justify-content:center;line-height:1.2}
+.erabar small{font-weight:400;opacity:.9}
+.era-a{background:#24566b;flex:24}
+.era-b{background:#4a3f6b;flex:40}
+.era-c{background:#5a6630;flex:53}
+.era-d{background:#7a1e2b;flex:22}
+.erascale{font-family:var(--sans);display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}
+
+/* chain: vertical numbered sequence */
+.chain{list-style:none;margin:18px 0 20px;padding:0;position:relative;border-top:1px solid var(--line)}
+.chain::before{content:"";position:absolute;left:17px;top:22px;bottom:22px;width:1px;background:var(--accent);opacity:.55}
+.chain li{position:relative;display:grid;grid-template-columns:36px minmax(170px,250px) 1fr;align-items:center;gap:18px;margin:0;padding:10px 0;border-bottom:1px solid var(--line)}
+.chain .n{position:relative;z-index:1;width:36px;height:36px;display:grid;place-items:center;background:var(--paper);border:1.5px solid var(--accent);color:var(--accent);font-family:var(--sans);font-size:.85rem;font-weight:700}
+.chain b{font-family:var(--serif);font-weight:600;color:var(--accent);font-size:1.02rem}
+.chain .desc{color:var(--muted);font-size:.97rem}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:.95rem;min-width:540px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-family:var(--serif);font-size:1rem;font-weight:600;border-bottom:1px solid var(--ink)}
+tr:last-child td{border-bottom:none}
+
+/* phases */
+.phase{border:1px solid var(--line);border-left:4px solid var(--c4);border-radius:0;margin:16px 0;overflow:hidden}
+.phase-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;align-items:baseline;padding:12px 18px;background:var(--c4-soft);border-bottom:1px solid var(--line)}
+.phase-head h4{margin:0;font-size:1.12rem;font-weight:600}
+.phase-head .yr{font-family:var(--serif);font-weight:700;color:var(--c4)}
+.phase-body{padding:6px 18px 12px}
+.mini-tl{list-style:none;padding:0;margin:8px 0}
+.mini-tl li{display:grid;grid-template-columns:108px 1fr;gap:12px;padding:5px 0;border-bottom:1px solid var(--line)}
+.mini-tl li:last-child{border-bottom:none}
+.mini-tl .d{font-family:var(--sans);font-size:.92rem;padding-top:2px;font-weight:700;color:var(--c4);font-variant-numeric:tabular-nums}
+
+/* details */
+details{background:var(--bg);border:1px solid var(--line);border-radius:0;padding:10px 14px;margin:12px 0}
+details summary{cursor:pointer;font-weight:600;color:var(--accent)}
+details[open] summary{margin-bottom:6px}
+
+/* quote */
+blockquote{margin:14px 0;padding:8px 16px;border-left:3px solid var(--accent);font-family:var(--serif);font-style:italic;color:var(--muted)}
+
+/* timeline */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.filters button{font:inherit;font-family:var(--sans);font-size:.88rem;padding:6px 13px;border-radius:0;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.filters button.on{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.tl{position:relative;list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:6px 0 10px 12px}
+.tl li::before{content:"";position:absolute;left:-29px;top:14px;width:10px;height:10px;border-radius:0;background:var(--paper);border:3px solid var(--muted)}
+.tl li.reich::before{border-color:var(--c1)}
+.tl li.religion::before{border-color:var(--c3)}
+.tl li.europa::before{border-color:var(--c2)}
+.tl li.krieg::before{border-color:var(--c4)}
+.tl li.kultur::before{border-color:var(--c5)}
+.tl .y{font-family:var(--serif);font-weight:700;font-size:1.05rem;margin-right:6px}
+.tl .tag{font-family:var(--sans);text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;font-weight:600;padding:1px 8px;border-radius:0;margin-left:6px;vertical-align:2px}
+.tag.reich{background:var(--c1-soft);color:var(--c1)}
+.tag.religion{background:var(--c3-soft);color:var(--c3)}
+.tag.europa{background:var(--c2-soft);color:var(--c2)}
+.tag.krieg{background:var(--c4-soft);color:var(--c4)}
+.tag.kultur{background:var(--c5-soft);color:var(--c5)}
+.tl li.hide{display:none}
+
+/* people */
+.people{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.person{background:var(--bg);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:0;padding:14px 16px}
+.person h4{margin:0}
+.person .life{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin-bottom:4px}
+.person .role{font-family:var(--sans);font-size:.7rem;letter-spacing:.12em;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+.person p{font-size:.93rem;margin:.35rem 0 0}
+
+/* glossary */
+dl.gloss{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:0;margin:0}
+dl.gloss dt,dl.gloss dd{padding:9px 6px;border-bottom:1px solid var(--line);margin:0}
+dl.gloss dt{font-weight:700;font-family:var(--serif)}
+.g{text-decoration:underline dotted;text-underline-offset:3px;color:inherit;cursor:help}
+
+.sources li{margin:.4rem 0}
+footer{font-family:var(--sans);text-align:center;color:var(--muted);font-size:.8rem;letter-spacing:.04em;padding:22px 20px 30px;border-top:1px solid var(--line);max-width:1240px;margin:0 auto}
+#top{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border-radius:0;border:1px solid var(--accent);background:var(--accent);color:var(--paper);font-size:1.3rem;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s}
+#top.show{opacity:1;pointer-events:auto}
+
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr;padding:16px 16px 70px;gap:16px}
+  nav.toc{position:relative;top:0;max-height:none}
+  nav.toc ol{display:none}
+  nav.toc.open ol{display:block}
+  .toc-toggle{display:block;width:100%;font:inherit;font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;background:none;border:none;color:var(--ink);text-align:left;cursor:pointer;padding:2px 6px}
+  nav.toc .toc-title{display:none}
+  .toc-toggle::after{content:"+";float:right;font-weight:400}
+  nav.toc.open .toc-toggle::after{content:"\2013"}
+  section.chapter{padding:22px 18px}
+  h2{font-size:1.55rem}
+  dl.gloss{grid-template-columns:1fr}
+  dl.gloss dt{border-bottom:none;padding-bottom:0}
+  .mini-tl li{grid-template-columns:1fr;gap:0}
+  .chain li{grid-template-columns:36px 1fr;gap:4px 14px}
+  .chain .n{grid-row:span 2}
+  .chain .desc{grid-column:2}
+}
+@media print{
+  nav.toc,#top,#progress,.filters,.theme-btn{display:none!important}
+  .layout{display:block;padding:0}
+  section.chapter{box-shadow:none;break-inside:auto;border:none;padding:10px 0}
+  details{display:block}
+  details>*{display:block}
+  .hero{background:none;color:#000}
+  .hero h1{color:#000}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<!-- Der Philosopher: Leiste -->
+<style>
+.ph-bar{background:var(--paper);border-bottom:1px solid var(--line);font-family:var(--sans)}
+.ph-bar .ph-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:baseline;gap:6px 18px;flex-wrap:wrap}
+.ph-brand{font-family:var(--serif);font-size:1.35rem;font-weight:600;line-height:1.2;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.ph-brand i{font-weight:400;font-size:.72em;color:var(--muted);margin-right:.18em}
+.ph-links{display:flex;gap:18px;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.ph-links a{color:var(--muted);text-decoration:none}
+.ph-links a:hover{color:var(--accent);text-decoration:underline}
+footer .ph-foot a{color:var(--muted)}
+@media (max-width:700px){.ph-bar .ph-in{padding:8px 16px}}
+@media print{.ph-bar{display:none}}
+</style>
+<nav class="ph-bar" aria-label="Der Philosopher"><div class="ph-in">
+  <a class="ph-brand" href="index.html"><i>Der</i>Philosopher</a>
+  <div class="ph-links"><a href="index.html#politik">Politik</a><a href="index.html">Titelseite</a></div>
+</div></nav>
+
+
+<header class="hero">
+  <div class="kicker">Deutsche Zeitgeschichte und Politik</div>
+  <h1>Vom Euro-Protest zum Griff nach der Macht</h1>
+  <p>Wie die AfD seit ihrer Gründung ihren Weg plante, mehrfach neu ausrichtete und ihre Strategie schließlich gezielt gegen die Union wandte – erzählt anhand ihrer internen Strategiepapiere und der Ereignisse, die sie prägten.</p>
+  <div class="years">2013 – 2026</div>
+</header>
+
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Inhaltsverzeichnis">
+  <button class="toc-toggle" id="tocToggle" aria-expanded="false">Inhaltsverzeichnis</button>
+  <div class="toc-title">Inhalt</div>
+  <ol>
+    <li><a href="#ueberblick"><span class="num">1</span>Überblick: Worum geht es?</a></li>
+    <li><a href="#ausgangslage"><span class="num">2</span>Das Parteiensystem um 2013</a></li>
+    <li><a href="#gruendung"><span class="num">3</span>Von der Professorenpartei zur Protestpartei</a></li>
+    <li><a href="#strategie2017"><span class="num">4</span>Papier I: Provokation als Methode</a></li>
+    <li><a href="#strategie2019"><span class="num">5</span>Papier II: Der Weg zur Volkspartei</a></li>
+    <li><a href="#aufstieg"><span class="num">6</span>Aufstieg im Osten und in Europa</a></li>
+    <li><a href="#btw2025"><span class="num">7</span>Bundestagswahl 2025: Kampffeld Migration</a></li>
+    <li><a href="#brandmauerpapier"><span class="num">8</span>Papier III: Das Ende der Brandmauer</a></li>
+    <li><a href="#wirtschaft"><span class="num">9</span>Angriff auf den Markenkern Wirtschaft</a></li>
+    <li><a href="#kulturkampf"><span class="num">10</span>Kulturkampf: Die Mitte unter Druck</a></li>
+    <li><a href="#flaeche"><span class="num">11</span>Verankerung in der Fläche</a></li>
+    <li><a href="#wahljahr2026"><span class="num">12</span>Superwahljahr 2026 und Machtfrage</a></li>
+    <li><a href="#union"><span class="num">13</span>Die Antwort der Union</a></li>
+    <li><a href="#bilanz"><span class="num">14</span>Bilanz: Was hat sich verändert?</a></li>
+    <li><a href="#zeitleiste"><span class="num">15</span>Zeitleiste 2013–2026</a></li>
+    <li><a href="#personen"><span class="num">16</span>Wichtige Personen</a></li>
+    <li><a href="#glossar"><span class="num">17</span>Glossar</a></li>
+    <li><a href="#quellen"><span class="num">18</span>Quellen &amp; Weiterlesen</a></li>
+  </ol>
+  <button class="theme-btn" id="themeBtn" type="button">Darstellung: hell / dunkel</button>
+</nav>
+
+<main>
+
+<!-- ============ 1 UEBERBLICK ============ -->
+<section class="chapter" id="ueberblick">
+  <div class="chap-head"><div class="chap-num">1</div><div>
+    <span class="span-chip">Einstieg</span>
+    <h2>Überblick: Worum geht es?</h2>
+  </div></div>
+  <p class="lead">In gut dreizehn Jahren wurde aus einer kleinen Partei euroskeptischer Wirtschaftsprofessoren die in Umfragen stärkste politische Kraft Deutschlands. Dieser Weg war nicht nur Folge äußerer Krisen, sondern auch das Ergebnis geplanter Strategien – die sich mehrfach änderten.</p>
+
+  <p>Dieses Dokument behandelt keine abgeschlossene Epoche, sondern eine laufende Entwicklung der deutschen Politik. Im Mittelpunkt steht die Frage, mit welcher <strong>Strategie</strong> die Alternative für Deutschland (AfD) ihre Ziele verfolgt hat: Wen wollte sie ansprechen? Wen sah sie als Hauptgegner? Wie wollte sie an die Macht kommen? Die wichtigsten Quellen dafür sind die <strong>internen Strategiepapiere</strong> der Partei. Sie waren nicht für die Öffentlichkeit bestimmt, wurden aber über Medien bekannt.</p>
+
+  <h3>Warum gerade 2013 und 2026?</h3>
+  <div class="grid">
+    <div class="card"><div class="yr">2013</div><h4>Gründung als Euro-Partei</h4><p>Im Februar 2013 gründen Bernd Lucke, Alexander Gauland und andere die AfD. Anlass ist die Euro-Rettungspolitik der Regierung Merkel. Bei der Bundestagswahl im September scheitert die Partei mit 4,7 Prozent knapp an der Fünf-Prozent-Hürde.</p></div>
+    <div class="card"><div class="yr">2026</div><h4>An der Schwelle zur Regierung</h4><p>Im September 2026 gewinnt die AfD die Landtagswahlen in Sachsen-Anhalt (43,8 Prozent) und Mecklenburg-Vorpommern (38,2 Prozent). Bundesweit liegt sie in Umfragen vor der Union. Zugleich bereitet sie sich in Papieren auf eine Minderheitsregierung der Union vor. Das Dokument endet mit dem Stand Anfang Oktober 2026.</p></div>
+  </div>
+
+  <h3>Die Zeit in vier Abschnitten</h3>
+  <div class="erabar" role="img" aria-label="Zeitbalken mit vier Abschnitten von 2013 bis 2026">
+    <div class="era-a">Euro-Protest<small>2013–2015</small></div>
+    <div class="era-b">Protest und Provokation<small>2015–2019</small></div>
+    <div class="era-c">Volkspartei-Anspruch<small>2019–2024</small></div>
+    <div class="era-d">Angriff auf die Union<small>2024–2026</small></div>
+  </div>
+  <div class="erascale"><span>2013</span><span>2015</span><span>2019</span><span>2024</span><span>2026</span></div>
+
+  <div class="box kurz"><div class="box-title">Kurz gesagt – die ganze Entwicklung in fünf Sätzen</div>
+    <ol>
+      <li>Die AfD entstand 2013 als Protest gegen die Euro-Rettung und wandelte sich ab 2015 zu einer Partei, deren Kernthema die Migration ist.</li>
+      <li>Ihre erste Strategie setzte auf gezielte Provokation, um Aufmerksamkeit zu erzeugen und sich als Tabubrecherin gegen die übrigen Parteien zu stellen.</li>
+      <li>Ab 2019 wollte sie als bürgerliche „Volkspartei“ erscheinen, radikalisierte sich aber zugleich weiter und wurde vom Verfassungsschutz beobachtet.</li>
+      <li>Seit dem Wahlkampf 2025 richtet sie ihre Strategie vor allem gegen die Union: erst über das Thema Migration, dann über die Wirtschaftskompetenz und einen Kulturkampf, der die politische Mitte spalten soll.</li>
+      <li>2026 steht die Partei im Osten vor ersten Regierungsoptionen und plant bereits für den Fall, dass die schwarz-rote Bundesregierung zerbricht.</li>
+    </ol>
+  </div>
+
+  <h3>Der rote Faden</h3>
+  <p>Die Entwicklung lässt sich als Kette von Ursachen und Folgen lesen. Jede Stufe veränderte die Ausgangslage für die nächste.</p>
+  <ol class="chain" aria-label="Abfolge von Ursachen und Folgen">
+    <li><span class="n">1</span><b>Euro-Kritik</b><span class="desc">Gründung als Professorenpartei</span></li>
+    <li><span class="n">2</span><b>Flüchtlingszuzug 2015</b><span class="desc">Wende zur Migrationspartei</span></li>
+    <li><span class="n">3</span><b>Provokation</b><span class="desc">Aufmerksamkeit als Methode</span></li>
+    <li><span class="n">4</span><b>Volkspartei-Anspruch</b><span class="desc">bürgerliches Bild, radikale Basis</span></li>
+    <li><span class="n">5</span><b>Migrationswahlkampf</b><span class="desc">das eigene Thema bestimmt die Agenda</span></li>
+    <li><span class="n">6</span><b>Angriff auf die Union</b><span class="desc">Wirtschaft und Glaubwürdigkeit</span></li>
+    <li><span class="n">7</span><b>Machtfrage</b><span class="desc">Tolerierung und Regierung</span></li>
+  </ol>
+  <p>Ein <strong>zweiter Faden</strong> zieht sich durch alle Abschnitte: das Spannungsverhältnis zwischen Radikalisierung und <a class="g" href="#g-normalisierung">Normalisierung</a>. Die Strategiepapiere zielen fast immer darauf, gemäßigter und „bürgerlicher“ zu wirken. Gleichzeitig gewannen in der Partei die radikaleren Kräfte an Einfluss. Die Politikwissenschaftlerin Anna-Sophie Heinze beschreibt den deutschen Fall deshalb als Sonderfall: Anders als etwa in Schweden oder Frankreich habe sich die Rechtsaußen-Partei nicht gemäßigt, sondern sei zugleich radikaler und gesellschaftlich normaler geworden.</p>
+
+  <h3>Die Strategiepapiere im Überblick</h3>
+  <p>Drei große Grundsatzpapiere markieren die Hauptstationen. Dazu kommen mehrere kleinere Papiere, die einzelne Schritte vorbereiten.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Papier</th><th>Zeit und Urheber</th><th>Kernidee</th></tr>
+    <tr><td><strong>„Die Strategie der AfD für das Wahljahr 2017“</strong></td><td>Dezember 2016, Bundesvorstand</td><td>Sorgfältig geplante Provokationen sollen Aufmerksamkeit erzeugen; Abgrenzung von allen „<a class="g" href="#g-altparteien">Altparteien</a>“.</td></tr>
+    <tr><td><strong>„Strategie 2019–2025. Die AfD auf dem Weg zur Volkspartei“</strong></td><td>Mitte 2019, maßgeblich Georg Pazderski</td><td>Bürgerliches Auftreten, 20 bis 30 Prozent bis 2025, erste Tolerierungen auf Landesebene.</td></tr>
+    <tr><td>Entwurf zur Bundestagswahl</td><td>Oktober 2024, Bundesvorstand</td><td>Migration als Hauptthema; Normalisierung eigener Forderungen begrüßen; Wählerpotenzial bei Union und BSW.</td></tr>
+    <tr><td><strong>„Deutschland politisch gestalten – Das Ende der Brandmauer und der Weg in die Regierungsverantwortung“</strong></td><td>Juli 2025, Beatrix von Storch für die Bundestagsfraktion</td><td><a class="g" href="#g-akzeptanzumfeld">Akzeptanzumfeld</a> vergrößern, Schwarz-Rot spalten, Union bei der Wirtschaftskompetenz überholen.</td></tr>
+    <tr><td>„Ländliche Raumnahme“</td><td>März 2026, Sebastian Münzenmaier</td><td>Feste Treffpunkte in Dörfern; stärkste Kraft in mehr als der Hälfte der Kreise.</td></tr>
+    <tr><td>Papier zur Minderheitsregierung</td><td>bekannt seit September 2026, Sebastian Münzenmaier</td><td>Drei Varianten des Umgangs mit einer Minderheitsregierung der Union.</td></tr>
+  </table></div>
+
+  <div class="box warum"><div class="box-title">Wie dieses Dokument mit dem Thema umgeht</div>
+    <p>Die AfD ist eine der umstrittensten Parteien der Bundesrepublik. Dieses Dokument beschreibt ihre Strategie sachlich und so weit wie möglich anhand ihrer eigenen Papiere. Bewertungen werden ihren Urhebern zugeordnet: dem Verfassungsschutz, Gerichten, der Forschung, politischen Gegnern oder der AfD selbst. Die Partei versteht sich als „freiheitlich-konservative Volkspartei“ und hält ihre Ausgrenzung für undemokratisch. Der Verfassungsschutz stufte sie 2025 als gesichert rechtsextremistisch ein; diese Einstufung ist gerichtlich vorläufig ausgesetzt (siehe Kapitel 6 und 13). Weil die Ereignisse sehr jung sind, sind manche Einschätzungen vorläufig.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>2013:</strong> Gründung als Anti-Euro-Partei → Scheitern an der Fünf-Prozent-Hürde.</li>
+      <li><strong>Drei Grundsatzpapiere</strong> (2016, 2019, 2025) markieren die Strategiewechsel: Provokation → Volkspartei → Angriff auf die Union.</li>
+      <li>Die Papiere wurden <strong>nicht offiziell veröffentlicht</strong>, sondern über Medien bekannt.</li>
+      <li>Roter Faden: Die Partei sucht bürgerliche Anschlussfähigkeit und radikalisiert sich zugleich.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 2 AUSGANGSLAGE ============ -->
+<section class="chapter" id="ausgangslage">
+  <div class="chap-head"><div class="chap-num">2</div><div>
+    <span class="span-chip">Ausgangslage</span>
+    <h2>Das Parteiensystem um 2013</h2>
+  </div></div>
+  <p class="lead">Um die Strategie der AfD zu verstehen, muss man wissen, in welche Lücke sie stieß: Die Union unter Angela Merkel war in die politische Mitte gerückt, und rechts von ihr gab es keine erfolgreiche Partei.</p>
+
+  <h3>Eine Union in der Mitte</h3>
+  <p>Seit 2005 regierte Angela Merkel (CDU), zunächst mit der SPD, ab 2009 mit der FDP. Die CDU modernisierte sich in dieser Zeit: Sie trug den Ausstieg aus der Wehrpflicht (2011) und aus der Atomkraft (2011) mit, öffnete sich in der Familienpolitik und bekannte sich zu Deutschland als Einwanderungsland. Konservative Kritiker sprachen von einer „Sozialdemokratisierung“ der Union. Der langjährige Grundsatz von Franz Josef Strauß, rechts von der Union dürfe es keine demokratisch legitimierte Partei geben, schien lange zu gelten.</p>
+  <p>In der <strong>Euro-Krise</strong> (ab 2010) beschloss die Bundesregierung Rettungspakete für Griechenland und andere Staaten sowie den dauerhaften Rettungsschirm ESM. Merkel bezeichnete ihre Politik als alternativlos. Genau auf dieses Wort antwortete der Parteiname: „Alternative für Deutschland“.</p>
+
+  <div class="grid">
+    <div class="card"><h4>Die Union</h4><p>Breite Volkspartei der Mitte, aber mit heimatlos gewordenen Wirtschaftsliberalen und Nationalkonservativen am rechten Rand.</p></div>
+    <div class="card"><h4>Die FDP</h4><p>Regierungspartei bis 2013, mitverantwortlich für die Euro-Rettung. 2013 scheiterte sie erstmals an der Fünf-Prozent-Hürde.</p></div>
+    <div class="card"><h4>Die SPD</h4><p>Seit der Agenda 2010 geschwächt; viele Arbeiter und Arbeitslose fühlten sich nicht mehr vertreten.</p></div>
+    <div class="card"><h4>Die extreme Rechte</h4><p>Parteien wie die NPD blieben bundesweit bedeutungslos. Ihr Stigma schreckte bürgerliche Wähler ab.</p></div>
+  </div>
+
+  <div class="box warum"><div class="box-title">Warum ist das wichtig?</div>
+    <p>Die AfD verstand sich von Anfang an als Partei für enttäuschte Unionswähler. Das Verhältnis zur CDU ist deshalb der Schlüssel zu fast allen späteren Strategien: Mal wollte die AfD die Union „vor sich hertreiben“, mal ihr Wähler abwerben, mal sie zur Zusammenarbeit zwingen. Die Union wiederum beschloss 2018 einen <a class="g" href="#g-unvereinbarkeit">Unvereinbarkeitsbeschluss</a> gegen jede Zusammenarbeit mit der AfD, der später als „<a class="g" href="#g-brandmauer">Brandmauer</a>“ bekannt wurde.</p>
+  </div>
+
+  <h3>Rechtspopulismus in Europa um 2013</h3>
+  <p>Deutschland war in Westeuropa eher ein Nachzügler. In vielen Nachbarländern hatten sich rechtspopulistische Parteien längst etabliert – und manche gaben später Vorbilder für die Strategie der AfD ab.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Land</th><th>Partei</th><th>Lage um 2013 und Bedeutung für die AfD</th></tr>
+    <tr><td><strong>Österreich</strong></td><td>FPÖ</td><td>Seit 2000 zeitweise Regierungspartei. 2017 übernahm die ÖVP unter Sebastian Kurz viele FPÖ-Themen – für die AfD später das Warnbeispiel eines „<a class="g" href="#g-kurzstrache">Kurz-Strache-Effekts</a>“.</td></tr>
+    <tr><td><strong>Frankreich</strong></td><td>Front National (seit 2018 Rassemblement National)</td><td>Unter Marine Le Pen auf einem Kurs der „Entdämonisierung“, also der gezielten Mäßigung des Images.</td></tr>
+    <tr><td><strong>Niederlande</strong></td><td>PVV (Geert Wilders)</td><td>2010–2012 Duldung einer Minderheitsregierung – ein frühes Beispiel für eine <a class="g" href="#g-tolerierung">Tolerierung</a>.</td></tr>
+    <tr><td><strong>Dänemark</strong></td><td>Dänische Volkspartei</td><td>Stützte jahrelang bürgerliche Minderheitsregierungen und beeinflusste so die Migrationspolitik.</td></tr>
+    <tr><td><strong>Großbritannien</strong></td><td>UKIP</td><td>Euroskeptische Protestpartei; trug zum Brexit-Referendum 2016 bei.</td></tr>
+    <tr><td><strong>Ungarn</strong></td><td>Fidesz</td><td>Seit 2010 Regierung unter Viktor Orbán; Vorbild eines „illiberalen“ Staatsumbaus für Teile der europäischen Rechten.</td></tr>
+  </table></div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Merkels Mitte-Kurs</strong> hinterließ rechts von der Union eine Lücke.</li>
+      <li><strong>Euro-Krise:</strong> „alternativlose“ Rettungspolitik → Name und Gründungsanlass der AfD.</li>
+      <li>In Europa zeigten FPÖ, PVV und Dänische Volkspartei, wie Rechtspopulisten über <strong>Tolerierung</strong> Einfluss gewinnen können.</li>
+      <li>Das Verhältnis zur <strong>Union</strong> ist der Schlüssel zu allen späteren AfD-Strategien.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 3 GRUENDUNG ============ -->
+<section class="chapter" id="gruendung">
+  <div class="chap-head"><div class="chap-num">3</div><div>
+    <span class="span-chip">2013 – 2016</span>
+    <h2>Von der Professorenpartei zur Protestpartei</h2>
+  </div></div>
+  <p class="lead">In ihren ersten drei Jahren wechselte die AfD ihr Hauptthema, ihre Führung und ihre Wählerschaft. Aus der Kritik am Euro wurde die Kritik an der Flüchtlingspolitik.</p>
+
+  <h3>3.1 Die Gründung</h3>
+  <p>Am <strong>6. Februar 2013</strong> trafen sich die Gründer in Oberursel im Taunus, der Gründungsparteitag folgte am 14. April 2013 in Berlin. Zu den Gründern gehörten der Hamburger Volkswirtschaftsprofessor <strong>Bernd Lucke</strong>, der frühere CDU-Politiker <strong>Alexander Gauland</strong> und der Publizist Konrad Adam. Weil viele Ökonomen dabei waren, sprachen Medien von einer „Professorenpartei“. Das Programm war schmal: geordnete Auflösung oder Umbau der Eurozone, mehr Volksabstimmungen, Kritik an der EU-Bürokratie.</p>
+  <p>Schon früh gab es aber auch nationalkonservative Mitglieder, denen es um mehr als den Euro ging. Bei der Bundestagswahl im September 2013 erreichte die AfD aus dem Stand <strong>4,7 Prozent</strong>. Bei der Europawahl 2014 folgten 7,1 Prozent, im Herbst 2014 zog sie in die Landtage von Sachsen, Brandenburg und Thüringen ein.</p>
+
+  <h3>3.2 Der erste Richtungsstreit</h3>
+  <p>Im März 2015 veröffentlichten Björn Höcke und André Poggenburg die „Erfurter Resolution“. Sie warfen der Parteiführung vor, die AfD zu sehr an die etablierten Parteien anzupassen, und verlangten eine „Bewegung“ gegen die bestehende Politik. Daraus entstand der „<a class="g" href="#g-fluegel">Flügel</a>“, das völkisch-nationalistische Lager der Partei.</p>
+  <p>Auf dem Parteitag in Essen im <strong>Juli 2015</strong> unterlag Lucke deutlich gegen Frauke Petry. Er trat mit vielen Wirtschaftsliberalen aus der Partei aus. Viele Beobachter werten Essen als erste Häutung der AfD: Die liberal-konservative Gründergeneration verlor die Macht.</p>
+
+  <h3>3.3 Die Wende durch den Flüchtlingszuzug</h3>
+  <p>Im Sommer 2015 stand die geschwächte Partei in Umfragen bei etwa drei bis fünf Prozent. Dann kamen im Herbst 2015 sehr viele Geflüchtete nach Deutschland, im Jahr 2015 insgesamt etwa 890.000 Menschen. Die Entscheidung der Regierung Merkel, die Grenzen nicht zu schließen, wurde zum neuen Kernthema der AfD. Gauland nannte die Flüchtlingskrise später ein „Geschenk“ für seine Partei.</p>
+  <div class="grid">
+    <div class="card"><div class="yr">März 2016</div><h4>Landtagswahlen</h4><p>Sachsen-Anhalt 24,3 Prozent, Baden-Württemberg 15,1 Prozent, Rheinland-Pfalz 12,6 Prozent – erstmals große Erfolge auch im Westen.</p></div>
+    <div class="card"><div class="yr">Mai 2016</div><h4>Grundsatzprogramm</h4><p>Der Parteitag in Stuttgart beschließt das erste Grundsatzprogramm, unter anderem mit dem Satz, der Islam gehöre nicht zu Deutschland.</p></div>
+    <div class="card"><div class="yr">2016</div><h4>Neue Wählerschaft</h4><p>Statt Akademikern wählen nun vor allem Arbeiter, Arbeitslose, Ostdeutsche und frühere Nichtwähler die AfD.</p></div>
+  </div>
+
+  <div class="box warum"><div class="box-title">Warum wechselte das Thema so schnell?</div>
+    <p>Die Euro-Kritik sprach eine kleine, gebildete Wählergruppe an. Die Migration dagegen bewegte breite Schichten, besonders in Ostdeutschland. Für die neue Parteiführung war sie das Thema, mit dem sich die Partei von allen anderen unterscheiden konnte. In der Forschung spricht man von „issue ownership“: Wer ein Thema „besitzt“, profitiert, sobald es die öffentliche Debatte beherrscht. Diese Erfahrung prägte alle späteren Strategien – bis zum Wahlkampf 2025.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>2013:</strong> Gründung als euroskeptische „Professorenpartei“ → 4,7 Prozent.</li>
+      <li><strong>2015 (Essen):</strong> Petry stürzt Lucke → Austritt der Wirtschaftsliberalen.</li>
+      <li><strong>Herbst 2015:</strong> Flüchtlingszuzug → Migration wird Kernthema.</li>
+      <li><strong>„Flügel“</strong> ab 2015: völkisch-nationalistisches Lager um Björn Höcke.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 4 STRATEGIE 2017 ============ -->
+<section class="chapter" id="strategie2017">
+  <div class="chap-head"><div class="chap-num">4</div><div>
+    <span class="span-chip">2016 – 2019</span>
+    <h2>Papier I: Provokation als Methode</h2>
+  </div></div>
+  <p class="lead">Das erste bekannte Strategiepapier legte fest, wie die AfD in den Bundestag kommen wollte: nicht durch Mäßigung, sondern durch geplante Tabubrüche.</p>
+
+  <h3>4.1 Das Papier zum Wahljahr 2017</h3>
+  <p>Mitte <strong>Dezember 2016</strong> beschloss der Bundesvorstand ein internes Papier mit dem Titel „Die Strategie der AfD für das Wahljahr 2017“. Medien wie der Südwestrundfunk berichteten im Januar 2017 darüber. Die Kernaussagen lassen sich so zusammenfassen:</p>
+  <ul>
+    <li>Die AfD soll mit <strong>sorgfältig geplanten Provokationen</strong> arbeiten. Empörte Reaktionen der anderen Parteien und Medien sind erwünscht, weil sie Aufmerksamkeit bringen (<a class="g" href="#g-provokation">Provokationsstrategie</a>).</li>
+    <li>Die Partei soll bewusst „politisch inkorrekt“ sein und sich klar von allen anderen Parteien abgrenzen. Diese werden pauschal als „Altparteien“ bezeichnet.</li>
+    <li>Ständige Wiederholung derselben Botschaften wirke stärker als ständig neue Themen.</li>
+    <li>Soziale Netzwerke sollen eine eigene Gegenöffentlichkeit schaffen, unabhängig von klassischen Medien.</li>
+  </ul>
+
+  <div class="box warum"><div class="box-title">Warum Provokation?</div>
+    <p>Eine kleine Partei ohne Fernsehpräsenz und ohne Bündnispartner braucht vor allem eines: Aufmerksamkeit. Die Strategie rechnete damit, dass die anderen Parteien jede Grenzüberschreitung verurteilen würden. Dadurch stand die AfD im Mittelpunkt, konnte sich als einzige echte Opposition darstellen und ihre Anhänger in der Rolle von Außenseitern zusammenschweißen. Später nannte die AfD in ihren Papieren die Provokation ausdrücklich „kein Selbstzweck“ – sie sollte die Gegner herausfordern, die eigenen Wähler aber bestätigen.</p>
+  </div>
+
+  <h3>4.2 Grenzen des Konzepts</h3>
+  <p>Wie schwer sich Provokation steuern lässt, zeigte sich schon im Januar 2017. In einer Rede in Dresden bezeichnete Björn Höcke das Berliner Holocaust-Mahnmal als „Denkmal der Schande“ und forderte eine erinnerungspolitische Wende um 180 Grad. Der Bundesvorstand leitete ein Ausschlussverfahren ein, das jedoch scheiterte. Parteichefin Frauke Petry wollte die Partei mit einem „Zukunftsantrag“ auf einen realpolitischen Kurs verpflichten, der auf spätere Regierungsbeteiligung zielte. Der Kölner Parteitag im April 2017 befasste sich damit nicht einmal. Spitzenkandidaten wurden Alexander Gauland und Alice Weidel.</p>
+
+  <div class="grid">
+    <div class="card"><div class="yr">24.9.2017</div><h4>Einzug in den Bundestag</h4><p>Die AfD erreicht 12,6 Prozent und 94 Sitze. Weil Union und SPD erneut koalieren, wird sie größte Oppositionsfraktion.</p></div>
+    <div class="card"><div class="yr">25.9.2017</div><h4>Petry geht</h4><p>Einen Tag nach der Wahl kündigt Frauke Petry an, nicht der AfD-Fraktion anzugehören. Sie tritt kurz darauf aus.</p></div>
+    <div class="card"><div class="yr">Dez. 2017</div><h4>Neue Doppelspitze</h4><p>Jörg Meuthen und Alexander Gauland führen die Partei. Gauland hatte am Wahlabend angekündigt, man werde die Regierung „jagen“.</p></div>
+  </div>
+
+  <h3>4.3 Opposition im Bundestag</h3>
+  <p>Im Bundestag setzte die AfD die Strategie der Zuspitzung fort. Sie inszenierte sich als Stimme gegen das „Kartell“ der übrigen Parteien. Nach den Ausschreitungen in Chemnitz im Spätsommer 2018 marschierten AfD-Politiker gemeinsam mit Pegida-Anhängern. Im Januar 2019 erklärte das Bundesamt für Verfassungsschutz die Partei zum Prüffall; ein Gericht untersagte später die öffentliche Bezeichnung. Die CDU beschloss auf ihrem Hamburger Parteitag im Dezember 2018 die Unvereinbarkeit jeder Zusammenarbeit mit AfD und Linkspartei.</p>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Dezember 2016:</strong> Strategiepapier zum Wahljahr 2017 → geplante Provokation als Hauptmittel.</li>
+      <li><strong>2017:</strong> Höckes Dresdner Rede und Petrys gescheiterter Zukunftsantrag zeigen den Machtkampf der Lager.</li>
+      <li><strong>Bundestagswahl 2017:</strong> 12,6 Prozent → größte Oppositionsfraktion.</li>
+      <li><strong>2018:</strong> Die CDU beschließt die Unvereinbarkeit mit der AfD.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 5 STRATEGIE 2019 ============ -->
+<section class="chapter" id="strategie2019">
+  <div class="chap-head"><div class="chap-num">5</div><div>
+    <span class="span-chip">2019 – 2022</span>
+    <h2>Papier II: Der Weg zur Volkspartei</h2>
+  </div></div>
+  <p class="lead">Nach dem Einzug in den Bundestag wollte ein Teil der Führung die Partei koalitionsfähig machen. Das zweite Strategiepapier entwarf einen Sechsjahresplan – die Wirklichkeit verlief jedoch anders.</p>
+
+  <h3>5.1 Der Sechsjahresplan</h3>
+  <p>Mitte 2019 entstand das rund 72-seitige Papier „<strong>Strategie 2019–2025. Die AfD auf dem Weg zur Volkspartei</strong>“. Als Hauptautor gilt der damalige stellvertretende Parteivorsitzende und Berliner Landeschef <strong>Georg Pazderski</strong>. Der Bundesvorstand billigte es im Spätsommer 2019 in weiten Teilen. Die wichtigsten Punkte:</p>
+  <div class="grid">
+    <div class="card"><h4>Imagewandel</h4><p>Die AfD soll als „liberal-konservativ-patriotische <a class="g" href="#g-volkspartei">Volkspartei</a>“ erscheinen. Hasstiraden und sinnlose Provokationen sollen unterbleiben, weil sie das Bürgertum abschrecken.</p></div>
+    <div class="card"><h4>Ehrgeizige Ziele</h4><p>Bei der Bundestagswahl 2025 mindestens 20, bestenfalls 30 Prozent; etwa 70.000 Mitglieder; erste Tolerierung von Minderheitsregierungen oder Regierungsbeteiligung in Ländern.</p></div>
+    <div class="card"><h4>„Marsch durch die Organisationen“</h4><p>In Anlehnung an die 68er sollen Mitglieder in Vereine, Bürgerinitiativen, Nachbarschaftsgruppen und Gewerkschaften gehen und dort als engagierte Bürger wahrgenommen werden.</p></div>
+    <div class="card"><h4>Neue Wählergruppen</h4><p>Handwerker, Selbstständige, Arbeiter, junge Menschen, Nichtwähler und Menschen mit Migrationshintergrund, um dem Vorwurf der Ausländerfeindlichkeit zu begegnen.</p></div>
+    <div class="card"><h4>Außenpolitik</h4><p>Das Papier warnte vor Anti-Amerikanismus und unkritischer Russland-Verehrung, weil diese konservative Wähler abschreckten.</p></div>
+  </div>
+
+  <h3>5.2 Was dann geschah</h3>
+  <p>Die Jahre nach 2019 liefen in vieler Hinsicht gegen den Plan:</p>
+  <ul>
+    <li><strong>Thüringen 2020:</strong> Am 5. Februar 2020 wurde der FDP-Politiker Thomas Kemmerich mit Stimmen von AfD, CDU und FDP zum Ministerpräsidenten gewählt. Die AfD hatte zuvor einen eigenen Kandidaten aufgestellt, ihm im entscheidenden Wahlgang aber keine Stimme gegeben. Nach bundesweiter Empörung trat Kemmerich zurück. Für die CDU wurde der Vorgang zum Lehrstück, für die AfD zum Beweis, dass sie Mehrheiten beeinflussen kann.</li>
+    <li><strong>Verfassungsschutz:</strong> Im März 2020 stufte das Bundesamt den „Flügel“ als gesichert rechtsextremistisch ein; der Flügel wurde daraufhin formal aufgelöst. Im März 2021 wurde die Gesamtpartei zum <a class="g" href="#g-verdachtsfall">Verdachtsfall</a> erklärt.</li>
+    <li><strong>Corona-Pandemie:</strong> Die AfD wurde zur Stimme der Maßnahmenkritiker und näherte sich Teilen der Querdenker-Bewegung an.</li>
+    <li><strong>Bundestagswahl 2021:</strong> Mit 10,3 Prozent verlor die AfD Stimmen – das erste Mal seit ihrer Gründung.</li>
+    <li><strong>Austritt Meuthens:</strong> Im Januar 2022 verließ Parteichef Jörg Meuthen die AfD mit der Begründung, Teile der Partei stünden nicht mehr auf dem Boden der Verfassung. Pazderski folgte 2024.</li>
+  </ul>
+
+  <div class="tablewrap"><table>
+    <tr><th>Ziel im Papier 2019</th><th>Stand 2025</th></tr>
+    <tr><td><strong>20 bis 30 Prozent bei der Bundestagswahl 2025</strong></td><td>Erreicht: 20,8 Prozent – allerdings nicht als gemäßigte, sondern als weiter radikalisierte Partei.</td></tr>
+    <tr><td><strong>70.000 Mitglieder</strong></td><td>2019 etwa 35.000, später zeitweise deutlich unter 30.000; 2024 näherte sich die Zahl 50.000.</td></tr>
+    <tr><td><strong>Bürgerliches Image</strong></td><td>Nicht erreicht: Einstufungen durch den Verfassungsschutz, Skandale um die Europaliste 2024.</td></tr>
+    <tr><td><strong>Distanz zu Russland</strong></td><td>Gegenteil: Große Teile der Partei lehnen Sanktionen und Waffenlieferungen nach dem russischen Angriff auf die Ukraine ab.</td></tr>
+    <tr><td><strong>Tolerierung oder Regierung in Ländern</strong></td><td>Nicht erreicht; die Brandmauer hielt. Erst 2026 rückt eine Regierungsoption in Sachsen-Anhalt näher.</td></tr>
+  </table></div>
+
+  <div class="box achtung"><div class="box-title">Volkspartei ohne Mäßigung</div>
+    <p>Rückblickend erreichte die AfD das Wahlziel des Papiers, aber auf einem anderen Weg als geplant. Beobachter wie die Recherche-Plattform Endstation Rechts urteilen, dass der Weg zur „Volkspartei“ nicht mit einem bürgerlich-gemäßigten, sondern mit einem radikal-oppositionellen Auftreten einherging. Neue Wähler störten sich offenbar weniger an Radikalität als erwartet. Erfolgreich umgesetzt wurden dagegen andere Teile des Papiers: die Präsenz in sozialen Medien und die Prägung eigener Kampfbegriffe.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>2019:</strong> Pazderski-Papier → Ziel „respektierte Volkspartei“, 20 bis 30 Prozent bis 2025.</li>
+      <li><strong>2020:</strong> Kemmerich-Wahl in Thüringen → Rücktritt, Belastungsprobe der Brandmauer.</li>
+      <li><strong>2020/21:</strong> Flügel gesichert rechtsextremistisch, Gesamtpartei Verdachtsfall.</li>
+      <li><strong>2021/22:</strong> Stimmenverlust (10,3 Prozent) und Austritt Meuthens → Machtgewinn der radikaleren Lager.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 6 AUFSTIEG ============ -->
+<section class="chapter" id="aufstieg">
+  <div class="chap-head"><div class="chap-num">6</div><div>
+    <span class="span-chip">2022 – 2024</span>
+    <h2>Aufstieg im Osten und in Europa</h2>
+  </div></div>
+  <p class="lead">Unter der neuen Doppelspitze Weidel und Chrupalla stieg die AfD trotz Skandalen und Massenprotesten zur stärksten Partei in Teilen Ostdeutschlands auf.</p>
+
+  <h3>6.1 Neue Führung, neue Lage</h3>
+  <p>Im Juni 2022 wählte der Parteitag in Riesa <strong>Tino Chrupalla</strong> und <strong>Alice Weidel</strong> zur Doppelspitze. Die Unzufriedenheit mit der Ampel-Regierung aus SPD, Grünen und FDP, die steigenden Energiepreise nach dem russischen Angriff auf die Ukraine und der Streit um das Heizungsgesetz ließen die AfD 2023 in Umfragen auf rund 20 Prozent steigen. Im Juni 2023 wurde in Sonneberg (Thüringen) mit Robert Sesselmann erstmals ein AfD-Politiker Landrat.</p>
+
+  <h3>6.2 Rückschläge</h3>
+  <p>Im <strong>Januar 2024</strong> berichtete das Recherchenetzwerk Correctiv über ein Treffen in Potsdam, bei dem rechtsextreme Aktivisten und einzelne AfD-Politiker über „<a class="g" href="#g-remigration">Remigration</a>“ gesprochen hatten. Danach demonstrierten bundesweit Hunderttausende gegen Rechtsextremismus. Im Mai 2024 bestätigte das Oberverwaltungsgericht Münster die Einstufung als Verdachtsfall. Vor der Europawahl sorgten Spitzenkandidat Maximilian Krah und Petr Bystron mit Spionage- und Bestechungsvorwürfen für Schlagzeilen.</p>
+
+  <h3>6.3 Erfolge trotz allem</h3>
+  <div class="grid">
+    <div class="card"><div class="yr">9.6.2024</div><h4>Europawahl</h4><p>15,9 Prozent, zweitstärkste Kraft in Deutschland, stärkste Kraft in allen ostdeutschen Flächenländern.</p></div>
+    <div class="card"><div class="yr">1.9.2024</div><h4>Thüringen und Sachsen</h4><p>In Thüringen wird die AfD mit 32,8 Prozent erstmals stärkste Kraft bei einer Landtagswahl, in Sachsen erreicht sie 30,6 Prozent.</p></div>
+    <div class="card"><div class="yr">22.9.2024</div><h4>Brandenburg</h4><p>29,2 Prozent, knapp hinter der SPD. Überall bleibt die AfD ohne Koalitionspartner.</p></div>
+  </div>
+
+  <h3>6.4 Die AfD im europäischen Zusammenhang</h3>
+  <p>Im Europaparlament wurde die AfD nach der Wahl 2024 aus der Fraktion „Identität und Demokratie“ ausgeschlossen, der unter anderem Marine Le Pens Rassemblement National angehörte. Le Pen wollte sich von der als zu radikal geltenden AfD abgrenzen. Die AfD gründete daraufhin mit kleineren Parteien die Fraktion „Europa der Souveränen Nationen“ (ESN). Andere europäische Rechtsparteien gingen den Weg der Mäßigung: Giorgia Meloni in Italien führt seit 2022 eine Regierung, die Schwedendemokraten stützen eine bürgerliche Regierung. Die AfD dagegen blieb auch innerhalb der europäischen Rechten eher isoliert – ein Hinweis darauf, wie weit sie von dem 2019 angestrebten Image entfernt war.</p>
+
+  <div class="box warum"><div class="box-title">Warum schadeten die Skandale kaum?</div>
+    <p>Forschungsergebnisse und Wahlanalysen deuten darauf hin, dass sich ein fester Wählerkern gebildet hatte, der die AfD nicht mehr nur aus Protest, sondern aus Überzeugung wählte. Für diese Wähler wirkten Berichte über Skandale eher als Bestätigung, dass „das System“ gegen ihre Partei arbeite. Die AfD nutzte diese Opfererzählung gezielt: Ihr stehe ein breites Bündnis aus Regierungsparteien, Medien und Organisationen gegenüber.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>2022:</strong> Doppelspitze Weidel/Chrupalla.</li>
+      <li><strong>Januar 2024:</strong> Correctiv-Recherche zum Potsdamer Treffen → Massenproteste.</li>
+      <li><strong>2024:</strong> Europawahl 15,9 Prozent, Thüringen 32,8 Prozent → erstmals stärkste Kraft in einem Land.</li>
+      <li>In Europa blieb die AfD <strong>isoliert</strong>, während andere Rechtsparteien sich mäßigten.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 7 BTW 2025 ============ -->
+<section class="chapter" id="btw2025">
+  <div class="chap-head"><div class="chap-num">7</div><div>
+    <span class="span-chip">Oktober 2024 – Februar 2025</span>
+    <h2>Bundestagswahl 2025: Kampffeld Migration</h2>
+  </div></div>
+  <p class="lead">Im vorgezogenen Wahlkampf 2025 wurde die Migration zum beherrschenden Thema – also genau das Feld, auf dem die AfD ihre größte Stärke sah. Die Folgen sind bis heute umstritten.</p>
+
+  <h3>7.1 Der Strategieentwurf vom Oktober 2024</h3>
+  <p>Im Oktober 2024 entstand im Bundesvorstand der Entwurf einer Wahlkampfstrategie, über den zuerst die „Welt“ berichtete. Er war für eine Wahl im Herbst 2025 gedacht; nach dem Bruch der Ampel am 6. November 2024 wurde er plötzlich aktuell. Wichtige Linien:</p>
+  <ul>
+    <li><strong>Migration als Hauptthema:</strong> Die eigenen Wähler würden vor allem mit dem Thema illegale Migration mobilisiert. Viele andere Probleme – von innerer Sicherheit über Wohnen bis Rente – ließen sich darauf zurückführen.</li>
+    <li><strong>Normalisierung begrüßen:</strong> Die AfD stellte zufrieden fest, dass andere Parteien ihre Forderungen übernähmen. Sie sah darin eine wachsende Anschlussfähigkeit und wollte gemeinsame Schnittmengen mit Parteien sichtbar machen, die eine Zusammenarbeit noch ablehnten.</li>
+    <li><strong>Gegner vor sich hertreiben:</strong> Die AfD wollte die Themen bestimmen und ihre Konkurrenten zum Reagieren zwingen.</li>
+    <li><strong>Zielgruppen:</strong> Hauptgegner im Abstrakten seien SPD und Grüne; um Stimmen konkurriere man aber vor allem mit der Union und dem Bündnis Sahra Wagenknecht (BSW).</li>
+    <li><strong>Kalkulierte Provokation:</strong> Provokationen sollten Gegner herausfordern, die eigenen Wähler aber bestätigen.</li>
+  </ul>
+
+  <div class="box achtung"><div class="box-title">Ein wichtiger Unterschied</div>
+    <p>Wollte die AfD die Union gezielt auf das Feld der Migration locken? So einfach ist es nicht. Laut einem Bericht von Table.Briefings vom Oktober 2024 warnten Strategen der Parteispitze sogar davor, sich mit der CDU einen <a class="g" href="#g-ueberbietung">Überbietungswettbewerb</a> um die härteste Migrationspolitik zu liefern. Sie fürchteten einen „Kurz-Strache-Effekt“: Die Union könnte AfD-Positionen in bürgerlicher Form übernehmen und sich als „Weidel light“ präsentieren, wie es 2017 Sebastian Kurz in Österreich gegen die FPÖ gelungen war. Das Ziel war also weniger, die Union auf dieses Feld zu führen, als das Thema insgesamt so groß wie möglich zu machen – im Vertrauen darauf, dass die Wähler dann eher dem „Original“ folgen.</p>
+  </div>
+
+  <h3>7.2 Der Wahlkampf in drei Phasen</h3>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase I: Ampel-Bruch und Wahlkampfauftakt</h4><span class="yr">Nov. – Dez. 2024</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">6.11.2024</span><span>Kanzler Olaf Scholz entlässt Finanzminister Christian Lindner; die <strong>Ampel-Koalition zerbricht</strong>.</span></li>
+        <li><span class="d">16.12.2024</span><span>Scholz verliert die Vertrauensfrage; Neuwahl am 23. Februar 2025.</span></li>
+        <li><span class="d">20.12.2024</span><span><strong>Anschlag in Magdeburg:</strong> Ein aus Saudi-Arabien stammender Arzt rast mit einem Auto über den Weihnachtsmarkt. Sechs Menschen sterben, rund 300 werden verletzt. Der Täter galt als Islamkritiker mit Sympathien für die AfD – dennoch rückt die Debatte über Sicherheit und Migration ins Zentrum.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase II: Aschaffenburg und die Abstimmungen im Bundestag</h4><span class="yr">Jan. 2025</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">11.–12.1.2025</span><span>Parteitag in Riesa: Alice Weidel wird <strong>Kanzlerkandidatin</strong>; das Wahlprogramm enthält den Begriff „Remigration“.</span></li>
+        <li><span class="d">22.1.2025</span><span><strong>Messerangriff in Aschaffenburg:</strong> Ein ausreisepflichtiger Afghane tötet in einem Park einen zweijährigen Jungen und einen Mann, der helfen wollte. Der Täter wird später als schuldunfähig eingestuft.</span></li>
+        <li><span class="d">23.1.2025</span><span>CDU-Chef Friedrich Merz kündigt einen Fünf-Punkte-Plan an: dauerhafte Grenzkontrollen, Zurückweisungen auch von Asylsuchenden, Haft für Ausreisepflichtige. Er werde ihn einbringen, gleichgültig, wer zustimme.</span></li>
+        <li><span class="d">29.1.2025</span><span>Ein <a class="g" href="#g-entschliessungsantrag">Entschließungsantrag</a> der Union erhält erstmals in der Geschichte des Bundestages eine Mehrheit nur mit den Stimmen der AfD. Weidel spricht von einem großartigen Tag.</span></li>
+        <li><span class="d">31.1.2025</span><span>Das „Zustrombegrenzungsgesetz“ der Union scheitert knapp, weil Abgeordnete von Union und FDP fehlen oder nicht zustimmen. Altkanzlerin Merkel hatte Merz öffentlich kritisiert.</span></li>
+        <li><span class="d">Anfang Feb.</span><span>Hunderttausende demonstrieren bundesweit gegen eine Aufweichung der Brandmauer.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase III: Schlussspurt</h4><span class="yr">Feb. 2025</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">13.2.2025</span><span><strong>Anschlag in München:</strong> Ein Afghane fährt mit einem Auto in eine Gewerkschaftsdemonstration. Eine Mutter und ihre zweijährige Tochter sterben, Dutzende werden verletzt.</span></li>
+        <li><span class="d">Februar</span><span>Migration und Wirtschaft bleiben laut Umfragen die wichtigsten Themen für die Wahlentscheidung.</span></li>
+        <li><span class="d">23.2.2025</span><span><strong>Wahltag:</strong> Union 28,5 Prozent, AfD 20,8 Prozent, SPD 16,4 Prozent, Grüne 11,6 Prozent, Linke 8,8 Prozent; FDP und BSW scheitern.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> Die AfD verdoppelt ihr Ergebnis von 2021 und wird zweitstärkste Kraft. Die Wahlbeteiligung liegt mit 82,5 Prozent so hoch wie seit der Wiedervereinigung nicht mehr.</p>
+    </div>
+  </div>
+
+  <h3>7.3 Wem hat der Migrationswahlkampf genützt?</h3>
+  <p>Ob die Zuspitzung auf Migration der AfD genützt hat, lässt sich nicht exakt messen, weil niemand weiß, wie die Wahl ohne die Anschläge und die Abstimmungen ausgegangen wäre. Mehrere Befunde sprechen aber für die Vermutung, dass die AfD profitierte und die Union kaum:</p>
+  <div class="grid">
+    <div class="card"><h4>Die AfD</h4><p>Nach Berechnungen von Infratest dimap zur <a class="g" href="#g-waehlerwanderung">Wählerwanderung</a> gewann sie rund 1,8 Millionen frühere Nichtwähler und etwa eine Million Wähler von der Union. Das Thema, auf dem ihr die meiste Kompetenz zugeschrieben wird, dominierte den Wahlkampf.</p></div>
+    <div class="card"><h4>Die Union</h4><p>Eine Wahlstudie der CDU-nahen Konrad-Adenauer-Stiftung kam im Dezember 2025 zu dem Schluss, dass die Union von der Betonung der Migration ab Januar 2025 mutmaßlich nicht profitieren konnte. Frühere Sympathisanten wanderten wegen der Abstimmung mit der AfD zu SPD oder Grünen ab.</p></div>
+    <div class="card"><h4>Die Linke</h4><p>Laut derselben Studie profitierte vor allem die Linke: Sie lag im November 2024 bei etwa vier Prozent und erreichte 8,8 Prozent, weil sie als klarster Gegenpol zu Merz’ Kurs galt.</p></div>
+  </div>
+
+  <div class="box warum"><div class="box-title">Ging die Strategie auf?</div>
+    <p>Aus Sicht der AfD-Papiere in mehrfacher Hinsicht: Das eigene Thema bestimmte die Agenda; die Union stimmte in einer Kernfrage mit ihr ab, was die AfD als Schritt zur Normalisierung wertete; und Linke und AfD wurden zu den zwei Polen der Debatte. Genau dieses Bild einer Polarisierung zwischen AfD und Linker wurde im Sommer 2025 zum Baustein der nächsten Strategie. Eine Einschränkung bleibt: Die Union entschied sich selbst für ihren Kurs, und auch ohne AfD-Planung hätten die Anschläge die Debatte geprägt. Es handelt sich also um eine Mischung aus Strategie und Gelegenheit.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Oktober 2024:</strong> Wahlkampfentwurf → Migration als Hauptthema, Normalisierung begrüßen, aber kein Überbietungswettbewerb.</li>
+      <li><strong>Magdeburg, Aschaffenburg, München:</strong> Anschläge rücken Sicherheit und Migration ins Zentrum.</li>
+      <li><strong>29.1.2025:</strong> Erste Bundestagsmehrheit mit AfD-Stimmen → Proteste, Debatte über die Brandmauer.</li>
+      <li><strong>23.2.2025:</strong> AfD 20,8 Prozent → Verdopplung; nach einer KAS-Studie profitierte die Union nicht, wohl aber die Linke.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 8 BRANDMAUERPAPIER ============ -->
+<section class="chapter" id="brandmauerpapier">
+  <div class="chap-head"><div class="chap-num">8</div><div>
+    <span class="span-chip">Juli 2025</span>
+    <h2>Papier III: Das Ende der Brandmauer</h2>
+  </div></div>
+  <p class="lead">Wenige Monate nach der Wahl legte die AfD-Bundestagsfraktion ihre bislang ausführlichste Machtstrategie vor. Ihr Kern: Die AfD kann nur regieren, wenn die Brandmauer fällt – und die Brandmauer fällt, wenn die Union keine andere Wahl mehr hat.</p>
+
+  <h3>8.1 Entstehung</h3>
+  <p>Auf der ersten Klausur der neuen Bundestagsfraktion vom <strong>4. bis 6. Juli 2025</strong> stellte die stellvertretende Fraktionsvorsitzende <strong>Beatrix von Storch</strong> ein Papier mit dem Titel „Deutschland politisch gestalten – Das Ende der Brandmauer und der Weg in die Regierungsverantwortung“ vor. Politico und Correctiv machten es öffentlich. Es versteht sich ausdrücklich als Vorschlag für einen längeren Strategieprozess der Fraktion.</p>
+  <p>Die Ausgangsthese lautet: Es gebe in Deutschland eine Mitte-Rechts-Mehrheit für eine „Migrationswende“ und eine „Wirtschaftswende“. Die schwarz-rote Koalition beweise aber, dass beides ohne die AfD nicht möglich sei. Die Brandmauer werde fallen, wenn zwei Bedingungen erfüllt seien:</p>
+  <ol>
+    <li>Die AfD ist fest verankert, schöpft ihr Potenzial aus und gewinnt Akzeptanz über die eigene Wählerschaft hinaus (Teil I).</li>
+    <li>Koalitionen der Union mit linken Parteien sind nicht mehr möglich, weil der Graben zwischen ihnen zu tief geworden ist (Teil II).</li>
+  </ol>
+
+  <h3>8.2 Teil I: Mehrheiten schaffen</h3>
+  <p>Das Papier teilt die Bevölkerung in drei Gruppen ein und entwickelt für jede eine eigene Strategie.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Gruppe</th><th>Wer gehört dazu?</th><th>Ziel</th></tr>
+    <tr><td><strong><a class="g" href="#g-stammwaehler">Stammwähler</a></strong> (laut INSA etwa 18 Prozent)</td><td>Ostdeutsche, Arbeiter, Bewohner von Dörfern und Kleinstädten, Russlanddeutsche, Erstwähler – vor allem junge Männer</td><td>Bindung aus Überzeugung statt Protest; positives Selbstbild, etwa Arbeiter als eigentliche Leistungsträger, Ostdeutsche als Avantgarde der Freiheit.</td></tr>
+    <tr><td><strong><a class="g" href="#g-potenzial">Potenzial</a></strong> (zusammen bis etwa 30 Prozent)</td><td>Frauen, Akademiker, Großstädter, über 60-Jährige, kirchennahe Christen</td><td>Teilgruppen finden, zu denen sich Brücken schlagen lassen: etwa Hausfrauen und Mütter, Ingenieure, Bewohner von Brennpunkten, konservative Christen.</td></tr>
+    <tr><td><strong>Akzeptanzumfeld</strong></td><td>Wähler, die die AfD nicht wählen, eine Regierungsbeteiligung aber hinnehmen würden</td><td>Den Anteil derer, die Angst vor der AfD haben, ein Verbot befürworten oder jede Kooperation ablehnen, unter 50 Prozent drücken.</td></tr>
+  </table></div>
+
+  <h3>8.3 Teil II: Schwarz-Rot spalten</h3>
+  <p>Der zweite Teil ist der strategisch wichtigste. Das Papier erinnert an das Ende der Ampel, die an den Gegensätzen zwischen FDP und Rot-Grün zerbrochen sei. Zwischen dem marktwirtschaftlichen Flügel der Union und der SPD-Linken sei das Konfliktpotenzial ähnlich groß. Die AfD habe zwei Wege, diesen Graben zu vertiefen:</p>
+  <div class="grid">
+    <div class="card"><h4>Weg 1: Polarisierung gegen links</h4><p>Die politische Trennlinie soll nicht mehr zwischen der AfD und allen anderen verlaufen, sondern zwischen einem „bürgerlich-konservativen“ und einem sich radikalisierenden linken Lager – ausdrücklich „vergleichbar mit den USA“. Die Debatte soll auf ein Duell AfD gegen Linke zugespitzt werden. Weil die Linke auch gemäßigte konservative Positionen als AfD-nah angreife, würden die Gräben zwischen Union- und AfD-Wählern kleiner.</p></div>
+    <div class="card"><h4>Weg 2: Druck auf die Union</h4><p>Die AfD soll Anträge stellen, die bei Unionswählern beliebt sind, besonders bei denen, die die Union für eine Migrations- und Wirtschaftswende gewählt haben. Die Union gerät dann in ein Dilemma: Kompromisse mit der SPD treiben Wähler zur AfD, der Kampf um diese Wähler treibt sie in den Konflikt mit SPD und Grünen.</p></div>
+  </div>
+  <p>Daraus folgt eine <strong>zweigeteilte Kommunikation</strong>: Gegen links wird grundsätzlich gestritten, mit kulturellen Gegensatzpaaren wie Familie gegen „Gender“, Nation gegen offene Grenzen, Freiheit gegen Sozialismus (<a class="g" href="#g-kulturkampf">Kulturkampf</a>). Gegen die Union wird über Glaubwürdigkeit gestritten: Die AfD soll als „Original“ auftreten, das liefert, was die Union nur versprochen habe.</p>
+
+  <h3>8.4 Die Rechnung mit den vier Millionen</h3>
+  <p>Das Papier rechnet vor: Die Union habe 2025 rund vier Millionen Wähler von SPD (1,76 Millionen), FDP (1,35 Millionen) und aus dem Nichtwählerlager (0,9 Millionen) gewonnen. Diese <a class="g" href="#g-wechselwaehler">Wechselwähler</a> hätten wegen Wirtschaft, Sicherheit und Migration gewählt und seien erneut wechselbereit. Gewinne die AfD sie, steige sie von etwa zehn auf 14 Millionen Stimmen, also rund 28 Prozent, und werde stärkste Kraft. Der Schlüssel dazu sei neben der Migration die <a class="g" href="#g-kompetenz">Wirtschaftskompetenz</a> (siehe Kapitel 9).</p>
+
+  <h3>8.5 Außenpolitik als Störfaktor</h3>
+  <p>Auffällig knapp ist der Abschnitt zur Außenpolitik. Sie soll vor allem keine zusätzlichen Probleme schaffen: Konflikte in der eigenen Wählerschaft vermeiden und Angriffsflächen verringern. Correctiv wies darauf hin, dass das Papier die großen Gegensätze zwischen Union und AfD – etwa beim Verhältnis zu Russland, zur NATO und zur EU – bewusst ausklammert.</p>
+
+  <div class="box warum"><div class="box-title">Warum ist das Papier so bedeutsam?</div>
+    <p>Zum ersten Mal beschreibt die AfD nicht nur, wie sie Wähler gewinnen will, sondern wie sie das Parteiensystem umbauen will. Die Union ist darin zugleich „Wunschpartner“ und Hauptgegner: Sie soll so lange unter Druck gesetzt werden, bis sie nur noch zwischen zwei Übeln wählen kann – Selbstaufgabe in Koalitionen mit linken Parteien oder Zusammenarbeit mit der AfD. Viele spätere Ereignisse lassen sich als Umsetzungsversuche dieses Papiers lesen.</p>
+  </div>
+
+  <div class="box achtung"><div class="box-title">Kritische Einordnung</div>
+    <ul>
+      <li>Kritiker wie die Kampagnenorganisation Campact sehen darin eine Strategie der <a class="g" href="#g-selbstverharmlosung">Selbstverharmlosung</a>: Das Image werde poliert, die Inhalte blieben gleich.</li>
+      <li>Der damalige Unionsfraktionschef Jens Spahn reagierte gegenüber Correctiv kämpferisch: Die AfD könne planen, was sie wolle.</li>
+      <li>Ob die Gesellschaft sich tatsächlich wie in den USA in zwei Lager teilen lässt, ist offen. Das deutsche Verhältniswahlrecht und die Koalitionskultur unterscheiden sich stark vom amerikanischen Zweiparteiensystem.</li>
+    </ul>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Juli 2025:</strong> Papier von Beatrix von Storch → Ziel: Ende der Brandmauer und Regierungsverantwortung.</li>
+      <li><strong>Teil I:</strong> Stammwähler binden, Potenzial erschließen, Akzeptanzumfeld vergrößern (Ablehnung unter 50 Prozent).</li>
+      <li><strong>Teil II:</strong> Schwarz-Rot spalten → Polarisierung gegen links und Druck auf die Union.</li>
+      <li><strong>Rechnung:</strong> vier Millionen Wechselwähler der Union → AfD stärkste Kraft mit rund 28 Prozent.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 9 WIRTSCHAFT ============ -->
+<section class="chapter" id="wirtschaft">
+  <div class="chap-head"><div class="chap-num">9</div><div>
+    <span class="span-chip">2025 – 2026</span>
+    <h2>Angriff auf den Markenkern Wirtschaft</h2>
+  </div></div>
+  <p class="lead">Nach dem Amtsantritt von Friedrich Merz wollte die AfD die Union dort schlagen, wo sie traditionell am stärksten ist: beim Ansehen in Wirtschaftsfragen.</p>
+
+  <h3>9.1 Der Plan</h3>
+  <p>Im Papier vom Juli 2025 heißt es sinngemäß: Der <a class="g" href="#g-markenkern">Markenkern</a> der Union liege in der Wirtschafts- und Finanzkompetenz. Bei der Migration lägen die Kompetenzwerte von AfD und Union bereits nahe beieinander, in der Wirtschaft sei der Abstand noch groß. Ihn zu verringern und die Union schließlich zu überholen, sei die Schlüsselfrage. Die AfD solle sich als „Partei der Sozialen Marktwirtschaft“ präsentieren – ein Begriff, der eng mit Ludwig Erhard und der CDU verbunden ist.</p>
+  <p>Als Ansatzpunkte nennt das Papier:</p>
+  <ul>
+    <li>Die Lockerung der <a class="g" href="#g-schuldenbremse">Schuldenbremse</a> koste die Union erheblich an Glaubwürdigkeit; Staatsverschuldung und Zinslast würden zum Dauerthema.</li>
+    <li>In der Koalition mit der SPD seien tiefgreifende Strukturreformen unmöglich.</li>
+    <li>Die AfD könne marktwirtschaftliche Forderungen übernehmen, ohne dass die Union in der Koalition glaubwürdig dagegenhalten könne.</li>
+    <li>Sie könne sich ohne Rücksicht auf Klimaziele zu Wachstum und billiger Energie bekennen.</li>
+  </ul>
+
+  <h3>9.2 Die Gelegenheit: Merz’ Schuldenwende</h3>
+  <p>Den wichtigsten Anlass lieferte die Union selbst. Im Wahlkampf hatte Merz an der Schuldenbremse festgehalten. Nach der Wahl beschloss der noch alte Bundestag am <strong>18. März 2025</strong> mit Stimmen von Union, SPD und Grünen eine Grundgesetzänderung: Verteidigungsausgaben wurden weitgehend von der Schuldenbremse ausgenommen, dazu kam ein Sondervermögen von 500 Milliarden Euro für Infrastruktur. Viele Unionswähler empfanden das als Wortbruch. Am <strong>9. April 2025</strong> lag die AfD in einer Ipsos-Umfrage mit 25 zu 24 Prozent erstmals bundesweit vor der Union. Merz wurde am 6. Mai 2025 erst im zweiten Wahlgang zum Kanzler gewählt – ein Novum in der Geschichte der Bundesrepublik.</p>
+
+  <h3>9.3 Was die Umfragen zeigen</h3>
+  <p>Hat die Strategie funktioniert? Die Antwort hängt davon ab, welche Frage man betrachtet.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Messgröße</th><th>Befund</th></tr>
+    <tr><td><strong>Wirtschaftskompetenz (Infratest dimap)</strong></td><td>Der Anteil, der der AfD die größte Wirtschaftskompetenz zuschreibt, stieg von 12 Prozent (Februar 2025) auf 17 Prozent im Sommer 2025 und 18 Prozent (Februar 2026). Die Union fiel von 37 auf 31 Prozent, blieb aber deutlich vorn.</td></tr>
+    <tr><td><strong>Wirtschaftskompetenz gegenüber der SPD</strong></td><td>Im Sommer 2025 schrieben erstmals mehr Befragte der AfD als der SPD Wirtschaftskompetenz zu.</td></tr>
+    <tr><td><strong>Allgemeine Problemlösungskompetenz (Forsa)</strong></td><td>Von etwa März bis Juni 2026 trauten mehr Menschen der AfD als der Union zu, mit den Problemen des Landes fertigzuwerden (zeitweise 15 zu 13 Prozent). Ende Juni 2026 lag die Union knapp wieder vorn.</td></tr>
+    <tr><td><strong>Inflation (Ipsos, Frühjahr 2026)</strong></td><td>AfD und Union gleichauf bei je 16 Prozent.</td></tr>
+    <tr><td><strong>Sonntagsfrage</strong></td><td>Seit Frühjahr 2025 regelmäßig AfD vor Union; Anfang Oktober 2026 im ARD-Deutschlandtrend 27 zu 20 Prozent, in einzelnen Umfragen bis zu 30 Prozent für die AfD.</td></tr>
+  </table></div>
+
+  <div class="box warum"><div class="box-title">Teilweise erfolgreich</div>
+    <p>Das Ziel, die Union in der Wirtschaftskompetenz zu überholen, hat die AfD nach den großen Instituten bis Herbst 2026 nicht erreicht. Sie hat den Abstand aber deutlich verkleinert und in der allgemeinen Kompetenzfrage zeitweise die Führung übernommen. Wichtiger als der Gewinn eigener Kompetenz war offenbar der Verlust der Union: Unzufriedenheit mit der Regierung – zeitweise waren über 80 Prozent mit Kanzler Merz unzufrieden –, schwaches Wachstum und Streit über Sozialreformen schwächten den Markenkern der Union. Ein Ökonom des Instituts der deutschen Wirtschaft merkte an, die AfD sei als Oppositionspartei davon befreit nachzuweisen, dass sie es besser könne.</p>
+  </div>
+
+  <div class="box achtung"><div class="box-title">Widersprüche im Wirtschaftsprofil</div>
+    <ul>
+      <li>Wirtschaftsforscher kritisieren Teile des AfD-Programms. Das Deutsche Institut für Wirtschaftsforschung (DIW) berechnete etwa für einen einheitlichen Steuersatz von 25 Prozent, dass rund drei Viertel der Entlastung den reichsten zehn Prozent zugutekämen.</li>
+      <li>Lange forderte die AfD den Austritt aus Euro und EU („Dexit“), was Wirtschaftsverbände als großes Risiko ansehen. Anfang Oktober 2026 wurde ein neues Strategiepapier von Europapolitikern der AfD bekannt, das statt eines Austritts einen Umbau der EU zu einem „Bund souveräner Nationen“ und Reformen des Euro vorschlägt – ein Hinweis, dass die Partei Hindernisse für wirtschaftsnahe Wähler abbauen will.</li>
+      <li>Im ländlichen Raum wirbt die AfD zugleich mit teuren Entlastungen, etwa der Abschaffung der Grundsteuer und höherer Pendlerpauschale (siehe Kapitel 11). Marktliberale und soziale Versprechen stehen so nebeneinander.</li>
+    </ul>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Plan (Juli 2025):</strong> Union beim Markenkern Wirtschaft überholen → AfD als „Partei der Sozialen Marktwirtschaft“.</li>
+      <li><strong>März 2025:</strong> Lockerung der Schuldenbremse → Glaubwürdigkeitsverlust der Union; <strong>April 2025:</strong> AfD erstmals in einer Umfrage vorn.</li>
+      <li><strong>Ergebnis:</strong> Abstand in der Wirtschaftskompetenz stark verkleinert, aber Union laut Infratest dimap weiter vorn; in der allgemeinen Kompetenz zeitweise AfD vorn.</li>
+      <li><strong>Oktober 2026:</strong> neues Europa-Papier → Abkehr vom sofortigen Euro- und EU-Austritt.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 10 KULTURKAMPF ============ -->
+<section class="chapter" id="kulturkampf">
+  <div class="chap-head"><div class="chap-num">10</div><div>
+    <span class="span-chip">2025 – 2026</span>
+    <h2>Kulturkampf: Die Mitte unter Druck</h2>
+  </div></div>
+  <p class="lead">Die jüngste Stufe der Strategie zielt nicht mehr nur auf Wähler, sondern auf das Gefüge der Mitte selbst: Durch Kulturkonflikte sollen Union und SPD auseinandergetrieben werden.</p>
+
+  <h3>10.1 Das Prinzip</h3>
+  <p>Ein Kulturkampf ist ein Streit über Werte und Lebensweisen statt über konkrete Sachfragen: Gendersprache, Abtreibung, nationale Identität, Erinnerungskultur, Klimaschutz als Lebensstil. Solche Fragen lassen sich schwer durch Kompromisse lösen. Genau deshalb eignen sie sich nach dem Papier vom Juli 2025 für die Strategie: Sie zwingen jede Partei zu einer klaren Seite. Die Union soll so vor eine Wahl gestellt werden: Entweder sie stellt sich auf die konservative Seite und gerät mit SPD und Grünen in Streit, oder sie weicht aus und verliert konservative Wähler.</p>
+
+  <h3>10.2 Die Fälle</h3>
+  <div class="grid">
+    <div class="card"><div class="yr">Juli 2025</div><h4>Richterwahl</h4><p>Die SPD schlug die Juristin Frauke Brosius-Gersdorf für das Bundesverfassungsgericht vor. Rechte Plattformen und AfD-Politiker stellten sie wegen Äußerungen zur Abtreibung als radikal links dar; eine Kampagne rief Unionsabgeordnete zum Widerstand auf. Am 11. Juli 2025 wurde die Wahl abgesetzt – die erste schwere Krise der Koalition.</p></div>
+    <div class="card"><div class="yr">Herbst 2025</div><h4>Weitere Streitfragen</h4><p>Ob Wehrpflicht, Bürgergeld, die sogenannte Stadtbild-Debatte nach einer Äußerung von Merz oder Streit über Teilzeit: Die Politikwissenschaftlerin Anna-Sophie Heinze stellte fest, dass die AfD bei vielen dieser Konflikte selbst kaum noch etwas tun musste.</p></div>
+    <div class="card"><div class="yr">Sept. 2026</div><h4>Polarisierte Wahlen</h4><p>In Mecklenburg-Vorpommern kämpften SPD und AfD um Platz eins, die CDU fiel aus dem Landtag. In Berlin wurde die Linke mit 25,7 Prozent stärkste Kraft. Die Pole links und rechts wuchsen, die Mitte schrumpfte.</p></div>
+  </div>
+
+  <h3>10.3 Läuft die Spaltung der Mitte?</h3>
+  <p>Kommentatoren sehen die Strategie inzwischen teilweise aufgehen. Die Nürnberger Nachrichten schrieben nach der Doppelwahl im September 2026, der erste Schritt – die <a class="g" href="#g-polarisierung">Polarisierung</a> zwischen AfD und Linker – sei fast abgehakt, am zweiten – dem Graben zwischen Union und SPD – arbeite die AfD gerade. Eine Koalition der Linken mit SPD und Grünen in Berlin würde aus dieser Sicht genau in das Drehbuch passen. Die taz urteilte im September 2026, es gelinge der AfD erstaunlich gut, die Union zwischen Koalitionszwängen und eigenen Wahlversprechen zu zerreiben.</p>
+  <p>Zugleich wächst in der Union die Debatte über die Brandmauer selbst. Der CDU-nahe Historiker Andreas Rödder forderte einen anderen Umgang mit der AfD; Carsten Linnemann bezeichnete die Brandmauer als linken Begriff. Anfang Oktober 2026 sprach sich Hessens Ministerpräsident Boris Rhein dafür aus, AfD-Abgeordnete zu Ausschussvorsitzenden im Bundestag zu wählen, und lehnte ein Verbotsverfahren ab. Andere in der CDU, etwa der frühere Generalsekretär Ruprecht Polenz, widersprachen scharf.</p>
+
+  <div class="box warum"><div class="box-title">Warum nützt Polarisierung der AfD?</div>
+    <p>In einem Parteiensystem mit starker Mitte ist die AfD eine Außenseiterin, die alle anderen ausgrenzen können. Stehen sich dagegen zwei Lager gegenüber, wird sie zum stärksten Teil eines „rechten“ Lagers. Je komplizierter und linker die Bündnisse werden, mit denen die anderen Parteien die AfD von der Macht fernhalten, desto leichter kann sie sich als einzige konservative Kraft darstellen. Die AfD verstärkt diesen Effekt rhetorisch: Ulrich Siegmund erklärte 2026 sinngemäß, es gebe nur noch zwei Parteien – die AfD und alle anderen.</p>
+  </div>
+
+  <div class="box achtung"><div class="box-title">Grenzen der Strategie</div>
+    <ul>
+      <li>Polarisierung kann auch gegen die AfD wirken: In Mecklenburg-Vorpommern mobilisierte Manuela Schwesig mit dem Slogan „Die Frau gegen Blau“ viele Wähler und begrenzte den Abstand auf wenige Punkte.</li>
+      <li>Laut der Wahlstudie der Konrad-Adenauer-Stiftung ist es für 78 Prozent der Unionswähler wichtig, dass ihre Partei nicht mit der AfD koaliert. Eine offene Zusammenarbeit könnte die Union also eher spalten als stärken.</li>
+      <li>Die Linke profitiert ebenfalls von der Zuspitzung. Ob eine stärkere Linke der AfD langfristig nützt oder ihr eine wirksame Gegenbewegung entgegenstellt, ist offen.</li>
+    </ul>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Kulturkampf:</strong> Wertekonflikte zwingen die Union, sich zwischen SPD-Partner und konservativen Wählern zu entscheiden.</li>
+      <li><strong>Juli 2025:</strong> geplatzte Richterwahl → erste große Koalitionskrise.</li>
+      <li><strong>September 2026:</strong> Wahlerfolge von AfD und Linker → die Mitte schrumpft.</li>
+      <li><strong>Oktober 2026:</strong> neue Brandmauer-Debatte in der Union → die AfD trägt ihren Streit in die anderen Parteien.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 11 FLAECHE ============ -->
+<section class="chapter" id="flaeche">
+  <div class="chap-head"><div class="chap-num">11</div><div>
+    <span class="span-chip">2026</span>
+    <h2>Verankerung in der Fläche</h2>
+  </div></div>
+  <p class="lead">Neben den großen Machtstrategien plante die AfD 2026 auch ihre Verankerung vor Ort – mit Dorfkneipen, Weinfesten und Bürgerzentren.</p>
+
+  <h3>11.1 Das Papier „Ländliche Raumnahme“</h3>
+  <p>Im März 2026 legte <strong>Sebastian Münzenmaier</strong>, Landesvorsitzender in Rheinland-Pfalz und Vize-Fraktionschef im Bundestag, ein Papier mit dem Titel „<a class="g" href="#g-raumnahme">Ländliche Raumnahme</a>“ vor. Das Ziel: Die AfD soll bei der nächsten Bundestagswahl in mehr als der Hälfte der Kreise stärkste Kraft werden und „die Partei des ländlichen Raums“ sein. Bis 2029 soll es in jedem Wahlkreis ein eigenes Zentrum geben.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Stufe</th><th>Inhalt</th></tr>
+    <tr><td><strong>1. Erstkontakt</strong></td><td>Gesellige Dämmerschoppen mit Bratwurst und Wein, keine langen Reden; Neumitglieder gewinnen, die dann selbst Stammtische und Infostände organisieren.</td></tr>
+    <tr><td><strong>2. Zentren bauen</strong></td><td>Leerstehende Gaststätten, Discos oder Weingüter mieten oder kaufen, finanziert über Mandate und Spender; tagsüber Bürgerbüro, abends Treffpunkt mit Aperol-Abenden für die Jugend, Seniorennachmittagen und Festen.</td></tr>
+    <tr><td><strong>3. Themen</strong></td><td>Konkrete ländliche Anliegen: Heizungsgesetz abschaffen, CO2-Preis abschaffen, Verbrennerautos erhalten, Pendlerpauschale erhöhen, Grundsteuer streichen, Windkraft-Moratorium, Agrardiesel-Rückerstattung.</td></tr>
+  </table></div>
+  <p>Das Papier spricht von „Machern statt Dagegen-Partei“ und einem sympathischen Image. AfD-Büros wirkten auf Neulinge abschreckend; niedrigschwellige Treffpunkte sollten Vorurteile abbauen. Als Vorbild nennt es ein ehemaliges Weingut in der Nordpfalz, das seit Sommer 2025 als Treffpunkt dient. Auf dem Parteitag in Erfurt im Juli 2026 warb Münzenmaier zudem dafür, Abgeordnete ohne Wahlkreisbüro zu einer Abgabe an die Partei zu verpflichten; der Antrag verfehlte die nötige Zweidrittelmehrheit.</p>
+
+  <h3>11.2 Ergebnisse</h3>
+  <p>Bei der Landtagswahl in Rheinland-Pfalz am 22. März 2026 erzielte die AfD mit 19,5 Prozent ihr bis dahin bestes Ergebnis in Westdeutschland; in Baden-Württemberg kam sie zwei Wochen zuvor auf 18,8 Prozent. Bei den bayerischen Kommunalwahlen im März 2026 verdoppelte sie ihren Stimmenanteil auf gut zwölf Prozent. Wie viel davon auf die Raumnahme zurückgeht, lässt sich nicht trennen; die Zeitung „Die Welt“ brachte den Erfolg in Rheinland-Pfalz aber ausdrücklich mit dem Plan in Verbindung.</p>
+
+  <div class="box achtung"><div class="box-title">Kritische Einordnung</div>
+    <p>Kritiker sehen in dem Konzept eine Strategie, die rechtsextreme Gruppen schon seit Jahren verfolgen: Präsenz im Alltag, Geselligkeit und „Kümmern“, um die Partei unpolitisch und harmlos erscheinen zu lassen. Das Papier selbst nennt als Kooperationspartner unter anderem das „Vorfeld“ und die „alternative Kulturszene“ (<a class="g" href="#g-vorfeld">Vorfeld</a>). Fachleute beschreiben dies als Teil einer metapolitischen Strategie, wie sie in der <a class="g" href="#g-neuerechte">Neuen Rechten</a> um Götz Kubitschek diskutiert wird (<a class="g" href="#g-metapolitik">Metapolitik</a>).</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>März 2026:</strong> Papier „Ländliche Raumnahme“ → Ziel: stärkste Kraft in über der Hälfte der Kreise.</li>
+      <li><strong>Mittel:</strong> Dämmerschoppen, eigene Treffpunkte, konkrete ländliche Themen.</li>
+      <li><strong>2026:</strong> Rekordergebnisse im Westen (Rheinland-Pfalz 19,5 Prozent, Baden-Württemberg 18,8 Prozent).</li>
+      <li>Kritiker sehen darin <strong>Normalisierung durch Alltagspräsenz</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 12 WAHLJAHR 2026 ============ -->
+<section class="chapter" id="wahljahr2026">
+  <div class="chap-head"><div class="chap-num">12</div><div>
+    <span class="span-chip">2026</span>
+    <h2>Superwahljahr 2026 und Machtfrage</h2>
+  </div></div>
+  <p class="lead">Im September 2026 erreichte die AfD ihre bisher größten Erfolge. Damit stellte sich erstmals ernsthaft die Frage, wie sie an eine Regierung kommen kann – im Land und im Bund.</p>
+
+  <h3>12.1 Zwei Septembersonntage</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Wahl</th><th>AfD</th><th>Union</th><th>Weitere Ergebnisse</th></tr>
+    <tr><td><strong>Sachsen-Anhalt</strong>, 6.9.2026</td><td>43,8 % (+23,0), 39 von 83 Sitzen, 38 von 41 Direktmandaten</td><td>17,2 % (rund −20)</td><td>SPD 9,3 %, Grüne 8,9 %, Linke 8,6 %, BSW 5,3 %, FDP 2,6 %; Wahlbeteiligung 77,8 %</td></tr>
+    <tr><td><strong>Mecklenburg-Vorpommern</strong>, 20.9.2026</td><td>38,2 % (+21), stärkste Kraft</td><td>4,9 %, nicht mehr im Landtag</td><td>SPD 35,5 %; BSW 4,9 %</td></tr>
+    <tr><td><strong>Berlin</strong>, 20.9.2026</td><td>16,3 % (+7,2)</td><td>18,8 % (−9,5)</td><td>Linke 25,7 % stärkste Kraft, Grüne 14,3 %, SPD 12,1 %</td></tr>
+  </table></div>
+  <p>In Sachsen-Anhalt hatte der Spitzenkandidat <strong>Ulrich Siegmund</strong> einen auf soziale Medien ausgerichteten Wahlkampf geführt. Ein Titelbild des „Spiegel“, das ihn als gefährlichsten Mann Deutschlands bezeichnete, nutzte er für seine Kampagne. Merz nannte das Ergebnis der CDU in Mecklenburg-Vorpommern ein „Desaster“. Die taz sprach in der Unionsfraktion von einem Katastrophensonntag.</p>
+
+  <h3>12.2 Sachsen-Anhalt: die erste Regierungsoption</h3>
+  <p>In Sachsen-Anhalt fehlen der AfD drei Sitze zur absoluten Mehrheit. Das BSW zog mit nur rund 3.500 Stimmen über der Fünf-Prozent-Hürde ein – und das veränderte die Mehrheiten: Ohne das BSW hätten CDU, SPD, Grüne und Linke gemeinsam eine Mehrheit gehabt. Nun stehen AfD und BSW zusammen ebenso bei 44 Sitzen wie alle übrigen Parteien einschließlich BSW. Die CDU lehnt Gespräche über eine Regierung mit SPD, Grünen, Linken und BSW ab und sieht sich in der Opposition. Das BSW schlägt einen überparteilichen Ministerpräsidenten vor, der auch mit AfD-Stimmen gewählt werden soll, und will sich bei einer Wahl Siegmunds enthalten. Siegmund kündigte am 24. September 2026 an, sich in der Dezember-Sitzung des Landtages zur Wahl zu stellen. Er strebe ein Format „oberhalb einer Minderheitsregierung“ an. Im dritten Wahlgang genügt in Sachsen-Anhalt die Mehrheit der abgegebenen Stimmen.</p>
+
+  <h3>12.3 Das Papier zur Minderheitsregierung</h3>
+  <p>Am 22. September 2026 berichteten zuerst die „Bild“ und dann die taz über ein Diskussionspapier aus dem Vorstand der Bundestagsfraktion, verfasst von <strong>Sebastian Münzenmaier</strong>. Es spielt durch, wie sich die AfD verhalten soll, falls die schwarz-rote Koalition zerbricht und die Union allein als <a class="g" href="#g-minderheitsregierung">Minderheitsregierung</a> weiterregiert.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Variante</th><th>Inhalt</th><th>Risiko laut Papier</th></tr>
+    <tr><td><strong>1. Keine Zusammenarbeit</strong></td><td>Konsequente Blockade der Regierung, Forderung nach Neuwahlen.</td><td>Widerspricht dem eigenen Anspruch, zuzustimmen, wenn die Sache stimmt; Vorwurf, vor Verantwortung zu fliehen.</td></tr>
+    <tr><td><strong>2. Punktuelle Zusammenarbeit bis zur Neuwahl</strong></td><td>Eigene Gesetzesinitiativen, erzwungene namentliche Abstimmungen über Kernthemen, Forderung nach Neuwahlen.</td><td>Bei Wählern darf nicht der Eindruck entstehen, die AfD sei billiger Mehrheitsbeschaffer.</td></tr>
+    <tr><td><strong>3. Zusammenarbeit je nach Sachfrage</strong></td><td>„<a class="g" href="#g-antragsoffensive">Antragsoffensive</a>“ dort, wo es Schnittmengen mit dem Unionsprogramm gibt; dafür sei eine schriftliche Tolerierungsvereinbarung nötig.</td><td>Keine Unterstützung ohne Gegenleistung.</td></tr>
+  </table></div>
+  <p>Münzenmaier bevorzugt erkennbar die Varianten 2 und 3. Als Bedingungen nennt das Papier die Gleichbehandlung der AfD im Parlament – etwa einen Bundestagsvizepräsidenten, Ausschussvorsitze und einen Platz in Abstimmungsrunden – sowie das Prinzip „Links ist vorbei“, eine Anspielung auf einen Wahlkampfsatz von Merz. Auf Dauer, so das Papier, werde die AfD keine Minderheitsregierung stützen, die zwar in der Migration Kleinigkeiten ändere, aber in der Gesellschaftspolitik und beim „Kampf gegen Rechts“ mit linken Parteien zusammenarbeite. Die Phase bis zu einer Neuwahl solle genutzt werden, um die Union zu Bekenntnissen zu zwingen oder sie „zu entlarven“.</p>
+
+  <div class="box warum"><div class="box-title">Warum ein Papier für einen Fall, der noch nicht eingetreten ist?</div>
+    <p>Die schwarz-rote Koalition war im Herbst 2026 nicht zerbrochen. Die taz vermutet, dass das Papier auch an die Öffentlichkeit gelangte, um den Druck auf die Union zu erhöhen. Es fügt sich nahtlos in die Strategie von 2025: Je schwächer die Koalition, desto mehr soll die Frage nach einer Zusammenarbeit mit der AfD in die Union selbst getragen werden. Die Tolerierung, die schon das Papier von 2019 als Ziel nannte, wäre dabei der erste Schritt – nicht als Unterstützung ohne Gegenleistung, sondern als Hebel.</p>
+  </div>
+
+  <div class="box achtung"><div class="box-title">Reaktionen</div>
+    <p>CSU-Landesgruppenchef Alexander Hoffmann erklärte gegenüber der taz, die AfD habe jeden dieser Anträge schon einmal gestellt und keine Zustimmung der Union bekommen; die Partei wolle vor allem, dass über sie gesprochen werde. Kritiker verweisen auf das Beispiel vom Januar 2025: Damals habe die gemeinsame Abstimmung eher der AfD als der Union genützt.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>6.9.2026:</strong> Sachsen-Anhalt 43,8 Prozent → drei Sitze fehlen zur absoluten Mehrheit.</li>
+      <li><strong>20.9.2026:</strong> Mecklenburg-Vorpommern 38,2 Prozent, CDU nicht mehr im Landtag; Berlin: Linke stärkste Kraft.</li>
+      <li><strong>Dezember 2026:</strong> Siegmund will sich zum Ministerpräsidenten wählen lassen; das BSW ist Zünglein an der Waage.</li>
+      <li><strong>Papier Münzenmaier:</strong> drei Varianten für eine Unions-Minderheitsregierung → Tolerierung als Hebel, nicht als Geschenk.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 13 UNION ============ -->
+<section class="chapter" id="union">
+  <div class="chap-head"><div class="chap-num">13</div><div>
+    <span class="span-chip">2018 – 2026</span>
+    <h2>Die Antwort der Union</h2>
+  </div></div>
+  <p class="lead">Jede Strategie hat einen Gegenspieler. Die Union schwankte im Umgang mit der AfD zwischen Abgrenzung, Übernahme von Themen und offener Konfrontation.</p>
+
+  <h3>13.1 Drei Ansätze</h3>
+  <div class="grid">
+    <div class="card"><h4>Abgrenzung</h4><p>2018 beschloss die CDU die Unvereinbarkeit mit AfD und Linkspartei. Merz hatte 2018 angekündigt, er traue sich zu, die AfD zu halbieren. Nach der Wahl 2025 erklärte die CDU-Spitze die AfD wiederholt zum Hauptgegner.</p></div>
+    <div class="card"><h4>Übernahme von Themen</h4><p>Vor allem in der Migrationspolitik verschärfte die Union ihren Kurs: Fünf-Punkte-Plan, Zurückweisungen an den Grenzen. Studien und die KAS-Wahlanalyse deuten darauf hin, dass dies die AfD nicht schwächte.</p></div>
+    <div class="card"><h4>Konfrontation</h4><p>Im Mai 2026 veröffentlichte die CDU die Broschüre „Abstieg für Deutschland. Keine Alternative“. Darin nennt sie die AfD demokratieschädlich, antisemitisch und völkisch und bestreitet, dass sie konservativ oder bürgerlich sei.</p></div>
+  </div>
+
+  <h3>13.2 Staatliche Mittel: Verfassungsschutz und Verbotsdebatte</h3>
+  <p>Am <strong>2. Mai 2025</strong> stufte das Bundesamt für Verfassungsschutz die AfD als <a class="g" href="#g-gesichert">gesichert rechtsextremistische Bestrebung</a> ein. Die Partei klagte. Am <strong>26. Februar 2026</strong> untersagte das Verwaltungsgericht Köln in einem Eilbeschluss vorläufig, die Partei so einzustufen und zu bezeichnen, bis im Hauptverfahren entschieden ist. Das Gericht sah zwar hinreichende Gewissheit, dass es in der AfD verfassungsfeindliche Bestrebungen gibt, aber nicht, dass sie die Gesamtpartei prägen. Weidel sprach von einem großen Sieg; Rechtswissenschaftler betonten, das sei keine inhaltliche Rehabilitierung. Ende August 2026 forderten Verteidigungsminister Boris Pistorius (SPD) und Baden-Württembergs Ministerpräsident Cem Özdemir (Grüne) ein <a class="g" href="#g-verbotsverfahren">Parteiverbotsverfahren</a>. Innerhalb der Union ist ein Verbotsverfahren umstritten.</p>
+
+  <h3>13.3 Das Dilemma der Union</h3>
+  <p>Die Strategie der AfD setzt genau an der Zwangslage an, die die Union selbst beschreibt: Sie regiert mit der SPD, deren Wähler andere Erwartungen haben als ihre eigenen; sie hat Wähler mit dem Versprechen einer Migrations- und Wirtschaftswende gewonnen; und sie lehnt jede Zusammenarbeit mit AfD und Linker ab. In Thüringen regiert die CDU seit 2024 mit BSW und SPD ohne eigene Mehrheit und ist auf die Linke angewiesen – ein Modell, das Merz vor der Wahl in Sachsen-Anhalt auch dort für denkbar hielt. Für die AfD sind solche Konstellationen Belege für ihre Erzählung, die Union sei Teil eines linken Lagers.</p>
+
+  <div class="box warum"><div class="box-title">Hat die Brandmauer die AfD stark gemacht?</div>
+    <p>Diese Frage wird heftig diskutiert. Befürworter einer Öffnung argumentieren, die Ausgrenzung erlaube der AfD, sich als Opfer eines „Kartells“ darzustellen, und viele Bürger hielten die Brandmauer für undemokratisch; in Baden-Württemberg war im Januar 2026 laut einer Umfrage jeder Zweite für eine Zusammenarbeit von Fall zu Fall oder Koalitionen. Gegner einer Öffnung verweisen auf Forschungsergebnisse aus Europa, nach denen die Übernahme rechter Positionen und die Zusammenarbeit mit Rechtsaußen-Parteien diese eher stärken. Für einen ursächlichen Zusammenhang zwischen Brandmauer und AfD-Erfolg gibt es bisher keinen eindeutigen Beleg.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>2018:</strong> Unvereinbarkeitsbeschluss → Grundlage der „Brandmauer“.</li>
+      <li><strong>2025:</strong> Themenübernahme in der Migration → kein messbarer Gewinn für die Union.</li>
+      <li><strong>2025/26:</strong> Verfassungsschutz stuft AfD hoch → Gericht setzt Einstufung vorläufig aus.</li>
+      <li><strong>2026:</strong> CDU-Broschüre gegen die AfD, zugleich wachsende Debatte über die Brandmauer.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 14 BILANZ ============ -->
+<section class="chapter" id="bilanz">
+  <div class="chap-head"><div class="chap-num">14</div><div>
+    <span class="span-chip">Zusammenfassung</span>
+    <h2>Bilanz: Was hat sich verändert?</h2>
+  </div></div>
+  <p class="lead">Dreizehn Jahre nach ihrer Gründung ist die AfD eine andere Partei – und das deutsche Parteiensystem ein anderes.</p>
+
+  <div class="tablewrap"><table>
+    <tr><th>Bereich</th><th>Um 2013</th><th>Um 2026</th></tr>
+    <tr><td><strong>Hauptthema</strong></td><td>Euro-Rettung</td><td>Migration, ergänzt um Wirtschaft, Energie und Kulturkonflikte</td></tr>
+    <tr><td><strong>Führung</strong></td><td>Lucke, Adam, Petry; Wirtschaftsliberale prägen das Bild</td><td>Weidel und Chrupalla; starker Einfluss des früheren Flügel-Lagers um Höcke</td></tr>
+    <tr><td><strong>Wählerschaft</strong></td><td>Akademiker, ältere Westdeutsche, enttäuschte Unions- und FDP-Wähler</td><td>Ostdeutsche, Arbeiter, junge Männer, ländlicher Raum; zunehmend auch im Westen</td></tr>
+    <tr><td><strong>Wahlergebnisse</strong></td><td>Bund 4,7 Prozent</td><td>Bund 20,8 Prozent (2025); Umfragen 27 bis 30 Prozent; Sachsen-Anhalt 43,8 Prozent</td></tr>
+    <tr><td><strong>Verhältnis zur Union</strong></td><td>Abspaltung, Konkurrenz um enttäuschte Konservative</td><td>Erklärter Hauptgegner und erwünschter Partner zugleich; Ziel: Ende der Brandmauer</td></tr>
+    <tr><td><strong>Strategie</strong></td><td>Sachthema, wenig Planung</td><td>Ausgearbeitete Papiere zu Zielgruppen, Polarisierung, Tolerierung</td></tr>
+    <tr><td><strong>Einstufung</strong></td><td>Keine Beobachtung</td><td>Gesichert rechtsextremistisch (2025), gerichtlich vorläufig ausgesetzt; Verbotsdebatte</td></tr>
+    <tr><td><strong>Machtperspektive</strong></td><td>Keine</td><td>Mögliche Ministerpräsidentenwahl in Sachsen-Anhalt; Pläne für eine Unions-Minderheitsregierung im Bund</td></tr>
+  </table></div>
+
+  <h3>Sechs große Entwicklungslinien</h3>
+  <div class="grid">
+    <div class="card"><h4>Vom Euro zur Migration</h4><p>Der Themenwechsel von 2015 machte aus einer Nischenpartei eine Massenpartei. Migration blieb seitdem der Kern.</p></div>
+    <div class="card"><h4>Von der Provokation zur Planung</h4><p>Aus dem Tabubruch als Aufmerksamkeitsquelle wurde eine differenzierte Strategie mit Zielgruppen, Kennziffern und Zeitplänen.</p></div>
+    <div class="card"><h4>Radikal und normal zugleich</h4><p>Die Partei radikalisierte sich, während sie gesellschaftlich normaler wurde. Die Papiere wollten das Bürgerliche, die Basis setzte das Radikale durch.</p></div>
+    <div class="card"><h4>Vom Gegner Merkel zum Gegner Union</h4><p>Erst richtete sich die AfD gegen Merkels Politik, dann gegen die gesamte Union. Seit 2025 ist deren Schwächung das zentrale Ziel.</p></div>
+    <div class="card"><h4>Vom Osten in die Fläche</h4><p>Die Hochburgen liegen im Osten. Mit der „Ländlichen Raumnahme“ zielt die Partei nun auf Dörfer und Kleinstädte auch im Westen.</p></div>
+    <div class="card"><h4>Vom Protest zur Machtfrage</h4><p>Der Anspruch hat sich von Opposition zu Regierung verschoben. Die Tolerierung einer Minderheitsregierung gilt als möglicher erster Schritt.</p></div>
+  </div>
+
+  <div class="box kurz"><div class="box-title">Ausblick: Wie geht es nach Oktober 2026 weiter?</div>
+    <ul>
+      <li><strong>Dezember 2026:</strong> In Sachsen-Anhalt will Ulrich Siegmund sich zum Ministerpräsidenten wählen lassen. Ob ihm das gelingt und mit welchen Stimmen, entscheidet über die erste AfD-geführte Landesregierung.</li>
+      <li><strong>Verfassungsschutz und Verbot:</strong> Das Hauptverfahren vor dem Verwaltungsgericht Köln und die Debatte über ein Parteiverbot bleiben offen.</li>
+      <li><strong>Schwarz-Rot:</strong> Hält die Koalition, oder tritt der Fall ein, für den das Minderheitsregierungs-Papier geschrieben wurde?</li>
+      <li><strong>Union:</strong> Die Debatte über die Brandmauer wird in der CDU weitergeführt – genau das ist ein Ziel der AfD-Strategie.</li>
+      <li><strong>Bundestagswahl 2029:</strong> Für sie hat die AfD in ihren Papieren ihre Hauptziele formuliert: stärkste Kraft im Bund und in der Fläche, Regierungsbeteiligung.</li>
+    </ul>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li>Die AfD wandelte sich von der <strong>Euro-Partei</strong> zur in Umfragen <strong>stärksten Partei</strong>.</li>
+      <li>Ihre Strategie verlagerte sich von <strong>Provokation</strong> über <strong>Volkspartei-Image</strong> zum gezielten <strong>Angriff auf die Union</strong>.</li>
+      <li>Kernmittel seit 2025: <strong>Polarisierung, Kompetenzangriff, Tolerierungsangebot</strong>.</li>
+      <li>Ob die Brandmauer fällt, entscheidet sich nicht in der AfD, sondern in der <strong>Union</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 15 ZEITLEISTE ============ -->
+<section class="chapter" id="zeitleiste">
+  <div class="chap-head"><div class="chap-num">15</div><div>
+    <span class="span-chip">Zum Nachschlagen</span>
+    <h2>Zeitleiste 2013–2026</h2>
+  </div></div>
+  <p class="lead">Die wichtigsten Ereignisse in zeitlicher Reihenfolge. Über die Schaltflächen lassen sich einzelne Bereiche auswählen.</p>
+  <div class="filters" id="filters">
+    <button class="on" data-f="alle">Alle</button>
+    <button data-f="reich">Partei &amp; Führung</button>
+    <button data-f="religion">Strategiepapiere</button>
+    <button data-f="europa">Wahlen &amp; Umfragen</button>
+    <button data-f="krieg">Krisen &amp; Konflikte</button>
+    <button data-f="kultur">Union &amp; Mitte</button>
+  </div>
+  <ol class="tl" id="timeline"></ol>
+</section>
+
+<!-- ============ 16 PERSONEN ============ -->
+<section class="chapter" id="personen">
+  <div class="chap-head"><div class="chap-num">16</div><div>
+    <span class="span-chip">Wer war wer?</span>
+    <h2>Wichtige Personen</h2>
+  </div></div>
+  <p class="lead">Die Personen sind grob nach dem Zeitpunkt geordnet, an dem sie für die Strategie der AfD wichtig wurden.</p>
+  <div class="people">
+    <div class="person"><div class="role">Gründer</div><h4>Bernd Lucke</h4><div class="life">geb. 1962</div><p>Volkswirtschaftsprofessor, Gründungssprecher der AfD. Verlor 2015 in Essen den Machtkampf und verließ die Partei.</p></div>
+    <div class="person"><div class="role">Mitgründer, Ehrenvorsitzender</div><h4>Alexander Gauland</h4><div class="life">geb. 1941</div><p>Früherer CDU-Politiker, verband Nationalkonservative und Flügel. Partei- und Fraktionschef nach 2017, gilt als Architekt des Bündnisses der Lager.</p></div>
+    <div class="person"><div class="role">Parteichefin 2015–2017</div><h4>Frauke Petry</h4><div class="life">geb. 1975</div><p>Stürzte Lucke, scheiterte 2017 mit ihrem realpolitischen Zukunftsantrag und trat nach der Bundestagswahl aus.</p></div>
+    <div class="person"><div class="role">Thüringer Landeschef</div><h4>Björn Höcke</h4><div class="life">geb. 1972</div><p>Gründer des „Flügels“, wichtigste Figur des völkisch-nationalistischen Lagers. Ausschlussversuche scheiterten; großer Einfluss auf die Partei.</p></div>
+    <div class="person"><div class="role">Parteichef 2015–2022</div><h4>Jörg Meuthen</h4><div class="life">geb. 1961</div><p>Wirtschaftsprofessor, versuchte den Flügel zurückzudrängen. Trat 2022 aus und warf Teilen der Partei Verfassungsferne vor.</p></div>
+    <div class="person"><div class="role">Stratege 2019</div><h4>Georg Pazderski</h4><div class="life">geb. 1951</div><p>Früherer Bundeswehroberst, Hauptautor des Papiers „Strategie 2019–2025“. Verließ die AfD 2024 enttäuscht.</p></div>
+    <div class="person"><div class="role">Partei- und Fraktionschefin</div><h4>Alice Weidel</h4><div class="life">geb. 1979</div><p>Ökonomin, seit 2022 Ko-Vorsitzende, 2025 erste Kanzlerkandidatin der AfD. Steht für einen wirtschaftsliberalen Auftritt bei hartem Migrationskurs.</p></div>
+    <div class="person"><div class="role">Partei- und Fraktionschef</div><h4>Tino Chrupalla</h4><div class="life">geb. 1975</div><p>Malermeister aus der Lausitz, seit 2019 Ko-Vorsitzender. Verkörpert die ostdeutsche Basis; vertritt eine russlandfreundlichere Linie.</p></div>
+    <div class="person"><div class="role">Vize-Fraktionschefin</div><h4>Beatrix von Storch</h4><div class="life">geb. 1971</div><p>Gesellschaftspolitisch konservativ, gut vernetzt mit christlich-konservativen Gruppen. Verfasserin des Strategiepapiers vom Juli 2025.</p></div>
+    <div class="person"><div class="role">Vize-Fraktionschef, Stratege</div><h4>Sebastian Münzenmaier</h4><div class="life">geb. 1989</div><p>Landeschef in Rheinland-Pfalz, Autor der Papiere zur „Ländlichen Raumnahme“ und zur Minderheitsregierung. Gilt als Strippenzieher mit Kontakten in alle Lager.</p></div>
+    <div class="person"><div class="role">Parlamentarischer Geschäftsführer</div><h4>Bernd Baumann</h4><div class="life">geb. 1958</div><p>Organisiert die Arbeit der Bundestagsfraktion; scharfe Angriffe auf die Union, die er 2026 als zerriebenen „Hühnerhaufen“ verspottete.</p></div>
+    <div class="person"><div class="role">Europa-Spitzenkandidat 2024</div><h4>Maximilian Krah</h4><div class="life">geb. 1977</div><p>Skandale vor der Europawahl 2024 führten zum Ausschluss der AfD aus der ID-Fraktion – ein Rückschlag für das bürgerliche Image.</p></div>
+    <div class="person"><div class="role">Vordenker der Neuen Rechten</div><h4>Götz Kubitschek</h4><div class="life">geb. 1970</div><p>Verleger, kein AfD-Mitglied, aber einflussreich in strategischen Debatten über Metapolitik und das „Vorfeld“.</p></div>
+    <div class="person"><div class="role">Spitzenkandidat Sachsen-Anhalt</div><h4>Ulrich Siegmund</h4><div class="life">geb. 1990</div><p>Führte die AfD 2026 zu 43,8 Prozent. Will sich im Dezember 2026 zum Ministerpräsidenten wählen lassen.</p></div>
+    <div class="person"><div class="role">Spitzenkandidat Mecklenburg-Vorpommern</div><h4>Leif-Erik Holm</h4><div class="life">geb. 1970</div><p>Ministerpräsidentenkandidat 2026; die AfD wurde mit 38,2 Prozent stärkste Kraft, blieb aber ohne Partner.</p></div>
+    <div class="person"><div class="role">Landeschef Baden-Württemberg</div><h4>Markus Frohnmaier</h4><div class="life">geb. 1991</div><p>Spitzenkandidat 2026 im Südwesten, wo die AfD 18,8 Prozent erreichte; zugleich Vize-Fraktionschef im Bundestag.</p></div>
+    <div class="person"><div class="role">Bundeskanzler seit 2025</div><h4>Friedrich Merz</h4><div class="life">geb. 1955</div><p>Wichtigster Gegenspieler. Sein Migrationskurs im Januar 2025 und die Schuldenwende im März 2025 wurden zu Ansatzpunkten der AfD-Strategie.</p></div>
+    <div class="person"><div class="role">CDU-Politiker</div><h4>Carsten Linnemann</h4><div class="life">geb. 1977</div><p>Als Generalsekretär Architekt der CDU-Programmatik; seit Juli 2026 Gesundheitsminister. Nannte die Brandmauer einen linken Begriff.</p></div>
+    <div class="person"><div class="role">BSW-Gründerin</div><h4>Sahra Wagenknecht</h4><div class="life">geb. 1969</div><p>Ihre Partei konkurriert mit der AfD um Protestwähler; 2026 forderte sie ein Ende der Brandmauer und Sachzusammenarbeit auch mit der AfD.</p></div>
+    <div class="person"><div class="role">FDP-Politiker</div><h4>Thomas Kemmerich</h4><div class="life">geb. 1965</div><p>Wurde 2020 mit AfD-Stimmen Ministerpräsident von Thüringen und trat nach wenigen Tagen zurück – ein Schlüsselereignis der Brandmauer-Debatte.</p></div>
+  </div>
+</section>
+
+<!-- ============ 17 GLOSSAR ============ -->
+<section class="chapter" id="glossar">
+  <div class="chap-head"><div class="chap-num">17</div><div>
+    <span class="span-chip">Wichtige Begriffe</span>
+    <h2>Glossar</h2>
+  </div></div>
+  <dl class="gloss" id="gloss">
+    <dt id="g-akzeptanzumfeld">Akzeptanzumfeld</dt><dd>Begriff aus dem AfD-Papier von 2025: Wähler, die die AfD nicht wählen, eine Regierungsbeteiligung aber hinnehmen würden. Die Partei will es so vergrößern, dass die Ablehnung unter 50 Prozent sinkt.</dd>
+    <dt id="g-altparteien">Altparteien</dt><dd>Abwertender Sammelbegriff der AfD für die etablierten Parteien. Er soll vermitteln, dass sich diese Parteien kaum unterscheiden und gemeinsam gegen die AfD stehen.</dd>
+    <dt id="g-antragsoffensive">Antragsoffensive</dt><dd>Gezielte Serie von Anträgen im Parlament, die bei Wählern einer anderen Partei beliebt sind. Sie soll diese Partei zwingen, sich öffentlich zu positionieren.</dd>
+    <dt id="g-brandmauer">Brandmauer</dt><dd>Umgangssprachlicher Begriff für die Weigerung der anderen Parteien, mit der AfD zusammenzuarbeiten. Bei der CDU beruht sie auf dem Unvereinbarkeitsbeschluss von 2018.</dd>
+    <dt id="g-entschliessungsantrag">Entschließungsantrag</dt><dd>Antrag, mit dem das Parlament eine Meinung oder Aufforderung beschließt, ohne ein Gesetz zu verabschieden. Er ist rechtlich nicht bindend.</dd>
+    <dt id="g-fluegel">Flügel, Der</dt><dd>2015 entstandene, informelle Strömung um Björn Höcke mit völkisch-nationalistischer Ausrichtung. 2020 vom Verfassungsschutz als gesichert rechtsextremistisch eingestuft und formal aufgelöst.</dd>
+    <dt id="g-gesichert">Gesichert rechtsextremistische Bestrebung</dt><dd>Höchste Einstufung des Verfassungsschutzes. Sie bedeutet, dass verfassungsfeindliche Ziele als erwiesen gelten, und erlaubt den vollen Einsatz nachrichtendienstlicher Mittel.</dd>
+    <dt id="g-kompetenz">Kompetenzzuschreibung</dt><dd>In Umfragen gemessene Einschätzung, welcher Partei die Bürger am ehesten zutrauen, ein Problem zu lösen. Sie gilt als wichtiger Vorbote von Wahlentscheidungen.</dd>
+    <dt id="g-kulturkampf">Kulturkampf</dt><dd>Politischer Streit über Werte, Identität und Lebensweisen statt über Sachfragen. Der Begriff stammt aus dem Konflikt zwischen Bismarck und der katholischen Kirche im 19. Jahrhundert und wird heute oft für US-amerikanische Verhältnisse verwendet.</dd>
+    <dt id="g-kurzstrache">Kurz-Strache-Effekt</dt><dd>Von AfD-Strategen verwendeter Begriff für die Gefahr, dass eine bürgerliche Partei rechte Positionen übernimmt und der Rechtspartei Wähler abnimmt – wie 2017 die ÖVP unter Sebastian Kurz gegenüber der FPÖ unter Heinz-Christian Strache.</dd>
+    <dt id="g-raumnahme">Ländliche Raumnahme</dt><dd>Titel eines AfD-Strategiepapiers von 2026. Gemeint ist die dauerhafte Verankerung in Dörfern durch gesellige Veranstaltungen und eigene Treffpunkte.</dd>
+    <dt id="g-markenkern">Markenkern</dt><dd>Das Merkmal, mit dem Wähler eine Partei vor allem verbinden. Bei der Union gilt dies traditionell als Wirtschafts- und Finanzkompetenz.</dd>
+    <dt id="g-metapolitik">Metapolitik</dt><dd>Strategie der Neuen Rechten, zuerst Kultur, Sprache und Alltag zu beeinflussen, bevor politische Macht errungen wird.</dd>
+    <dt id="g-minderheitsregierung">Minderheitsregierung</dt><dd>Regierung, die keine eigene Mehrheit im Parlament hat und für Gesetze auf Stimmen anderer Parteien angewiesen ist.</dd>
+    <dt id="g-neuerechte">Neue Rechte</dt><dd>Intellektuelle Strömung rechts der Union, die sich auf Denker der „Konservativen Revolution“ der Weimarer Zeit beruft. Sie wirkt über Verlage, Zeitschriften und Thinktanks auf die AfD ein.</dd>
+    <dt id="g-normalisierung">Normalisierung</dt><dd>Prozess, in dem Positionen oder Parteien, die zuvor als extrem galten, als gewöhnlicher Teil der Politik wahrgenommen werden.</dd>
+    <dt id="g-verbotsverfahren">Parteiverbotsverfahren</dt><dd>Verfahren vor dem Bundesverfassungsgericht nach Artikel 21 des Grundgesetzes. Bundestag, Bundesrat oder Bundesregierung können es beantragen; eine Partei kann verboten werden, wenn sie die freiheitliche demokratische Grundordnung beseitigen will.</dd>
+    <dt id="g-polarisierung">Polarisierung</dt><dd>Auseinanderdriften der Gesellschaft oder des Parteiensystems in gegensätzliche Lager, zwischen denen kaum Kompromisse möglich sind.</dd>
+    <dt id="g-potenzial">Potenzial (Wählerpotenzial)</dt><dd>Anteil der Wahlberechtigten, der sich grundsätzlich vorstellen kann, eine Partei zu wählen – auch wenn er es derzeit nicht tut.</dd>
+    <dt id="g-provokation">Provokationsstrategie</dt><dd>Gezielte Grenzüberschreitungen, die Empörung und damit Aufmerksamkeit erzeugen sollen. Kernidee des AfD-Strategiepapiers zum Wahljahr 2017.</dd>
+    <dt id="g-remigration">Remigration</dt><dd>Begriff aus der Neuen Rechten, den die AfD seit 2024 im Programm verwendet. Die Partei versteht darunter vor allem die Rückführung Ausreisepflichtiger; Kritiker und Verfassungsschutz sehen darin auch Pläne zur Ausweisung von Menschen mit Migrationshintergrund, was die AfD-Spitze bestreitet.</dd>
+    <dt id="g-schuldenbremse">Schuldenbremse</dt><dd>Regel im Grundgesetz seit 2009, die die Neuverschuldung des Staates begrenzt. 2025 für Verteidigungsausgaben und ein Infrastruktur-Sondervermögen gelockert.</dd>
+    <dt id="g-selbstverharmlosung">Selbstverharmlosung</dt><dd>Begriff aus der Neuen Rechten für den bewusst gemäßigten Auftritt einer radikalen Kraft. Kritiker verwenden ihn, um Imagestrategien der AfD zu beschreiben.</dd>
+    <dt id="g-stammwaehler">Stammwähler</dt><dd>Wähler, die eine Partei dauerhaft und aus Überzeugung wählen, nicht nur aus Protest.</dd>
+    <dt id="g-tolerierung">Tolerierung</dt><dd>Eine Partei stützt eine Minderheitsregierung im Parlament, ohne ihr anzugehören – etwa durch Zustimmung zum Haushalt oder Verzicht auf ein Misstrauensvotum.</dd>
+    <dt id="g-ueberbietung">Überbietungswettbewerb</dt><dd>Lage, in der Parteien sich mit immer schärferen Forderungen zum selben Thema zu übertreffen versuchen.</dd>
+    <dt id="g-unvereinbarkeit">Unvereinbarkeitsbeschluss</dt><dd>Parteitagsbeschluss, der eine Zusammenarbeit mit einer anderen Partei ausschließt. Die CDU fasste ihn 2018 gegenüber AfD und Linkspartei.</dd>
+    <dt id="g-verdachtsfall">Verdachtsfall</dt><dd>Mittlere Stufe des Verfassungsschutzes: Es gibt tatsächliche Anhaltspunkte für verfassungsfeindliche Bestrebungen. Beobachtung mit nachrichtendienstlichen Mitteln ist eingeschränkt erlaubt.</dd>
+    <dt id="g-volkspartei">Volkspartei</dt><dd>Partei, die Wähler aus allen Schichten, Regionen und Altersgruppen anspricht und regelmäßig große Stimmenanteile erreicht.</dd>
+    <dt id="g-vorfeld">Vorfeld</dt><dd>Organisationen, Medien und Gruppen außerhalb einer Partei, die ihr politisch nahestehen und ihre Ziele unterstützen.</dd>
+    <dt id="g-waehlerwanderung">Wählerwanderung</dt><dd>Berechnung, wie viele Wähler zwischen zwei Wahlen von einer Partei zur anderen oder ins Nichtwählerlager gewechselt sind. Sie beruht auf Schätzmodellen.</dd>
+    <dt id="g-wechselwaehler">Wechselwähler</dt><dd>Wähler ohne feste Parteibindung, die bei verschiedenen Wahlen unterschiedliche Parteien wählen.</dd>
+  </dl>
+</section>
+
+<!-- ============ 18 QUELLEN ============ -->
+<section class="chapter" id="quellen">
+  <div class="chap-head"><div class="chap-num">18</div><div>
+    <span class="span-chip">Zum Weiterlesen</span>
+    <h2>Quellen &amp; Weiterlesen</h2>
+  </div></div>
+  <p class="lead">Hinweis: Umfragewerte haben eine Fehlertoleranz von etwa zwei bis drei Prozentpunkten und unterscheiden sich je nach Institut. Zahlen zur Wählerwanderung sind Modellschätzungen. Die Wahlergebnisse von 2026 sind teilweise vorläufige Endergebnisse. Die internen Strategiepapiere sind nur so weit wiedergegeben, wie sie öffentlich bekannt wurden.</p>
+  <h3>Strategiepapiere und Recherchen</h3>
+  <ul class="sources">
+    <li><a href="https://assets.ctfassets.net/mj324dykhxwi/1VR9r0oN9wXMYYdP1VKEIL/1733b85a3101ab17ee119a024875cb66/Strategie_BvS_Fraktionsklausur2025.pdf">Beatrix von Storch: Deutschland politisch gestalten – Das Ende der Brandmauer und der Weg in die Regierungsverantwortung (Fraktionsklausur Juli 2025, über Correctiv)</a></li>
+    <li><a href="https://correctiv.org/aktuelles/neue-rechte/2025/07/11/brandmauer-umstuerzen-so-will-die-afd-an-die-macht-kommen/">Correctiv: „Brandmauer stürzen“: So will die AfD an die Macht kommen (11.7.2025)</a></li>
+    <li><a href="https://table.media/assets/berlin/strategiepapier-landliche-raumnahme.pdf">Sebastian Münzenmaier: Strategiepapier „Ländliche Raumnahme“ (März 2026, über Table.Briefings)</a></li>
+    <li><a href="https://taz.de/AfD-Strategiepapier/!6215437/">taz: AfD-Strategiepapier – Wie die AfD die CDU zerstören will (22.9.2026)</a></li>
+    <li><a href="https://table.media/berlin/analyse/afd-wahlkampfstrategie-2025-weniger-konkurrenz-zur-cdu-mehr-waehler-von-der-spd">Table.Briefings: AfD-Wahlkampfstrategie 2025 (14.10.2024)</a></li>
+    <li><a href="https://www.endstation-rechts.de/news/afd-strategie-eine-extreme-partei-freut-sich-ueber-das-weisswaschen">Endstation Rechts: Der Strategieentwurf zur Bundestagswahl (7.12.2024)</a></li>
+    <li><a href="https://www.endstation-rechts.de/news/sechsjahresplan-der-afd-radikale-opposition-aber-keine-koalitionen">Endstation Rechts: Sechsjahresplan der AfD – das Papier „Strategie 2019–2025“ (29.7.2024)</a></li>
+    <li><a href="https://www.weser-kurier.de/politik/provokation-als-programm-doc7e4471x98sze4oywayk">Weser-Kurier: Provokation als Programm – zum Strategiepapier für 2017 (24.1.2017)</a></li>
+    <li><a href="https://www.mittelstand-nachrichten.de/aktuell/dts_politik/afd-strategiepapier-kein-eu-und-euro-austritt-mehr/">dts/Mittelstand-Nachrichten: AfD-Strategiepapier – kein EU- und Euro-Austritt mehr (Oktober 2026)</a></li>
+    <li><a href="https://krautreporter.de/politik-und-macht/6276-das-ist-die-strategie-der-afd-fur-das-jahr-2026">Krautreporter: Das ist die Strategie der AfD für das Jahr 2026 (5.3.2026)</a></li>
+  </ul>
+  <h3>Wahlen, Umfragen und Analysen</h3>
+  <ul class="sources">
+    <li><a href="https://www.zdfheute.de/politik/cdu-studie-bundestagswahl-afd-migration-linke-100.html">ZDFheute: KAS-Studie – Merz’ Migrationskurs hat Linken genutzt (4.12.2025)</a></li>
+    <li><a href="https://de.statista.com/themen/13093/bundestagswahl-2025">Statista: Bundestagswahl 2025 und Wählerwanderung</a></li>
+    <li><a href="https://www.schwaebische.de/politik/afd-in-umfrage-erstmals-vor-der-union-3486462">Schwäbische Zeitung: AfD in Umfrage erstmals vor der Union (April 2025)</a></li>
+    <li><a href="https://www.handelsblatt.com/politik/deutschland/umfrage-afd-ueberholt-spd-bei-der-wirtschaftskompetenz/100152973.html">Handelsblatt: AfD überholt SPD bei der Wirtschaftskompetenz (2025)</a></li>
+    <li><a href="https://www.finanzen.net/nachricht/aktien/umfrage-union-bei-kompetenzfrage-erstmals-seit-maerz-vor-afd-15773147">dpa-AFX: Union bei Kompetenzfrage erstmals seit März vor AfD (Juni 2026)</a></li>
+    <li><a href="https://www.tagesspiegel.de/politik/tiefstwert-fur-kanzler-merz-afd-bleibt-in-deutschlandtrend-bei-27-prozent-union-fallt-auf-20-prozent-16117651.html">Tagesspiegel: ARD-Deutschlandtrend – AfD 27, Union 20 Prozent (Oktober 2026)</a></li>
+    <li><a href="https://im.baden-wuerttemberg.de/de/land-kommunen/lebendige-demokratie/wahlen/landtagswahl-2026/">Innenministerium Baden-Württemberg: Landtagswahl 2026</a></li>
+    <li><a href="https://www.kas.de/documents/d/guest/wahlanalyse-der-landtagswahl-in-rheinland-pfalz-am-22-marz-2026">Konrad-Adenauer-Stiftung: Wahlanalyse Rheinland-Pfalz 2026</a></li>
+    <li><a href="https://www.abgeordnetenwatch.de/sachsen_anhalt-529-0.html">abgeordnetenwatch: Landtagswahl Sachsen-Anhalt 2026</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Landtagswahl_in_Sachsen-Anhalt_2026">Wikipedia: Landtagswahl in Sachsen-Anhalt 2026 (Regierungsbildung)</a></li>
+    <li><a href="https://www.zdfheute.de/politik/deutschland/siegmund-will-ministerpraesident-magdeburg-100.html">ZDFheute: Siegmund will sich im Dezember zur Wahl stellen (September 2026)</a></li>
+    <li><a href="https://www.zdfheute.de/politik/deutschland/afd-wahlsieg-spd-cdu-mecklenburg-vorpommern-wahl-100.html">ZDFheute: Mecklenburg-Vorpommern – AfD stärkste Kraft, Debakel für die CDU (20.9.2026)</a></li>
+    <li><a href="https://www.boell.de/de/berlin-2026-wahl-des-abgeordnetenhauses-und-der-bezirksverordnetenversammlungen">Heinrich-Böll-Stiftung: Wahlanalyse Berlin 2026</a></li>
+    <li><a href="https://www.nn.de/politik/strategie-der-afd-geht-auf-union-und-spd-lassen-sich-spalten-berlin-wird-ein-testfall-1.15289938">Nürnberger Nachrichten: Strategie der AfD geht auf (Kommentar, 23.9.2026)</a></li>
+  </ul>
+  <h3>Union, Verfassungsschutz und Gerichte</h3>
+  <ul class="sources">
+    <li><a href="https://table.media/berlin/news/strategiepapier-cdu-positioniert-sich-denkbar-kritisch-zur-afd">Table.Briefings: CDU-Broschüre „Abstieg für Deutschland“ (21.5.2026)</a></li>
+    <li><a href="https://www.zdfheute.de/politik/deutschland/afd-gericht-einstufung-rechtsextrem-100.html">ZDFheute: VG Köln – AfD vorerst nicht gesichert rechtsextremistisch (26.2.2026)</a></li>
+    <li><a href="https://www.evangelisch.de/inhalte/253173/26-02-2026/verfassungsschutz-darf-afd-vorerst-nicht-als-rechtsextrem-einstufen">evangelisch.de (epd): Begründung des Kölner Eilbeschlusses</a></li>
+    <li><a href="https://www.handelsblatt.com/politik/deutschland/afd-hessens-ministerpraesident-entfacht-neue-brandmauer-debatte/100259579.html">Handelsblatt: Hessens Ministerpräsident entfacht neue Brandmauer-Debatte (4.10.2026)</a></li>
+    <li><a href="https://www.volksstimme.de/panorama/afd-parteitag-zu-ende-4280258">Volksstimme (dpa): AfD-Parteitag in Erfurt zu Ende (5.7.2026)</a></li>
+  </ul>
+  <h3>Bücher zum Vertiefen</h3>
+  <ul>
+    <li>Justus Bender: <em>Was will die AfD? Eine Partei verändert Deutschland</em>. München 2017.</li>
+    <li>Melanie Amann: <em>Angst für Deutschland. Die Wahrheit über die AfD</em>. München 2017.</li>
+    <li>Alexander Häusler (Hrsg.): <em>Die Alternative für Deutschland. Programmatik, Entwicklung und politische Verortung</em>. Wiesbaden 2016.</li>
+    <li>Volker Weiß: <em>Die autoritäre Revolte. Die Neue Rechte und der Untergang des Abendlandes</em>. Stuttgart 2017.</li>
+    <li>Wolfgang Schroeder, Bernhard Weßels (Hrsg.): <em>Smarte Spalter. Die AfD zwischen Bewegung und Parlament</em>. Bonn 2022.</li>
+  </ul>
+</section>
+
+</main>
+</div>
+
+<footer>Deutsche Zeitgeschichte · Der strategische Weg der AfD 2013–2026 · Zusammengestellt als Lern- und Überblicksdokument · Stand: Oktober 2026<span class="ph-foot"> · <a href="index.html">Der Philosopher</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></footer>
+<button id="top" aria-label="Nach oben">↑</button>
+
+<script>
+(function(){
+  // ---- Timeline data ----
+  var T = [
+    ["6.2.2013","reich","Gründungstreffen in Oberursel; zu den Gründern gehören Bernd Lucke, Alexander Gauland und Konrad Adam."],
+    ["14.4.2013","reich","Gründungsparteitag in Berlin; Hauptthema ist die Kritik an der Euro-Rettungspolitik."],
+    ["22.9.2013","europa","Bundestagswahl: Die AfD scheitert mit 4,7 Prozent knapp an der Fünf-Prozent-Hürde."],
+    ["25.5.2014","europa","Europawahl: 7,1 Prozent, erstmals Abgeordnete im Europaparlament."],
+    ["Aug./Sept. 2014","europa","Einzug in die Landtage von Sachsen, Brandenburg und Thüringen."],
+    ["März 2015","reich","„Erfurter Resolution“ von Höcke und Poggenburg – Beginn des „Flügels“."],
+    ["4.–5.7.2015","reich","Parteitag in Essen: Frauke Petry setzt sich gegen Bernd Lucke durch; Lucke und viele Wirtschaftsliberale treten aus."],
+    ["Herbst 2015","krieg","Starker Flüchtlingszuzug; die Migration wird zum neuen Kernthema der AfD."],
+    ["13.3.2016","europa","Landtagswahlen: Sachsen-Anhalt 24,3, Baden-Württemberg 15,1, Rheinland-Pfalz 12,6 Prozent."],
+    ["1.5.2016","reich","Parteitag in Stuttgart beschließt das erste Grundsatzprogramm."],
+    ["Dez. 2016","religion","Bundesvorstand beschließt das Strategiepapier zum Wahljahr 2017: geplante Provokation als Methode."],
+    ["17.1.2017","krieg","Höckes Dresdner Rede über das Holocaust-Mahnmal; ein Ausschlussverfahren scheitert später."],
+    ["April 2017","reich","Parteitag in Köln: Petrys realpolitischer Zukunftsantrag wird nicht behandelt; Gauland und Weidel werden Spitzenkandidaten."],
+    ["24.9.2017","europa","Bundestagswahl: 12,6 Prozent und 94 Sitze; die AfD wird größte Oppositionsfraktion."],
+    ["25.9.2017","reich","Frauke Petry kündigt an, nicht der Fraktion anzugehören, und verlässt bald die Partei."],
+    ["Dez. 2017","reich","Jörg Meuthen und Alexander Gauland übernehmen den Parteivorsitz."],
+    ["Aug./Sept. 2018","krieg","Nach Ausschreitungen in Chemnitz marschieren AfD-Politiker gemeinsam mit Pegida-Anhängern."],
+    ["Dez. 2018","kultur","CDU-Parteitag in Hamburg beschließt die Unvereinbarkeit mit AfD und Linkspartei."],
+    ["Jan. 2019","krieg","Das Bundesamt für Verfassungsschutz erklärt die AfD zum Prüffall."],
+    ["Mitte 2019","religion","Papier „Strategie 2019–2025. Die AfD auf dem Weg zur Volkspartei“ unter Federführung von Georg Pazderski."],
+    ["Sept./Okt. 2019","europa","Landtagswahlen im Osten: Sachsen 27,5, Brandenburg 23,5, Thüringen 23,4 Prozent."],
+    ["5.2.2020","kultur","Thomas Kemmerich (FDP) wird mit Stimmen von AfD, CDU und FDP Ministerpräsident in Thüringen und tritt kurz darauf zurück."],
+    ["März 2020","krieg","Der Verfassungsschutz stuft den „Flügel“ als gesichert rechtsextremistisch ein; er wird formal aufgelöst."],
+    ["März 2021","krieg","Die Gesamtpartei wird zum Verdachtsfall erklärt."],
+    ["26.9.2021","europa","Bundestagswahl: 10,3 Prozent – erster Stimmenverlust der Parteigeschichte."],
+    ["28.1.2022","reich","Parteichef Jörg Meuthen tritt aus der AfD aus."],
+    ["18.6.2022","reich","Parteitag in Riesa: Tino Chrupalla und Alice Weidel bilden die neue Doppelspitze."],
+    ["25.6.2023","europa","Robert Sesselmann wird in Sonneberg erster AfD-Landrat."],
+    ["10.1.2024","krieg","Correctiv berichtet über das Potsdamer Treffen; Hunderttausende demonstrieren gegen Rechtsextremismus."],
+    ["13.5.2024","krieg","Das OVG Münster bestätigt die Einstufung der AfD als Verdachtsfall."],
+    ["31.5.2024","krieg","Messerangriff eines Afghanen in Mannheim; ein Polizist stirbt."],
+    ["9.6.2024","europa","Europawahl: 15,9 Prozent, zweitstärkste Kraft; danach Ausschluss aus der ID-Fraktion und Gründung der ESN-Fraktion."],
+    ["23.8.2024","krieg","Islamistischer Messeranschlag in Solingen mit drei Toten."],
+    ["1.9.2024","europa","Thüringen: AfD mit 32,8 Prozent erstmals stärkste Kraft bei einer Landtagswahl; Sachsen 30,6 Prozent."],
+    ["22.9.2024","europa","Brandenburg: 29,2 Prozent, knapp hinter der SPD."],
+    ["Okt. 2024","religion","Bundesvorstand entwirft die Wahlkampfstrategie: Migration als Hauptthema, Normalisierung begrüßen."],
+    ["6.11.2024","krieg","Die Ampel-Koalition zerbricht; Neuwahlen werden für Februar 2025 angesetzt."],
+    ["20.12.2024","krieg","Anschlag auf den Magdeburger Weihnachtsmarkt mit sechs Toten."],
+    ["11.–12.1.2025","reich","Parteitag in Riesa: Alice Weidel wird Kanzlerkandidatin, das Programm nennt „Remigration“."],
+    ["22.1.2025","krieg","Messerangriff in Aschaffenburg; ein Kleinkind und ein Helfer sterben."],
+    ["29.1.2025","kultur","Ein Migrationsantrag der Union erhält im Bundestag eine Mehrheit nur dank AfD-Stimmen."],
+    ["31.1.2025","kultur","Das Zustrombegrenzungsgesetz der Union scheitert knapp; bundesweit Proteste."],
+    ["13.2.2025","krieg","Ein Afghane fährt in München in eine Demonstration; eine Mutter und ihr Kind sterben."],
+    ["23.2.2025","europa","Bundestagswahl: AfD 20,8 Prozent, zweitstärkste Kraft; Union 28,5 Prozent."],
+    ["18.3.2025","kultur","Grundgesetzänderung lockert die Schuldenbremse; viele Unionswähler sehen einen Wortbruch."],
+    ["9.4.2025","europa","In einer Ipsos-Umfrage liegt die AfD mit 25 Prozent erstmals bundesweit vor der Union."],
+    ["2.5.2025","krieg","Der Verfassungsschutz stuft die AfD als gesichert rechtsextremistisch ein; die Partei klagt."],
+    ["6.5.2025","kultur","Friedrich Merz wird erst im zweiten Wahlgang zum Bundeskanzler gewählt."],
+    ["4.–6.7.2025","religion","Fraktionsklausur: Beatrix von Storch stellt das Papier zum Ende der Brandmauer vor."],
+    ["11.7.2025","kultur","Die Wahl von Frauke Brosius-Gersdorf zur Verfassungsrichterin wird nach einer Kampagne abgesetzt."],
+    ["14.9.2025","europa","Kommunalwahlen in Nordrhein-Westfalen: Die AfD verdreifacht etwa ihr Ergebnis."],
+    ["29.–30.11.2025","reich","Gründung der neuen Jugendorganisation „Generation Deutschland“ in Gießen."],
+    ["4.12.2025","kultur","Eine Studie der Konrad-Adenauer-Stiftung kommt zu dem Schluss, dass der Migrationskurs der Union 2025 kaum genützt hat."],
+    ["26.2.2026","krieg","Das VG Köln untersagt vorläufig die Einstufung als gesichert rechtsextremistisch."],
+    ["8.3.2026","europa","Baden-Württemberg: AfD 18,8 Prozent; in Bayern verdoppelt sie bei den Kommunalwahlen ihren Anteil."],
+    ["März 2026","religion","Sebastian Münzenmaier legt das Papier „Ländliche Raumnahme“ vor."],
+    ["22.3.2026","europa","Rheinland-Pfalz: AfD 19,5 Prozent, bestes Ergebnis in Westdeutschland."],
+    ["21.5.2026","kultur","Die CDU veröffentlicht die Broschüre „Abstieg für Deutschland. Keine Alternative“."],
+    ["Juni 2026","europa","Umfragen sehen die AfD bei bis zu 29 Prozent und bis zu neun Punkte vor der Union."],
+    ["4.–5.7.2026","reich","Parteitag in Erfurt bestätigt Weidel und Chrupalla; Ziel ist der Weg in die Regierung."],
+    ["18.7.2026","kultur","Unionsfraktionschef Jens Spahn tritt zurück; Thorsten Frei folgt ihm."],
+    ["30.8.2026","krieg","Boris Pistorius und Cem Özdemir fordern ein Verbotsverfahren gegen die AfD."],
+    ["6.9.2026","europa","Sachsen-Anhalt: AfD 43,8 Prozent, CDU 17,2 Prozent; drei Sitze fehlen zur absoluten Mehrheit."],
+    ["20.9.2026","europa","Mecklenburg-Vorpommern: AfD 38,2 Prozent, CDU scheitert mit 4,9 Prozent; in Berlin wird die Linke stärkste Kraft."],
+    ["22.9.2026","religion","Bekannt wird Münzenmaiers Papier zum Umgang mit einer Minderheitsregierung der Union."],
+    ["24.9.2026","reich","Ulrich Siegmund kündigt an, sich im Dezember zum Ministerpräsidenten wählen zu lassen."],
+    ["Anfang Okt. 2026","europa","ARD-Deutschlandtrend: AfD 27 Prozent, Union 20 Prozent."],
+    ["4.10.2026","kultur","Hessens Ministerpräsident Boris Rhein löst eine neue Brandmauer-Debatte in der CDU aus."],
+    ["5.10.2026","religion","Ein neues Europa-Papier der AfD rückt vom sofortigen EU- und Euro-Austritt ab."]
+  ];
+  var names = {reich:"Partei & Führung",religion:"Strategiepapiere",europa:"Wahlen & Umfragen",krieg:"Krisen & Konflikte",kultur:"Union & Mitte"};
+  var tl = document.getElementById("timeline");
+  T.forEach(function(e){
+    var li = document.createElement("li");
+    li.className = e[1];
+    li.innerHTML = '<span class="y">'+e[0]+'</span><span class="tag '+e[1]+'">'+names[e[1]]+'</span><br>'+e[2];
+    tl.appendChild(li);
+  });
+  document.getElementById("filters").addEventListener("click", function(ev){
+    var b = ev.target.closest("button"); if(!b) return;
+    var f = b.getAttribute("data-f");
+    this.querySelectorAll("button").forEach(function(x){x.classList.toggle("on", x===b);});
+    tl.querySelectorAll("li").forEach(function(li){
+      li.classList.toggle("hide", f!=="alle" && !li.classList.contains(f));
+    });
+  });
+
+  // ---- Progress bar & top button ----
+  var prog = document.getElementById("progress"), topBtn = document.getElementById("top");
+  function onScroll(){
+    var h = document.documentElement;
+    var p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+    prog.style.width = (p*100) + "%";
+    topBtn.classList.toggle("show", h.scrollTop > 600);
+  }
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+  topBtn.addEventListener("click", function(){ window.scrollTo({top:0}); });
+
+  // ---- Active TOC ----
+  var links = {};
+  document.querySelectorAll("nav.toc a").forEach(function(a){ links[a.getAttribute("href").slice(1)] = a; });
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          Object.keys(links).forEach(function(k){ links[k].classList.remove("active"); });
+          var a = links[en.target.id]; if(a) a.classList.add("active");
+        }
+      });
+    }, {rootMargin:"-30% 0px -60% 0px"});
+    document.querySelectorAll("section.chapter").forEach(function(s){ io.observe(s); });
+  }
+
+  // ---- Mobile TOC toggle ----
+  var toc = document.getElementById("toc"), tt = document.getElementById("tocToggle");
+  tt.addEventListener("click", function(){
+    var open = toc.classList.toggle("open"); tt.setAttribute("aria-expanded", open);
+  });
+  toc.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toc.classList.remove("open"); tt.setAttribute("aria-expanded", false); }); });
+
+  // ---- Theme toggle ----
+  var root = document.documentElement;
+  document.getElementById("themeBtn").addEventListener("click", function(){
+    var dark = root.getAttribute("data-theme") ? root.getAttribute("data-theme")==="dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    root.setAttribute("data-theme", dark ? "light" : "dark");
+  });
+
+  // ---- Glossary links: tooltip with definition ----
+  document.querySelectorAll("a.g").forEach(function(a){
+    a.title = (function(){ var dt=document.querySelector(a.getAttribute("href")); return dt && dt.nextElementSibling ? dt.nextElementSibling.textContent : ""; })();
+  });
+})();
+</script>
+</body>
+</html>

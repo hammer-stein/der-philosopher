@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Der Philosopher</title>
+<meta name="description" content="Der Philosopher – Lern- und Überblicksdossiers zu Geschichte, Politik und Wirtschaft: gründlich recherchiert, verständlich erklärt, mit Zeitleisten, Personen, Glossar und Quellen.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Der Philosopher">
+<meta property="og:description" content="Lern- und Überblicksdossiers zu Geschichte, Politik und Wirtschaft.">
+<meta property="og:locale" content="de_DE">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2314213a'/%3E%3Ctext x='32' y='47' font-family='Georgia,serif' font-size='44' fill='%23ffffff' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="philosopher.css">
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
+
+<div class="wrap">
+  <div class="topline">
+    <span id="datum">Lern- und Überblicksdossiers</span>
+    <span class="topline-mid">Geschichte · Politik · Wirtschaft</span>
+    <div class="topline-links">
+      <a href="#archiv">Alle Dossiers</a>
+      <a href="#ueber">Über den Philosopher</a>
+      <button class="theme-btn" id="themeBtn" type="button">Darstellung: hell / dunkel</button>
+    </div>
+  </div>
+  <header class="masthead">
+    <div class="ear" id="earLeft"></div>
+    <div class="nameplate">
+      <a class="wordmark" href="#start"><span class="der">Der</span>Philosopher</a>
+      <p class="motto">Hintergrund und Zusammenhang</p>
+    </div>
+    <div class="ear ear-right" id="earRight"></div>
+  </header>
+  <div class="masthead-rule"></div>
+</div>
+
+<nav class="ressorts" aria-label="Ressorts">
+  <div class="wrap"><ul id="ressortNav"></ul></div>
+</nav>
+
+<main id="inhalt" class="wrap">
+  <noscript>
+    <div class="leer-box"><h2>Bitte JavaScript aktivieren</h2><p>Die Titelseite wird aus dem Beitragsregister aufgebaut. Ohne JavaScript erreichen Sie die Dossiers direkt über ihre Dateinamen.</p></div>
+  </noscript>
+  <div id="ansicht" style="display:grid;gap:44px"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="foot-mark" href="#start"><span class="der">Der</span>Philosopher</a>
+      <p>Ausführliche Lern- und Überblicksdossiers, die ein Thema von Grund auf erklären: Ursachen, Abläufe und Folgen, mit Zeitleiste, Personen, Glossar und Quellen.</p>
+    </div>
+    <div>
+      <h2>Ressorts</h2>
+      <ul id="footRessorts"></ul>
+    </div>
+    <div>
+      <h2>Der Philosopher</h2>
+      <ul>
+        <li><a href="#archiv">Alle Dossiers</a></li>
+        <li><a href="#ueber">Über den Philosopher</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <div class="copy" id="copy">Der Philosopher</div>
+  </div>
+</footer>
+
+<script src="register.js"></script>
+<script>
+(function(){
+  "use strict";
+  var P = window.PHILOSOPHER || {ressorts:[],reihen:[],artikel:[]};
+  var ansicht = document.getElementById("ansicht");
+
+  // ---------- Hilfsfunktionen ----------
+  function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function ressort(id){ for (var i=0;i<P.ressorts.length;i++) if (P.ressorts[i].id===id) return P.ressorts[i]; return {id:id,name:id,beschreibung:""}; }
+  function reihe(id){ for (var i=0;i<P.reihen.length;i++) if (P.reihen[i].id===id) return P.reihen[i]; return null; }
+  function zeitraum(a){ return a.von === a.bis ? String(a.von) : a.von + "–" + a.bis; }
+  function datumLang(iso){
+    var d = new Date(iso + "T12:00:00");
+    return isNaN(d) ? iso : d.toLocaleDateString("de-DE",{day:"numeric",month:"long",year:"numeric"});
+  }
+  // Neueste zuerst; bei gleichem Datum gilt die Reihenfolge im Register
+  var artikel = P.artikel.map(function(a,i){ a._i = i; return a; }).sort(function(x,y){
+    if (x.veroeffentlicht !== y.veroeffentlicht) return x.veroeffentlicht < y.veroeffentlicht ? 1 : -1;
+    return x._i - y._i;
+  });
+  function imRessort(id){ return artikel.filter(function(a){ return a.ressort===id; }); }
+
+  function flag(a, mitReihe){
+    var r = ressort(a.ressort), re = a.reihe ? reihe(a.reihe) : null;
+    var s = esc(r.name);
+    if (mitReihe && re) s += ' <span class="reihe">· Reihe, Teil ' + esc(a.teil) + '</span>';
+    else if (a.dachzeile) s += ' <span class="reihe">· ' + esc(a.dachzeile) + '</span>';
+    return '<div class="flag">' + s + '</div>';
+  }
+  function meta(a){
+    return '<div class="meta"><span>' + zeitraum(a) + '</span><span>' + esc(a.kapitel) + ' Kapitel</span><span>Stand ' + esc(a.stand) + '</span></div>';
+  }
+  function row(a){
+    var r = ressort(a.ressort);
+    var chips = (a.inhalt||[]).slice(0,5).map(function(k){
+      return '<a href="' + esc(a.datei) + '#' + esc(k[1]) + '">' + esc(k[2]) + '</a>';
+    }).join("");
+    return '<article class="row r-' + esc(a.ressort) + '">' +
+      '<div class="row-years">' + zeitraum(a) + '<small>' + esc(r.name) + '</small></div>' +
+      '<div class="row-body">' + flag(a, true) +
+        '<h3><a href="' + esc(a.datei) + '">' + esc(a.titel) + '</a></h3>' +
+        '<p>' + esc(a.teaser) + '</p>' + meta(a) +
+        (chips ? '<div class="chips" aria-label="Aus dem Inhalt">' + chips + '</div>' : '') +
+      '</div></article>';
+  }
+
+  // ---------- Kopf, Leiste, Fuß ----------
+  var mitInhalt = P.ressorts.filter(function(r){ return imRessort(r.id).length; });
+  var minVon = Math.min.apply(null, artikel.map(function(a){return a.von;}));
+  var maxBis = Math.max.apply(null, artikel.map(function(a){return a.bis;}));
+  document.getElementById("earLeft").innerHTML = '<strong>' + artikel.length + ' Dossiers</strong>in ' + mitInhalt.length + ' Ressorts';
+  document.getElementById("earRight").innerHTML = artikel.length ? '<strong>' + minVon + ' bis ' + maxBis + '</strong>Zeitraum des Archivs' : '';
+  try {
+    document.getElementById("datum").textContent = new Date().toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+  } catch(e) {}
+  document.getElementById("copy").textContent = "Der Philosopher · " + new Date().getFullYear() + " · Alle Dossiers geben den Stand zum angegebenen Datum wieder.";
+
+  var nav = document.getElementById("ressortNav");
+  var navHtml = '<li><a href="#start" data-ziel="start">Titelseite</a></li>';
+  P.ressorts.forEach(function(r){
+    navHtml += '<li class="r-' + esc(r.id) + '"><a href="#' + esc(r.id) + '" data-ziel="' + esc(r.id) + '">' + esc(r.name) + '</a></li>';
+  });
+  navHtml += '<li><a href="#archiv" data-ziel="archiv">Archiv</a></li>';
+  nav.innerHTML = navHtml;
+  document.getElementById("footRessorts").innerHTML = P.ressorts.map(function(r){
+    return '<li><a href="#' + esc(r.id) + '">' + esc(r.name) + '</a></li>';
+  }).join("");
+
+  // ---------- Titelseite ----------
+  function zeitachse(){
+    var START = 1450, ENDE = 2030, SPANNE = ENDE - START;
+    function pos(j){ return ((j - START) / SPANNE * 100).toFixed(3); }
+    var html = '<section class="zeitachse" aria-labelledby="za-h">' +
+      '<div class="section-head"><h2 id="za-h">Das Archiv auf der Zeitachse</h2><a class="more" href="#archiv">Alle Dossiers</a></div>' +
+      '<p class="section-intro">Jedes Dossier steht an der Stelle des Zeitraums, den es behandelt. Die Lücken zeigen, was noch geschrieben werden will.</p>' +
+      '<div class="scroll"><div class="za" role="list">';
+    mitInhalt.forEach(function(r){
+      // Überlappende Dossiers eines Ressorts auf mehrere Spuren verteilen
+      var spuren = [];
+      imRessort(r.id).slice().sort(function(x,y){ return x.von - y.von; }).forEach(function(a){
+        for (var i=0;i<spuren.length;i++){ if (spuren[i].ende < a.von){ spuren[i].ende = a.bis; spuren[i].liste.push(a); return; } }
+        spuren.push({ende:a.bis, liste:[a]});
+      });
+      spuren.forEach(function(s, i){
+        html += '<div class="za-label r-' + esc(r.id) + '">' + (i===0 ? esc(r.name) : '') + '</div><div class="za-track r-' + esc(r.id) + '" role="listitem">';
+        s.liste.forEach(function(a){
+          var l = parseFloat(pos(a.von)), w = Math.max(parseFloat(pos(a.bis)) - l, 0.9);
+          var cls = "za-bar";
+          if (w < 12) cls += (l + w > 70) ? " out out-l" : " out out-r";
+          html += '<a class="' + cls + '" style="left:' + l + '%;width:' + w + '%" href="' + esc(a.datei) + '" title="' + esc(a.titel) + '" aria-label="' + esc(a.titel) + ', ' + zeitraum(a) + '"><span class="t">' + zeitraum(a) + (w >= 22 ? ' · ' + esc(a.titel) : '') + '</span></a>';
+        });
+        html += '</div>';
+      });
+    });
+    html += '<div></div><div class="za-axis" aria-hidden="true">';
+    for (var j = START; j <= 2000; j += 50) html += '<span style="left:' + pos(j) + '%">' + j + '</span>';
+    html += '</div></div></div></section>';
+    return html;
+  }
+
+  function reihenBlock(re){
+    var teile = artikel.filter(function(a){ return a.reihe === re.id; }).sort(function(x,y){ return x.von - y.von; });
+    if (!teile.length) return "";
+    var r = ressort(re.ressort), beginn = re.beginn || teile[0].von, ende = re.ende || new Date().getFullYear();
+    var strip = "", letzte = beginn;
+    teile.forEach(function(a){
+      strip += '<a href="' + esc(a.datei) + '" style="flex:' + Math.max(a.bis - a.von, 1) + '" title="' + esc(a.titel) + '">Teil ' + esc(a.teil) + '<small>' + zeitraum(a) + '</small></a>';
+      letzte = Math.max(letzte, a.bis);
+    });
+    if (letzte < ende) strip += '<div class="offen" style="flex:' + (ende - letzte) + '">' + esc(re.offen || "In Vorbereitung") + '<small>' + (letzte + 1) + '–heute</small></div>';
+    var liste = teile.map(function(a){
+      return '<div class="teil"><span class="nr">' + esc(a.teil) + '</span><div class="meta"><span>' + zeitraum(a) + '</span><span>' + esc(a.kapitel) + ' Kapitel</span></div>' +
+        '<h3><a href="' + esc(a.datei) + '">' + esc(a.titel) + '</a></h3></div>';
+    }).join("");
+    if (letzte < ende) liste += '<div class="teil geplant"><span class="nr">' + (teile.length + 1) + '</span><div class="meta"><span>ab ' + (letzte + 1) + '</span></div><h3>Fortsetzung in Vorbereitung</h3></div>';
+    return '<section class="reihe-box r-' + esc(r.id) + '" aria-labelledby="reihe-' + esc(re.id) + '">' +
+      '<div class="section-head"><h2 id="reihe-' + esc(re.id) + '">Reihe: ' + esc(re.name) + '</h2><a class="more" href="#' + esc(r.id) + '">Ressort ' + esc(r.name) + '</a></div>' +
+      '<p class="section-intro">' + esc(re.beschreibung) + '</p>' +
+      '<div class="reihe-strip" role="img" aria-label="Fortschritt der Reihe von ' + beginn + ' bis ' + ende + '">' + strip + '</div>' +
+      '<div class="reihe-scale"><span>' + beginn + '</span><span>' + ende + '</span></div>' +
+      '<div class="teile">' + liste + '</div></section>';
+  }
+
+  function titelseite(){
+    if (!artikel.length){
+      ansicht.innerHTML = '<div class="leer-box"><h2>Noch keine Dossiers</h2><p>Tragen Sie das erste Dossier in die Datei register.js ein.</p></div>';
+      return;
+    }
+    var lead = artikel.filter(function(a){ return a.aufmacher; })[0] || artikel[0];
+    var rest = artikel.filter(function(a){ return a !== lead; });
+    var lr = ressort(lead.ressort);
+    var inhalt = (lead.inhalt||[]).slice(0,8).map(function(k){
+      return '<li><a href="' + esc(lead.datei) + '#' + esc(k[1]) + '"><span class="nr">' + esc(k[0]) + '</span><span>' + esc(k[2]) + '</span></a></li>';
+    }).join("");
+
+    var html = '<section class="front-top" aria-label="Aufmacher">' +
+      '<article class="lead-story r-' + esc(lead.ressort) + '">' +
+        '<div class="flag">Aufmacher · ' + esc(lr.name) + ' <span class="reihe">· ' + esc(lead.dachzeile) + '</span></div>' +
+        '<h2><a href="' + esc(lead.datei) + '">' + esc(lead.titel) + '</a></h2>' +
+        '<p class="lead-standfirst">' + esc(lead.teaser) + '</p>' +
+        '<div class="lead-years">' + lead.von + ' – ' + lead.bis + '</div>' +
+        '<div class="meta"><span>' + esc(lead.kapitel) + ' Kapitel</span><span>mit Zeitleiste, Personen und Glossar</span><span>Stand ' + esc(lead.stand) + '</span></div>' +
+        (inhalt ? '<div class="lead-inhalt"><span class="label">Aus dem Inhalt</span><ol>' + inhalt + '</ol></div>' : '') +
+        '<a class="btn-lesen" href="' + esc(lead.datei) + '">Dossier lesen</a>' +
+      '</article>' +
+      '<aside class="side-col" aria-label="Weitere Dossiers"><span class="label">Weitere Dossiers</span>' +
+        rest.slice(0,3).map(function(a){
+          return '<div class="side-item r-' + esc(a.ressort) + '">' + flag(a, true) +
+            '<h3><a href="' + esc(a.datei) + '">' + esc(a.titel) + '</a></h3>' +
+            '<p>' + esc(a.teaser) + '</p>' + meta(a) + '</div>';
+        }).join("") +
+      '</aside></section>';
+
+    html += zeitachse();
+    P.reihen.forEach(function(re){ html += reihenBlock(re); });
+
+    mitInhalt.forEach(function(r){
+      var liste = imRessort(r.id);
+      html += '<section class="r-' + esc(r.id) + '" aria-labelledby="sec-' + esc(r.id) + '">' +
+        '<div class="section-head"><h2 id="sec-' + esc(r.id) + '">' + esc(r.name) + '</h2><a class="more" href="#' + esc(r.id) + '">Zum Ressort ' + esc(r.name) + '</a></div>' +
+        '<div class="rows">' + liste.map(row).join("") + '</div></section>';
+    });
+
+    html += '<section id="ueber" aria-labelledby="ueber-h">' +
+      '<div class="section-head"><h2 id="ueber-h">Über den Philosopher</h2></div>' +
+      '<div class="ueber">' +
+        '<div><h3>Was der Philosopher ist</h3><p>Der Philosopher sammelt ausführliche Lern- und Überblicksdossiers. Jedes erklärt ein Thema von Grund auf: wie es dazu kam, was geschah und was daraus folgte. Zeitleiste, Personenverzeichnis, Glossar und Quellen gehören zu jedem Dossier.</p></div>' +
+        '<div><h3>Wie die Dossiers entstehen</h3><p>Die Dossiers werden mit Hilfe eines KI-Sprachmodells recherchiert und verfasst. Daten und Zahlen werden vor dem Schreiben an seriösen Quellen geprüft, Schätzungen sind als Schätzungen und Umstrittenes als umstritten gekennzeichnet. Jedes Dossier nennt die verwendeten Quellen.</p></div>' +
+        '<div><h3>Stand der Informationen</h3><p>Dossiers zu laufenden Entwicklungen geben den Stand zum angegebenen Datum wieder und werden nicht fortlaufend aktualisiert. Sie ersetzen keine Fach-, Rechts- oder Anlageberatung.</p></div>' +
+      '</div></section>';
+
+    ansicht.innerHTML = html;
+  }
+
+  // ---------- Ressortseite ----------
+  function ressortSeite(id){
+    var r = ressort(id), liste = imRessort(id);
+    var html = '<header class="ressort-head r-' + esc(id) + '"><span class="label" style="color:var(--muted)">Ressort</span><h1>' + esc(r.name) + '</h1><p>' + esc(r.beschreibung) + '</p>' +
+      '<div class="meta"><span>' + (liste.length === 1 ? '1 Dossier' : liste.length + ' Dossiers') + '</span></div></header>';
+    if (liste.length){
+      // Geschichte chronologisch nach Zeitraum, sonst neueste zuerst
+      if (id === "geschichte") liste = liste.slice().sort(function(x,y){ return x.von - y.von; });
+      html += '<div class="rows">' + liste.map(row).join("") + '</div>';
+    } else {
+      html += '<div class="leer-box r-' + esc(id) + '"><h2>In Vorbereitung</h2><p>In diesem Ressort ist noch kein Dossier erschienen. Bis dahin finden Sie alle bisherigen Beiträge im <a href="#archiv">Archiv</a>.</p></div>';
+    }
+    ansicht.innerHTML = html;
+  }
+
+  // ---------- Archiv ----------
+  function archiv(){
+    ansicht.innerHTML = '<header class="ressort-head"><span class="label" style="color:var(--muted)">Archiv</span><h1 style="color:var(--ink)">Alle Dossiers</h1><p>Sämtliche Beiträge des Philosophers, durchsuchbar nach Titel, Thema und Kapitel.</p></header>' +
+      '<div class="archiv-tools">' +
+        '<label class="feld" for="suche">Suchen<input id="suche" type="search" placeholder="z. B. Reformation, Inflation, Preußen" autocomplete="off"></label>' +
+        '<label class="feld" for="ordnung">Ordnen<select id="ordnung"><option value="neu">Neueste zuerst</option><option value="zeit">Nach behandeltem Zeitraum</option><option value="ressort">Nach Ressort</option></select></label>' +
+        '<span class="treffer" id="treffer" aria-live="polite"></span>' +
+      '</div><div id="archivListe"></div>';
+    var suche = document.getElementById("suche"), ordnung = document.getElementById("ordnung");
+    function zeichnen(){
+      var q = suche.value.trim().toLowerCase();
+      var liste = artikel.filter(function(a){
+        if (!q) return true;
+        var text = [a.titel, a.teaser, a.dachzeile, ressort(a.ressort).name, zeitraum(a)].concat((a.inhalt||[]).map(function(k){return k[2];})).join(" ").toLowerCase();
+        return q.split(/\s+/).every(function(w){ return text.indexOf(w) !== -1; });
+      });
+      if (ordnung.value === "zeit") liste = liste.slice().sort(function(x,y){ return x.von - y.von; });
+      if (ordnung.value === "ressort") liste = liste.slice().sort(function(x,y){
+        var ix = P.ressorts.indexOf(ressort(x.ressort)), iy = P.ressorts.indexOf(ressort(y.ressort));
+        return ix - iy || x.von - y.von;
+      });
+      document.getElementById("treffer").textContent = liste.length === 1 ? "1 Dossier" : liste.length + " Dossiers";
+      document.getElementById("archivListe").innerHTML = liste.length
+        ? '<div class="rows">' + liste.map(row).join("") + '</div>'
+        : '<div class="leer-box"><h2>Kein Treffer</h2><p>Zu „' + esc(suche.value) + '“ gibt es noch kein Dossier. Versuchen Sie einen anderen Begriff.</p></div>';
+    }
+    suche.addEventListener("input", zeichnen);
+    ordnung.addEventListener("change", zeichnen);
+    zeichnen();
+  }
+
+  // ---------- Navigation über den Anker in der Adresse ----------
+  var letzteAnsicht = null;
+  function route(){
+    var h = (location.hash || "").replace(/^#/, "");
+    var ziel = h;
+    var istRessort = P.ressorts.some(function(r){ return r.id === h; });
+    if (!istRessort && h !== "archiv") ziel = "start";
+    if (ziel !== letzteAnsicht){
+      if (istRessort) ressortSeite(h);
+      else if (h === "archiv") archiv();
+      else titelseite();
+      letzteAnsicht = ziel;
+      var titel = istRessort ? ressort(h).name + " – Der Philosopher" : (h === "archiv" ? "Archiv – Der Philosopher" : "Der Philosopher");
+      document.title = titel;
+    }
+    nav.querySelectorAll("a").forEach(function(a){
+      if (a.getAttribute("data-ziel") === ziel) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+    });
+    if (h === "ueber"){
+      var u = document.getElementById("ueber"); if (u) u.scrollIntoView();
+    } else if (h && h !== "start" && ziel === h){
+      window.scrollTo(0, 0);
+    } else if (!h || h === "start"){
+      window.scrollTo(0, 0);
+    }
+  }
+  window.addEventListener("hashchange", route);
+  route();
+
+  // ---------- Darstellung hell / dunkel ----------
+  var root = document.documentElement;
+  document.getElementById("themeBtn").addEventListener("click", function(){
+    var dunkel = root.getAttribute("data-theme") ? root.getAttribute("data-theme") === "dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    root.setAttribute("data-theme", dunkel ? "light" : "dark");
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Von 1453 bis 1648 – Deutsche und europäische Geschichte</title>
+<meta name="description" content="Die Geschichte des Heiligen Römischen Reiches und Europas vom Fall Konstantinopels bis zum Westfälischen Frieden – verständlich, gegliedert, mit Zeitleiste, Personen und Glossar.">
+<style>
+:root{
+  --bg:#f1f2f4; --paper:#ffffff; --ink:#16191f; --muted:#555b66; --line:#d3d7de;
+  --accent:#1f3a5f; --accent-soft:#e6ebf2;
+  --c1:#24566b; --c2:#5a6630; --c3:#4a3f6b; --c4:#7a1e2b; --c5:#2f5a3f;
+  --c1-soft:#e8f0f2; --c2-soft:#eff1e6; --c3-soft:#eeecf3; --c4-soft:#f4e9eb; --c5-soft:#e9f1ec;
+  --shadow:none;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#11141a; --paper:#191d24; --ink:#e4e7ec; --muted:#9aa1ad; --line:#323844;
+    --accent:#8fb3d9; --accent-soft:#1d2836;
+    --c1:#7fb6c6; --c2:#b8c37f; --c3:#b0a5d6; --c4:#e08a97; --c5:#8fc4a0;
+    --c1-soft:#172429; --c2-soft:#22251a; --c3-soft:#211e2b; --c4-soft:#2b1b1f; --c5-soft:#18251d;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+    --bg:#11141a; --paper:#191d24; --ink:#e4e7ec; --muted:#9aa1ad; --line:#323844;
+    --accent:#8fb3d9; --accent-soft:#1d2836;
+    --c1:#7fb6c6; --c2:#b8c37f; --c3:#b0a5d6; --c4:#e08a97; --c5:#8fc4a0;
+    --c1-soft:#172429; --c2-soft:#22251a; --c3-soft:#211e2b; --c4-soft:#2b1b1f; --c5-soft:#18251d;
+    --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;color:var(--ink)}
+h2{font-size:1.85rem;margin:0 0 .4rem;font-weight:600;letter-spacing:.005em}
+h3{font-size:1.32rem;margin:2.2rem 0 .7rem;font-weight:600;padding-bottom:.3rem;border-bottom:1px solid var(--line)}
+h4{font-size:1.08rem;margin:1.2rem 0 .3rem}
+p{margin:.6rem 0}
+ul,ol{padding-left:1.3rem}
+li{margin:.25rem 0}
+strong{font-weight:650}
+
+/* progress */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:50;transition:width .1s}
+
+/* hero */
+.hero{background:#14213a;color:#eef1f5;padding:60px 20px 50px;text-align:center;border-bottom:4px double #8a97ab}
+.hero .kicker{font-family:var(--sans);letter-spacing:.22em;text-transform:uppercase;font-size:.75rem;opacity:.8}
+.hero h1{color:#fff;font-size:clamp(2rem,5vw,3.1rem);font-weight:600;margin:.5rem 0 .8rem}
+.hero p{max-width:720px;margin:0 auto;font-size:1.08rem;opacity:.95}
+.hero .years{font-family:var(--serif);font-size:clamp(1.3rem,3.6vw,1.8rem);letter-spacing:.12em;margin:22px auto 0;padding-top:14px;border-top:1px solid rgba(238,241,245,.35);display:inline-block;opacity:.95}
+
+/* layout */
+.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:36px;max-width:1240px;margin:0 auto;padding:28px 20px 80px}
+nav.toc{font-family:var(--sans);position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:0;padding:16px 14px;box-shadow:var(--shadow);font-size:.92rem}
+nav.toc .toc-title{font-family:var(--sans);font-weight:700;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 10px 8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+nav.toc ol{list-style:none;margin:0;padding:0}
+nav.toc a{display:block;padding:5px 8px;border-radius:0;color:var(--ink);text-decoration:none;line-height:1.35}
+nav.toc a:hover{background:var(--accent-soft)}
+nav.toc a.active{background:var(--accent-soft);color:var(--accent);font-weight:600;box-shadow:inset 3px 0 0 var(--accent)}
+nav.toc .num{display:inline-block;width:1.6em;color:var(--muted)}
+.theme-btn{font-family:var(--sans);margin:12px 6px 2px;font:inherit;font-size:.85rem;background:none;border:1px solid var(--line);color:var(--muted);padding:5px 10px;border-radius:0;cursor:pointer}
+.toc-toggle{display:none}
+main{min-width:0}
+section.chapter{background:var(--paper);border:1px solid var(--line);border-radius:0;padding:34px 38px;margin-bottom:28px;box-shadow:var(--shadow)}
+.chap-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.chap-num{flex:0 0 auto;width:46px;height:46px;border-radius:0;background:transparent;color:var(--accent);border:1.5px solid var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:1.35rem;font-weight:700}
+.span-chip{display:inline-block;font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:0;border-radius:0;background:none;color:var(--muted);margin-bottom:4px}
+.lead{font-size:1.1rem;color:var(--muted);font-style:italic}
+
+/* boxes */
+.box{border-radius:0;padding:14px 18px;margin:20px 0;border:1px solid var(--line);border-left:4px solid}
+.box .box-title{font-family:var(--sans);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.box.kurz{background:var(--c1-soft);border-color:var(--c1)}
+.box.kurz .box-title{color:var(--c1)}
+.box.merke{background:var(--c5-soft);border-color:var(--c5)}
+.box.merke .box-title{color:var(--c5)}
+.box.warum{background:var(--c3-soft);border-color:var(--c3)}
+.box.warum .box-title{color:var(--c3)}
+.box.achtung{background:var(--c2-soft);border-color:var(--c2)}
+.box.achtung .box-title{color:var(--c2)}
+.box ul{margin:.3rem 0}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:14px 0}
+.card{background:var(--bg);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:0;padding:14px 16px}
+.card h4{margin:.1rem 0 .3rem;font-weight:600}
+.card .yr{font-family:var(--serif);font-weight:700;color:var(--accent);font-size:1.05rem}
+.card p{margin:.3rem 0;font-size:.95rem}
+
+/* era bar */
+.erabar{font-family:var(--sans);display:flex;border-radius:0;overflow:hidden;margin:18px 0 6px;font-size:.78rem;color:#fff;font-weight:600;min-height:58px}
+.erabar div{padding:8px 8px;display:flex;flex-direction:column;justify-content:center;line-height:1.2}
+.erabar small{font-weight:400;opacity:.9}
+.era-a{background:#24566b;flex:64}
+.era-b{background:#4a3f6b;flex:38}
+.era-c{background:#5a6630;flex:63}
+.era-d{background:#7a1e2b;flex:30}
+.erascale{font-family:var(--sans);display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}
+
+/* chain: vertical numbered sequence */
+.chain{list-style:none;margin:18px 0 20px;padding:0;position:relative;border-top:1px solid var(--line)}
+.chain::before{content:"";position:absolute;left:17px;top:22px;bottom:22px;width:1px;background:var(--accent);opacity:.55}
+.chain li{position:relative;display:grid;grid-template-columns:36px minmax(170px,250px) 1fr;align-items:center;gap:18px;margin:0;padding:10px 0;border-bottom:1px solid var(--line)}
+.chain .n{position:relative;z-index:1;width:36px;height:36px;display:grid;place-items:center;background:var(--paper);border:1.5px solid var(--accent);color:var(--accent);font-family:var(--sans);font-size:.85rem;font-weight:700}
+.chain b{font-family:var(--serif);font-weight:600;color:var(--accent);font-size:1.02rem}
+.chain .desc{color:var(--muted);font-size:.97rem}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:.95rem;min-width:540px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-family:var(--serif);font-size:1rem;font-weight:600;border-bottom:1px solid var(--ink)}
+tr:last-child td{border-bottom:none}
+
+/* phases */
+.phase{border:1px solid var(--line);border-left:4px solid var(--c4);border-radius:0;margin:16px 0;overflow:hidden}
+.phase-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;align-items:baseline;padding:12px 18px;background:var(--c4-soft);border-bottom:1px solid var(--line)}
+.phase-head h4{margin:0;font-size:1.12rem;font-weight:600}
+.phase-head .yr{font-family:var(--serif);font-weight:700;color:var(--c4)}
+.phase-body{padding:6px 18px 12px}
+.mini-tl{list-style:none;padding:0;margin:8px 0}
+.mini-tl li{display:grid;grid-template-columns:108px 1fr;gap:12px;padding:5px 0;border-bottom:1px solid var(--line)}
+.mini-tl li:last-child{border-bottom:none}
+.mini-tl .d{font-family:var(--sans);font-size:.92rem;padding-top:2px;font-weight:700;color:var(--c4);font-variant-numeric:tabular-nums}
+
+/* details */
+details{background:var(--bg);border:1px solid var(--line);border-radius:0;padding:10px 14px;margin:12px 0}
+details summary{cursor:pointer;font-weight:600;color:var(--accent)}
+details[open] summary{margin-bottom:6px}
+
+/* quote */
+blockquote{margin:14px 0;padding:8px 16px;border-left:3px solid var(--accent);font-family:var(--serif);font-style:italic;color:var(--muted)}
+
+/* timeline */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.filters button{font:inherit;font-family:var(--sans);font-size:.88rem;padding:6px 13px;border-radius:0;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.filters button.on{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.tl{position:relative;list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:6px 0 10px 12px}
+.tl li::before{content:"";position:absolute;left:-29px;top:14px;width:10px;height:10px;border-radius:0;background:var(--paper);border:3px solid var(--muted)}
+.tl li.reich::before{border-color:var(--c1)}
+.tl li.religion::before{border-color:var(--c3)}
+.tl li.europa::before{border-color:var(--c2)}
+.tl li.krieg::before{border-color:var(--c4)}
+.tl li.kultur::before{border-color:var(--c5)}
+.tl .y{font-family:var(--serif);font-weight:700;font-size:1.05rem;margin-right:6px}
+.tl .tag{font-family:var(--sans);text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;font-weight:600;padding:1px 8px;border-radius:0;margin-left:6px;vertical-align:2px}
+.tag.reich{background:var(--c1-soft);color:var(--c1)}
+.tag.religion{background:var(--c3-soft);color:var(--c3)}
+.tag.europa{background:var(--c2-soft);color:var(--c2)}
+.tag.krieg{background:var(--c4-soft);color:var(--c4)}
+.tag.kultur{background:var(--c5-soft);color:var(--c5)}
+.tl li.hide{display:none}
+
+/* people */
+.people{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.person{background:var(--bg);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:0;padding:14px 16px}
+.person h4{margin:0}
+.person .life{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin-bottom:4px}
+.person .role{font-family:var(--sans);font-size:.7rem;letter-spacing:.12em;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+.person p{font-size:.93rem;margin:.35rem 0 0}
+
+/* glossary */
+dl.gloss{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:0;margin:0}
+dl.gloss dt,dl.gloss dd{padding:9px 6px;border-bottom:1px solid var(--line);margin:0}
+dl.gloss dt{font-weight:700;font-family:var(--serif)}
+.g{text-decoration:underline dotted;text-underline-offset:3px;color:inherit;cursor:help}
+
+.sources li{margin:.4rem 0}
+footer{font-family:var(--sans);text-align:center;color:var(--muted);font-size:.8rem;letter-spacing:.04em;padding:22px 20px 30px;border-top:1px solid var(--line);max-width:1240px;margin:0 auto}
+#top{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border-radius:0;border:1px solid var(--accent);background:var(--accent);color:var(--paper);font-size:1.3rem;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s}
+#top.show{opacity:1;pointer-events:auto}
+
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr;padding:16px 16px 70px;gap:16px}
+  nav.toc{position:relative;top:0;max-height:none}
+  nav.toc ol{display:none}
+  nav.toc.open ol{display:block}
+  .toc-toggle{display:block;width:100%;font:inherit;font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;background:none;border:none;color:var(--ink);text-align:left;cursor:pointer;padding:2px 6px}
+  nav.toc .toc-title{display:none}
+  .toc-toggle::after{content:"+";float:right;font-weight:400}
+  nav.toc.open .toc-toggle::after{content:"\2013"}
+  section.chapter{padding:22px 18px}
+  h2{font-size:1.55rem}
+  dl.gloss{grid-template-columns:1fr}
+  dl.gloss dt{border-bottom:none;padding-bottom:0}
+  .mini-tl li{grid-template-columns:1fr;gap:0}
+  .chain li{grid-template-columns:36px 1fr;gap:4px 14px}
+  .chain .n{grid-row:span 2}
+  .chain .desc{grid-column:2}
+}
+@media print{
+  nav.toc,#top,#progress,.filters,.theme-btn{display:none!important}
+  .layout{display:block;padding:0}
+  section.chapter{box-shadow:none;break-inside:auto;border:none;padding:10px 0}
+  details{display:block}
+  details>*{display:block}
+  .hero{background:none;color:#000}
+  .hero h1{color:#000}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<!-- Der Philosopher: Leiste -->
+<style>
+.ph-bar{background:var(--paper);border-bottom:1px solid var(--line);font-family:var(--sans)}
+.ph-bar .ph-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:baseline;gap:6px 18px;flex-wrap:wrap}
+.ph-brand{font-family:var(--serif);font-size:1.35rem;font-weight:600;line-height:1.2;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.ph-brand i{font-weight:400;font-size:.72em;color:var(--muted);margin-right:.18em}
+.ph-links{display:flex;gap:18px;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.ph-links a{color:var(--muted);text-decoration:none}
+.ph-links a:hover{color:var(--accent);text-decoration:underline}
+footer .ph-foot a{color:var(--muted)}
+@media (max-width:700px){.ph-bar .ph-in{padding:8px 16px}}
+@media print{.ph-bar{display:none}}
+</style>
+<nav class="ph-bar" aria-label="Der Philosopher"><div class="ph-in">
+  <a class="ph-brand" href="index.html"><i>Der</i>Philosopher</a>
+  <div class="ph-links"><a href="index.html#geschichte">Geschichte</a><a href="index.html">Titelseite</a></div>
+</div></nav>
+
+
+<header class="hero">
+  <div class="kicker">Deutsche und europäische Geschichte</div>
+  <h1>Vom Fall Konstantinopels zum Westfälischen Frieden</h1>
+  <p>Wie aus dem Mittelalter die Neuzeit wurde: Buchdruck und Entdeckungen, Reformation und Glaubensspaltung, Bauernkrieg, Religionskriege und schließlich der Dreißigjährige Krieg – und was am Ende daraus entstand.</p>
+  <div class="years">1453 – 1648</div>
+</header>
+
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Inhaltsverzeichnis">
+  <button class="toc-toggle" id="tocToggle" aria-expanded="false">Inhaltsverzeichnis</button>
+  <div class="toc-title">Inhalt</div>
+  <ol>
+    <li><a href="#ueberblick"><span class="num">1</span>Überblick: Worum geht es?</a></li>
+    <li><a href="#um1450"><span class="num">2</span>Die Welt um 1450</a></li>
+    <li><a href="#aufbruch"><span class="num">3</span>Aufbruch in eine neue Zeit</a></li>
+    <li><a href="#reichsreform"><span class="num">4</span>Maximilian &amp; die Reichsreform</a></li>
+    <li><a href="#reformation"><span class="num">5</span>Die Reformation</a></li>
+    <li><a href="#konfession"><span class="num">6</span>Das konfessionelle Zeitalter</a></li>
+    <li><a href="#europa"><span class="num">7</span>Europa der Glaubenskriege</a></li>
+    <li><a href="#krieg"><span class="num">8</span>Der Dreißigjährige Krieg</a></li>
+    <li><a href="#frieden"><span class="num">9</span>Der Westfälische Frieden</a></li>
+    <li><a href="#bilanz"><span class="num">10</span>Bilanz: Was hat sich verändert?</a></li>
+    <li><a href="#zeitleiste"><span class="num">11</span>Zeitleiste</a></li>
+    <li><a href="#personen"><span class="num">12</span>Wichtige Personen</a></li>
+    <li><a href="#glossar"><span class="num">13</span>Glossar</a></li>
+    <li><a href="#quellen"><span class="num">14</span>Quellen &amp; Weiterlesen</a></li>
+  </ol>
+  <button class="theme-btn" id="themeBtn" type="button">Darstellung: hell / dunkel</button>
+</nav>
+
+<main>
+
+<!-- ============ 1 ÜBERBLICK ============ -->
+<section class="chapter" id="ueberblick">
+  <div class="chap-head"><div class="chap-num">1</div><div>
+    <span class="span-chip">Einstieg</span>
+    <h2>Überblick: Worum geht es?</h2>
+  </div></div>
+  <p class="lead">Die knapp 200 Jahre zwischen 1453 und 1648 gehören zu den spannendsten der europäischen Geschichte. Historiker nennen diese Zeit den Beginn der <strong>Frühen Neuzeit</strong>. In ihr endete das Mittelalter, und viele Dinge entstanden, die unser Leben bis heute prägen.</p>
+
+  <h3>Warum gerade 1453 und 1648?</h3>
+  <div class="grid">
+    <div class="card"><div class="yr">1453</div><h4>Ein Weltreich geht unter</h4><p>Die Osmanen erobern Konstantinopel. Das über 1000 Jahre alte Byzantinische (Oströmische) Reich ist am Ende. Im selben Jahr endet der Hundertjährige Krieg zwischen England und Frankreich, und in Mainz läuft Gutenbergs Druckerpresse an. Darum gilt 1453 oft als Grenze zwischen Mittelalter und Neuzeit.</p></div>
+    <div class="card"><div class="yr">1648</div><h4>Ein großer Krieg endet</h4><p>Der Westfälische Frieden beendet den Dreißigjährigen Krieg. Er regelt das Zusammenleben der Konfessionen im Reich und ordnet das Machtgefüge in Europa neu. Danach beginnt das Zeitalter des Absolutismus.</p></div>
+  </div>
+
+  <h3>Die Zeit in vier Abschnitten</h3>
+  <div class="erabar" role="img" aria-label="Zeitbalken mit vier Epochen von 1453 bis 1648">
+    <div class="era-a">Aufbruch<small>1453–1517</small></div>
+    <div class="era-b">Reformation<small>1517–1555</small></div>
+    <div class="era-c">Konfessionelles Zeitalter<small>1555–1618</small></div>
+    <div class="era-d">30-jähr. Krieg<small>1618–48</small></div>
+  </div>
+  <div class="erascale"><span>1453</span><span>1517</span><span>1555</span><span>1618</span><span>1648</span></div>
+
+  <div class="box kurz"><div class="box-title">Kurz gesagt – die ganze Epoche in fünf Sätzen</div>
+    <ol>
+      <li><strong>Neue Techniken und Ideen</strong> (Buchdruck, Humanismus, Entdeckungsreisen) verändern um 1500 das Wissen und das Weltbild der Menschen.</li>
+      <li><strong>Martin Luther</strong> kritisiert ab 1517 die Kirche. Dank Buchdruck verbreiten sich seine Ideen rasend schnell – die Kirche spaltet sich in katholisch und evangelisch.</li>
+      <li>Im <strong>Heiligen Römischen Reich</strong> nutzen viele Fürsten die Reformation, um ihre Macht gegenüber dem Kaiser zu stärken. 1555 einigt man sich im <strong>Augsburger Religionsfrieden</strong>: Der Landesherr bestimmt die Religion seines Gebiets.</li>
+      <li>Der Kompromiss hält nicht dauerhaft. In ganz Europa toben <strong>Glaubenskriege</strong>, und im Reich wachsen Misstrauen und Blockbildung.</li>
+      <li>1618 bricht der <strong>Dreißigjährige Krieg</strong> aus, der weite Teile Deutschlands verwüstet. Der <strong>Westfälische Frieden</strong> 1648 beendet ihn und stellt die Weichen für die nächsten 150 Jahre.</li>
+    </ol>
+  </div>
+
+  <h3>Der rote Faden: Eine Kette von Ursachen und Folgen</h3>
+  <p>Viele Ereignisse dieser Zeit hängen direkt zusammen. Wer diese Kette versteht, versteht die ganze Epoche:</p>
+  <ol class="chain" aria-label="Abfolge von Ursachen und Folgen">
+    <li><span class="n">1</span><b>Buchdruck</b><span class="desc">Ideen verbreiten sich schnell</span></li>
+    <li><span class="n">2</span><b>Reformation</b><span class="desc">Kritik an der Kirche</span></li>
+    <li><span class="n">3</span><b>Glaubensspaltung</b><span class="desc">katholisch vs. evangelisch</span></li>
+    <li><span class="n">4</span><b>Religionsfrieden 1555</b><span class="desc">Kompromiss mit Lücken</span></li>
+    <li><span class="n">5</span><b>Wachsende Spannungen</b><span class="desc">Union vs. Liga</span></li>
+    <li><span class="n">6</span><b>Dreißigjähriger Krieg</b><span class="desc">1618–1648</span></li>
+    <li><span class="n">7</span><b>Westfälischer Frieden</b><span class="desc">neue Ordnung</span></li>
+  </ol>
+  <p>Daneben läuft ein zweiter Faden: der Machtkampf zwischen <strong>Kaiser und Fürsten</strong> im Reich – und zwischen den Großmächten <strong>Habsburg und Frankreich</strong> in Europa. Religion und Machtpolitik sind in dieser Zeit fast immer miteinander verflochten.</p>
+</section>
+
+<!-- ============ 2 UM 1450 ============ -->
+<section class="chapter" id="um1450">
+  <div class="chap-head"><div class="chap-num">2</div><div>
+    <span class="span-chip">Ausgangslage um 1450</span>
+    <h2>Die Welt um 1450</h2>
+  </div></div>
+  <p class="lead">Bevor wir die Ereignisse verfolgen, müssen wir verstehen, wie das „Deutschland“ dieser Zeit aufgebaut war. Denn einen deutschen Staat im heutigen Sinn gab es nicht.</p>
+
+  <h3>Das Heilige Römische Reich – kein Staat wie heute</h3>
+  <p>Das Gebiet, in dem Deutsch gesprochen wurde, gehörte zum <strong>Heiligen Römischen Reich</strong>. Seit dem späten 15. Jahrhundert kam der Zusatz „Deutscher Nation“ auf; offiziell taucht er 1486 erstmals auf. Das Reich reichte weit über das heutige Deutschland hinaus: Österreich, Böhmen (Tschechien), die Niederlande und Belgien, die Schweiz, Teile Ostfrankreichs und Norditaliens gehörten (zumindest formal) dazu.</p>
+  <p>Man kann sich das Reich wie einen <strong>Flickenteppich</strong> vorstellen: Es bestand aus Hunderten von Herrschaftsgebieten unterschiedlicher Größe – Herzogtümer, Grafschaften, Bistümer, Abteien, freie Reichsstädte und winzige Ritterherrschaften.</p>
+
+  <div class="grid">
+    <div class="card"><h4>Der Kaiser</h4><p>Stand an der Spitze, wurde aber <strong>gewählt</strong> und nicht einfach vererbt. Er hatte viel Ansehen, aber wenig direkte Macht. Seit 1438 stellten fast immer die <strong>Habsburger</strong> den Kaiser.</p></div>
+    <div class="card"><h4>Die Kurfürsten</h4><p>Sieben besonders mächtige Fürsten wählten den König bzw. Kaiser: die Erzbischöfe von <strong>Mainz, Köln und Trier</strong> sowie der König von <strong>Böhmen</strong>, der Pfalzgraf bei Rhein, der Herzog von <strong>Sachsen</strong> und der Markgraf von <strong>Brandenburg</strong>.</p></div>
+    <div class="card"><h4>Die Reichsstände</h4><p>Fürsten, Grafen, Bischöfe und Reichsstädte, die direkt dem Kaiser unterstanden. Sie regierten ihre Gebiete weitgehend selbst und trafen sich auf dem <a class="g" href="#g-reichstag">Reichstag</a>.</p></div>
+    <div class="card"><h4>Die Reichsstädte</h4><p>Reiche Handelsstädte wie Nürnberg, Augsburg, Frankfurt oder Köln hatten keinen Fürsten über sich, sondern nur den Kaiser. Sie waren Zentren von Handel, Handwerk und Buchdruck.</p></div>
+  </div>
+
+  <div class="box warum"><div class="box-title">Warum ist das wichtig?</div>
+    <p>Weil der Kaiser so wenig Macht hatte, konnte er später die Reformation nicht einfach verbieten. Die Fürsten entschieden in ihren Gebieten vieles selbst – auch, welcher Glaube dort gelten sollte. Diese <strong>Machtteilung zwischen Kaiser und Fürsten</strong> ist der Schlüssel zum Verständnis der gesamten Epoche.</p>
+  </div>
+
+  <h3>Die Gesellschaft: Jeder hat seinen Stand</h3>
+  <p>Die Menschen lebten in einer <a class="g" href="#g-staende">Ständegesellschaft</a>. Man wurde in seinen Stand hineingeboren und kam nur selten heraus:</p>
+  <ul>
+    <li><strong>Geistlichkeit (Klerus):</strong> Papst, Bischöfe, Priester, Mönche und Nonnen. Die Kirche besaß viel Land und großen Einfluss.</li>
+    <li><strong>Adel:</strong> Herrschte über Land und Leute, stellte Ritter und Beamte.</li>
+    <li><strong>Bürger und Bauern:</strong> Die große Mehrheit. Rund vier von fünf Menschen lebten auf dem Land und arbeiteten in der Landwirtschaft. Viele Bauern waren als <a class="g" href="#g-leibeigen">Leibeigene</a> von ihrem Grundherrn abhängig und mussten Abgaben und Dienste leisten.</li>
+  </ul>
+  <p>Fast alle Menschen in West- und Mitteleuropa gehörten der einen <strong>katholischen Kirche</strong> an. Der Glaube bestimmte den Alltag: Die Angst vor Fegefeuer und Hölle war groß, und die Kirche versprach Wege zum Seelenheil – etwa durch gute Werke, Wallfahrten oder den <a class="g" href="#g-ablass">Ablass</a>.</p>
+
+  <h3>Europa um 1450 – die Nachbarn</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Land</th><th>Lage um 1450</th></tr>
+    <tr><td><strong>Frankreich</strong></td><td>Hat den Hundertjährigen Krieg (1337–1453) gewonnen. Der König baut seine Macht aus – Frankreich wird ein starker, zentral regierter Staat und der große Gegenspieler der Habsburger.</td></tr>
+    <tr><td><strong>England</strong></td><td>Verliert fast alle Besitzungen in Frankreich; danach folgen die Rosenkriege (1455–1485), ein Bürgerkrieg des Adels. Ab 1485 regieren die Tudors.</td></tr>
+    <tr><td><strong>Spanien</strong></td><td>Noch kein einheitliches Land. Kastilien und Aragón vereinen sich durch die Heirat von Isabella und Ferdinand (1469). 1492 erobern sie Granada, das letzte muslimische Reich auf der Iberischen Halbinsel (Ende der <em>Reconquista</em>).</td></tr>
+    <tr><td><strong>Italien</strong></td><td>Zersplittert in Stadtstaaten (Venedig, Florenz, Mailand, Kirchenstaat, Neapel). Reich, gebildet – und Geburtsort der <a class="g" href="#g-renaissance">Renaissance</a>.</td></tr>
+    <tr><td><strong>Osmanisches Reich</strong></td><td>Eine aufstrebende muslimische Großmacht, die bereits große Teile des Balkans beherrscht und nun nach Konstantinopel greift.</td></tr>
+    <tr><td><strong>Osteuropa</strong></td><td>Polen-Litauen ist ein großes Doppelreich; Ungarn und Böhmen sind wichtige Königreiche; im Osten wächst das Großfürstentum Moskau.</td></tr>
+  </table></div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <p>Um 1450 gibt es kein „Deutschland“, sondern das <strong>Heilige Römische Reich</strong> – einen lockeren Verbund vieler Herrschaften unter einem gewählten Kaiser. Die Gesellschaft ist nach <strong>Ständen</strong> geordnet, und fast alle sind <strong>katholisch</strong>.</p>
+  </div>
+</section>
+
+<!-- ============ 3 AUFBRUCH ============ -->
+<section class="chapter" id="aufbruch">
+  <div class="chap-head"><div class="chap-num">3</div><div>
+    <span class="span-chip">ca. 1450 – 1520</span>
+    <h2>Aufbruch in eine neue Zeit</h2>
+  </div></div>
+  <p class="lead">In wenigen Jahrzehnten verändern mehrere Entwicklungen gleichzeitig die Welt: Ein Reich fällt, eine Erfindung revolutioniert das Wissen, Gelehrte entdecken die Antike neu, und Seefahrer finden einen „neuen“ Kontinent.</p>
+
+  <h3>1453: Der Fall Konstantinopels</h3>
+  <p>Am <strong>29. Mai 1453</strong> erobert der osmanische Sultan <strong>Mehmed II.</strong> nach rund siebenwöchiger Belagerung Konstantinopel. Er setzt dabei riesige Kanonen ein, gegen die die alten Stadtmauern nicht mehr schützen. Das Byzantinische Reich, das letzte Überbleibsel des antiken Römischen Reiches, geht damit unter. Die Stadt wird als Istanbul zur neuen Hauptstadt der Osmanen.</p>
+  <ul>
+    <li><strong>Folge 1 – Bedrohung:</strong> Die Osmanen dringen weiter nach Europa vor. Die sogenannte <a class="g" href="#g-tuerkengefahr">„Türkengefahr“</a> beschäftigt das Reich die ganze Epoche hindurch.</li>
+    <li><strong>Folge 2 – Wissen:</strong> Viele griechische Gelehrte fliehen mit ihren Büchern nach Italien und bringen antikes Wissen mit – ein Schub für die Renaissance.</li>
+    <li><strong>Folge 3 – Handel:</strong> Die Handelswege in den Osten werden unsicherer und teurer. Das ist ein Grund, warum Europäer neue Seewege nach Asien suchen.</li>
+  </ul>
+
+  <h3>Der Buchdruck – eine Medienrevolution</h3>
+  <p>Um <strong>1450</strong> entwickelt <strong>Johannes Gutenberg</strong> in Mainz den Buchdruck mit beweglichen Metall-Lettern. Vorher mussten Bücher mühsam von Hand abgeschrieben werden – sie waren selten und sehr teuer. Jetzt konnte man hunderte gleiche Exemplare schnell und günstig herstellen. Um 1454 entsteht die berühmte <strong>Gutenberg-Bibel</strong>.</p>
+  <p>Die Erfindung verbreitet sich rasend schnell: Bis 1500 gibt es an rund 250 Orten in Europa Druckereien, mehr als sechzig davon im Heiligen Römischen Reich. Bis zur Jahrhundertwende erscheinen schätzungsweise rund 25.000 Buchtitel.</p>
+  <div class="box warum"><div class="box-title">Warum ist das wichtig?</div>
+    <p>Ohne den Buchdruck hätte es die Reformation in dieser Form wohl nicht gegeben. Luthers Schriften wurden als billige <a class="g" href="#g-flugschrift">Flugschriften</a> in hohen Auflagen gedruckt und überall gelesen und vorgelesen. Die Reformation war damit das erste große <strong>Medienereignis</strong> der Geschichte. Zugleich förderte der Buchdruck das Lesenlernen und eine einheitlichere deutsche Schriftsprache.</p>
+  </div>
+
+  <h3>Renaissance und Humanismus – zurück zu den Quellen</h3>
+  <p>Von Italien aus breitet sich eine neue Geisteshaltung aus. <strong>Renaissance</strong> heißt „Wiedergeburt“ – gemeint ist die Wiederentdeckung der Kunst und Wissenschaft der Antike. Der Mensch rückt stärker in den Mittelpunkt: seine Fähigkeiten, seine Würde, seine Neugier.</p>
+  <ul>
+    <li>Die <strong><a class="g" href="#g-humanismus">Humanisten</a></strong> wollten die alten Texte im Original lesen – ihr Motto lautete <em>„ad fontes“</em> („zu den Quellen“). Der wichtigste nördlich der Alpen war <strong>Erasmus von Rotterdam</strong>, der 1516 das Neue Testament in griechischer Sprache herausgab.</li>
+    <li>Diese Methode wurde wichtig für die Reformation: Wer die Bibel selbst im Original liest, kann die Lehren der Kirche kritisch prüfen.</li>
+    <li>In der Kunst entstehen Meisterwerke: in Italien von Leonardo da Vinci und Michelangelo, in Deutschland von <strong>Albrecht Dürer</strong> (Nürnberg), Lucas Cranach und Hans Holbein.</li>
+  </ul>
+
+  <h3>Die Entdeckungsfahrten – Europa greift nach der Welt</h3>
+  <p>Portugal und Spanien suchen einen Seeweg nach Indien, um direkt an Gewürze, Seide und Gold zu kommen.</p>
+  <div class="grid">
+    <div class="card"><div class="yr">1492</div><h4>Kolumbus erreicht Amerika</h4><p>Christoph Kolumbus segelt im Auftrag Spaniens nach Westen und landet in der Karibik. Er glaubt, Indien erreicht zu haben – daher der Name „Indianer“.</p></div>
+    <div class="card"><div class="yr">1494</div><h4>Die Welt wird aufgeteilt</h4><p>Im Vertrag von Tordesillas teilen Spanien und Portugal die neu entdeckten Gebiete außerhalb Europas unter sich auf.</p></div>
+    <div class="card"><div class="yr">1498</div><h4>Seeweg nach Indien</h4><p>Der Portugiese Vasco da Gama umsegelt Afrika und erreicht Indien.</p></div>
+    <div class="card"><div class="yr">1519–1522</div><h4>Erste Weltumsegelung</h4><p>Die Expedition Magellans umrundet die Erde. Endgültig ist bewiesen: Die Erde ist rund, und die Ozeane hängen zusammen.</p></div>
+  </div>
+  <p><strong>Folgen:</strong> Spanien und Portugal bauen riesige Kolonialreiche auf. Spanische Eroberer zerstören das Reich der Azteken (1519–1521) und der Inka (ab 1532). Für die Ureinwohner Amerikas bedeutet das Krieg, Zwangsarbeit und vor allem tödliche Seuchen, an denen Millionen sterben. Später werden Millionen Afrikaner als Sklaven nach Amerika verschleppt. Für Europa strömt Silber aus Amerika herein, und der Welthandel verlagert sich vom Mittelmeer an den Atlantik.</p>
+
+  <h3>Neue Wirtschaft: Das Zeitalter der Fugger</h3>
+  <p>In den süddeutschen Handelsstädten entsteht der <a class="g" href="#g-fruehkapitalismus">Frühkapitalismus</a>: Kaufleute handeln über große Entfernungen, betreiben Bergwerke und verleihen Geld. Am berühmtesten ist <strong>Jakob Fugger</strong> aus Augsburg („der Reiche“). Er wurde durch Silber- und Kupferbergbau steinreich und lieh Fürsten, Kaisern und dem Papst Geld. 1519 finanzierte er zu einem großen Teil die Bestechungsgelder, mit denen Karl V. die Kurfürsten für seine Wahl zum König gewann. Geld wird damit zu einem wichtigen Machtfaktor in der Politik.</p>
+
+  <h3>Ein neues Weltbild</h3>
+  <p>Auch die Wissenschaft verändert sich. <strong>Nikolaus Kopernikus</strong> veröffentlicht 1543 seine Lehre, dass sich die Erde um die Sonne dreht und nicht umgekehrt (heliozentrisches Weltbild). Der Deutsche <strong>Johannes Kepler</strong> beschreibt Anfang des 17. Jahrhunderts die Bahnen der Planeten mathematisch, und <strong>Galileo Galilei</strong> beobachtet mit dem Fernrohr den Himmel. Galilei muss seine Lehre 1633 auf Druck der Kirche widerrufen – der Streit zwischen alter Autorität und neuer Beobachtung ist typisch für die Zeit.</p>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>1453</strong> Fall Konstantinopels → Osmanen werden europäische Großmacht.</li>
+      <li><strong>Um 1450</strong> Buchdruck → Wissen und Meinungen verbreiten sich schnell.</li>
+      <li><strong>Humanismus</strong> → „Zurück zu den Quellen“, kritisches Lesen der Bibel.</li>
+      <li><strong>1492</strong> Kolumbus → Beginn der europäischen Kolonialherrschaft und des Welthandels.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 4 REICHSREFORM ============ -->
+<section class="chapter" id="reichsreform">
+  <div class="chap-head"><div class="chap-num">4</div><div>
+    <span class="span-chip">ca. 1477 – 1519</span>
+    <h2>Maximilian I. und die Reichsreform</h2>
+  </div></div>
+  <p class="lead">Um 1500 versucht man, das schwerfällige Reich besser zu organisieren. Gleichzeitig steigen die Habsburger durch geschickte Heiraten zur mächtigsten Familie Europas auf.</p>
+
+  <h3>Heiraten statt Kriege: Der Aufstieg der Habsburger</h3>
+  <p><strong>Kaiser Friedrich III.</strong> (Kaiser 1452–1493) war der letzte Kaiser, der in Rom gekrönt wurde. Sein Sohn <strong>Maximilian I.</strong> (König ab 1486, regiert 1493–1519) betrieb eine erfolgreiche Heiratspolitik. Ein bekannter Spruch dazu lautet sinngemäß: „Andere mögen Kriege führen – du, glückliches Österreich, heirate!“</p>
+  <div class="tablewrap"><table>
+    <tr><th>Jahr</th><th>Heirat</th><th>Gewinn für Habsburg</th></tr>
+    <tr><td>1477</td><td>Maximilian heiratet Maria von Burgund</td><td>Die reichen Niederlande und Burgund</td></tr>
+    <tr><td>1496</td><td>Sein Sohn Philipp („der Schöne“) heiratet Johanna von Kastilien</td><td>Später ganz Spanien mit seinen Kolonien und Besitzungen in Italien</td></tr>
+    <tr><td>1515</td><td>Wiener Doppelhochzeit mit dem polnisch-ungarischen Königshaus</td><td>Ab 1526 Böhmen und Ungarn</td></tr>
+  </table></div>
+  <p>Ergebnis: Maximilians Enkel <strong>Karl V.</strong> erbte ein Reich, „in dem die Sonne nie unterging“ – von Spanien und Amerika über die Niederlande bis nach Österreich.</p>
+
+  <h3>Der Reichstag zu Worms 1495: Schluss mit dem Faustrecht</h3>
+  <p>Im Mittelalter durften Adlige ihre Streitigkeiten oft mit Waffengewalt austragen – das nannte man <a class="g" href="#g-fehde">Fehde</a>. Das führte zu ständiger Unsicherheit. Auf dem <strong>Reichstag zu Worms 1495</strong> beschlossen Maximilian und die Reichsstände eine große <strong>Reichsreform</strong>:</p>
+  <div class="grid">
+    <div class="card"><h4>Ewiger Landfriede</h4><p>Am 7. August 1495 wird die Fehde für immer verboten. Streit muss jetzt vor Gericht ausgetragen werden. Das ist ein frühes Stück Rechtsstaat: Gewalt soll nicht mehr Privatsache sein.</p></div>
+    <div class="card"><h4>Reichskammergericht</h4><p>Ein oberstes Gericht für das ganze Reich (zuerst Frankfurt, später Speyer und Wetzlar). Es bestand bis zum Ende des Reiches 1806.</p></div>
+    <div class="card"><h4>Gemeiner Pfennig</h4><p>Eine allgemeine Reichssteuer, u. a. gegen Frankreich und die Osmanen. Sie ließ sich in der Praxis aber kaum durchsetzen.</p></div>
+    <div class="card"><h4>Reichskreise</h4><p>Ab 1500 (erweitert 1512) wird das Reich in Kreise eingeteilt. Sie sollen den Landfrieden in den Regionen sichern und Truppen stellen.</p></div>
+  </div>
+  <p>Wichtig: Die Reform stärkte nicht den Kaiser, sondern vor allem die <strong>Reichsstände</strong>. Der <a class="g" href="#g-reichstag">Reichstag</a> wurde zur festen Einrichtung, auf der Kaiser und Stände miteinander verhandelten. Die Schweizer Eidgenossen lehnten Reichssteuer und Reichskammergericht ab und lösten sich nach dem Schwabenkrieg 1499 faktisch vom Reich.</p>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <p>Die <strong>Habsburger</strong> werden durch Heiraten zur Weltmacht. Die <strong>Reichsreform von 1495</strong> verbietet die Fehde (Ewiger Landfriede) und schafft das Reichskammergericht – das Reich wird zu einer <strong>Rechtsgemeinschaft</strong>, bleibt aber ein Verbund vieler selbstständiger Gebiete.</p>
+  </div>
+</section>
+
+<!-- ============ 5 REFORMATION ============ -->
+<section class="chapter" id="reformation">
+  <div class="chap-head"><div class="chap-num">5</div><div>
+    <span class="span-chip">1517 – 1555</span>
+    <h2>Die Reformation</h2>
+  </div></div>
+  <p class="lead">Ein Mönch aus Wittenberg stellt Fragen – und spaltet damit die westliche Christenheit. Die Reformation verändert Glauben, Politik, Sprache und Gesellschaft in Deutschland und Europa grundlegend.</p>
+
+  <h3>5.1 Warum gerade jetzt? Die Ursachen</h3>
+  <div class="grid">
+    <div class="card"><h4>Missstände in der Kirche</h4><p>Viele Päpste lebten wie weltliche Fürsten. Kirchenämter wurden gekauft, Bischöfe sammelten mehrere Ämter, viele Priester waren schlecht ausgebildet.</p></div>
+    <div class="card"><h4>Der Ablasshandel</h4><p>Gegen Geld konnte man einen <a class="g" href="#g-ablass">Ablass</a> kaufen, der Strafen im Fegefeuer verkürzen sollte. Mit dem Geld wurde u. a. der Neubau des Petersdoms in Rom finanziert.</p></div>
+    <div class="card"><h4>Große Glaubenssorge</h4><p>Die Menschen sorgten sich stark um ihr Seelenheil. Gerade weil sie fromm waren, empörten sie die Missstände.</p></div>
+    <div class="card"><h4>Humanismus &amp; Buchdruck</h4><p>Gelehrte prüften die Bibel im Original. Der Buchdruck verbreitete Kritik schneller, als Kirche und Kaiser sie unterdrücken konnten.</p></div>
+    <div class="card"><h4>Interessen der Fürsten</h4><p>Viele Landesherren wollten weniger Geld nach Rom schicken und selbst über die Kirche in ihrem Land bestimmen.</p></div>
+    <div class="card"><h4>Unzufriedenheit</h4><p>Bauern und Stadtbürger litten unter Abgaben. Kritik an Kirche und Obrigkeit fiel auf fruchtbaren Boden.</p></div>
+  </div>
+  <p>Schon vorher hatte es Kritiker gegeben, etwa John Wyclif in England und Jan Hus in Böhmen, der 1415 als Ketzer verbrannt wurde. Neu war 1517, dass die Kritik dank Buchdruck und politischer Unterstützung nicht mehr zu stoppen war.</p>
+
+  <h3>5.2 Martin Luther – vom Mönch zum Reformator</h3>
+  <p><strong>Martin Luther</strong> (1483–1546) war Augustinermönch und Professor für Theologie in Wittenberg (Kursachsen). Er quälte sich mit der Frage: <em>Wie kann ich vor Gott bestehen?</em> Beim Bibelstudium kam er zu der Überzeugung, dass der Mensch nicht durch eigene Leistungen oder gekaufte Ablässe, sondern allein durch Gottes Gnade und den Glauben gerettet wird.</p>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Luthers Weg 1517–1522</h4><span class="yr">Schritt für Schritt</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">31.10.1517</span><span>Luther verfasst seine <strong>95 Thesen</strong> gegen den Ablasshandel und schickt sie an den Erzbischof Albrecht von Mainz. Ob er sie wirklich an die Tür der Schlosskirche schlug, ist unter Historikern umstritten. Die Thesen werden gedruckt und verbreiten sich in wenigen Wochen.</span></li>
+        <li><span class="d">1518–1519</span><span>Verhöre und Streitgespräche (u. a. Leipziger Disputation 1519). Luther stellt nun auch die Autorität des Papstes und der Konzilien infrage.</span></li>
+        <li><span class="d">1520</span><span>Drei berühmte Hauptschriften, u. a. <em>„An den christlichen Adel deutscher Nation“</em> und <em>„Von der Freiheit eines Christenmenschen“</em>. Der Papst droht mit dem Bann; Luther verbrennt die päpstliche Drohbulle öffentlich.</span></li>
+        <li><span class="d">Jan. 1521</span><span>Der Papst schließt Luther aus der Kirche aus (<a class="g" href="#g-bann">Kirchenbann</a>).</span></li>
+        <li><span class="d">April 1521</span><span><strong>Reichstag zu Worms:</strong> Luther soll vor Kaiser Karl V. und den Reichsständen widerrufen. Er weigert sich. Überliefert ist der berühmte Satz: <em>„Hier stehe ich, ich kann nicht anders.“</em></span></li>
+        <li><span class="d">Mai 1521</span><span><strong>Wormser Edikt:</strong> Der Kaiser verhängt die <a class="g" href="#g-reichsacht">Reichsacht</a>. Luther ist nun vogelfrei, seine Schriften sind verboten.</span></li>
+        <li><span class="d">1521–1522</span><span>Sein Landesherr <strong>Friedrich der Weise</strong> lässt ihn zum Schein „entführen“ und auf der <strong>Wartburg</strong> verstecken. Dort übersetzt Luther als „Junker Jörg“ das Neue Testament ins Deutsche (gedruckt 1522). Die ganze Bibel folgt 1534.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h4>Was lehrte Luther? – Die Kernpunkte</h4>
+  <div class="tablewrap"><table>
+    <tr><th>Luthers Lehre</th><th>Was das bedeutet</th><th>Bisherige katholische Lehre</th></tr>
+    <tr><td><strong>Allein durch Gnade / allein durch Glauben</strong></td><td>Der Mensch wird von Gott angenommen, weil Gott gnädig ist – nicht wegen eigener Leistungen.</td><td>Glaube <em>und</em> gute Werke (Spenden, Wallfahrten, Ablass) tragen zum Heil bei.</td></tr>
+    <tr><td><strong>Allein die Schrift</strong></td><td>Nur die Bibel ist Maßstab für den Glauben.</td><td>Bibel <em>und</em> Tradition der Kirche, ausgelegt von Papst und Konzilien.</td></tr>
+    <tr><td><strong>Priestertum aller Gläubigen</strong></td><td>Alle Getauften stehen direkt vor Gott; Priester sind keine Vermittler mit besonderem Rang.</td><td>Geweihte Priester vermitteln zwischen Gott und Menschen.</td></tr>
+    <tr><td><strong>Zwei Sakramente</strong></td><td>Nur Taufe und Abendmahl (Brot <em>und</em> Wein für alle).</td><td>Sieben Sakramente; der Kelch meist nur für Priester.</td></tr>
+    <tr><td><strong>Gottesdienst auf Deutsch, Pfarrer dürfen heiraten</strong></td><td>Bibel und Lieder in der Volkssprache; Klöster werden aufgelöst.</td><td>Messe auf Latein, Ehelosigkeit (Zölibat) der Priester.</td></tr>
+  </table></div>
+
+  <div class="box warum"><div class="box-title">Warum wurde Luther nicht einfach verbrannt wie Jan Hus?</div>
+    <ul>
+      <li><strong>Schutz durch seinen Fürsten:</strong> Friedrich der Weise von Sachsen, ein Kurfürst, hielt die Hand über ihn.</li>
+      <li><strong>Der Kaiser war abgelenkt:</strong> Karl V. führte fast ununterbrochen Kriege gegen Frankreich und die Osmanen und brauchte dafür die Unterstützung der Fürsten – auch der evangelischen.</li>
+      <li><strong>Der Buchdruck:</strong> Luthers Ideen waren längst in Hunderttausenden Drucken im Umlauf.</li>
+      <li><strong>Die Machtverhältnisse im Reich:</strong> Der Kaiser konnte das Wormser Edikt in den Territorien der Fürsten nicht durchsetzen.</li>
+    </ul>
+  </div>
+
+  <h3>5.3 Die Reformation breitet sich aus – und spaltet sich</h3>
+  <p>Luther war nicht der einzige Reformator. Schnell entstanden verschiedene Richtungen:</p>
+  <div class="grid">
+    <div class="card"><h4>Ulrich Zwingli</h4><p>Reformiert ab 1519/1523 Zürich. Er versteht das Abendmahl nur als Erinnerungsmahl – darüber zerstreitet er sich mit Luther (Marburger Religionsgespräch 1529). Zwingli fällt 1531 im Krieg gegen katholische Kantone.</p></div>
+    <div class="card"><h4>Johannes Calvin</h4><p>Prägt ab 1541 Genf. Lehrt die <a class="g" href="#g-praedestination">Vorherbestimmung</a> und strenge Kirchenzucht. Der <a class="g" href="#g-calvinismus">Calvinismus</a> („reformiert“) verbreitet sich in Frankreich, den Niederlanden, Schottland und Teilen des Reiches (z. B. Kurpfalz).</p></div>
+    <div class="card"><h4>Die Täufer</h4><p>Lehnen die Kindertaufe ab und wollen eine Kirche der bewusst Glaubenden. Sie werden von Katholiken und Protestanten verfolgt. 1534/35 errichten radikale Täufer in Münster ein „Königreich“, das blutig niedergeschlagen wird.</p></div>
+  </div>
+  <p>Besonders in den <strong>Städten</strong> setzte sich die Reformation schnell durch (z. B. Nürnberg, Straßburg, Augsburg), denn hier gab es Druckereien, gebildete Bürger und Prediger. Bald folgten ganze <strong>Fürstentümer</strong>: Kursachsen, Hessen, Brandenburg-Ansbach, Württemberg (1534) und andere.</p>
+
+  <h3>5.4 Der Bauernkrieg 1524/25</h3>
+  <p>Viele Bauern verstanden Luthers Botschaft von der „Freiheit eines Christenmenschen“ auch politisch: Wenn vor Gott alle gleich sind – warum sollen wir dann Leibeigene sein? Ab 1524 erhoben sich Bauern im Südwesten des Reiches, bald auch in Franken, Thüringen, im Elsass, in Tirol und Salzburg.</p>
+  <p>Im März 1525 formulierten Vertreter der oberschwäbischen Bauernhaufen in der Reichsstadt <strong>Memmingen</strong> die <strong>Zwölf Artikel</strong>. Sie wurden innerhalb von etwa zwei Monaten rund 25.000-mal gedruckt und überall verbreitet. Die wichtigsten Forderungen:</p>
+  <ul>
+    <li>Jede Gemeinde soll ihren Pfarrer selbst wählen dürfen.</li>
+    <li>Die <strong>Leibeigenschaft</strong> soll abgeschafft werden – mit Berufung auf die Bibel.</li>
+    <li>Freies Jagen und Fischen, Rückgabe von Wald und Gemeindeland.</li>
+    <li>Gerechtere Abgaben und Dienste, faire Gerichtsverfahren.</li>
+  </ul>
+  <p>Die Bauern wollten die Obrigkeit nicht abschaffen, sondern eine gerechtere Ordnung auf Grundlage der Bibel. Manche Historiker sehen in den Zwölf Artikeln deshalb eine frühe Form von Freiheits- und Menschenrechtsforderungen.</p>
+  <p>Doch die Fürsten schlugen zurück. Die Heere des Schwäbischen Bundes und der Landesherren waren den schlecht bewaffneten Bauernhaufen weit überlegen. In der <strong>Schlacht bei Frankenhausen</strong> (Thüringen) am <strong>15. Mai 1525</strong> wurde das Heer um den radikalen Prediger <strong>Thomas Müntzer</strong> vernichtet; Müntzer wurde hingerichtet. Insgesamt starben schätzungsweise rund 70.000 Bauern.</p>
+  <div class="box achtung"><div class="box-title">Luthers Haltung</div>
+    <p>Luther hatte anfangs Verständnis für manche Klagen der Bauern, stellte sich dann aber scharf gegen den Aufstand und rief die Fürsten dazu auf, ihn niederzuschlagen. Für ihn war die weltliche Ordnung von Gott gewollt. <strong>Folge:</strong> Die Reformation wurde danach immer mehr zur Sache der <strong>Fürsten</strong> und Obrigkeiten („Fürstenreformation“), nicht des einfachen Volkes.</p>
+  </div>
+
+  <h3>5.5 Karl V. – ein Kaiser zwischen allen Fronten</h3>
+  <p><strong>Karl V.</strong> (1500–1558) wurde 1519 zum römisch-deutschen König gewählt und 1530 vom Papst zum Kaiser gekrönt. Er herrschte über Spanien mit seinen amerikanischen Kolonien, die Niederlande, große Teile Italiens und die österreichischen Länder. Sein Ziel war eine einige, katholische Christenheit unter seiner Führung. Doch er musste an vielen Fronten zugleich kämpfen:</p>
+  <div class="grid">
+    <div class="card"><h4>Gegen Frankreich</h4><p>König Franz I. fühlte sich von habsburgischen Ländern umzingelt. Es kam zu vier Kriegen um Italien. 1527 plünderten kaiserliche Söldner sogar Rom (Sacco di Roma).</p></div>
+    <div class="card"><h4>Gegen die Osmanen</h4><p>Sultan Süleyman der Prächtige siegte 1526 bei <strong>Mohács</strong> über Ungarn. 1529 belagerten die Osmanen erstmals <strong>Wien</strong>. Frankreich verbündete sich zeitweise sogar mit ihnen gegen den Kaiser.</p></div>
+    <div class="card"><h4>Gegen die Protestanten</h4><p>Im Reich breitete sich die Reformation trotz Verbot immer weiter aus.</p></div>
+  </div>
+  <p>Durch den Tod des ungarischen Königs bei Mohács fielen <strong>Böhmen und Ungarn</strong> 1526 an Karls Bruder <strong>Ferdinand</strong>. Damit wurde die österreichische Habsburgermonarchie zur Großmacht in Mitteleuropa – aber auch zum Frontstaat gegen die Osmanen.</p>
+
+  <h3>5.6 Der lange Weg zum Religionsfrieden</h3>
+  <div class="phase">
+    <div class="phase-head"><h4>Von „Protestanten“ bis Augsburg</h4><span class="yr">1526–1555</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1526</span><span>Reichstag zu Speyer: Jeder Reichsstand soll sich in Glaubensfragen vorerst so verhalten, wie er es vor Gott und dem Kaiser verantworten kann – faktisch freie Hand für die Fürsten.</span></li>
+        <li><span class="d">1529</span><span>Zweiter Reichstag zu Speyer: Die katholische Mehrheit will das Wormser Edikt wieder durchsetzen. Die evangelischen Stände legen <strong>Protestation</strong> ein – daher der Name <strong>„Protestanten“</strong>.</span></li>
+        <li><span class="d">1530</span><span>Reichstag zu Augsburg: Die Lutheraner legen das <strong>Augsburger Bekenntnis</strong> (Confessio Augustana) vor, verfasst von Philipp Melanchthon. Der Kaiser lehnt es ab.</span></li>
+        <li><span class="d">1531</span><span>Evangelische Fürsten und Städte gründen zu ihrem Schutz den <strong>Schmalkaldischen Bund</strong>.</span></li>
+        <li><span class="d">1546</span><span>Martin Luther stirbt in Eisleben.</span></li>
+        <li><span class="d">1546–1547</span><span><strong>Schmalkaldischer Krieg:</strong> Der Kaiser siegt 1547 bei Mühlberg über die Protestanten. Doch sein Sieg hält nicht.</span></li>
+        <li><span class="d">1552</span><span><strong>Fürstenaufstand:</strong> Moritz von Sachsen wechselt die Seite und erhebt sich mit anderen Fürsten und französischer Hilfe gegen den Kaiser. Frankreich erhält dafür die Bistümer Metz, Toul und Verdun. Karl V. muss fliehen.</span></li>
+        <li><span class="d">25.9.1555</span><span><strong>Augsburger Religionsfrieden</strong> (siehe unten).</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h4>Der Augsburger Religionsfrieden 1555 – was wurde geregelt?</h4>
+  <p>König Ferdinand schloss den Frieden im Namen seines Bruders mit den Reichsständen. Erstmals wurde festgeschrieben, wie Katholiken und Lutheraner im Reich nebeneinander leben sollten:</p>
+  <div class="grid">
+    <div class="card"><h4>Gleichberechtigung</h4><p>Katholische und lutherische Reichsstände sind gleichberechtigt. Niemand darf wegen des Glaubens bekriegt werden.</p></div>
+    <div class="card"><h4>„Wessen Land, dessen Religion“</h4><p>Der Landesherr bestimmt die Konfession seines Gebiets. Die Untertanen müssen folgen. Die lateinische Formel <em>cuius regio, eius religio</em> wurde allerdings erst Jahrzehnte später geprägt.</p></div>
+    <div class="card"><h4>Recht auf Auswanderung</h4><p>Wer den Glauben des Landesherrn nicht annehmen will, darf mit seinem Besitz auswandern.</p></div>
+    <div class="card"><h4>Geistlicher Vorbehalt</h4><p>Wird ein katholischer Bischof oder Abt evangelisch, muss er sein Amt und Land abgeben. So sollten die geistlichen Gebiete katholisch bleiben.</p></div>
+  </div>
+  <div class="box achtung"><div class="box-title">Die Schwachstellen des Kompromisses</div>
+    <ul>
+      <li>Die <strong>Calvinisten</strong> (Reformierte) waren nicht eingeschlossen – obwohl ihre Zahl bald wuchs.</li>
+      <li>Religionsfreiheit galt nur für die <strong>Fürsten</strong>, nicht für die einfachen Menschen.</li>
+      <li>Der <strong>Geistliche Vorbehalt</strong> wurde von den Protestanten nie wirklich anerkannt und sorgte immer wieder für Streit.</li>
+      <li>Der Frieden war eigentlich nur als <strong>Übergangslösung</strong> gedacht, bis die Kirche wieder vereint wäre.</li>
+    </ul>
+    <p>Diese Lücken wurden später zu Zündstoff für den Dreißigjährigen Krieg.</p>
+  </div>
+
+  <h4>Das Ende Karls V.</h4>
+  <p>Karl V. wollte den Kompromiss von 1555 nicht mittragen; seine Politik der Glaubenseinheit war gescheitert. Er dankte 1555/56 ab – ein einmaliger Vorgang in der Geschichte des Reiches – und zog sich in ein spanisches Kloster zurück, wo er 1558 starb. Sein Reich wurde geteilt:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Spanische Linie: Sohn Philipp II.</th><th>Österreichische Linie: Bruder Ferdinand I.</th></tr>
+    <tr><td>Spanien mit den Kolonien in Amerika, die Niederlande, Besitzungen in Italien (Mailand, Neapel, Sizilien)</td><td>Die österreichischen Länder, Böhmen, (Rest-)Ungarn und die Kaiserwürde im Heiligen Römischen Reich</td></tr>
+  </table></div>
+  <p>Beide Linien des Hauses Habsburg arbeiteten aber weiterhin eng zusammen – ein Grund, warum Frankreich sich bis 1648 von Habsburg „eingekreist“ fühlte.</p>
+
+  <h3>5.7 Was hat die Reformation verändert?</h3>
+  <div class="grid">
+    <div class="card"><h4>Sprache</h4><p>Luthers Bibelübersetzung wurde millionenfach gelesen und trug stark zu einer einheitlichen hochdeutschen Schriftsprache bei.</p></div>
+    <div class="card"><h4>Bildung</h4><p>Jeder sollte die Bibel selbst lesen können. Evangelische Gebiete gründeten Schulen und Universitäten; Philipp Melanchthon wurde zum „Lehrer Deutschlands“.</p></div>
+    <div class="card"><h4>Macht der Fürsten</h4><p>In evangelischen Gebieten wurde der Landesherr zum Oberhaupt der Kirche (<a class="g" href="#g-landeskirche">Landeskirche</a>). Klosterbesitz fiel an den Staat – die Fürsten wurden mächtiger.</p></div>
+    <div class="card"><h4>Alltag</h4><p>Pfarrer heirateten; das Pfarrhaus wurde zu einem Ort von Bildung. Die Ehe wurde aufgewertet, Klöster als Lebensweg fielen weg.</p></div>
+    <div class="card"><h4>Spaltung</h4><p>Die Glaubensspaltung führte zu über hundert Jahren Misstrauen, Verfolgung und Krieg in Europa.</p></div>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>1517:</strong> Luthers 95 Thesen gegen den Ablass → Beginn der Reformation.</li>
+      <li><strong>1521:</strong> Reichstag zu Worms → Luther widerruft nicht, Reichsacht; Bibelübersetzung auf der Wartburg.</li>
+      <li><strong>1525:</strong> Bauernkrieg (Zwölf Artikel) → blutig niedergeschlagen; Reformation wird Fürstensache.</li>
+      <li><strong>1555:</strong> Augsburger Religionsfrieden → Landesherr bestimmt die Konfession; Calvinisten ausgeschlossen.</li>
+      <li><strong>1556:</strong> Abdankung Karls V. → Teilung in spanische und österreichische Habsburger.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 6 KONFESSIONELLES ZEITALTER ============ -->
+<section class="chapter" id="konfession">
+  <div class="chap-head"><div class="chap-num">6</div><div>
+    <span class="span-chip">1555 – 1618</span>
+    <h2>Das konfessionelle Zeitalter im Reich</h2>
+  </div></div>
+  <p class="lead">Nach 1555 herrscht im Reich über 60 Jahre lang kein großer Krieg. Doch unter der Oberfläche wachsen die Spannungen: Beide Seiten festigen ihre Lehre, grenzen sich ab und bilden schließlich bewaffnete Bündnisse.</p>
+
+  <h3>Die katholische Kirche reformiert sich</h3>
+  <p>Die katholische Kirche reagierte auf die Reformation mit eigenen Reformen. Man spricht von <strong>katholischer Reform</strong> und, wo es um das Zurückdrängen des Protestantismus ging, von <a class="g" href="#g-gegenreformation">Gegenreformation</a>.</p>
+  <ul>
+    <li><strong>Konzil von Trient (1545–1563):</strong> Die Kirche legte ihre Lehre klar fest (Glaube <em>und</em> Werke, Bibel <em>und</em> Tradition, sieben Sakramente) und beseitigte Missstände: Priester sollten besser ausgebildet werden, Bischöfe in ihren Bistümern leben, der Ablasshandel gegen Geld wurde abgeschafft.</li>
+    <li><strong>Die Jesuiten (gegründet 1540):</strong> Der Orden des Ignatius von Loyola wurde zur „Speerspitze“ der Erneuerung. Jesuiten gründeten erstklassige Schulen und Universitäten, wurden Beichtväter von Fürsten und missionierten weltweit. In Deutschland wirkte vor allem Petrus Canisius.</li>
+    <li>Katholische Herrscher wie die Herzöge von <strong>Bayern</strong> und die <strong>Habsburger</strong> drängten den Protestantismus in ihren Ländern zurück.</li>
+  </ul>
+
+  <h3>Konfessionalisierung: Staat und Kirche formen die Menschen</h3>
+  <p>In allen drei Konfessionen – katholisch, lutherisch, reformiert – arbeiteten Kirche und Landesherr eng zusammen. Historiker nennen das <a class="g" href="#g-konfessionalisierung">Konfessionalisierung</a>:</p>
+  <ul>
+    <li>Jede Konfession schrieb ihre Lehre in Bekenntnissen und <strong>Katechismen</strong> fest (z. B. der reformierte <em>Heidelberger Katechismus</em> 1563).</li>
+    <li>Kirchliche Kontrolleure (<em>Visitationen</em>) überprüften Pfarrer und Gemeinden: Gehen die Leute zum Gottesdienst? Kennen sie die richtige Lehre?</li>
+    <li>Ehe, Moral, Schule und Armenfürsorge wurden stärker geregelt.</li>
+  </ul>
+  <p><strong>Ergebnis:</strong> Die Menschen identifizierten sich immer stärker mit „ihrer“ Konfession – und grenzten sich von den anderen ab. Selbst der Kalender wurde zum Streitpunkt: Den 1582 vom Papst eingeführten <strong>Gregorianischen Kalender</strong> lehnten die protestantischen Gebiete ab. Jahrzehntelang galten im Reich zwei verschiedene Daten nebeneinander.</p>
+
+  <h3>Wachsende Spannungen und die Lähmung des Reiches</h3>
+  <p>Nach Kaiser <strong>Maximilian II.</strong> (1564–1576), der vorsichtig zwischen den Lagern vermittelte, folgten mit <strong>Rudolf II.</strong> (1576–1612) und <strong>Matthias</strong> (1612–1619) Kaiser, die die Spannungen kaum noch kontrollieren konnten. Habsburg selbst wurde durch einen „Bruderzwist“ zwischen Rudolf und Matthias geschwächt.</p>
+  <div class="phase">
+    <div class="phase-head"><h4>Der Weg in die Blockbildung</h4><span class="yr">1583–1618</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1583–1588</span><span><strong>Kölner Krieg:</strong> Der Kölner Erzbischof will evangelisch werden und heiraten. Bayern und Spanien verhindern das mit Gewalt – der Geistliche Vorbehalt wird durchgesetzt.</span></li>
+        <li><span class="d">1607</span><span><strong>Donauwörth:</strong> In der Reichsstadt kommt es zu Unruhen bei einer katholischen Prozession. Der Kaiser verhängt die Reichsacht, Bayern besetzt die evangelische Stadt und rekatholisiert sie.</span></li>
+        <li><span class="d">1608</span><span>Der Reichstag zerbricht im Streit – das Reich ist praktisch handlungsunfähig. Evangelische Fürsten gründen unter Führung der Kurpfalz die <strong>Protestantische Union</strong>.</span></li>
+        <li><span class="d">1609</span><span>Katholische Fürsten antworten mit der <strong>Katholischen Liga</strong> unter Herzog Maximilian von Bayern. Im selben Jahr gesteht Rudolf II. den böhmischen Protestanten im <strong>Majestätsbrief</strong> Religionsfreiheit zu.</span></li>
+        <li><span class="d">1609–1614</span><span>Der <strong>Jülich-Klevische Erbfolgestreit</strong> bringt Europa an den Rand eines großen Krieges.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Krisenzeit: Kleine Eiszeit und Hexenverfolgung</h3>
+  <p>Ende des 16. Jahrhunderts wurde das Klima spürbar kälter (<a class="g" href="#g-eiszeit">„Kleine Eiszeit“</a>). Missernten, Hunger, Seuchen und steigende Preise verunsicherten die Menschen. Viele suchten Schuldige.</p>
+  <p>Gerade in dieser Zeit erreichten die <strong>Hexenverfolgungen</strong> ihren Höhepunkt – also nicht, wie oft angenommen, im „finsteren Mittelalter“, sondern in der Frühen Neuzeit, etwa zwischen 1560 und 1650. Schätzungen gehen von etwa 40.000 bis 60.000 Hinrichtungen in Europa aus, etwa die Hälfte davon im Heiligen Römischen Reich. Rund drei Viertel der Opfer waren Frauen.</p>
+  <ul>
+    <li>Grundlage war der Glaube, Hexen hätten einen Pakt mit dem Teufel geschlossen und schadeten Mensch und Vieh. Das Buch <em>„Hexenhammer“</em> (1486/87) verbreitete diese Vorstellung.</li>
+    <li>Unter <strong>Folter</strong> „gestanden“ Angeklagte und nannten weitere Namen – so entstanden ganze Prozesswellen.</li>
+    <li>Besonders grausam waren die Verfolgungen in kleinen geistlichen Territorien wie den Hochstiften <strong>Bamberg und Würzburg</strong> um 1626–1630, mit jeweils rund 900 bis 1.200 Opfern.</li>
+    <li>Katholische wie protestantische Gebiete verfolgten. Kritiker wie der Jesuit Friedrich Spee (1631) prangerten die Folterprozesse an.</li>
+  </ul>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <p>Nach 1555 erneuert sich die katholische Kirche (<strong>Konzil von Trient, Jesuiten</strong>). Alle Konfessionen grenzen sich scharf voneinander ab (<strong>Konfessionalisierung</strong>). Das Reich wird handlungsunfähig, es entstehen zwei Militärbündnisse: <strong>Union (1608)</strong> und <strong>Liga (1609)</strong>. Krisen und Ängste führen zum Höhepunkt der <strong>Hexenverfolgung</strong>.</p>
+  </div>
+</section>
+
+<!-- ============ 7 EUROPA ============ -->
+<section class="chapter" id="europa">
+  <div class="chap-head"><div class="chap-num">7</div><div>
+    <span class="span-chip">ca. 1530 – 1640</span>
+    <h2>Europa im Zeitalter der Glaubenskriege</h2>
+  </div></div>
+  <p class="lead">Während im Reich nach 1555 ein brüchiger Frieden herrscht, wird in anderen Ländern Europas um Glauben und Macht gekämpft. Diese Konflikte hängen eng mit dem Reich zusammen – und viele ihrer Akteure tauchen im Dreißigjährigen Krieg wieder auf.</p>
+
+  <h3>Spanien – katholische Weltmacht unter Philipp II.</h3>
+  <p><strong>Philipp II.</strong> (König 1556–1598) regierte das mächtigste Reich der Welt. Silber aus Amerika füllte seine Kassen – dennoch ging Spanien wegen der vielen Kriege mehrmals bankrott. Philipp sah sich als Schutzherr des Katholizismus. 1571 besiegte eine christliche Flotte unter spanischer Führung die Osmanen in der Seeschlacht von <strong>Lepanto</strong>.</p>
+
+  <h3>Die Niederlande – Freiheitskampf gegen Spanien</h3>
+  <p>Die reichen Niederlande gehörten zum spanischen Erbe. Philipp II. verfolgte die vielen Protestanten dort hart und missachtete alte Freiheiten der Provinzen. Ab <strong>1568</strong> erhoben sich die Niederländer unter <strong>Wilhelm von Oranien</strong>. Es begann der <strong>Achtzigjährige Krieg</strong> (1568–1648).</p>
+  <ul>
+    <li>1579 schlossen sich die nördlichen Provinzen in der <strong>Utrechter Union</strong> zusammen, 1581 erklärten sie sich von Spanien unabhängig.</li>
+    <li>Der katholische Süden (etwa das heutige Belgien) blieb spanisch.</li>
+    <li>Die <strong>Republik der Vereinigten Niederlande</strong> wurde trotz des Krieges zur führenden Handels- und Seemacht („Goldenes Zeitalter“, Amsterdam als Welthandelszentrum).</li>
+    <li>Erst im Januar <strong>1648</strong> erkannte Spanien im Frieden von Münster die Unabhängigkeit an.</li>
+  </ul>
+
+  <h3>Frankreich – Hugenottenkriege und Staatsräson</h3>
+  <p>In Frankreich wuchs die Zahl der Calvinisten, der <a class="g" href="#g-hugenotten">Hugenotten</a>. Von <strong>1562 bis 1598</strong> erschütterten acht Bürgerkriege das Land.</p>
+  <ul>
+    <li><strong>Bartholomäusnacht (24. August 1572):</strong> In Paris und anderen Städten wurden Tausende Hugenotten ermordet – ein Schock für das protestantische Europa.</li>
+    <li><strong>Heinrich IV.</strong>, selbst Hugenotte, wurde König, trat aber zum Katholizismus über, um das Land zu einen.</li>
+    <li><strong>Edikt von Nantes (1598):</strong> Die Hugenotten erhielten Gewissensfreiheit und begrenzte Rechte zur Religionsausübung. Frankreich kam zur Ruhe.</li>
+    <li>Ab 1624 lenkte <strong>Kardinal Richelieu</strong> die Politik. Sein Grundsatz war die <a class="g" href="#g-staatsraeson">Staatsräson</a>: Die Interessen des Staates stehen über der Religion. Deshalb unterstützte das katholische Frankreich im Dreißigjährigen Krieg die Protestanten – gegen die katholischen Habsburger.</li>
+  </ul>
+
+  <h3>England – eine eigene Staatskirche</h3>
+  <p><strong>Heinrich VIII.</strong> brach 1534 mit dem Papst, weil dieser seine Ehe nicht annullieren wollte. Er machte sich selbst zum Oberhaupt der Kirche von England (<em>anglikanische Kirche</em>). Unter <strong>Elisabeth I.</strong> (1558–1603) wurde England endgültig protestantisch und stieg zur Seemacht auf. <strong>1588</strong> scheiterte die spanische Kriegsflotte, die <strong>Armada</strong>, beim Versuch, England anzugreifen. Ab 1642 versank England allerdings selbst in einem Bürgerkrieg.</p>
+
+  <h3>Der Norden und Osten</h3>
+  <ul>
+    <li><strong>Skandinavien:</strong> Dänemark und Schweden wurden lutherisch. Schweden stieg unter König <strong>Gustav II. Adolf</strong> (1611–1632) zur Großmacht auf und wollte die Ostsee beherrschen.</li>
+    <li><strong>Polen-Litauen:</strong> 1569 vereinten sich beide Länder zu einer Adelsrepublik mit gewähltem König – einem der größten Staaten Europas, der lange relativ tolerant gegenüber verschiedenen Konfessionen war.</li>
+    <li><strong>Russland:</strong> Das Großfürstentum Moskau wuchs zum Zarenreich (Iwan IV., „der Schreckliche“, erster gekrönter Zar 1547).</li>
+  </ul>
+
+  <h3>Die Osmanen – ständige Bedrohung im Südosten</h3>
+  <p>Unter <strong>Süleyman dem Prächtigen</strong> (1520–1566) erreichte das Osmanische Reich seinen Höhepunkt. Nach der Eroberung von Buda 1541 war <strong>Ungarn dreigeteilt</strong>: Der Westen und Norden blieb habsburgisch, die Mitte osmanisch, Siebenbürgen ein eigenes Fürstentum unter osmanischer Oberhoheit. Kriege an der Grenze waren häufig (z. B. der „Lange Türkenkrieg“ 1593–1606). Für die Habsburger bedeutete das: Sie brauchten immer wieder Geld und Truppen der Reichsstände – und mussten deshalb den Protestanten oft entgegenkommen.</p>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <p>Fast überall in Europa vermischen sich <strong>Glaube und Machtpolitik</strong>: Die Niederlande kämpfen gegen Spanien, Frankreich erlebt die Hugenottenkriege, England bricht mit Rom. Am Ende zählt oft die <strong>Staatsräson</strong> mehr als die Konfession – das zeigt sich besonders im Dreißigjährigen Krieg.</p>
+  </div>
+</section>
+
+<!-- ============ 8 DREISSIGJÄHRIGER KRIEG ============ -->
+<section class="chapter" id="krieg">
+  <div class="chap-head"><div class="chap-num">8</div><div>
+    <span class="span-chip">1618 – 1648</span>
+    <h2>Der Dreißigjährige Krieg</h2>
+  </div></div>
+  <p class="lead">Was 1618 als Aufstand in Böhmen begann, wurde zu einem europäischen Krieg, der fast ausschließlich auf dem Boden des Reiches ausgetragen wurde. Für Deutschland war er eine Katastrophe, die sich tief ins kollektive Gedächtnis eingebrannt hat.</p>
+
+  <h3>Drei Ebenen von Ursachen</h3>
+  <div class="grid">
+    <div class="card"><h4>Religion</h4><p>Katholiken und Protestanten stritten über die Auslegung des Augsburger Religionsfriedens, über geistliche Gebiete und die Rechte der Calvinisten.</p></div>
+    <div class="card"><h4>Verfassung des Reiches</h4><p>Wie viel Macht hat der Kaiser, wie viel die Fürsten? Die Fürsten verteidigten ihre „<a class="g" href="#g-libertaet">Libertät</a>“ gegen einen starken Kaiser.</p></div>
+    <div class="card"><h4>Europäische Machtpolitik</h4><p>Frankreich wollte die Umklammerung durch Habsburg sprengen, Schweden die Ostsee beherrschen, Spanien die Niederlande zurückgewinnen.</p></div>
+  </div>
+  <p>Diese Konflikte waren wie ein Pulverfass. Es fehlte nur noch der Funke.</p>
+
+  <h3>Der Auslöser: Der Prager Fenstersturz 1618</h3>
+  <p>Böhmen war überwiegend protestantisch, sein König aber ein Habsburger. 1617 wurde der streng katholische <strong>Ferdinand (II.)</strong> König von Böhmen. Er schränkte die im Majestätsbrief zugesicherten Rechte der Protestanten ein. Am <strong>23. Mai 1618</strong> stürmten protestantische Adlige die Prager Burg und warfen zwei kaiserliche Statthalter und einen Sekretär aus dem Fenster. Alle drei überlebten den Sturz – doch das war eine offene Kampfansage an die Habsburger.</p>
+  <p>Die böhmischen Stände setzten Ferdinand ab und wählten 1619 den calvinistischen Kurfürsten <strong>Friedrich V. von der Pfalz</strong>, den Anführer der Protestantischen Union, zu ihrem König. Im selben Jahr wurde Ferdinand II. zum Kaiser gewählt. Damit war aus einem böhmischen Konflikt ein Konflikt des ganzen Reiches geworden.</p>
+
+  <h3>Die vier Phasen des Krieges</h3>
+  <p>Historiker teilen den Krieg üblicherweise in vier Phasen ein – benannt nach den jeweiligen Hauptgegnern des Kaisers.</p>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Phase I: Böhmisch-Pfälzischer Krieg</h4><span class="yr">1618–1623</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1618</span><span>Prager Fenstersturz, Aufstand der böhmischen Stände.</span></li>
+        <li><span class="d">8.11.1620</span><span><strong>Schlacht am Weißen Berg</strong> bei Prag: Die Truppen des Kaisers und der Liga unter Feldherr Tilly besiegen die Böhmen vernichtend. Friedrich V. flieht – er geht als <strong>„Winterkönig“</strong> in die Geschichte ein, weil er nur einen Winter regierte.</span></li>
+        <li><span class="d">ab 1621</span><span>Böhmen wird gewaltsam rekatholisiert. Anführer des Aufstands werden hingerichtet, Tausende Protestanten wandern aus.</span></li>
+        <li><span class="d">1622–1623</span><span>Die Pfalz wird erobert. Die pfälzische Kurwürde geht an <strong>Maximilian von Bayern</strong>.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> Großer Sieg für Kaiser und Katholiken.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Phase II: Dänisch-Niedersächsischer Krieg</h4><span class="yr">1625–1629</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1625</span><span>König <strong>Christian IV. von Dänemark</strong> greift ein, um die Protestanten zu schützen – und um selbst Einfluss in Norddeutschland zu gewinnen.</span></li>
+        <li><span class="d">1625</span><span>Der böhmische Adlige <strong>Albrecht von Wallenstein</strong> stellt dem Kaiser ein eigenes riesiges Söldnerheer zur Verfügung. Sein Prinzip: <a class="g" href="#g-kontribution">„Der Krieg ernährt den Krieg“</a> – die Armee versorgt sich durch Zwangsabgaben aus den besetzten Gebieten.</span></li>
+        <li><span class="d">1626</span><span>Tilly besiegt die Dänen bei Lutter am Barenberge; Wallenstein siegt an der Dessauer Elbbrücke. Kaiserliche Truppen stoßen bis an die Ostsee vor.</span></li>
+        <li><span class="d">1629</span><span>Mit dem <strong>Restitutionsedikt</strong> verlangt der Kaiser, dass alle seit 1552 von Protestanten eingezogenen Kirchengüter zurückgegeben werden. Das schreckt sogar katholische Fürsten auf, denn der Kaiser wird ihnen zu mächtig. Dänemark scheidet im Frieden von Lübeck aus.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> Der Kaiser steht auf dem Höhepunkt seiner Macht – aber er überspannt den Bogen. 1630 setzen die Kurfürsten die Entlassung Wallensteins durch.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Phase III: Schwedischer Krieg</h4><span class="yr">1630–1635</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1630</span><span>König <strong>Gustav II. Adolf von Schweden</strong> landet mit einem modernen, gut organisierten Heer an der pommerschen Küste. Er will die Protestanten retten und die Ostsee beherrschen. Frankreich unterstützt ihn mit Geld.</span></li>
+        <li><span class="d">Mai 1631</span><span>Truppen der Liga erobern und zerstören <strong>Magdeburg</strong>. Etwa 20.000 Menschen sterben – die „Magdeburger Hochzeit“ wird zum Sinnbild für die Grausamkeit des Krieges.</span></li>
+        <li><span class="d">1631</span><span>Gustav Adolf siegt bei <strong>Breitenfeld</strong> (bei Leipzig) über Tilly und zieht bis nach Süddeutschland. Der Kaiser holt Wallenstein zurück.</span></li>
+        <li><span class="d">16.11.1632</span><span><strong>Schlacht bei Lützen:</strong> Die Schweden behaupten das Schlachtfeld, aber Gustav Adolf fällt.</span></li>
+        <li><span class="d">25.2.1634</span><span>Wallenstein, der eigenmächtig mit den Gegnern verhandelt, wird auf Befehl des Kaisers in Eger ermordet.</span></li>
+        <li><span class="d">1634</span><span>Die Schweden erleiden bei <strong>Nördlingen</strong> eine schwere Niederlage.</span></li>
+        <li><span class="d">1635</span><span><strong>Prager Frieden</strong> zwischen dem Kaiser und Sachsen; fast alle Reichsstände treten bei. Doch Schweden und Frankreich sind nicht beteiligt – der Krieg geht weiter.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Phase IV: Schwedisch-Französischer Krieg</h4><span class="yr">1635–1648</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1635</span><span>Das katholische <strong>Frankreich</strong> tritt offen in den Krieg ein – gegen die katholischen Habsburger. Spätestens jetzt ist klar: Es geht vor allem um <strong>Macht in Europa</strong>, nicht mehr um Religion.</span></li>
+        <li><span class="d">1636–1645</span><span>Ein zermürbender Krieg ohne klare Fronten. Heere ziehen kreuz und quer durchs Reich, plündern und verwüsten. Kaiser Ferdinand III. (ab 1637) gerät immer mehr in die Defensive.</span></li>
+        <li><span class="d">ab 1643</span><span>In <strong>Münster und Osnabrück</strong> beginnen Friedensverhandlungen – während weitergekämpft wird.</span></li>
+        <li><span class="d">1645</span><span>Schwere kaiserliche Niederlagen bei Jankau (Böhmen) und Alerheim (bei Nördlingen).</span></li>
+        <li><span class="d">1648</span><span>Schwedische Truppen stehen in Prag – der Krieg endet dort, wo er begonnen hat. Im Oktober wird der Frieden unterzeichnet.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Krieg aus der Sicht der Menschen</h3>
+  <p>Die meisten Toten fielen nicht in Schlachten. Die Heere bestanden aus <a class="g" href="#g-soeldner">Söldnern</a>, die oft nicht bezahlt wurden und sich nahmen, was sie brauchten:</p>
+  <ul>
+    <li><strong>Plünderung und Gewalt:</strong> Dörfer wurden ausgeraubt, Häuser angezündet, Menschen gefoltert und getötet, um Verstecke von Geld und Vorräten zu erpressen.</li>
+    <li><strong>Hunger:</strong> Saatgut und Vieh wurden geraubt, Felder verwüstet – Hungersnöte folgten.</li>
+    <li><strong>Seuchen:</strong> Pest, Typhus und Ruhr verbreiteten sich mit den Heeren und Flüchtlingsströmen. Sie forderten die meisten Opfer.</li>
+    <li><strong>Flucht:</strong> Viele Menschen flohen in befestigte Städte, wo Enge und Krankheiten neue Opfer forderten.</li>
+  </ul>
+  <div class="box achtung"><div class="box-title">Die Bilanz</div>
+    <p>Im Heiligen Römischen Reich sank die Bevölkerung von etwa 16–17 Millionen auf rund 10–11 Millionen – also um etwa <strong>ein Drittel</strong>. Die Unterschiede waren aber groß: Manche Regionen (z. B. Pommern, Mecklenburg, Württemberg, die Pfalz, Thüringen) verloren die Hälfte ihrer Einwohner oder mehr, andere (z. B. der Nordwesten, Teile Österreichs) blieben weitgehend verschont. Im Verhältnis zur Bevölkerung war der Dreißigjährige Krieg für Deutschland ein tieferer Einschnitt als die Weltkriege des 20. Jahrhunderts. Es dauerte bis ins 18. Jahrhundert, bis der Bevölkerungsstand von 1618 wieder erreicht war.</p>
+  </div>
+  <p>Der Roman <em>„Der abenteuerliche Simplicissimus“</em> von Hans Jakob Christoffel von Grimmelshausen (1668), der selbst als Junge in den Krieg geriet, schildert diese Erfahrungen eindrücklich und ist bis heute die bekannteste literarische Erinnerung an den Krieg.</p>
+
+  <div class="box warum"><div class="box-title">War es ein Religionskrieg?</div>
+    <p>Ja und nein. Am Anfang spielte die Religion eine große Rolle, und viele Soldaten und Herrscher sahen sich als Kämpfer für den wahren Glauben. Doch je länger der Krieg dauerte, desto mehr ging es um Macht, Land und Einfluss. Das deutlichste Beispiel: Das katholische Frankreich kämpfte an der Seite des protestantischen Schweden gegen den katholischen Kaiser. Heute sehen Historiker den Krieg als eine Verbindung aus <strong>Konfessionskrieg, Verfassungskonflikt im Reich und europäischem Mächtekampf</strong>.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Auslöser:</strong> Prager Fenstersturz 1618.</li>
+      <li><strong>Vier Phasen:</strong> böhmisch-pfälzisch → dänisch-niedersächsisch → schwedisch → schwedisch-französisch.</li>
+      <li><strong>Wichtige Personen:</strong> Ferdinand II., Tilly, Wallenstein, Gustav Adolf, Richelieu.</li>
+      <li><strong>Folgen:</strong> Etwa ein Drittel der Bevölkerung stirbt, vor allem durch Hunger und Seuchen.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 9 WESTFÄLISCHER FRIEDEN ============ -->
+<section class="chapter" id="frieden">
+  <div class="chap-head"><div class="chap-num">9</div><div>
+    <span class="span-chip">24. Oktober 1648</span>
+    <h2>Der Westfälische Frieden</h2>
+  </div></div>
+  <p class="lead">Nach fast fünf Jahren Verhandlungen wird der Krieg beendet. Der Westfälische Frieden war zugleich ein europäischer Friedensvertrag und ein Grundgesetz für das Reich – und blieb es bis 1806.</p>
+
+  <h3>Ein Friedenskongress der besonderen Art</h3>
+  <p>Ab 1643/44 trafen sich Gesandte aus ganz Europa in zwei westfälischen Städten, die etwa 50 km voneinander entfernt liegen:</p>
+  <div class="grid">
+    <div class="card"><h4>Münster</h4><p>Hier verhandelten der Kaiser und <strong>Frankreich</strong> (mit den katholischen Ständen). Hier schlossen auch Spanien und die Niederlande im Januar 1648 ihren eigenen Frieden.</p></div>
+    <div class="card"><h4>Osnabrück</h4><p>Hier verhandelten der Kaiser und <strong>Schweden</strong> (mit den protestantischen Ständen). Die Reichsstände nahmen an den Verhandlungen teil.</p></div>
+  </div>
+  <p>Am <strong>24. Oktober 1648</strong> wurden die Verträge unterzeichnet. Es war einer der ersten großen internationalen Friedenskongresse der Geschichte.</p>
+
+  <h3>Die Ergebnisse im Überblick</h3>
+  <h4>1. Religion: Der „zweite Religionsfrieden“</h4>
+  <ul>
+    <li>Der Augsburger Religionsfrieden wird bestätigt und <strong>auf die Reformierten (Calvinisten) ausgeweitet</strong>. Es gibt nun drei anerkannte Konfessionen im Reich: katholisch, lutherisch, reformiert.</li>
+    <li><strong>Normaljahr 1624:</strong> Wer am 1. Januar 1624 welche Kirchen und Kirchengüter besaß, behält sie. So wurde der jahrzehntelange Besitzstreit beendet; das Restitutionsedikt von 1629 wurde aufgehoben.</li>
+    <li>Der Landesherr behält zwar das Recht, die Konfession seines Landes festzulegen, aber Andersgläubige, die schon 1624 dort lebten, dürfen ihren Glauben zumindest <strong>privat ausüben</strong> und nicht benachteiligt werden.</li>
+    <li>In Glaubensfragen kann im Reichstag nicht mehr einfach überstimmt werden: Katholiken und Protestanten verhandeln als zwei gleich starke Gruppen (<a class="g" href="#g-paritaet">Parität</a>).</li>
+  </ul>
+
+  <h4>2. Verfassung des Reiches: Stärkere Fürsten, schwächerer Kaiser</h4>
+  <ul>
+    <li>Die Reichsstände erhalten die volle <a class="g" href="#g-landeshoheit">Landeshoheit</a> in ihren Gebieten.</li>
+    <li>Sie dürfen <strong>Bündnisse</strong> untereinander und mit ausländischen Mächten schließen – allerdings nicht gegen Kaiser und Reich.</li>
+    <li>Wichtige Reichsangelegenheiten (Krieg, Frieden, Steuern, Gesetze) kann der Kaiser nur noch <strong>gemeinsam mit dem Reichstag</strong> entscheiden.</li>
+    <li>Das Reich bleibt bestehen – als lockerer Verbund, in dem Recht und Verträge den Frieden sichern sollen. Die eigentliche Staatsmacht liegt aber künftig bei den großen Territorien (z. B. Österreich, Brandenburg-Preußen, Bayern, Sachsen).</li>
+  </ul>
+
+  <h4>3. Gebiete: Wer gewinnt, wer verliert?</h4>
+  <div class="tablewrap"><table>
+    <tr><th>Wer</th><th>Was</th></tr>
+    <tr><td><strong>Schweiz</strong></td><td>Wird offiziell aus dem Reich entlassen und unabhängig.</td></tr>
+    <tr><td><strong>Niederlande</strong></td><td>Ihre Unabhängigkeit wird von Spanien anerkannt (Frieden von Münster, Januar 1648).</td></tr>
+    <tr><td><strong>Frankreich</strong></td><td>Erhält habsburgische Gebiete und Rechte im Elsass (u. a. den Sundgau) sowie Breisach; der Besitz von Metz, Toul und Verdun wird bestätigt.</td></tr>
+    <tr><td><strong>Schweden</strong></td><td>Erhält Vorpommern mit Rügen und Stettin, Wismar sowie die Gebiete Bremen und Verden. Damit kontrolliert es die Mündungen von Oder, Elbe und Weser – und wird selbst Reichsstand.</td></tr>
+    <tr><td><strong>Brandenburg</strong></td><td>Erhält Hinterpommern, Halberstadt, Minden und die Anwartschaft auf Magdeburg – Grundlage für den späteren Aufstieg Preußens.</td></tr>
+    <tr><td><strong>Bayern</strong></td><td>Behält die Oberpfalz und die Kurwürde.</td></tr>
+    <tr><td><strong>Pfalz</strong></td><td>Der Sohn des „Winterkönigs“ erhält die Rheinpfalz zurück und eine neu geschaffene <strong>achte Kurwürde</strong>.</td></tr>
+  </table></div>
+
+  <h3>Was bedeutet der Westfälische Frieden?</h3>
+  <div class="grid">
+    <div class="card"><h4>Gewinner</h4><p>Frankreich und Schweden sind die großen Gewinner, ebenso die Reichsfürsten. Verlierer sind der Kaiser, der seine Macht im Reich nicht ausbauen konnte, und der Papst, dessen Protest gegen den Vertrag ignoriert wurde.</p></div>
+    <div class="card"><h4>Zusammenleben der Konfessionen</h4><p>Der Frieden schuf keine moderne Religionsfreiheit, aber einen dauerhaften rechtlichen Rahmen für das Nebeneinander der Konfessionen. Große Religionskriege führte man im Reich danach nicht mehr.</p></div>
+    <div class="card"><h4>Europa</h4><p>Der Vertrag gilt als wichtiger Schritt zu einer Ordnung, in der Staaten durch Verhandlungen und Verträge miteinander umgehen. Historiker warnen aber vor Übertreibung: Ein „ewiger Frieden“ wurde er nicht – Frankreich und Spanien kämpften z. B. bis 1659 weiter.</p></div>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <p>Der <strong>Westfälische Frieden (1648)</strong> beendet den Dreißigjährigen Krieg. Er erkennt <strong>drei Konfessionen</strong> an (Normaljahr 1624), stärkt die <strong>Fürsten</strong> gegenüber dem Kaiser, macht <strong>Schweiz und Niederlande</strong> unabhängig und lässt <strong>Frankreich und Schweden</strong> als Gewinner hervorgehen. Er bleibt bis 1806 Grundgesetz des Reiches.</p>
+  </div>
+</section>
+
+<!-- ============ 10 BILANZ ============ -->
+<section class="chapter" id="bilanz">
+  <div class="chap-head"><div class="chap-num">10</div><div>
+    <span class="span-chip">Zusammenfassung</span>
+    <h2>Bilanz: Was hat sich verändert?</h2>
+  </div></div>
+  <p class="lead">Vergleicht man die Welt von 1453 mit der von 1648, wird deutlich, wie gewaltig die Veränderungen in diesen knapp zwei Jahrhunderten waren.</p>
+
+  <div class="tablewrap"><table>
+    <tr><th>Bereich</th><th>Um 1453</th><th>Um 1648</th></tr>
+    <tr><td><strong>Religion</strong></td><td>Eine katholische Kirche für West- und Mitteleuropa, an der Spitze der Papst.</td><td>Mehrere Konfessionen (katholisch, lutherisch, reformiert, anglikanisch). Glaube ist eng an den Staat gebunden.</td></tr>
+    <tr><td><strong>Politik im Reich</strong></td><td>Lockerer Verbund, Fehderecht, kaum gemeinsame Einrichtungen.</td><td>Rechtsgemeinschaft mit Reichstag und Reichsgerichten; starke Fürsten mit Landeshoheit, schwacher Kaiser.</td></tr>
+    <tr><td><strong>Europa</strong></td><td>Idee einer christlichen Einheit unter Papst und Kaiser.</td><td>Ein System selbstständiger, konkurrierender Staaten (Frankreich, Schweden, Spanien, Niederlande, England, Österreich).</td></tr>
+    <tr><td><strong>Medien &amp; Wissen</strong></td><td>Handgeschriebene Bücher, wenige können lesen.</td><td>Gedruckte Bücher, Flugblätter, erste Zeitungen (ab 1605 in Straßburg); mehr Menschen lernen lesen.</td></tr>
+    <tr><td><strong>Weltbild</strong></td><td>Die Erde als Mittelpunkt des Kosmos; Welt endet am Atlantik.</td><td>Die Erde kreist um die Sonne; Amerika und der Seeweg nach Asien sind bekannt; Beginn der modernen Naturwissenschaft.</td></tr>
+    <tr><td><strong>Wirtschaft</strong></td><td>Handel vor allem im Mittelmeer und über Land.</td><td>Welthandel über den Atlantik, Kolonien, große Handelshäuser; Zentrum verlagert sich nach Nordwesteuropa (Niederlande, England).</td></tr>
+    <tr><td><strong>Deutsche Sprache</strong></td><td>Viele unterschiedliche regionale Schreibweisen.</td><td>Auf dem Weg zu einer einheitlichen Schriftsprache, stark geprägt von Luthers Bibel.</td></tr>
+  </table></div>
+
+  <h3>Sechs große Entwicklungslinien</h3>
+  <div class="grid">
+    <div class="card"><h4>1. Vom Mittelalter zur Neuzeit</h4><p>Buchdruck, Humanismus und Entdeckungen eröffnen ein neues Zeitalter des Wissens und Welthandels.</p></div>
+    <div class="card"><h4>2. Von der Einheit zur Vielfalt des Glaubens</h4><p>Die Reformation spaltet die Kirche dauerhaft. Nach blutigen Konflikten lernt man, die Spaltung rechtlich zu regeln.</p></div>
+    <div class="card"><h4>3. Vom Kaiser zu den Fürsten</h4><p>Im Reich verschiebt sich die Macht vom Kaiser zu den Landesherren. Deutschland bleibt bis ins 19. Jahrhundert ein Verbund vieler Staaten.</p></div>
+    <div class="card"><h4>4. Vom christlichen Abendland zum Staatensystem</h4><p>Statt eines Papstes und Kaisers als Ordnungsmächte konkurrieren selbstständige Staaten – Staatsräson zählt mehr als Konfession.</p></div>
+    <div class="card"><h4>5. Vom Faustrecht zum Recht</h4><p>Ewiger Landfriede, Reichskammergericht und Religionsfrieden zeigen den Versuch, Konflikte durch Recht und Verträge zu lösen.</p></div>
+    <div class="card"><h4>6. Licht und Schatten</h4><p>Neben Fortschritt stehen Kolonialgewalt, Hexenverfolgung und verheerende Kriege. Die Epoche ist beides: Aufbruch und Katastrophe.</p></div>
+  </div>
+
+  <div class="box kurz"><div class="box-title">Ausblick: Wie geht es nach 1648 weiter?</div>
+    <p>In Europa beginnt das Zeitalter des <strong>Absolutismus</strong>, mit Ludwig XIV. von Frankreich als Vorbild. Im Reich steigen <strong>Österreich</strong> und <strong>Brandenburg-Preußen</strong> zu Großmächten auf. 1683 scheitern die Osmanen ein zweites Mal vor Wien. Das Heilige Römische Reich besteht noch bis 1806, als es unter dem Druck Napoleons aufgelöst wird.</p>
+  </div>
+</section>
+
+<!-- ============ 11 ZEITLEISTE ============ -->
+<section class="chapter" id="zeitleiste">
+  <div class="chap-head"><div class="chap-num">11</div><div>
+    <span class="span-chip">Zum Nachschlagen</span>
+    <h2>Zeitleiste 1453–1648</h2>
+  </div></div>
+  <p>Die wichtigsten Daten auf einen Blick. Mit den Schaltflächen lässt sich nach Themen filtern.</p>
+  <div class="filters" id="filters">
+    <button class="on" data-f="alle">Alle</button>
+    <button data-f="reich">Reich &amp; Politik</button>
+    <button data-f="religion">Religion</button>
+    <button data-f="europa">Europa &amp; Welt</button>
+    <button data-f="krieg">Kriege</button>
+    <button data-f="kultur">Kultur &amp; Wissen</button>
+  </div>
+  <ol class="tl" id="timeline"></ol>
+</section>
+
+<!-- ============ 12 PERSONEN ============ -->
+<section class="chapter" id="personen">
+  <div class="chap-head"><div class="chap-num">12</div><div>
+    <span class="span-chip">Wer war wer?</span>
+    <h2>Wichtige Personen</h2>
+  </div></div>
+  <div class="people">
+    <div class="person"><div class="role">Erfinder</div><h4>Johannes Gutenberg</h4><div class="life">um 1400 – 1468</div><p>Entwickelte in Mainz um 1450 den Buchdruck mit beweglichen Lettern – Grundlage der Medienrevolution.</p></div>
+    <div class="person"><div class="role">Sultan</div><h4>Mehmed II.</h4><div class="life">1432 – 1481</div><p>Eroberte 1453 Konstantinopel und machte das Osmanische Reich zur Großmacht.</p></div>
+    <div class="person"><div class="role">Kaiser</div><h4>Maximilian I.</h4><div class="life">1459 – 1519</div><p>Machte die Habsburger durch Heiratspolitik groß; unter ihm begann 1495 die Reichsreform.</p></div>
+    <div class="person"><div class="role">Kaufmann</div><h4>Jakob Fugger</h4><div class="life">1459 – 1525</div><p>Augsburger Großkaufmann und Bankier; finanzierte Kaiser und Päpste, u. a. die Wahl Karls V.</p></div>
+    <div class="person"><div class="role">Humanist</div><h4>Erasmus von Rotterdam</h4><div class="life">um 1466 – 1536</div><p>Wichtigster Gelehrter seiner Zeit; gab das griechische Neue Testament heraus. Kritisierte die Kirche, blieb aber katholisch.</p></div>
+    <div class="person"><div class="role">Reformator</div><h4>Martin Luther</h4><div class="life">1483 – 1546</div><p>Löste mit den 95 Thesen 1517 die Reformation aus; übersetzte die Bibel ins Deutsche.</p></div>
+    <div class="person"><div class="role">Reformator</div><h4>Philipp Melanchthon</h4><div class="life">1497 – 1560</div><p>Luthers engster Mitarbeiter; verfasste das Augsburger Bekenntnis und reformierte das Bildungswesen.</p></div>
+    <div class="person"><div class="role">Kurfürst</div><h4>Friedrich der Weise</h4><div class="life">1463 – 1525</div><p>Kurfürst von Sachsen; schützte Luther und versteckte ihn auf der Wartburg.</p></div>
+    <div class="person"><div class="role">Prediger</div><h4>Thomas Müntzer</h4><div class="life">um 1489 – 1525</div><p>Radikaler Reformator, der eine gerechtere Gesellschaft mit Gewalt durchsetzen wollte; nach Frankenhausen hingerichtet.</p></div>
+    <div class="person"><div class="role">Kaiser</div><h4>Karl V.</h4><div class="life">1500 – 1558</div><p>Herrscher über ein Weltreich; wollte die Glaubenseinheit erhalten und scheiterte. Dankte 1556 ab.</p></div>
+    <div class="person"><div class="role">Kaiser</div><h4>Ferdinand I.</h4><div class="life">1503 – 1564</div><p>Bruder Karls V.; schloss den Augsburger Religionsfrieden und begründete die österreichische Habsburger-Linie.</p></div>
+    <div class="person"><div class="role">Reformator</div><h4>Johannes Calvin</h4><div class="life">1509 – 1564</div><p>Reformator in Genf; seine Lehre (Calvinismus) verbreitete sich in Westeuropa.</p></div>
+    <div class="person"><div class="role">Sultan</div><h4>Süleyman der Prächtige</h4><div class="life">1494 – 1566</div><p>Unter ihm erreichte das Osmanische Reich seinen Höhepunkt; belagerte 1529 Wien.</p></div>
+    <div class="person"><div class="role">König</div><h4>Philipp II. von Spanien</h4><div class="life">1527 – 1598</div><p>Sohn Karls V.; katholische Führungsmacht Europas, Gegner der Niederländer und Englands.</p></div>
+    <div class="person"><div class="role">Königin</div><h4>Elisabeth I. von England</h4><div class="life">1533 – 1603</div><p>Festigte die anglikanische Kirche; unter ihr wurde 1588 die Armada abgewehrt.</p></div>
+    <div class="person"><div class="role">Kaiser</div><h4>Ferdinand II.</h4><div class="life">1578 – 1637</div><p>Streng katholischer Kaiser; seine Politik in Böhmen löste den Dreißigjährigen Krieg aus.</p></div>
+    <div class="person"><div class="role">Feldherr</div><h4>Albrecht von Wallenstein</h4><div class="life">1583 – 1634</div><p>Kaiserlicher Oberbefehlshaber mit eigenem Söldnerheer; wurde zu mächtig und 1634 ermordet.</p></div>
+    <div class="person"><div class="role">Feldherr</div><h4>Johann t’Serclaes von Tilly</h4><div class="life">1559 – 1632</div><p>Feldherr der Katholischen Liga; Sieger am Weißen Berg, verantwortlich für die Eroberung Magdeburgs.</p></div>
+    <div class="person"><div class="role">König</div><h4>Gustav II. Adolf von Schweden</h4><div class="life">1594 – 1632</div><p>Griff 1630 auf protestantischer Seite in den Krieg ein; fiel 1632 bei Lützen.</p></div>
+    <div class="person"><div class="role">Staatsmann</div><h4>Kardinal Richelieu</h4><div class="life">1585 – 1642</div><p>Leitender Minister Frankreichs; stellte die Staatsräson über die Religion und kämpfte gegen Habsburg.</p></div>
+    <div class="person"><div class="role">Kurfürst</div><h4>Maximilian I. von Bayern</h4><div class="life">1573 – 1651</div><p>Führer der Katholischen Liga; gewann im Krieg die Kurwürde und die Oberpfalz.</p></div>
+  </div>
+</section>
+
+<!-- ============ 13 GLOSSAR ============ -->
+<section class="chapter" id="glossar">
+  <div class="chap-head"><div class="chap-num">13</div><div>
+    <span class="span-chip">Wichtige Begriffe</span>
+    <h2>Glossar</h2>
+  </div></div>
+  <dl class="gloss" id="gloss">
+    <dt id="g-ablass">Ablass</dt><dd>Nachlass von Strafen für Sünden, die man nach damaliger Lehre im Fegefeuer abbüßen musste. Ablässe konnte man u. a. gegen Geld erwerben – das kritisierte Luther.</dd>
+    <dt id="g-bann">Bann (Kirchenbann)</dt><dd>Ausschluss aus der Kirche durch den Papst. Der Betroffene durfte keine Sakramente mehr empfangen.</dd>
+    <dt id="g-calvinismus">Calvinismus / Reformierte</dt><dd>Evangelische Richtung nach Johannes Calvin und Ulrich Zwingli. Strenger als die Lutheraner, z. B. schlichte Kirchen ohne Bilder.</dd>
+    <dt id="g-eiszeit">Kleine Eiszeit</dt><dd>Phase mit kühlerem Klima (besonders ca. 1570–1650), die Missernten und Hunger verursachte.</dd>
+    <dt id="g-fehde">Fehde</dt><dd>Im Mittelalter erlaubte, private Kriegführung von Adligen zur Durchsetzung eigener Rechte. 1495 verboten.</dd>
+    <dt id="g-flugschrift">Flugschrift</dt><dd>Kurze, billige gedruckte Schrift von wenigen Seiten, oft mit Bildern. Das wichtigste Medium der Reformation.</dd>
+    <dt id="g-fruehkapitalismus">Frühkapitalismus</dt><dd>Wirtschaftsform, in der Kaufleute ihr Kapital gewinnbringend in Handel, Bergbau und Kredite investieren.</dd>
+    <dt id="g-gegenreformation">Gegenreformation / katholische Reform</dt><dd>Erneuerung der katholischen Kirche nach der Reformation und Versuche, verlorene Gebiete zurückzugewinnen.</dd>
+    <dt id="g-habsburger">Habsburger</dt><dd>Herrscherfamilie, die fast immer den Kaiser stellte. Ab 1556 in eine spanische und eine österreichische Linie geteilt.</dd>
+    <dt id="g-hugenotten">Hugenotten</dt><dd>Französische Calvinisten.</dd>
+    <dt id="g-humanismus">Humanismus</dt><dd>Bildungsbewegung, die antike Texte im Original studierte („ad fontes“) und die Würde und Bildung des Menschen betonte.</dd>
+    <dt id="g-konfession">Konfession</dt><dd>Glaubensrichtung innerhalb des Christentums, z. B. katholisch, lutherisch oder reformiert.</dd>
+    <dt id="g-konfessionalisierung">Konfessionalisierung</dt><dd>Prozess, in dem Staat und Kirche gemeinsam dafür sorgten, dass die Untertanen die „richtige“ Konfession annahmen und lebten.</dd>
+    <dt id="g-kontribution">Kontribution</dt><dd>Zwangsabgabe, die Armeen von der Bevölkerung besetzter Gebiete eintrieben. Wallensteins Prinzip: „Der Krieg ernährt den Krieg.“</dd>
+    <dt id="g-kurfuersten">Kurfürsten</dt><dd>Die (bis 1623 sieben, ab 1648 acht) Fürsten, die den König bzw. Kaiser wählten. „Küren“ heißt wählen.</dd>
+    <dt id="g-landeshoheit">Landeshoheit</dt><dd>Das Recht eines Fürsten, in seinem Gebiet selbstständig zu regieren (Gesetze, Steuern, Gericht, Religion).</dd>
+    <dt id="g-landeskirche">Landeskirche</dt><dd>Evangelische Kirche eines Territoriums, an deren Spitze der Landesherr stand.</dd>
+    <dt id="g-leibeigen">Leibeigenschaft</dt><dd>Persönliche Abhängigkeit eines Bauern von seinem Herrn: eingeschränkte Freiheit beim Heiraten oder Wegziehen, Abgaben und Dienste.</dd>
+    <dt id="g-libertaet">Libertät</dt><dd>„Fürstliche Freiheit“: die Rechte der Reichsstände gegenüber dem Kaiser.</dd>
+    <dt id="g-paritaet">Parität</dt><dd>Gleichberechtigung, hier: der Konfessionen im Reich. Ab 1648 durften Religionsfragen im Reichstag nicht per Mehrheit entschieden werden.</dd>
+    <dt id="g-praedestination">Prädestination</dt><dd>Lehre Calvins, dass Gott schon vorher bestimmt hat, wer gerettet wird.</dd>
+    <dt id="g-protestanten">Protestanten</dt><dd>Name für die Anhänger der Reformation, nach ihrer „Protestation“ auf dem Reichstag zu Speyer 1529.</dd>
+    <dt id="g-reichsacht">Reichsacht</dt><dd>Höchste weltliche Strafe im Reich: Der Geächtete war rechtlos („vogelfrei“), niemand durfte ihn beherbergen.</dd>
+    <dt id="g-reichsstaende">Reichsstände</dt><dd>Fürsten, Grafen, Prälaten und Reichsstädte, die direkt dem Kaiser unterstanden und auf dem Reichstag Sitz und Stimme hatten.</dd>
+    <dt id="g-reichstag">Reichstag</dt><dd>Versammlung von Kaiser und Reichsständen, auf der über Gesetze, Steuern, Krieg und Frieden beraten wurde.</dd>
+    <dt id="g-renaissance">Renaissance</dt><dd>„Wiedergeburt“ der antiken Kunst und Wissenschaft, ausgehend von Italien im 15. Jahrhundert.</dd>
+    <dt id="g-soeldner">Söldner / Landsknechte</dt><dd>Berufssoldaten, die gegen Bezahlung für einen Kriegsherrn kämpften – oft unabhängig von Religion oder Herkunft.</dd>
+    <dt id="g-staatsraeson">Staatsräson</dt><dd>Grundsatz, dass das Wohl und die Macht des Staates Vorrang vor anderen Zielen (z. B. Religion) haben.</dd>
+    <dt id="g-staende">Ständegesellschaft</dt><dd>Gesellschaftsordnung mit festen, durch Geburt bestimmten Gruppen: Geistlichkeit, Adel, Bürger und Bauern.</dd>
+    <dt id="g-tuerkengefahr">„Türkengefahr“</dt><dd>Zeitgenössischer Begriff für die Bedrohung durch das Osmanische Reich, das bis nach Ungarn und vor Wien vordrang.</dd>
+  </dl>
+</section>
+
+<!-- ============ 14 QUELLEN ============ -->
+<section class="chapter" id="quellen">
+  <div class="chap-head"><div class="chap-num">14</div><div>
+    <span class="span-chip">Zum Weiterlesen</span>
+    <h2>Quellen &amp; Weiterlesen</h2>
+  </div></div>
+  <p>Dieses Dokument fasst den Forschungsstand in eigenen Worten zusammen. Für Zahlen (z. B. Opfer, Bevölkerungsverluste) gibt es oft nur Schätzungen; die hier genannten Werte sind gängige Größenordnungen aus den folgenden Quellen.</p>
+  <ul class="sources">
+    <li><a href="https://www.bpb.de/shop/zeitschriften/apuz/272830/dreissigjaehriger-krieg/">Bundeszentrale für politische Bildung: APuZ „Dreißigjähriger Krieg“ (2018)</a></li>
+    <li><a href="https://www.bpb.de/shop/zeitschriften/apuz/272899/zeittafel-wegmarken-des-dreissigjaehrigen-krieges/">bpb: Zeittafel – Wegmarken des Dreißigjährigen Krieges</a></li>
+    <li><a href="https://www.bpb.de/shop/zeitschriften/apuz/272820/das-sich-einem-stein-solt-erbarmet-haben/">bpb: Der Dreißigjährige Krieg im Erleben der Zivilbevölkerung</a></li>
+    <li><a href="https://www.bpb.de/themen/zeit-kulturgeschichte/reformation/235721/deutschlands-grosser-konfessionskrieg/">bpb: Deutschlands großer Konfessionskrieg</a></li>
+    <li><a href="https://germanhistorydocs.org/de/von-den-reformationen-bis-zum-dreissigjaehrigen-krieg-1500-1648/die-reichsreform-von-1495">German History in Documents and Images: Die Reichsreform von 1495</a></li>
+    <li><a href="https://www.historisches-lexikon-bayerns.de/Lexikon/Wormser_Reichstag,_1495">Historisches Lexikon Bayerns: Wormser Reichstag 1495</a></li>
+    <li><a href="https://www.historisches-lexikon-bayerns.de/Lexikon/Buchdruck_(15./16._Jahrhundert)">Historisches Lexikon Bayerns: Buchdruck (15./16. Jahrhundert)</a></li>
+    <li><a href="https://www.historisches-lexikon-bayerns.de/Lexikon/T%C3%BCrkengefahr_(Sp%C3%A4tmittelalter/Fr%C3%BChe_Neuzeit)">Historisches Lexikon Bayerns: Türkengefahr</a></li>
+    <li><a href="https://www.historisches-lexikon-bayerns.de/Lexikon/Hexenverfolgung">Historisches Lexikon Bayerns: Hexenverfolgung</a></li>
+    <li><a href="https://ome-lexikon.uni-oldenburg.de/laender/heiliges-roemisches-reich-deutscher-nation">OME-Lexikon (Universität Oldenburg): Heiliges Römisches Reich (Deutscher Nation)</a></li>
+    <li><a href="https://www.luther2017.de/wiki/stationen-der-reformation/1521-luther-auf-dem-reichstag-in-worms/index.html">Luther2017: Luther auf dem Reichstag in Worms</a></li>
+    <li><a href="https://stadtarchiv.memmingen.de/publikationen/memmingen-und-das-aufbegehren-von-bauern-und-buergern-1525.html">Stadtarchiv Memmingen: Memmingen und das Aufbegehren von Bauern und Bürgern 1525</a></li>
+    <li><a href="https://kulturstiftung.org/zeitstrahl/der-augsburger-religionsfrieden">Kulturstiftung der deutschen Vertriebenen: Der Augsburger Religionsfrieden</a></li>
+    <li><a href="https://www.habsburger.net/de/kapitel/wo-die-sonne-nie-unterging-das-weltreich-karls-v">habsburger.net: Das Weltreich Karls V.</a></li>
+    <li><a href="https://www.leo-bw.de/themenmodul/dreissigjaehriger-krieg/friedensschlusse/westfalischer-frieden">LEO-BW: Der Westfälische Frieden</a></li>
+    <li><a href="https://fnz-online.univie.ac.at/themen/politische-ereignisse-und-entwicklungen/3-dreissigjaehriger-krieg-und-westfaelischer-frieden/34-westfaelischer-friede-1648/">Universität Wien, Frühe Neuzeit online: Westfälischer Friede</a></li>
+    <li><a href="https://lwl.org/westfaelischer-friede-download/wfd-t/wfd-txt1-47.htm">LWL Forschungsstelle „Westfälischer Friede“</a></li>
+    <li><a href="https://www.kas.de/de/web/die-politische-meinung/artikel/detail/-/content/der-dreissigjaehrige-krieg">Konrad-Adenauer-Stiftung: Der Dreißigjährige Krieg (Herfried Münkler)</a></li>
+    <li><a href="https://www.planet-wissen.de/geschichte/neuzeit/der_dreissigjaehrige_krieg/index.html">Planet Wissen: Der Dreißigjährige Krieg</a></li>
+    <li><a href="https://www.kinderzeitmaschine.de/neuzeit/reformation/ereignisse/reformation/augsburger-religionsfriede/">Kinderzeitmaschine: Augsburger Religionsfriede (gut für den Einstieg)</a></li>
+  </ul>
+  <h3>Bücher zum Vertiefen</h3>
+  <ul>
+    <li>Joachim Whaley: <em>Das Heilige Römische Reich deutscher Nation und seine Territorien</em>, Bd. 1 (1493–1648).</li>
+    <li>Heinz Schilling: <em>Martin Luther. Rebell in einer Zeit des Umbruchs</em>.</li>
+    <li>Herfried Münkler: <em>Der Dreißigjährige Krieg. Europäische Katastrophe, deutsches Trauma 1618–1648</em>.</li>
+    <li>Peter H. Wilson: <em>Der Dreißigjährige Krieg. Eine europäische Tragödie</em>.</li>
+    <li>Barbara Stollberg-Rilinger: <em>Das Heilige Römische Reich Deutscher Nation</em> (C. H. Beck Wissen, kurz und gut lesbar).</li>
+  </ul>
+</section>
+
+</main>
+</div>
+
+<footer>Deutsche und europäische Geschichte 1453–1648 · Zusammengestellt als Lern- und Überblicksdokument · Stand: Oktober 2026<span class="ph-foot"> · <a href="index.html">Der Philosopher</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></footer>
+<button id="top" aria-label="Nach oben">↑</button>
+
+<script>
+(function(){
+  // ---- Timeline data ----
+  var T = [
+    ["1450","kultur","Johannes Gutenberg entwickelt in Mainz den Buchdruck mit beweglichen Lettern (Gutenberg-Bibel um 1454)."],
+    ["1452","reich","Friedrich III. wird in Rom zum Kaiser gekrönt – als letzter Kaiser dort."],
+    ["1453","europa","Die Osmanen erobern Konstantinopel – Ende des Byzantinischen Reiches."],
+    ["1453","europa","Ende des Hundertjährigen Krieges zwischen England und Frankreich."],
+    ["1477","reich","Maximilian heiratet Maria von Burgund – Habsburg erhält Burgund und die Niederlande."],
+    ["1486","reich","Der Zusatz „Deutscher Nation“ erscheint erstmals offiziell im Reichsnamen."],
+    ["1486/87","religion","Der „Hexenhammer“ erscheint und befeuert den Hexenglauben."],
+    ["1492","europa","Kolumbus erreicht Amerika; Spanien erobert Granada (Ende der Reconquista)."],
+    ["1494","europa","Vertrag von Tordesillas: Spanien und Portugal teilen die Welt außerhalb Europas auf."],
+    ["1495","reich","Reichstag zu Worms: Ewiger Landfriede, Reichskammergericht, Gemeiner Pfennig."],
+    ["1498","europa","Vasco da Gama erreicht auf dem Seeweg Indien."],
+    ["1499","reich","Schwabenkrieg: Die Eidgenossen lösen sich faktisch vom Reich."],
+    ["1500/1512","reich","Einteilung des Reiches in Reichskreise."],
+    ["1516","kultur","Erasmus von Rotterdam gibt das griechische Neue Testament heraus."],
+    ["1517","religion","Martin Luther veröffentlicht seine 95 Thesen gegen den Ablasshandel."],
+    ["1519","reich","Karl V. wird zum römisch-deutschen König gewählt (mit Geld der Fugger)."],
+    ["1519–1522","europa","Erste Weltumsegelung durch die Expedition Magellans."],
+    ["1521","religion","Reichstag zu Worms: Luther widerruft nicht; Wormser Edikt und Reichsacht."],
+    ["1521","europa","Spanier zerstören das Aztekenreich in Mexiko."],
+    ["1522","kultur","Luthers Übersetzung des Neuen Testaments erscheint."],
+    ["1524/25","krieg","Deutscher Bauernkrieg; 1525 Zwölf Artikel von Memmingen, Niederlage bei Frankenhausen."],
+    ["1526","krieg","Schlacht bei Mohács: Die Osmanen besiegen Ungarn; Böhmen und Ungarn fallen an Ferdinand von Habsburg."],
+    ["1527","krieg","Sacco di Roma: Kaiserliche Söldner plündern Rom."],
+    ["1529","religion","Reichstag zu Speyer: „Protestation“ der evangelischen Stände – Name „Protestanten“."],
+    ["1529","krieg","Erste Belagerung Wiens durch die Osmanen."],
+    ["1530","religion","Augsburger Bekenntnis (Confessio Augustana); Karl V. wird in Bologna zum Kaiser gekrönt."],
+    ["1531","religion","Gründung des Schmalkaldischen Bundes evangelischer Fürsten und Städte."],
+    ["1534","religion","Heinrich VIII. trennt die englische Kirche von Rom; Luthers Vollbibel erscheint."],
+    ["1534/35","religion","Täuferreich in Münster wird niedergeschlagen."],
+    ["1540","religion","Der Papst bestätigt den Jesuitenorden."],
+    ["1541","religion","Calvin beginnt sein dauerhaftes Wirken in Genf; Osmanen erobern Buda (Ungarn dreigeteilt)."],
+    ["1543","kultur","Kopernikus veröffentlicht das heliozentrische Weltbild."],
+    ["1545–1563","religion","Konzil von Trient – Grundlage der katholischen Reform."],
+    ["1546","religion","Martin Luther stirbt in Eisleben."],
+    ["1546/47","krieg","Schmalkaldischer Krieg; Sieg des Kaisers bei Mühlberg (1547)."],
+    ["1552","reich","Fürstenaufstand gegen Karl V.; Frankreich erhält Metz, Toul und Verdun; Passauer Vertrag."],
+    ["1555","religion","Augsburger Religionsfrieden: Der Landesherr bestimmt die Konfession."],
+    ["1556","reich","Abdankung Karls V.; Teilung in spanische und österreichische Habsburger."],
+    ["1562–1598","krieg","Hugenottenkriege in Frankreich."],
+    ["1563","religion","Heidelberger Katechismus: Die Kurpfalz wird calvinistisch."],
+    ["1568","krieg","Beginn des niederländischen Aufstands gegen Spanien (Achtzigjähriger Krieg)."],
+    ["1571","krieg","Seeschlacht von Lepanto: Sieg über die osmanische Flotte."],
+    ["1572","religion","Bartholomäusnacht: Massenmord an Hugenotten in Frankreich."],
+    ["1581","europa","Die nördlichen Niederlande erklären sich von Spanien unabhängig."],
+    ["1582","kultur","Papst Gregor XIII. führt den neuen (Gregorianischen) Kalender ein."],
+    ["1583–1588","krieg","Kölner Krieg um ein evangelisch werdendes Erzbistum."],
+    ["1588","krieg","Die spanische Armada scheitert vor England."],
+    ["1598","religion","Edikt von Nantes: Duldung der Hugenotten in Frankreich."],
+    ["1605","kultur","In Straßburg erscheint eine der ersten Zeitungen der Welt."],
+    ["1607","religion","Donauwörth wird von Bayern besetzt und rekatholisiert."],
+    ["1608","reich","Gründung der Protestantischen Union; der Reichstag ist blockiert."],
+    ["1609","reich","Gründung der Katholischen Liga; Majestätsbrief für die böhmischen Protestanten."],
+    ["1609","kultur","Johannes Kepler veröffentlicht seine ersten Planetengesetze."],
+    ["1618","krieg","Prager Fenstersturz (23. Mai) – Beginn des Dreißigjährigen Krieges."],
+    ["1619","reich","Ferdinand II. wird Kaiser; die Böhmen wählen Friedrich V. von der Pfalz zum König."],
+    ["1620","krieg","Schlacht am Weißen Berg: Niederlage der Böhmen, Flucht des „Winterkönigs“."],
+    ["1623","reich","Die pfälzische Kurwürde geht an Maximilian von Bayern."],
+    ["1625","krieg","Dänemark greift ein; Wallenstein stellt ein kaiserliches Heer auf."],
+    ["1629","religion","Restitutionsedikt des Kaisers; Frieden von Lübeck mit Dänemark."],
+    ["1630","krieg","Gustav II. Adolf von Schweden landet in Pommern."],
+    ["1631","krieg","Zerstörung Magdeburgs; Sieg der Schweden bei Breitenfeld."],
+    ["1632","krieg","Schlacht bei Lützen – Gustav Adolf fällt."],
+    ["1633","kultur","Galileo Galilei muss vor der Inquisition widerrufen."],
+    ["1634","krieg","Ermordung Wallensteins; schwedische Niederlage bei Nördlingen."],
+    ["1635","reich","Prager Frieden; Frankreich tritt offen in den Krieg ein."],
+    ["1643/44","reich","Beginn der Friedensverhandlungen in Münster und Osnabrück."],
+    ["1645","krieg","Kaiserliche Niederlagen bei Jankau und Alerheim."],
+    ["1648","europa","Januar: Frieden von Münster – Spanien erkennt die Niederlande an."],
+    ["1648","reich","24. Oktober: Westfälischer Frieden beendet den Dreißigjährigen Krieg."]
+  ];
+  var names = {reich:"Reich",religion:"Religion",europa:"Europa & Welt",krieg:"Krieg",kultur:"Kultur & Wissen"};
+  var tl = document.getElementById("timeline");
+  T.forEach(function(e){
+    var li = document.createElement("li");
+    li.className = e[1];
+    li.innerHTML = '<span class="y">'+e[0]+'</span><span class="tag '+e[1]+'">'+names[e[1]]+'</span><br>'+e[2];
+    tl.appendChild(li);
+  });
+  document.getElementById("filters").addEventListener("click", function(ev){
+    var b = ev.target.closest("button"); if(!b) return;
+    var f = b.getAttribute("data-f");
+    this.querySelectorAll("button").forEach(function(x){x.classList.toggle("on", x===b);});
+    tl.querySelectorAll("li").forEach(function(li){
+      li.classList.toggle("hide", f!=="alle" && !li.classList.contains(f));
+    });
+  });
+
+  // ---- Progress bar & top button ----
+  var prog = document.getElementById("progress"), topBtn = document.getElementById("top");
+  function onScroll(){
+    var h = document.documentElement;
+    var p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+    prog.style.width = (p*100) + "%";
+    topBtn.classList.toggle("show", h.scrollTop > 600);
+  }
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+  topBtn.addEventListener("click", function(){ window.scrollTo({top:0}); });
+
+  // ---- Active TOC ----
+  var links = {};
+  document.querySelectorAll("nav.toc a").forEach(function(a){ links[a.getAttribute("href").slice(1)] = a; });
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          Object.keys(links).forEach(function(k){ links[k].classList.remove("active"); });
+          var a = links[en.target.id]; if(a) a.classList.add("active");
+        }
+      });
+    }, {rootMargin:"-30% 0px -60% 0px"});
+    document.querySelectorAll("section.chapter").forEach(function(s){ io.observe(s); });
+  }
+
+  // ---- Mobile TOC toggle ----
+  var toc = document.getElementById("toc"), tt = document.getElementById("tocToggle");
+  tt.addEventListener("click", function(){
+    var open = toc.classList.toggle("open"); tt.setAttribute("aria-expanded", open);
+  });
+  toc.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toc.classList.remove("open"); tt.setAttribute("aria-expanded", false); }); });
+
+  // ---- Theme toggle ----
+  var root = document.documentElement;
+  document.getElementById("themeBtn").addEventListener("click", function(){
+    var dark = root.getAttribute("data-theme") ? root.getAttribute("data-theme")==="dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    root.setAttribute("data-theme", dark ? "light" : "dark");
+  });
+
+  // ---- Glossary links: briefly highlight target ----
+  document.querySelectorAll("a.g").forEach(function(a){
+    a.title = (function(){ var dt=document.querySelector(a.getAttribute("href")); return dt && dt.nextElementSibling ? dt.nextElementSibling.textContent : ""; })();
+  });
+})();
+</script>
+</body>
+</html>

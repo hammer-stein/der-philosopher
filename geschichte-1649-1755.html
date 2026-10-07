@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Von 1649 bis 1755 – Deutsche und europäische Geschichte</title>
+<meta name="description" content="Die Geschichte des Heiligen Römischen Reiches und Europas vom Westfälischen Frieden bis zum Vorabend des Siebenjährigen Krieges – Wiederaufbau, Absolutismus, Türkenkriege, Aufstieg Österreichs und Preußens, Barock und frühe Aufklärung.">
+<style>
+:root{
+  --bg:#f1f2f4; --paper:#ffffff; --ink:#16191f; --muted:#555b66; --line:#d3d7de;
+  --accent:#1f3a5f; --accent-soft:#e6ebf2;
+  --c1:#24566b; --c2:#5a6630; --c3:#4a3f6b; --c4:#7a1e2b; --c5:#2f5a3f;
+  --c1-soft:#e8f0f2; --c2-soft:#eff1e6; --c3-soft:#eeecf3; --c4-soft:#f4e9eb; --c5-soft:#e9f1ec;
+  --shadow:none;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#11141a; --paper:#191d24; --ink:#e4e7ec; --muted:#9aa1ad; --line:#323844;
+    --accent:#8fb3d9; --accent-soft:#1d2836;
+    --c1:#7fb6c6; --c2:#b8c37f; --c3:#b0a5d6; --c4:#e08a97; --c5:#8fc4a0;
+    --c1-soft:#172429; --c2-soft:#22251a; --c3-soft:#211e2b; --c4-soft:#2b1b1f; --c5-soft:#18251d;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+    --bg:#11141a; --paper:#191d24; --ink:#e4e7ec; --muted:#9aa1ad; --line:#323844;
+    --accent:#8fb3d9; --accent-soft:#1d2836;
+    --c1:#7fb6c6; --c2:#b8c37f; --c3:#b0a5d6; --c4:#e08a97; --c5:#8fc4a0;
+    --c1-soft:#172429; --c2-soft:#22251a; --c3-soft:#211e2b; --c4-soft:#2b1b1f; --c5-soft:#18251d;
+    --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;color:var(--ink)}
+h2{font-size:1.85rem;margin:0 0 .4rem;font-weight:600;letter-spacing:.005em}
+h3{font-size:1.32rem;margin:2.2rem 0 .7rem;font-weight:600;padding-bottom:.3rem;border-bottom:1px solid var(--line)}
+h4{font-size:1.08rem;margin:1.2rem 0 .3rem}
+p{margin:.6rem 0}
+ul,ol{padding-left:1.3rem}
+li{margin:.25rem 0}
+strong{font-weight:650}
+
+/* progress */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:50;transition:width .1s}
+
+/* hero */
+.hero{background:#14213a;color:#eef1f5;padding:60px 20px 50px;text-align:center;border-bottom:4px double #8a97ab}
+.hero .kicker{font-family:var(--sans);letter-spacing:.22em;text-transform:uppercase;font-size:.75rem;opacity:.8}
+.hero h1{color:#fff;font-size:clamp(2rem,5vw,3.1rem);font-weight:600;margin:.5rem 0 .8rem}
+.hero p{max-width:720px;margin:0 auto;font-size:1.08rem;opacity:.95}
+.hero .years{font-family:var(--serif);font-size:clamp(1.3rem,3.6vw,1.8rem);letter-spacing:.12em;margin:22px auto 0;padding-top:14px;border-top:1px solid rgba(238,241,245,.35);display:inline-block;opacity:.95}
+
+/* layout */
+.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:36px;max-width:1240px;margin:0 auto;padding:28px 20px 80px}
+nav.toc{font-family:var(--sans);position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:0;padding:16px 14px;box-shadow:var(--shadow);font-size:.92rem}
+nav.toc .toc-title{font-family:var(--sans);font-weight:700;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 10px 8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+nav.toc ol{list-style:none;margin:0;padding:0}
+nav.toc a{display:block;padding:5px 8px;border-radius:0;color:var(--ink);text-decoration:none;line-height:1.35}
+nav.toc a:hover{background:var(--accent-soft)}
+nav.toc a.active{background:var(--accent-soft);color:var(--accent);font-weight:600;box-shadow:inset 3px 0 0 var(--accent)}
+nav.toc .num{display:inline-block;width:1.6em;color:var(--muted)}
+.theme-btn{font-family:var(--sans);margin:12px 6px 2px;font:inherit;font-size:.85rem;background:none;border:1px solid var(--line);color:var(--muted);padding:5px 10px;border-radius:0;cursor:pointer}
+.toc-toggle{display:none}
+main{min-width:0}
+section.chapter{background:var(--paper);border:1px solid var(--line);border-radius:0;padding:34px 38px;margin-bottom:28px;box-shadow:var(--shadow)}
+.chap-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.chap-num{flex:0 0 auto;width:46px;height:46px;border-radius:0;background:transparent;color:var(--accent);border:1.5px solid var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:1.35rem;font-weight:700}
+.span-chip{display:inline-block;font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:0;border-radius:0;background:none;color:var(--muted);margin-bottom:4px}
+.lead{font-size:1.1rem;color:var(--muted);font-style:italic}
+
+/* boxes */
+.box{border-radius:0;padding:14px 18px;margin:20px 0;border:1px solid var(--line);border-left:4px solid}
+.box .box-title{font-family:var(--sans);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.box.kurz{background:var(--c1-soft);border-color:var(--c1)}
+.box.kurz .box-title{color:var(--c1)}
+.box.merke{background:var(--c5-soft);border-color:var(--c5)}
+.box.merke .box-title{color:var(--c5)}
+.box.warum{background:var(--c3-soft);border-color:var(--c3)}
+.box.warum .box-title{color:var(--c3)}
+.box.achtung{background:var(--c2-soft);border-color:var(--c2)}
+.box.achtung .box-title{color:var(--c2)}
+.box ul{margin:.3rem 0}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:14px 0}
+.card{background:var(--bg);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:0;padding:14px 16px}
+.card h4{margin:.1rem 0 .3rem;font-weight:600}
+.card .yr{font-family:var(--serif);font-weight:700;color:var(--accent);font-size:1.05rem}
+.card p{margin:.3rem 0;font-size:.95rem}
+
+/* era bar */
+.erabar{font-family:var(--sans);display:flex;border-radius:0;overflow:hidden;margin:18px 0 6px;font-size:.78rem;color:#fff;font-weight:600;min-height:58px}
+.erabar div{padding:8px 8px;display:flex;flex-direction:column;justify-content:center;line-height:1.2}
+.erabar small{font-weight:400;opacity:.9}
+.era-a{background:#24566b;flex:18}
+.era-b{background:#4a3f6b;flex:47}
+.era-c{background:#5a6630;flex:26}
+.era-d{background:#7a1e2b;flex:15}
+.erascale{font-family:var(--sans);display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}
+
+/* chain: vertical numbered sequence */
+.chain{list-style:none;margin:18px 0 20px;padding:0;position:relative;border-top:1px solid var(--line)}
+.chain::before{content:"";position:absolute;left:17px;top:22px;bottom:22px;width:1px;background:var(--accent);opacity:.55}
+.chain li{position:relative;display:grid;grid-template-columns:36px minmax(170px,250px) 1fr;align-items:center;gap:18px;margin:0;padding:10px 0;border-bottom:1px solid var(--line)}
+.chain .n{position:relative;z-index:1;width:36px;height:36px;display:grid;place-items:center;background:var(--paper);border:1.5px solid var(--accent);color:var(--accent);font-family:var(--sans);font-size:.85rem;font-weight:700}
+.chain b{font-family:var(--serif);font-weight:600;color:var(--accent);font-size:1.02rem}
+.chain .desc{color:var(--muted);font-size:.97rem}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:.95rem;min-width:540px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-family:var(--serif);font-size:1rem;font-weight:600;border-bottom:1px solid var(--ink)}
+tr:last-child td{border-bottom:none}
+
+/* phases */
+.phase{border:1px solid var(--line);border-left:4px solid var(--c4);border-radius:0;margin:16px 0;overflow:hidden}
+.phase-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;align-items:baseline;padding:12px 18px;background:var(--c4-soft);border-bottom:1px solid var(--line)}
+.phase-head h4{margin:0;font-size:1.12rem;font-weight:600}
+.phase-head .yr{font-family:var(--serif);font-weight:700;color:var(--c4)}
+.phase-body{padding:6px 18px 12px}
+.mini-tl{list-style:none;padding:0;margin:8px 0}
+.mini-tl li{display:grid;grid-template-columns:108px 1fr;gap:12px;padding:5px 0;border-bottom:1px solid var(--line)}
+.mini-tl li:last-child{border-bottom:none}
+.mini-tl .d{font-family:var(--sans);font-size:.92rem;padding-top:2px;font-weight:700;color:var(--c4);font-variant-numeric:tabular-nums}
+
+/* details */
+details{background:var(--bg);border:1px solid var(--line);border-radius:0;padding:10px 14px;margin:12px 0}
+details summary{cursor:pointer;font-weight:600;color:var(--accent)}
+details[open] summary{margin-bottom:6px}
+
+/* quote */
+blockquote{margin:14px 0;padding:8px 16px;border-left:3px solid var(--accent);font-family:var(--serif);font-style:italic;color:var(--muted)}
+
+/* timeline */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.filters button{font:inherit;font-family:var(--sans);font-size:.88rem;padding:6px 13px;border-radius:0;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.filters button.on{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.tl{position:relative;list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:6px 0 10px 12px}
+.tl li::before{content:"";position:absolute;left:-29px;top:14px;width:10px;height:10px;border-radius:0;background:var(--paper);border:3px solid var(--muted)}
+.tl li.reich::before{border-color:var(--c1)}
+.tl li.religion::before{border-color:var(--c3)}
+.tl li.europa::before{border-color:var(--c2)}
+.tl li.krieg::before{border-color:var(--c4)}
+.tl li.kultur::before{border-color:var(--c5)}
+.tl .y{font-family:var(--serif);font-weight:700;font-size:1.05rem;margin-right:6px}
+.tl .tag{font-family:var(--sans);text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;font-weight:600;padding:1px 8px;border-radius:0;margin-left:6px;vertical-align:2px}
+.tag.reich{background:var(--c1-soft);color:var(--c1)}
+.tag.religion{background:var(--c3-soft);color:var(--c3)}
+.tag.europa{background:var(--c2-soft);color:var(--c2)}
+.tag.krieg{background:var(--c4-soft);color:var(--c4)}
+.tag.kultur{background:var(--c5-soft);color:var(--c5)}
+.tl li.hide{display:none}
+
+/* people */
+.people{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.person{background:var(--bg);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:0;padding:14px 16px}
+.person h4{margin:0}
+.person .life{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin-bottom:4px}
+.person .role{font-family:var(--sans);font-size:.7rem;letter-spacing:.12em;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+.person p{font-size:.93rem;margin:.35rem 0 0}
+
+/* glossary */
+dl.gloss{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:0;margin:0}
+dl.gloss dt,dl.gloss dd{padding:9px 6px;border-bottom:1px solid var(--line);margin:0}
+dl.gloss dt{font-weight:700;font-family:var(--serif)}
+.g{text-decoration:underline dotted;text-underline-offset:3px;color:inherit;cursor:help}
+
+.sources li{margin:.4rem 0}
+footer{font-family:var(--sans);text-align:center;color:var(--muted);font-size:.8rem;letter-spacing:.04em;padding:22px 20px 30px;border-top:1px solid var(--line);max-width:1240px;margin:0 auto}
+#top{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border-radius:0;border:1px solid var(--accent);background:var(--accent);color:var(--paper);font-size:1.3rem;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s}
+#top.show{opacity:1;pointer-events:auto}
+
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr;padding:16px 16px 70px;gap:16px}
+  nav.toc{position:relative;top:0;max-height:none}
+  nav.toc ol{display:none}
+  nav.toc.open ol{display:block}
+  .toc-toggle{display:block;width:100%;font:inherit;font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;background:none;border:none;color:var(--ink);text-align:left;cursor:pointer;padding:2px 6px}
+  nav.toc .toc-title{display:none}
+  .toc-toggle::after{content:"+";float:right;font-weight:400}
+  nav.toc.open .toc-toggle::after{content:"\2013"}
+  section.chapter{padding:22px 18px}
+  h2{font-size:1.55rem}
+  dl.gloss{grid-template-columns:1fr}
+  dl.gloss dt{border-bottom:none;padding-bottom:0}
+  .mini-tl li{grid-template-columns:1fr;gap:0}
+  .chain li{grid-template-columns:36px 1fr;gap:4px 14px}
+  .chain .n{grid-row:span 2}
+  .chain .desc{grid-column:2}
+}
+@media print{
+  nav.toc,#top,#progress,.filters,.theme-btn{display:none!important}
+  .layout{display:block;padding:0}
+  section.chapter{box-shadow:none;break-inside:auto;border:none;padding:10px 0}
+  details{display:block}
+  details>*{display:block}
+  .hero{background:none;color:#000}
+  .hero h1{color:#000}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<!-- Der Philosopher: Leiste -->
+<style>
+.ph-bar{background:var(--paper);border-bottom:1px solid var(--line);font-family:var(--sans)}
+.ph-bar .ph-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:baseline;gap:6px 18px;flex-wrap:wrap}
+.ph-brand{font-family:var(--serif);font-size:1.35rem;font-weight:600;line-height:1.2;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.ph-brand i{font-weight:400;font-size:.72em;color:var(--muted);margin-right:.18em}
+.ph-links{display:flex;gap:18px;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.ph-links a{color:var(--muted);text-decoration:none}
+.ph-links a:hover{color:var(--accent);text-decoration:underline}
+footer .ph-foot a{color:var(--muted)}
+@media (max-width:700px){.ph-bar .ph-in{padding:8px 16px}}
+@media print{.ph-bar{display:none}}
+</style>
+<nav class="ph-bar" aria-label="Der Philosopher"><div class="ph-in">
+  <a class="ph-brand" href="index.html"><i>Der</i>Philosopher</a>
+  <div class="ph-links"><a href="index.html#geschichte">Geschichte</a><a href="index.html">Titelseite</a></div>
+</div></nav>
+
+
+<header class="hero">
+  <div class="kicker">Deutsche und europäische Geschichte</div>
+  <h1>Vom Westfälischen Frieden zum Vorabend des Siebenjährigen Krieges</h1>
+  <p>Wie sich das Reich nach dem Dreißigjährigen Krieg neu ordnete: Wiederaufbau, Absolutismus und Barock, die Kriege gegen Ludwig XIV. und die Osmanen, der Aufstieg Österreichs und Preußens zu Großmächten – und der Beginn der Aufklärung.</p>
+  <div class="years">1649 – 1755</div>
+</header>
+
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Inhaltsverzeichnis">
+  <button class="toc-toggle" id="tocToggle" aria-expanded="false">Inhaltsverzeichnis</button>
+  <div class="toc-title">Inhalt</div>
+  <ol>
+    <li><a href="#ueberblick"><span class="num">1</span>Überblick: Worum geht es?</a></li>
+    <li><a href="#um1649"><span class="num">2</span>Die Welt um 1649</a></li>
+    <li><a href="#wiederaufbau"><span class="num">3</span>Wiederaufbau und Neuordnung</a></li>
+    <li><a href="#absolutismus"><span class="num">4</span>Das Zeitalter des Absolutismus</a></li>
+    <li><a href="#westen"><span class="num">5</span>Ludwig XIV. und die Kriege im Westen</a></li>
+    <li><a href="#tuerken"><span class="num">6</span>Türkenkriege und Aufstieg Österreichs</a></li>
+    <li><a href="#norden"><span class="num">7</span>Der Norden im Umbruch</a></li>
+    <li><a href="#preussen"><span class="num">8</span>Der Aufstieg Brandenburg-Preußens</a></li>
+    <li><a href="#schlesien"><span class="num">9</span>Maria Theresia, Friedrich II. und Schlesien</a></li>
+    <li><a href="#gesellschaft"><span class="num">10</span>Gesellschaft, Glaube und Kultur</a></li>
+    <li><a href="#bilanz"><span class="num">11</span>Bilanz: Was hat sich verändert?</a></li>
+    <li><a href="#zeitleiste"><span class="num">12</span>Zeitleiste</a></li>
+    <li><a href="#personen"><span class="num">13</span>Wichtige Personen</a></li>
+    <li><a href="#glossar"><span class="num">14</span>Glossar</a></li>
+    <li><a href="#quellen"><span class="num">15</span>Quellen &amp; Weiterlesen</a></li>
+  </ol>
+  <button class="theme-btn" id="themeBtn" type="button">Darstellung: hell / dunkel</button>
+</nav>
+
+<main>
+
+<!-- ============ 1 ÜBERBLICK ============ -->
+<section class="chapter" id="ueberblick">
+  <div class="chap-head"><div class="chap-num">1</div><div>
+    <span class="span-chip">Einstieg</span>
+    <h2>Überblick: Worum geht es?</h2>
+  </div></div>
+  <p class="lead">Die gut 100 Jahre zwischen 1649 und 1755 beginnen in einem verwüsteten Land und enden in einem Europa der Großmächte. Es ist die Zeit der prunkvollen Schlösser und der stehenden Heere, der Türkenkriege und der ersten Schritte der Aufklärung – und die Zeit, in der Österreich und Preußen zu den beiden Rivalen werden, die die deutsche Geschichte bis ins 19. Jahrhundert prägen.</p>
+
+  <h3>Warum gerade 1649 und 1755?</h3>
+  <div class="grid">
+    <div class="card"><div class="yr">1649</div><h4>Der Frieden muss umgesetzt werden</h4><p>Der Westfälische Frieden ist unterschrieben, doch noch stehen überall fremde Truppen im Land. Auf dem Nürnberger Exekutionstag (1649/50) wird geregelt, wie die Heere abziehen und bezahlt werden. Erst jetzt beginnt der eigentliche Wiederaufbau. Im selben Jahr wird in England König Karl I. hingerichtet – ein Schock für alle Monarchien Europas.</p></div>
+    <div class="card"><div class="yr">1755</div><h4>Ruhe vor dem nächsten Sturm</h4><p>Österreich und Preußen haben zweimal um Schlesien gekämpft. 1755 bereiten beide Seiten schon den nächsten Krieg vor, der 1756 als Siebenjähriger Krieg ausbricht. Am 1. November 1755 zerstört ein Erdbeben Lissabon – ein Ereignis, das das Denken der Aufklärung tief erschüttert.</p></div>
+  </div>
+
+  <h3>Die Zeit in vier Abschnitten</h3>
+  <div class="erabar" role="img" aria-label="Zeitbalken mit vier Epochen von 1649 bis 1755">
+    <div class="era-a">Wiederaufbau<small>1649–1667</small></div>
+    <div class="era-b">Kriege gegen Ludwig XIV. und die Osmanen<small>1667–1714</small></div>
+    <div class="era-c">Neue Großmächte<small>1714–1740</small></div>
+    <div class="era-d">Dualismus<small>1740–55</small></div>
+  </div>
+  <div class="erascale"><span>1649</span><span>1667</span><span>1714</span><span>1740</span><span>1755</span></div>
+
+  <div class="box kurz"><div class="box-title">Kurz gesagt – die ganze Epoche in fünf Sätzen</div>
+    <ol>
+      <li>Nach dem Dreißigjährigen Krieg wird das Reich <strong>wieder aufgebaut</strong>; der Kaiser bleibt schwach, die großen Landesfürsten werden stärker.</li>
+      <li>Nach dem Vorbild Ludwigs XIV. von Frankreich regieren viele Fürsten <strong>absolutistisch</strong>: mit Hof, Beamten, Steuern und einem stehenden Heer.</li>
+      <li>Das Reich muss sich gegen zwei Seiten verteidigen: gegen die <strong>Eroberungskriege Frankreichs</strong> im Westen und gegen die <strong>Osmanen</strong>, die 1683 vor Wien stehen.</li>
+      <li>Aus diesen Kriegen geht <strong>Österreich</strong> als Großmacht im Südosten hervor; im Norden steigt <strong>Brandenburg-Preußen</strong> mit seiner Armee auf.</li>
+      <li>Ab 1740 kämpfen Maria Theresia und Friedrich II. um <strong>Schlesien</strong> – der Beginn des <strong>deutschen Dualismus</strong>. Zugleich verbreiten sich Pietismus und frühe Aufklärung.</li>
+    </ol>
+  </div>
+
+  <h3>Der rote Faden: Eine Kette von Ursachen und Folgen</h3>
+  <p>Viele Ereignisse dieser Zeit hängen direkt zusammen. Wer diese Kette versteht, versteht die ganze Epoche:</p>
+  <ol class="chain" aria-label="Abfolge von Ursachen und Folgen">
+    <li><span class="n">1</span><b>Westfälischer Frieden</b><span class="desc">starke Fürsten, schwacher Kaiser</span></li>
+    <li><span class="n">2</span><b>Wiederaufbau</b><span class="desc">der Staat ordnet das Land neu</span></li>
+    <li><span class="n">3</span><b>Absolutismus</b><span class="desc">Fürsten bündeln die Macht</span></li>
+    <li><span class="n">4</span><b>Stehende Heere</b><span class="desc">Steuern, Beamte, Soldaten</span></li>
+    <li><span class="n">5</span><b>Kriege gegen Frankreich und Osmanen</b><span class="desc">Österreich wird Großmacht</span></li>
+    <li><span class="n">6</span><b>Aufstieg Preußens</b><span class="desc">Militärstaat im Norden</span></li>
+    <li><span class="n">7</span><b>Kampf um Schlesien</b><span class="desc">Dualismus Österreich – Preußen</span></li>
+  </ol>
+  <p>Daneben läuft ein zweiter Faden: In Europa setzt sich die Idee eines <strong>Gleichgewichts der Mächte</strong> durch – keine Macht soll so stark werden, dass sie alle anderen beherrscht. Und im Denken der Menschen beginnt ein langsamer Wandel vom <strong>Barock</strong>, das von Glauben und Pracht geprägt ist, zur <strong>Aufklärung</strong>, die auf die Vernunft setzt.</p>
+</section>
+
+<!-- ============ 2 UM 1649 ============ -->
+<section class="chapter" id="um1649">
+  <div class="chap-head"><div class="chap-num">2</div><div>
+    <span class="span-chip">Ausgangslage um 1649</span>
+    <h2>Die Welt um 1649</h2>
+  </div></div>
+  <p class="lead">Der Dreißigjährige Krieg ist vorbei, aber seine Folgen sind überall sichtbar. Um die folgenden Jahrzehnte zu verstehen, müssen wir wissen, wie zerstört das Land war und welche neue Ordnung der Westfälische Frieden geschaffen hatte.</p>
+
+  <h3>Ein verwüstetes Land</h3>
+  <p>Im Heiligen Römischen Reich war die Bevölkerung während des Krieges von etwa 16–17 Millionen auf rund 10–11 Millionen Menschen gesunken – also um etwa ein Drittel. In manchen Regionen wie Pommern, Mecklenburg, der Pfalz oder Württemberg lebte nur noch die Hälfte der Menschen oder weniger. Viele Dörfer standen leer, Felder lagen brach, Städte waren verarmt und verschuldet.</p>
+  <p>Hinzu kamen die Kosten des Friedens: Schweden verlangte hohe Geldsummen, um seine rund 60.000 Soldaten abzudanken. Erst auf dem <strong>Nürnberger Exekutionstag</strong> (April 1649 bis Juli 1650) einigte man sich auf Zahlungen und einen stufenweisen Abzug der Truppen. Die Menschen feierten das mit großen Friedensfesten – das Ende des Krieges wurde erst jetzt wirklich spürbar.</p>
+
+  <h3>Die neue Ordnung von 1648</h3>
+  <p>Der Westfälische Frieden war das neue Grundgesetz des Reiches. Er hatte drei wichtige Folgen für die Zeit danach:</p>
+  <div class="grid">
+    <div class="card"><h4>Der Kaiser</h4><p>Er blieb Oberhaupt des Reiches, konnte aber über Krieg, Frieden, Steuern und Gesetze nur noch gemeinsam mit dem <a class="g" href="#g-reichstag">Reichstag</a> entscheiden. Bis 1657 regierte Ferdinand III., danach Leopold I. – beide aus dem Haus Habsburg.</p></div>
+    <div class="card"><h4>Die großen Landesfürsten</h4><p>Sie hatten nun die volle Landeshoheit und durften Bündnisse schließen, auch mit ausländischen Mächten. Die mächtigsten waren Österreich (Habsburg), Brandenburg, Bayern, Sachsen und die Pfalz.</p></div>
+    <div class="card"><h4>Die vielen Kleinen</h4><p>Neben den großen Fürstentümern gab es Hunderte geistliche Gebiete, Grafschaften, Reichsstädte und Ritterherrschaften. Für sie war das Reich mit seinen Gerichten ein wichtiger Schutz vor den Großen.</p></div>
+    <div class="card"><h4>Fremde Mächte im Reich</h4><p>Schweden besaß Vorpommern, Wismar und Bremen-Verden und saß damit im Reichstag. Frankreich hatte Rechte im Elsass. Beide galten als „Garanten“ des Friedens – und konnten sich so in die Reichspolitik einmischen.</p></div>
+  </div>
+  <p>Auch in der Religion herrschte nun eine feste Ordnung: Katholiken, Lutheraner und Reformierte waren anerkannt, und das <strong>Normaljahr 1624</strong> legte fest, wem welche Kirchen und Kirchengüter gehörten. Glaubenskriege im Reich gab es danach nicht mehr – aber Misstrauen und Benachteiligung blieben.</p>
+
+  <div class="box warum"><div class="box-title">Warum ist das wichtig?</div>
+    <p>Weil der Kaiser so wenig Macht hatte, fand der „Staatsaufbau“ in Deutschland nicht im Reich, sondern in den einzelnen Territorien statt. Wer einen modernen Staat mit Beamten, Steuern und Armee aufbauen wollte, tat das als Landesfürst – in Wien, Berlin, München oder Dresden. Das erklärt, warum es in dieser Epoche um den Aufstieg einzelner Länder geht und nicht um ein starkes Deutschland.</p>
+  </div>
+
+  <h3>Europa um 1649 – die Nachbarn</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Land</th><th>Lage um 1649</th></tr>
+    <tr><td><strong>Frankreich</strong></td><td>Gewinner des Westfälischen Friedens. Im Inneren erschüttert der Adelsaufstand der <em>Fronde</em> (1648–1653) die Monarchie. Der junge König Ludwig XIV. wird aus dieser Erfahrung lernen, den Adel unter Kontrolle zu bringen.</td></tr>
+    <tr><td><strong>England</strong></td><td>Nach einem Bürgerkrieg zwischen König und Parlament wird König Karl I. am 30. Januar 1649 hingerichtet. England wird für elf Jahre eine Republik, ab 1653 unter Oliver Cromwell.</td></tr>
+    <tr><td><strong>Spanien</strong></td><td>Hat die Niederlande verloren und kämpft noch bis 1659 gegen Frankreich. Die einstige Weltmacht ist geschwächt und hoch verschuldet.</td></tr>
+    <tr><td><strong>Niederlande</strong></td><td>Seit 1648 unabhängig. Die Republik ist im „Goldenen Zeitalter“: führende Handels- und Seemacht, Zentrum von Kunst, Buchdruck und Wissenschaft.</td></tr>
+    <tr><td><strong>Schweden</strong></td><td>Großmacht im Norden, beherrscht große Teile der Ostseeküste und besitzt Gebiete im Reich.</td></tr>
+    <tr><td><strong>Polen-Litauen</strong></td><td>Großes Doppelreich mit gewähltem König und mächtigem Adel. Ab 1648 erschüttern Kosakenaufstände und Kriege das Land.</td></tr>
+    <tr><td><strong>Osmanisches Reich</strong></td><td>Beherrscht den Balkan und den größten Teil Ungarns. Die Grenze zu Habsburg liegt nur wenige Tagesmärsche östlich von Wien.</td></tr>
+    <tr><td><strong>Russland</strong></td><td>Ein großes, aber noch wenig mit Westeuropa verbundenes Zarenreich.</td></tr>
+  </table></div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <p>Um 1649 ist das Reich <strong>verwüstet und entvölkert</strong>. Der Westfälische Frieden hat die <strong>Landesfürsten gestärkt</strong> und den Kaiser an den Reichstag gebunden. Frankreich und Schweden sind die neuen Vormächte; im Osten stehen die <strong>Osmanen</strong> nahe an der Grenze.</p>
+  </div>
+</section>
+
+<!-- ============ 3 WIEDERAUFBAU ============ -->
+<section class="chapter" id="wiederaufbau">
+  <div class="chap-head"><div class="chap-num">3</div><div>
+    <span class="span-chip">1649 – 1680</span>
+    <h2>Wiederaufbau und Neuordnung des Reiches</h2>
+  </div></div>
+  <p class="lead">Nach dem Krieg muss fast alles neu aufgebaut werden: Höfe und Dörfer, Handel und Verwaltung. Gleichzeitig findet das Reich eine neue Form – mit einem Reichstag, der ab 1663 dauerhaft tagt.</p>
+
+  <h3>Neue Menschen für leere Länder</h3>
+  <p>Die Fürsten wussten: Ein Land ohne Menschen bringt keine Steuern und keine Soldaten. Deshalb warben sie gezielt Siedler an – das nannte man <a class="g" href="#g-peuplierung">Peuplierung</a> (von französisch <em>peuple</em>, „Volk“).</p>
+  <ul>
+    <li>Neusiedler erhielten oft Land, Baumaterial und einige Jahre <strong>Steuerfreiheit</strong>.</li>
+    <li>Viele kamen aus der Schweiz, aus Tirol, den Niederlanden oder aus anderen deutschen Regionen.</li>
+    <li>Glaubensflüchtlinge waren besonders willkommen, wenn sie Fachwissen mitbrachten – etwa die französischen <a class="g" href="#g-hugenotten">Hugenotten</a> nach 1685 (siehe Kapitel 8).</li>
+  </ul>
+  <p>Der Wiederaufbau ging langsam, aber stetig voran. Historiker gehen davon aus, dass die Bevölkerung des Reiches bis in die <strong>1720er-Jahre</strong> wieder den Stand von vor dem Krieg erreichte. Rückschläge brachten neue Kriege, Missernten und Seuchen – die Pest kehrte mehrmals zurück, zuletzt 1713.</p>
+
+  <h3>Das Reich findet eine neue Form</h3>
+  <p>Viele Historiker sahen das Reich nach 1648 lange als „morsch“ und bedeutungslos. Die neuere Forschung urteilt anders: Das Reich wurde zu einer <strong>Rechts- und Friedensordnung</strong>, die gerade die kleinen und mittleren Herrschaften schützte.</p>
+  <div class="grid">
+    <div class="card"><div class="yr">1663</div><h4>Der Immerwährende Reichstag</h4><p>Am 20. Januar 1663 trat in Regensburg ein Reichstag zusammen, um über die Türkengefahr zu beraten. Weil die Verhandlungen nie abgeschlossen wurden, blieb er einfach zusammen – bis zum Ende des Reiches 1806. Statt der Fürsten selbst saßen dort rund 70 Gesandtschaften. So entstand eine Art ständiger Gesandtenkongress.</p></div>
+    <div class="card"><h4>Die Reichsgerichte</h4><p>Das Reichskammergericht (ab 1693 in Wetzlar) und der Reichshofrat in Wien schlichteten Streit zwischen Fürsten, aber auch zwischen Untertanen und ihren Herren. Selbst Bauern konnten gegen ihren Landesherrn klagen.</p></div>
+    <div class="card"><div class="yr">1681</div><h4>Die Reichskriegsverfassung</h4><p>Angesichts der Bedrohung durch Frankreich und die Osmanen beschloss der Reichstag, wie ein gemeinsames Reichsheer aufzustellen sei. Die <a class="g" href="#g-reichskreise">Reichskreise</a> mussten dafür Truppen stellen – zusammen rund 40.000 Mann.</p></div>
+  </div>
+
+  <h3>Kaiser Leopold I. und der Rheinbund</h3>
+  <p>1658 wurde der Habsburger <strong>Leopold I.</strong> zum Kaiser gewählt. Er regierte fast ein halbes Jahrhundert (bis 1705) – die Zeit der großen Kriege gegen Frankreich und die Osmanen. Seine Wahl war nicht selbstverständlich: Frankreich versuchte, einen eigenen Kandidaten durchzusetzen.</p>
+  <p>Im selben Jahr schlossen mehrere Reichsfürsten – darunter der Erzbischof von Mainz – mit Frankreich und Schweden den <strong>Rheinbund</strong> (1658–1668). Er sollte verhindern, dass der Kaiser das Reich in die Kriege Spaniens hineinzog. Das Bündnis zeigt, wie die Fürsten ihr neues Bündnisrecht nutzten – und wie Frankreich versuchte, im Reich Einfluss zu gewinnen.</p>
+
+  <div class="box warum"><div class="box-title">Warum zerfiel das Reich nicht?</div>
+    <p>Obwohl die Fürsten fast selbstständig regierten, hatten die meisten ein Interesse am Fortbestand des Reiches: Es gab ihnen Rang und Titel, schützte die Kleinen vor den Großen und bot einen gemeinsamen Rahmen gegen äußere Feinde. Der Kaiser wiederum blieb als Schiedsrichter, Lehnsherr und oberster Richter wichtig – vor allem für die katholischen und kleineren Reichsstände.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>1649/50:</strong> Nürnberger Exekutionstag → Abzug der Truppen, Beginn des Wiederaufbaus.</li>
+      <li><strong>Peuplierung:</strong> Fürsten werben Siedler an; bis in die 1720er-Jahre erholt sich die Bevölkerung.</li>
+      <li><strong>1663:</strong> Immerwährender Reichstag in Regensburg → das Reich als Rechts- und Friedensordnung.</li>
+      <li><strong>1658:</strong> Leopold I. wird Kaiser; der Rheinbund zeigt den Einfluss Frankreichs.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 4 ABSOLUTISMUS ============ -->
+<section class="chapter" id="absolutismus">
+  <div class="chap-head"><div class="chap-num">4</div><div>
+    <span class="span-chip">ca. 1661 – 1740</span>
+    <h2>Das Zeitalter des Absolutismus</h2>
+  </div></div>
+  <p class="lead">Ein Herrscher, der „losgelöst“ von allen anderen Gewalten regiert – das war das Ideal vieler Fürsten dieser Zeit. Ihr großes Vorbild war Ludwig XIV. von Frankreich. Doch es gab auch ein Gegenmodell: England.</p>
+
+  <h3>4.1 Was bedeutet Absolutismus?</h3>
+  <p>Das Wort <a class="g" href="#g-absolutismus">Absolutismus</a> kommt vom lateinischen <em>legibus absolutus</em> – „von den Gesetzen losgelöst“. Gemeint ist eine Herrschaftsform, in der der Fürst die ganze Staatsgewalt in seiner Hand vereint: Er macht die Gesetze, ist oberster Richter, entscheidet über Krieg und Frieden und erhebt Steuern, ohne die <a class="g" href="#g-landstaende">Landstände</a> fragen zu müssen. Seine Macht leitet er von Gott ab („Gottesgnadentum“).</p>
+  <div class="grid">
+    <div class="card"><h4>Stehendes Heer</h4><p>Statt Söldner nur für einen Krieg anzuwerben, unterhält der Fürst dauerhaft eine Armee, die ihm allein gehorcht (<a class="g" href="#g-stehendes-heer">stehendes Heer</a>).</p></div>
+    <div class="card"><h4>Beamte</h4><p>Bezahlte, ausgebildete Beamte verwalten das Land im Auftrag des Fürsten – nicht mehr der örtliche Adel.</p></div>
+    <div class="card"><h4>Staatswirtschaft</h4><p>Der Staat fördert gezielt die Wirtschaft, um mehr Steuern einzunehmen (<a class="g" href="#g-merkantilismus">Merkantilismus</a>).</p></div>
+    <div class="card"><h4>Hof und Repräsentation</h4><p>Prächtige Schlösser, Feste und eine strenge Hofordnung zeigen die Macht des Herrschers und binden den Adel an den Hof.</p></div>
+  </div>
+  <div class="box warum"><div class="box-title">Ein Begriff aus späterer Zeit</div>
+    <p>Das Wort „Absolutismus“ wurde erst im 19. Jahrhundert geprägt. Die Forschung betont heute, dass kein Fürst wirklich unbeschränkt herrschte: Adel, Kirche, Städte, Landstände, altes Recht und die Reichsgerichte setzten ihm Grenzen. „Absolutismus“ beschreibt daher eher einen <strong>Anspruch und ein Ideal</strong> als die tatsächliche Wirklichkeit.</p>
+  </div>
+
+  <h3>4.2 Das Vorbild: Ludwig XIV. von Frankreich</h3>
+  <p><strong>Ludwig XIV.</strong> (König 1643–1715) übernahm 1661 selbst die Regierung und regierte danach ohne leitenden Minister. Er nannte sich „Sonnenkönig“: Wie die Planeten um die Sonne sollte sich alles um ihn drehen. Der berühmte Satz <em>„Der Staat bin ich“</em> wird ihm zugeschrieben, ist aber wahrscheinlich nicht von ihm.</p>
+  <ul>
+    <li><strong>Versailles:</strong> Ab 1682 residierte der Hof im riesigen Schloss Versailles bei Paris. Der Hochadel musste dort leben, um Einfluss zu haben – so wurde er überwacht und von Aufständen abgehalten (<a class="g" href="#g-hofgesellschaft">Hofgesellschaft</a>).</li>
+    <li><strong>Colbert und der Merkantilismus:</strong> Sein Finanzminister Jean-Baptiste Colbert förderte <a class="g" href="#g-manufaktur">Manufakturen</a>, Straßen, Kanäle und den Export, erhob hohe Zölle auf ausländische Waren und baute eine Flotte auf.</li>
+    <li><strong>Armee:</strong> Frankreich unterhielt das größte stehende Heer Europas – Grundlage für die Eroberungskriege (Kapitel 5).</li>
+    <li><strong>Ein König, ein Glaube:</strong> 1685 hob Ludwig mit dem Edikt von Fontainebleau die Rechte der Hugenotten auf. Schätzungsweise 150.000 bis 200.000 Protestanten flohen aus Frankreich – viele davon nach Deutschland.</li>
+  </ul>
+
+  <h3>4.3 Absolutismus in Deutschland</h3>
+  <p>Viele deutsche Fürsten ahmten Ludwig XIV. nach – im Großen wie im Kleinen. Französisch wurde die Sprache der Höfe und der Gebildeten.</p>
+  <div class="grid">
+    <div class="card"><h4>Residenzen</h4><p>Überall entstanden prächtige Schlösser nach dem Vorbild von Versailles: Schönbrunn (Wien), Nymphenburg (München), Ludwigsburg (Württemberg), der Zwinger (Dresden), die Würzburger Residenz. Oft wurden ganze <a class="g" href="#g-residenz">Residenzstädte</a> neu geplant, etwa Mannheim oder Karlsruhe (1715).</p></div>
+    <div class="card"><h4>Kameralismus</h4><p>In Deutschland hieß die staatliche Wirtschaftslehre <a class="g" href="#g-kameralismus">Kameralismus</a>. Ihr Ziel: ein volkreiches, wirtschaftlich starkes Land mit gefüllter Staatskasse. Ab 1727 wurde sie in Halle und Frankfurt (Oder) sogar als Universitätsfach gelehrt.</p></div>
+    <div class="card"><h4>Entmachtung der Stände</h4><p>In vielen Ländern verloren die Landstände ihr Recht, Steuern zu bewilligen. In anderen, etwa in Württemberg oder Mecklenburg, konnten sie sich behaupten.</p></div>
+    <div class="card"><h4>Große Unterschiede</h4><p>Ein „absolutistischer“ Zwergstaat mit wenigen tausend Einwohnern hatte mit Versailles wenig gemein. Echte Machtstaaten wurden nur die großen Territorien – vor allem Österreich und Preußen.</p></div>
+  </div>
+  <div class="box achtung"><div class="box-title">Wer bezahlte die Pracht?</div>
+    <p>Schlösser, Feste und Armeen kosteten gewaltige Summen. Bezahlt wurden sie vor allem von den <strong>Bauern und Bürgern</strong> über Steuern, Abgaben und Frondienste. Manche Fürsten verschuldeten sich hoch oder „verkauften“ sogar Soldaten gegen Geld an andere Mächte (<a class="g" href="#g-subsidien">Subsidien</a>). Die Kluft zwischen dem Leben am Hof und dem der einfachen Menschen war enorm.</p>
+  </div>
+
+  <h3>4.4 Das Gegenmodell: England und die Niederlande</h3>
+  <p>Nicht überall setzte sich der Absolutismus durch. In England kämpfte das Parlament jahrzehntelang mit der Krone um die Macht:</p>
+  <div class="phase">
+    <div class="phase-head"><h4>Englands Weg zur parlamentarischen Monarchie</h4><span class="yr">1649–1714</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1649</span><span>Hinrichtung König Karls I.; England wird Republik (<em>Commonwealth</em>).</span></li>
+        <li><span class="d">1653–1658</span><span><strong>Oliver Cromwell</strong> regiert als „Lordprotektor“ – faktisch eine Militärherrschaft.</span></li>
+        <li><span class="d">1660</span><span>Rückkehr der Monarchie (Restauration) unter Karl II.</span></li>
+        <li><span class="d">1688/89</span><span><strong>Glorreiche Revolution:</strong> Der katholische König Jakob II. wird fast ohne Blutvergießen gestürzt. Der Niederländer Wilhelm III. von Oranien und seine Frau Maria werden König und Königin.</span></li>
+        <li><span class="d">1689</span><span><strong>Bill of Rights:</strong> Ohne Zustimmung des Parlaments darf der König keine Steuern erheben, keine Gesetze aufheben und kein Heer im Frieden unterhalten.</span></li>
+        <li><span class="d">1707</span><span>England und Schottland vereinen sich zum Königreich <strong>Großbritannien</strong>.</span></li>
+        <li><span class="d">1714</span><span>Der Kurfürst von Hannover wird als Georg I. König von Großbritannien – Beginn einer über 120-jährigen <a class="g" href="#g-personalunion">Personalunion</a> mit einem deutschen Land.</span></li>
+      </ul>
+    </div>
+  </div>
+  <p>In dieser Zeit schrieb der englische Philosoph <strong>John Locke</strong> (1689/90), dass jeder Mensch natürliche Rechte auf Leben, Freiheit und Eigentum habe und dass eine Regierung nur mit Zustimmung der Regierten rechtmäßig sei. Diese Ideen wurden später zur Grundlage moderner Verfassungen.</p>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Absolutismus:</strong> Der Fürst beansprucht die ganze Staatsgewalt – mit Hof, Beamten, stehendem Heer und Merkantilismus.</li>
+      <li><strong>Vorbild:</strong> Ludwig XIV. und Versailles; in Deutschland entstehen zahlreiche Residenzen.</li>
+      <li><strong>Grenzen:</strong> Der Begriff ist später entstanden; in Wirklichkeit war die Macht der Fürsten oft beschränkt.</li>
+      <li><strong>Gegenmodell England:</strong> Glorreiche Revolution 1688/89 und Bill of Rights → Herrschaft mit dem Parlament.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 5 KRIEGE IM WESTEN ============ -->
+<section class="chapter" id="westen">
+  <div class="chap-head"><div class="chap-num">5</div><div>
+    <span class="span-chip">1667 – 1714</span>
+    <h2>Ludwig XIV. und die Kriege im Westen</h2>
+  </div></div>
+  <p class="lead">Fast ein halbes Jahrhundert lang führte Frankreich Kriege, um seine Grenzen nach Osten zu verschieben. Das Reich, vor allem seine westlichen Gebiete am Rhein, wurde zum Schauplatz – und zum Opfer – dieser Politik.</p>
+
+  <h3>Warum führte Ludwig XIV. so viele Kriege?</h3>
+  <div class="grid">
+    <div class="card"><h4>Ruhm</h4><p>Kriegsruhm (<em>gloire</em>) galt als wichtigste Aufgabe eines Königs. Siege steigerten das Ansehen des Herrschers in ganz Europa.</p></div>
+    <div class="card"><h4>Sichere Grenzen</h4><p>Frankreich wollte „natürliche Grenzen“ wie den Rhein erreichen und sich vor den Habsburgern in Spanien und im Reich schützen.</p></div>
+    <div class="card"><h4>Erbansprüche</h4><p>Ludwig nutzte Heiratsverbindungen, um Ansprüche auf fremde Gebiete zu erheben – auf die Spanischen Niederlande, die Pfalz und schließlich ganz Spanien.</p></div>
+  </div>
+
+  <h3>Die vier Kriege Ludwigs XIV.</h3>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase I: Devolutionskrieg</h4><span class="yr">1667–1668</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1667</span><span>Ludwig erhebt im Namen seiner spanischen Ehefrau Anspruch auf Teile der Spanischen Niederlande und lässt seine Truppen einmarschieren.</span></li>
+        <li><span class="d">1668</span><span>Frieden von Aachen: Frankreich erhält mehrere flandrische Städte, darunter Lille.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase II: Holländischer Krieg</h4><span class="yr">1672–1679</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1672</span><span>Frankreich greift die Niederlande an. Die Niederländer öffnen die Deiche und setzen das Land unter Wasser, um die Angreifer aufzuhalten.</span></li>
+        <li><span class="d">1674</span><span>Das Reich erklärt Frankreich den Reichskrieg. Französische Truppen verwüsten Teile der Pfalz und Badens.</span></li>
+        <li><span class="d">1675</span><span>Schweden fällt als Verbündeter Frankreichs in Brandenburg ein und wird bei <strong>Fehrbellin</strong> geschlagen (Kapitel 8).</span></li>
+        <li><span class="d">1678/79</span><span>Frieden von Nimwegen: Frankreich erhält die Franche-Comté (Freigrafschaft Burgund) und Freiburg im Breisgau.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h4>Zwischen den Kriegen: Die Reunionen und Straßburg</h4>
+  <p>Auch im Frieden setzte Ludwig seine Ausdehnung fort. Ab 1679 ließen eigens eingerichtete Gerichte, die „Reunionskammern“ in Metz, Breisach, Besançon und Tournai, anhand alter Lehensurkunden prüfen, welche Gebiete angeblich schon immer zu Frankreich gehört hätten. Die Urteile fielen immer zugunsten des Königs aus; französische Truppen besetzten daraufhin zahlreiche Orte (<a class="g" href="#g-reunionen">Reunionen</a>).</p>
+  <p>Am <strong>30. September 1681</strong> besetzte Frankreich die freie Reichsstadt <strong>Straßburg</strong> – ohne jeden Rechtsgrund. Das Reich war machtlos, denn zur selben Zeit rückten die Osmanen auf Wien vor. Im <strong>Regensburger Stillstand</strong> von 1684 musste es die Besetzungen für 20 Jahre hinnehmen.</p>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Phase III: Pfälzischer Erbfolgekrieg</h4><span class="yr">1688–1697</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1688</span><span>Ludwig erhebt im Namen seiner Schwägerin <strong>Liselotte von der Pfalz</strong> Ansprüche auf pfälzisches Erbe und lässt Truppen in die Pfalz einmarschieren.</span></li>
+        <li><span class="d">1689</span><span>Gegen Frankreich bildet sich die Wiener Große Allianz: Kaiser und Reich, England, die Niederlande, Spanien und Savoyen.</span></li>
+        <li><span class="d">1689</span><span>Beim Rückzug verwüsten französische Truppen systematisch die Pfalz und angrenzende Gebiete: Mannheim wird dem Erdboden gleichgemacht, Speyer und Worms brennen, der Wormser Dom brennt aus.</span></li>
+        <li><span class="d">1693</span><span>Heidelberg wird erneut erobert und mitsamt dem Schloss fast völlig zerstört.</span></li>
+        <li><span class="d">1697</span><span>Frieden von Rijswijk: Frankreich gibt die meisten Reunionsgebiete und Lothringen zurück, behält aber das Elsass mit Straßburg.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="box achtung"><div class="box-title">Die Verwüstung der Pfalz</div>
+    <p>Die Zerstörung der Pfalz war keine Folge von Kämpfen, sondern ein geplanter Befehl: Ein breiter Streifen Land sollte unbewohnbar gemacht werden, damit gegnerische Heere dort nicht versorgt werden konnten. Städte, Dörfer, Kirchen und Burgen wurden gesprengt und angezündet. Die Ruine des Heidelberger Schlosses erinnert bis heute daran. Auch das Reichskammergericht musste aus dem zerstörten Speyer nach Wetzlar umziehen. Die Erfahrung prägte für lange Zeit das Bild Frankreichs als „Erbfeind“ in Deutschland.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Phase IV: Spanischer Erbfolgekrieg</h4><span class="yr">1701–1714</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1.11.1700</span><span>Der kinderlose König Karl II. von Spanien stirbt. Im Testament setzt er Ludwigs Enkel <strong>Philipp von Anjou</strong> als Erben ein. Auch Kaiser Leopold I. beansprucht das Erbe für seinen Sohn Karl.</span></li>
+        <li><span class="d">1701</span><span>Krieg zwischen Frankreich und einer Allianz aus Habsburg, England, den Niederlanden und dem Reich. <strong>Bayern</strong> und <strong>Kurköln</strong> kämpfen auf der Seite Frankreichs.</span></li>
+        <li><span class="d">13.8.1704</span><span><strong>Schlacht bei Höchstädt</strong> (an der Donau): Prinz Eugen und der englische Herzog von Marlborough besiegen Franzosen und Bayern vernichtend. Bayern wird von Österreich besetzt.</span></li>
+        <li><span class="d">1705</span><span>Bayerische Bauern erheben sich gegen die harte österreichische Besatzung. Bei Sendling vor München werden sie am 25. Dezember niedergemetzelt („Sendlinger Mordweihnacht“).</span></li>
+        <li><span class="d">1706–1709</span><span>Weitere Siege der Alliierten (Ramillies, Turin, Oudenaarde, Malplaquet), doch Frankreich hält stand.</span></li>
+        <li><span class="d">1711</span><span>Kaiser Joseph I. stirbt; sein Bruder Karl wird Kaiser Karl VI. Würde er auch Spanien erhalten, wäre Habsburg übermächtig. England verliert das Interesse am Krieg.</span></li>
+        <li><span class="d">1713/14</span><span>Frieden von Utrecht (1713), Rastatt und Baden (1714).</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> Philipp V. wird König von Spanien, darf aber nie zugleich Frankreich regieren.</p>
+    </div>
+  </div>
+
+  <h4>Wer erhielt was? – Die Friedensschlüsse 1713/14</h4>
+  <div class="tablewrap"><table>
+    <tr><th>Wer</th><th>Was</th></tr>
+    <tr><td><strong>Spanien</strong></td><td>Bleibt mit seinen Kolonien beim Bourbonen Philipp V., verliert aber seine Besitzungen in Europa außerhalb Spaniens.</td></tr>
+    <tr><td><strong>Österreich</strong></td><td>Erhält die Spanischen Niederlande (etwa das heutige Belgien), Mailand, Neapel und Sardinien.</td></tr>
+    <tr><td><strong>Großbritannien</strong></td><td>Gewinnt Gibraltar und Menorca sowie Gebiete in Nordamerika – Grundstein seiner Weltmachtstellung.</td></tr>
+    <tr><td><strong>Savoyen</strong></td><td>Erhält Sizilien (1720 gegen Sardinien getauscht) und den Königstitel.</td></tr>
+    <tr><td><strong>Preußen</strong></td><td>Sein Königstitel wird anerkannt; es erhält Obergeldern.</td></tr>
+    <tr><td><strong>Bayern und Kurköln</strong></td><td>Ihre Kurfürsten, die unter Reichsacht gestanden hatten, erhalten ihre Länder zurück.</td></tr>
+  </table></div>
+
+  <div class="box warum"><div class="box-title">Das Gleichgewicht der Mächte</div>
+    <p>Im Spanischen Erbfolgekrieg ging es nicht um Religion, sondern um eine Frage der Machtverteilung: Kein Herrscherhaus sollte so stark werden, dass es Europa beherrscht. Die Friedensschlüsse von 1713/14 gelten deshalb als Durchbruch des Prinzips vom <a class="g" href="#g-gleichgewicht">Gleichgewicht der Mächte</a> (englisch <em>balance of power</em>). Es bestimmte die europäische Politik bis ins 19. Jahrhundert. Kriege dieser Art, geführt von Fürsten und ihren Kabinetten um Erbe und Macht, nennt man auch <a class="g" href="#g-kabinettskrieg">Kabinettskriege</a>.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Ludwig XIV.</strong> führt vier Kriege, um Frankreich nach Osten zu erweitern.</li>
+      <li><strong>1681:</strong> Besetzung Straßburgs; <strong>1689/93:</strong> Verwüstung der Pfalz und Heidelbergs.</li>
+      <li><strong>1704:</strong> Sieg bei Höchstädt; <strong>1713/14:</strong> Utrecht und Rastatt → ein Bourbone in Spanien, Österreich erhält Belgien und große Teile Italiens.</li>
+      <li><strong>Folge:</strong> Das Prinzip des Gleichgewichts der Mächte setzt sich durch.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 6 TÜRKENKRIEGE ============ -->
+<section class="chapter" id="tuerken">
+  <div class="chap-head"><div class="chap-num">6</div><div>
+    <span class="span-chip">1663 – 1739</span>
+    <h2>Die Türkenkriege und der Aufstieg Österreichs</h2>
+  </div></div>
+  <p class="lead">1683 stand ein osmanisches Heer vor Wien. Nur 16 Jahre später hatten die Habsburger fast ganz Ungarn zurückerobert. Aus der Verteidigung wurde ein Siegeszug – und aus den habsburgischen Ländern eine europäische Großmacht im Donauraum.</p>
+
+  <h3>Ausgangslage: Ein geteiltes Ungarn</h3>
+  <p>Seit dem 16. Jahrhundert war Ungarn dreigeteilt: Der Westen und Norden gehörten den Habsburgern, die Mitte mit Buda (Ofen) war osmanisch, Siebenbürgen ein eigenes Fürstentum unter osmanischer Oberhoheit. An der Grenze sicherten Festungen und eine <a class="g" href="#g-militaergrenze">Militärgrenze</a> mit Wehrbauern das Land. Viele ungarische Adlige misstrauten aber den Habsburgern, die sie streng katholisch und zentralistisch regieren wollten – manche verbündeten sich sogar mit den Osmanen.</p>
+  <p>Ein erster Krieg (1663/64) endete mit einem Sieg der kaiserlichen Truppen bei <strong>Mogersdorf (St. Gotthard)</strong> am 1. August 1664, an dem auch Truppen aus dem Reich und aus Frankreich beteiligt waren. Doch der rasch geschlossene Frieden von Eisenburg brachte kaum Gewinne und verärgerte den ungarischen Adel.</p>
+
+  <h3>1683: Die zweite Belagerung Wiens</h3>
+  <div class="phase">
+    <div class="phase-head"><h4>Wien in Gefahr</h4><span class="yr">Juli–September 1683</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Frühjahr 1683</span><span>Großwesir <strong>Kara Mustafa</strong> zieht mit einem gewaltigen Heer nach Westen. Ungarische Aufständische unter Imre Thököly unterstützen ihn.</span></li>
+        <li><span class="d">7.7.1683</span><span>Kaiser Leopold I. verlässt mit seinem Hof Wien und flieht nach Passau.</span></li>
+        <li><span class="d">14.7.1683</span><span>Rund 120.000 osmanische Soldaten schließen Wien ein. Stadtkommandant <strong>Ernst Rüdiger von Starhemberg</strong> verteidigt die Stadt mit etwa 16.000 Mann, darunter rund 5.000 bewaffnete Bürger.</span></li>
+        <li><span class="d">Juli–Sept.</span><span>Zwei Monate lang graben die Osmanen Minen unter die Mauern und stürmen immer wieder. Hunger und Ruhr schwächen die Verteidiger; die Lage wird verzweifelt.</span></li>
+        <li><span class="d">12.9.1683</span><span><strong>Schlacht am Kahlenberg:</strong> Ein Entsatzheer aus kaiserlichen, polnischen, bayerischen, sächsischen und weiteren Reichstruppen unter <strong>Karl von Lothringen</strong> und dem polnischen König <strong>Jan III. Sobieski</strong> schlägt die Belagerer in die Flucht.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> Wien ist gerettet. Kara Mustafa wird wenige Monate später auf Befehl des Sultans hingerichtet.</p>
+    </div>
+  </div>
+  <div class="box warum"><div class="box-title">Warum war der Sieg möglich?</div>
+    <p>Wien hielt stand, weil seine Befestigungen modernisiert worden waren und die Verteidiger entschlossen kämpften. Entscheidend war aber, dass sich ungewöhnlich viele Mächte zusammenschlossen: der Kaiser, Polen, mehrere Reichsfürsten und der Papst, der Geld schickte. Die gemeinsame Bedrohung überwand – für einen Moment – die Rivalitäten. Frankreich dagegen hielt sich fern und nutzte die Lage für seine Reunionen im Westen.</p>
+  </div>
+
+  <h3>Vom Abwehrkampf zur Rückeroberung</h3>
+  <p>Nach dem Sieg schlossen sich 1684 der Kaiser, Polen, Venedig und der Papst zur <strong>Heiligen Liga</strong> zusammen; später kam Russland hinzu. Im <strong>Großen Türkenkrieg</strong> (1683–1699) wurden die Osmanen Schritt für Schritt zurückgedrängt:</p>
+  <div class="phase">
+    <div class="phase-head"><h4>Der Große Türkenkrieg</h4><span class="yr">1683–1699</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">2.9.1686</span><span>Eroberung von <strong>Ofen</strong> (Buda) nach 145 Jahren osmanischer Herrschaft.</span></li>
+        <li><span class="d">1687</span><span>Sieg bei Mohács. Der ungarische Landtag erkennt die Habsburger als erbliche Könige Ungarns an.</span></li>
+        <li><span class="d">1688</span><span>Der bayerische Kurfürst <strong>Max Emanuel</strong> erobert Belgrad (1690 wieder verloren).</span></li>
+        <li><span class="d">1691</span><span>Markgraf Ludwig Wilhelm von Baden, der „Türkenlouis“, siegt bei Slankamen.</span></li>
+        <li><span class="d">11.9.1697</span><span><strong>Prinz Eugen von Savoyen</strong> vernichtet bei Zenta ein osmanisches Heer.</span></li>
+        <li><span class="d">26.1.1699</span><span><strong>Frieden von Karlowitz:</strong> Die Osmanen treten ganz Ungarn (außer dem Banat), Siebenbürgen und den größten Teil Slawoniens an Habsburg ab.</span></li>
+      </ul>
+    </div>
+  </div>
+  <p>Ein weiterer Krieg unter Prinz Eugen brachte noch größere Gewinne: Nach den Siegen bei <strong>Peterwardein</strong> (5. August 1716) und der Eroberung <strong>Belgrads</strong> (1717) erhielt Österreich im <strong>Frieden von Passarowitz</strong> (21. Juli 1718) das Banat, Nordserbien mit Belgrad und die Kleine Walachei. Damit erreichte die Habsburgermonarchie ihre größte Ausdehnung auf dem Balkan. Ein letzter Krieg an der Seite Russlands endete jedoch mit Niederlagen: Im <strong>Frieden von Belgrad</strong> (1739) gingen Belgrad, Nordserbien und die Kleine Walachei wieder verloren.</p>
+
+  <h3>Folgen: Eine neue Großmacht an der Donau</h3>
+  <div class="grid">
+    <div class="card"><h4>Großmacht Österreich</h4><p>Mit Ungarn, Böhmen, den österreichischen Ländern und den Gewinnen von 1714 in Italien und Belgien war die Habsburgermonarchie eine der größten Mächte Europas. Ihr Schwerpunkt verlagerte sich nach Südosten – teilweise aus dem Reich hinaus.</p></div>
+    <div class="card"><h4>Neue Siedler</h4><p>Die entvölkerten Gebiete in Ungarn und im Banat wurden gezielt neu besiedelt. In drei großen Wellen unter Karl VI., Maria Theresia und Joseph II. kamen schätzungsweise über 150.000 Menschen, meist aus Südwestdeutschland. Sie fuhren oft auf Booten die Donau hinab und wurden später „Donauschwaben“ genannt.</p></div>
+    <div class="card"><h4>Konflikte in Ungarn</h4><p>Die Habsburger regierten Ungarn hart. Von 1703 bis 1711 kämpften ungarische Aufständische unter Franz II. Rákóczi gegen Wien. Der Frieden von Sathmar (1711) sicherte dem ungarischen Adel seine alten Rechte – ein Kompromiss, der Ungarn eine Sonderstellung gab.</p></div>
+    <div class="card"><h4>Wiener Barock</h4><p>Die Siege und die Überwindung der Pest wurden mit prachtvollen Bauten gefeiert: der Pestsäule am Graben (nach der schweren Pest von 1679), der Karlskirche (nach der Pest von 1713), dem Belvedere des Prinzen Eugen und dem Ausbau von Schönbrunn.</p></div>
+  </div>
+  <div class="box achtung"><div class="box-title">Mythen und Wirklichkeit</div>
+    <p>Um 1683 ranken sich viele Legenden – etwa, dass die Wiener Kaffeekultur mit erbeuteten Kaffeesäcken der Osmanen begonnen habe. Tatsächlich ist das erste Wiener Kaffeehaus erst für 1685 belegt, betrieben von einem armenischen Händler. Auch das Bild vom „Abwehrkampf des christlichen Abendlandes“ ist vereinfacht: Christliche Mächte wie Frankreich unterstützten die Osmanen indirekt, und ungarische Protestanten kämpften teils auf osmanischer Seite gegen die katholischen Habsburger.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>1683:</strong> Zweite Belagerung Wiens → Sieg am Kahlenberg (12. September).</li>
+      <li><strong>1699:</strong> Frieden von Karlowitz → Ungarn und Siebenbürgen fallen an Habsburg.</li>
+      <li><strong>1718:</strong> Frieden von Passarowitz → größte Ausdehnung auf dem Balkan (1739 teilweise wieder verloren).</li>
+      <li><strong>Folge:</strong> Österreich wird Großmacht im Donauraum; Neubesiedlung durch die „Donauschwaben“.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 7 NORDEN ============ -->
+<section class="chapter" id="norden">
+  <div class="chap-head"><div class="chap-num">7</div><div>
+    <span class="span-chip">1655 – 1735</span>
+    <h2>Der Norden im Umbruch: Schweden, Polen und Russland</h2>
+  </div></div>
+  <p class="lead">Um 1650 beherrschte Schweden die Ostsee und besaß Gebiete im Reich. Siebzig Jahre später war es keine Großmacht mehr – und an seine Stelle trat Russland. Deutsche Fürsten waren an diesem Umbruch eng beteiligt.</p>
+
+  <h3>Schweden als Macht im Reich</h3>
+  <p>Durch den Westfälischen Frieden besaß Schweden Vorpommern mit Stettin, Wismar sowie Bremen und Verden. Es kontrollierte damit die Mündungen von Oder, Elbe und Weser und war zugleich Reichsstand. Seine Nachbarn – vor allem Brandenburg und Dänemark – sahen darin eine ständige Bedrohung.</p>
+  <ul>
+    <li>Im <strong>Zweiten Nordischen Krieg</strong> (1655–1660) kämpfte Schweden gegen Polen. Brandenburg wechselte geschickt die Seiten und erreichte, dass Polen 1657 die volle <a class="g" href="#g-souveraenitaet">Souveränität</a> des Kurfürsten im Herzogtum Preußen anerkannte (Vertrag von Wehlau, bestätigt im Frieden von Oliva 1660).</li>
+    <li>Als Schweden 1675 auf Seiten Frankreichs in Brandenburg einfiel, wurde es bei <strong>Fehrbellin</strong> geschlagen. Brandenburg eroberte danach ganz Vorpommern – musste es aber 1679 auf Druck Frankreichs wieder zurückgeben. Die Lehre: Ein Mittelstaat war ohne starke Verbündete machtlos.</li>
+  </ul>
+
+  <h3>Der Große Nordische Krieg (1700–1721)</h3>
+  <p>1700 griffen Dänemark, Russland und Sachsen-Polen gemeinsam Schweden an, um dessen Vormacht an der Ostsee zu brechen. Der junge schwedische König <strong>Karl XII.</strong> erwies sich jedoch als glänzender Feldherr.</p>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase I: Die Siege Karls XII.</h4><span class="yr">1700–1709</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1700</span><span>Karl XII. zwingt Dänemark zum Frieden und schlägt ein weit überlegenes russisches Heer bei <strong>Narva</strong>.</span></li>
+        <li><span class="d">1701–1706</span><span>Er zieht durch Polen bis nach Sachsen. Im Frieden von Altranstädt (1706) muss August der Starke auf die polnische Krone verzichten; Sachsen wird besetzt und ausgeplündert.</span></li>
+        <li><span class="d">8.7.1709</span><span><strong>Schlacht bei Poltawa</strong> (heute Ukraine): Das russische Heer unter Peter dem Großen vernichtet die schwedische Armee. Karl XII. flieht ins Osmanische Reich.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase II: Der Niedergang Schwedens</h4><span class="yr">1709–1721</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1709</span><span>August der Starke wird wieder König von Polen. Dänemark tritt erneut in den Krieg ein.</span></li>
+        <li><span class="d">1708–1713</span><span>Eine schwere Pest wütet im ganzen Ostseeraum; in Ostpreußen stirbt nach Schätzungen etwa ein Drittel der Bevölkerung.</span></li>
+        <li><span class="d">1715</span><span>Auch Preußen und Hannover kämpfen nun gegen Schweden; Stralsund wird erobert.</span></li>
+        <li><span class="d">1718</span><span>Karl XII. fällt bei einer Belagerung in Norwegen.</span></li>
+        <li><span class="d">1719/20</span><span>Frieden von Stockholm: Hannover erhält Bremen und Verden, Preußen Vorpommern bis zur Peene mit Stettin.</span></li>
+        <li><span class="d">1721</span><span>Frieden von Nystad: Russland erhält Livland, Estland und Ingermanland – den Zugang zur Ostsee.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> Schweden verliert seine Großmachtstellung; Russland wird zur führenden Macht im Ostseeraum.</p>
+    </div>
+  </div>
+
+  <h3>Neue Akteure im Norden und Osten</h3>
+  <div class="grid">
+    <div class="card"><h4>Russland unter Peter dem Großen</h4><p>Peter I. (Zar ab 1682) reiste 1697/98 inkognito durch Deutschland, die Niederlande und England, um Schiffbau und Technik zu lernen. Er gründete 1703 Sankt Petersburg als „Fenster nach Europa“ und modernisierte Heer und Verwaltung nach westlichem Vorbild. Viele Deutsche, vor allem aus dem Baltikum, traten in russische Dienste. Ab 1721 nannte er sich Kaiser.</p></div>
+    <div class="card"><h4>Sachsen-Polen</h4><p>Um polnischer König zu werden, trat Kurfürst Friedrich August I. von Sachsen („August der Starke“) 1697 zum Katholizismus über – das Land, Kernland der Reformation, blieb lutherisch. Die Verbindung mit Polen brachte Glanz, aber auch Kriege und hohe Kosten. Nach seinem Tod setzte sich sein Sohn im Polnischen Thronfolgekrieg (1733–1735) als August III. durch.</p></div>
+    <div class="card"><h4>Hannover und Großbritannien</h4><p>Das Herzogtum Braunschweig-Lüneburg (Hannover) erhielt 1692 eine neue, neunte <a class="g" href="#g-kurfuersten">Kurwürde</a>. 1714 wurde Kurfürst Georg Ludwig König von Großbritannien. Bis 1837 regierten die britischen Könige zugleich in Hannover.</p></div>
+  </div>
+  <div class="box warum"><div class="box-title">Warum ist das wichtig?</div>
+    <p>Drei deutsche Fürstenhäuser – Sachsen, Hannover und Brandenburg – trugen nun Königskronen außerhalb des Reiches (Polen, Großbritannien, Preußen). Das zeigt, wie eng die Reichsfürsten mit der europäischen Politik verflochten waren. Es zeigt aber auch, dass ihr Blick oft über das Reich hinausging: Ihre Interessen lagen zunehmend in Warschau, London oder Königsberg.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>1660:</strong> Frieden von Oliva → Brandenburg ist souverän im Herzogtum Preußen.</li>
+      <li><strong>1700–1721:</strong> Großer Nordischer Krieg; <strong>1709</strong> Poltawa → Ende der schwedischen Großmacht.</li>
+      <li><strong>1720/21:</strong> Preußen erhält Stettin, Hannover Bremen-Verden, Russland das Baltikum.</li>
+      <li><strong>Königskronen:</strong> Sachsen (Polen 1697), Brandenburg (Preußen 1701), Hannover (Großbritannien 1714).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 8 PREUSSEN ============ -->
+<section class="chapter" id="preussen">
+  <div class="chap-head"><div class="chap-num">8</div><div>
+    <span class="span-chip">1640 – 1740</span>
+    <h2>Der Aufstieg Brandenburg-Preußens</h2>
+  </div></div>
+  <p class="lead">1640 war Brandenburg ein ausgeplündertes, armes Kurfürstentum aus weit verstreuten Landesteilen. Hundert Jahre später besaß Preußen eine der stärksten Armeen Europas. Wie war das möglich?</p>
+
+  <h3>Ein Staat aus vielen Teilen</h3>
+  <p>Die Hohenzollern herrschten über Gebiete, die nicht miteinander verbunden waren und von der Maas bis an die Memel reichten:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Gebiet</th><th>Lage und Bedeutung</th></tr>
+    <tr><td><strong>Kurmark Brandenburg</strong></td><td>Kernland mit Berlin und Potsdam; arm an Bodenschätzen, sandige Böden („Streusandbüchse des Reiches“).</td></tr>
+    <tr><td><strong>Herzogtum Preußen</strong></td><td>Das spätere Ostpreußen mit Königsberg; lag außerhalb des Reiches und war bis 1657 polnisches Lehen.</td></tr>
+    <tr><td><strong>Kleve, Mark, Ravensberg</strong></td><td>Kleine, aber wirtschaftlich entwickelte Gebiete im Westen am Rhein.</td></tr>
+    <tr><td><strong>Hinterpommern, Halberstadt, Minden, Magdeburg</strong></td><td>Gewinne aus dem Westfälischen Frieden (Magdeburg 1680).</td></tr>
+  </table></div>
+  <p>Diese Landesteile hatten eigene Stände, Gesetze und Traditionen. Was sie zusammenhielt, waren der gemeinsame Herrscher – und bald die gemeinsame Armee und Verwaltung.</p>
+
+  <h3>Der Große Kurfürst (1640–1688)</h3>
+  <p><strong>Friedrich Wilhelm</strong> übernahm ein verwüstetes, von fremden Truppen besetztes Land. Er baute systematisch einen Staat auf, dessen Kern ein <strong>stehendes Heer</strong> war – am Ende seiner Regierung rund 30.000 Mann.</p>
+  <ul>
+    <li><strong>Der Handel mit dem Adel (1653):</strong> Die brandenburgischen Stände bewilligten Geld für das Heer. Dafür bestätigte der Kurfürst die Rechte der adligen Gutsbesitzer (<a class="g" href="#g-gutsherrschaft">Gutsherrschaft</a>) über ihre Bauern. Dieser Kompromiss prägte Preußen über 150 Jahre: Der Adel diente als Offiziere, die Bauern trugen die Lasten.</li>
+    <li><strong>Steuern und Verwaltung:</strong> In den Städten führte er die <a class="g" href="#g-akzise">Akzise</a> ein, eine Steuer auf Waren. Ein Kriegskommissariat verwaltete das Geld für die Armee und wurde zur Keimzelle der preußischen Verwaltung.</li>
+    <li><strong>Außenpolitik:</strong> Souveränität in Preußen (1657/60), Sieg über die Schweden bei <strong>Fehrbellin</strong> am 28. Juni 1675 – danach nannte man ihn den „Großen Kurfürsten“.</li>
+    <li><strong>Wirtschaft:</strong> Er ließ einen Kanal zwischen Oder und Spree bauen, förderte Manufakturen und gründete sogar eine Kolonie in Westafrika (Groß Friedrichsburg im heutigen Ghana), die dem Sklavenhandel diente.</li>
+  </ul>
+
+  <h4>Das Edikt von Potsdam 1685</h4>
+  <p>Als Ludwig XIV. die Hugenotten verfolgte, reagierte der reformierte Kurfürst sofort. Im <strong>Edikt von Potsdam</strong> (29. Oktober 1685) lud er die Glaubensflüchtlinge nach Brandenburg ein: Sie erhielten zwölf Jahre Steuerfreiheit, eigene Kirchen und Prediger. Rund 20.000 Hugenotten kamen. Um 1700 war etwa jeder fünfte Einwohner Berlins französischer Herkunft. Sie brachten Handwerk, Manufakturwissen und Bildung mit. Schon 1671 hatte der Kurfürst 50 jüdische Familien aufgenommen, die aus Wien vertrieben worden waren.</p>
+  <div class="box warum"><div class="box-title">Toleranz aus Überzeugung oder Berechnung?</div>
+    <p>Beides. Der Kurfürst war als Reformierter selbst Angehöriger einer Minderheit in einem lutherischen Land und fühlte sich den verfolgten Glaubensbrüdern verbunden. Zugleich brauchte das entvölkerte Land dringend fleißige, gut ausgebildete Menschen. Diese Verbindung von religiöser <a class="g" href="#g-toleranz">Toleranz</a> und wirtschaftlichem Nutzen wurde zu einem Kennzeichen der preußischen Politik.</p>
+  </div>
+
+  <h3>Friedrich I.: Die Königskrone (1701)</h3>
+  <p>Sein Sohn <strong>Friedrich III.</strong> (1688–1713) wollte mehr sein als ein Kurfürst. Weil das Herzogtum Preußen außerhalb des Reiches lag, konnte er sich dort zum König machen, ohne den Kaiser als Lehnsherrn zu brauchen. Der Kaiser stimmte im Krontraktat von 1700 zu – gegen das Versprechen von Truppen für den bevorstehenden Spanischen Erbfolgekrieg.</p>
+  <p>Am <strong>18. Januar 1701</strong> setzte sich Friedrich in Königsberg selbst die Krone auf und nannte sich nun <strong>Friedrich I., „König in Preußen“</strong>. Das „in“ war Absicht: Der westliche Teil Preußens gehörte noch zu Polen. Die Feiern kosteten rund sechs Millionen Taler – mehr als das Anderthalbfache der jährlichen Staatseinnahmen.</p>
+  <p>Friedrich I. förderte Kunst und Wissenschaft: Er gründete die Universität Halle (1694), die Akademie der Künste (1696) und auf Anregung von Gottfried Wilhelm Leibniz die Sozietät der Wissenschaften in Berlin (1700). Berlin wurde zu einer barocken Residenzstadt mit Schloss Charlottenburg und dem ausgebauten Stadtschloss.</p>
+
+  <h3>Friedrich Wilhelm I.: Der „Soldatenkönig“ (1713–1740)</h3>
+  <p>Der neue König war das Gegenteil seines Vaters: sparsam, streng und ganz auf das Militär ausgerichtet. Gleich nach seinem Amtsantritt senkte er die Ausgaben des Hofes von 276.000 auf 55.000 Taler im Jahr.</p>
+  <div class="grid">
+    <div class="card"><h4>Die Armee</h4><p>Er verdoppelte das Heer von rund 40.000 auf über 80.000 Mann. Berühmt war sein Leibregiment der „Langen Kerls“ in Potsdam, für das er besonders große Soldaten in ganz Europa anwerben ließ.</p></div>
+    <div class="card"><h4>Das Kantonsystem (1733)</h4><p>Das Land wurde in Bezirke („Kantone“) eingeteilt, aus denen jedes Regiment seine Rekruten holte. Junge Männer vom Land wurden so zum Dienst verpflichtet, verbrachten aber den größten Teil des Jahres als „Beurlaubte“ auf ihren Höfen (<a class="g" href="#g-kantonsystem">Kantonsystem</a>).</p></div>
+    <div class="card"><h4>Die Verwaltung</h4><p>1722/23 fasste er alle Finanz- und Militärbehörden im Generaldirektorium zusammen. Beamte sollten pflichtbewusst, sparsam und gehorsam sein – Tugenden, die später als „preußisch“ galten.</p></div>
+    <div class="card"><h4>Land und Leute</h4><p>Er siedelte Kolonisten in den durch die Pest entvölkerten Gebieten Ostpreußens an, darunter rund 15.000 aus Salzburg vertriebene Protestanten (1732). 1717 ordnete er eine allgemeine Schulpflicht an, die aber nur langsam umgesetzt wurde.</p></div>
+  </div>
+  <div class="box achtung"><div class="box-title">Ein Staat im Dienst der Armee</div>
+    <p>Der weitaus größte Teil der Staatseinnahmen floss in das Militär. Preußen hatte um 1740 nur etwa zwei Millionen Einwohner (die Schätzungen schwanken), aber eine der größten Armeen Europas. Die Disziplin war brutal, Fahnenflucht wurde hart bestraft. Später wurde oft ein Spruch zitiert, der dem Franzosen Mirabeau zugeschrieben wird: Preußen sei kein Land, das eine Armee habe, sondern eine Armee, die ein Land habe. Auch das Verhältnis des Königs zu seinem Sohn war von Härte geprägt: Als der 18-jährige Kronprinz Friedrich 1730 fliehen wollte, ließ der König dessen Freund Hans Hermann von Katte vor seinen Augen hinrichten.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Großer Kurfürst:</strong> stehendes Heer, Bündnis mit dem Adel, Sieg bei Fehrbellin 1675, Edikt von Potsdam 1685.</li>
+      <li><strong>1701:</strong> Friedrich I. krönt sich in Königsberg zum „König in Preußen“.</li>
+      <li><strong>Soldatenkönig (1713–1740):</strong> Sparsamkeit, Armee von über 80.000 Mann, Kantonsystem 1733.</li>
+      <li><strong>Folge:</strong> Ein kleiner, armer Staat wird zur militärischen Großmacht.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 9 SCHLESIEN ============ -->
+<section class="chapter" id="schlesien">
+  <div class="chap-head"><div class="chap-num">9</div><div>
+    <span class="span-chip">1713 – 1755</span>
+    <h2>Maria Theresia, Friedrich II. und der Kampf um Schlesien</h2>
+  </div></div>
+  <p class="lead">1740 kamen in Wien und Berlin zwei junge Herrscher an die Macht. Ihr Kampf um Schlesien machte Österreich und Preußen zu dauerhaften Rivalen – der Beginn des deutschen Dualismus.</p>
+
+  <h3>9.1 Das Problem der Habsburger: Kein Sohn</h3>
+  <p>Kaiser <strong>Karl VI.</strong> (1711–1740) hatte keinen Sohn. Damit seine Länder nach seinem Tod nicht auseinanderfielen, erließ er 1713 die <a class="g" href="#g-pragmatische">Pragmatische Sanktion</a>: Alle habsburgischen Länder sollten ungeteilt bleiben und notfalls an eine Tochter fallen. Jahrzehntelang bemühte sich Karl darum, dass die Stände seiner Länder, das Reich und die europäischen Mächte dieses Gesetz anerkannten – und machte dafür viele Zugeständnisse. So musste sein Schwiegersohn Franz Stephan sein Herzogtum Lothringen abgeben und erhielt dafür die Toskana.</p>
+
+  <h3>9.2 Das Jahr 1740: Zwei neue Herrscher</h3>
+  <div class="grid">
+    <div class="card"><div class="yr">31.5.1740</div><h4>Friedrich II. in Preußen</h4><p>Der 28-jährige Friedrich war musisch und philosophisch gebildet, spielte Flöte, schrieb auf Französisch und war mit Voltaire befreundet. In seiner Schrift „Antimachiavel“ verurteilte er Eroberungskriege. Kurz nach dem Amtsantritt schaffte er die Folter weitgehend ab und erklärte, in Preußen solle „jeder nach seiner Fasson selig werden“.</p></div>
+    <div class="card"><div class="yr">20.10.1740</div><h4>Maria Theresia in Österreich</h4><p>Nach dem Tod Karls VI. übernahm seine 23-jährige Tochter die Herrschaft. Sie hatte keine Erfahrung im Regieren, die Staatskasse war leer, die Armee schwach – und mehrere Fürsten bestritten ihr Erbe trotz der Pragmatischen Sanktion.</p></div>
+  </div>
+
+  <h3>9.3 Der Griff nach Schlesien</h3>
+  <p>Am <strong>16. Dezember 1740</strong> marschierte Friedrich II. ohne Kriegserklärung in das habsburgische <strong>Schlesien</strong> ein. Er berief sich auf alte, kaum haltbare Erbansprüche. Der eigentliche Grund war die günstige Gelegenheit: Schlesien war reich, dicht besiedelt und durch Leinenweberei und Bergbau wirtschaftlich bedeutend – sein Besitz hätte Preußens Macht stark vergrößert.</p>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase I: Erster Schlesischer Krieg</h4><span class="yr">1740–1742</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">10.4.1741</span><span>Sieg Preußens bei <strong>Mollwitz</strong>. Daraufhin verbünden sich Bayern, Sachsen, Frankreich und Spanien gegen Maria Theresia – der <strong>Österreichische <a class="g" href="#g-erbfolgekrieg">Erbfolgekrieg</a></strong> beginnt.</span></li>
+        <li><span class="d">1741</span><span>Maria Theresia wird zur Königin von Ungarn gekrönt und gewinnt mit einem eindrucksvollen Auftritt vor dem ungarischen Landtag in Pressburg dessen militärische Hilfe.</span></li>
+        <li><span class="d">24.1.1742</span><span>Der bayerische Kurfürst Karl Albrecht wird als <strong>Karl VII.</strong> zum Kaiser gewählt – erstmals seit 300 Jahren kein Habsburger. Fast zur selben Zeit wie seine Krönung besetzen österreichische Truppen seine Hauptstadt München – ein „Kaiser ohne Land“.</span></li>
+        <li><span class="d">1742</span><span>Frieden von Breslau und Berlin: Maria Theresia muss fast ganz Schlesien und die Grafschaft Glatz an Preußen abtreten.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase II: Zweiter Schlesischer Krieg</h4><span class="yr">1744–1745</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1744</span><span>Weil Österreich militärisch wieder erstarkt, greift Friedrich erneut an, um Schlesien zu sichern.</span></li>
+        <li><span class="d">20.1.1745</span><span>Kaiser Karl VII. stirbt. Bayern schließt Frieden mit Österreich.</span></li>
+        <li><span class="d">4.6.1745</span><span>Preußischer Sieg bei <strong>Hohenfriedberg</strong>; im Dezember folgt der Sieg bei Kesselsdorf über die Sachsen.</span></li>
+        <li><span class="d">13.9.1745</span><span>Maria Theresias Ehemann wird als <strong>Franz I.</strong> zum Kaiser gewählt. Die Kaiserwürde kehrt an das Haus Habsburg(-Lothringen) zurück.</span></li>
+        <li><span class="d">25.12.1745</span><span><strong>Frieden von Dresden:</strong> Preußen behält Schlesien und erkennt Franz I. als Kaiser an.</span></li>
+      </ul>
+    </div>
+  </div>
+  <p>Der Österreichische Erbfolgekrieg ging an anderen Schauplätzen – in den Niederlanden, in Italien und in den Kolonien – noch bis 1748 weiter. Der <strong>Frieden von Aachen</strong> (18. Oktober 1748) bestätigte Maria Theresias Erbe, aber auch den preußischen Besitz Schlesiens.</p>
+
+  <h3>9.4 Reformen in Wien und Berlin (1748–1755)</h3>
+  <p>Beide Seiten nutzten die Friedensjahre, um ihre Staaten zu stärken:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Österreich unter Maria Theresia</th><th>Preußen unter Friedrich II.</th></tr>
+    <tr><td>Staatsreform unter Graf Haugwitz (ab 1749): Die österreichischen und böhmischen Länder erhalten eine gemeinsame zentrale Behörde; die Stände verlieren Einfluss, Steuern fließen regelmäßig an den Staat.</td><td>Justizreform unter Samuel von Cocceji (ab 1746): schnellere, einheitlichere Gerichtsverfahren, besser ausgebildete Richter.</td></tr>
+    <tr><td>Reform der Armee nach preußischem Vorbild; Gründung einer Militärakademie in Wiener Neustadt (1751/52).</td><td>Landesausbau: Trockenlegung des Oderbruchs (1747–1753) und Ansiedlung von Tausenden Kolonisten.</td></tr>
+    <tr><td>Wenzel Anton von Kaunitz wird 1753 Staatskanzler und plant ein Bündnis mit dem alten Feind Frankreich, um Schlesien zurückzugewinnen.</td><td>Friedrich baut Schloss Sanssouci (1745–1747) und holt Voltaire an seinen Hof (1750–1753) – Potsdam wird ein Zentrum der Aufklärung.</td></tr>
+  </table></div>
+
+  <div class="box warum"><div class="box-title">Was bedeutet „Dualismus“?</div>
+    <p>Mit dem Raub Schlesiens begann die Rivalität zweier deutscher Großmächte, die das Reich und später Deutschland über hundert Jahre prägte. Man nennt sie den <a class="g" href="#g-dualismus">deutschen Dualismus</a>. Erst 1866 wurde er im Deutschen Krieg zugunsten Preußens entschieden. Für die kleineren Reichsstände bedeutete der Dualismus, dass sie sich zwischen Wien und Berlin entscheiden oder geschickt zwischen beiden lavieren mussten.</p>
+  </div>
+  <div class="box achtung"><div class="box-title">Der Aufklärer als Machtpolitiker</div>
+    <p>Friedrich II. ist bis heute umstritten. Er verband aufgeklärte Ideen mit rücksichtsloser Machtpolitik: Der Verfasser des „Antimachiavel“ begann kurz nach seinem Amtsantritt einen Angriffskrieg ohne Kriegserklärung. Er selbst schrieb, ihn hätten Ehrgeiz, Ruhmbegierde und die günstige Gelegenheit getrieben. Erst nach weiteren Kriegen erhielt er den Beinamen „der Große“.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>1713:</strong> Pragmatische Sanktion → Maria Theresia soll das ungeteilte Erbe erhalten.</li>
+      <li><strong>1740:</strong> Friedrich II. marschiert in Schlesien ein → Schlesische Kriege und Österreichischer Erbfolgekrieg.</li>
+      <li><strong>1742–1745:</strong> Karl VII. aus Bayern ist Kaiser; danach Franz I. (Habsburg-Lothringen).</li>
+      <li><strong>1745/1748:</strong> Dresden und Aachen → Schlesien bleibt preußisch; Beginn des <strong>Dualismus</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 10 GESELLSCHAFT ============ -->
+<section class="chapter" id="gesellschaft">
+  <div class="chap-head"><div class="chap-num">10</div><div>
+    <span class="span-chip">1649 – 1755</span>
+    <h2>Gesellschaft, Glaube und Kultur</h2>
+  </div></div>
+  <p class="lead">Hinter Kriegen und Fürstenhöfen stand der Alltag von Millionen Menschen. Er war geprägt von harter Arbeit, Krisen und Wanderungen – aber auch von neuer Frömmigkeit, barocker Pracht und den ersten Gedanken der Aufklärung.</p>
+
+  <h3>10.1 Leben auf dem Land</h3>
+  <p>Mindestens vier von fünf Menschen lebten auf dem Land und arbeiteten in der Landwirtschaft. Wie frei sie waren, hing stark davon ab, wo sie lebten:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Region</th><th>Ordnung</th><th>Bedeutung für die Bauern</th></tr>
+    <tr><td><strong>Westlich der Elbe</strong></td><td>Grundherrschaft</td><td>Die Bauern bewirtschafteten ihre Höfe weitgehend selbst und zahlten dem Grundherrn Abgaben in Geld oder Naturalien.</td></tr>
+    <tr><td><strong>Östlich der Elbe</strong></td><td><a class="g" href="#g-gutsherrschaft">Gutsherrschaft</a></td><td>Der adlige Gutsherr war zugleich Grundherr, Richter und Polizei. Die Bauern mussten oft mehrere Tage pro Woche auf seinen Feldern arbeiten und durften ohne Erlaubnis weder wegziehen noch heiraten.</td></tr>
+  </table></div>
+  <p>Das Leben blieb unsicher. Das Klima war in der <strong>„Kleinen Eiszeit“</strong> kühler als heute; der extrem kalte Winter 1708/09 („Großer Frost“) führte in vielen Teilen Europas zu Missernten und Hunger. Die Pest kehrte mehrmals zurück. Nach der Epidemie von 1713 verschwand sie jedoch aus Mitteleuropa – auch dank eines streng bewachten „Pestkordons“ an der Grenze zum Osmanischen Reich.</p>
+
+  <h3>10.2 Wirtschaft: Manufakturen, Handel und Merkantilismus</h3>
+  <ul>
+    <li>Die Fürsten förderten nach den Regeln des <a class="g" href="#g-merkantilismus">Merkantilismus</a> und Kameralismus die heimische Produktion: Möglichst viele Waren sollten im eigenen Land hergestellt und möglichst wenige eingeführt werden.</li>
+    <li>In <a class="g" href="#g-manufaktur">Manufakturen</a> arbeiteten viele Menschen arbeitsteilig, aber noch ohne Maschinen – etwa in Textil-, Glas- oder Porzellanbetrieben. 1710 gründete August der Starke die <strong>Porzellanmanufaktur Meißen</strong>, die erste in Europa.</li>
+    <li>Auf dem Land wuchs das Heimgewerbe: Bauernfamilien spannen und webten im Auftrag von Kaufleuten, vor allem in Schlesien, Sachsen und Westfalen.</li>
+    <li>Handelsstädte wie Hamburg, Leipzig (mit seiner Messe) und Frankfurt am Main blühten auf. Neue Genussmittel wie Kaffee, Tee und Kakao kamen in Mode; ab den 1670er-Jahren entstanden auch in deutschen Städten Kaffeehäuser.</li>
+  </ul>
+
+  <h3>10.3 Menschen in Bewegung</h3>
+  <p>Diese Epoche war eine Zeit großer Wanderungen – oft erzwungen durch Glaubensverfolgung, oft gelenkt durch die <a class="g" href="#g-peuplierung">Peuplierungspolitik</a> der Fürsten:</p>
+  <div class="grid">
+    <div class="card"><h4>Glaubensflüchtlinge</h4><p>Französische Hugenotten (nach 1685), vertriebene Protestanten aus Salzburg (1731/32) und aus den habsburgischen Ländern fanden vor allem in Brandenburg-Preußen, Hessen und anderen protestantischen Gebieten eine neue Heimat.</p></div>
+    <div class="card"><h4>Siedler im Osten und Südosten</h4><p>Kolonisten zogen in die entvölkerten Gebiete Ostpreußens und in das von den Osmanen zurückeroberte Ungarn und Banat.</p></div>
+    <div class="card"><h4>Auswanderer nach Amerika</h4><p>1683 gründeten Familien aus Krefeld bei Philadelphia die Siedlung Germantown. Nach dem Hungerwinter 1709 zogen Tausende Menschen aus der Pfalz über England nach Nordamerika. „Pfälzer“ wurde dort lange zum Wort für deutsche Einwanderer überhaupt.</p></div>
+  </div>
+
+  <h3>10.4 Glaube und Frömmigkeit</h3>
+  <p>Die drei Konfessionen lebten nun in festen Grenzen nebeneinander. Innerhalb der Kirchen entstanden aber neue Strömungen:</p>
+  <ul>
+    <li><strong>Pietismus:</strong> Der lutherische Theologe <strong>Philipp Jakob Spener</strong> forderte 1675 in seiner Schrift <em>„Pia desideria“</em> („Fromme Wünsche“) einen lebendigen, persönlichen Glauben statt bloßer Lehrsätze. Gläubige trafen sich in kleinen Kreisen zum Bibellesen. In Halle gründete <strong>August Hermann Francke</strong> 1698 ein Waisenhaus, aus dem die Franckeschen Stiftungen mit Schulen und Werkstätten hervorgingen. Der <a class="g" href="#g-pietismus">Pietismus</a> prägte Bildung, Sozialfürsorge und das Pflichtbewusstsein der preußischen Beamten. 1722 entstand in der Oberlausitz die Herrnhuter Brüdergemeine des Grafen Zinzendorf.</li>
+    <li><strong>Katholische Barockfrömmigkeit:</strong> In den katholischen Ländern prägten Wallfahrten, Prozessionen, prächtige Kirchen und Klöster das religiöse Leben, etwa in Melk, Ottobeuren oder der Wieskirche.</li>
+    <li><strong>Das Ende der Hexenverfolgung:</strong> Nach 1680 gingen die Hexenprozesse deutlich zurück. Gelehrte wie Christian Thomasius kritisierten sie scharf. Die letzte Hinrichtung einer angeblichen Hexe in Franken fand 1749 in Würzburg statt.</li>
+  </ul>
+  <div class="box achtung"><div class="box-title">Die Lage der Juden</div>
+    <p>Juden lebten im Reich meist nur geduldet, gegen hohe Schutzgelder und unter vielen Einschränkungen. 1670 ließ Kaiser Leopold I. die Juden aus Wien vertreiben. Zugleich waren einige jüdische Bankiers als <a class="g" href="#g-hofjuden">Hofjuden</a> für die Fürsten unentbehrlich – etwa Samuel Oppenheimer, der die Türkenkriege des Kaisers mitfinanzierte. Ihre Stellung war jedoch gefährlich: Joseph Süß Oppenheimer, Finanzberater des Herzogs von Württemberg, wurde nach dessen Tod in einem antisemitisch geprägten Prozess verurteilt und 1738 in Stuttgart hingerichtet.</p>
+  </div>
+
+  <h3>10.5 Barock: Kunst der Pracht und der Vergänglichkeit</h3>
+  <p>Der <a class="g" href="#g-barock">Barock</a> war der Stil des Zeitalters. Er wollte die Sinne überwältigen – mit Bewegung, Licht, Gold und Farbe. Zugleich erinnerte er an die Vergänglichkeit allen Lebens (lateinisch <em>vanitas</em>), eine Erfahrung, die nach dem Dreißigjährigen Krieg tief saß.</p>
+  <div class="grid">
+    <div class="card"><h4>Architektur</h4><p>Schlösser und Kirchen wie die Würzburger Residenz, der Dresdner Zwinger (1711–1728), die Dresdner Frauenkirche (1726–1743), das Belvedere und die Karlskirche in Wien.</p></div>
+    <div class="card"><h4>Musik</h4><p><strong>Johann Sebastian Bach</strong> (Thomaskantor in Leipzig ab 1723) und <strong>Georg Friedrich Händel</strong>, der ab 1712 in London wirkte, wurden beide 1685 geboren. Hinzu kamen Komponisten wie Georg Philipp Telemann.</p></div>
+    <div class="card"><h4>Medien</h4><p>1650 erschien in Leipzig die erste Tageszeitung der Welt. Zeitungen, Flugblätter und gelehrte Zeitschriften verbreiteten Nachrichten und neue Ideen immer schneller.</p></div>
+  </div>
+
+  <h3>10.6 Die frühe Aufklärung</h3>
+  <p>Schon im Zeitalter des Barock begann eine neue Denkweise: die <a class="g" href="#g-aufklaerung">Aufklärung</a>. Sie setzte auf die menschliche Vernunft, auf Beobachtung und Erfahrung statt auf bloße Überlieferung.</p>
+  <ul>
+    <li><strong>Gottfried Wilhelm Leibniz</strong> (1646–1716) war Philosoph, Mathematiker, Jurist und Diplomat. Er entwickelte die Differentialrechnung und regte die Gründung der Berliner Akademie an. In seiner <em>„Theodizee“</em> (1710) erklärte er, Gott habe trotz allen Übels die „beste aller möglichen Welten“ geschaffen.</li>
+    <li><strong>Christian Thomasius</strong> kündigte 1687 in Leipzig als einer der Ersten eine Vorlesung in deutscher statt lateinischer Sprache an. In Halle, der 1694 gegründeten Reformuniversität, kämpfte er gegen Hexenprozesse und Folter.</li>
+    <li><strong>Christian Wolff</strong> machte die Philosophie der Vernunft in Deutschland bekannt. 1723 wurde er auf Druck der Pietisten aus Preußen vertrieben, 1740 holte ihn Friedrich II. zurück – ein Zeichen für den Wandel.</li>
+    <li>Die Universität Göttingen (1737 eröffnet) wurde zu einer der modernsten Hochschulen Europas.</li>
+    <li>Aus England kamen wichtige Anstöße: Isaac Newtons Naturgesetze (1687) und John Lockes Lehre von den natürlichen Rechten des Menschen.</li>
+  </ul>
+
+  <div class="box warum"><div class="box-title">1755: Das Erdbeben von Lissabon</div>
+    <p>Am 1. November 1755, dem Allerheiligentag, zerstörten ein schweres Erdbeben, eine Flutwelle und Brände die portugiesische Hauptstadt Lissabon. Schätzungen gehen von bis zu 60.000 Toten aus (die Angaben schwanken stark). Die Katastrophe erschütterte ganz Europa – auch geistig: Wie konnte ein gütiger Gott so viel Leid zulassen? War dies wirklich die „beste aller möglichen Welten“? Voltaire verspottete den Optimismus von Leibniz, und der junge Immanuel Kant versuchte, das Beben naturwissenschaftlich zu erklären. Die Frage nach der <a class="g" href="#g-theodizee">Theodizee</a> und der Wunsch, die Natur mit der Vernunft zu verstehen, prägten von nun an die Aufklärung.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Alltag:</strong> Über 80 % leben auf dem Land; östlich der Elbe herrscht die Gutsherrschaft. Die Pest verschwindet nach 1713 aus Mitteleuropa.</li>
+      <li><strong>Wanderungen:</strong> Hugenotten, Salzburger, Donauschwaben, Auswanderer nach Amerika.</li>
+      <li><strong>Glaube:</strong> Pietismus (Spener 1675, Francke 1698); Ende der Hexenverfolgung.</li>
+      <li><strong>Kultur:</strong> Barock (Bach, Händel, Residenzen) und frühe Aufklärung (Leibniz, Thomasius, Wolff).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 11 BILANZ ============ -->
+<section class="chapter" id="bilanz">
+  <div class="chap-head"><div class="chap-num">11</div><div>
+    <span class="span-chip">Zusammenfassung</span>
+    <h2>Bilanz: Was hat sich verändert?</h2>
+  </div></div>
+  <p class="lead">Vergleicht man das Reich von 1649 mit dem von 1755, wird deutlich, wie stark sich in einem Jahrhundert die Gewichte verschoben haben – im Reich wie in Europa.</p>
+
+  <div class="tablewrap"><table>
+    <tr><th>Bereich</th><th>Um 1649</th><th>Um 1755</th></tr>
+    <tr><td><strong>Bevölkerung</strong></td><td>Etwa 10–11 Millionen; viele Gebiete verwüstet und entvölkert.</td><td>Der Vorkriegsstand ist seit den 1720er-Jahren wieder erreicht; die Bevölkerung wächst weiter.</td></tr>
+    <tr><td><strong>Reich</strong></td><td>Neue Ordnung von 1648, Kaiser an den Reichstag gebunden.</td><td>Immerwährender Reichstag und Reichsgerichte sichern die kleinen Stände; das Reich ist eine Rechts- und Friedensordnung, aber politisch schwach.</td></tr>
+    <tr><td><strong>Mächte im Reich</strong></td><td>Viele mittlere Fürstentümer; Schweden und Frankreich mischen mit.</td><td>Zwei Großmächte – Österreich und Preußen – stehen sich gegenüber (Dualismus). Sachsen, Hannover und Bayern sind mit fremden Kronen oder dem Kaisertum verbunden.</td></tr>
+    <tr><td><strong>Staat</strong></td><td>Landstände bewilligen Steuern; kaum feste Verwaltung.</td><td>Absolutistisch regierte Territorien mit Beamten, regelmäßigen Steuern und stehenden Heeren.</td></tr>
+    <tr><td><strong>Europa</strong></td><td>Frankreich und Schweden sind Vormächte; Spanien geschwächt.</td><td>Gleichgewicht von fünf Großmächten: Frankreich, Großbritannien, Österreich, Russland und Preußen. Schweden und Spanien sind zweitrangig.</td></tr>
+    <tr><td><strong>Südosten</strong></td><td>Osmanen herrschen über den größten Teil Ungarns.</td><td>Ungarn ist habsburgisch; die osmanische Gefahr für Mitteleuropa ist gebannt.</td></tr>
+    <tr><td><strong>Denken und Kultur</strong></td><td>Glaubensstreit, Barockfrömmigkeit, Latein als Gelehrtensprache.</td><td>Pietismus und Aufklärung; Vernunft und Wissenschaft gewinnen an Gewicht; Deutsch wird Sprache der Universitäten.</td></tr>
+  </table></div>
+
+  <h3>Sechs große Entwicklungslinien</h3>
+  <div class="grid">
+    <div class="card"><h4>1. Vom Krieg zum Wiederaufbau</h4><p>Das Reich erholt sich langsam, aber nachhaltig von der Katastrophe des Dreißigjährigen Krieges.</p></div>
+    <div class="card"><h4>2. Vom Ständestaat zum Fürstenstaat</h4><p>Die Landesherren bündeln die Macht in ihren Händen; Verwaltung, Steuern und Heer werden staatlich.</p></div>
+    <div class="card"><h4>3. Vom Reich zu den Territorien</h4><p>Politische Macht entsteht in Wien, Berlin, Dresden und München – nicht beim Kaiser als Reichsoberhaupt.</p></div>
+    <div class="card"><h4>4. Von der Bedrohung zur Großmacht</h4><p>Österreich wehrt die Osmanen ab und wird zur Großmacht an der Donau; Preußen steigt mit seiner Armee auf.</p></div>
+    <div class="card"><h4>5. Vom Hegemoniestreben zum Gleichgewicht</h4><p>Die Vormacht Frankreichs wird gebrochen; Europa ordnet sich nach dem Gleichgewicht der Mächte.</p></div>
+    <div class="card"><h4>6. Vom Glauben zur Vernunft</h4><p>Neben barocker Frömmigkeit und Pietismus tritt die Aufklärung; Toleranz wird – oft aus Nützlichkeit – zur Staatspolitik.</p></div>
+  </div>
+
+  <div class="box kurz"><div class="box-title">Ausblick: Wie geht es nach 1755 weiter?</div>
+    <p>1756 vollzieht sich eine „Umkehrung der Bündnisse“: Österreich verbündet sich mit seinem alten Gegner Frankreich, Preußen mit Großbritannien. Im selben Jahr beginnt der <strong>Siebenjährige Krieg</strong> (1756–1763), in dem Preußen nur knapp überlebt und Schlesien endgültig behält. Danach folgt die Zeit des <strong>aufgeklärten Absolutismus</strong> unter Friedrich II., Maria Theresia und Joseph II. – bis die <strong>Französische Revolution</strong> von 1789 die alte Ordnung erschüttert und das Heilige Römische Reich 1806 endet.</p>
+  </div>
+</section>
+
+<!-- ============ 12 ZEITLEISTE ============ -->
+<section class="chapter" id="zeitleiste">
+  <div class="chap-head"><div class="chap-num">12</div><div>
+    <span class="span-chip">Zum Nachschlagen</span>
+    <h2>Zeitleiste 1649–1755</h2>
+  </div></div>
+  <p>Die wichtigsten Daten auf einen Blick. Mit den Schaltflächen lässt sich nach Themen filtern.</p>
+  <div class="filters" id="filters">
+    <button class="on" data-f="alle">Alle</button>
+    <button data-f="reich">Reich &amp; Politik</button>
+    <button data-f="religion">Religion &amp; Gesellschaft</button>
+    <button data-f="europa">Europa &amp; Welt</button>
+    <button data-f="krieg">Kriege</button>
+    <button data-f="kultur">Kultur &amp; Wissen</button>
+  </div>
+  <ol class="tl" id="timeline"></ol>
+</section>
+
+<!-- ============ 13 PERSONEN ============ -->
+<section class="chapter" id="personen">
+  <div class="chap-head"><div class="chap-num">13</div><div>
+    <span class="span-chip">Wer war wer?</span>
+    <h2>Wichtige Personen</h2>
+  </div></div>
+  <div class="people">
+    <div class="person"><div class="role">Kurfürst</div><h4>Friedrich Wilhelm, der Große Kurfürst</h4><div class="life">1620 – 1688</div><p>Baute Brandenburg nach dem Krieg mit stehendem Heer und Verwaltung neu auf; Sieger von Fehrbellin, Urheber des Edikts von Potsdam.</p></div>
+    <div class="person"><div class="role">König</div><h4>Jan III. Sobieski</h4><div class="life">1629 – 1696</div><p>König von Polen; führte 1683 das Entsatzheer am Kahlenberg mit an.</p></div>
+    <div class="person"><div class="role">Theologe</div><h4>Philipp Jakob Spener</h4><div class="life">1635 – 1705</div><p>Begründer des lutherischen Pietismus mit seiner Schrift „Pia desideria“ (1675).</p></div>
+    <div class="person"><div class="role">König</div><h4>Ludwig XIV. von Frankreich</h4><div class="life">1638 – 1715</div><p>Der „Sonnenkönig“; Vorbild des Absolutismus und Urheber zahlreicher Eroberungskriege gegen das Reich.</p></div>
+    <div class="person"><div class="role">Stadtkommandant</div><h4>Ernst Rüdiger von Starhemberg</h4><div class="life">1638 – 1701</div><p>Verteidigte Wien 1683 zwei Monate lang gegen das osmanische Heer.</p></div>
+    <div class="person"><div class="role">Kaiser</div><h4>Leopold I.</h4><div class="life">1640 – 1705</div><p>Kaiser ab 1658; führte das Reich durch die Kriege gegen Frankreich und die Osmanen. Unter ihm wurde Ungarn habsburgisch.</p></div>
+    <div class="person"><div class="role">Gelehrter</div><h4>Gottfried Wilhelm Leibniz</h4><div class="life">1646 – 1716</div><p>Universalgelehrter; Mitbegründer der Differentialrechnung, Anreger der Berliner Akademie, Verfasser der „Theodizee“.</p></div>
+    <div class="person"><div class="role">König</div><h4>Wilhelm III. von Oranien</h4><div class="life">1650 – 1702</div><p>Statthalter der Niederlande und ab 1689 König von England; Kopf der Bündnisse gegen Ludwig XIV.</p></div>
+    <div class="person"><div class="role">Herzogin</div><h4>Liselotte von der Pfalz</h4><div class="life">1652 – 1722</div><p>Pfälzische Prinzessin am französischen Hof; in ihrem Namen wurde der Pfälzische Erbfolgekrieg geführt. Ihre Briefe sind eine wichtige Quelle zum Leben in Versailles.</p></div>
+    <div class="person"><div class="role">Jurist</div><h4>Christian Thomasius</h4><div class="life">1655 – 1728</div><p>Wegbereiter der Aufklärung; lehrte auf Deutsch und bekämpfte Hexenprozesse und Folter.</p></div>
+    <div class="person"><div class="role">König</div><h4>Friedrich I. in Preußen</h4><div class="life">1657 – 1713</div><p>Krönte sich 1701 in Königsberg zum König; förderte Kunst, Wissenschaft und die Residenz Berlin.</p></div>
+    <div class="person"><div class="role">Kurfürst</div><h4>Max Emanuel von Bayern</h4><div class="life">1662 – 1726</div><p>Erfolgreicher Feldherr gegen die Osmanen; im Spanischen Erbfolgekrieg auf Seiten Frankreichs, verlor 1704 bei Höchstädt.</p></div>
+    <div class="person"><div class="role">Feldherr</div><h4>Prinz Eugen von Savoyen</h4><div class="life">1663 – 1736</div><p>Bedeutendster Feldherr Österreichs; Sieger von Zenta, Höchstädt und Belgrad, Bauherr des Belvedere.</p></div>
+    <div class="person"><div class="role">Theologe</div><h4>August Hermann Francke</h4><div class="life">1663 – 1727</div><p>Pietist und Pädagoge; gründete in Halle Waisenhaus, Schulen und die Franckeschen Stiftungen.</p></div>
+    <div class="person"><div class="role">Kurfürst und König</div><h4>August der Starke</h4><div class="life">1670 – 1733</div><p>Kurfürst von Sachsen und König von Polen; machte Dresden zur Barockmetropole und gründete die Porzellanmanufaktur Meißen.</p></div>
+    <div class="person"><div class="role">Zar</div><h4>Peter der Große</h4><div class="life">1672 – 1725</div><p>Modernisierte Russland nach westlichem Vorbild und machte es durch den Sieg über Schweden zur Großmacht.</p></div>
+    <div class="person"><div class="role">König</div><h4>Karl XII. von Schweden</h4><div class="life">1682 – 1718</div><p>Begabter Feldherr, unter dem Schweden nach der Niederlage bei Poltawa seine Großmachtstellung verlor.</p></div>
+    <div class="person"><div class="role">Kaiser</div><h4>Karl VI.</h4><div class="life">1685 – 1740</div><p>Letzter männlicher Habsburger; sicherte mit der Pragmatischen Sanktion die Erbfolge seiner Tochter Maria Theresia.</p></div>
+    <div class="person"><div class="role">Komponist</div><h4>Johann Sebastian Bach</h4><div class="life">1685 – 1750</div><p>Thomaskantor in Leipzig; einer der bedeutendsten Komponisten der Musikgeschichte.</p></div>
+    <div class="person"><div class="role">Komponist</div><h4>Georg Friedrich Händel</h4><div class="life">1685 – 1759</div><p>In Halle geboren, in London erfolgreich; Opern, Oratorien wie der „Messiah“ und die „Wassermusik“.</p></div>
+    <div class="person"><div class="role">König</div><h4>Friedrich Wilhelm I.</h4><div class="life">1688 – 1740</div><p>Der „Soldatenkönig“; verdoppelte die preußische Armee und schuf eine sparsame, straffe Verwaltung.</p></div>
+    <div class="person"><div class="role">König</div><h4>Friedrich II. (der Große)</h4><div class="life">1712 – 1786</div><p>Aufgeklärter Herrscher und rücksichtsloser Machtpolitiker; eroberte 1740–1742 Schlesien.</p></div>
+    <div class="person"><div class="role">Herrscherin</div><h4>Maria Theresia</h4><div class="life">1717 – 1780</div><p>Behauptete 1740–1748 das habsburgische Erbe und reformierte Staat und Heer. Ihr Mann Franz I. wurde 1745 Kaiser.</p></div>
+  </div>
+</section>
+
+<!-- ============ 14 GLOSSAR ============ -->
+<section class="chapter" id="glossar">
+  <div class="chap-head"><div class="chap-num">14</div><div>
+    <span class="span-chip">Wichtige Begriffe</span>
+    <h2>Glossar</h2>
+  </div></div>
+  <dl class="gloss" id="gloss">
+    <dt id="g-absolutismus">Absolutismus</dt><dd>Herrschaftsform, in der der Fürst die ganze Staatsgewalt beansprucht, ohne an die Mitwirkung der Stände gebunden zu sein. Der Begriff entstand erst im 19. Jahrhundert.</dd>
+    <dt id="g-akzise">Akzise</dt><dd>Verbrauchssteuer auf Waren wie Bier, Fleisch oder Getreide, die vor allem in den Städten erhoben wurde, etwa in Brandenburg-Preußen.</dd>
+    <dt id="g-aufklaerung">Aufklärung</dt><dd>Geistige Bewegung des 17. und 18. Jahrhunderts, die auf Vernunft, Wissenschaft und Kritik statt auf bloße Überlieferung und Autorität setzte.</dd>
+    <dt id="g-barock">Barock</dt><dd>Kunststil von etwa 1600 bis 1750, geprägt von Pracht, Bewegung, Licht und Farbe; zugleich Ausdruck des Gedankens der Vergänglichkeit.</dd>
+    <dt id="g-dualismus">Dualismus</dt><dd>Hier: die Rivalität der beiden deutschen Großmächte Österreich und Preußen von 1740 bis 1866.</dd>
+    <dt id="g-erbfolgekrieg">Erbfolgekrieg</dt><dd>Krieg um das Erbe eines Herrscherhauses, wenn kein eindeutiger Erbe vorhanden war oder mehrere Mächte Ansprüche erhoben.</dd>
+    <dt id="g-gleichgewicht">Gleichgewicht der Mächte</dt><dd>Grundsatz der europäischen Politik, nach dem keine einzelne Macht so stark werden sollte, dass sie die anderen beherrscht.</dd>
+    <dt id="g-gutsherrschaft">Gutsherrschaft</dt><dd>Agrarordnung östlich der Elbe: Der adlige Gutsherr war zugleich Grund-, Gerichts- und Polizeiherr; die Bauern mussten auf seinen Feldern Frondienste leisten.</dd>
+    <dt id="g-hofgesellschaft">Hofgesellschaft</dt><dd>Die Gemeinschaft von Adligen, Beamten und Bediensteten am Hof eines Fürsten, mit strenger Rangordnung und festen Zeremonien.</dd>
+    <dt id="g-hofjuden">Hofjuden</dt><dd>Jüdische Kaufleute und Bankiers, die Fürsten mit Krediten, Waren und Heeresbedarf versorgten. Sie waren einflussreich, aber rechtlich ungeschützt.</dd>
+    <dt id="g-hugenotten">Hugenotten</dt><dd>Französische Protestanten (Calvinisten). Nach 1685 flohen viele von ihnen aus Frankreich, unter anderem nach Brandenburg-Preußen.</dd>
+    <dt id="g-kabinettskrieg">Kabinettskrieg</dt><dd>Krieg, den Fürsten und ihre Ratgeber („Kabinett“) aus machtpolitischen Gründen mit stehenden Heeren führten – meist um Erbe, Land oder Ansehen.</dd>
+    <dt id="g-kameralismus">Kameralismus</dt><dd>Deutsche Form des Merkantilismus: Lehre von der Verwaltung und Wirtschaftsförderung des Staates mit dem Ziel einer gefüllten Staatskasse („Kammer“).</dd>
+    <dt id="g-kantonsystem">Kantonsystem</dt><dd>Preußisches Rekrutierungssystem ab 1733: Jedes Regiment erhielt einen Bezirk (Kanton), aus dem es junge Männer zum Militärdienst holen konnte.</dd>
+    <dt id="g-kurfuersten">Kurfürsten</dt><dd>Die Fürsten, die den römisch-deutschen König und Kaiser wählten; 1648 waren es acht, ab 1692 neun.</dd>
+    <dt id="g-landstaende">Landstände</dt><dd>Vertretung von Adel, Geistlichkeit und Städten in einem Territorium. Sie mussten traditionell neuen Steuern zustimmen.</dd>
+    <dt id="g-manufaktur">Manufaktur</dt><dd>Großbetrieb, in dem viele Arbeiter arbeitsteilig, aber überwiegend von Hand Waren herstellten – eine Vorstufe der Fabrik.</dd>
+    <dt id="g-merkantilismus">Merkantilismus</dt><dd>Wirtschaftspolitik, die den Export fördert, Importe durch Zölle erschwert und so Geld ins eigene Land bringen soll.</dd>
+    <dt id="g-militaergrenze">Militärgrenze</dt><dd>Befestigter Grenzstreifen der Habsburger zum Osmanischen Reich, in dem Wehrbauern Land erhielten und dafür zum Grenzschutz verpflichtet waren.</dd>
+    <dt id="g-personalunion">Personalunion</dt><dd>Zwei selbstständige Staaten haben denselben Herrscher, bleiben aber getrennt, etwa Hannover und Großbritannien (1714–1837).</dd>
+    <dt id="g-peuplierung">Peuplierung</dt><dd>Gezielte Ansiedlung von Menschen durch den Staat, um entvölkerte Gebiete wieder zu beleben und die Steuerkraft zu erhöhen.</dd>
+    <dt id="g-pietismus">Pietismus</dt><dd>Protestantische Frömmigkeitsbewegung ab etwa 1670, die persönlichen Glauben, Bibellesen und tätige Nächstenliebe betonte.</dd>
+    <dt id="g-pragmatische">Pragmatische Sanktion</dt><dd>Hausgesetz Karls VI. von 1713: Die habsburgischen Länder sollten unteilbar sein und notfalls an eine Tochter vererbt werden.</dd>
+    <dt id="g-reichskreise">Reichskreise</dt><dd>Regionale Zusammenschlüsse der Reichsstände, die für Landfrieden, Münzwesen und das Aufstellen von Reichstruppen zuständig waren.</dd>
+    <dt id="g-reichstag">Reichstag (Immerwährender)</dt><dd>Versammlung der Reichsstände; ab 1663 tagte er ständig in Regensburg als Gesandtenkongress bis 1806.</dd>
+    <dt id="g-residenz">Residenz / Residenzstadt</dt><dd>Sitz eines Fürsten und seines Hofes; oft eine planmäßig angelegte Stadt rund um ein Schloss.</dd>
+    <dt id="g-reunionen">Reunionen</dt><dd>„Wiedervereinigungen“: französische Annexionen von Reichsgebieten ab 1679, die mit angeblichen alten Rechtsansprüchen begründet wurden.</dd>
+    <dt id="g-souveraenitaet">Souveränität</dt><dd>Höchste, von niemandem abgeleitete Herrschaftsgewalt; ein souveräner Herrscher ist keinem Lehnsherrn untergeordnet.</dd>
+    <dt id="g-stehendes-heer">Stehendes Heer</dt><dd>Dauerhaft unterhaltene Armee eines Fürsten, auch in Friedenszeiten, im Gegensatz zu nur für einen Krieg angeworbenen Söldnern.</dd>
+    <dt id="g-subsidien">Subsidien</dt><dd>Zahlungen einer Macht an eine andere, meist für die Bereitstellung von Truppen oder für ein Bündnis.</dd>
+    <dt id="g-theodizee">Theodizee</dt><dd>„Rechtfertigung Gottes“: die Frage, wie ein allmächtiger und gütiger Gott das Leid in der Welt zulassen kann. Der Begriff stammt von Leibniz.</dd>
+    <dt id="g-toleranz">Toleranz</dt><dd>Duldung anderer Glaubensrichtungen. Im 17. und 18. Jahrhundert meist begrenzt und oft aus wirtschaftlichen Gründen gewährt.</dd>
+  </dl>
+</section>
+
+<!-- ============ 15 QUELLEN ============ -->
+<section class="chapter" id="quellen">
+  <div class="chap-head"><div class="chap-num">15</div><div>
+    <span class="span-chip">Zum Weiterlesen</span>
+    <h2>Quellen &amp; Weiterlesen</h2>
+  </div></div>
+  <p>Dieses Dokument fasst den Forschungsstand in eigenen Worten zusammen. Für Zahlen (z. B. Heeresstärken, Bevölkerung, Opfer) gibt es oft nur Schätzungen; die hier genannten Werte sind gängige Größenordnungen aus den folgenden Quellen.</p>
+  <ul class="sources">
+    <li><a href="https://germanhistorydocs.org/de/das-heilige-roemische-reich-1648-1815/einleitung">German History in Documents and Images: Das Heilige Römische Reich (1648–1815), Einleitung</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/N%C3%BCrnberger_Exekutionstag">Wikipedia: Nürnberger Exekutionstag</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Immerw%C3%A4hrender_Reichstag">Wikipedia: Immerwährender Reichstag</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Reunionspolitik">Wikipedia: Reunionspolitik</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Pf%C3%A4lzischer_Erbfolgekrieg">Wikipedia: Pfälzischer Erbfolgekrieg</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Spanischer_Erbfolgekrieg">Wikipedia: Spanischer Erbfolgekrieg</a></li>
+    <li><a href="https://www.geschichtewiki.wien.gv.at/Zweite_T%C3%BCrkenbelagerung_(1683)">Wien Geschichte Wiki: Zweite Türkenbelagerung (1683)</a></li>
+    <li><a href="https://www.geschichtewiki.wien.gv.at/Eugen_von_Savoyen">Wien Geschichte Wiki: Eugen von Savoyen</a></li>
+    <li><a href="https://www.geschichtewiki.wien.gv.at/Pest">Wien Geschichte Wiki: Pest</a></li>
+    <li><a href="https://kulturstiftung.org/zeitstrahl/friede-von-karlowitz">Kulturstiftung der deutschen Vertriebenen: Friede von Karlowitz</a></li>
+    <li><a href="https://kulturstiftung.org/zeitstrahl/der-friede-von-passarowitz">Kulturstiftung der deutschen Vertriebenen: Der Friede von Passarowitz</a></li>
+    <li><a href="https://www.oesta.gv.at/veroeffentlichungen/archivale-des-monats/archivale-des-monats-august-2020.html">Österreichisches Staatsarchiv: Kolonisten – Ansiedlungspolitik im Südosten Europas</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Gro%C3%9Fer_Nordischer_Krieg">Wikipedia: Großer Nordischer Krieg</a></li>
+    <li><a href="https://www.dresden-und-sachsen.de/geschichte/08_august_der_starke.htm">Dresden und Sachsen: August der Starke</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Friedrich_Wilhelm_(Brandenburg)">Wikipedia: Friedrich Wilhelm (Brandenburg)</a></li>
+    <li><a href="https://www.hugenottenmuseum.de/hugenotten/edikte/04-a-edikt-potsdam-1685.pdf">Hugenottenmuseum Berlin: Das Edikt von Potsdam vom 29. Oktober 1685 (PDF)</a></li>
+    <li><a href="https://www.preussenchronik.de/episode_jsp/key=chronologie_002020.html">rbb Preußen-Chronik: Die Königskrönung 1701</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Friedrich_Wilhelm_I._(Preu%C3%9Fen)">Wikipedia: Friedrich Wilhelm I. (Preußen)</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/%C3%96sterreichischer_Erbfolgekrieg">Wikipedia: Österreichischer Erbfolgekrieg</a></li>
+    <li><a href="https://www.geschichtewiki.wien.gv.at/Maria_Theresia">Wien Geschichte Wiki: Maria Theresia</a></li>
+    <li><a href="https://de.wikipedia.org/wiki/Pietismus">Wikipedia: Pietismus</a></li>
+    <li><a href="https://www.catalogus-professorum-halensis.de/thomasius-christian.html">Catalogus Professorum Halensis: Christian Thomasius</a></li>
+    <li><a href="https://wuerzburgwiki.de/wiki/Maria_Renata_Singer_von_Mossau">WürzburgWiki: Maria Renata Singer von Mossau</a></li>
+    <li><a href="https://www.domradio.de/artikel/das-erdbeben-von-lissabon-allerheiligen-1755">domradio.de: Das Erdbeben von Lissabon an Allerheiligen 1755</a></li>
+  </ul>
+  <h3>Bücher zum Vertiefen</h3>
+  <ul>
+    <li>Heinz Schilling: <em>Höfe und Allianzen. Deutschland 1648–1763</em>.</li>
+    <li>Joachim Whaley: <em>Das Heilige Römische Reich deutscher Nation und seine Territorien</em>, Bd. 2 (1648–1806).</li>
+    <li>Christopher Clark: <em>Preußen. Aufstieg und Niedergang 1600–1947</em>.</li>
+    <li>Barbara Stollberg-Rilinger: <em>Maria Theresia. Die Kaiserin in ihrer Zeit</em>.</li>
+    <li>Barbara Stollberg-Rilinger: <em>Europa im Jahrhundert der Aufklärung</em> (kurz und gut lesbar).</li>
+    <li>Heinz Duchhardt: <em>Barock und Aufklärung</em> (Oldenbourg Grundriss der Geschichte).</li>
+  </ul>
+</section>
+
+</main>
+</div>
+
+<footer>Deutsche und europäische Geschichte 1649–1755 · Zusammengestellt als Lern- und Überblicksdokument · Stand: Oktober 2026<span class="ph-foot"> · <a href="index.html">Der Philosopher</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></footer>
+<button id="top" aria-label="Nach oben">↑</button>
+
+<script>
+(function(){
+  // ---- Timeline data ----
+  var T = [
+    ["1649", "europa", "In England wird König Karl I. hingerichtet; das Land wird Republik."],
+    ["1649/50", "reich", "Der Nürnberger Exekutionstag regelt Truppenabzug und Zahlungen nach dem Westfälischen Frieden."],
+    ["1650", "kultur", "In Leipzig erscheint die erste Tageszeitung der Welt."],
+    ["1653", "reich", "Brandenburgischer Landtagsrezess: Geld für das stehende Heer gegen Bestätigung der Adelsrechte."],
+    ["1655–1660", "krieg", "Zweiter Nordischer Krieg zwischen Schweden und Polen."],
+    ["1657", "reich", "Vertrag von Wehlau: Polen erkennt die Souveränität Brandenburgs im Herzogtum Preußen an."],
+    ["1658", "reich", "Leopold I. wird Kaiser; mehrere Reichsfürsten gründen mit Frankreich den Rheinbund."],
+    ["1659", "europa", "Der Pyrenäenfrieden beendet den Krieg zwischen Frankreich und Spanien."],
+    ["1660", "europa", "Frieden von Oliva; in England wird die Monarchie wiederhergestellt."],
+    ["1661", "europa", "Ludwig XIV. übernimmt in Frankreich selbst die Regierung."],
+    ["1663", "reich", "Eröffnung des Immerwährenden Reichstags in Regensburg (20. Januar)."],
+    ["1664", "krieg", "Sieg über die Osmanen bei Mogersdorf (St. Gotthard); Frieden von Eisenburg."],
+    ["1667–1668", "krieg", "Devolutionskrieg Frankreichs um die Spanischen Niederlande."],
+    ["1670", "religion", "Kaiser Leopold I. lässt die Juden aus Wien vertreiben."],
+    ["1671", "religion", "Brandenburg nimmt 50 aus Wien vertriebene jüdische Familien auf."],
+    ["1672–1679", "krieg", "Holländischer Krieg; ab 1674 führt das Reich Krieg gegen Frankreich."],
+    ["1675", "krieg", "Brandenburg besiegt die Schweden bei Fehrbellin (28. Juni)."],
+    ["1675", "religion", "Philipp Jakob Spener veröffentlicht die „Pia desideria“ – Beginn des Pietismus."],
+    ["1679", "religion", "Schwere Pestepidemie in Wien."],
+    ["1679/80", "reich", "Französische Reunionskammern sprechen Reichsgebiete Frankreich zu."],
+    ["1681", "reich", "Frankreich besetzt Straßburg (30. September); Reichskriegsverfassung."],
+    ["1682", "europa", "Ludwig XIV. verlegt seinen Hof nach Versailles."],
+    ["1683", "krieg", "Zweite Belagerung Wiens durch die Osmanen; Sieg am Kahlenberg (12. September)."],
+    ["1683", "religion", "Auswanderer aus Krefeld gründen Germantown in Pennsylvania."],
+    ["1684", "reich", "Regensburger Stillstand mit Frankreich; Heilige Liga gegen die Osmanen."],
+    ["1685", "religion", "Edikt von Fontainebleau in Frankreich; Edikt von Potsdam in Brandenburg (29. Oktober)."],
+    ["1686", "krieg", "Rückeroberung von Ofen (Buda) nach 145 Jahren osmanischer Herrschaft."],
+    ["1687", "kultur", "Isaac Newton veröffentlicht seine „Principia“; Christian Thomasius kündigt eine Vorlesung auf Deutsch an."],
+    ["1688–1697", "krieg", "Pfälzischer Erbfolgekrieg; 1689 Verwüstung der Pfalz, 1693 Zerstörung Heidelbergs."],
+    ["1688/89", "europa", "Glorreiche Revolution in England; 1689 Bill of Rights."],
+    ["1692", "reich", "Hannover erhält die neunte Kurwürde."],
+    ["1694", "kultur", "Gründung der Universität Halle."],
+    ["1697", "krieg", "Sieg Prinz Eugens bei Zenta; Frieden von Rijswijk."],
+    ["1697", "europa", "August der Starke wird König von Polen."],
+    ["1698", "religion", "August Hermann Francke gründet in Halle sein Waisenhaus."],
+    ["1699", "krieg", "Frieden von Karlowitz: Ungarn und Siebenbürgen fallen an Habsburg."],
+    ["1700", "kultur", "Gründung der Sozietät der Wissenschaften in Berlin auf Anregung von Leibniz."],
+    ["1700", "krieg", "Beginn des Großen Nordischen Krieges; Schlacht bei Narva."],
+    ["1701", "reich", "Friedrich I. krönt sich in Königsberg zum „König in Preußen“ (18. Januar)."],
+    ["1701–1714", "krieg", "Spanischer Erbfolgekrieg."],
+    ["1703", "europa", "Peter der Große gründet Sankt Petersburg."],
+    ["1704", "krieg", "Schlacht bei Höchstädt (13. August): Sieg über Frankreich und Bayern."],
+    ["1705", "religion", "Sendlinger Mordweihnacht: Ein bayerischer Bauernaufstand wird blutig niedergeschlagen."],
+    ["1707", "europa", "England und Schottland vereinigen sich zu Großbritannien."],
+    ["1708–1713", "religion", "Pest im Ostseeraum; in Ostpreußen stirbt etwa ein Drittel der Bevölkerung."],
+    ["1709", "krieg", "Schlacht bei Poltawa: Russland besiegt Schweden (8. Juli)."],
+    ["1709", "religion", "Extrem kalter Winter und Hungersnot; Tausende Pfälzer wandern nach Amerika aus."],
+    ["1710", "kultur", "Gründung der Porzellanmanufaktur Meißen; Leibniz veröffentlicht die „Theodizee“."],
+    ["1711", "reich", "Karl VI. wird Kaiser; Frieden von Sathmar mit dem ungarischen Adel."],
+    ["1713", "reich", "Pragmatische Sanktion; Friedrich Wilhelm I. wird König in Preußen."],
+    ["1713", "religion", "Letzte große Pestepidemie in Mitteleuropa."],
+    ["1713/14", "europa", "Frieden von Utrecht, Rastatt und Baden beenden den Spanischen Erbfolgekrieg."],
+    ["1714", "europa", "Kurfürst Georg Ludwig von Hannover wird König von Großbritannien."],
+    ["1716–1718", "krieg", "Türkenkrieg: Siege bei Peterwardein und Belgrad; Frieden von Passarowitz (1718)."],
+    ["1717", "religion", "Preußen ordnet eine allgemeine Schulpflicht an."],
+    ["1720", "europa", "Frieden von Stockholm: Preußen erhält Vorpommern mit Stettin."],
+    ["1721", "europa", "Frieden von Nystad: Russland wird führende Macht an der Ostsee."],
+    ["1722", "religion", "Gründung der Herrnhuter Brüdergemeine in der Oberlausitz."],
+    ["1722/23", "reich", "Friedrich Wilhelm I. schafft das Generaldirektorium."],
+    ["1723", "kultur", "Bach wird Thomaskantor in Leipzig; Christian Wolff wird aus Preußen vertrieben."],
+    ["1731/32", "religion", "Vertreibung der Salzburger Protestanten; rund 15.000 finden in Preußen Aufnahme."],
+    ["1733", "reich", "Einführung des Kantonsystems in Preußen."],
+    ["1733–1735", "krieg", "Polnischer Thronfolgekrieg; August III. von Sachsen wird König von Polen."],
+    ["1737", "kultur", "Feierliche Eröffnung der Universität Göttingen."],
+    ["1737–1739", "krieg", "Türkenkrieg; im Frieden von Belgrad (1739) verliert Österreich Belgrad wieder."],
+    ["1738", "religion", "Hinrichtung von Joseph Süß Oppenheimer in Stuttgart nach einem antisemitischen Prozess."],
+    ["1740", "reich", "Friedrich II. wird König in Preußen; nach dem Tod Karls VI. übernimmt Maria Theresia die Herrschaft."],
+    ["1740", "krieg", "Preußen marschiert in Schlesien ein (16. Dezember)."],
+    ["1741", "krieg", "Schlacht bei Mollwitz; Beginn des Österreichischen Erbfolgekrieges."],
+    ["1742", "reich", "Karl VII. aus Bayern wird Kaiser; Frieden von Breslau und Berlin: Schlesien wird preußisch."],
+    ["1742", "kultur", "Uraufführung von Händels „Messiah“ in Dublin."],
+    ["1744–1745", "krieg", "Zweiter Schlesischer Krieg; Frieden von Dresden (25. Dezember 1745)."],
+    ["1745", "reich", "Franz I. Stephan, der Ehemann Maria Theresias, wird Kaiser."],
+    ["1745–1747", "kultur", "Bau von Schloss Sanssouci in Potsdam."],
+    ["1748", "europa", "Der Frieden von Aachen beendet den Österreichischen Erbfolgekrieg."],
+    ["1749", "reich", "Beginn der Staatsreform unter Graf Haugwitz in Österreich."],
+    ["1749", "religion", "In Würzburg wird Maria Renata Singer hingerichtet – die letzte Hexenhinrichtung in Franken."],
+    ["1750", "kultur", "Tod Johann Sebastian Bachs; Voltaire kommt an den Hof Friedrichs II."],
+    ["1753", "reich", "Kaunitz wird österreichischer Staatskanzler."],
+    ["1755", "europa", "Erdbeben von Lissabon (1. November) erschüttert Europa."]
+  ];
+  var names = {reich:"Reich",religion:"Religion & Gesellschaft",europa:"Europa & Welt",krieg:"Krieg",kultur:"Kultur & Wissen"};
+  var tl = document.getElementById("timeline");
+  T.forEach(function(e){
+    var li = document.createElement("li");
+    li.className = e[1];
+    li.innerHTML = '<span class="y">'+e[0]+'</span><span class="tag '+e[1]+'">'+names[e[1]]+'</span><br>'+e[2];
+    tl.appendChild(li);
+  });
+  document.getElementById("filters").addEventListener("click", function(ev){
+    var b = ev.target.closest("button"); if(!b) return;
+    var f = b.getAttribute("data-f");
+    this.querySelectorAll("button").forEach(function(x){x.classList.toggle("on", x===b);});
+    tl.querySelectorAll("li").forEach(function(li){
+      li.classList.toggle("hide", f!=="alle" && !li.classList.contains(f));
+    });
+  });
+
+  // ---- Progress bar & top button ----
+  var prog = document.getElementById("progress"), topBtn = document.getElementById("top");
+  function onScroll(){
+    var h = document.documentElement;
+    var p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+    prog.style.width = (p*100) + "%";
+    topBtn.classList.toggle("show", h.scrollTop > 600);
+  }
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+  topBtn.addEventListener("click", function(){ window.scrollTo({top:0}); });
+
+  // ---- Active TOC ----
+  var links = {};
+  document.querySelectorAll("nav.toc a").forEach(function(a){ links[a.getAttribute("href").slice(1)] = a; });
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          Object.keys(links).forEach(function(k){ links[k].classList.remove("active"); });
+          var a = links[en.target.id]; if(a) a.classList.add("active");
+        }
+      });
+    }, {rootMargin:"-30% 0px -60% 0px"});
+    document.querySelectorAll("section.chapter").forEach(function(s){ io.observe(s); });
+  }
+
+  // ---- Mobile TOC toggle ----
+  var toc = document.getElementById("toc"), tt = document.getElementById("tocToggle");
+  tt.addEventListener("click", function(){
+    var open = toc.classList.toggle("open"); tt.setAttribute("aria-expanded", open);
+  });
+  toc.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toc.classList.remove("open"); tt.setAttribute("aria-expanded", false); }); });
+
+  // ---- Theme toggle ----
+  var root = document.documentElement;
+  document.getElementById("themeBtn").addEventListener("click", function(){
+    var dark = root.getAttribute("data-theme") ? root.getAttribute("data-theme")==="dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    root.setAttribute("data-theme", dark ? "light" : "dark");
+  });
+
+  // ---- Glossary links: tooltip with definition ----
+  document.querySelectorAll("a.g").forEach(function(a){
+    a.title = (function(){ var dt=document.querySelector(a.getAttribute("href")); return dt && dt.nextElementSibling ? dt.nextElementSibling.textContent : ""; })();
+  });
+})();
+</script>
+</body>
+</html>

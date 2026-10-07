@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zinsen als Lenker der Wirtschaft 2008 bis 2026 – Deutsche und europäische Wirtschaftsgeschichte</title>
+<meta name="description" content="Lern- und Überblicksdokument zur Rolle der Zinsen in Wirtschaft und Gesellschaft: Grundlagen, Wirkungsweise der Geldpolitik, Zusammenhang mit Inflation, historische Lehrstücke, unterschiedliche Leitzinsen in Europa und den USA, die Null- und Negativzinsjahre in Deutschland, Zinsschock 2022/23, die neue Zinswende 2026 und Szenarien für die kommenden Jahre.">
+<style>
+:root{
+  --bg:#f1f2f4; --paper:#ffffff; --ink:#16191f; --muted:#555b66; --line:#d3d7de;
+  --accent:#1f3a5f; --accent-soft:#e6ebf2;
+  --c1:#24566b; --c2:#5a6630; --c3:#4a3f6b; --c4:#7a1e2b; --c5:#2f5a3f;
+  --c1-soft:#e8f0f2; --c2-soft:#eff1e6; --c3-soft:#eeecf3; --c4-soft:#f4e9eb; --c5-soft:#e9f1ec;
+  --shadow:none;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#11141a; --paper:#191d24; --ink:#e4e7ec; --muted:#9aa1ad; --line:#323844;
+    --accent:#8fb3d9; --accent-soft:#1d2836;
+    --c1:#7fb6c6; --c2:#b8c37f; --c3:#b0a5d6; --c4:#e08a97; --c5:#8fc4a0;
+    --c1-soft:#172429; --c2-soft:#22251a; --c3-soft:#211e2b; --c4-soft:#2b1b1f; --c5-soft:#18251d;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+    --bg:#11141a; --paper:#191d24; --ink:#e4e7ec; --muted:#9aa1ad; --line:#323844;
+    --accent:#8fb3d9; --accent-soft:#1d2836;
+    --c1:#7fb6c6; --c2:#b8c37f; --c3:#b0a5d6; --c4:#e08a97; --c5:#8fc4a0;
+    --c1-soft:#172429; --c2-soft:#22251a; --c3-soft:#211e2b; --c4-soft:#2b1b1f; --c5-soft:#18251d;
+    --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;color:var(--ink)}
+h2{font-size:1.85rem;margin:0 0 .4rem;font-weight:600;letter-spacing:.005em}
+h3{font-size:1.32rem;margin:2.2rem 0 .7rem;font-weight:600;padding-bottom:.3rem;border-bottom:1px solid var(--line)}
+h4{font-size:1.08rem;margin:1.2rem 0 .3rem}
+p{margin:.6rem 0}
+ul,ol{padding-left:1.3rem}
+li{margin:.25rem 0}
+strong{font-weight:650}
+
+/* progress */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:50;transition:width .1s}
+
+/* hero */
+.hero{background:#14213a;color:#eef1f5;padding:60px 20px 50px;text-align:center;border-bottom:4px double #8a97ab}
+.hero .kicker{font-family:var(--sans);letter-spacing:.22em;text-transform:uppercase;font-size:.75rem;opacity:.8}
+.hero h1{color:#fff;font-size:clamp(2rem,5vw,3.1rem);font-weight:600;margin:.5rem 0 .8rem}
+.hero p{max-width:720px;margin:0 auto;font-size:1.08rem;opacity:.95}
+.hero .years{font-family:var(--serif);font-size:clamp(1.3rem,3.6vw,1.8rem);letter-spacing:.12em;margin:22px auto 0;padding-top:14px;border-top:1px solid rgba(238,241,245,.35);display:inline-block;opacity:.95}
+
+/* layout */
+.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:36px;max-width:1240px;margin:0 auto;padding:28px 20px 80px}
+nav.toc{font-family:var(--sans);position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:0;padding:16px 14px;box-shadow:var(--shadow);font-size:.92rem}
+nav.toc .toc-title{font-family:var(--sans);font-weight:700;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 10px 8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+nav.toc ol{list-style:none;margin:0;padding:0}
+nav.toc a{display:block;padding:5px 8px;border-radius:0;color:var(--ink);text-decoration:none;line-height:1.35}
+nav.toc a:hover{background:var(--accent-soft)}
+nav.toc a.active{background:var(--accent-soft);color:var(--accent);font-weight:600;box-shadow:inset 3px 0 0 var(--accent)}
+nav.toc .num{display:inline-block;width:1.6em;color:var(--muted)}
+.theme-btn{font-family:var(--sans);margin:12px 6px 2px;font:inherit;font-size:.85rem;background:none;border:1px solid var(--line);color:var(--muted);padding:5px 10px;border-radius:0;cursor:pointer}
+.toc-toggle{display:none}
+main{min-width:0}
+section.chapter{background:var(--paper);border:1px solid var(--line);border-radius:0;padding:34px 38px;margin-bottom:28px;box-shadow:var(--shadow)}
+.chap-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.chap-num{flex:0 0 auto;width:46px;height:46px;border-radius:0;background:transparent;color:var(--accent);border:1.5px solid var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:1.35rem;font-weight:700}
+.span-chip{display:inline-block;font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:0;border-radius:0;background:none;color:var(--muted);margin-bottom:4px}
+.lead{font-size:1.1rem;color:var(--muted);font-style:italic}
+
+/* boxes */
+.box{border-radius:0;padding:14px 18px;margin:20px 0;border:1px solid var(--line);border-left:4px solid}
+.box .box-title{font-family:var(--sans);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.box.kurz{background:var(--c1-soft);border-color:var(--c1)}
+.box.kurz .box-title{color:var(--c1)}
+.box.merke{background:var(--c5-soft);border-color:var(--c5)}
+.box.merke .box-title{color:var(--c5)}
+.box.warum{background:var(--c3-soft);border-color:var(--c3)}
+.box.warum .box-title{color:var(--c3)}
+.box.achtung{background:var(--c2-soft);border-color:var(--c2)}
+.box.achtung .box-title{color:var(--c2)}
+.box ul{margin:.3rem 0}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:14px 0}
+.card{background:var(--bg);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:0;padding:14px 16px}
+.card h4{margin:.1rem 0 .3rem;font-weight:600}
+.card .yr{font-family:var(--serif);font-weight:700;color:var(--accent);font-size:1.05rem}
+.card p{margin:.3rem 0;font-size:.95rem}
+
+/* era bar */
+.erabar{font-family:var(--sans);display:flex;border-radius:0;overflow:hidden;margin:18px 0 6px;font-size:.78rem;color:#fff;font-weight:600;min-height:58px}
+.erabar div{padding:8px 8px;display:flex;flex-direction:column;justify-content:center;line-height:1.2}
+.erabar small{font-weight:400;opacity:.9}
+.era-a{background:#24566b;flex:6}
+.era-b{background:#4a3f6b;flex:8}
+.era-c{background:#5a6630;flex:2}
+.era-d{background:#7a1e2b;flex:2.3}
+.erascale{font-family:var(--sans);display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}
+
+/* chain: vertical numbered sequence */
+.chain{list-style:none;margin:18px 0 20px;padding:0;position:relative;border-top:1px solid var(--line)}
+.chain::before{content:"";position:absolute;left:17px;top:22px;bottom:22px;width:1px;background:var(--accent);opacity:.55}
+.chain li{position:relative;display:grid;grid-template-columns:36px minmax(170px,250px) 1fr;align-items:center;gap:18px;margin:0;padding:10px 0;border-bottom:1px solid var(--line)}
+.chain .n{position:relative;z-index:1;width:36px;height:36px;display:grid;place-items:center;background:var(--paper);border:1.5px solid var(--accent);color:var(--accent);font-family:var(--sans);font-size:.85rem;font-weight:700}
+.chain b{font-family:var(--serif);font-weight:600;color:var(--accent);font-size:1.02rem}
+.chain .desc{color:var(--muted);font-size:.97rem}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:.95rem;min-width:540px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-family:var(--serif);font-size:1rem;font-weight:600;border-bottom:1px solid var(--ink)}
+tr:last-child td{border-bottom:none}
+
+/* phases */
+.phase{border:1px solid var(--line);border-left:4px solid var(--c4);border-radius:0;margin:16px 0;overflow:hidden}
+.phase-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;align-items:baseline;padding:12px 18px;background:var(--c4-soft);border-bottom:1px solid var(--line)}
+.phase-head h4{margin:0;font-size:1.12rem;font-weight:600}
+.phase-head .yr{font-family:var(--serif);font-weight:700;color:var(--c4)}
+.phase-body{padding:6px 18px 12px}
+.mini-tl{list-style:none;padding:0;margin:8px 0}
+.mini-tl li{display:grid;grid-template-columns:108px 1fr;gap:12px;padding:5px 0;border-bottom:1px solid var(--line)}
+.mini-tl li:last-child{border-bottom:none}
+.mini-tl .d{font-family:var(--sans);font-size:.92rem;padding-top:2px;font-weight:700;color:var(--c4);font-variant-numeric:tabular-nums}
+
+/* details */
+details{background:var(--bg);border:1px solid var(--line);border-radius:0;padding:10px 14px;margin:12px 0}
+details summary{cursor:pointer;font-weight:600;color:var(--accent)}
+details[open] summary{margin-bottom:6px}
+
+/* quote */
+blockquote{margin:14px 0;padding:8px 16px;border-left:3px solid var(--accent);font-family:var(--serif);font-style:italic;color:var(--muted)}
+
+/* timeline */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.filters button{font:inherit;font-family:var(--sans);font-size:.88rem;padding:6px 13px;border-radius:0;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.filters button.on{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.tl{position:relative;list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:6px 0 10px 12px}
+.tl li::before{content:"";position:absolute;left:-29px;top:14px;width:10px;height:10px;border-radius:0;background:var(--paper);border:3px solid var(--muted)}
+.tl li.reich::before{border-color:var(--c1)}
+.tl li.religion::before{border-color:var(--c3)}
+.tl li.europa::before{border-color:var(--c2)}
+.tl li.krieg::before{border-color:var(--c4)}
+.tl li.kultur::before{border-color:var(--c5)}
+.tl .y{font-family:var(--serif);font-weight:700;font-size:1.05rem;margin-right:6px}
+.tl .tag{font-family:var(--sans);text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;font-weight:600;padding:1px 8px;border-radius:0;margin-left:6px;vertical-align:2px}
+.tag.reich{background:var(--c1-soft);color:var(--c1)}
+.tag.religion{background:var(--c3-soft);color:var(--c3)}
+.tag.europa{background:var(--c2-soft);color:var(--c2)}
+.tag.krieg{background:var(--c4-soft);color:var(--c4)}
+.tag.kultur{background:var(--c5-soft);color:var(--c5)}
+.tl li.hide{display:none}
+
+/* people */
+.people{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.person{background:var(--bg);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:0;padding:14px 16px}
+.person h4{margin:0}
+.person .life{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin-bottom:4px}
+.person .role{font-family:var(--sans);font-size:.7rem;letter-spacing:.12em;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+.person p{font-size:.93rem;margin:.35rem 0 0}
+
+/* glossary */
+dl.gloss{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:0;margin:0}
+dl.gloss dt,dl.gloss dd{padding:9px 6px;border-bottom:1px solid var(--line);margin:0}
+dl.gloss dt{font-weight:700;font-family:var(--serif)}
+.g{text-decoration:underline dotted;text-underline-offset:3px;color:inherit;cursor:help}
+
+.sources li{margin:.4rem 0}
+footer{font-family:var(--sans);text-align:center;color:var(--muted);font-size:.8rem;letter-spacing:.04em;padding:22px 20px 30px;border-top:1px solid var(--line);max-width:1240px;margin:0 auto}
+#top{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border-radius:0;border:1px solid var(--accent);background:var(--accent);color:var(--paper);font-size:1.3rem;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s}
+#top.show{opacity:1;pointer-events:auto}
+
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr;padding:16px 16px 70px;gap:16px}
+  nav.toc{position:relative;top:0;max-height:none}
+  nav.toc ol{display:none}
+  nav.toc.open ol{display:block}
+  .toc-toggle{display:block;width:100%;font:inherit;font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;background:none;border:none;color:var(--ink);text-align:left;cursor:pointer;padding:2px 6px}
+  nav.toc .toc-title{display:none}
+  .toc-toggle::after{content:"+";float:right;font-weight:400}
+  nav.toc.open .toc-toggle::after{content:"\2013"}
+  section.chapter{padding:22px 18px}
+  h2{font-size:1.55rem}
+  dl.gloss{grid-template-columns:1fr}
+  dl.gloss dt{border-bottom:none;padding-bottom:0}
+  .mini-tl li{grid-template-columns:1fr;gap:0}
+  .chain li{grid-template-columns:36px 1fr;gap:4px 14px}
+  .chain .n{grid-row:span 2}
+  .chain .desc{grid-column:2}
+}
+@media print{
+  nav.toc,#top,#progress,.filters,.theme-btn{display:none!important}
+  .layout{display:block;padding:0}
+  section.chapter{box-shadow:none;break-inside:auto;border:none;padding:10px 0}
+  details{display:block}
+  details>*{display:block}
+  .hero{background:none;color:#000}
+  .hero h1{color:#000}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<!-- Der Philosopher: Leiste -->
+<style>
+.ph-bar{background:var(--paper);border-bottom:1px solid var(--line);font-family:var(--sans)}
+.ph-bar .ph-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:baseline;gap:6px 18px;flex-wrap:wrap}
+.ph-brand{font-family:var(--serif);font-size:1.35rem;font-weight:600;line-height:1.2;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.ph-brand i{font-weight:400;font-size:.72em;color:var(--muted);margin-right:.18em}
+.ph-links{display:flex;gap:18px;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.ph-links a{color:var(--muted);text-decoration:none}
+.ph-links a:hover{color:var(--accent);text-decoration:underline}
+footer .ph-foot a{color:var(--muted)}
+@media (max-width:700px){.ph-bar .ph-in{padding:8px 16px}}
+@media print{.ph-bar{display:none}}
+</style>
+<nav class="ph-bar" aria-label="Der Philosopher"><div class="ph-in">
+  <a class="ph-brand" href="index.html"><i>Der</i>Philosopher</a>
+  <div class="ph-links"><a href="index.html#wirtschaft">Wirtschaft</a><a href="index.html">Titelseite</a></div>
+</div></nav>
+
+
+<header class="hero">
+  <div class="kicker">Deutsche und europäische Wirtschaftsgeschichte</div>
+  <h1>Vom Nullzins zur neuen Zinswende</h1>
+  <p>Wie Zinsen Preise, Wachstum, Vermögen und Staatsfinanzen lenken – erklärt an historischen Lehrstücken und verfolgt von den Null- und Negativzinsjahren in Deutschland bis zur neuen Zinswende im Herbst 2026.</p>
+  <div class="years">2008 – 2026</div>
+</header>
+
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Inhaltsverzeichnis">
+  <button class="toc-toggle" id="tocToggle" aria-expanded="false">Inhaltsverzeichnis</button>
+  <div class="toc-title">Inhalt</div>
+  <ol>
+    <li><a href="#ueberblick"><span class="num">1</span>Überblick: Worum geht es?</a></li>
+    <li><a href="#grundlagen"><span class="num">2</span>Der Zins: Preis des Geldes</a></li>
+    <li><a href="#werkzeug"><span class="num">3</span>Das Werkzeug der Zentralbanken</a></li>
+    <li><a href="#inflation"><span class="num">4</span>Zinsen und Inflation</a></li>
+    <li><a href="#lehrstuecke"><span class="num">5</span>Lehrstücke aus der Geschichte</a></li>
+    <li><a href="#zweizinsen"><span class="num">6</span>Zwei Währungsräume, zwei Zinsen</a></li>
+    <li><a href="#nullzins"><span class="num">7</span>Der Weg in den Nullzins</a></li>
+    <li><a href="#nullzinsfolgen"><span class="num">8</span>Die Nullzinsjahre in Deutschland</a></li>
+    <li><a href="#inflationsschock"><span class="num">9</span>Die Rückkehr der Inflation</a></li>
+    <li><a href="#zinsschock"><span class="num">10</span>Der Zinsschock 2022/23</a></li>
+    <li><a href="#lockerung"><span class="num">11</span>Lockerung und trügerische Ruhe</a></li>
+    <li><a href="#gegenwart"><span class="num">12</span>Die neue Zinswende 2026</a></li>
+    <li><a href="#szenarien"><span class="num">13</span>Ausblick: Vier Szenarien</a></li>
+    <li><a href="#bilanz"><span class="num">14</span>Bilanz: Was hat sich verändert?</a></li>
+    <li><a href="#zeitleiste"><span class="num">15</span>Zeitleiste 1957–2026</a></li>
+    <li><a href="#personen"><span class="num">16</span>Wichtige Personen</a></li>
+    <li><a href="#glossar"><span class="num">17</span>Glossar</a></li>
+    <li><a href="#quellen"><span class="num">18</span>Quellen &amp; Weiterlesen</a></li>
+  </ol>
+  <button class="theme-btn" id="themeBtn" type="button">Darstellung: hell / dunkel</button>
+</nav>
+
+<main>
+
+<!-- ============ 1 UEBERBLICK ============ -->
+<section class="chapter" id="ueberblick">
+  <div class="chap-head"><div class="chap-num">1</div><div>
+    <span class="span-chip">Einstieg</span>
+    <h2>Überblick: Worum geht es?</h2>
+  </div></div>
+  <p class="lead">Der Zins ist der Preis, den man dafür zahlt, heute Geld zu haben, das man erst morgen verdient. Wer diesen Preis verändert, verändert fast alles: was Häuser kosten, ob Unternehmen investieren, wie viel ein Sparbuch wert ist und wie viel Spielraum ein Finanzminister hat.</p>
+
+  <p>Dieses Dokument behandelt keine abgeschlossene Epoche, sondern ein Instrument und seine Folgen. Es erklärt zunächst, was ein Zins ist und wie Zentralbanken ihn nutzen, um die Wirtschaft zu lenken. Dann zeigt es an <strong>historischen Lehrstücken</strong>, was geschieht, wenn Zinsen zu spät, zu früh oder zu stark verändert werden – und warum es eine Rolle spielt, wenn Europa und die USA unterschiedliche Leitzinsen haben. Den Hauptteil bildet die Entwicklung in Deutschland und Europa seit der Finanzkrise: die <strong>Null- und Negativzinsjahre</strong>, die Rückkehr der Inflation, der <strong>Zinsschock</strong> von 2022/23 und die neue <a class="g" href="#g-zinswende">Zinswende</a> im Jahr 2026. Am Ende stehen <strong>Szenarien</strong> für die kommenden Jahre.</p>
+
+  <h3>Warum gerade 2008 und 2026?</h3>
+  <div class="grid">
+    <div class="card"><div class="yr">2008</div><h4>Die Finanzkrise</h4><p>Nach dem Zusammenbruch der US-Investmentbank Lehman Brothers im September 2008 senken die Zentralbanken der westlichen Welt ihre Leitzinsen in kurzer Zeit auf nahe null. Damit beginnt eine mehr als ein Jahrzehnt dauernde Phase extrem billigen Geldes, die in Europa bis in den negativen Bereich führt.</p></div>
+    <div class="card"><div class="yr">2026</div><h4>Die zweite Zinswende</h4><p>Nach einem Krieg um Iran und der Blockade der Straße von Hormus steigen die Energiepreise stark. Im Juni und September 2026 erhöht die Europäische Zentralbank ihre Leitzinsen, im September auch die US-Notenbank. Die Renditen deutscher Staatsanleihen erreichen den höchsten Stand seit 2011. Das Dokument endet mit dem Stand Anfang Oktober 2026.</p></div>
+  </div>
+
+  <h3>Die Zeit in vier Abschnitten</h3>
+  <div class="erabar" role="img" aria-label="Zeitbalken mit vier Abschnitten von 2008 bis 2026">
+    <div class="era-a">Krisenjahre<small>2008–2014</small></div>
+    <div class="era-b">Null- und Negativzins<small>2014–2022</small></div>
+    <div class="era-c">Zinsschock<small>2022–2024</small></div>
+    <div class="era-d">Neue Wende<small>2024–2026</small></div>
+  </div>
+  <div class="erascale"><span>2008</span><span>2014</span><span>2022</span><span>2024</span><span>2026</span></div>
+
+  <div class="box kurz"><div class="box-title">Kurz gesagt – die ganze Entwicklung in fünf Sätzen</div>
+    <ol>
+      <li>Zentralbanken lenken die Wirtschaft vor allem über den Leitzins: Steigt er, werden Kredite teurer, die Nachfrage kühlt ab und die Inflation sinkt – mit einer Verzögerung von ein bis zwei Jahren.</li>
+      <li>Nach der Finanzkrise 2008 und der Euro-Krise senkte die EZB ihre Zinsen auf null und darunter und kaufte in großem Umfang Anleihen, weil sie eine zu niedrige Inflation und einen Zerfall der Währungsunion fürchtete.</li>
+      <li>In Deutschland profitierten davon vor allem Staat, Kreditnehmer und Immobilienbesitzer, während Sparer, Banken und Lebensversicherer litten.</li>
+      <li>Als 2021/22 die Inflation zurückkehrte, erhöhten Fed und EZB die Zinsen so schnell wie nie zuvor seit Jahrzehnten; Bauzinsen vervierfachten sich, Immobilienpreise fielen, die Zinslast des Staates verzehnfachte sich.</li>
+      <li>Nach einer kurzen Lockerung 2024/25 löste ein neuer Energiepreisschock 2026 eine zweite Zinswende aus – diesmal in einer Welt mit deutlich höheren Staatsschulden und politischem Druck auf die Notenbanken.</li>
+    </ol>
+  </div>
+
+  <h3>Der rote Faden</h3>
+  <p>Die Entwicklung lässt sich als Kette von Ursachen und Folgen lesen. Jede Stufe veränderte die Ausgangslage für die nächste.</p>
+  <ol class="chain" aria-label="Abfolge von Ursachen und Folgen">
+    <li><span class="n">1</span><b>Finanzkrise 2008</b><span class="desc">Zinsen fallen gegen null</span></li>
+    <li><span class="n">2</span><b>Euro-Krise</b><span class="desc">EZB als letzte Rettung</span></li>
+    <li><span class="n">3</span><b>Negativzins und Anleihekäufe</b><span class="desc">billiges Geld für ein Jahrzehnt</span></li>
+    <li><span class="n">4</span><b>Vermögenspreise steigen</b><span class="desc">Häuser, Aktien, Anleihen</span></li>
+    <li><span class="n">5</span><b>Inflation kehrt zurück</b><span class="desc">Pandemie und Energieschock</span></li>
+    <li><span class="n">6</span><b>Zinsschock 2022/23</b><span class="desc">schnellste Erhöhung seit Jahrzehnten</span></li>
+    <li><span class="n">7</span><b>Neue Zinswende 2026</b><span class="desc">Ölschock trifft hohe Schulden</span></li>
+  </ol>
+  <p>Ein <strong>zweiter Faden</strong> zieht sich durch alle Abschnitte: Zinsen verteilen um. Jeder Zinssatz hat zwei Seiten – was der Schuldner zahlt, erhält der Gläubiger. Niedrige Zinsen entlasten Schuldner, also vor allem Staaten, Unternehmen und Hauskäufer, und belasten Sparer. Hohe Zinsen kehren dieses Verhältnis um. Deutschland ist ein Land mit vielen Sparern und einer traditionell großen Angst vor Inflation. Deshalb wurde die Zinspolitik der EZB hier stärker als in anderen Euroländern zum politischen Streitthema.</p>
+
+  <div class="box warum"><div class="box-title">Wie dieses Dokument mit dem Thema umgeht</div>
+    <p>Geldpolitik ist ein Feld, in dem Fachleute oft gegensätzliche Meinungen vertreten. Ob die Nullzinspolitik richtig war, ob die EZB 2021 zu spät reagierte und wie sie 2026 handeln sollte, ist umstritten. Das Dokument stellt die Positionen nebeneinander und ordnet sie ihren Urhebern zu. Zahlen sind gerundet; viele Werte – etwa Inflationsraten – werden von den Statistikämtern nachträglich überarbeitet. Die Szenarien in Kapitel 13 sind Gedankenspiele auf Grundlage historischer Erfahrungen, keine Vorhersagen und keine Anlageempfehlungen.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Zins</strong> = Preis des Geldes über die Zeit → er beeinflusst Konsum, Investitionen, Vermögenspreise und Staatsfinanzen.</li>
+      <li><strong>2008–2022:</strong> Phase extrem niedriger, zeitweise negativer Zinsen in Europa.</li>
+      <li><strong>2022/23:</strong> Zinsschock als Antwort auf die höchste Inflation seit Jahrzehnten.</li>
+      <li><strong>2026:</strong> neue Zinswende nach einem Energiepreisschock.</li>
+      <li>Zinsen <strong>verteilen um</strong> – zwischen Sparern und Schuldnern, Jung und Alt, Staat und Bürgern.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 2 GRUNDLAGEN ============ -->
+<section class="chapter" id="grundlagen">
+  <div class="chap-head"><div class="chap-num">2</div><div>
+    <span class="span-chip">Grundlagen</span>
+    <h2>Der Zins: Preis des Geldes</h2>
+  </div></div>
+  <p class="lead">Bevor wir die Ereignisse verfolgen, lohnt ein Blick auf das Werkzeug selbst: Was ist ein Zins, wer bestimmt ihn, und warum gibt es nicht nur einen, sondern viele Zinssätze?</p>
+
+  <h3>2.1 Warum es Zinsen gibt</h3>
+  <p>Wer Geld verleiht, verzichtet darauf, es selbst auszugeben. Dafür verlangt er einen Ausgleich. Der Zins entschädigt den Gläubiger für drei Dinge: für das Warten, für das Risiko, dass der Schuldner nicht zahlt, und für die Gefahr, dass das Geld bis zur Rückzahlung an Kaufkraft verliert. Diese drei Bestandteile erklären, warum ein Staat wie Deutschland weniger Zinsen zahlt als ein hoch verschuldetes Land oder ein kleines Unternehmen, und warum langfristige Kredite meist teurer sind als kurzfristige.</p>
+  <p>Für die Wirtschaft ist der Zins ein <strong>Signal</strong>. Ist er hoch, lohnt es sich zu sparen und Ausgaben aufzuschieben. Ist er niedrig, lohnt es sich, Kredite aufzunehmen, zu investieren, ein Haus zu kaufen oder Aktien zu halten. Deshalb wirkt eine Zinsänderung wie das Gaspedal oder die Bremse einer Volkswirtschaft.</p>
+
+  <h3>2.2 Nominalzins und Realzins</h3>
+  <p>Der Zins, der auf dem Kontoauszug steht, heißt <strong>Nominalzins</strong>. Entscheidend für die Kaufkraft ist aber der <a class="g" href="#g-realzins">Realzins</a>: der Nominalzins abzüglich der Inflationsrate. Der amerikanische Ökonom Irving Fisher hat diesen Zusammenhang Anfang des 20. Jahrhunderts beschrieben.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Beispiel</th><th>Nominalzins</th><th>Inflation</th><th>Realzins</th><th>Was bedeutet das?</th></tr>
+    <tr><td><strong>Sparbuch 2019</strong></td><td>0&nbsp;%</td><td>1,4&nbsp;%</td><td>−1,4&nbsp;%</td><td>Das Ersparte verliert jedes Jahr gut ein Prozent an Kaufkraft.</td></tr>
+    <tr><td><strong>Einlagesatz der EZB, Oktober 2022</strong></td><td>0,75&nbsp;%</td><td>10,6&nbsp;% (Euroraum)</td><td>rund −10&nbsp;%</td><td>Geld ist trotz Zinserhöhungen extrem billig – die Geldpolitik bremst noch kaum.</td></tr>
+    <tr><td><strong>Einlagesatz der EZB, Ende 2023</strong></td><td>4,0&nbsp;%</td><td>rund 3&nbsp;%</td><td>rund +1&nbsp;%</td><td>Erst jetzt wirkt die Geldpolitik spürbar bremsend.</td></tr>
+    <tr><td><strong>Einlagesatz der EZB, September 2026</strong></td><td>2,5&nbsp;%</td><td>3,8&nbsp;% (Euroraum, Schnellschätzung)</td><td>rund −1,3&nbsp;%</td><td>Trotz zweier Zinserhöhungen ist der Realzins wieder negativ.</td></tr>
+  </table></div>
+  <p>Der Realzins erklärt einen scheinbaren Widerspruch: Ein Zins von vier Prozent kann großzügig sein, wenn die Preise kaum steigen, und gleichzeitig zu niedrig, wenn die Inflation bei sechs Prozent liegt.</p>
+
+  <h3>2.3 Kurze und lange Zinsen</h3>
+  <p>Es gibt nicht „den“ Zins. Die Zentralbank bestimmt direkt nur sehr kurzfristige Zinsen, zu denen sich Banken bei ihr Geld leihen oder anlegen. Diese nennt man <a class="g" href="#g-leitzins">Leitzinsen</a>. Langfristige Zinsen – etwa für zehnjährige Staats<a class="g" href="#g-anleihe">anleihen</a> oder Baukredite mit zehn Jahren <em>Zinsbindung</em> – bilden sich am Kapitalmarkt. Sie hängen davon ab, was Anleger über die künftigen Leitzinsen, die Inflation und die Kreditwürdigkeit des Schuldners erwarten. Die Kurve, die die Zinsen nach Laufzeiten ordnet, heißt <a class="g" href="#g-zinsstruktur">Zinsstrukturkurve</a>.</p>
+  <p>Für deutsche Haushalte ist das wichtig: Ein Baukredit richtet sich vor allem nach der <a class="g" href="#g-rendite">Rendite</a> zehnjähriger Bundesanleihen, nicht direkt nach dem Leitzins. Deshalb können Bauzinsen steigen, obwohl die EZB nichts tut – oder fallen, obwohl sie gerade die Zinsen erhöht.</p>
+
+  <div class="grid">
+    <div class="card"><h4>Sparer</h4><p>Erhalten Zinsen auf Tagesgeld, Festgeld und Anleihen. Hohe Realzinsen helfen ihnen, Negativzinsen schaden ihnen.</p></div>
+    <div class="card"><h4>Kreditnehmer</h4><p>Hauskäufer und Unternehmen zahlen Zinsen. Niedrige Zinsen machen Investitionen und Immobilienkäufe erschwinglich.</p></div>
+    <div class="card"><h4>Der Staat</h4><p>Ist der größte Schuldner im Land. Jeder Prozentpunkt mehr Zins kostet den Bund auf Dauer viele Milliarden Euro im Jahr.</p></div>
+    <div class="card"><h4>Banken</h4><p>Verdienen an der Differenz zwischen Kredit- und Einlagezinsen. Sehr niedrige Zinsen drücken ihre Gewinne.</p></div>
+    <div class="card"><h4>Versicherer und Altersvorsorge</h4><p>Müssen langfristige Zusagen erfüllen. Lebensversicherungen und Betriebsrenten leiden unter langen Niedrigzinsphasen.</p></div>
+  </div>
+
+  <h3>2.4 Die wichtigsten Zentralbanken</h3>
+  <p>Zinsen werden heute vor allem von unabhängigen Zentralbanken gesteuert. Für Deutschland ist seit 1999 die Europäische Zentralbank zuständig; die Bundesbank ist Teil des Eurosystems und sitzt mit ihrem Präsidenten im <a class="g" href="#g-ezbrat">EZB-Rat</a>.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Zentralbank</th><th>Gebiet</th><th>Auftrag</th><th>Leitzins Anfang Oktober 2026</th></tr>
+    <tr><td><strong>Europäische Zentralbank (EZB)</strong></td><td>Euroraum (21 Staaten)</td><td>Vorrangig Preisstabilität, Ziel 2&nbsp;% Inflation</td><td>Einlagesatz 2,50&nbsp;%</td></tr>
+    <tr><td><strong>Deutsche Bundesbank</strong></td><td>Deutschland, Teil des Eurosystems</td><td>Bis 1998 eigene Geldpolitik für die D-Mark; heute Umsetzung der EZB-Beschlüsse</td><td>–</td></tr>
+    <tr><td><strong><a class="g" href="#g-fed">Federal Reserve (Fed)</a></strong></td><td>USA</td><td>Doppeltes <a class="g" href="#g-mandat">Mandat</a>: stabile Preise und hohe Beschäftigung</td><td>3,75–4,00&nbsp;%</td></tr>
+    <tr><td><strong>Bank of Japan</strong></td><td>Japan</td><td>Preisstabilität, Ziel 2&nbsp;%</td><td>1,25&nbsp;%, höchster Stand seit über 30 Jahren</td></tr>
+    <tr><td><strong>Bank of England</strong></td><td>Vereinigtes Königreich</td><td>Preisstabilität, Ziel 2&nbsp;%</td><td>im Sommer 2026: 3,75&nbsp;%</td></tr>
+  </table></div>
+
+  <div class="box warum"><div class="box-title">Warum sind Zentralbanken unabhängig?</div>
+    <p>Regierungen haben einen Anreiz, die Zinsen vor Wahlen niedrig zu halten oder die Notenpresse für ihre Ausgaben zu nutzen. Die Folgen – Inflation – zeigen sich erst später. Die deutsche Erfahrung mit zwei Geldentwertungen im 20. Jahrhundert, vor allem der Hyperinflation von 1923, prägte die Überzeugung, dass Geldpolitik vor politischem Zugriff geschützt werden muss. Die Bundesbank wurde 1957 als unabhängige Notenbank gegründet und galt als Vorbild für die EZB. Diese Unabhängigkeit ist kein Naturgesetz: In den USA hat Präsident Trump 2025/26 offen Druck auf die Fed ausgeübt, um niedrigere Zinsen zu erzwingen (siehe Kapitel 11 und 12).</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li>Der Zins entschädigt für <strong>Warten, Risiko und Geldentwertung</strong>.</li>
+      <li><strong>Realzins</strong> = Nominalzins − Inflation → entscheidend für Kaufkraft und Bremswirkung.</li>
+      <li>Die Zentralbank steuert direkt nur die <strong>kurzen Zinsen</strong>; lange Zinsen bildet der Markt.</li>
+      <li>Bauzinsen folgen vor allem der <strong>Rendite zehnjähriger Bundesanleihen</strong>.</li>
+      <li>Für Deutschland entscheidet seit 1999 der <strong>EZB-Rat</strong>, nicht mehr die Bundesbank allein.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 3 WERKZEUG ============ -->
+<section class="chapter" id="werkzeug">
+  <div class="chap-head"><div class="chap-num">3</div><div>
+    <span class="span-chip">Funktionsweise</span>
+    <h2>Das Werkzeug der Zentralbanken</h2>
+  </div></div>
+  <p class="lead">Eine Zentralbank kann Preise nicht direkt festlegen. Sie verändert einen einzigen kurzfristigen Zinssatz – und vertraut darauf, dass sich diese Änderung über viele Stufen bis in die Supermarktregale fortpflanzt.</p>
+
+  <h3>3.1 Die drei Leitzinsen der EZB</h3>
+  <p>Die EZB legt drei Zinssätze fest. Der <a class="g" href="#g-einlagesatz">Einlagesatz</a> ist der Zins, den Banken für Guthaben bei der Zentralbank erhalten (oder, wenn er negativ ist, zahlen müssen). Der <a class="g" href="#g-hauptrefi">Hauptrefinanzierungssatz</a> gilt für die regelmäßigen Kredite der Zentralbank an Banken, der Spitzenrefinanzierungssatz für Übernacht-Notkredite. Weil die Banken seit der Finanzkrise sehr viel überschüssiges Geld bei der Zentralbank halten, ist der Einlagesatz zum eigentlichen Steuerungszins geworden. Seit September 2024 erklärt die EZB ihn auch offiziell zu ihrem maßgeblichen Signal. Nach der Erhöhung vom September 2026 liegen die drei Sätze bei 2,50, 2,65 und 2,90 Prozent.</p>
+
+  <h3>3.2 Der Weg vom Leitzins zur Inflation</h3>
+  <p>Den Übertragungsweg nennen Fachleute <a class="g" href="#g-transmission">Transmission</a>. Die Bundesbank beschreibt ihn so: Die Zentralbank verändert die kurzfristigen Marktzinsen, diese wirken auf die längerfristigen Zinsen, die Banken geben die Änderung an ihre Kunden weiter – und Unternehmen und Haushalte passen ihr Verhalten an. Dabei wirken mehrere Kanäle gleichzeitig:</p>
+  <div class="grid">
+    <div class="card"><h4>Zinskanal</h4><p>Teurere Kredite dämpfen Investitionen, Bauvorhaben und den Kauf langlebiger Güter wie Autos. Sparen wird attraktiver.</p></div>
+    <div class="card"><h4>Kreditkanal</h4><p>Banken vergeben vorsichtiger Kredite, weil Schuldner schlechter zahlen können und ihre Sicherheiten an Wert verlieren.</p></div>
+    <div class="card"><h4>Vermögenskanal</h4><p>Höhere Zinsen senken die Kurse von Anleihen, Aktien und Immobilien. Wer sich ärmer fühlt, gibt weniger aus.</p></div>
+    <div class="card"><h4>Wechselkurskanal</h4><p>Höhere Zinsen ziehen Kapital an; die eigene Währung wertet auf. Importe – auch Öl, das in Dollar bezahlt wird – werden billiger.</p></div>
+    <div class="card"><h4>Erwartungskanal</h4><p>Glaubt die Öffentlichkeit, dass die Zentralbank die Inflation bekämpft, verlangen Gewerkschaften und Unternehmen geringere Lohn- und Preiserhöhungen. Vertrauen ist das stärkste Werkzeug.</p></div>
+  </div>
+
+  <div class="box warum"><div class="box-title">Warum wirkt Geldpolitik so langsam?</div>
+    <p>Zwischen einer Zinsänderung und ihrer vollen Wirkung vergehen meist ein bis zwei Jahre. Viele Kredite haben feste Zinsen, Bauprojekte laufen weiter, Preise werden nur in Abständen angepasst. Die Bundesbank rechnete Ende 2022 vor, dass die Zinserhöhungen ihre stärkste Wirkung auf die Konjunktur 2023 und auf die Inflation erst 2024 entfalten würden. Eine Zentralbank muss deshalb vorausschauend handeln – und läuft ständig Gefahr, zu spät zu bremsen oder zu lange auf der Bremse zu stehen. Fachleute vergleichen das mit dem Steuern eines großen Schiffes.</p>
+  </div>
+
+  <h3>3.3 Wenn der Zins bei null liegt: unkonventionelle Mittel</h3>
+  <p>Lange galt null Prozent als Untergrenze für Zinsen, weil Sparer ihr Geld sonst als Bargeld horten würden. Nach 2008 stießen viele Zentralbanken an diese Grenze. Sie entwickelten deshalb neue Werkzeuge:</p>
+  <ul>
+    <li><strong><a class="g" href="#g-negativzins">Negativzinsen</a>:</strong> Banken zahlen für Guthaben bei der Zentralbank. Die EZB führte sie im Juni 2014 ein.</li>
+    <li><strong><a class="g" href="#g-anleihekaeufe">Anleihekaufprogramme</a></strong> (auch „quantitative Lockerung“ genannt): Die Zentralbank kauft in großem Umfang Staats- und Unternehmensanleihen und drückt so die langfristigen Zinsen.</li>
+    <li><strong><a class="g" href="#g-forwardguidance">Forward Guidance</a>:</strong> Die Zentralbank kündigt an, wie lange die Zinsen niedrig bleiben werden, und lenkt so die Erwartungen.</li>
+    <li><strong>Langfristige Kredite an Banken</strong> zu sehr günstigen Bedingungen, wenn diese das Geld an Unternehmen weiterverleihen.</li>
+    <li><strong>Schutzinstrumente</strong> wie das <a class="g" href="#g-tpi">TPI</a> von 2022: Die EZB kann gezielt Anleihen eines Landes kaufen, wenn dessen Zinsen ohne sachlichen Grund in die Höhe schießen.</li>
+  </ul>
+
+  <div class="box achtung"><div class="box-title">Die Grenzen des Werkzeugs</div>
+    <ul>
+      <li>Ein Leitzins gilt für den gesamten Euroraum. Er kann für ein Land zu hoch und für ein anderes zu niedrig sein („one size fits all“-Problem).</li>
+      <li>Geldpolitik kann keine Energie herbeischaffen und keine Lieferketten reparieren. Gegen Angebotsschocks wirkt sie nur indirekt (siehe Kapitel 4).</li>
+      <li>Anleihekäufe verwischen die Grenze zur Staatsfinanzierung, die der EZB verboten ist. Darüber wurde in Deutschland bis vor das Bundesverfassungsgericht gestritten.</li>
+    </ul>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Einlagesatz</strong> = wichtigster Steuerungszins der EZB (seit 16.9.2026: 2,50&nbsp;%).</li>
+      <li><strong>Transmission</strong> über Zins-, Kredit-, Vermögens-, Wechselkurs- und Erwartungskanal.</li>
+      <li>Wirkung mit <strong>ein bis zwei Jahren Verzögerung</strong> → Zentralbanken müssen vorausschauend handeln.</li>
+      <li>An der Nullgrenze: <strong>Negativzinsen, Anleihekäufe, Forward Guidance</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 4 INFLATION ============ -->
+<section class="chapter" id="inflation">
+  <div class="chap-head"><div class="chap-num">4</div><div>
+    <span class="span-chip">Funktionsweise</span>
+    <h2>Zinsen und Inflation: ein ungleiches Paar</h2>
+  </div></div>
+  <p class="lead">Die wichtigste Aufgabe des Zinses ist die Bekämpfung der Inflation. Doch nicht jede Inflation lässt sich gleich gut mit Zinsen bekämpfen – und manche Teuerung verschwindet von selbst.</p>
+
+  <h3>4.1 Was Inflation ist und wie man sie misst</h3>
+  <p><a class="g" href="#g-inflation">Inflation</a> ist der allgemeine Anstieg der Preise, also der Verlust an Kaufkraft des Geldes. In Deutschland misst sie das Statistische Bundesamt mit dem Verbraucherpreisindex (VPI). Für den europäischen Vergleich und die EZB zählt der harmonisierte Index <a class="g" href="#g-hvpi">HVPI</a>, der etwas anders gewichtet ist; deshalb weichen die deutschen Werte je nach Index leicht voneinander ab. Weil Energie- und Lebensmittelpreise stark schwanken, beobachten Zentralbanken zusätzlich die <a class="g" href="#g-kerninflation">Kerninflation</a> ohne diese Güter. Die EZB strebt seit 2021 eine Inflation von genau zwei Prozent auf mittlere Sicht an; zuvor lautete das Ziel „unter, aber nahe zwei Prozent“.</p>
+
+  <h3>4.2 Zwei Arten von Inflation</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Merkmal</th><th>Nachfrageinflation</th><th>Angebotsinflation</th></tr>
+    <tr><td><strong>Ursache</strong></td><td>Die Menschen wollen mehr kaufen, als produziert werden kann – etwa nach billigen Krediten oder großen Staatsprogrammen.</td><td>Etwas Wichtiges wird knapp und teuer – vor allem Energie, Rohstoffe oder Vorprodukte (<a class="g" href="#g-angebotsschock">Angebotsschock</a>).</td></tr>
+    <tr><td><strong>Folge für die Wirtschaft</strong></td><td>Hohe Auslastung, Beschäftigung steigt, Preise steigen.</td><td>Produktion sinkt, Kaufkraft schwindet, Preise steigen – im schlimmsten Fall <a class="g" href="#g-stagflation">Stagflation</a>.</td></tr>
+    <tr><td><strong>Wirkung höherer Zinsen</strong></td><td>Gut: Die Nachfrage wird gebremst, die Preise beruhigen sich.</td><td>Schwierig: Zinsen machen Öl nicht billiger, schwächen aber zusätzlich die Wirtschaft.</td></tr>
+    <tr><td><strong>Historische Beispiele</strong></td><td>USA 2021/22 (Konjunkturprogramme), Deutschland nach der Wiedervereinigung 1990–92</td><td>Ölkrisen 1973 und 1979, Gaskrise 2022, Hormus-Blockade 2026</td></tr>
+  </table></div>
+
+  <h3>4.3 Warum Zentralbanken trotzdem auf Angebotsschocks reagieren</h3>
+  <p>Wenn die Inflation von Energie ausgeht, könnte eine Zentralbank theoretisch abwarten: Sobald der Ölpreis nicht mehr steigt, fällt die Inflationsrate von selbst, weil sie nur die Veränderung gegenüber dem Vorjahr misst. Gefährlich wird es aber, wenn die Teuerung sich ausbreitet – wenn Arbeitnehmer höhere Löhne fordern, um die Preise auszugleichen, und Unternehmen die höheren Löhne wiederum auf die Preise aufschlagen. Solche <a class="g" href="#g-zweitrunde">Zweitrundeneffekte</a> können eine Lohn-Preis-Spirale in Gang setzen. Entscheidend ist dabei, was die Menschen für die Zukunft erwarten. Solange die <a class="g" href="#g-erwartungen">Inflationserwartungen</a> bei etwa zwei Prozent „verankert“ bleiben, kann die Zentralbank einen Energieschock eher hinnehmen. Geraten sie ins Rutschen, muss sie hart bremsen.</p>
+
+  <div class="box warum"><div class="box-title">Kann die EZB Öl billiger machen?</div>
+    <p>Nicht direkt. Sie kann aber verhindern, dass ein einmaliger Preisschub zu dauerhaft höherer Inflation wird. Zudem wirkt ein höherer Zins über den Wechselkurs: Steigt der Euro gegenüber dem Dollar, wird in Dollar gehandeltes Öl in Euro billiger. Die Kehrseite ist, dass die ohnehin vom Energieschock geschwächte Wirtschaft zusätzlich gebremst wird. Diese Abwägung prägte die Diskussionen der EZB 2022 und erneut 2026.</p>
+  </div>
+
+  <h3>4.4 Eine Faustregel für den „richtigen“ Zins</h3>
+  <p>Der amerikanische Ökonom John B. Taylor schlug 1993 eine einfache Formel vor, die beschreibt, wie Zentralbanken in der Vergangenheit gehandelt haben (<a class="g" href="#g-taylorregel">Taylor-Regel</a>). Vereinfacht: Der Leitzins sollte dem <a class="g" href="#g-neutralzins">neutralen Zins</a> plus der aktuellen Inflation entsprechen, und er sollte zusätzlich steigen, wenn die Inflation über dem Ziel liegt, und sinken, wenn die Wirtschaft unter ihren Möglichkeiten bleibt. Liegt die Inflation einen Prozentpunkt über dem Ziel, sollte der Leitzins um mehr als einen Prozentpunkt steigen – sonst sinkt der Realzins und die Geldpolitik wird ungewollt lockerer.</p>
+  <p>Ein Rechenbeispiel zeigt, wie groß die Lücke 2022 war: Bei einem neutralen Realzins von etwa einem halben Prozent und einer Inflation von rund acht Prozent hätte die Regel einen Leitzins von deutlich über zehn Prozent ergeben. Tatsächlich lag der Einlagesatz der EZB Mitte 2022 noch bei minus 0,5 Prozent. Die Regel ist umstritten und wird von keiner Zentralbank mechanisch angewendet, macht aber sichtbar, wie locker die Geldpolitik damals war.</p>
+
+  <div class="box achtung"><div class="box-title">Eine Grenze der Faustregel</div>
+    <p>Niemand kennt den neutralen Zins genau – also den Zins, der die Wirtschaft weder anschiebt noch bremst. Er hängt von Bevölkerungsentwicklung, Sparneigung und Produktivität ab und hat sich über die Jahrzehnte verschoben. Die US-Notenbank schätzt ihn inzwischen höher als vor einigen Jahren. Ob der heutige Leitzins „bremst“ oder „antreibt“, ist deshalb immer auch eine Einschätzung.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Nachfrageinflation</strong> → Zinsen wirken gut; <strong>Angebotsinflation</strong> → Zinsen wirken schlecht und schaden dem Wachstum.</li>
+      <li>Gefährlich sind <strong>Zweitrundeneffekte</strong> und entankerte <strong>Inflationserwartungen</strong>.</li>
+      <li><strong>Kerninflation</strong> zeigt, wie tief die Teuerung in der Wirtschaft sitzt.</li>
+      <li><strong>Taylor-Regel:</strong> Steigt die Inflation, muss der Leitzins stärker steigen, sonst sinkt der Realzins.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 5 LEHRSTUECKE ============ -->
+<section class="chapter" id="lehrstuecke">
+  <div class="chap-head"><div class="chap-num">5</div><div>
+    <span class="span-chip">1973 – 2012</span>
+    <h2>Lehrstücke aus der Geschichte</h2>
+  </div></div>
+  <p class="lead">Zentralbanker berufen sich bei fast jeder Entscheidung auf die Vergangenheit. Fünf Episoden prägen ihr Denken bis heute – und sie erklären, warum die Notenbanken 2022 und 2026 so handelten, wie sie handelten.</p>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Fall I: Die große Inflation und der Volcker-Schock</h4><span class="yr">1973–1983</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1971–1973</span><span>Das System fester Wechselkurse von Bretton Woods zerfällt. Die USA lösen den Dollar 1971 vom Gold.</span></li>
+        <li><span class="d">1973/74</span><span><strong>Erste Ölkrise:</strong> Die arabischen Förderländer drosseln die Lieferungen, der Ölpreis vervielfacht sich. In vielen westlichen Ländern steigt die Inflation in den zweistelligen Bereich.</span></li>
+        <li><span class="d">1970er</span><span>Die US-Notenbank erhöht die Zinsen mehrfach, senkt sie aber wieder, sobald die Arbeitslosigkeit steigt („Stop and Go“). Die Inflationserwartungen geraten außer Kontrolle.</span></li>
+        <li><span class="d">1979</span><span><strong>Zweite Ölkrise</strong> nach der Revolution in Iran. Im August wird Paul Volcker Chef der Fed; im Oktober stellt sie ihre Politik radikal um.</span></li>
+        <li><span class="d">März 1980</span><span>Die US-Inflation erreicht mit 14,8 Prozent ihren Höhepunkt.</span></li>
+        <li><span class="d">Juni 1981</span><span>Der Leitzins der Fed erreicht rund 20 Prozent. Es folgt die schwerste Rezession seit den 1930er Jahren; die Arbeitslosigkeit steigt auf über zehn Prozent. Landwirte blockieren mit Traktoren die Straßen vor der Fed in Washington.</span></li>
+        <li><span class="d">1982</span><span>Die hohen Dollarzinsen lösen eine Schuldenkrise in Lateinamerika aus, beginnend mit Mexiko.</span></li>
+        <li><span class="d">1983</span><span>Die US-Inflation fällt unter drei Prozent.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> Volcker gilt seither als Beweis dafür, dass eine Zentralbank auch tief verwurzelte Inflation brechen kann – aber zu hohen gesellschaftlichen Kosten. Die Lehre der Notenbanker lautet: Inflation früh bekämpfen, bevor sich die Erwartungen verschieben. Genau auf dieses Beispiel bezogen sich Fed und EZB 2022, als sie die Zinsen außergewöhnlich schnell anhoben.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Fall II: Die Bundesbank und die deutsche Stabilitätskultur</h4><span class="yr">1973–1990</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">März 1973</span><span>Mit dem Ende fester Wechselkurse gegenüber dem Dollar gewinnt die Bundesbank die Freiheit, ihre Zinsen allein an der heimischen Preisstabilität auszurichten.</span></li>
+        <li><span class="d">1973/74</span><span>Die Inflation in der Bundesrepublik steigt auf rund sieben Prozent – hoch für deutsche Verhältnisse, aber deutlich weniger als in Großbritannien, Italien oder den USA.</span></li>
+        <li><span class="d">Dez. 1974</span><span>Die Bundesbank verkündet als eine der ersten Zentralbanken ein Ziel für das Wachstum der Geldmenge. Sie macht damit ihre Politik vorhersehbar.</span></li>
+        <li><span class="d">1974/75</span><span>Die harte Linie trägt zu einer Rezession bei; die Zahl der Arbeitslosen steigt erstmals seit den 1950er Jahren über eine Million.</span></li>
+        <li><span class="d">1980er</span><span>Die D-Mark wird zur Ankerwährung Europas. Andere Länder im Europäischen Währungssystem (EWS, seit 1979) müssen sich an den deutschen Zinsen orientieren.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> Die Bundesbank bewies, dass eine unabhängige Notenbank Inflation begrenzen kann, wenn die Öffentlichkeit ihr vertraut. Daraus entstand das, was oft „deutsche Stabilitätskultur“ genannt wird. Sie erklärt, warum die Konstruktion der EZB stark am Bundesbank-Modell ausgerichtet wurde – und warum die Nullzinspolitik später in Deutschland auf so viel Misstrauen stieß.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Fall III: Wiedervereinigung und die Krise des Europäischen Währungssystems</h4><span class="yr">1990–1993</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">1.7.1990</span><span><strong>Deutsch-deutsche Währungsunion:</strong> Die D-Mark wird in der DDR eingeführt. Die Kosten der Einheit werden zu großen Teilen über Kredite finanziert; die Nachfrage im Osten treibt die Preise.</span></li>
+        <li><span class="d">1990–1992</span><span>Die Bundesbank erhöht ihre Zinsen in mehreren Schritten. Der Diskontsatz steigt von sechs Prozent Ende 1990 auf <strong>8,75 Prozent im Juli 1992</strong>.</span></li>
+        <li><span class="d">1992</span><span>Großbritannien, Italien und andere EWS-Länder stecken in einer Rezession, müssen aber wegen der festen Wechselkursbänder die hohen deutschen Zinsen mittragen.</span></li>
+        <li><span class="d">16.9.1992</span><span><strong>„Schwarzer Mittwoch“:</strong> Spekulanten wetten gegen das Pfund. Die Bank of England erhöht ihren Leitzins an einem Tag von zehn auf zwölf Prozent und kündigt 15 Prozent an – vergeblich. Großbritannien verlässt den Wechselkursmechanismus, Italien folgt.</span></li>
+        <li><span class="d">Aug. 1993</span><span>Die Schwankungsbreiten im EWS werden auf plus/minus 15 Prozent ausgeweitet; das System ist faktisch entschärft.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> Die Krise zeigte, was geschieht, wenn eine Zentralbank Zinsen für ihr eigenes Land setzt, andere Länder aber daran gebunden sind. Ein Zins, der für ein boomendes Deutschland richtig war, war für ein Großbritannien in der Rezession viel zu hoch. Dieses Problem kehrte mit dem Euro in neuer Form zurück: Seit 1999 gilt ein einziger Leitzins für sehr unterschiedliche Volkswirtschaften.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Fall IV: Zinserhöhungen zur falschen Zeit</h4><span class="yr">2008 und 2011</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Juli 2008</span><span>Der Ölpreis steigt auf ein Rekordhoch. Die EZB unter Jean-Claude Trichet erhöht ihren Hauptrefinanzierungssatz auf 4,25 Prozent, obwohl sich die Finanzkrise bereits abzeichnet.</span></li>
+        <li><span class="d">Sept. 2008</span><span>Lehman Brothers bricht zusammen. Die EZB senkt die Zinsen bis Mai 2009 auf ein Prozent.</span></li>
+        <li><span class="d">April/Juli 2011</span><span>Wegen steigender Energiepreise erhöht die EZB erneut zweimal die Zinsen – mitten in der beginnenden Euro-Schuldenkrise.</span></li>
+        <li><span class="d">Nov./Dez. 2011</span><span>Der neue EZB-Präsident Mario Draghi nimmt beide Erhöhungen sofort wieder zurück.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> Beide Erhöhungen gelten heute vielen Ökonomen als Fehler: Die EZB reagierte auf eine von Energiepreisen getriebene Inflation, während die Wirtschaft bereits in die Krise rutschte. Diese Erfahrung erklärt, warum die EZB 2021 zögerte, als die Inflation zu steigen begann – und warum sie 2026 betont, keinem festen Zinspfad zu folgen.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Fall V: „Whatever it takes“ – die Macht der Worte</h4><span class="yr">2010–2012</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">2010–2012</span><span>In der Euro-Schuldenkrise steigen die Zinsen für griechische, portugiesische, irische, spanische und italienische Staatsanleihen stark. Anleger fürchten einen Austritt einzelner Länder aus dem Euro.</span></li>
+        <li><span class="d">26.7.2012</span><span>Mario Draghi erklärt in London, die EZB werde im Rahmen ihres Mandats alles Notwendige tun, um den Euro zu erhalten.</span></li>
+        <li><span class="d">Sept. 2012</span><span>Die EZB beschließt das Programm OMT für unbegrenzte Anleihekäufe unter Auflagen. Es wird nie eingesetzt – die Ankündigung allein senkt die Risikoaufschläge deutlich.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> Ein glaubwürdiges Versprechen kann mehr bewirken als jede tatsächliche Maßnahme. Zugleich übernahm die EZB damit die Rolle einer Schutzmacht für Staatsanleihen. Kritiker in Deutschland sahen darin eine verbotene Staatsfinanzierung; das Bundesverfassungsgericht und der Europäische Gerichtshof billigten das Programm aber unter Bedingungen.</p>
+    </div>
+  </div>
+
+  <div class="box warum"><div class="box-title">Seitenblick: Japans lange Nullzinszeit</div>
+    <p>Japan erlebte nach dem Platzen einer Immobilien- und Aktienblase Anfang der 1990er Jahre jahrzehntelang schwaches Wachstum und fallende Preise (<a class="g" href="#g-deflation">Deflation</a>). Die Bank of Japan senkte ihre Zinsen 1999 auf null und 2016 sogar ins Negative. Japan wurde damit zum Warnbild: Sehr niedrige Zinsen allein erzeugen weder Wachstum noch Inflation, wenn Unternehmen und Haushalte nicht investieren wollen. Diese Sorge vor einer „Japanisierung“ prägte die EZB-Politik der 2010er Jahre. Erst 2024 beendete Japan die Negativzinsen; im September 2026 hob die Bank of Japan ihren Leitzins auf 1,25 Prozent, den höchsten Stand seit über drei Jahrzehnten.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Volcker 1979–1983:</strong> Leitzins bis 20&nbsp;% → Inflation gebrochen, aber schwere Rezession.</li>
+      <li><strong>Bundesbank:</strong> Unabhängigkeit und Geldmengenziel → deutsche Stabilitätskultur, Vorbild für die EZB.</li>
+      <li><strong>1992:</strong> Hohe deutsche Zinsen nach der Einheit → Krise des EWS, Pfund verlässt das System.</li>
+      <li><strong>2008 und 2011:</strong> EZB erhöht wegen Ölpreisen in den Abschwung → Fehler, rasch korrigiert.</li>
+      <li><strong>2012:</strong> „Whatever it takes“ → Worte und Glaubwürdigkeit als Werkzeug.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 6 ZWEI ZINSEN ============ -->
+<section class="chapter" id="zweizinsen">
+  <div class="chap-head"><div class="chap-num">6</div><div>
+    <span class="span-chip">Europa und die USA</span>
+    <h2>Zwei Währungsräume, zwei Zinsen</h2>
+  </div></div>
+  <p class="lead">Der Euroraum und die USA sind die beiden größten Währungsräume der westlichen Welt. Ihre Zentralbanken entscheiden unabhängig voneinander – und oft verschieden. Was das bedeutet, spürt man an der Zapfsäule, in der Exportindustrie und an den Finanzmärkten.</p>
+
+  <h3>6.1 Warum die Leitzinsen auseinanderlaufen</h3>
+  <div class="grid">
+    <div class="card"><h4>Unterschiedliche Schocks</h4><p>Die USA sind seit dem Schieferöl-Boom selbst großer Öl- und Gasproduzent. Europa muss Energie importieren und leidet stärker unter Preisschocks – 2022 beim Gas, 2026 beim Öl.</p></div>
+    <div class="card"><h4>Unterschiedliche Aufträge</h4><p>Die Fed soll neben stabilen Preisen auch hohe Beschäftigung sichern. Die EZB hat vorrangig die Preisstabilität im Blick.</p></div>
+    <div class="card"><h4>Unterschiedliche Konjunktur</h4><p>Die US-Wirtschaft wuchs seit 2010 meist schneller als die europäische. Ein starkes Wachstum verträgt höhere Zinsen.</p></div>
+    <div class="card"><h4>Unterschiedliche Staatsfinanzen</h4><p>Die USA haben seit Jahren sehr hohe Haushaltsdefizite, die die Nachfrage anheizen. Im Euroraum muss die EZB zudem auf die Lage hoch verschuldeter Länder wie Italien und Frankreich achten.</p></div>
+  </div>
+
+  <h3>6.2 Was eine Zinsdifferenz auslöst</h3>
+  <p>Liegt der Zins in den USA höher als im Euroraum, können Anleger mit Dollar-Anlagen mehr verdienen. Sie tauschen Euro in Dollar, um amerikanische Anleihen zu kaufen. Die steigende Nachfrage nach Dollar lässt seinen Kurs steigen, der Euro wird schwächer. Diese <a class="g" href="#g-zinsdifferenz">Zinsdifferenz</a> ist einer der wichtigsten Bestimmungsgründe für den Wechselkurs – wenn auch nicht der einzige.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Zeitpunkt</th><th>Fed (Obergrenze)</th><th>EZB-Einlagesatz</th><th>Abstand</th><th>Euro in Dollar (rund)</th><th>Einordnung</th></tr>
+    <tr><td><strong>Ende 2008</strong></td><td>0,25&nbsp;%</td><td>2,00&nbsp;%</td><td>EZB höher</td><td>1,40</td><td>Die Fed senkt schneller; der Euro ist stark.</td></tr>
+    <tr><td><strong>Frühjahr 2015</strong></td><td>0,25&nbsp;%</td><td>−0,20&nbsp;%</td><td>0,45 Pp.</td><td>1,05–1,10</td><td>EZB startet Anleihekäufe, die Fed bereitet Erhöhungen vor; der Euro verliert binnen eines Jahres rund ein Viertel.</td></tr>
+    <tr><td><strong>Ende 2018</strong></td><td>2,50&nbsp;%</td><td>−0,40&nbsp;%</td><td>2,9 Pp.</td><td>1,14</td><td>Die Fed hat neunmal erhöht, die EZB gar nicht.</td></tr>
+    <tr><td><strong>Herbst 2022</strong></td><td>3,25&nbsp;%</td><td>0,75&nbsp;%</td><td>2,5 Pp.</td><td>unter 1,00</td><td>Die Fed erhöht früher und schneller; der Euro fällt erstmals seit 2002 unter den Dollar.</td></tr>
+    <tr><td><strong>Herbst 2023</strong></td><td>5,50&nbsp;%</td><td>4,00&nbsp;%</td><td>1,5 Pp.</td><td>1,06</td><td>Beide auf dem Höhepunkt des Zinszyklus.</td></tr>
+    <tr><td><strong>Sommer 2025</strong></td><td>4,50&nbsp;%</td><td>2,00&nbsp;%</td><td>2,5 Pp.</td><td>1,17</td><td>Trotz großer Differenz steigt der Euro – Zölle und Zweifel an der US-Politik schwächen den Dollar.</td></tr>
+    <tr><td><strong>September 2026</strong></td><td>4,00&nbsp;%</td><td>2,50&nbsp;%</td><td>1,5 Pp.</td><td>1,15</td><td>Beide erhöhen; nach dem Fed-Schritt gibt der Euro nach.</td></tr>
+  </table></div>
+
+  <h3>6.3 Die Folgen für Deutschland</h3>
+  <ul>
+    <li><strong>Exporte:</strong> Ein schwacher Euro macht deutsche Waren im Dollarraum billiger und hilft der Exportindustrie.</li>
+    <li><strong>Importierte Inflation:</strong> Öl, Gas und viele Rohstoffe werden in Dollar gehandelt. Ein schwacher Euro verteuert sie zusätzlich. 2022 trafen beide Effekte zusammen: Die Energiepreise stiegen in Dollar, und der Dollar selbst wurde teurer.</li>
+    <li><strong>Gekoppelte Kapitalmärkte:</strong> Steigen die Renditen amerikanischer Staatsanleihen, ziehen die Renditen von Bundesanleihen meist mit, weil weltweit tätige Anleger zwischen beiden wählen. Im September 2026 stiegen beide gleichzeitig auf Mehrjahreshochs – US-Anleihen auf über fünf Prozent, Bundesanleihen auf gut 3,5 Prozent.</li>
+    <li><strong>Spielraum der EZB:</strong> Senkt die EZB ihre Zinsen deutlich stärker als die Fed, schwächt sie den Euro und importiert Inflation. Deshalb beobachtet sie die US-Politik genau, auch wenn sie ihr nicht folgen muss.</li>
+  </ul>
+
+  <h3>6.4 Wenn Zinsdifferenzen plötzlich schrumpfen: der Carry-Trade</h3>
+  <p>Zinsunterschiede locken auch Spekulanten. Beim <a class="g" href="#g-carrytrade">Carry-Trade</a> leihen sich Anleger Geld in einer Währung mit niedrigen Zinsen – lange vor allem im japanischen Yen – und legen es dort an, wo die Zinsen höher sind. Das funktioniert, solange die Zinsdifferenz groß bleibt und die Billigwährung nicht aufwertet. Als die Bank of Japan im Juli 2024 ihren Leitzins leicht anhob und die Fed zugleich Zinssenkungen signalisierte, wertete der Yen auf. Viele Anleger mussten ihre Geschäfte in kurzer Zeit auflösen; Anfang August 2024 stürzten die Börsen weltweit kurzzeitig ab, besonders in Tokio. Das Beispiel zeigt, dass kleine Zinsschritte große Wirkungen haben können, wenn sich weltweit Wetten auf eine bestimmte Zinsdifferenz aufgebaut haben.</p>
+
+  <div class="box warum"><div class="box-title">Muss die EZB der Fed folgen?</div>
+    <p>Rechtlich nicht, und praktisch auch nicht immer. Im Juni 2024 senkte die EZB ihre Zinsen drei Monate vor der Fed, weil die Inflation im Euroraum schneller gesunken war. Sie nahm einen etwas schwächeren Euro in Kauf. Grenzen gibt es dennoch: Weicht die EZB zu weit ab, droht eine starke Abwertung des Euro, die über teurere Importe die Inflation nach oben treibt. Viele Ökonomen sprechen deshalb davon, dass die EZB „im Schatten der Fed“ entscheidet – unabhängig im Prinzip, aber nicht unbeeinflusst.</p>
+  </div>
+
+  <div class="box achtung"><div class="box-title">Die Zinsdifferenz ist nicht alles</div>
+    <p>2025 stieg der Euro gegenüber dem Dollar deutlich, obwohl die US-Zinsen viel höher lagen. Nach Einschätzung von Banken wie der LBBW störten die umfassenden US-Zölle vom April 2025 und die Angriffe des Präsidenten auf die Unabhängigkeit der Fed das Vertrauen in den Dollar. Wechselkurse spiegeln also nicht nur Zinsen, sondern auch Vertrauen in Institutionen, Rechtssicherheit und Politik wider.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Höhere US-Zinsen</strong> → Kapital fließt in den Dollar → Euro wird schwächer.</li>
+      <li>Schwacher Euro → <strong>Exporte billiger</strong>, aber <strong>Energieimporte teurer</strong> (importierte Inflation).</li>
+      <li><strong>Herbst 2022:</strong> größere Zinsdifferenz → Euro unter einen Dollar.</li>
+      <li><strong>Carry-Trade:</strong> Wetten auf Zinsdifferenzen können plötzliche Marktbeben auslösen (August 2024).</li>
+      <li>Die EZB entscheidet unabhängig, aber <strong>„im Schatten der Fed“</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 7 NULLZINS ============ -->
+<section class="chapter" id="nullzins">
+  <div class="chap-head"><div class="chap-num">7</div><div>
+    <span class="span-chip">2008 – 2021</span>
+    <h2>Der Weg in den Nullzins</h2>
+  </div></div>
+  <p class="lead">Über mehr als ein Jahrzehnt lagen die Zinsen im Euroraum bei null oder darunter. Was als Notmaßnahme in der Finanzkrise begann, wurde zum Dauerzustand – aus Gründen, die weit über die Geldpolitik hinausreichen.</p>
+
+  <h3>7.1 Das große Bild: Leitzinsen und Inflation seit 2008</h3>
+  <p>Die Grafik zeigt den Einlagesatz der EZB, den Leitzins der US-Notenbank und die Inflationsrate in Deutschland. Gut zu erkennen sind die lange Phase, in der der europäische Leitzins unter der Nulllinie lag, der steile Anstieg ab 2022 – der erst einsetzte, als die Inflation schon hoch war – und die erneute Wende 2026.</p>
+  <div style="border:1px solid var(--line);background:var(--bg);padding:14px 10px 6px;margin:16px 0">
+<svg viewBox="0 0 760 392" width="100%" role="img" aria-label="Liniendiagramm: EZB-Einlagesatz, Leitzins der US-Notenbank und Inflationsrate in Deutschland, 2008 bis 2026" style="display:block;height:auto;font-family:var(--sans)">
+<line x1="58" y1="300.0" x2="736" y2="300.0" style="stroke:var(--line);stroke-width:0.6"/>
+<text x="50" y="304.0" text-anchor="end" style="font-size:11px;fill:var(--muted)">-1&nbsp;%</text>
+<line x1="58" y1="266.0" x2="736" y2="266.0" style="stroke:var(--ink);stroke-width:1.2"/>
+<text x="50" y="270.0" text-anchor="end" style="font-size:11px;fill:var(--muted)">0&nbsp;%</text>
+<line x1="58" y1="232.0" x2="736" y2="232.0" style="stroke:var(--line);stroke-width:0.6"/>
+<text x="50" y="236.0" text-anchor="end" style="font-size:11px;fill:var(--muted)">1&nbsp;%</text>
+<line x1="58" y1="198.0" x2="736" y2="198.0" style="stroke:var(--line);stroke-width:0.6"/>
+<text x="50" y="202.0" text-anchor="end" style="font-size:11px;fill:var(--muted)">2&nbsp;%</text>
+<line x1="58" y1="164.0" x2="736" y2="164.0" style="stroke:var(--line);stroke-width:0.6"/>
+<text x="50" y="168.0" text-anchor="end" style="font-size:11px;fill:var(--muted)">3&nbsp;%</text>
+<line x1="58" y1="130.0" x2="736" y2="130.0" style="stroke:var(--line);stroke-width:0.6"/>
+<text x="50" y="134.0" text-anchor="end" style="font-size:11px;fill:var(--muted)">4&nbsp;%</text>
+<line x1="58" y1="96.0" x2="736" y2="96.0" style="stroke:var(--line);stroke-width:0.6"/>
+<text x="50" y="100.0" text-anchor="end" style="font-size:11px;fill:var(--muted)">5&nbsp;%</text>
+<line x1="58" y1="62.0" x2="736" y2="62.0" style="stroke:var(--line);stroke-width:0.6"/>
+<text x="50" y="66.0" text-anchor="end" style="font-size:11px;fill:var(--muted)">6&nbsp;%</text>
+<line x1="58" y1="28.0" x2="736" y2="28.0" style="stroke:var(--line);stroke-width:0.6"/>
+<text x="50" y="32.0" text-anchor="end" style="font-size:11px;fill:var(--muted)">7&nbsp;%</text>
+<text x="58.0" y="320" text-anchor="middle" style="font-size:11px;fill:var(--muted)">2008</text>
+<text x="133.3" y="320" text-anchor="middle" style="font-size:11px;fill:var(--muted)">2010</text>
+<text x="208.7" y="320" text-anchor="middle" style="font-size:11px;fill:var(--muted)">2012</text>
+<text x="284.0" y="320" text-anchor="middle" style="font-size:11px;fill:var(--muted)">2014</text>
+<text x="359.3" y="320" text-anchor="middle" style="font-size:11px;fill:var(--muted)">2016</text>
+<text x="434.7" y="320" text-anchor="middle" style="font-size:11px;fill:var(--muted)">2018</text>
+<text x="510.0" y="320" text-anchor="middle" style="font-size:11px;fill:var(--muted)">2020</text>
+<text x="585.3" y="320" text-anchor="middle" style="font-size:11px;fill:var(--muted)">2022</text>
+<text x="660.7" y="320" text-anchor="middle" style="font-size:11px;fill:var(--muted)">2024</text>
+<text x="736.0" y="320" text-anchor="middle" style="font-size:11px;fill:var(--muted)">2026</text>
+<polyline points="58.0,257.5 95.7,257.5 133.3,257.5 171.0,257.5 208.7,257.5 246.3,257.5 284.0,257.5 321.7,249.0 359.3,240.5 397.0,215.0 434.7,181.0 472.3,206.5 510.0,257.5 547.7,257.5 585.3,113.0 623.0,79.0 660.7,113.0 698.3,138.5 736.0,130.0" style="fill:none;stroke:var(--c2);stroke-width:2.4;stroke-dasharray:6 4"/><rect x="55.5" y="255.0" width="5" height="5" style="fill:var(--c2)"/><rect x="93.2" y="255.0" width="5" height="5" style="fill:var(--c2)"/><rect x="130.8" y="255.0" width="5" height="5" style="fill:var(--c2)"/><rect x="168.5" y="255.0" width="5" height="5" style="fill:var(--c2)"/><rect x="206.2" y="255.0" width="5" height="5" style="fill:var(--c2)"/><rect x="243.8" y="255.0" width="5" height="5" style="fill:var(--c2)"/><rect x="281.5" y="255.0" width="5" height="5" style="fill:var(--c2)"/><rect x="319.2" y="246.5" width="5" height="5" style="fill:var(--c2)"/><rect x="356.8" y="238.0" width="5" height="5" style="fill:var(--c2)"/><rect x="394.5" y="212.5" width="5" height="5" style="fill:var(--c2)"/><rect x="432.2" y="178.5" width="5" height="5" style="fill:var(--c2)"/><rect x="469.8" y="204.0" width="5" height="5" style="fill:var(--c2)"/><rect x="507.5" y="255.0" width="5" height="5" style="fill:var(--c2)"/><rect x="545.2" y="255.0" width="5" height="5" style="fill:var(--c2)"/><rect x="582.8" y="110.5" width="5" height="5" style="fill:var(--c2)"/><rect x="620.5" y="76.5" width="5" height="5" style="fill:var(--c2)"/><rect x="658.2" y="110.5" width="5" height="5" style="fill:var(--c2)"/><rect x="695.8" y="136.0" width="5" height="5" style="fill:var(--c2)"/><rect x="733.5" y="127.5" width="5" height="5" style="fill:var(--c2)"/>
+<polyline points="58.0,198.0 95.7,257.5 133.3,257.5 171.0,257.5 208.7,266.0 246.3,266.0 284.0,272.8 321.7,276.2 359.3,279.6 397.0,279.6 434.7,279.6 472.3,283.0 510.0,283.0 547.7,283.0 585.3,198.0 623.0,130.0 660.7,164.0 698.3,198.0 736.0,181.0" style="fill:none;stroke:var(--c1);stroke-width:2.4"/><rect x="55.5" y="195.5" width="5" height="5" style="fill:var(--c1)"/><rect x="93.2" y="255.0" width="5" height="5" style="fill:var(--c1)"/><rect x="130.8" y="255.0" width="5" height="5" style="fill:var(--c1)"/><rect x="168.5" y="255.0" width="5" height="5" style="fill:var(--c1)"/><rect x="206.2" y="263.5" width="5" height="5" style="fill:var(--c1)"/><rect x="243.8" y="263.5" width="5" height="5" style="fill:var(--c1)"/><rect x="281.5" y="270.3" width="5" height="5" style="fill:var(--c1)"/><rect x="319.2" y="273.7" width="5" height="5" style="fill:var(--c1)"/><rect x="356.8" y="277.1" width="5" height="5" style="fill:var(--c1)"/><rect x="394.5" y="277.1" width="5" height="5" style="fill:var(--c1)"/><rect x="432.2" y="277.1" width="5" height="5" style="fill:var(--c1)"/><rect x="469.8" y="280.5" width="5" height="5" style="fill:var(--c1)"/><rect x="507.5" y="280.5" width="5" height="5" style="fill:var(--c1)"/><rect x="545.2" y="280.5" width="5" height="5" style="fill:var(--c1)"/><rect x="582.8" y="195.5" width="5" height="5" style="fill:var(--c1)"/><rect x="620.5" y="127.5" width="5" height="5" style="fill:var(--c1)"/><rect x="658.2" y="161.5" width="5" height="5" style="fill:var(--c1)"/><rect x="695.8" y="195.5" width="5" height="5" style="fill:var(--c1)"/><rect x="733.5" y="178.5" width="5" height="5" style="fill:var(--c1)"/>
+<polyline points="58.0,177.6 95.7,255.8 133.3,232.0 171.0,191.2 208.7,201.4 246.3,215.0 284.0,232.0 321.7,249.0 359.3,249.0 397.0,215.0 434.7,204.8 472.3,218.4 510.0,249.0 547.7,160.6 585.3,31.4 623.0,65.4 660.7,191.2 698.3,191.2 736.0,170.8" style="fill:none;stroke:var(--c4);stroke-width:2.4"/><rect x="55.5" y="175.1" width="5" height="5" style="fill:var(--c4)"/><rect x="93.2" y="253.3" width="5" height="5" style="fill:var(--c4)"/><rect x="130.8" y="229.5" width="5" height="5" style="fill:var(--c4)"/><rect x="168.5" y="188.7" width="5" height="5" style="fill:var(--c4)"/><rect x="206.2" y="198.9" width="5" height="5" style="fill:var(--c4)"/><rect x="243.8" y="212.5" width="5" height="5" style="fill:var(--c4)"/><rect x="281.5" y="229.5" width="5" height="5" style="fill:var(--c4)"/><rect x="319.2" y="246.5" width="5" height="5" style="fill:var(--c4)"/><rect x="356.8" y="246.5" width="5" height="5" style="fill:var(--c4)"/><rect x="394.5" y="212.5" width="5" height="5" style="fill:var(--c4)"/><rect x="432.2" y="202.3" width="5" height="5" style="fill:var(--c4)"/><rect x="469.8" y="215.9" width="5" height="5" style="fill:var(--c4)"/><rect x="507.5" y="246.5" width="5" height="5" style="fill:var(--c4)"/><rect x="545.2" y="158.1" width="5" height="5" style="fill:var(--c4)"/><rect x="582.8" y="28.9" width="5" height="5" style="fill:var(--c4)"/><rect x="620.5" y="62.9" width="5" height="5" style="fill:var(--c4)"/><rect x="658.2" y="188.7" width="5" height="5" style="fill:var(--c4)"/><rect x="695.8" y="188.7" width="5" height="5" style="fill:var(--c4)"/><rect x="733.5" y="168.3" width="5" height="5" style="fill:var(--c4)"/>
+<line x1="58" y1="344" x2="82" y2="344" style="stroke:var(--c1);stroke-width:2.4"/>
+<text x="88" y="348" style="font-size:11.5px;fill:var(--ink)">EZB-Einlagesatz (Jahresende)</text>
+<line x1="58" y1="362" x2="82" y2="362" style="stroke:var(--c2);stroke-width:2.4;stroke-dasharray:6 4"/>
+<text x="88" y="366" style="font-size:11.5px;fill:var(--ink)">Fed-Leitzins, Obergrenze (Jahresende)</text>
+<line x1="58" y1="380" x2="82" y2="380" style="stroke:var(--c4);stroke-width:2.4"/>
+<text x="88" y="384" style="font-size:11.5px;fill:var(--ink)">Inflation Deutschland (VPI, Jahresdurchschnitt)</text>
+<text x="472.3" y="299.0" text-anchor="middle" style="font-size:11px;fill:var(--c1)">Negativzins</text>
+<text x="591.3" y="23.4" text-anchor="start" style="font-size:11px;fill:var(--c4)">Inflationsspitze</text>
+</svg>
+  </div>
+  <p style="font-family:var(--sans);font-size:.82rem;color:var(--muted)">Zinswerte jeweils zum Jahresende, für 2026 Stand Oktober. Inflation als Jahresdurchschnitt des Verbraucherpreisindex (gerundet); der Wert für 2026 ist die Prognose der Gemeinschaftsdiagnose vom Herbst 2026.</p>
+  <details>
+    <summary>Die Werte als Tabelle</summary>
+    <div class="tablewrap"><table>
+      <tr><th>Jahr</th><th>EZB-Einlagesatz</th><th>Fed (Obergrenze)</th><th>Inflation Deutschland</th></tr>
+      <tr><td><strong>2008</strong></td><td>2,00&nbsp;%</td><td>0,25&nbsp;%</td><td>2,6&nbsp;%</td></tr>
+      <tr><td><strong>2009</strong></td><td>0,25&nbsp;%</td><td>0,25&nbsp;%</td><td>0,3&nbsp;%</td></tr>
+      <tr><td><strong>2010</strong></td><td>0,25&nbsp;%</td><td>0,25&nbsp;%</td><td>1,0&nbsp;%</td></tr>
+      <tr><td><strong>2011</strong></td><td>0,25&nbsp;%</td><td>0,25&nbsp;%</td><td>2,2&nbsp;%</td></tr>
+      <tr><td><strong>2012</strong></td><td>0,00&nbsp;%</td><td>0,25&nbsp;%</td><td>1,9&nbsp;%</td></tr>
+      <tr><td><strong>2013</strong></td><td>0,00&nbsp;%</td><td>0,25&nbsp;%</td><td>1,5&nbsp;%</td></tr>
+      <tr><td><strong>2014</strong></td><td>−0,20&nbsp;%</td><td>0,25&nbsp;%</td><td>1,0&nbsp;%</td></tr>
+      <tr><td><strong>2015</strong></td><td>−0,30&nbsp;%</td><td>0,50&nbsp;%</td><td>0,5&nbsp;%</td></tr>
+      <tr><td><strong>2016</strong></td><td>−0,40&nbsp;%</td><td>0,75&nbsp;%</td><td>0,5&nbsp;%</td></tr>
+      <tr><td><strong>2017</strong></td><td>−0,40&nbsp;%</td><td>1,50&nbsp;%</td><td>1,5&nbsp;%</td></tr>
+      <tr><td><strong>2018</strong></td><td>−0,40&nbsp;%</td><td>2,50&nbsp;%</td><td>1,8&nbsp;%</td></tr>
+      <tr><td><strong>2019</strong></td><td>−0,50&nbsp;%</td><td>1,75&nbsp;%</td><td>1,4&nbsp;%</td></tr>
+      <tr><td><strong>2020</strong></td><td>−0,50&nbsp;%</td><td>0,25&nbsp;%</td><td>0,5&nbsp;%</td></tr>
+      <tr><td><strong>2021</strong></td><td>−0,50&nbsp;%</td><td>0,25&nbsp;%</td><td>3,1&nbsp;%</td></tr>
+      <tr><td><strong>2022</strong></td><td>2,00&nbsp;%</td><td>4,50&nbsp;%</td><td>6,9&nbsp;%</td></tr>
+      <tr><td><strong>2023</strong></td><td>4,00&nbsp;%</td><td>5,50&nbsp;%</td><td>5,9&nbsp;%</td></tr>
+      <tr><td><strong>2024</strong></td><td>3,00&nbsp;%</td><td>4,50&nbsp;%</td><td>2,2&nbsp;%</td></tr>
+      <tr><td><strong>2025</strong></td><td>2,00&nbsp;%</td><td>3,75&nbsp;%</td><td>2,2&nbsp;%</td></tr>
+      <tr><td><strong>2026 (Okt.)</strong></td><td>2,50&nbsp;%</td><td>4,00&nbsp;%</td><td>2,8&nbsp;% (Prognose)</td></tr>
+    </table></div>
+  </details>
+
+  <h3>7.2 Warum die Zinsen so tief fielen</h3>
+  <p>Ökonomen nennen kurzfristige und langfristige Gründe. Die kurzfristigen waren die Krisen selbst. Die langfristigen wirken leiser, aber über Jahrzehnte: Der <a class="g" href="#g-neutralzins">neutrale Zins</a>, bei dem die Wirtschaft weder angeheizt noch gebremst wird, ist in allen Industrieländern seit den 1980er Jahren gesunken.</p>
+  <div class="grid">
+    <div class="card"><h4>Finanz- und Euro-Krise</h4><p>Banken, Staaten und Haushalte mussten Schulden abbauen. Die Nachfrage blieb über Jahre schwach.</p></div>
+    <div class="card"><h4>Alternde Gesellschaften</h4><p>Wer für das Alter vorsorgt, spart. Viel Erspartes trifft auf wenig Investitionsbedarf und drückt den Zins.</p></div>
+    <div class="card"><h4>Schwaches Produktivitätswachstum</h4><p>Wenn neue Investitionen weniger zusätzlichen Ertrag bringen, sinkt der Zins, den Unternehmen zahlen können.</p></div>
+    <div class="card"><h4>Globale Ersparnisse</h4><p>Exportstarke Länder wie China, Deutschland und die Ölstaaten legten große Überschüsse an den Kapitalmärkten an.</p></div>
+    <div class="card"><h4>Angst vor Deflation</h4><p>2014/15 sank die Inflation im Euroraum zeitweise unter null. Die EZB fürchtete eine Abwärtsspirale wie in Japan.</p></div>
+  </div>
+
+  <h3>7.3 Die Schritte in den Nullzins</h3>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase I: Krisenbekämpfung</h4><span class="yr">2008–2013</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Okt. 2008</span><span>Nach der Lehman-Pleite senken mehrere Zentralbanken gemeinsam ihre Zinsen. Die EZB stellt Banken unbegrenzt Liquidität zur Verfügung.</span></li>
+        <li><span class="d">Mai 2009</span><span>Der Hauptrefinanzierungssatz der EZB liegt bei 1,0 Prozent. Die Fed ist bereits seit Dezember 2008 bei null und kauft Anleihen.</span></li>
+        <li><span class="d">2010–2012</span><span>Euro-Schuldenkrise. Die EZB kauft erstmals Staatsanleihen von Krisenländern und vergibt dreijährige Kredite an Banken im Umfang von rund einer Billion Euro.</span></li>
+        <li><span class="d">Juli 2012</span><span>Der Einlagesatz sinkt auf null. Draghis „Whatever it takes“ beruhigt die Märkte.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase II: Negativzins und Anleihekäufe</h4><span class="yr">2014–2019</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Juni 2014</span><span>Die EZB führt als erste große Zentralbank einen <strong>negativen Einlagesatz</strong> ein: −0,1 Prozent.</span></li>
+        <li><span class="d">März 2015</span><span>Beginn des großen <strong>Anleihekaufprogramms</strong> (APP) mit zunächst 60 Milliarden Euro im Monat, vor allem Staatsanleihen. Bis 2022 erwirbt die EZB im Rahmen des APP Wertpapiere für mehr als drei Billionen Euro.</span></li>
+        <li><span class="d">März 2016</span><span>Der Hauptrefinanzierungssatz sinkt auf <strong>null</strong>, der Einlagesatz auf −0,4 Prozent.</span></li>
+        <li><span class="d">Juni 2016</span><span>Die Rendite zehnjähriger Bundesanleihen fällt erstmals unter null. Der Bund verdient zeitweise Geld damit, Schulden zu machen.</span></li>
+        <li><span class="d">Aug. 2019</span><span>Selbst dreißigjährige Bundesanleihen rentieren erstmals negativ.</span></li>
+        <li><span class="d">Sept. 2019</span><span>Zum Abschied Draghis senkt die EZB den Einlagesatz auf <strong>−0,5 Prozent</strong> und nimmt die Anleihekäufe wieder auf. Bundesbankpräsident Jens Weidmann und mehrere frühere Notenbanker kritisieren die Entscheidung öffentlich.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="phase">
+    <div class="phase-head"><h4>Phase III: Pandemie</h4><span class="yr">2020–2021</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">März 2020</span><span>Die Corona-Pandemie erschüttert die Märkte. Die Rendite zehnjähriger Bundesanleihen fällt auf ein Rekordtief von rund −0,9 Prozent. Die EZB startet das Notfallprogramm <strong>PEPP</strong>, das später auf 1,85 Billionen Euro aufgestockt wird.</span></li>
+        <li><span class="d">5.5.2020</span><span>Das <strong>Bundesverfassungsgericht</strong> erklärt in seinem PSPP-Urteil, die EZB habe die Verhältnismäßigkeit ihrer Anleihekäufe nicht ausreichend begründet – ein Konflikt mit dem Europäischen Gerichtshof, der die Käufe zuvor gebilligt hatte.</span></li>
+        <li><span class="d">Juli 2021</span><span>Die EZB beschließt eine neue Strategie: Das Inflationsziel lautet nun symmetrisch zwei Prozent; zeitweise Überschreitungen werden hingenommen.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box warum"><div class="box-title">Warum verlangte die EZB Zinsen von Banken?</div>
+    <p>Ein negativer Einlagesatz sollte Banken dazu bringen, ihr überschüssiges Geld nicht bei der Zentralbank zu parken, sondern als Kredit an Unternehmen und Haushalte zu vergeben. Zugleich sollte er den Euro schwächen und so Exporte fördern und Importe verteuern – beides sollte die zu niedrige Inflation anheben. Um die Banken nicht zu überfordern, befreite die EZB ab 2019 einen Teil ihrer Guthaben vom Negativzins.</p>
+  </div>
+
+  <div class="box achtung"><div class="box-title">Die Kritik</div>
+    <ul>
+      <li><strong>Enteignung der Sparer:</strong> In Deutschland wurde der Begriff der „kalten Enteignung“ populär, weil Sparzinsen unter der Inflation lagen.</li>
+      <li><strong>Blasengefahr:</strong> Billiges Geld treibe die Preise von Immobilien und Aktien und begünstige diejenigen, die bereits Vermögen besitzen.</li>
+      <li><strong>Zombieunternehmen:</strong> Firmen, die nur dank niedriger Zinsen überleben, blockierten den Strukturwandel. Wie verbreitet dieses Phänomen war, ist in der Forschung umstritten.</li>
+      <li><strong>Fehlanreize für Staaten:</strong> Regierungen hoch verschuldeter Länder hätten Reformen aufgeschoben, weil die EZB ihre Finanzierung absicherte.</li>
+      <li><strong>Mandatsfrage:</strong> Kritiker sahen in den Anleihekäufen eine verbotene Staatsfinanzierung; Befürworter verwiesen auf die drohende Deflation und den möglichen Zerfall des Euroraums.</li>
+    </ul>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Ursachen:</strong> Krisen, Alterung, schwache Produktivität, globale Ersparnisse, Deflationsangst.</li>
+      <li><strong>2014:</strong> erster negativer Einlagesatz → bis 2022 negativ, Tiefpunkt −0,5&nbsp;% (2019).</li>
+      <li><strong>2015:</strong> Beginn massiver Anleihekäufe → Billionen-Bestände in der Zentralbankbilanz.</li>
+      <li><strong>2016–2021:</strong> Bundesanleihen mit negativer Rendite.</li>
+      <li><strong>2020:</strong> PSPP-Urteil des Bundesverfassungsgerichts → offener Streit über die Grenzen der EZB.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 8 NULLZINSFOLGEN ============ -->
+<section class="chapter" id="nullzinsfolgen">
+  <div class="chap-head"><div class="chap-num">8</div><div>
+    <span class="span-chip">2014 – 2021</span>
+    <h2>Die Nullzinsjahre in Deutschland</h2>
+  </div></div>
+  <p class="lead">Kein großes Euroland hat so intensiv über die Nullzinspolitik gestritten wie Deutschland. Das hatte einen Grund: Die Deutschen gehören zu den eifrigsten Sparern Europas – und zugleich profitierte ihr Staat wie kaum ein anderer von den niedrigen Zinsen.</p>
+
+  <h3>8.1 Gewinner und Verlierer</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Gruppe</th><th>Was geschah</th><th>Bilanz</th></tr>
+    <tr><td><strong>Der Bund</strong></td><td>Die Zinsausgaben sanken von rund 40 Milliarden Euro im Jahr 2008 auf rund vier Milliarden Euro im Jahr 2021, obwohl die Schulden wuchsen. Neue Anleihen brachten zeitweise sogar Geld ein. Von 2014 bis 2019 erzielte der Bund Haushaltsüberschüsse („schwarze Null“).</td><td>Großer Gewinner. Nach Berechnungen, über die das Handelsblatt 2019 berichtete, sparte der deutsche Staat seit 2008 rund 440 Milliarden Euro an Zinsen.</td></tr>
+    <tr><td><strong>Hauskäufer und Kreditnehmer</strong></td><td>Baukredite mit zehnjähriger Zinsbindung kosteten 2021 im Durchschnitt rund ein Prozent, Anfang 2022 teils weniger. Die Preise für Wohnimmobilien stiegen von 2008 bis 2022 ohne Unterbrechung, zuletzt mit zweistelligen Raten.</td><td>Gewinner, vor allem wer früh kaufte. Für spätere Käufer wurden die Häuser so teuer, dass der Zinsvorteil aufgezehrt wurde.</td></tr>
+    <tr><td><strong>Sparer</strong></td><td>Tagesgeld und Sparbuch brachten fast nichts. Viele Banken verlangten <a class="g" href="#g-verwahrentgelt">Verwahrentgelte</a>; auf dem Höhepunkt im Mai 2022 waren es mindestens 455 Institute, teils schon ab 5.000 Euro Guthaben.</td><td>Verlierer, solange sie ihr Geld auf Konten hielten. Der Bundesgerichtshof erklärte die Entgelte auf Spar- und Tagesgeldkonten 2025 für unzulässig.</td></tr>
+    <tr><td><strong>Banken und Sparkassen</strong></td><td>Die Zinsspanne der deutschen Institute sank laut Bundesregierung von 1,10 Prozent (2014) auf 0,97 Prozent (2019). Für Sparkassen und Volksbanken, die vom Einlagen- und Kreditgeschäft leben, war das schmerzhaft.</td><td>Verlierer; Fusionen und Filialschließungen beschleunigten sich.</td></tr>
+    <tr><td><strong>Lebensversicherer und Altersvorsorge</strong></td><td>Der Höchstrechnungszins für neue Lebensversicherungen sank schrittweise bis auf 0,25 Prozent (2022). Betriebliche Pensionszusagen wurden für Unternehmen teurer.</td><td>Verlierer; klassische Garantieprodukte verloren an Bedeutung.</td></tr>
+    <tr><td><strong>Unternehmen</strong></td><td>Kredite waren billig, Unternehmensanleihen fanden leicht Käufer. Die Zahl der Insolvenzen sank auf historische Tiefstände.</td><td>Gewinner, mit Nebenwirkungen: Kritiker sahen schwache Firmen künstlich am Leben gehalten.</td></tr>
+    <tr><td><strong>Vermögende</strong></td><td>Wer Aktien und Immobilien besaß, profitierte von steigenden Preisen. Mieter und Sparer ohne Wertpapiere hatten davon nichts.</td><td>Nach verbreiteter Einschätzung nahm die Vermögensungleichheit eher zu; das Ausmaß ist umstritten.</td></tr>
+  </table></div>
+
+  <h3>8.2 Der Staat und die verpasste Gelegenheit</h3>
+  <p>Für die Bundesregierung waren die Nullzinsen ein stilles Geschenk. Sie konnte die Schuldenbremse einhalten und zugleich Überschüsse erzielen, ohne harte Einschnitte. Rückblickend wird ihr aber vorgeworfen, die Gelegenheit nicht genutzt zu haben. ING-Chefvolkswirt Carsten Brzeski sagte 2023, der Bund zahle nun den Preis dafür, dass er die Phase negativer Zinsen nicht genutzt habe, um sich langfristig günstig zu verschulden; die meisten europäischen Länder hätten das klüger gemacht. Österreich etwa gab 2019 eine Anleihe mit 100 Jahren Laufzeit zu sehr niedrigen Zinsen aus. Andere Ökonomen kritisierten, dass in dieser Zeit zu wenig in Straßen, Schienen, Digitalisierung und Verteidigung investiert worden sei, obwohl Kredite praktisch nichts kosteten.</p>
+
+  <h3>8.3 Sparer in der Falle</h3>
+  <p>Deutsche Haushalte halten einen großen Teil ihres Geldvermögens auf Bankkonten und in Versicherungen. Aktien besitzen hierzulande deutlich weniger Menschen als etwa in den USA. Deshalb traf die Nullzinspolitik die Mittelschicht direkter als in anderen Ländern. Die ersten Banken gaben Negativzinsen ab 2014 an Großkunden weiter, später auch an Privatkunden. Nach der Zinswende 2022 verschwanden die Verwahrentgelte rasch. Im Februar 2025 entschied der Bundesgerichtshof in vier Urteilen, dass entsprechende Klauseln für Tagesgeld- und Sparkonten unwirksam waren und für Girokonten in der verwendeten Form ebenfalls; Kunden können gezahlte Beträge zurückfordern.</p>
+
+  <div class="box warum"><div class="box-title">Hat die Nullzinspolitik gewirkt?</div>
+    <p>Die Antwort hängt vom Maßstab ab. <strong>Befürworter</strong> verweisen darauf, dass der Euro die Schuldenkrise überstand, eine Deflation verhindert wurde und die Arbeitslosigkeit im Euroraum wie in Deutschland bis 2019 deutlich sank. <strong>Kritiker</strong> halten dagegen, dass die Inflation trotz aller Maßnahmen bis 2021 meist unter dem Ziel blieb, das Wachstum schwach war und die Nebenwirkungen – auf Banken, Sparer, Vermögenspreise und die Haushaltsdisziplin – unterschätzt wurden. Einig sind sich die meisten Fachleute darin, dass die EZB in dieser Zeit eine Last trug, die eigentlich auch Regierungen mit ihrer Finanz- und Reformpolitik hätten tragen müssen.</p>
+  </div>
+
+  <div class="box achtung"><div class="box-title">Ein Risiko für später</div>
+    <p>Die Zentralbanken des Eurosystems kauften Anleihen mit sehr niedrigen Zinsen und finanzierten sie mit Guthaben der Banken bei sich selbst. Solange der Einlagesatz negativ war, verdienten sie daran. Die Bundesbank begann ab 2016, Rückstellungen für den Fall steigender Zinsen zu bilden. Als die Zinsen ab 2022 stiegen, kehrte sich die Rechnung um (siehe Kapitel 10).</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Bund:</strong> Zinsausgaben von rund 40 Mrd. € (2008) auf rund 4 Mrd. € (2021) → schwarze Null, aber kaum langfristige Absicherung.</li>
+      <li><strong>Hauskäufer:</strong> Bauzinsen um 1&nbsp;% → Immobilienboom bis Mitte 2022.</li>
+      <li><strong>Sparer:</strong> Realverluste und Verwahrentgelte (Mai 2022: mindestens 455 Institute) → BGH 2025: unzulässig.</li>
+      <li><strong>Banken, Versicherer, Altersvorsorge</strong> unter Druck.</li>
+      <li>Zinsen verteilen um: <strong>Schuldner gewannen, Sparer verloren</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 9 INFLATIONSSCHOCK ============ -->
+<section class="chapter" id="inflationsschock">
+  <div class="chap-head"><div class="chap-num">9</div><div>
+    <span class="span-chip">2021 – 2022</span>
+    <h2>Die Rückkehr der Inflation</h2>
+  </div></div>
+  <p class="lead">Jahrelang hatten die Zentralbanken vergeblich versucht, die Inflation auf zwei Prozent zu heben. Dann kam sie innerhalb weniger Monate mit einer Wucht zurück, die es in Deutschland seit siebzig Jahren nicht gegeben hatte.</p>
+
+  <h3>9.1 Drei Ursachen kommen zusammen</h3>
+  <div class="grid">
+    <div class="card"><div class="yr">2021</div><h4>Nachholende Nachfrage</h4><p>Nach den Lockdowns wollten die Menschen wieder reisen und konsumieren. In den USA heizten Konjunkturprogramme im Umfang von mehreren Billionen Dollar die Nachfrage zusätzlich an.</p></div>
+    <div class="card"><div class="yr">2021</div><h4>Gestörte Lieferketten</h4><p>Fehlende Halbleiter, überlastete Häfen und teure Containerfrachten machten viele Waren knapp. In Deutschland kamen Sondereffekte hinzu: die Rückkehr zur alten Mehrwertsteuer und der neue CO2-Preis.</p></div>
+    <div class="card"><div class="yr">2022</div><h4>Energiepreisschock</h4><p>Nach dem russischen Angriff auf die Ukraine am 24. Februar 2022 stiegen die Preise für Gas, Strom und Öl drastisch. Im Oktober 2022 kostete Energie für deutsche Verbraucher über 40 Prozent mehr als ein Jahr zuvor.</p></div>
+  </div>
+
+  <h3>9.2 Die Zahlen</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Gebiet</th><th>Höchststand</th><th>Zeitpunkt</th><th>Anmerkung</th></tr>
+    <tr><td><strong>Deutschland (VPI)</strong></td><td>8,8&nbsp;%</td><td>Oktober und November 2022</td><td>Zunächst als 10,4&nbsp;% gemeldet; nach Umstellung auf das Basisjahr 2020 nach unten korrigiert. Jahresdurchschnitt 2022: 6,9&nbsp;%, 2023: 5,9&nbsp;%.</td></tr>
+    <tr><td><strong>Deutschland (HVPI)</strong></td><td>über 11&nbsp;%</td><td>Oktober 2022</td><td>Der europäische Index gewichtet Energie anders; 2022 im Durchschnitt 8,7&nbsp;%.</td></tr>
+    <tr><td><strong>Euroraum (HVPI)</strong></td><td>10,6&nbsp;%</td><td>Oktober 2022</td><td>Höchster Wert seit Einführung des Euro.</td></tr>
+    <tr><td><strong>USA (Verbraucherpreise)</strong></td><td>gut 9&nbsp;%</td><td>Juni 2022</td><td>Höchster Wert seit 1981.</td></tr>
+  </table></div>
+
+  <h3>9.3 Die Zentralbanken reagieren – unterschiedlich schnell</h3>
+  <p>Beide Notenbanken hielten den Preisanstieg 2021 zunächst für <strong>vorübergehend</strong>. Die Fed begann im März 2022 mit Zinserhöhungen und steigerte das Tempo im Juni auf drei Viertelprozentpunkte je Sitzung. Die EZB beendete zunächst ihre Netto-Anleihekäufe und erhöhte die Zinsen erst am 21. Juli 2022 – um einen halben Prozentpunkt, die erste Erhöhung seit 2011. Damit endete die Zeit der Negativzinsen. Der Euro fiel im Sommer 2022 unter die Parität zum Dollar, was Energieimporte zusätzlich verteuerte.</p>
+  <p>Die Bundesregierung versuchte, die Folgen für die Bürger abzufedern: mit einem befristeten Tankrabatt und dem 9-Euro-Ticket im Sommer 2022, einer gesenkten Mehrwertsteuer auf Gas, einer Einmalzahlung für Gas- und Wärmekunden im Dezember und den Strom- und Gaspreisbremsen 2023. Solche Maßnahmen senken die gemessene Inflation kurzfristig, kosten aber Staatsgeld und können die Nachfrage stützen, die die Zentralbank gerade bremsen will.</p>
+
+  <div class="box warum"><div class="box-title">Warum reagierte die EZB später als die Fed?</div>
+    <ul>
+      <li><strong>Andere Ursache:</strong> In den USA war die Inflation stärker nachfragegetrieben, im Euroraum vor allem ein Energieschock – also die Art von Inflation, gegen die Zinsen wenig ausrichten.</li>
+      <li><strong>Die Erfahrung von 2008 und 2011:</strong> Die EZB wollte nicht erneut auf einen Ölpreisschock mit Zinserhöhungen in einen Abschwung hinein reagieren.</li>
+      <li><strong>Die Reihenfolge:</strong> Die EZB hatte versprochen, erst die Anleihekäufe zu beenden und dann die Zinsen zu erhöhen.</li>
+      <li><strong>Die Angst vor Spaltung:</strong> Steigende Zinsen trafen hoch verschuldete Länder wie Italien besonders. Die EZB beschloss deshalb zeitgleich mit der ersten Zinserhöhung das Schutzinstrument TPI.</li>
+    </ul>
+  </div>
+
+  <div class="box achtung"><div class="box-title">Ein historischer Fehler?</div>
+    <p>Viele Ökonomen sehen das späte Handeln heute als Fehleinschätzung, die Zentralbanken haben ihre Prognosefehler selbst eingeräumt. Der spätere Fed-Vorsitzende Kevin Warsh nannte die Inflation von 2021/22 sogar den größten Fehler der makroökonomischen Politik seit 45 Jahren. Andere halten dagegen, dass ein Energieschock dieser Größe kaum vorherzusehen war und frühere Zinserhöhungen ihn nicht verhindert hätten. Unstrittig ist: Die Erfahrung hat die Zentralbanken geprägt. 2026 reagierten sie auf den nächsten Energieschock deutlich früher.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Ursachen 2021/22:</strong> Nachholeffekte, Lieferketten, Energieschock nach dem 24.2.2022.</li>
+      <li><strong>Höchststände:</strong> Euroraum 10,6&nbsp;% (Okt. 2022), Deutschland (VPI) 8,8&nbsp;%, USA gut 9&nbsp;%.</li>
+      <li><strong>Fed ab März 2022, EZB ab Juli 2022</strong> → Ende der Negativzinsen.</li>
+      <li>Euro unter einem Dollar → <strong>importierte Inflation</strong>.</li>
+      <li>Lehre der Notenbanken: <strong>„vorübergehend“</strong> ist ein gefährliches Wort.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 10 ZINSSCHOCK ============ -->
+<section class="chapter" id="zinsschock">
+  <div class="chap-head"><div class="chap-num">10</div><div>
+    <span class="span-chip">Juli 2022 – Mitte 2024</span>
+    <h2>Der Zinsschock 2022/23</h2>
+  </div></div>
+  <p class="lead">Innerhalb von gut vierzehn Monaten hob die EZB ihre Zinsen um 4,5 Prozentpunkte an – schneller als je zuvor seit Einführung des Euro. Kaum ein Bereich der Wirtschaft blieb davon unberührt.</p>
+
+  <h3>10.1 Das Tempo</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Zentralbank</th><th>Beginn</th><th>Höhepunkt</th><th>Umfang</th><th>Anzahl der Schritte</th></tr>
+    <tr><td><strong>Fed</strong></td><td>März 2022 (0–0,25&nbsp;%)</td><td>Juli 2023: 5,25–5,50&nbsp;%</td><td>5,25 Prozentpunkte</td><td>11</td></tr>
+    <tr><td><strong>EZB (Einlagesatz)</strong></td><td>Juli 2022 (−0,50&nbsp;%)</td><td>September 2023: 4,00&nbsp;%</td><td>4,50 Prozentpunkte</td><td>10</td></tr>
+  </table></div>
+  <p>Allein 2022 erhöhte die EZB um 2,5 Prozentpunkte, zweimal davon um einen Dreiviertelpunkt. Bundesbankpräsident Joachim Nagel warnte Ende 2022 davor, die Zügel zu früh wieder zu lockern; die Zinsen müssten ausreichend lange hoch bleiben. Bis Juni 2024 behielt die EZB den Einlagesatz bei vier Prozent.</p>
+
+  <h3>10.2 Die Folgen in Deutschland</h3>
+  <div class="grid">
+    <div class="card"><h4>Bauzinsen vervierfacht</h4><p>Konnten Käufer im Januar 2022 noch zehnjährige Finanzierungen unter einem Prozent abschließen, lagen die Bauzinsen im Oktober 2023 im Durchschnitt bei rund vier Prozent, teils darüber. Bei einem Kredit von 400.000 Euro bedeutet der Unterschied über zehn Jahre Mehrkosten in der Größenordnung von 100.000 Euro.</p></div>
+    <div class="card"><h4>Immobilienpreise fallen</h4><p>Nach dem Höhepunkt im zweiten Quartal 2022 sanken die Preise für Wohnimmobilien. 2023 lagen sie im Durchschnitt 8,4 Prozent unter dem Vorjahr – der stärkste Rückgang seit Beginn der Statistik im Jahr 2000. Das Kiel Institut für Weltwirtschaft sprach vom stärksten Preisrückgang seit rund 60 Jahren.</p></div>
+    <div class="card"><h4>Wohnungsbau bricht ein</h4><p>Höhere Zinsen und teure Baustoffe ließen viele Projekte unrentabel werden. In den ersten Monaten 2023 lagen die Baugenehmigungen für Wohnungen rund ein Viertel bis ein Drittel unter dem Vorjahr. Der Wohnungsmangel in den Städten verschärfte sich.</p></div>
+    <div class="card"><h4>Sparer erhalten wieder Zinsen</h4><p>Verwahrentgelte verschwanden, Tages- und Festgeld brachten 2023 wieder drei bis vier Prozent. Angesichts der hohen Inflation blieb der Realzins zunächst trotzdem negativ.</p></div>
+    <div class="card"><h4>Der Staat zahlt</h4><p>Die Zinsausgaben des Bundes stiegen nach Angaben des damaligen Finanzministers Christian Lindner von rund vier Milliarden Euro (2021) auf rund 40 Milliarden Euro (2023) – eine Verzehnfachung. Verstärkt wurde der Anstieg durch inflationsindexierte Anleihen.</p></div>
+    <div class="card"><h4>Die Bundesbank macht Verluste</h4><p>Die Bundesbank hält Anleihen mit sehr niedrigen Zinsen, muss den Banken aber auf deren Guthaben den hohen Einlagesatz zahlen. Für 2024 wies sie mit 19,2 Milliarden Euro den ersten Verlust seit 1979 und den höchsten ihrer Geschichte aus; bereits seit dem Geschäftsjahr 2020 führt sie keinen Gewinn mehr an den Bund ab.</p></div>
+  </div>
+  <p>Auch die Gesamtwirtschaft litt. Das reale Bruttoinlandsprodukt Deutschlands schrumpfte 2023 und 2024. Die höheren Zinsen waren dabei nur ein Grund unter mehreren; hinzu kamen die hohen Energiepreise, die Schwäche der Industrie und die nachlassende Nachfrage aus China.</p>
+
+  <h3>10.3 Wenn Zinsen das Finanzsystem testen</h3>
+  <p>Ein schneller Zinsanstieg lässt die Kurse bereits ausgegebener Anleihen fallen. Wer viele davon hält und sie plötzlich verkaufen muss, erleidet Verluste. Zwei Ereignisse zeigten 2022/23, wie gefährlich das sein kann:</p>
+  <ul>
+    <li><strong>Großbritannien, September 2022:</strong> Unfinanzierte Steuersenkungen der Regierung Truss lösten einen Ausverkauf britischer Staatsanleihen aus. Pensionsfonds gerieten in Not, die Bank of England musste eingreifen; Premierministerin Truss trat nach wenigen Wochen zurück. Die Episode wird seitdem oft als Warnung angeführt, dass Märkte unsolide Haushaltspolitik mit höheren Zinsen bestrafen.</li>
+    <li><strong>USA und Schweiz, März 2023:</strong> Die Silicon Valley Bank brach zusammen, nachdem sie Verluste auf ihre Anleihebestände realisieren musste und Kunden ihre Einlagen abzogen. Wenige Tage später musste die Schweizer Großbank Credit Suisse von der UBS übernommen werden.</li>
+  </ul>
+
+  <div class="box warum"><div class="box-title">Warum sank die Inflation wieder?</div>
+    <p>Die Inflation in Deutschland fiel von 5,9 Prozent (2023) auf 2,2 Prozent (2024). Mehrere Gründe wirkten zusammen: Die Energiepreise gaben nach, die Lieferketten normalisierten sich, und die höheren Zinsen dämpften Kreditvergabe, Bau und Konsum. Wie groß der Anteil der Geldpolitik genau war, ist umstritten. Wichtig war nach Ansicht vieler Ökonomen vor allem, dass die Inflationserwartungen trotz zweistelliger Raten nicht dauerhaft nach oben abdrifteten – eine Lohn-Preis-Spirale wie in den 1970er Jahren blieb aus.</p>
+  </div>
+
+  <div class="box achtung"><div class="box-title">Die Schattenseiten</div>
+    <ul>
+      <li>Viele Familien konnten sich den Traum vom Eigenheim nicht mehr leisten; Mieten stiegen weiter, weil weniger gebaut wurde.</li>
+      <li>Wer eine Anschlussfinanzierung brauchte, musste plötzlich ein Vielfaches an Zinsen zahlen.</li>
+      <li>Projektentwickler und Bauunternehmen gingen in größerer Zahl in die Insolvenz.</li>
+      <li>Die steigende Zinslast engte den Spielraum des Bundeshaushalts ein und verschärfte den Streit um die Schuldenbremse.</li>
+    </ul>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>EZB 2022/23:</strong> +4,5 Prozentpunkte in 14 Monaten → Einlagesatz 4,0&nbsp;% (Sept. 2023).</li>
+      <li><strong>Bauzinsen:</strong> unter 1&nbsp;% (Anfang 2022) → rund 4&nbsp;% (Okt. 2023) → Immobilienpreise 2023 −8,4&nbsp;%.</li>
+      <li><strong>Bund:</strong> Zinsausgaben verzehnfacht (rund 4 → rund 40 Mrd. €).</li>
+      <li><strong>Bundesbank:</strong> 2024 Verlust von 19,2 Mrd. € → erstmals seit 1979.</li>
+      <li><strong>Finanzsystem:</strong> Gilt-Krise 2022, Silicon Valley Bank und Credit Suisse 2023.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 11 LOCKERUNG ============ -->
+<section class="chapter" id="lockerung">
+  <div class="chap-head"><div class="chap-num">11</div><div>
+    <span class="span-chip">Juni 2024 – Februar 2026</span>
+    <h2>Lockerung und trügerische Ruhe</h2>
+  </div></div>
+  <p class="lead">Als die Inflation 2024 wieder in die Nähe von zwei Prozent sank, senkten die Zentralbanken ihre Zinsen. Doch unter der Oberfläche bauten sich neue Spannungen auf: hohe Staatsschulden, Handelskonflikte und offener politischer Druck auf die US-Notenbank.</p>
+
+  <h3>11.1 Die EZB senkt – und hält inne</h3>
+  <p>Im Juni 2024 senkte die EZB ihren Einlagesatz erstmals seit 2019, drei Monate vor der Fed. Es folgten sieben weitere Schritte, bis der Satz im Juni 2025 bei <strong>2,0 Prozent</strong> lag. Im September 2024 stellte die EZB zudem ihren geldpolitischen Handlungsrahmen um und rückte den Einlagesatz offiziell in den Mittelpunkt. Ab Juli 2025 legte sie eine fast einjährige Pause ein. Der Leitzins lag nun ungefähr in dem Bereich, den die EZB als neutral einschätzte, die Inflation in Deutschland betrug 2024 und 2025 jeweils 2,2 Prozent. Bundesbankpräsident Nagel erklärte bei der Vorlage des Jahresabschlusses 2025, die Preisstabilität im Euroraum sei wieder erreicht. Im Dezember 2025 rechneten die Fachleute des Eurosystems sogar damit, dass die Inflation 2026 und 2027 leicht unter zwei Prozent liegen würde.</p>
+
+  <h3>11.2 Die Fed zwischen Zöllen und Präsident</h3>
+  <p>Die Fed senkte im September 2024 um einen halben Prozentpunkt und bis Jahresende auf 4,25–4,50 Prozent. Dann hielt sie inne: Die umfassenden Zölle, die Präsident Donald Trump im April 2025 verkündete, ließen höhere Preise erwarten. Trump griff Fed-Chef Jerome Powell deshalb immer wieder öffentlich an und forderte drastische Zinssenkungen. Im August 2025 versuchte er, die Fed-Gouverneurin Lisa Cook zu entlassen. Im Herbst 2025 senkte die Fed dreimal auf 3,50–3,75 Prozent. Ende Januar 2026 nominierte Trump den früheren Fed-Gouverneur <strong>Kevin Warsh</strong> als Nachfolger Powells, dessen Amtszeit als Vorsitzender im Mai 2026 endete.</p>
+
+  <h3>11.3 Deutschland: die Schuldenwende</h3>
+  <p>Nach der Bundestagswahl im Februar 2025 beschloss der alte Bundestag am <strong>18. März 2025</strong> eine Änderung des Grundgesetzes: Verteidigungsausgaben über einer bestimmten Schwelle wurden von der <a class="g" href="#g-schuldenbremse">Schuldenbremse</a> ausgenommen, dazu kam ein Sondervermögen von 500 Milliarden Euro für Infrastruktur. Schon die Ankündigung Anfang März ließ die Rendite zehnjähriger Bundesanleihen sprunghaft steigen. Die Märkte rechneten mit deutlich mehr deutschen Anleihen – und damit höheren Zinsen. Die lange Phase, in der Deutschland sich fast zum Nulltarif verschulden konnte, war endgültig vorbei.</p>
+
+  <div class="grid">
+    <div class="card"><div class="yr">Aug. 2024</div><h4>Carry-Trade-Beben</h4><p>Eine kleine Zinserhöhung der Bank of Japan löst weltweit Verkäufe aus (siehe Kapitel 6).</p></div>
+    <div class="card"><div class="yr">Feb. 2025</div><h4>BGH-Urteile</h4><p>Der Bundesgerichtshof erklärt Verwahrentgelte auf Spar- und Tagesgeldkonten für unzulässig – ein juristisches Nachspiel der Negativzinsjahre.</p></div>
+    <div class="card"><div class="yr">Feb. 2025</div><h4>Bundesbank im Minus</h4><p>Die Bundesbank meldet 19,2 Milliarden Euro Verlust für 2024; für 2025 folgen 8,6 Milliarden Euro.</p></div>
+    <div class="card"><div class="yr">2024/25</div><h4>Frankreich als Sorgenkind</h4><p>Wechselnde Regierungen ohne stabile Mehrheit lassen den Risikoaufschlag französischer Anleihen gegenüber Bundesanleihen wachsen; Ratingagenturen stufen das Land herab.</p></div>
+  </div>
+
+  <div class="box warum"><div class="box-title">Warum blieb die EZB bei zwei Prozent stehen?</div>
+    <p>Ein Leitzins von etwa zwei Prozent bei einer Inflation von etwa zwei Prozent bedeutet einen Realzins von ungefähr null. Die EZB sah sich damit nach eigener Darstellung in einer „guten Position“: Die Geldpolitik bremste nicht mehr, heizte aber auch nicht an. Weitere Senkungen hätten bei der robusten Lohnentwicklung und den Ausgabenprogrammen der Regierungen neue Inflationsrisiken bergen können. Die Pause erwies sich als vorausschauend – sie ließ der EZB 2026 Spielraum, ohne dass sie von negativen Realzinsen aus starten musste wie 2022.</p>
+  </div>
+
+  <div class="box achtung"><div class="box-title">Wenn Regierungen über Zinsen bestimmen wollen</div>
+    <p>Fachleute sprechen von <strong>fiskalischer Dominanz</strong>, wenn eine Zentralbank ihre Zinsen nicht mehr nach der Inflation ausrichtet, sondern nach der Finanzierbarkeit der Staatsschulden. Der offene Druck aus dem Weißen Haus auf die Fed nährte 2025/26 die Sorge, dass dieser Zustand in den USA näher rücken könnte. Banken wie die LBBW sahen darin einen Grund für die Schwäche des Dollars 2025: Wer die Unabhängigkeit der Notenbank angreift, untergräbt das Vertrauen in die eigene Währung.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>EZB:</strong> acht Senkungen von Juni 2024 bis Juni 2025 → Einlagesatz 2,0&nbsp;%, dann Pause.</li>
+      <li><strong>Fed:</strong> Senkungen 2024 und Herbst 2025 → 3,50–3,75&nbsp;%; Druck durch Präsident Trump.</li>
+      <li><strong>März 2025:</strong> Lockerung der Schuldenbremse → Renditen deutscher Anleihen steigen.</li>
+      <li><strong>Januar 2026:</strong> Kevin Warsh als neuer Fed-Chef nominiert.</li>
+      <li>Inflation in Deutschland 2024 und 2025 bei je <strong>2,2&nbsp;%</strong> → scheinbare Normalität.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 12 GEGENWART ============ -->
+<section class="chapter" id="gegenwart">
+  <div class="chap-head"><div class="chap-num">12</div><div>
+    <span class="span-chip">Februar – Oktober 2026</span>
+    <h2>Die neue Zinswende 2026</h2>
+  </div></div>
+  <p class="lead">Ende Februar 2026 beginnt ein Krieg am Persischen Golf. Er trifft die Weltwirtschaft an ihrer empfindlichsten Stelle – der Energieversorgung – und zwingt die Zentralbanken dazu, die Zinsen wieder zu erhöhen, kaum dass sie sie gesenkt haben.</p>
+
+  <h3>12.1 Der Auslöser: Krieg und die Straße von Hormus</h3>
+  <p>Am <strong>28. Februar 2026</strong> griffen die USA und Israel Iran an; im Verlauf des Krieges wurde auch Irans Oberster Führer Ali Chamenei getötet. Iran blockierte daraufhin faktisch die <strong>Straße von Hormus</strong>, die Meerenge am Ausgang des Persischen Golfs. Durch sie wurde vor dem Krieg rund ein Fünftel des weltweit verbrauchten Öls und ein großer Teil des Flüssiggases transportiert. Deutschland bezieht sein Öl zwar kaum direkt aus dieser Region, ist aber über die Weltmarktpreise betroffen.</p>
+  <div class="phase">
+    <div class="phase-head"><h4>Der Ölpreis als Fieberkurve</h4><span class="yr">2026</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Anfang März</span><span>Der Preis für ein Barrel der Nordseesorte Brent steigt binnen Tagen von gut 70 auf über 100 US-Dollar. Benzin und Diesel kosten in Deutschland über zwei Euro je Liter. Die Internationale Energieagentur gibt in Rekordumfang strategische Reserven frei.</span></li>
+        <li><span class="d">Mai</span><span>Brent erreicht in der Spitze knapp 115 US-Dollar.</span></li>
+        <li><span class="d">Mitte Juni</span><span>Eine Waffenruhe und ein Rahmenabkommen zwischen den USA und Iran lassen den Ölpreis kräftig fallen; Tanker passieren die Meerenge wieder.</span></li>
+        <li><span class="d">23. Juli</span><span>Nach neuen Kämpfen notiert Brent zeitweise wieder über 100 US-Dollar.</span></li>
+        <li><span class="d">Anfang Aug.</span><span>Hoffnungen auf eine Einigung zwischen Iran und Oman über eine Schifffahrtsroute drücken den Preis unter 80 US-Dollar.</span></li>
+        <li><span class="d">September</span><span>Eine 60-tägige Waffenruhe läuft aus, die USA lehnen eine Verlängerung ab. Ende September weist Präsident Trump ein iranisches Angebot einer siebentägigen Waffenruhe zurück; Brent steigt über 107 US-Dollar.</span></li>
+      </ul>
+      <p><strong>Stand Anfang Oktober 2026:</strong> Eine vollständige und dauerhafte Öffnung der Meerenge ist nicht in Sicht. Selbst nach einer Einigung müssten Minen geräumt und Sicherheitsgarantien geklärt werden; Fachleute rechnen dann mit Monaten bis zur Normalisierung.</p>
+    </div>
+  </div>
+
+  <h3>12.2 Die Inflation kehrt zurück</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Gebiet</th><th>Frühjahr 2026</th><th>August 2026</th><th>September 2026</th><th>Bemerkung</th></tr>
+    <tr><td><strong>Deutschland (VPI)</strong></td><td>März 2,7&nbsp;%, April 2,9&nbsp;%</td><td>2,9&nbsp;%</td><td>3,3&nbsp;% (vorläufig)</td><td>Energie +14,9&nbsp;%; Kerninflation stabil bei 2,4&nbsp;%.</td></tr>
+    <tr><td><strong>Euroraum (HVPI)</strong></td><td>Mai 3,2&nbsp;%</td><td>3,2&nbsp;%</td><td>3,8&nbsp;% (Schnellschätzung)</td><td>Energie +18,8&nbsp;%; Dienstleistungen 3,2&nbsp;%. Erwartet waren 3,6&nbsp;%.</td></tr>
+    <tr><td><strong>USA (Verbraucherpreise)</strong></td><td>Juni 3,5&nbsp;%</td><td>3,4&nbsp;%</td><td>–</td><td>Kerninflation 2,4&nbsp;%, niedrigster Wert seit 2021.</td></tr>
+  </table></div>
+  <p>Das Muster ähnelt 2022, ist aber schwächer ausgeprägt: Treiber ist die Energie, während die Kerninflation bisher kaum steigt. Für die Zentralbanken ist genau das die entscheidende Frage – bleibt es bei einem Energieschock, oder greift die Teuerung auf Löhne und Dienstleistungen über? Ein Zwischentief der deutschen Inflation im Mai und Juni führten Volkswirte unter anderem auf einen erneuten staatlichen Tankrabatt zurück.</p>
+
+  <h3>12.3 Die EZB erhöht – früher als 2022</h3>
+  <p>Anders als 2021/22 wartete die EZB diesmal nicht lange. Nach drei Sitzungen ohne Änderung erhöhte sie am <strong>11. Juni 2026</strong> überraschend ihre Leitzinsen um einen Viertelpunkt (25 <a class="g" href="#g-basispunkt">Basispunkte</a>) – die erste Erhöhung seit September 2023. Am <strong>10. September 2026</strong> folgte bei einer auswärtigen Sitzung in Berlin der zweite Schritt. Seit dem 16. September liegen Einlagesatz, Hauptrefinanzierungssatz und Spitzenrefinanzierungssatz bei 2,50, 2,65 und 2,90 Prozent.</p>
+  <div class="tablewrap"><table>
+    <tr><th>EZB-Projektion vom September 2026</th><th>2026</th><th>2027</th><th>2028</th></tr>
+    <tr><td><strong>Inflation (Euroraum)</strong></td><td>3,0&nbsp;%</td><td>2,5&nbsp;%</td><td>2,1&nbsp;%</td></tr>
+    <tr><td><strong>Inflation ohne Energie und Nahrungsmittel</strong></td><td>2,5&nbsp;%</td><td>2,6&nbsp;%</td><td>2,3&nbsp;%</td></tr>
+    <tr><td><strong>Wirtschaftswachstum</strong></td><td>0,9&nbsp;%</td><td>1,4&nbsp;%</td><td>1,5&nbsp;%</td></tr>
+  </table></div>
+  <p>EZB-Präsidentin Christine Lagarde begründete die Entscheidung damit, dass der Konflikt im Nahen Osten weiter Inflationsdruck erzeuge und die Teuerung für längere Zeit deutlich über dem Zielwert bleiben dürfte. Die Risiken für die Inflation sah der EZB-Rat aufwärts-, die für das Wachstum abwärtsgerichtet. Auf einen weiteren Zinspfad legte er sich ausdrücklich nicht fest. Volkswirte großer Banken wie JP Morgan und BNP Paribas rechneten bereits vor der Septembersitzung mit einem weiteren Schritt im Dezember; die überraschend hohe Septemberinflation von 3,8 Prozent hat diese Erwartung verstärkt. Kritik kam von Gewerkschaften, Wirtschaftsverbänden und manchen Ökonomen, die befürchten, dass die EZB eine ohnehin schwache Konjunktur abwürgt.</p>
+
+  <h3>12.4 Die Fed unter neuer Führung</h3>
+  <p>In den USA übernahm im Mai 2026 <strong>Kevin Warsh</strong> den Vorsitz der Fed. Präsident Trump hatte sich von ihm niedrigere Zinsen erhofft. Stattdessen stand Warsh vor steigender Inflation. Im Juni und Juli hielt die Fed ihren Leitzins bei 3,50–3,75 Prozent; im Juli stimmten drei regionale Notenbankpräsidenten für eine Erhöhung – für einen neuen Vorsitzenden ungewöhnlich viel Widerspruch. Am <strong>16. September 2026</strong> erhöhte die Fed um einen Viertelpunkt auf <strong>3,75–4,00 Prozent</strong>, die erste Erhöhung seit 2023. Die Mehrheit der Notenbanker erwartet bis Jahresende noch einen weiteren Schritt. Zugleich schätzt die Fed den neutralen Zins inzwischen deutlich höher als 2019 – ein Hinweis darauf, dass die Ära sehr niedriger Zinsen nach ihrer Einschätzung vorbei ist.</p>
+
+  <h3>12.5 Unruhe an den Anleihemärkten</h3>
+  <p>Seit dem Sommer 2026 geraten Staatsanleihen weltweit unter Verkaufsdruck. Die Rendite zehnjähriger Bundesanleihen stieg im Juli über 3,2 Prozent und Mitte September auf rund 3,5 Prozent, zeitweise darüber – der höchste Stand seit 2011. Die Rendite zehnjähriger US-Staatsanleihen überschritt am 15. September fünf Prozent und erreichte den höchsten Stand seit 2007. Nach Einschätzung von Marktbeobachtern liegt das nicht nur an der Inflation:</p>
+  <ul>
+    <li><strong>Hohe Schulden:</strong> Viele westliche Staaten – darunter die USA, Japan und Frankreich – sind sehr hoch verschuldet und bringen immer mehr Anleihen auf den Markt. Um genügend Käufer zu finden, müssen sie höhere Zinsen bieten.</li>
+    <li><strong>Konkurrenz um Kapital:</strong> Große Technologiekonzerne finanzieren ihre Investitionen in künstliche Intelligenz zunehmend über Anleihen. Alphabet, Amazon und Meta gaben 2026 schon bis August Anleihen über rund 220 Milliarden Dollar aus.</li>
+    <li><strong>Frankreich:</strong> Ohne stabile Regierungsmehrheit und mit einer Schuldenquote von fast 120 Prozent verlangen Anleger einen wachsenden <a class="g" href="#g-spread">Risikoaufschlag</a>. Am 1. Oktober 2026 lag er gegenüber Bundesanleihen bei bis zu 1,33 Prozentpunkten; französische Anleihen rentieren inzwischen höher als italienische. Die EZB hat ihr Schutzinstrument TPI bisher nie eingesetzt.</li>
+  </ul>
+
+  <h3>12.6 Was das für Deutschland bedeutet</h3>
+  <div class="grid">
+    <div class="card"><h4>Bauzinsen</h4><p>Zehnjährige Baukredite verteuerten sich von rund 3,7 Prozent Ende August auf rund 4,1 Prozent Mitte September 2026 (beste Konditionen). Das dämpft die Erholung des Immobilienmarkts.</p></div>
+    <div class="card"><h4>Sparer</h4><p>Tages- und Festgeld werfen wieder mehr ab. Real bleibt bei über drei Prozent Inflation wenig übrig.</p></div>
+    <div class="card"><h4>Bundeshaushalt</h4><p>Der Entwurf für 2027 sieht Ausgaben von 555,4 Milliarden Euro und eine Nettokreditaufnahme von 118,7 Milliarden Euro im Kernhaushalt vor. Die Zinsausgaben sollen von 41,9 Milliarden Euro (2027) auf voraussichtlich 80,7 Milliarden Euro (2030) steigen.</p></div>
+    <div class="card"><h4>Konjunktur</h4><p>Die Wirtschaftsinstitute erwarten im Herbstgutachten 2026 ein Wachstum von 1,3 Prozent (2026) und 1,1 Prozent (2027), getragen vor allem von staatlichen Ausgaben. Die Inflation soll 2027 auf 3,2 Prozent steigen. Ihr Gutachten trägt den Untertitel „Finanzpolitik auf Abwegen“.</p></div>
+    <div class="card"><h4>Euro</h4><p>Der Euro notierte Mitte September bei rund 1,15 US-Dollar und gab nach der Fed-Erhöhung nach – die Zinsdifferenz zu den USA wirkt wieder.</p></div>
+    <div class="card"><h4>Bundesbank</h4><p>Sie rechnet auch für 2026 mit einem Verlust; die aufgelaufenen Verluste lagen Ende 2025 bei 27,8 Milliarden Euro, gedeckt durch hohe Bewertungsreserven vor allem beim Gold.</p></div>
+  </div>
+  <p>Finanzminister Lars Klingbeil verteidigte die höhere Verschuldung mit der Sicherheitslage: Mit der schwarzen Null könne man sich nicht gegen Putin verteidigen. Kritiker aus Opposition und Wissenschaft halten dagegen, dass steigende Zinsen jeden neuen Kredit teurer machen und die Lücken in den kommenden Haushalten – für 2028 bis 2030 zwischen 22 und 47 Milliarden Euro jährlich – weiter vergrößern.</p>
+
+  <div class="box warum"><div class="box-title">Warum handeln die Zentralbanken diesmal schneller?</div>
+    <ul>
+      <li><strong>Die Lehre von 2022:</strong> Wer zu lange wartet, muss später umso härter bremsen. Die Notenbanken wollen verhindern, dass sich die Inflationserwartungen erneut nach oben verschieben.</li>
+      <li><strong>Verlorenes Vertrauen:</strong> Kommentatoren wie die Börsen-Zeitung weisen darauf hin, dass die EZB nach 2022 in der Bevölkerung an Vertrauen verloren hat. Eine frühe Reaktion soll Entschlossenheit zeigen.</li>
+      <li><strong>Ein besserer Ausgangspunkt:</strong> Anders als 2022 starten die Zinsen nicht im negativen Bereich. Kleine Schritte genügen, um ein Signal zu senden.</li>
+      <li><strong>Kein Nachfrageboom:</strong> Weil die Kerninflation bisher stabil ist, bleiben die Schritte klein. Beide Zentralbanken erhöhen um je einen Viertelpunkt, nicht um ganze Prozentpunkte wie 2022.</li>
+    </ul>
+  </div>
+
+  <div class="box achtung"><div class="box-title">Die Zwickmühle</div>
+    <p>Die Zentralbanken stehen vor einem dreifachen Dilemma. Erstens bekämpfen sie mit Zinsen einen Angebotsschock, gegen den Zinsen wenig ausrichten. Zweitens erhöhen sie die Zinslast von Staaten, die ohnehin hoch verschuldet sind und gleichzeitig mehr für Verteidigung, Infrastruktur und Entlastungen ausgeben wollen – Geld- und Finanzpolitik ziehen in entgegengesetzte Richtungen. Drittens wächst in den USA der politische Druck auf die Notenbank, und in Europa hängt über allem die Frage, ob die EZB im Ernstfall französische Anleihen stützen würde.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>28.2.2026:</strong> Krieg gegen Iran → Hormus blockiert → Brent zeitweise knapp 115 US-$.</li>
+      <li><strong>Inflation September 2026:</strong> Deutschland 3,3&nbsp;%, Euroraum 3,8&nbsp;% → Energie als Treiber, Kerninflation stabil.</li>
+      <li><strong>EZB:</strong> Erhöhungen am 11.6. und 10.9.2026 → Einlagesatz 2,50&nbsp;%.</li>
+      <li><strong>Fed:</strong> unter Warsh am 16.9.2026 → 3,75–4,00&nbsp;%.</li>
+      <li><strong>Anleihen:</strong> Bundesanleihen rund 3,5&nbsp;% (höchster Stand seit 2011), US-Anleihen über 5&nbsp;%, Frankreich unter Druck.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 13 SZENARIEN ============ -->
+<section class="chapter" id="szenarien">
+  <div class="chap-head"><div class="chap-num">13</div><div>
+    <span class="span-chip">Ausblick bis 2028</span>
+    <h2>Ausblick: Vier Szenarien</h2>
+  </div></div>
+  <p class="lead">Niemand kann die Zukunft der Zinsen vorhersagen. Aber die Erfahrungen der vergangenen fünfzig Jahre zeigen, welche Kräfte wirken und wie Zentralbanken typischerweise reagieren. Daraus lassen sich Szenarien ableiten – mögliche Pfade, keine Prognosen.</p>
+
+  <h3>13.1 Was die Geschichte für 2026 lehrt</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Lehre</th><th>Historisches Beispiel</th><th>Bedeutung für die Lage im Herbst 2026</th></tr>
+    <tr><td><strong>Auf Angebotsschocks nicht überreagieren</strong></td><td>EZB 2008 und 2011</td><td>Spricht dafür, dass die EZB in kleinen Schritten vorgeht und bei sinkendem Ölpreis rasch pausiert.</td></tr>
+    <tr><td><strong>Erwartungen nicht entgleiten lassen</strong></td><td>USA in den 1970er Jahren, Volcker</td><td>Spricht für weitere Erhöhungen, falls Löhne und Kerninflation anziehen.</td></tr>
+    <tr><td><strong>Zinsen wirken mit Verzögerung</strong></td><td>Zinsschock 2022/23</td><td>Die Erhöhungen von Juni und September 2026 entfalten ihre volle Wirkung erst 2027.</td></tr>
+    <tr><td><strong>Ein Zins für viele Länder erzeugt Spannungen</strong></td><td>EWS-Krise 1992, Euro-Krise 2010–2012</td><td>Höhere Zinsen treffen Frankreich und Italien stärker als Deutschland; das Schutzinstrument TPI könnte erstmals gebraucht werden.</td></tr>
+    <tr><td><strong>Glaubwürdigkeit wirkt stärker als Taten</strong></td><td>„Whatever it takes“ 2012</td><td>Klare Worte der EZB könnten Spreads und Erwartungen beruhigen, bevor sie handeln muss.</td></tr>
+  </table></div>
+
+  <h3>13.2 Die vier Szenarien</h3>
+  <p>Die folgenden Spannbreiten sind Annahmen dieses Dokuments. Sie orientieren sich an den Projektionen der EZB, am Herbstgutachten der Wirtschaftsinstitute und an historischen Mustern, sollen aber nur die Richtung veranschaulichen.</p>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Szenario I: Rasche Entspannung</h4><span class="yr">Hormus öffnet bis Anfang 2027</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Annahme</span><span>Eine dauerhafte Vereinbarung öffnet die Meerenge; der Ölpreis fällt bis Mitte 2027 auf 70 bis 85 US-Dollar.</span></li>
+        <li><span class="d">Inflation</span><span>Weil die Inflationsrate den Vergleich zum Vorjahr misst, fällt sie 2027 kräftig, sobald die hohen Energiepreise aus der Rechnung fallen. Die EZB selbst erwartet, dass die Energiepreisinflation bis Mitte 2028 negativ wird.</span></li>
+        <li><span class="d">Zinsen</span><span>Die EZB belässt den Einlagesatz bei 2,50 Prozent und senkt ihn womöglich Ende 2027 wieder. Bundesanleihen fallen in Richtung drei Prozent, Bauzinsen auf etwa 3,5 Prozent.</span></li>
+        <li><span class="d">Folgen</span><span>Der Immobilienmarkt erholt sich, das staatlich getragene Wachstum setzt sich fort. Die Erhöhungen von 2026 erscheinen im Rückblick als vorsichtige „Versicherung“.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Szenario II: Zähe Hochphase</h4><span class="yr">nahe am Basisszenario der EZB</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Annahme</span><span>Die Meerenge bleibt bis weit in das Jahr 2027 nur eingeschränkt passierbar; Öl kostet 85 bis 110 US-Dollar und schwankt stark.</span></li>
+        <li><span class="d">Inflation</span><span>Die Teuerung im Euroraum bleibt 2027 zwischen 2,5 und 3 Prozent; in Deutschland erwarten die Institute 3,2 Prozent. Die Kerninflation steigt leicht, weil höhere Energiekosten in Dienstleistungen und Löhne einsickern.</span></li>
+        <li><span class="d">Zinsen</span><span>Die EZB erhöht noch ein- oder zweimal – etwa im Dezember 2026 und Anfang 2027 – auf 2,75 bis 3,0 Prozent und hält diesen Satz länger. Die Fed bleibt bei rund vier Prozent oder etwas darüber. Bundesanleihen pendeln zwischen 3,25 und 4 Prozent, Bauzinsen zwischen 4 und 4,5 Prozent.</span></li>
+        <li><span class="d">Folgen</span><span>Der Wohnungsbau stagniert, die Zinslast des Bundes wächst wie geplant oder schneller. Der Euro bleibt gegenüber dem Dollar eher schwach, was Energieimporte zusätzlich verteuert.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Szenario III: Stagflation mit Zweitrundeneffekten</h4><span class="yr">das Muster der 1970er Jahre</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Annahme</span><span>Der Krieg eskaliert, Förderanlagen am Golf werden zerstört; Öl liegt über Monate bei mehr als 120 US-Dollar. Gewerkschaften setzen hohe Lohnabschlüsse durch, um die Kaufkraft zu sichern.</span></li>
+        <li><span class="d">Inflation</span><span>Die Inflation steigt 2027 über vier Prozent, und – entscheidend – auch die Kerninflation zieht an. Die Inflationserwartungen geraten in Bewegung.</span></li>
+        <li><span class="d">Zinsen</span><span>Die Zentralbanken handeln nach der Volcker-Lehre: Die EZB erhöht auf 3,5 bis 4 Prozent, die Fed deutlich darüber. Lange Zinsen steigen weiter.</span></li>
+        <li><span class="d">Folgen</span><span>Rezession in Deutschland und im Euroraum, steigende Arbeitslosigkeit und Insolvenzen, erneut fallende Immobilienpreise. Frankreich und Italien geraten unter Druck; die EZB muss möglicherweise erstmals das TPI einsetzen – mit absehbarem Streit, auch vor deutschen Gerichten.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h4>Szenario IV: Schuldenstress und Druck auf die Notenbanken</h4><span class="yr">kann sich mit II oder III verbinden</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Annahme</span><span>Unabhängig vom Ölpreis verlieren Anleger das Vertrauen in die Haushaltspolitik großer Staaten – in den USA, in Frankreich, in Japan oder in Großbritannien. Sie verlangen deutlich höhere Zinsen für lange Laufzeiten.</span></li>
+        <li><span class="d">Zinsen</span><span>Die langfristigen Zinsen steigen stärker als die Leitzinsen. Regierungen drängen ihre Zentralbanken, Anleihen zu kaufen oder die Zinsen niedrig zu halten.</span></li>
+        <li><span class="d">Weggabelung</span><span>Geben die Notenbanken nach, beruhigen sich die Anleihemärkte kurzfristig, doch die Inflation droht auf Dauer höher zu bleiben (<strong>fiskalische Dominanz</strong>). Bleiben sie hart, drohen Haushaltskrisen und erzwungene Sparprogramme wie in Großbritannien 2022.</span></li>
+        <li><span class="d">Folgen</span><span>Für Deutschland würde der Spielraum für Verteidigung und Infrastruktur enger; in der Währungsunion käme die alte Frage zurück, wie weit die EZB für einzelne Staaten einstehen darf.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>13.3 Die Szenarien im Vergleich</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Größe (bis Ende 2027)</th><th>I: Entspannung</th><th>II: Zähe Hochphase</th><th>III: Stagflation</th><th>IV: Schuldenstress</th></tr>
+    <tr><td><strong>Ölpreis (Brent)</strong></td><td>70–85 US-$</td><td>85–110 US-$</td><td>über 120 US-$</td><td>beliebig</td></tr>
+    <tr><td><strong>Inflation Euroraum 2027</strong></td><td>um 2&nbsp;%</td><td>2,5–3&nbsp;%</td><td>über 4&nbsp;%</td><td>über dem Ziel, auf Dauer</td></tr>
+    <tr><td><strong>EZB-Einlagesatz</strong></td><td>2,0–2,5&nbsp;%</td><td>2,75–3,0&nbsp;%</td><td>3,5–4,0&nbsp;%</td><td>unter politischem Druck</td></tr>
+    <tr><td><strong>Zehnjährige Bundesanleihe</strong></td><td>um 3&nbsp;%</td><td>3,25–4&nbsp;%</td><td>4&nbsp;% und mehr</td><td>stark steigend</td></tr>
+    <tr><td><strong>Bauzinsen (10 Jahre)</strong></td><td>um 3,5&nbsp;%</td><td>4–4,5&nbsp;%</td><td>über 4,5&nbsp;%</td><td>stark steigend</td></tr>
+    <tr><td><strong>Wachstum Deutschland</strong></td><td>über 1&nbsp;%</td><td>um 1&nbsp;%, staatlich gestützt</td><td>Rezession</td><td>schwach</td></tr>
+    <tr><td><strong>Historisches Vorbild</strong></td><td>Ölpreisrückgang 1986, 2023</td><td>2011, 2023/24</td><td>1974, 1980/81</td><td>Großbritannien 2022</td></tr>
+  </table></div>
+
+  <h3>13.4 Woran man erkennt, welcher Pfad eintritt</h3>
+  <ul>
+    <li><strong>Straße von Hormus und Ölpreis:</strong> der wichtigste Einzelfaktor für die Inflation der kommenden Monate.</li>
+    <li><strong>Kerninflation und Dienstleistungspreise:</strong> Steigen sie deutlich über 2,5 Prozent, rückt Szenario III näher.</li>
+    <li><strong>Lohnabschlüsse:</strong> Die EZB rechnet für Anfang 2027 mit einem moderaten Anstieg der Tariflöhne um rund 2,7 Prozent. Deutlich höhere Abschlüsse wären ein Warnsignal.</li>
+    <li><strong>Termine der Zentralbanken:</strong> EZB am 29. Oktober und 17. Dezember 2026 (mit neuen Projektionen), Fed am 27./28. Oktober 2026.</li>
+    <li><strong>Risikoaufschläge:</strong> Der Abstand französischer zu deutschen Anleihen sowie die Ratingentscheidungen zu Frankreich (Moody’s am 23. Oktober, S&amp;P am 27. November 2026).</li>
+    <li><strong>Politik:</strong> der Bundeshaushalt 2027 (Verabschiedung Ende November), der Umgang der US-Regierung mit der Fed und die Nachfolge von Christine Lagarde, deren Amtszeit im Oktober 2027 endet.</li>
+  </ul>
+
+  <div class="box warum"><div class="box-title">Was ist anders als 2022?</div>
+    <ul>
+      <li><strong>Günstiger:</strong> Die Inflation ist mit drei bis vier Prozent weit von zweistelligen Raten entfernt; die Kerninflation ist bisher stabil; die Zinsen starten nicht im negativen Bereich; die Zentralbanken haben früher reagiert.</li>
+      <li><strong>Ungünstiger:</strong> Die Staatsschulden sind höher, die Zinsen auf langlaufende Anleihen ebenfalls; Deutschland hat seine Schuldenbremse gelockert; die Unabhängigkeit der Fed ist politisch umkämpft; und die geopolitische Lage ist instabiler. Höhere Zinsen treffen deshalb Staaten härter als 2022.</li>
+    </ul>
+  </div>
+
+  <div class="box achtung"><div class="box-title">Grenzen jeder Vorschau</div>
+    <p>Zinsentwicklungen hängen von politischen Entscheidungen in Washington, Teheran, Paris und Berlin ab, die sich nicht berechnen lassen. Prognosen von Zentralbanken und Instituten mussten in den vergangenen Jahren immer wieder stark korrigiert werden: Im Dezember 2025 erwartete das Eurosystem für 2026 noch eine Inflation unter zwei Prozent, neun Monate später waren es drei Prozent. Die Szenarien beschreiben deshalb Möglichkeiten, keine Wahrscheinlichkeiten, und sind keine Grundlage für Finanzentscheidungen.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Szenario I:</strong> Hormus öffnet → Inflation fällt 2027 → Zinsgipfel bei 2,5&nbsp;% erreicht.</li>
+      <li><strong>Szenario II:</strong> zähe Energiekrise → ein bis zwei weitere Erhöhungen → Bauzinsen über 4&nbsp;%.</li>
+      <li><strong>Szenario III:</strong> Zweitrundeneffekte → Volcker-Logik → Rezession und Spannungen im Euroraum.</li>
+      <li><strong>Szenario IV:</strong> Schuldenstress → Druck auf Notenbanken → Gefahr fiskalischer Dominanz.</li>
+      <li>Entscheidende Signale: <strong>Ölpreis, Kerninflation, Löhne, Spreads, Unabhängigkeit der Zentralbanken</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 14 BILANZ ============ -->
+<section class="chapter" id="bilanz">
+  <div class="chap-head"><div class="chap-num">14</div><div>
+    <span class="span-chip">Zusammenfassung</span>
+    <h2>Bilanz: Was hat sich verändert?</h2>
+  </div></div>
+  <p class="lead">In achtzehn Jahren hat Europa erlebt, was frühere Generationen über Jahrzehnte verteilt erfuhren: Krisenzinsen, Negativzinsen, eine Inflationswelle, einen Zinsschock und eine zweite Zinswende.</p>
+
+  <div class="tablewrap"><table>
+    <tr><th>Bereich</th><th>Um 2008</th><th>Um 2021</th><th>Herbst 2026</th></tr>
+    <tr><td><strong>EZB-Leitzins</strong></td><td>Hauptrefinanzierungssatz 4,25&nbsp;% (Juli 2008)</td><td>Einlagesatz −0,50&nbsp;%</td><td>Einlagesatz 2,50&nbsp;%, Tendenz steigend</td></tr>
+    <tr><td><strong>Fed-Leitzins</strong></td><td>ab Dezember 2008 nahe null</td><td>0–0,25&nbsp;%</td><td>3,75–4,00&nbsp;%</td></tr>
+    <tr><td><strong>Inflation Deutschland</strong></td><td>2,6&nbsp;%</td><td>3,1&nbsp;%, steigend</td><td>3,3&nbsp;% (September)</td></tr>
+    <tr><td><strong>Zehnjährige Bundesanleihe</strong></td><td>um 4&nbsp;%</td><td>leicht negativ</td><td>rund 3,5&nbsp;%</td></tr>
+    <tr><td><strong>Bauzinsen (10 Jahre)</strong></td><td>um 5&nbsp;%</td><td>um 1&nbsp;%</td><td>rund 4&nbsp;%</td></tr>
+    <tr><td><strong>Zinsausgaben des Bundes</strong></td><td>rund 40 Mrd. €</td><td>rund 4 Mrd. €</td><td>41,9 Mrd. € geplant für 2027, rund 80 Mrd. € für 2030</td></tr>
+    <tr><td><strong>Sparzinsen</strong></td><td>mehrere Prozent</td><td>null, teils Verwahrentgelte</td><td>wieder positiv, real aber kaum</td></tr>
+    <tr><td><strong>Bundesbank</strong></td><td>Gewinne in Milliardenhöhe für den Bund</td><td>keine Ausschüttung mehr</td><td>Verluste, Ausgleich durch Bewertungsreserven</td></tr>
+    <tr><td><strong>Unabhängigkeit der Zentralbanken</strong></td><td>weithin anerkannt</td><td>Streit vor allem über Anleihekäufe</td><td>in den USA offen politisch angegriffen</td></tr>
+  </table></div>
+
+  <h3>Sechs große Entwicklungslinien</h3>
+  <div class="grid">
+    <div class="card"><h4>Vom Ausnahme- zum Normalfall</h4><p>Null- und Negativzinsen galten 2008 als undenkbar. Ein Jahrzehnt später waren sie Alltag – und die Rückkehr zu „normalen“ Zinsen wurde zum Schock.</p></div>
+    <div class="card"><h4>Die Zentralbank als Retter</h4><p>Die EZB rettete den Euro mit Worten und Anleihekäufen. Damit wuchs ihre Macht, aber auch die Kritik an ihr, besonders in Deutschland.</p></div>
+    <div class="card"><h4>Zinsen verteilen um</h4><p>Erst gewannen Schuldner und Vermögensbesitzer, dann Sparer. Staat, Häuslebauer und Banken erlebten beide Seiten.</p></div>
+    <div class="card"><h4>Die Rückkehr der Inflation</h4><p>Nach Jahrzehnten der Ruhe zeigte 2022, dass Inflation nicht verschwunden war. 2026 reagieren die Notenbanken deshalb früher.</p></div>
+    <div class="card"><h4>Energie als Taktgeber</h4><p>Ölkrisen in den 1970er Jahren, Gaskrise 2022, Hormus-Blockade 2026: Europas Abhängigkeit von Energieimporten macht seine Inflation und damit seine Zinsen verwundbar.</p></div>
+    <div class="card"><h4>Geld- und Finanzpolitik im Konflikt</h4><p>Höhere Staatsschulden machen jeden Zinsschritt teurer. Die Frage, ob Zentralbanken unabhängig bleiben können, wenn Staaten hoch verschuldet sind (<a class="g" href="#g-fiskal">fiskalische Dominanz</a>), prägt die kommenden Jahre.</p></div>
+  </div>
+
+  <div class="box kurz"><div class="box-title">Ausblick: Wie geht es nach Oktober 2026 weiter?</div>
+    <ul>
+      <li><strong>27./28. Oktober 2026:</strong> Sitzung der Fed – folgt ein weiterer Schritt?</li>
+      <li><strong>29. Oktober 2026:</strong> Sitzung der EZB, erste Reaktion auf die Septemberinflation von 3,8 Prozent.</li>
+      <li><strong>Ende November 2026:</strong> Der Bundestag soll den Haushalt 2027 beschließen; die Zinslast ist einer der größten Streitpunkte.</li>
+      <li><strong>17. Dezember 2026:</strong> letzte EZB-Sitzung des Jahres mit neuen Projektionen – nach Erwartung vieler Volkswirte ein möglicher Termin für eine dritte Erhöhung.</li>
+      <li><strong>2027:</strong> Die Zinserhöhungen von 2026 entfalten ihre volle Wirkung. Im Oktober 2027 endet die Amtszeit von EZB-Präsidentin Lagarde – die Nachfolge entscheidet mit über den Kurs der Geldpolitik.</li>
+    </ul>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li>Der Zins ist das zentrale <strong>Steuerungsinstrument</strong> der Wirtschaft – und zugleich ein Instrument der <strong>Umverteilung</strong>.</li>
+      <li><strong>2008–2021:</strong> Nullzins → Entlastung für Staat und Schuldner, Belastung für Sparer.</li>
+      <li><strong>2022–2023:</strong> Zinsschock → Immobilienkrise, Zinslast des Staates verzehnfacht.</li>
+      <li><strong>2026:</strong> neue Zinswende nach einem Energieschock, unter den Bedingungen hoher Schulden und politischen Drucks.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 15 ZEITLEISTE ============ -->
+<section class="chapter" id="zeitleiste">
+  <div class="chap-head"><div class="chap-num">15</div><div>
+    <span class="span-chip">Zum Nachschlagen</span>
+    <h2>Zeitleiste 1957–2026</h2>
+  </div></div>
+  <p class="lead">Die wichtigsten Ereignisse in zeitlicher Reihenfolge. Über die Schaltflächen lassen sich einzelne Bereiche auswählen.</p>
+  <div class="filters" id="filters">
+    <button class="on" data-f="alle">Alle</button>
+    <button data-f="reich">EZB &amp; Bundesbank</button>
+    <button data-f="religion">Inflation &amp; Preise</button>
+    <button data-f="europa">USA &amp; Welt</button>
+    <button data-f="krieg">Krisen &amp; Schocks</button>
+    <button data-f="kultur">Staat &amp; Bürger in Deutschland</button>
+  </div>
+  <ol class="tl" id="timeline"></ol>
+</section>
+
+<!-- ============ 16 PERSONEN ============ -->
+<section class="chapter" id="personen">
+  <div class="chap-head"><div class="chap-num">16</div><div>
+    <span class="span-chip">Wer war wer?</span>
+    <h2>Wichtige Personen</h2>
+  </div></div>
+  <p class="lead">Die Personen sind grob nach dem Zeitraum geordnet, in dem sie für die Zinspolitik wichtig wurden.</p>
+  <div class="people">
+    <div class="person"><div class="role">Ökonom</div><h4>Irving Fisher</h4><div class="life">1867 – 1947</div><p>Amerikanischer Ökonom, beschrieb den Zusammenhang von Nominalzins, Realzins und erwarteter Inflation („Fisher-Gleichung“).</p></div>
+    <div class="person"><div class="role">Ökonom</div><h4>Milton Friedman</h4><div class="life">1912 – 2006</div><p>Begründer des Monetarismus. Seine These, Inflation sei stets ein Phänomen zu viel Geldes, prägte die Bundesbank und die Fed der 1970er und 1980er Jahre.</p></div>
+    <div class="person"><div class="role">Bundesbankpräsident 1977–1979</div><h4>Otmar Emminger</h4><div class="life">1911 – 1986</div><p>Verteidigte die Unabhängigkeit der Bundesbank beim Eintritt in das Europäische Währungssystem; Symbol der deutschen Stabilitätskultur.</p></div>
+    <div class="person"><div class="role">Fed-Vorsitzender 1979–1987</div><h4>Paul Volcker</h4><div class="life">1927 – 2019</div><p>Brach die amerikanische Inflation mit Leitzinsen von bis zu 20 Prozent; bis heute Vorbild für entschlossene Inflationsbekämpfung.</p></div>
+    <div class="person"><div class="role">Bundesbankpräsident 1980–1991</div><h4>Karl Otto Pöhl</h4><div class="life">1929 – 2014</div><p>Führte die Bundesbank durch die 1980er Jahre und die deutsch-deutsche Währungsunion, deren Umtauschkurs er kritisch sah.</p></div>
+    <div class="person"><div class="role">Ökonom</div><h4>John B. Taylor</h4><div class="life">geb. 1946</div><p>Stanford-Ökonom, formulierte 1993 die nach ihm benannte Faustregel für den angemessenen Leitzins.</p></div>
+    <div class="person"><div class="role">EZB-Präsident 1998–2003</div><h4>Wim Duisenberg</h4><div class="life">1935 – 2005</div><p>Erster Präsident der EZB; baute die neue Notenbank nach dem Vorbild der Bundesbank auf.</p></div>
+    <div class="person"><div class="role">EZB-Präsident 2003–2011</div><h4>Jean-Claude Trichet</h4><div class="life">geb. 1942</div><p>Führte die EZB durch die Finanzkrise; seine Zinserhöhungen von 2008 und 2011 gelten vielen als Fehler.</p></div>
+    <div class="person"><div class="role">Fed-Vorsitzender 2006–2014</div><h4>Ben Bernanke</h4><div class="life">geb. 1953</div><p>Senkte die US-Zinsen in der Finanzkrise auf null und führte umfangreiche Anleihekäufe ein; erhielt 2022 den Wirtschaftsnobelpreis für Forschung zu Banken und Finanzkrisen.</p></div>
+    <div class="person"><div class="role">EZB-Präsident 2011–2019</div><h4>Mario Draghi</h4><div class="life">geb. 1947</div><p>Rettete mit „Whatever it takes“ den Euro; verantwortete Negativzinsen und Anleihekäufe. In Deutschland stark kritisiert.</p></div>
+    <div class="person"><div class="role">Bundesfinanzminister 2009–2017</div><h4>Wolfgang Schäuble</h4><div class="life">1942 – 2023</div><p>Stand für die „schwarze Null“, die auch dank sinkender Zinsausgaben möglich wurde; kritisierte zugleich die Folgen der Nullzinspolitik für Sparer.</p></div>
+    <div class="person"><div class="role">Bundesbankpräsident 2011–2021</div><h4>Jens Weidmann</h4><div class="life">geb. 1968</div><p>Wichtigster Kritiker der Anleihekäufe im EZB-Rat; trat Ende 2021 vorzeitig zurück.</p></div>
+    <div class="person"><div class="role">Gouverneur der Bank of Japan 2013–2023</div><h4>Haruhiko Kuroda</h4><div class="life">geb. 1944</div><p>Führte Japan 2016 in Negativzinsen und kaufte in gewaltigem Umfang Anleihen und sogar Aktienfonds.</p></div>
+    <div class="person"><div class="role">EZB-Präsidentin seit 2019</div><h4>Christine Lagarde</h4><div class="life">geb. 1956</div><p>Verantwortet die späte Zinswende 2022, den Zinsschock und die erneuten Erhöhungen 2026. Ihre Amtszeit endet im Oktober 2027.</p></div>
+    <div class="person"><div class="role">Fed-Vorsitzender 2018–2026</div><h4>Jerome Powell</h4><div class="life">geb. 1953</div><p>Bezeichnete die Inflation 2021 zunächst als vorübergehend, erhöhte dann so schnell wie seit Volcker nicht. Stand ab 2025 unter massivem Druck des Präsidenten.</p></div>
+    <div class="person"><div class="role">EZB-Direktorin seit 2020</div><h4>Isabel Schnabel</h4><div class="life">geb. 1971</div><p>Deutsche Ökonomin im EZB-Direktorium, zuständig für die Marktoperationen; gilt als einflussreiche Stimme für eine wachsame Inflationsbekämpfung.</p></div>
+    <div class="person"><div class="role">Bundesfinanzminister 2021–2024</div><h4>Christian Lindner</h4><div class="life">geb. 1979</div><p>Musste die Verzehnfachung der Zinsausgaben des Bundes verkraften und verteidigte mit diesem Argument die Schuldenbremse.</p></div>
+    <div class="person"><div class="role">Bundesbankpräsident seit 2022</div><h4>Joachim Nagel</h4><div class="life">geb. 1966</div><p>Warnte im Zinsschock vor zu früher Lockerung; verantwortet die Verluste der Bundesbank als vorübergehende Folge der Geldpolitik.</p></div>
+    <div class="person"><div class="role">Gouverneur der Bank of Japan seit 2023</div><h4>Kazuo Ueda</h4><div class="life">geb. 1951</div><p>Beendete 2024 die Negativzinsen in Japan und hob den Leitzins bis September 2026 auf 1,25 Prozent.</p></div>
+    <div class="person"><div class="role">Fed-Vorsitzender seit 2026</div><h4>Kevin Warsh</h4><div class="life">geb. 1970</div><p>Von Trump nominiert, erhöhte im September 2026 dennoch die Zinsen. Setzt auf weniger Vorab-Signale und hofft auf Produktivitätsgewinne durch künstliche Intelligenz.</p></div>
+    <div class="person"><div class="role">Bundesfinanzminister seit 2025</div><h4>Lars Klingbeil</h4><div class="life">geb. 1978</div><p>Verantwortet die höhere Verschuldung für Verteidigung und Infrastruktur – und die steigende Zinslast des Bundes.</p></div>
+  </div>
+</section>
+
+<!-- ============ 17 GLOSSAR ============ -->
+<section class="chapter" id="glossar">
+  <div class="chap-head"><div class="chap-num">17</div><div>
+    <span class="span-chip">Wichtige Begriffe</span>
+    <h2>Glossar</h2>
+  </div></div>
+  <dl class="gloss" id="gloss">
+    <dt id="g-angebotsschock">Angebotsschock</dt><dd>Plötzliche Verknappung oder Verteuerung wichtiger Güter wie Öl oder Gas. Er treibt die Preise und dämpft zugleich die Produktion.</dd>
+    <dt id="g-anleihe">Anleihe</dt><dd>Schuldverschreibung, mit der sich Staaten oder Unternehmen am Kapitalmarkt Geld leihen. Der Käufer erhält feste Zinsen und am Ende den Nennwert zurück.</dd>
+    <dt id="g-anleihekaeufe">Anleihekaufprogramm</dt><dd>Kauf großer Mengen von Anleihen durch eine Zentralbank (auch „quantitative Lockerung“). Er drückt die langfristigen Zinsen und bringt zusätzliches Geld in das Finanzsystem.</dd>
+    <dt id="g-basispunkt">Basispunkt</dt><dd>Ein Hundertstel Prozentpunkt. Eine Erhöhung um 25 Basispunkte entspricht 0,25 Prozentpunkten.</dd>
+    <dt id="g-carrytrade">Carry-Trade</dt><dd>Geschäft, bei dem Anleger Geld in einer Währung mit niedrigen Zinsen leihen und in einer Währung mit höheren Zinsen anlegen. Es lohnt sich, solange die Zinsdifferenz groß und der Wechselkurs stabil bleibt.</dd>
+    <dt id="g-deflation">Deflation</dt><dd>Anhaltend sinkendes Preisniveau. Sie kann eine Abwärtsspirale auslösen, weil Verbraucher Käufe aufschieben und Schulden real schwerer wiegen.</dd>
+    <dt id="g-einlagesatz">Einlagesatz</dt><dd>Zins, den Banken für Guthaben bei der Zentralbank erhalten oder zahlen. Seit 2024 der maßgebliche Steuerungszins der EZB.</dd>
+    <dt id="g-ezbrat">EZB-Rat</dt><dd>Oberstes Entscheidungsgremium der EZB aus den sechs Mitgliedern des Direktoriums und den Präsidenten der nationalen Zentralbanken des Euroraums, darunter der Bundesbankpräsident.</dd>
+    <dt id="g-fed">Federal Reserve (Fed)</dt><dd>Zentralbank der USA, gegründet 1913. Ihr Leitzins ist ein Zielkorridor für den Zins, zu dem sich Banken über Nacht gegenseitig Geld leihen.</dd>
+    <dt id="g-fiskal">Fiskalische Dominanz</dt><dd>Zustand, in dem eine Zentralbank ihre Zinsen nicht mehr nach der Inflation, sondern nach der Finanzierbarkeit der Staatsschulden ausrichtet. Er gilt als Weg zu dauerhaft höherer Inflation.</dd>
+    <dt id="g-forwardguidance">Forward Guidance</dt><dd>Ankündigung einer Zentralbank über ihren künftigen Kurs. Sie soll die Erwartungen und damit die langfristigen Zinsen lenken.</dd>
+    <dt id="g-hauptrefi">Hauptrefinanzierungssatz</dt><dd>Zins, zu dem sich Banken bei der EZB regelmäßig gegen Sicherheiten Geld leihen. Lange der bekannteste „Leitzins“; seit September 2024 liegt er 0,15 Prozentpunkte über dem Einlagesatz.</dd>
+    <dt id="g-hvpi">HVPI</dt><dd>Harmonisierter Verbraucherpreisindex. Europaweit einheitlich berechnete Inflationsrate, an der sich die EZB orientiert.</dd>
+    <dt id="g-inflation">Inflation</dt><dd>Anstieg des allgemeinen Preisniveaus, gemessen als Veränderung gegenüber dem Vorjahresmonat. Sie bedeutet einen Verlust an Kaufkraft des Geldes.</dd>
+    <dt id="g-erwartungen">Inflationserwartungen</dt><dd>Die Inflation, mit der Haushalte, Unternehmen und Anleger für die Zukunft rechnen. Sie beeinflussen Lohnforderungen und Preissetzung und gelten als Schlüssel der Geldpolitik.</dd>
+    <dt id="g-kerninflation">Kerninflation</dt><dd>Inflationsrate ohne die stark schwankenden Preise für Energie und Nahrungsmittel. Sie zeigt den grundlegenden Preistrend.</dd>
+    <dt id="g-leitzins">Leitzins</dt><dd>Von der Zentralbank festgelegter kurzfristiger Zinssatz, über den sie das gesamte Zinsniveau beeinflusst.</dd>
+    <dt id="g-mandat">Mandat</dt><dd>Gesetzlicher Auftrag einer Zentralbank. Die EZB ist vorrangig der Preisstabilität verpflichtet, die Fed zusätzlich einer hohen Beschäftigung.</dd>
+    <dt id="g-negativzins">Negativzins</dt><dd>Zinssatz unter null: Der Geldgeber zahlt dafür, dass er Geld anlegt. Die EZB berechnete Banken von 2014 bis 2022 negative Zinsen auf Einlagen.</dd>
+    <dt id="g-neutralzins">Neutraler Zins</dt><dd>Gedachter Zinssatz, bei dem die Geldpolitik die Wirtschaft weder anregt noch bremst. Er lässt sich nicht beobachten, nur schätzen.</dd>
+    <dt id="g-realzins">Realzins</dt><dd>Nominalzins abzüglich der Inflationsrate. Er zeigt, wie sich die Kaufkraft eines Guthabens oder die tatsächliche Last eines Kredits entwickelt.</dd>
+    <dt id="g-rendite">Rendite</dt><dd>Tatsächlicher jährlicher Ertrag einer Anlage, etwa einer Anleihe, bezogen auf ihren Kaufpreis. Steigt der Kurs einer Anleihe, sinkt ihre Rendite und umgekehrt.</dd>
+    <dt id="g-spread">Risikoaufschlag (Spread)</dt><dd>Zinsunterschied zwischen einer Anleihe und einer als besonders sicher geltenden Vergleichsanleihe, im Euroraum meist der Bundesanleihe.</dd>
+    <dt id="g-schuldenbremse">Schuldenbremse</dt><dd>Regel im Grundgesetz seit 2009, die die Neuverschuldung von Bund und Ländern begrenzt. 2025 für Verteidigung und ein Infrastruktur-Sondervermögen gelockert.</dd>
+    <dt id="g-stagflation">Stagflation</dt><dd>Gleichzeitiges Auftreten von wirtschaftlicher Stagnation und hoher Inflation, wie in den 1970er Jahren.</dd>
+    <dt id="g-taylorregel">Taylor-Regel</dt><dd>Faustregel für den angemessenen Leitzins in Abhängigkeit von Inflation und Auslastung der Wirtschaft, 1993 von John B. Taylor vorgeschlagen.</dd>
+    <dt id="g-tpi">TPI</dt><dd>Transmission Protection Instrument. Seit 2022 bestehendes Instrument, mit dem die EZB Anleihen einzelner Euroländer kaufen kann, wenn deren Zinsen ungerechtfertigt stark steigen. Bisher nie eingesetzt.</dd>
+    <dt id="g-transmission">Transmission</dt><dd>Übertragungsweg, über den eine Leitzinsänderung auf Marktzinsen, Kredite, Nachfrage und schließlich auf die Preise wirkt.</dd>
+    <dt id="g-verwahrentgelt">Verwahrentgelt</dt><dd>Gebühr, die Banken in der Negativzinsphase für größere Guthaben verlangten. Der Bundesgerichtshof erklärte die verwendeten Klauseln 2025 für unwirksam.</dd>
+    <dt id="g-zinsdifferenz">Zinsdifferenz</dt><dd>Unterschied der Zinsniveaus zwischen zwei Währungsräumen. Er beeinflusst Kapitalströme und Wechselkurse.</dd>
+    <dt id="g-zinsstruktur">Zinsstrukturkurve</dt><dd>Darstellung der Zinsen für Anleihen eines Schuldners nach ihrer Laufzeit. Normalerweise sind lange Laufzeiten höher verzinst als kurze.</dd>
+    <dt id="g-zinswende">Zinswende</dt><dd>Umkehr der Zinsrichtung nach einer längeren Phase sinkender oder steigender Zinsen, etwa im Juli 2022 und im Juni 2026.</dd>
+    <dt id="g-zweitrunde">Zweitrundeneffekte</dt><dd>Wenn ein ursprünglicher Preisschub – etwa bei Energie – höhere Löhne und weitere Preiserhöhungen auslöst. Sie können eine Lohn-Preis-Spirale in Gang setzen.</dd>
+  </dl>
+</section>
+
+<!-- ============ 18 QUELLEN ============ -->
+<section class="chapter" id="quellen">
+  <div class="chap-head"><div class="chap-num">18</div><div>
+    <span class="span-chip">Zum Weiterlesen</span>
+    <h2>Quellen &amp; Weiterlesen</h2>
+  </div></div>
+  <p class="lead">Hinweis: Inflationsraten werden von den Statistikämtern nachträglich überarbeitet; Monatswerte für 2026 sind teils vorläufige Schätzungen. Markt- und Zinsdaten schwanken täglich und sind gerundet. Die Szenarien in Kapitel 13 sind eigene Gedankenspiele auf Grundlage der genannten Quellen und keine Anlageberatung.</p>
+  <h3>Zentralbanken und amtliche Statistik</h3>
+  <ul class="sources">
+    <li><a href="https://www.bundesbank.de/de/aufgaben/themen/ezb-rat-hebt-leitzinsen-um-25-basispunkte-an-1008148">Deutsche Bundesbank: EZB-Rat hebt Leitzinsen um 25 Basispunkte an (10.9.2026)</a></li>
+    <li><a href="https://www.bundesbank.de/resource/blob/1008114/78d19de3d6fb1f6d94befa20ee275dfd/472B63F073F071307366337C94F8C870/2026-09-10-pressekonferenz-download.pdf">EZB: Einleitende Bemerkungen zur Pressekonferenz vom 10.9.2026 (deutsche Fassung, PDF)</a></li>
+    <li><a href="https://www.ecb.europa.eu/press/press_conference/monetary-policy-statement/2025/html/ecb.is251218~3a10402adb.de.html">EZB: Pressekonferenz vom 18.12.2025 mit den Projektionen für 2026</a></li>
+    <li><a href="https://www.bundesbank.de/de/aufgaben/geldpolitik/geldpolitische-wertpapierankaeufe/was-bedeutet-geldpolitische-transmission--897276">Deutsche Bundesbank: Was bedeutet geldpolitische Transmission?</a></li>
+    <li><a href="https://www.hochschule-bundesbank.de/resource/blob/892600/c264cf77a95bd426ab2930a4eaadb2b8/mL/geld-und-geldpolitik-kapitel6-data.pdf">Deutsche Bundesbank: Geld und Geldpolitik, Kapitel 6 – Die Geldpolitik des Eurosystems (PDF)</a></li>
+    <li><a href="https://www.bundesbank.de/de/aufgaben/themen/joachim-nagel-geldpolitik-nicht-zu-frueh-lockern-918672">Deutsche Bundesbank: Joachim Nagel – Geldpolitik nicht zu früh lockern (2022)</a></li>
+    <li><a href="https://www.bundesbank.de/de/presse/reden/jahresabschluss-2025-990792">Deutsche Bundesbank: Statement zum Jahresabschluss 2025</a></li>
+    <li><a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/09/PD26_348_611.html">Statistisches Bundesamt: Inflationsrate im September 2026 voraussichtlich +3,3&nbsp;%</a></li>
+    <li><a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/01/PD26_019_611.html">Statistisches Bundesamt: Verbraucherpreisindex Dezember und Jahr 2025</a></li>
+    <li><a href="https://destatis.de/EN/Press/2024/03/PE24_114_61262.html">Statistisches Bundesamt: Prices of residential property 2023 (−8,4&nbsp;%)</a></li>
+    <li><a href="https://dserver.bundestag.de/btd/19/324/1932499.pdf">Deutscher Bundestag: Antwort der Bundesregierung zu den Folgen der Null- und Negativzinspolitik (Drucksache 19/32499)</a></li>
+  </ul>
+  <h3>Forschung und Analysen</h3>
+  <ul class="sources">
+    <li><a href="https://www.diw.de/de/diw_01.c.1020394.de/gemeinschaftsdiagnose_herbst_2026__aufschwung_mit_strukturproblemen_____finanzpolitik_auf_abwegen.html">Projektgruppe Gemeinschaftsdiagnose: Herbst 2026 – Aufschwung mit Strukturproblemen, Finanzpolitik auf Abwegen</a></li>
+    <li><a href="https://www.diw.de/de/diw_01.c.1016802.de/publikationen/diw_aktuell/2026_0122/blockade_der_strasse_von_hormus__angebotsschock_ueberlagert___ache_nachfrage__oelpreise_bleiben_anfaellig_fuer_ausschlaege.html">DIW aktuell: Blockade der Straße von Hormus – Angebotsschock (2026)</a></li>
+    <li><a href="https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Auf-einen-Blick/2026_03_10_Oelpreis-Hormus.pdf">KfW Research: Blockade der Straße von Hormus (10.3.2026, PDF)</a></li>
+    <li><a href="https://www.lbbw.de/artikel/news-und-einschaetzungen/jahresausblick-2026-waehrungen_ak1gtjc266_d.html">LBBW Research: Jahresausblick 2026 – Zinsdifferenzen und Wechselkurse</a></li>
+    <li><a href="https://kpmg.com/us/en/articles/2026/july-2026-fomc-meeting.html">KPMG Economics: July 2026 FOMC meeting</a></li>
+    <li><a href="https://am.eu.rothschildandco.com/stock/lib/PDF/Eco%20note/EN/econote_01_EN.pdf">Rothschild &amp; Co Asset Management: The Volcker shock (PDF)</a></li>
+    <li><a href="https://www.bankofengland.co.uk/-/media/boe/files/quarterly-bulletin/1992/operation-of-monetary-policy-qb-1992-q4.pdf">Bank of England: Operation of monetary policy, Quarterly Bulletin 1992 Q4 (PDF)</a></li>
+  </ul>
+  <h3>Berichterstattung</h3>
+  <ul class="sources">
+    <li><a href="https://www.boersen-zeitung.de/kapitalmaerkte/zehnjaehrige-mit-hoechster-rendite-seit-april-2011">Börsen-Zeitung (Reuters): Zehnjährige mit höchster Rendite seit April 2011 (2026)</a></li>
+    <li><a href="https://de.euronews.com/2026/09/15/us-rendite-fur-zehnjahrige-staatsanleihen-uberschreitet-5-prozent-bei-globalem-ausverkauf">Euronews: US-Rendite für zehnjährige Staatsanleihen überschreitet 5 Prozent (15.9.2026)</a></li>
+    <li><a href="https://de.euronews.com/2026/09/28/olpreise-steigen-nachdem-trump-irans-waffenstillstandsangebot-ablehnt">Euronews: Ölpreise steigen, nachdem Trump Irans Waffenstillstandsangebot ablehnt (28.9.2026)</a></li>
+    <li><a href="https://www.optionfinance.fr/info-financiere-en-continu/d/2026-10-02-zone-euro-linflation-depasse-les-attentes-en-septembre.html">Option Finance: Inflation im Euroraum im September 2026 über den Erwartungen (französisch)</a></li>
+    <li><a href="https://www.cash.ch/news/top-news/zinsschritt-mit-ansage-wie-die-ezb-die-inflation-zugeln-will-966110">cash.ch (Reuters): Zinsschritt mit Ansage – wie die EZB die Inflation zügeln will (September 2026)</a></li>
+    <li><a href="https://www.boersen-zeitung.de/meinung-analyse/ein-symbol-der-ezb-reicht-aus">Börsen-Zeitung: Ein Symbol der EZB reicht aus (Kommentar, Juni 2026)</a></li>
+    <li><a href="https://lasvegassun.com/news/2026/jul/28/fed-leaves-interest-rate-unchanged-but-with-3-diss/">Associated Press: Fed leaves interest rate unchanged but with 3 dissents (29.7.2026)</a></li>
+    <li><a href="https://admiralmarkets.com/analytics/traders-blog/fed-raised-interest-rates">Admiral Markets: Fed raised interest rates to 3.75&nbsp;%–4.00&nbsp;% (16.9.2026)</a></li>
+    <li><a href="https://stock3.com/news/kevin-warsh-wird-neue-us-notenbankchef-16906520">stock3: Kevin Warsh soll neuer US-Notenbankchef werden (30.1.2026)</a></li>
+    <li><a href="https://stock3.com/news/bank-of-japan-erhoeht-leitzins-auf-31-jahres-hoch-17291806">stock3: Bank of Japan erhöht Leitzins auf 31-Jahres-Hoch (18.9.2026)</a></li>
+    <li><a href="https://www.tagesspiegel.de/article16028836.ece">Tagesspiegel (dpa): Haushaltswoche in unruhigen Zeiten – das steckt im Etat 2027 (8.9.2026)</a></li>
+    <li><a href="https://www.volksstimme.de/deutschland-und-welt/deutschland/klingbeil-will-finanzhilfen-im-klimafonds-kurzen-4279820">Volksstimme (dpa): Mehr Schulden, weniger Finanzhilfen – Zinsausgaben bis 2030</a></li>
+    <li><a href="https://www.capitalo.de/anbieter/capitalo/news/bauzinsen-marktueberblick-2026-09">Capitalo: Bundesanleihen-Rendite und Bauzinsen im September 2026</a></li>
+    <li><a href="https://www.drweb.de/frankreich-staatsanleihen-eurokrise-ramsch/">Dr. Web: Frankreichs Staatsanleihen, Risikoaufschlag und das TPI (Oktober 2026)</a></li>
+    <li><a href="https://www.boersen-zeitung.de/recht-kapitalmarkt/bgh-erklaert-verwahrentgelte-fuer-spar-und-tagesgeldkonten-fuer-unzulaessig">Börsen-Zeitung: BGH erklärt Verwahrentgelte für unzulässig (2025)</a></li>
+    <li><a href="https://deutsche-wirtschafts-nachrichten.de/702452/Lindner-Zinsausgaben-des-Bundes-haben-sich-verzehnfacht">Deutsche Wirtschafts Nachrichten: Lindner – Zinsausgaben des Bundes haben sich verzehnfacht (2023)</a></li>
+    <li><a href="https://www.boersen-zeitung.de/kompakt/deutsche-inflation-2022-nach-revision-niedriger">Börsen-Zeitung: Deutsche Inflation 2022 nach Revision niedriger (2023)</a></li>
+    <li><a href="https://www.boersen-zeitung.de/kapitalmaerkte/anleiheverzinsungen-rutschen-ab">Börsen-Zeitung: Anleiheverzinsungen rutschen ab – Bundrendite auf Rekordtief (März 2020)</a></li>
+    <li><a href="https://stock3.com/news/so-knackte-george-soros-die-bank-of-england-4740359">stock3: So knackte George Soros die Bank of England (zur EWS-Krise 1992)</a></li>
+    <li><a href="https://www.sparkasse.de/themen/geldanlage/negativzins.html">Sparkasse.de: Fragen und Antworten zu Negativzins und Nullzins</a></li>
+  </ul>
+  <h3>Bücher zum Vertiefen</h3>
+  <ul>
+    <li>Deutsche Bundesbank: <em>Geld und Geldpolitik</em>. Lehrbuch, Frankfurt am Main (laufend aktualisiert, online verfügbar).</li>
+    <li>Otmar Issing: <em>Einführung in die Geldtheorie</em>. München (Vahlen), zahlreiche Auflagen.</li>
+    <li>Ben S. Bernanke: <em>21st Century Monetary Policy. The Federal Reserve from the Great Inflation to COVID-19</em>. New York 2022.</li>
+    <li>Paul A. Volcker, Christine Harper: <em>Keeping At It. The Quest for Sound Money and Good Government</em>. New York 2018.</li>
+    <li>Edward Chancellor: <em>The Price of Time. The Real Story of Interest</em>. London 2022.</li>
+    <li>Hans-Werner Sinn: <em>Die wundersame Geldvermehrung. Staatsverschuldung, Negativzinsen, Inflation</em>. Freiburg 2021.</li>
+  </ul>
+</section>
+
+</main>
+</div>
+
+<footer>Deutsche und europäische Wirtschaftsgeschichte · Zinsen als Lenker der Wirtschaft 2008–2026 · Zusammengestellt als Lern- und Überblicksdokument · Stand: Oktober 2026<span class="ph-foot"> · <a href="index.html">Der Philosopher</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></footer>
+<button id="top" aria-label="Nach oben">↑</button>
+
+<script>
+(function(){
+  // ---- Timeline data ----
+  var T = [
+    ["1957","reich","Gründung der Deutschen Bundesbank als unabhängige Notenbank der Bundesrepublik."],
+    ["1971","europa","Die USA lösen den Dollar vom Gold; das System fester Wechselkurse von Bretton Woods zerfällt."],
+    ["1973","reich","Ende der festen Bindung an den Dollar: Die Bundesbank kann ihre Zinsen allein an der Preisstabilität ausrichten."],
+    ["1973/74","krieg","Erste Ölkrise: Der Ölpreis vervielfacht sich, die Inflation steigt in fast allen Industrieländern."],
+    ["1974","religion","Die Inflation in der Bundesrepublik erreicht rund sieben Prozent – deutlich weniger als in den USA oder Großbritannien."],
+    ["1974","reich","Die Bundesbank verkündet als eine der ersten Zentralbanken ein Geldmengenziel."],
+    ["1979","krieg","Zweite Ölkrise nach der Revolution in Iran."],
+    ["1979","reich","Start des Europäischen Währungssystems (EWS); die D-Mark wird zur Ankerwährung."],
+    ["1979","europa","Paul Volcker wird Vorsitzender der Fed und leitet im Oktober eine radikale Wende ein."],
+    ["1980","religion","Die Inflation in den USA erreicht im März mit 14,8 Prozent ihren Höhepunkt."],
+    ["1981","europa","Der Leitzins der Fed erreicht rund 20 Prozent; die USA geraten in eine schwere Rezession."],
+    ["1982","krieg","Hohe Dollarzinsen lösen die lateinamerikanische Schuldenkrise aus."],
+    ["1990","kultur","Deutsch-deutsche Währungsunion am 1. Juli; die Einheit wird großteils auf Kredit finanziert."],
+    ["1992","reich","Die Bundesbank erhöht den Diskontsatz im Juli auf 8,75 Prozent."],
+    ["1992","krieg","„Schwarzer Mittwoch“ am 16. September: Das britische Pfund verlässt den Wechselkursmechanismus des EWS."],
+    ["1998","reich","Gründung der Europäischen Zentralbank in Frankfurt am Main."],
+    ["1999","reich","Einführung des Euro als Buchgeld; die EZB übernimmt die Geldpolitik für den Euroraum."],
+    ["2002","kultur","Euro-Bargeld ersetzt die D-Mark."],
+    ["2007","krieg","Die US-Immobilienkrise erfasst die Geldmärkte; Banken misstrauen einander."],
+    ["2008","reich","Im Juli erhöht die EZB wegen hoher Ölpreise noch auf 4,25 Prozent."],
+    ["2008","krieg","Zusammenbruch von Lehman Brothers am 15. September; weltweite Finanzkrise."],
+    ["2008","europa","Die Fed senkt ihren Leitzins im Dezember auf 0–0,25 Prozent und kauft Anleihen."],
+    ["2009","kultur","Die Schuldenbremse wird im Grundgesetz verankert."],
+    ["2010","krieg","Hilfspaket für Griechenland: Beginn der Euro-Schuldenkrise."],
+    ["2011","reich","Die EZB erhöht im April und Juli die Zinsen und nimmt die Schritte im November und Dezember zurück."],
+    ["2012","reich","Draghis „Whatever it takes“ am 26. Juli; der Einlagesatz sinkt auf null, im September folgt das OMT-Programm."],
+    ["2014","reich","Im Juni führt die EZB einen negativen Einlagesatz von −0,1 Prozent ein."],
+    ["2014","kultur","Erstmals seit 1969 kommt der Bund ohne neue Schulden aus („schwarze Null“)."],
+    ["2015","reich","Im März beginnt das große Anleihekaufprogramm der EZB."],
+    ["2015","europa","Die Fed erhöht im Dezember erstmals seit 2006 die Zinsen."],
+    ["2016","reich","Der Hauptrefinanzierungssatz der EZB sinkt im März auf null."],
+    ["2016","kultur","Die Rendite zehnjähriger Bundesanleihen fällt im Juni erstmals unter null."],
+    ["2019","kultur","Auch dreißigjährige Bundesanleihen rentieren im August erstmals negativ."],
+    ["2019","reich","Die EZB senkt den Einlagesatz im September auf −0,5 Prozent; Weidmann und frühere Notenbanker protestieren."],
+    ["2020","krieg","Corona-Pandemie; die Rendite zehnjähriger Bundesanleihen fällt im März auf rund −0,9 Prozent."],
+    ["2020","reich","Die EZB startet das Pandemie-Notfallkaufprogramm PEPP."],
+    ["2020","kultur","Am 5. Mai beanstandet das Bundesverfassungsgericht im PSPP-Urteil die Anleihekäufe der EZB."],
+    ["2021","religion","Die Inflation in Deutschland steigt auf 3,1 Prozent; die Notenbanken sprechen von einem vorübergehenden Anstieg."],
+    ["2022","krieg","Russland greift am 24. Februar die Ukraine an; die Energiepreise steigen drastisch."],
+    ["2022","europa","Die Fed erhöht im März erstmals seit 2018 die Zinsen."],
+    ["2022","kultur","Im Mai verlangen mindestens 455 Banken und Sparkassen Verwahrentgelte."],
+    ["2022","reich","Am 21. Juli erhöht die EZB erstmals seit 2011 die Zinsen und beschließt das Schutzinstrument TPI."],
+    ["2022","europa","Der Euro fällt im Sommer erstmals seit 2002 unter einen Dollar."],
+    ["2022","krieg","Im September löst die britische Haushaltspolitik eine Krise am Anleihemarkt aus."],
+    ["2022","religion","Im Oktober erreicht die Inflation im Euroraum 10,6 Prozent, in Deutschland 8,8 Prozent (VPI)."],
+    ["2023","krieg","Im März brechen die Silicon Valley Bank und die Credit Suisse zusammen."],
+    ["2023","reich","Im September erreicht der Einlagesatz der EZB mit 4,0 Prozent seinen Höchststand."],
+    ["2023","kultur","Bauzinsen steigen auf rund vier Prozent; die Preise für Wohnimmobilien fallen im Jahresdurchschnitt um 8,4 Prozent."],
+    ["2023","kultur","Die Zinsausgaben des Bundes erreichen rund 40 Milliarden Euro – zehnmal so viel wie 2021."],
+    ["2024","reich","Im Juni senkt die EZB erstmals seit 2019 die Zinsen."],
+    ["2024","europa","Anfang August löst eine Zinserhöhung der Bank of Japan ein weltweites Börsenbeben aus."],
+    ["2024","religion","Die Inflation in Deutschland sinkt auf 2,2 Prozent im Jahresdurchschnitt."],
+    ["2025","kultur","Am 4. Februar erklärt der Bundesgerichtshof Verwahrentgelte auf Spar- und Tagesgeldkonten für unzulässig."],
+    ["2025","reich","Die Bundesbank meldet für 2024 einen Verlust von 19,2 Milliarden Euro – den ersten seit 1979."],
+    ["2025","kultur","Am 18. März lockert der Bundestag die Schuldenbremse; die Renditen deutscher Anleihen steigen sprunghaft."],
+    ["2025","europa","Umfassende US-Zölle im April; Präsident Trump erhöht den Druck auf die Fed."],
+    ["2025","reich","Im Juni senkt die EZB den Einlagesatz auf 2,0 Prozent und legt danach eine Pause ein."],
+    ["2025","europa","Die Fed senkt von September bis Dezember dreimal auf 3,50–3,75 Prozent."],
+    ["2026","europa","Am 30. Januar nominiert Trump Kevin Warsh als Nachfolger von Fed-Chef Powell."],
+    ["2026","krieg","Am 28. Februar greifen die USA und Israel Iran an; die Straße von Hormus wird blockiert."],
+    ["2026","krieg","Im Mai erreicht der Ölpreis der Sorte Brent in der Spitze knapp 115 US-Dollar."],
+    ["2026","reich","Am 11. Juni erhöht die EZB erstmals seit 2023 die Zinsen (Einlagesatz 2,25 Prozent)."],
+    ["2026","europa","Die Bank of Japan hebt ihren Leitzins im Juni auf 1,0 und im September auf 1,25 Prozent."],
+    ["2026","europa","Am 29. Juli belässt die Fed ihren Zins; drei Notenbankpräsidenten stimmen für eine Erhöhung."],
+    ["2026","kultur","Am 8. September bringt Finanzminister Klingbeil den Haushalt 2027 ein; die Zinsausgaben sollen sich bis 2030 fast verdoppeln."],
+    ["2026","reich","Am 10. September erhöht die EZB in Berlin auf 2,50 Prozent."],
+    ["2026","krieg","Am 15. September steigt die Rendite zehnjähriger US-Anleihen über 5 Prozent, die der Bundesanleihe auf über 3,5 Prozent."],
+    ["2026","europa","Am 16. September erhöht die Fed auf 3,75–4,00 Prozent."],
+    ["2026","krieg","Ende September steigt Brent nach der Ablehnung eines iranischen Waffenstillstandsangebots über 107 US-Dollar."],
+    ["2026","religion","Die Inflation in Deutschland steigt im September auf 3,3 Prozent (vorläufig)."],
+    ["2026","krieg","Am 1. Oktober steigt der Risikoaufschlag französischer Anleihen gegenüber Bundesanleihen auf bis zu 1,33 Prozentpunkte."],
+    ["2026","religion","Am 2. Oktober meldet Eurostat für September eine Inflation von 3,8 Prozent im Euroraum."]
+  ];
+  var names = {reich:"EZB & Bundesbank",religion:"Inflation & Preise",europa:"USA & Welt",krieg:"Krisen & Schocks",kultur:"Staat & Bürger in Deutschland"};
+  var tl = document.getElementById("timeline");
+  T.forEach(function(e){
+    var li = document.createElement("li");
+    li.className = e[1];
+    li.innerHTML = '<span class="y">'+e[0]+'</span><span class="tag '+e[1]+'">'+names[e[1]]+'</span><br>'+e[2];
+    tl.appendChild(li);
+  });
+  document.getElementById("filters").addEventListener("click", function(ev){
+    var b = ev.target.closest("button"); if(!b) return;
+    var f = b.getAttribute("data-f");
+    this.querySelectorAll("button").forEach(function(x){x.classList.toggle("on", x===b);});
+    tl.querySelectorAll("li").forEach(function(li){
+      li.classList.toggle("hide", f!=="alle" && !li.classList.contains(f));
+    });
+  });
+
+  // ---- Progress bar & top button ----
+  var prog = document.getElementById("progress"), topBtn = document.getElementById("top");
+  function onScroll(){
+    var h = document.documentElement;
+    var p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+    prog.style.width = (p*100) + "%";
+    topBtn.classList.toggle("show", h.scrollTop > 600);
+  }
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+  topBtn.addEventListener("click", function(){ window.scrollTo({top:0}); });
+
+  // ---- Active TOC ----
+  var links = {};
+  document.querySelectorAll("nav.toc a").forEach(function(a){ links[a.getAttribute("href").slice(1)] = a; });
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          Object.keys(links).forEach(function(k){ links[k].classList.remove("active"); });
+          var a = links[en.target.id]; if(a) a.classList.add("active");
+        }
+      });
+    }, {rootMargin:"-30% 0px -60% 0px"});
+    document.querySelectorAll("section.chapter").forEach(function(s){ io.observe(s); });
+  }
+
+  // ---- Mobile TOC toggle ----
+  var toc = document.getElementById("toc"), tt = document.getElementById("tocToggle");
+  tt.addEventListener("click", function(){
+    var open = toc.classList.toggle("open"); tt.setAttribute("aria-expanded", open);
+  });
+  toc.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toc.classList.remove("open"); tt.setAttribute("aria-expanded", false); }); });
+
+  // ---- Theme toggle ----
+  var root = document.documentElement;
+  document.getElementById("themeBtn").addEventListener("click", function(){
+    var dark = root.getAttribute("data-theme") ? root.getAttribute("data-theme")==="dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    root.setAttribute("data-theme", dark ? "light" : "dark");
+  });
+
+  // ---- Glossary links: tooltip with definition ----
+  document.querySelectorAll("a.g").forEach(function(a){
+    a.title = (function(){ var dt=document.querySelector(a.getAttribute("href")); return dt && dt.nextElementSibling ? dt.nextElementSibling.textContent : ""; })();
+  });
+})();
+</script>
+</body>
+</html>
