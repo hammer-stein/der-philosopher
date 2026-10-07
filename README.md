@@ -11,6 +11,8 @@ Statische Website ohne Datenbank und ohne Server-Programmierung. Sie besteht nur
 | `philosopher.css` | Gestaltung der Titelseite und der Nebenseiten |
 | `impressum.html`, `datenschutz.html` | Vorlagen, vor der Veröffentlichung ausfüllen |
 | `anbinden.py` | Fügt in die Dossiers die Kopfleiste „Der Philosopher“ und Fußzeilen-Links ein |
+| `vorrendern.js` | Schreibt die aus `register.js` aufgebaute Titelseite fest in `index.html` (für Suchmaschinen und Besucher ohne JavaScript) |
+| `sitemap.xml` | Liste aller Seiten für Google und Bing |
 | `robots.txt` | Hinweis für Suchmaschinen |
 | `geschichte-….html`, `wirtschaft-….html`, `zeitgeschichte-….html` | die Dossiers (in denselben Ordner legen) |
 
@@ -21,7 +23,8 @@ Alle Dateien liegen in **einem** Ordner. Die Links sind relativ, die Seite funkt
 1. Die HTML-Datei des Dossiers in diesen Ordner legen. Dateiname nach dem Muster `ressort-thema-JJJJ-JJJJ.html`, klein, ohne Umlaute und Leerzeichen.
 2. In `register.js` unter `artikel` einen Eintrag ergänzen (vorhandenen kopieren und anpassen). Die Kommentare oben in der Datei erklären jedes Feld.
 3. Einmal `python3 anbinden.py` ausführen – oder das Dossier gleich mit der Leiste erstellen lassen (siehe Konzept im Projekt).
-4. `index.html` im Browser öffnen und prüfen. Danach den Ordner neu hochladen.
+4. Einmal `node vorrendern.js` ausführen. Das schreibt die Titelseite fest in `index.html`, damit Suchmaschinen, Linkvorschauen und Besucher ohne JavaScript sie lesen können. Ohne diesen Schritt fehlt das neue Dossier in dieser festen Fassung, im Browser erscheint es trotzdem.
+5. `index.html` im Browser öffnen und prüfen. Danach den Ordner neu hochladen.
 
 Ein neues Ressort entsteht, indem man es unter `ressorts` einträgt. Ressorts ohne Dossier erscheinen in der Leiste und zeigen „In Vorbereitung“; auf der Titelseite tauchen sie erst auf, wenn ein Dossier vorhanden ist.
 
