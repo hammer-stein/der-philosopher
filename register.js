@@ -105,7 +105,7 @@ window.PHILOSOPHER = {
       datei: "zeitgeschichte-afd-strategie-2013-2026.html",
       ressort: "politik",
       dachzeile: "Deutsche Zeitgeschichte und Politik",
-      titel: "Die Strategie der AfD – und warum sie so oft aufging",
+      titel: "Die Strategie der AfD und wie ihre Rechnung aufging",
       teaser: "Wie die AfD seit ihrer Gründung ihren Weg plante, mehrfach neu ausrichtete und ihre Strategie schließlich gezielt gegen die Union wandte – erzählt anhand ihrer internen Strategiepapiere und der Ereignisse, die sie prägten.",
       von: 2013, bis: 2026, kapitel: 18,
       veroeffentlicht: "2026-10-06", stand: "Oktober 2026",
