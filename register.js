@@ -82,7 +82,7 @@ window.PHILOSOPHER = {
       ressort: "wirtschaft",
       dachzeile: "Deutsche und europäische Wirtschaftsgeschichte",
       titel: "Zinsen als Lenker der Wirtschaft",
-      teaser: "Wie Zinsen Preise, Wachstum, Vermögen und Staatsfinanzen lenken – erklärt an historischen Lehrstücken und verfolgt von den Null- und Negativzinsjahren in Deutschland bis zur neuen Zinswende im Herbst 2026.",
+      teaser: "Wie Zinsen Preise, Wachstum, Vermögen und Staatsfinanzen prägen – erklärt an historischen Lehrstücken und verfolgt von den Null- und Negativzinsjahren in Deutschland bis zur neuen Zinswende im Herbst 2026.",
       von: 2008, bis: 2026, kapitel: 18,
       veroeffentlicht: "2026-10-06", stand: "Oktober 2026",
       aufmacher: true,
