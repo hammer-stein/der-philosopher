@@ -188,6 +188,27 @@ main > *, #ansicht > *{min-width:0}
 .textseite h2{font-size:1.2rem;font-weight:600;margin-top:12px}
 .textseite p,.textseite li{line-height:1.6}
 .textseite ul{margin:0;padding-left:1.2rem}
+/* Rechtstexte (Impressum, Datenschutz): ruhiger, grauer Fließtext,
+   gestufte serifenlose Überschriften */
+.rechtstext{font-family:var(--sans);color:var(--muted);gap:0;padding:44px 48px}
+.rechtstext h1{font-family:var(--serif);color:var(--ink);margin-bottom:28px}
+.rechtstext h2{font-family:var(--sans);font-size:1.75rem;font-weight:700;color:var(--c1);margin:40px 0 4px;letter-spacing:-.01em}
+.rechtstext h3{font-family:var(--sans);font-size:1.3rem;font-weight:700;color:var(--ink);margin:30px 0 10px}
+.rechtstext h4{font-family:var(--sans);font-size:1.2rem;font-weight:400;color:var(--ink);margin:24px 0 8px}
+.rechtstext h1+h3,.rechtstext h2+h3,.rechtstext h3+h4{margin-top:14px}
+.rechtstext p{line-height:1.85;margin:0 0 16px}
+.rechtstext p.block{line-height:1.9}
+.rechtstext .label{display:block;font-family:var(--sans);font-size:inherit;font-weight:700;text-transform:none;letter-spacing:0;color:var(--muted)}
+.rechtstext a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px}
+.rechtstext a:hover{color:var(--ink)}
+.rechtstext .meta{margin-top:24px}
+.rechtstext .zurueck{margin-top:8px}
+@media (max-width:640px){
+  .rechtstext{padding:28px 18px}
+  .rechtstext h2{font-size:1.45rem}
+  .rechtstext h3{font-size:1.15rem}
+  .rechtstext h4{font-size:1.08rem}
+}
 .platzhalter{background:var(--c4-soft);color:var(--c4);font-family:var(--sans);font-size:.88em;padding:0 4px}
 .hinweis{border:1px solid var(--line);border-left:4px solid var(--c2);background:var(--c2-soft);padding:12px 16px;font-family:var(--sans);font-size:.88rem}
 
