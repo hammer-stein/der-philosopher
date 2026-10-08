@@ -34,7 +34,7 @@ footer .ph-foot a{color:var(--muted)}
 </style>
 <nav class="ph-bar" aria-label="Der Philosopher"><div class="ph-in">
   <a class="ph-brand" href="index.html"><i>Der</i>Philosopher</a>
-  <div class="ph-links"><a href="index.html#{ressort_id}">{ressort_name}</a><a href="index.html">Titelseite</a></div>
+  <div class="ph-links"><a href="{ressort_id}.html">{ressort_name}</a><a href="index.html">Titelseite</a></div>
 </div></nav>
 """
 

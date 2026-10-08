@@ -6,12 +6,15 @@ Statische Website ohne Datenbank und ohne Server-Programmierung. Sie besteht nur
 
 | Datei | Zweck |
 |---|---|
-| `index.html` | Titelseite mit Ressortleiste, Aufmacher, Reihe, Ressortblöcken, Ressortseiten (`index.html#geschichte` …) und Archiv mit Suche (`index.html#archiv`) |
+| `index.html` | Titelseite mit Ressortleiste, Aufmacher, Reihe, Ressortblöcken und Archiv mit Suche (`index.html#archiv`); Vorlage für die Ressortseiten |
 | `register.js` | **Beitragsregister** – die einzige Datei, die beim Hinzufügen eines Dossiers geändert wird |
 | `philosopher.css` | Gestaltung der Titelseite und der Nebenseiten |
 | `impressum.html`, `datenschutz.html` | Vorlagen, vor der Veröffentlichung ausfüllen |
 | `anbinden.py` | Fügt in die Dossiers die Kopfleiste „Der Philosopher“ und Fußzeilen-Links ein |
-| `vorrendern.js` | Schreibt die aus `register.js` aufgebaute Titelseite fest in `index.html` (für Suchmaschinen und Besucher ohne JavaScript) |
+| `vorrendern.js` | Baut aus `register.js` alles Abgeleitete: feste Titelseite, Ressortseiten (`geschichte.html` …), Kopfdaten für Google und Linkvorschauen (strukturierte Daten, Open Graph) und `sitemap.xml` |
+| `vorschaubilder.py` | Erzeugt die Vorschaubilder in `bilder/` (je Dossier eines, dazu Titelseite und Logo) |
+| `geschichte.html`, `politik.html`, … | Ressortseiten – **werden erzeugt, nicht von Hand bearbeiten** |
+| `bilder/` | Vorschaubilder und Logo |
 | `sitemap.xml` | Liste aller Seiten für Google und Bing |
 | `robots.txt` | Hinweis für Suchmaschinen |
 | `geschichte-….html`, `wirtschaft-….html`, `zeitgeschichte-….html` | die Dossiers (in denselben Ordner legen) |
@@ -23,7 +26,7 @@ Alle Dateien liegen in **einem** Ordner. Die Links sind relativ, die Seite funkt
 1. Die HTML-Datei des Dossiers in diesen Ordner legen. Dateiname nach dem Muster `ressort-thema-JJJJ-JJJJ.html`, klein, ohne Umlaute und Leerzeichen.
 2. In `register.js` unter `artikel` einen Eintrag ergänzen (vorhandenen kopieren und anpassen). Die Kommentare oben in der Datei erklären jedes Feld.
 3. Einmal `python3 anbinden.py` ausführen – oder das Dossier gleich mit der Leiste erstellen lassen (siehe Konzept im Projekt).
-4. Einmal `node vorrendern.js` ausführen. Das schreibt die Titelseite fest in `index.html`, damit Suchmaschinen, Linkvorschauen und Besucher ohne JavaScript sie lesen können. Ohne diesen Schritt fehlt das neue Dossier in dieser festen Fassung, im Browser erscheint es trotzdem.
+4. `python3 vorschaubilder.py` ausführen (erzeugt das Vorschaubild des neuen Dossiers), danach `node vorrendern.js`. Das schreibt Titelseite, Ressortseiten, Kopfdaten und Sitemap neu. Seitentitel (`<title>`) und Beschreibung des Dossiers werden dabei übernommen, nicht verändert.
 5. `index.html` im Browser öffnen und prüfen. Danach den Ordner neu hochladen.
 
 Ein neues Ressort entsteht, indem man es unter `ressorts` einträgt. Ressorts ohne Dossier erscheinen in der Leiste und zeigen „In Vorbereitung“; auf der Titelseite tauchen sie erst auf, wenn ein Dossier vorhanden ist.
