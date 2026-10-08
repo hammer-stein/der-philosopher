@@ -64,9 +64,9 @@ def dossier_html(a):
 TITELSEITE = seite('''
 <div class="mitte" style="align-items:center;text-align:center">
   <div class="marke" style="font-size:118px;line-height:1"><i>Der</i>Philosopher</div>
-  <div class="motto">Hintergrund und Zusammenhang</div>
+  <div class="motto" style="font-size:20px;letter-spacing:.22em">Geschichte, Politik und Wirtschaft verständlich erklärt</div>
   <div style="width:520px;border-top:4px double #8a97ab;margin:40px 0 30px"></div>
-  <div style="font-size:34px;color:#eef1f5">Lern- und Überblicksdossiers zu Geschichte, Politik und Wirtschaft</div>
+  <div style="font-size:34px;color:#eef1f5">Lern- und Überblicksdossiers · gründlich recherchiert</div>
 </div>
 <div class="fuss" style="justify-content:center"><div class="domain">der-philosopher.de</div></div>''')
 

@@ -25,6 +25,10 @@
      kapitel        Anzahl der Kapitel
      veroeffentlicht  Datum JJJJ-MM-TT (bestimmt die Reihenfolge)
      stand          Stand der Informationen, z. B. "Oktober 2026"
+     aktualisiert   (optional) Datum JJJJ-MM-TT der letzten inhaltlichen
+                    Überarbeitung. Erst wenn es gesetzt ist, zeigt das
+                    Dossier "Zuletzt aktualisiert am …". Nur bei echten
+                    inhaltlichen Änderungen setzen.
      inhalt         Hauptkapitel als [Nummer, Anker-id, Titel];
                     die Anker-id führt direkt zum Kapitel im Dossier
    ===================================================================== */

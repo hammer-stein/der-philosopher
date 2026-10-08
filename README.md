@@ -15,6 +15,8 @@ Statische Website ohne Datenbank und ohne Server-Programmierung. Sie besteht nur
 | `vorschaubilder.py` | Erzeugt die Vorschaubilder in `bilder/` (je Dossier eines, dazu Titelseite und Logo) |
 | `geschichte.html`, `politik.html`, … | Ressortseiten – **werden erzeugt, nicht von Hand bearbeiten** |
 | `bilder/` | Vorschaubilder und Logo |
+| `ueber.html` | Seite „Über den Philosopher“ – **wird erzeugt**; den Inhalt in `vorlagen/ueber.html` ändern |
+| `vorlagen/` | Inhalt der Über-Seite und gemeinsame Regeln für die Kästen am Dossierende (`kaesten.css`) |
 | `sitemap.xml` | Liste aller Seiten für Google und Bing |
 | `robots.txt` | Hinweis für Suchmaschinen |
 | `geschichte-….html`, `wirtschaft-….html`, `zeitgeschichte-….html` | die Dossiers (in denselben Ordner legen) |
@@ -57,3 +59,7 @@ Wichtig für den Dauerbetrieb:
 - **Datenschutzfreundlich gebaut:** keine Cookies, keine Tracker, keine Schriften oder Skripte von fremden Servern. Ein Cookie-Banner ist deshalb nicht nötig, solange nichts davon nachträglich eingebaut wird.
 
 Diese Hinweise sind keine Rechtsberatung.
+
+## Ein Dossier überarbeiten
+
+Nach einer inhaltlichen Überarbeitung im Register beim Dossier `aktualisiert: "JJJJ-MM-TT"` eintragen und `node vorrendern.js` ausführen. Erst dann erscheint im Kopf des Dossiers „Zuletzt aktualisiert am …“; auch Google und die Sitemap erhalten das neue Datum. Nur bei echten inhaltlichen Änderungen setzen.

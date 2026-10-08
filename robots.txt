@@ -3,5 +3,6 @@ Allow: /
 Disallow: /anbinden.py
 Disallow: /vorrendern.js
 Disallow: /vorschaubilder.py
+Disallow: /vorlagen/
 
 Sitemap: https://der-philosopher.de/sitemap.xml
