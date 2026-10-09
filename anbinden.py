@@ -43,6 +43,13 @@ FUSS = ('<span class="ph-foot"> · <a href="index.html">Der Philosopher</a>'
         ' · <a href="datenschutz.html">Datenschutz</a></span>')
 
 
+ICONS = ('<link rel="icon" href="/favicon.ico" sizes="48x48">\n'
+         '<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n'
+         '<link rel="apple-touch-icon" href="/apple-touch-icon.png">\n'
+         '<link rel="manifest" href="/site.webmanifest">\n'
+         '<meta name="theme-color" content="#14213a">\n')
+
+
 def register_lesen():
     text = (ORDNER / "register.js").read_text(encoding="utf-8")
     namen = dict(re.findall(r'id:\s*"([^"]+)",\s*name:\s*"([^"]+)"', text))
@@ -70,6 +77,9 @@ def main():
             html = re.sub(r"(<body[^>]*>)", r"\1\n" + leiste.replace("\\", "\\\\"), html, count=1)
         if "</footer>" in html:
             html = html.replace("</footer>", FUSS + "</footer>", 1)
+        if "/favicon.svg" not in html:
+            html = re.sub(r'<link rel="icon"[^>]*>\n?', "", html)
+            html = re.sub(r"(<meta name=\"viewport\"[^>]*>\n)", lambda m: m.group(1) + ICONS, html, count=1)
         pfad.write_text(html, encoding="utf-8")
         geaendert += 1
         print(f"angebunden:  {datei}")
