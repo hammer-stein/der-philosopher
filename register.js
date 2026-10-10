@@ -61,6 +61,30 @@ window.PHILOSOPHER = {
 
   artikel: [
     {
+      datei: "wirtschaft-venture-capital-1946-2026.html",
+      ressort: "wirtschaft",
+      dachzeile: "Kapitalmärkte und Innovation",
+      titel: "Vom ersten Wagnisfonds zur KI-Billionenwette",
+      teaser: "Wie Venture Capital funktioniert – von der Fondsmathematik über Bewertung und Beteiligungsvertrag bis zum Börsengang – und wie sich das Wagniskapital von seinen Anfängen in Boston bis zum KI-Boom des Jahres 2026 entwickelt hat, in den USA, in Europa und in Deutschland.",
+      von: 1946, bis: 2026, kapitel: 18,
+      veroeffentlicht: "2026-10-10", stand: "Oktober 2026",
+      aufmacher: true,
+      inhalt: [
+        ["2",  "grundlagen",   "Was ist Venture Capital?"],
+        ["3",  "fonds",        "Die Fondsmaschine"],
+        ["4",  "potenzgesetz", "Das Potenzgesetz"],
+        ["5",  "deal",         "Der Deal: Bewertung, Anteile, Vertrag"],
+        ["6",  "ausstieg",     "Auswahl, Begleitung, Ausstieg"],
+        ["7",  "anfaenge",     "Die Pionierzeit"],
+        ["8",  "aufstieg",     "Aufstieg und Dotcom-Blase"],
+        ["9",  "einhoerner",   "Die Ära der Einhörner"],
+        ["10", "kiboom",       "Absturz und KI-Boom"],
+        ["11", "europa",       "Europa und Deutschland"],
+        ["12", "kritik",       "Schattenseiten und Kritik"],
+        ["13", "ausblick",     "Ausblick: Drei Szenarien"]
+      ]
+    },
+    {
       datei: "geschichte-1756-1813.html",
       ressort: "geschichte",
       reihe: "deutsche-geschichte", teil: 3,
@@ -89,7 +113,6 @@ window.PHILOSOPHER = {
       teaser: "Wie Zinsen Preise, Wachstum, Vermögen und Staatsfinanzen prägen – erklärt an historischen Lehrstücken und verfolgt von den Null- und Negativzinsjahren in Deutschland bis zur neuen Zinswende im Herbst 2026.",
       von: 2008, bis: 2026, kapitel: 18,
       veroeffentlicht: "2026-10-06", stand: "Oktober 2026",
-      aufmacher: true,
       inhalt: [
         ["2",  "grundlagen",       "Der Zins: Preis des Geldes"],
         ["3",  "werkzeug",         "Das Werkzeug der Zentralbanken"],

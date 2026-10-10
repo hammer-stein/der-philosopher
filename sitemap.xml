@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://der-philosopher.de/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-10</lastmod>
   </url>
   <url>
     <loc>https://der-philosopher.de/ueber.html</loc>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://der-philosopher.de/wirtschaft.html</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-10</lastmod>
   </url>
   <url>
     <loc>https://der-philosopher.de/geschichte-1453-1648.html</loc>
@@ -31,6 +31,10 @@
   <url>
     <loc>https://der-philosopher.de/geschichte-1756-1813.html</loc>
     <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://der-philosopher.de/wirtschaft-venture-capital-1946-2026.html</loc>
+    <lastmod>2026-10-10</lastmod>
   </url>
   <url>
     <loc>https://der-philosopher.de/wirtschaft-zinsen-2008-2026.html</loc>
