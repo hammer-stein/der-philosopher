@@ -61,6 +61,27 @@ window.PHILOSOPHER = {
 
   artikel: [
     {
+      datei: "wirtschaft-ki-unternehmen-2026-2035.html",
+      ressort: "wirtschaft",
+      dachzeile: "Unternehmen und künstliche Intelligenz",
+      titel: "Strukturen statt Stellen",
+      teaser: "Wie im KI-Zeitalter Abläufe in Unternehmen von Grund auf neu gedacht werden müssen. Wer Stellen durch Agenten ersetzt, digitalisiert sein Organigramm. Wer Strukturen neu baut, verändert sein Unternehmen.",
+      von: 2026, bis: 2035, kapitel: 15,
+      veroeffentlicht: "2026-10-12", stand: "Oktober 2026",
+      aufmacher: true,
+      inhalt: [
+        ["2",  "heute",     "Das Unternehmen heute"],
+        ["3",  "abteilung", "Die Schadenabteilung und das 90/10-Prinzip"],
+        ["4",  "fehler",    "Der Fehler: Stelle für Stelle ersetzen"],
+        ["5",  "prinzip",   "Ein Kern, viele Fähigkeiten"],
+        ["6",  "neubau",    "Die Schadenabteilung neu gebaut"],
+        ["7",  "zukunft",   "Das Unternehmen der Zukunft"],
+        ["8",  "szenarien", "Vier Szenarien und ein Herausforderer"],
+        ["9",  "grenzen",   "Was dagegen spricht"],
+        ["10", "weg",       "Der Weg dorthin"]
+      ]
+    },
+    {
       datei: "wirtschaft-venture-capital-1946-2026.html",
       ressort: "wirtschaft",
       dachzeile: "Kapitalmärkte und Innovation",
@@ -68,7 +89,6 @@ window.PHILOSOPHER = {
       teaser: "Wie Venture Capital funktioniert – von der Fondsmathematik über Bewertung und Beteiligungsvertrag bis zum Börsengang – und wie sich das Wagniskapital von seinen Anfängen in Boston bis zum KI-Boom des Jahres 2026 entwickelt hat, in den USA, in Europa und in Deutschland.",
       von: 1946, bis: 2026, kapitel: 18,
       veroeffentlicht: "2026-10-10", stand: "Oktober 2026",
-      aufmacher: true,
       inhalt: [
         ["2",  "grundlagen",   "Was ist Venture Capital?"],
         ["3",  "fonds",        "Die Fondsmaschine"],
