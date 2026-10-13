@@ -29,6 +29,8 @@
                     Überarbeitung. Erst wenn es gesetzt ist, zeigt das
                     Dossier "Zuletzt aktualisiert am …". Nur bei echten
                     inhaltlichen Änderungen setzen.
+     beigaben       (optional) Text der Metazeile im Aufmacher, Standard:
+                    "mit Zeitleiste, Personen und Glossar"
      inhalt         Hauptkapitel als [Nummer, Anker-id, Titel];
                     die Anker-id führt direkt zum Kapitel im Dossier
    ===================================================================== */
@@ -61,6 +63,27 @@ window.PHILOSOPHER = {
 
   artikel: [
     {
+      datei: "wirtschaft-energiemaerkte-1998-2026.html",
+      ressort: "wirtschaft",
+      dachzeile: "Energie und Märkte",
+      titel: "Der Preis der Energie",
+      teaser: "Wie Strom und Gas gehandelt werden, warum das teuerste Kraftwerk den Preis für alle bestimmt und was davon auf der Rechnung ankommt – von der Öffnung des Marktes 1998 bis zur Hormus-Krise 2026.",
+      von: 1998, bis: 2026, kapitel: 12,
+      veroeffentlicht: "2026-10-13", stand: "Oktober 2026",
+      aufmacher: true,
+      beigaben: "mit Rechner, Zeitleiste und Glossar",
+      inhalt: [
+        ["2", "aufbau",      "Wer mit wem handelt"],
+        ["3", "handel",      "Vom Jahresvertrag bis zur Viertelstunde"],
+        ["4", "meritorder",  "Die Merit-Order"],
+        ["5", "gasco2",      "Gas und CO₂"],
+        ["6", "erneuerbare", "Sonne, Wind und negative Preise"],
+        ["7", "rechnung",    "Was auf der Stromrechnung ankommt"],
+        ["8", "krise",       "Lehrstück Energiekrise"],
+        ["9", "baustellen",  "Die offenen Baustellen"]
+      ]
+    },
+    {
       datei: "wirtschaft-ki-unternehmen-2026-2035.html",
       ressort: "wirtschaft",
       dachzeile: "Unternehmen und künstliche Intelligenz",
@@ -68,7 +91,6 @@ window.PHILOSOPHER = {
       teaser: "Wie im KI-Zeitalter Abläufe in Unternehmen von Grund auf neu gedacht werden müssen. Wer Stellen durch Agenten ersetzt, digitalisiert sein Organigramm. Wer Strukturen neu baut, verändert sein Unternehmen.",
       von: 2026, bis: 2035, kapitel: 15,
       veroeffentlicht: "2026-10-12", stand: "Oktober 2026",
-      aufmacher: true,
       inhalt: [
         ["2",  "heute",     "Das Unternehmen heute"],
         ["3",  "abteilung", "Die Schadenabteilung und das 90/10-Prinzip"],
