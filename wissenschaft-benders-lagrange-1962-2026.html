@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#14213a">
+<title>Benders-Dekomposition und Lagrange-Cuts erklärt – mit Rechenbeispiel</title>
+<meta name="description" content="Benders-Dekomposition und Lagrange-Cuts verständlich erklärt: Wertfunktion, Cuts, Schranken und Multiplikatorsuche – mit durchgerechnetem Beispiel.">
+<!-- seo -->
+<link rel="canonical" href="https://der-philosopher.de/wissenschaft-benders-lagrange-1962-2026.html">
+<meta property="og:site_name" content="Der Philosopher">
+<meta property="og:locale" content="de_DE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Benders-Dekomposition und Lagrange-Cuts erklärt – mit Rechenbeispiel">
+<meta property="og:description" content="Wie die Benders-Dekomposition große Planungsprobleme unter Unsicherheit zerlegt, warum ganzzahlige Teilprobleme Lagrange-Cuts brauchen und wie zwei Schranken die beste Lösung beweisen – mit einem Schritt für Schritt durchgerechneten Beispiel.">
+<meta property="og:url" content="https://der-philosopher.de/wissenschaft-benders-lagrange-1962-2026.html">
+<meta property="og:image" content="https://der-philosopher.de/bilder/wissenschaft-benders-lagrange-1962-2026.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Der Philosopher: Zerlegen und beweisen (1962–2026)">
+<meta property="article:published_time" content="2026-10-14">
+<meta property="article:section" content="Wissenschaft">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://der-philosopher.de/wissenschaft-benders-lagrange-1962-2026.html#artikel",
+   "url": "https://der-philosopher.de/wissenschaft-benders-lagrange-1962-2026.html",
+   "mainEntityOfPage": "https://der-philosopher.de/wissenschaft-benders-lagrange-1962-2026.html",
+   "headline": "Benders-Dekomposition und Lagrange-Cuts erklärt – mit Rechenbeispiel",
+   "alternativeHeadline": "Zerlegen und beweisen",
+   "description": "Benders-Dekomposition und Lagrange-Cuts verständlich erklärt: Wertfunktion, Cuts, Schranken und Multiplikatorsuche – mit durchgerechnetem Beispiel.",
+   "image": [
+    "https://der-philosopher.de/bilder/wissenschaft-benders-lagrange-1962-2026.png"
+   ],
+   "datePublished": "2026-10-14",
+   "dateModified": "2026-10-14",
+   "inLanguage": "de",
+   "articleSection": "Wissenschaft",
+   "isAccessibleForFree": true,
+   "temporalCoverage": "1962/2026",
+   "author": {
+    "@type": "Organization",
+    "name": "Der Philosopher",
+    "url": "https://der-philosopher.de/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://der-philosopher.de/#organisation",
+    "name": "Der Philosopher",
+    "url": "https://der-philosopher.de/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://der-philosopher.de/bilder/logo.png",
+     "width": 512,
+     "height": 512
+    }
+   },
+   "breadcrumb": {
+    "@id": "https://der-philosopher.de/wissenschaft-benders-lagrange-1962-2026.html#brotkrumen"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://der-philosopher.de/wissenschaft-benders-lagrange-1962-2026.html#brotkrumen",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Der Philosopher",
+     "item": "https://der-philosopher.de/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Wissenschaft",
+     "item": "https://der-philosopher.de/wissenschaft.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Zerlegen und beweisen"
+    }
+   ]
+  }
+ ]
+}</script>
+<!-- /seo -->
+<style>
+:root{
+  --bg:#f1f2f4; --paper:#ffffff; --ink:#16191f; --muted:#555b66; --line:#d3d7de;
+  --accent:#1f3a5f; --accent-soft:#e6ebf2;
+  --c1:#24566b; --c2:#5a6630; --c3:#4a3f6b; --c4:#7a1e2b; --c5:#2f5a3f;
+  --c1-soft:#e8f0f2; --c2-soft:#eff1e6; --c3-soft:#eeecf3; --c4-soft:#f4e9eb; --c5-soft:#e9f1ec;
+  --shadow:none;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#11141a; --paper:#191d24; --ink:#e4e7ec; --muted:#9aa1ad; --line:#323844;
+    --accent:#8fb3d9; --accent-soft:#1d2836;
+    --c1:#7fb6c6; --c2:#b8c37f; --c3:#b0a5d6; --c4:#e08a97; --c5:#8fc4a0;
+    --c1-soft:#172429; --c2-soft:#22251a; --c3-soft:#211e2b; --c4-soft:#2b1b1f; --c5-soft:#18251d;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+    --bg:#11141a; --paper:#191d24; --ink:#e4e7ec; --muted:#9aa1ad; --line:#323844;
+    --accent:#8fb3d9; --accent-soft:#1d2836;
+    --c1:#7fb6c6; --c2:#b8c37f; --c3:#b0a5d6; --c4:#e08a97; --c5:#8fc4a0;
+    --c1-soft:#172429; --c2-soft:#22251a; --c3-soft:#211e2b; --c4-soft:#2b1b1f; --c5-soft:#18251d;
+    --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;color:var(--ink)}
+h2{font-size:1.85rem;margin:0 0 .4rem;font-weight:600;letter-spacing:.005em}
+h3{font-size:1.32rem;margin:2.2rem 0 .7rem;font-weight:600;padding-bottom:.3rem;border-bottom:1px solid var(--line)}
+h4{font-size:1.08rem;margin:1.2rem 0 .3rem}
+p{margin:.6rem 0}
+ul,ol{padding-left:1.3rem}
+li{margin:.25rem 0}
+strong{font-weight:650}
+
+/* progress */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:50;transition:width .1s}
+
+/* hero */
+.hero{background:#14213a;color:#eef1f5;padding:60px 20px 50px;text-align:center;border-bottom:4px double #8a97ab}
+.hero .kicker{font-family:var(--sans);letter-spacing:.22em;text-transform:uppercase;font-size:.75rem;opacity:.8}
+.hero h1{color:#fff;font-size:clamp(2rem,5vw,3.1rem);font-weight:600;margin:.5rem 0 .8rem}
+.hero p{max-width:720px;margin:0 auto;font-size:1.08rem;opacity:.95}
+.hero .years{font-family:var(--serif);font-size:clamp(1.3rem,3.6vw,1.8rem);letter-spacing:.12em;margin:22px auto 0;padding-top:14px;border-top:1px solid rgba(238,241,245,.35);display:inline-block;opacity:.95}
+.hero .pub{font-family:var(--sans);font-size:.8rem;letter-spacing:.06em;margin:14px auto 0;opacity:.8}
+
+/* layout */
+.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:36px;max-width:1240px;margin:0 auto;padding:28px 20px 80px}
+nav.toc{font-family:var(--sans);position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:0;padding:16px 14px;box-shadow:var(--shadow);font-size:.92rem}
+nav.toc .toc-title{font-family:var(--sans);font-weight:700;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 10px 8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+nav.toc ol{list-style:none;margin:0;padding:0}
+nav.toc a{display:block;padding:5px 8px;border-radius:0;color:var(--ink);text-decoration:none;line-height:1.35}
+nav.toc a:hover{background:var(--accent-soft)}
+nav.toc a.active{background:var(--accent-soft);color:var(--accent);font-weight:600;box-shadow:inset 3px 0 0 var(--accent)}
+nav.toc .num{display:inline-block;width:1.6em;color:var(--muted)}
+.theme-btn{font-family:var(--sans);margin:12px 6px 2px;font:inherit;font-size:.85rem;background:none;border:1px solid var(--line);color:var(--muted);padding:5px 10px;border-radius:0;cursor:pointer}
+.toc-toggle{display:none}
+main{min-width:0}
+section.chapter{background:var(--paper);border:1px solid var(--line);border-radius:0;padding:34px 38px;margin-bottom:28px;box-shadow:var(--shadow)}
+.chap-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:14px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.chap-num{flex:0 0 auto;width:46px;height:46px;border-radius:0;background:transparent;color:var(--accent);border:1.5px solid var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:1.35rem;font-weight:700}
+.span-chip{display:inline-block;font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:0;border-radius:0;background:none;color:var(--muted);margin-bottom:4px}
+.lead{font-size:1.1rem;color:var(--muted);font-style:italic}
+
+/* boxes */
+.box{border-radius:0;padding:14px 18px;margin:20px 0;border:1px solid var(--line);border-left:4px solid}
+.box .box-title{font-family:var(--sans);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.box.kurz{background:var(--c1-soft);border-color:var(--c1)}
+.box.kurz .box-title{color:var(--c1)}
+.box.merke{background:var(--c5-soft);border-color:var(--c5)}
+.box.merke .box-title{color:var(--c5)}
+.box.warum{background:var(--c3-soft);border-color:var(--c3)}
+.box.warum .box-title{color:var(--c3)}
+.box.achtung{background:var(--c2-soft);border-color:var(--c2)}
+.box.achtung .box-title{color:var(--c2)}
+.box ul{margin:.3rem 0}
+
+/* cards */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:14px 0}
+.card{background:var(--bg);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:0;padding:14px 16px}
+.card h4{margin:.1rem 0 .3rem;font-weight:600}
+.card .yr{font-family:var(--serif);font-weight:700;color:var(--accent);font-size:1.05rem}
+.card p{margin:.3rem 0;font-size:.95rem}
+
+/* era bar */
+.erabar{font-family:var(--sans);display:flex;border-radius:0;overflow:hidden;margin:18px 0 6px;font-size:.78rem;color:#fff;font-weight:600;min-height:58px}
+.erabar div{padding:8px 8px;display:flex;flex-direction:column;justify-content:center;line-height:1.2}
+.erabar small{font-weight:400;opacity:.9}
+.era-a{background:#24566b;flex:3}
+.era-b{background:#4a3f6b;flex:3}
+.era-c{background:#5a6630;flex:6}
+.era-d{background:#7a1e2b;flex:5}
+.erascale{font-family:var(--sans);display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}
+
+/* chain: vertical numbered sequence */
+.chain{list-style:none;margin:18px 0 20px;padding:0;position:relative;border-top:1px solid var(--line)}
+.chain::before{content:"";position:absolute;left:17px;top:22px;bottom:22px;width:1px;background:var(--accent);opacity:.55}
+.chain li{position:relative;display:grid;grid-template-columns:36px minmax(170px,250px) 1fr;align-items:center;gap:18px;margin:0;padding:10px 0;border-bottom:1px solid var(--line)}
+.chain .n{position:relative;z-index:1;width:36px;height:36px;display:grid;place-items:center;background:var(--paper);border:1.5px solid var(--accent);color:var(--accent);font-family:var(--sans);font-size:.85rem;font-weight:700}
+.chain b{font-family:var(--serif);font-weight:600;color:var(--accent);font-size:1.02rem}
+.chain .desc{color:var(--muted);font-size:.97rem}
+
+/* tables */
+.tablewrap{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:.95rem;min-width:540px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent-soft);font-family:var(--serif);font-size:1rem;font-weight:600;border-bottom:1px solid var(--ink)}
+tr:last-child td{border-bottom:none}
+
+/* phases */
+.phase{border:1px solid var(--line);border-left:4px solid var(--c4);border-radius:0;margin:16px 0;overflow:hidden}
+.phase-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;align-items:baseline;padding:12px 18px;background:var(--c4-soft);border-bottom:1px solid var(--line)}
+.phase-head h4{margin:0;font-size:1.12rem;font-weight:600}
+.phase-head .yr{font-family:var(--serif);font-weight:700;color:var(--c4)}
+.phase-body{padding:6px 18px 12px}
+.mini-tl{list-style:none;padding:0;margin:8px 0}
+.mini-tl li{display:grid;grid-template-columns:108px 1fr;gap:12px;padding:5px 0;border-bottom:1px solid var(--line)}
+.mini-tl li:last-child{border-bottom:none}
+.mini-tl .d{font-family:var(--sans);font-size:.92rem;padding-top:2px;font-weight:700;color:var(--c4);font-variant-numeric:tabular-nums}
+
+/* details */
+details{background:var(--bg);border:1px solid var(--line);border-radius:0;padding:10px 14px;margin:12px 0}
+details summary{cursor:pointer;font-weight:600;color:var(--accent)}
+details[open] summary{margin-bottom:6px}
+
+/* quote */
+blockquote{margin:14px 0;padding:8px 16px;border-left:3px solid var(--accent);font-family:var(--serif);font-style:italic;color:var(--muted)}
+
+/* timeline */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.filters button{font:inherit;font-family:var(--sans);font-size:.88rem;padding:6px 13px;border-radius:0;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.filters button.on{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.tl{position:relative;list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:6px 0 10px 12px}
+.tl li::before{content:"";position:absolute;left:-29px;top:14px;width:10px;height:10px;border-radius:0;background:var(--paper);border:3px solid var(--muted)}
+.tl li.reich::before{border-color:var(--c1)}
+.tl li.religion::before{border-color:var(--c3)}
+.tl li.europa::before{border-color:var(--c2)}
+.tl li.krieg::before{border-color:var(--c4)}
+.tl li.kultur::before{border-color:var(--c5)}
+.tl .y{font-family:var(--serif);font-weight:700;font-size:1.05rem;margin-right:6px}
+.tl .tag{font-family:var(--sans);text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;font-weight:600;padding:1px 8px;border-radius:0;margin-left:6px;vertical-align:2px}
+.tag.reich{background:var(--c1-soft);color:var(--c1)}
+.tag.religion{background:var(--c3-soft);color:var(--c3)}
+.tag.europa{background:var(--c2-soft);color:var(--c2)}
+.tag.krieg{background:var(--c4-soft);color:var(--c4)}
+.tag.kultur{background:var(--c5-soft);color:var(--c5)}
+.tl li.hide{display:none}
+
+/* people */
+.people{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.person{background:var(--bg);border:1px solid var(--line);border-top:2px solid var(--accent);border-radius:0;padding:14px 16px}
+.person h4{margin:0}
+.person .life{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin-bottom:4px}
+.person .role{font-family:var(--sans);font-size:.7rem;letter-spacing:.12em;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+.person p{font-size:.93rem;margin:.35rem 0 0}
+
+/* glossary */
+dl.gloss{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:0;margin:0}
+dl.gloss dt,dl.gloss dd{padding:9px 6px;border-bottom:1px solid var(--line);margin:0}
+dl.gloss dt{font-weight:700;font-family:var(--serif)}
+.g{text-decoration:underline dotted;text-underline-offset:3px;color:inherit;cursor:help}
+
+.sources li{margin:.4rem 0}
+footer{font-family:var(--sans);text-align:center;color:var(--muted);font-size:.8rem;letter-spacing:.04em;padding:22px 20px 30px;border-top:1px solid var(--line);max-width:1240px;margin:0 auto}
+#top{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border-radius:0;border:1px solid var(--accent);background:var(--accent);color:var(--paper);font-size:1.3rem;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s}
+#top.show{opacity:1;pointer-events:auto}
+
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr;padding:16px 16px 70px;gap:16px}
+  nav.toc{position:relative;top:0;max-height:none}
+  nav.toc ol{display:none}
+  nav.toc.open ol{display:block}
+  .toc-toggle{display:block;width:100%;font:inherit;font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;background:none;border:none;color:var(--ink);text-align:left;cursor:pointer;padding:2px 6px}
+  nav.toc .toc-title{display:none}
+  .toc-toggle::after{content:"+";float:right;font-weight:400}
+  nav.toc.open .toc-toggle::after{content:"\2013"}
+  section.chapter{padding:22px 18px}
+  h2{font-size:1.55rem}
+  dl.gloss{grid-template-columns:1fr}
+  dl.gloss dt{border-bottom:none;padding-bottom:0}
+  .mini-tl li{grid-template-columns:1fr;gap:0}
+  .chain li{grid-template-columns:36px 1fr;gap:4px 14px}
+  .chain .n{grid-row:span 2}
+  .chain .desc{grid-column:2}
+}
+@media print{
+  nav.toc,#top,#progress,.filters,.theme-btn{display:none!important}
+  .layout{display:block;padding:0}
+  section.chapter{box-shadow:none;break-inside:auto;border:none;padding:10px 0}
+  details{display:block}
+  details>*{display:block}
+  .hero{background:none;color:#000}
+  .hero h1{color:#000}
+}
+
+/* ---- Erweiterungen fuer Schaubilder ---- */
+a.q{text-underline-offset:2px}
+a.qa{font-family:var(--sans);font-size:.82em;font-weight:700;line-height:1;text-decoration:none;color:var(--accent);margin-left:.12em;padding:0 .12em;vertical-align:.3em;white-space:nowrap}
+a.qa:hover,a.qa:focus{text-decoration:underline;background:var(--accent-soft)}
+.fig{border:1px solid var(--line);background:var(--bg);margin:20px 0 6px}
+.fig-head{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:9px 14px;border-bottom:1px solid var(--line);display:flex;gap:6px 14px;flex-wrap:wrap;align-items:baseline}
+.fig-head b{color:var(--accent);letter-spacing:.06em}
+.fig-body{padding:14px 12px 10px;overflow-x:auto}
+.fig-body svg{display:block;width:100%;height:auto}
+.fig-cap{font-family:var(--sans);font-size:.82rem;color:var(--muted);margin:6px 0 20px;line-height:1.55}
+.fig-cap .basis{font-weight:700;color:var(--ink)}
+.fig svg text{font-family:var(--sans)}
+.fig .t{fill:var(--ink);font-size:13px}
+.fig .ts{fill:var(--ink);font-size:11.5px}
+.fig .tm{fill:var(--muted);font-size:11.5px}
+.fig .tb{fill:var(--ink);font-size:13px;font-weight:700}
+.fig .th{fill:var(--ink);font-size:14.5px;font-weight:700}
+.fig .tw{fill:var(--paper);font-size:12.5px;font-weight:700}
+.fig .tws{fill:var(--paper);font-size:11px;font-weight:600}
+.fig .tca{fill:var(--accent);font-size:12px;font-weight:700}
+.fig .tc4{fill:var(--c4);font-size:12px;font-weight:700}
+.fig .s-n{fill:var(--paper);stroke:var(--line);stroke-width:1.2}
+.fig .s-k{fill:var(--c1-soft);stroke:var(--c1);stroke-width:1.3}
+.fig .s-f{fill:var(--c2-soft);stroke:var(--c2);stroke-width:1.3}
+.fig .s-s{fill:var(--c3-soft);stroke:var(--c3);stroke-width:1.3}
+.fig .s-r{fill:var(--c4-soft);stroke:var(--c4);stroke-width:1.3}
+.fig .s-g{fill:var(--c5-soft);stroke:var(--c5);stroke-width:1.3}
+.fig .s-m{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.3}
+.fig .x-k{fill:var(--c1)} .fig .x-s{fill:var(--c3)} .fig .x-r{fill:var(--c4)} .fig .x-m{fill:var(--accent)}
+.fig .ln{stroke:var(--muted);stroke-width:1.3;fill:none}
+.fig .ln-g{stroke:var(--line);stroke-width:1;fill:none}
+.fig .ln-v{stroke:var(--c3);stroke-width:1.5;fill:none;stroke-dasharray:5 4}
+.fig .ln-a{stroke:var(--accent);stroke-width:2;fill:none}
+.fig .ln-r{stroke:var(--c4);stroke-width:1.6;fill:none;stroke-dasharray:6 4}
+.fig .mk{fill:var(--muted)} .fig .mks{fill:var(--c3)} .fig .mka{fill:var(--accent)} .fig .mkr{fill:var(--c4)}
+.legende{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--sans);font-size:.8rem;color:var(--muted);padding:0 14px 12px}
+.legende span{display:inline-flex;align-items:center;gap:6px}
+.legende i{display:inline-block;width:14px;height:10px;border:1.3px solid}
+.lg-k{background:var(--c1-soft);border-color:var(--c1)!important}
+.lg-f{background:var(--c2-soft);border-color:var(--c2)!important}
+.lg-s{background:var(--c3-soft);border-color:var(--c3)!important}
+.lg-r{background:var(--c4-soft);border-color:var(--c4)!important}
+.lg-g{background:var(--c5-soft);border-color:var(--c5)!important}
+.lg-m{background:var(--accent-soft);border-color:var(--accent)!important}
+.umschalter{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line);margin:12px 14px 0;font-family:var(--sans)}
+.umschalter button{font:inherit;font-size:.8rem;padding:6px 12px;border:0;border-right:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;border-radius:0}
+.umschalter button:last-child{border-right:0}
+.umschalter button.on{background:var(--accent);color:var(--paper)}
+.zustand[hidden]{display:none}
+.rechner{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;padding:16px 18px;font-family:var(--sans);font-size:.9rem}
+.rechner label{display:block;font-weight:600;margin:0 0 2px}
+.rechner .zeile{margin:0 0 14px}
+.rechner input[type=range]{width:100%;accent-color:var(--accent)}
+.rechner .wert{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:700}
+.rechner .hinweis{color:var(--muted);font-size:.8rem;line-height:1.45}
+.ergebnis{border:1px solid var(--line);border-top:3px solid var(--accent);background:var(--paper);padding:14px 16px}
+.ergebnis .gross{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--accent);line-height:1.1}
+.ergebnis table{min-width:0;font-size:.85rem;margin-top:8px}
+.ergebnis td{padding:4px 6px}
+@media (max-width:700px){.rechner{grid-template-columns:1fr}}
+.wisch{display:none;font-family:var(--sans);font-size:.72rem;color:var(--muted);padding:8px 14px 0}
+@media (max-width:700px){.wisch{display:block}}
+@media print{.zustand[hidden]{display:block}.umschalter{display:none}.fig-body{overflow:visible}}
+
+.fig .x-f{fill:var(--c2)} .fig .x-g{fill:var(--c5)} .fig .x-n{fill:var(--muted)}
+
+/* ---- Erweiterungen fuer Formeln und Rechenbeispiele (Dossier Benders-Dekomposition) ---- */
+.formel{font-family:var(--serif);font-size:1.12rem;text-align:center;margin:16px 0;padding:12px 14px;background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--accent);overflow-x:auto;white-space:nowrap;line-height:1.9}
+.formel sub,.formel sup{font-size:.68em}
+.ov{text-decoration:overline;text-decoration-thickness:1px;text-underline-offset:0}
+sub,sup{line-height:0}
+ol.schritte{margin:10px 0 14px;padding-left:1.4rem}
+ol.schritte li{margin:.45rem 0}
+table.zahlen td{font-variant-numeric:tabular-nums}
+tr.hl td{background:var(--accent-soft)}
+.nw{white-space:nowrap}
+.phase.iter{border-left-color:var(--accent)}
+.phase.iter .phase-head{background:var(--accent-soft)}
+.phase.iter .phase-head .yr{color:var(--accent);font-family:var(--sans);font-size:.85rem;letter-spacing:.04em}
+.phase.iter .mini-tl .d{color:var(--accent)}
+.phase.iter .mini-tl li{grid-template-columns:118px 1fr}
+.st-nav{display:flex;align-items:center;gap:12px;flex-wrap:nowrap;padding:10px 14px 0;font-family:var(--sans);font-size:.88rem}
+.st-nav button{font:inherit;font-size:.82rem;padding:6px 14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;border-radius:0}
+.st-nav button:hover:not([disabled]){border-color:var(--accent);color:var(--accent)}
+.st-nav button[disabled]{opacity:.45;cursor:default}
+#st-runde{font-weight:700;color:var(--accent);min-width:0;text-align:center;font-variant-numeric:tabular-nums}
+.st-info{font-family:var(--sans);font-size:.88rem;padding:4px 14px 14px;line-height:1.55}
+.st-info .zeile{display:flex;flex-wrap:wrap;gap:4px 22px;border-top:1px solid var(--line);padding-top:8px;margin-top:4px}
+.st-info .zeile b{color:var(--accent)}
+.st-info ul{margin:6px 0 0;padding-left:1.1rem}
+.st-info .cut{font-family:var(--serif);font-size:.98rem}
+#st-svg text{font-family:var(--sans)}
+.fig .bar-m{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.3}
+.fig .bar-k{fill:var(--c4-soft);stroke:var(--c4);stroke-width:1.8}
+.fig .bar-w{fill:none;stroke:var(--muted);stroke-width:1.3;stroke-dasharray:4 3}
+.mi-tab{min-width:0;font-size:.85rem;margin:0}
+.mi-tab td,.mi-tab th{padding:4px 8px}
+.mi-tab td.s{color:var(--c5);font-weight:700}
+#mi .gross{font-size:1.7rem}
+#mi .gross sub{font-size:.6em}
+@media (max-width:700px){.formel{font-size:1rem;text-align:left}.phase.iter .mini-tl li{grid-template-columns:1fr}}
+@media print{.st-nav,#st-var,#mi input{display:none}}
+
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<!-- Der Philosopher: Leiste -->
+<style>
+.ph-bar{background:var(--paper);border-bottom:1px solid var(--line);font-family:var(--sans)}
+.ph-bar .ph-in{max-width:1240px;margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:baseline;gap:6px 18px;flex-wrap:wrap}
+.ph-brand{font-family:var(--serif);font-size:1.35rem;font-weight:600;line-height:1.2;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.ph-brand i{font-weight:400;font-size:.72em;color:var(--muted);margin-right:.18em}
+.ph-links{display:flex;gap:18px;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.ph-links a{color:var(--muted);text-decoration:none}
+.ph-links a:hover{color:var(--accent);text-decoration:underline}
+footer .ph-foot a{color:var(--muted)}
+@media (max-width:700px){.ph-bar .ph-in{padding:8px 16px}}
+@media print{.ph-bar{display:none}}
+</style>
+<nav class="ph-bar" aria-label="Der Philosopher"><div class="ph-in">
+  <a class="ph-brand" href="index.html"><i>Der</i>Philosopher</a>
+  <div class="ph-links"><a href="wissenschaft.html">Wissenschaft</a><a href="index.html">Titelseite</a></div>
+</div></nav>
+
+<header class="hero">
+  <div class="kicker">Mathematische Optimierung</div>
+  <h1>Zerlegen und beweisen</h1>
+  <p>Wie die Benders-Dekomposition große Planungsprobleme unter Unsicherheit zerlegt, warum ganzzahlige Teilprobleme Lagrange-Cuts brauchen und wie zwei Schranken die beste Lösung beweisen – mit einem Schritt für Schritt durchgerechneten Beispiel.</p>
+  <div class="years">1962 – 2026</div>
+  <p class="pub">Veröffentlicht am <time datetime="2026-10-14">14. Oktober 2026</time></p>
+</header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Inhaltsverzeichnis">
+  <button class="toc-toggle" id="tocToggle" aria-expanded="false">Inhaltsverzeichnis</button>
+  <div class="toc-title">Inhalt</div>
+  <ol>
+    <li><a href="#ueberblick"><span class="num">1</span>Überblick: Worum geht es?</a></li>
+    <li><a href="#werkzeuge"><span class="num">2</span>Das Handwerkszeug der Optimierung</a></li>
+    <li><a href="#zweistufig"><span class="num">3</span>Entscheiden vor und nach dem Zufall</a></li>
+    <li><a href="#wertfunktion"><span class="num">4</span>Die Wertfunktion und ihre Unterschätzer</a></li>
+    <li><a href="#benders"><span class="num">5</span>Das Benders-Verfahren</a></li>
+    <li><a href="#lpcuts"><span class="num">6</span>Cuts aus der LP-Dualität und ihre Grenze</a></li>
+    <li><a href="#lagrange"><span class="num">7</span>Lagrange-Relaxation und Lagrange-Cuts</a></li>
+    <li><a href="#suche"><span class="num">8</span>Die Suche nach der besten Steigung</a></li>
+    <li><a href="#beispiel"><span class="num">9</span>Das Beispiel Schritt für Schritt</a></li>
+    <li><a href="#kernpunkt"><span class="num">10</span>Welcher Cut hilft am meisten?</a></li>
+    <li><a href="#grenzen"><span class="num">11</span>Größere Probleme und offene Fragen</a></li>
+    <li><a href="#lesehilfe"><span class="num">12</span>Lesehilfe für Fachartikel</a></li>
+    <li><a href="#zeitleiste"><span class="num">13</span>Zeitleiste 1788–2022</a></li>
+    <li><a href="#glossar"><span class="num">14</span>Glossar</a></li>
+    <li><a href="#quellen"><span class="num">15</span>Quellen &amp; Weiterlesen</a></li>
+  </ol>
+  <button class="theme-btn" id="themeBtn" type="button">Darstellung: hell / dunkel</button>
+</nav>
+<main>
+<!-- ============ 1 UEBERBLICK ============ -->
+<section class="chapter" id="ueberblick">
+  <div class="chap-head"><div class="chap-num">1</div><div>
+    <span class="span-chip">Einstieg</span>
+    <h2>Überblick: Worum geht es?</h2>
+  </div></div>
+  <p class="lead">Manche Planungsprobleme sind zu groß, um sie in einem Stück zu lösen. Die Benders-Dekomposition zerlegt sie in ein Hauptproblem und viele Teilprobleme, die sich über einfache Geraden verständigen. Sind die Teilprobleme ganzzahlig, versagen die klassischen Geraden – dann helfen Lagrange-Cuts.</p>
+
+  <p>Ein Cloud-Anbieter muss heute entscheiden, an welchen Standorten er Rechenzentren betreibt. Wie viel Rechenleistung seine Kunden im nächsten Jahr verlangen, weiß er erst später. Ein Energieversorger plant Kraftwerke, bevor er Wetter und Strompreise der kommenden Jahre kennt. Ein Logistiker eröffnet Lager, bevor die Bestellungen eingehen. In allen drei Fällen fällt eine Entscheidung <strong>vor</strong> dem Zufall, und danach wird <strong>auf</strong> den Zufall reagiert. Fachleute sprechen von <a class="g" href="#g-stochastische-optimierung">zweistufiger stochastischer Optimierung</a>.</p>
+  <p>Solche Probleme werden schnell riesig. Jede denkbare Zukunft – jedes <a class="g" href="#g-szenario">Szenario</a> – bringt ein eigenes Planungsproblem mit, und alle hängen an derselben ersten Entscheidung. Die <strong>Benders-Dekomposition</strong>, benannt nach dem niederländischen Mathematiker Jacques F. Benders, nutzt genau diese Struktur: Ein <a class="g" href="#g-masterproblem">Masterproblem</a> schlägt eine erste Entscheidung vor, die Teilprobleme bewerten sie, und aus jeder Bewertung entsteht eine Gerade, die dem Masterproblem eine Lehre mitgibt. Diese Geraden heißen <a class="g" href="#g-cut">Cuts</a>.</p>
+  <p>Dieses Dossier erklärt das übliche Vorgehen von Grund auf: was die Wertfunktion ist, wann ein Cut gültig und wann er straff ist, warum zwei Schranken einen Beweis liefern, wie man Cuts aus der Dualität linearer Programme gewinnt – und warum man bei ganzzahligen oder nichtkonvexen Teilproblemen zu <strong>Lagrange-Cuts</strong> greift. Am Ende steht ein vollständig durchgerechnetes Beispiel und eine Lesehilfe für Fachartikel. Vorausgesetzt wird nur Schulmathematik: Geraden, Gleichungen und der Erwartungswert.</p>
+
+  <h3>Drei Ideen tragen das ganze Verfahren</h3>
+  <div class="grid">
+    <div class="card"><h4>Zerlegen</h4><p>Ist die erste Entscheidung einmal festgelegt, zerfällt das große Problem in viele kleine, voneinander unabhängige Teilprobleme – eines je Szenario.</p></div>
+    <div class="card"><h4>Von unten abschätzen</h4><p>Die unbekannten Folgekosten der ersten Entscheidung werden durch Geraden ersetzt, die nie darüber liegen. Mit jeder Runde kommt eine Gerade hinzu, das Bild wird genauer.</p></div>
+    <div class="card"><h4>Beweisen</h4><p>Eine untere und eine obere Schranke schließen das wahre Optimum ein. Treffen sie sich, ist die Lösung bewiesen optimal – nicht nur gut.</p></div>
+  </div>
+
+  <h3>Der rote Faden</h3>
+  <p>Die Kapitel bauen aufeinander auf. Jeder Schritt der folgenden Abfolge wird in einem eigenen Kapitel erklärt.</p>
+  <ol class="chain" aria-label="Abfolge der Begriffe">
+    <li><span class="n">1</span><b>Schranken und Lücke</b><span class="desc">wie man Optimalität beweist</span></li>
+    <li><span class="n">2</span><b>Zweistufiges Problem</b><span class="desc">heute entscheiden, morgen reagieren</span></li>
+    <li><span class="n">3</span><b>Wertfunktion</b><span class="desc">Folgekosten jeder Entscheidung</span></li>
+    <li><span class="n">4</span><b>Cuts</b><span class="desc">Geraden unter der Wertfunktion</span></li>
+    <li><span class="n">5</span><b>Benders-Verfahren</b><span class="desc">vorschlagen, bewerten, dazulernen</span></li>
+    <li><span class="n">6</span><b>LP-Dualität</b><span class="desc">klassische Cuts, versagen bei Ganzzahligkeit</span></li>
+    <li><span class="n">7</span><b>Lagrange-Cuts</b><span class="desc">gültig für jede Steigung</span></li>
+    <li><span class="n">8</span><b>Multiplikatorsuche</b><span class="desc">der teure Teil</span></li>
+    <li><span class="n">9</span><b>Kernpunkte</b><span class="desc">welcher Cut am meisten hilft</span></li>
+  </ol>
+
+  <div class="box kurz"><div class="box-title">Kurz gesagt – das Verfahren in fünf Sätzen</div>
+    <ol>
+      <li>Die Kosten einer ersten Entscheidung setzen sich aus ihren direkten Kosten und den erwarteten Folgekosten zusammen; die Folgekosten beschreibt die <strong>Wertfunktion</strong>.</li>
+      <li>Die Wertfunktion ist nicht als Formel bekannt, man kann sie nur Punkt für Punkt ausrechnen – jedes Mal mit einem eigenen Optimierungsproblem.</li>
+      <li>Das Benders-Verfahren ersetzt sie deshalb durch <strong>Geraden, die nie über ihr liegen</strong>, und lernt mit jedem Vorschlag eine neue Gerade dazu.</li>
+      <li>Das Masterproblem mit diesen Geraden liefert eine <strong>untere Schranke</strong>, die Bewertung des Vorschlags eine <strong>obere Schranke</strong>; die Differenz ist die beweisbare Lücke.</li>
+      <li>Bei ganzzahligen Teilproblemen liefert die <strong>Lagrange-Relaxation</strong> solche Geraden – gültig für jede Steigung, aber die beste Steigung zu finden kostet viele Rechnungen.</li>
+    </ol>
+  </div>
+
+  <h3>Wie man dieses Dossier liest</h3>
+  <p>Wer schnell zum Kern will, liest Kapitel 4 (Wertfunktion), Kapitel 5 (Benders-Verfahren), Kapitel 7 (Lagrange-Cuts) und das Beispiel in Kapitel 9. Wer gründlich vorgehen möchte, beginnt mit dem Handwerkszeug in Kapitel 2. Kapitel 12 ist ein Nachschlageteil: Es übersetzt die Symbole und typischen Wendungen aus Fachartikeln und nennt jeweils das Kapitel, in dem sie erklärt werden.</p>
+  <p>Formeln sind unvermeidlich, aber jede wird in Worten erklärt und am Beispiel mit Zahlen gefüllt. Wer eine Formel überspringt, verliert den Faden nicht.</p>
+
+  <h3>Das Beispiel, das uns begleitet</h3>
+  <p>Durch das ganze Dossier zieht sich ein kleines Planungsproblem: Ein Cloud-Anbieter kann an drei Standorten – <strong>Nord</strong>, <strong>Mitte</strong> und <strong>Süd</strong> – Server aufstellen. Danach zeigt sich, ob das kommende Jahr ruhig verläuft oder Spitzenlast bringt, und vier Kundenregionen müssen auf die Standorte verteilt werden. Was nicht ins eigene Netz passt, wird teuer bei einer fremden Cloud eingekauft. Das Problem ist so klein, dass man jede Zahl von Hand nachrechnen kann, und doch groß genug, um alle Effekte zu zeigen: Die klassischen Cuts bleiben darin stecken, die Lagrange-Cuts beweisen die beste Lösung in sechs Runden, und ein gut gewählter Cut schafft es in zwei.</p>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Zweistufige Probleme:</strong> erst entscheiden, dann den Zufall abwarten, dann reagieren.</li>
+      <li><strong>Benders-Dekomposition:</strong> Masterproblem schlägt vor, Teilprobleme bewerten, Cuts tragen das Gelernte zurück.</li>
+      <li><strong>Zwei Schranken</strong> schließen das Optimum ein; ihre Differenz ist ein Beweis für die Güte der Lösung.</li>
+      <li><strong>Lagrange-Cuts</strong> sind das Mittel der Wahl, wenn Teilprobleme ganzzahlig oder nichtkonvex sind.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 2 WERKZEUGE ============ -->
+<section class="chapter" id="werkzeuge">
+  <div class="chap-head"><div class="chap-num">2</div><div>
+    <span class="span-chip">Grundlagen</span>
+    <h2>Das Handwerkszeug der Optimierung</h2>
+  </div></div>
+  <p class="lead">Bevor es um Zerlegung geht, braucht es ein paar Grundbegriffe: was ein Optimierungsproblem ist, warum ganze Zahlen alles schwerer machen und wie man beweist, dass eine Lösung die beste ist.</p>
+
+  <h3>2.1 Was ein Optimierungsproblem ist</h3>
+  <p>Ein Optimierungsproblem besteht aus drei Teilen. Die <strong>Entscheidungsvariablen</strong> sind das, was man festlegen darf – etwa, welche Standorte geöffnet werden. Die <strong>Zielfunktion</strong> bewertet jede Entscheidung, meist als Kosten, die möglichst klein sein sollen. Die <strong>Nebenbedingungen</strong> grenzen ein, was erlaubt ist – etwa, dass ein Standort nicht mehr Last tragen kann, als seine Kapazität hergibt. Eine Entscheidung, die alle Nebenbedingungen erfüllt, heißt <strong>zulässig</strong>; die zulässige Entscheidung mit den geringsten Kosten heißt <strong>optimal</strong>.</p>
+  <p>Mathematisch schreibt man das kurz als „min <i>f</i>(<i>x</i>) unter der Bedingung <i>x</i> ∈ <i>X</i>“: Gesucht ist das kleinste <i>f</i>(<i>x</i>) unter allen <i>x</i> aus der zulässigen Menge <i>X</i>. Der kleinste erreichbare Wert heißt <strong>Optimalwert</strong>.</p>
+
+  <h3>2.2 Lineare und ganzzahlige Programme</h3>
+  <p>Sind Zielfunktion und Nebenbedingungen <strong>linear</strong> – also nur Summen von Variablen mal Zahlen –, spricht man von einem <a class="g" href="#g-lp">linearen Programm</a> (LP). Lineare Programme sind gutmütig: Selbst mit Millionen Variablen löst ein Computer sie in Sekunden bis Minuten. Das Wort „Programm“ ist dabei alt und meint „Plan“, nicht Software.</p>
+  <p>Viele Entscheidungen sind aber nicht beliebig teilbar. Ein Standort ist offen oder geschlossen, ein Kunde wird von einem Rechenzentrum bedient oder nicht. Solche Ja-Nein-Entscheidungen werden mit <strong>binären Variablen</strong> dargestellt, die nur 0 oder 1 sein dürfen. Ein lineares Programm mit ganzzahligen Variablen heißt <a class="g" href="#g-mip">gemischt-ganzzahliges Programm</a> (englisch <em>mixed-integer program</em>, MIP).</p>
+  <div class="tablewrap"><table>
+    <tr><th>Merkmal</th><th>Lineares Programm (LP)</th><th>Gemischt-ganzzahliges Programm (MIP)</th></tr>
+    <tr><td><strong>Variablen</strong></td><td>beliebige reelle Zahlen in Grenzen</td><td>teils nur ganze Zahlen, oft nur 0 oder 1</td></tr>
+    <tr><td><strong>Rechenaufwand</strong></td><td>wächst gutmütig mit der Größe</td><td>kann mit der Zahl der Variablen explodieren</td></tr>
+    <tr><td><strong>Form der Lösungsmenge</strong></td><td>konvex: ein zusammenhängendes Vieleck</td><td>einzelne Gitterpunkte, nicht konvex</td></tr>
+    <tr><td><strong>Dualität</strong></td><td>exakt: Schattenpreise beschreiben das Problem vollständig</td><td>nur näherungsweise, es bleibt eine Dualitätslücke</td></tr>
+  </table></div>
+  <p>Der Grund für den Rechenaufwand ist schlichtes Abzählen. Mit drei Standorten gibt es 2 · 2 · 2 = 8 mögliche Kombinationen, mit zehn schon 1024, mit fünfzig mehr als eine Billiarde. Gute Verfahren müssen nicht alle durchprobieren, doch im ungünstigen Fall wächst der Aufwand exponentiell.</p>
+
+  <h3>2.3 Relaxation: absichtlich zu großzügig sein</h3>
+  <p>Eine <a class="g" href="#g-relaxation">Relaxation</a> ist eine gelockerte Fassung eines Problems: Man streicht eine Nebenbedingung oder schwächt sie ab. Das bekannteste Beispiel ist die <strong>LP-Relaxation</strong>: Statt „0 oder 1“ erlaubt man jeden Wert zwischen 0 und 1. Ein Kunde darf dann zur Hälfte von Nord und zur Hälfte von Süd bedient werden.</p>
+  <p>Das Entscheidende: Wer mehr erlaubt, kann nur gleich gut oder besser abschneiden. Bei einem Kostenminimum ist der Optimalwert der Relaxation deshalb <strong>nie größer</strong> als der des Originals. Jede Relaxation liefert so eine <strong>untere Schranke</strong> – eine Zahl, unter die die wahren Kosten nicht fallen können.</p>
+
+  <h3>2.4 Schranken, Lücke und Zertifikat</h3>
+  <p>Zwei Zahlen rahmen jedes Minimierungsproblem ein:</p>
+  <div class="grid">
+    <div class="card"><h4>Obere Schranke</h4><p>Die Kosten irgendeiner zulässigen Lösung. Das Optimum kann nicht teurer sein als eine Lösung, die man schon in der Hand hat.</p></div>
+    <div class="card"><h4>Untere Schranke</h4><p>Ein Wert, unter den die Kosten beweisbar nicht fallen können – etwa der Optimalwert einer Relaxation.</p></div>
+    <div class="card"><h4>Lücke</h4><p>Die Differenz zwischen beiden. Sie wird oft relativ angegeben, in Prozent der oberen Schranke oder einer anderen Bezugsgröße.</p></div>
+  </div>
+  <p>Ist die <a class="g" href="#g-luecke">Lücke</a> null, ist die Lösung bewiesen optimal. Ist sie zwei Prozent, weiß man: Die gefundene Lösung ist höchstens zwei Prozent teurer als die beste. Das Paar aus beiden Schranken heißt deshalb ein <a class="g" href="#g-zertifikat">Zertifikat</a> – ein Nachweis, den jeder prüfen kann, ohne dem Rechenweg vertrauen zu müssen.</p>
+  <div class="box warum"><div class="box-title">Warum ein Zertifikat mehr wert ist als eine gute Lösung</div>
+    <p>Eine Heuristik kann eine hervorragende Lösung liefern, sagt aber nicht, wie weit sie vom Optimum entfernt ist. Erst die untere Schranke macht aus „wir haben etwas Gutes gefunden“ ein „besser als 2 Prozent geht es nicht“. Für Investitionen in Milliardenhöhe ist dieser Unterschied entscheidend. Deshalb achten Verfahren wie Benders streng darauf, dass jede untere Schranke wirklich gültig ist – ein einziger zu hoher Cut würde den Beweis zerstören.</p>
+  </div>
+
+  <h3>2.5 Wie ein Solver ganzzahlige Probleme löst</h3>
+  <p>Programme, die Optimierungsprobleme lösen, heißen <a class="g" href="#g-solver">Solver</a>; bekannte Namen sind Gurobi, CPLEX, Xpress, SCIP und HiGHS. Für ganzzahlige Probleme nutzen sie im Kern <a class="g" href="#g-branch-and-bound">Branch-and-Bound</a>: Sie lösen die LP-Relaxation, teilen das Problem an einer gebrochenen Variablen in zwei Fälle („Standort Nord zu“ und „Standort Nord offen“) und verwerfen ganze Zweige, sobald deren untere Schranke schlechter ist als die beste bekannte Lösung. Dazu kommen Schnittebenen, Heuristiken und viele Kniffe.</p>
+  <p>Für dieses Dossier ist eine Eigenschaft wichtig: Ein Solver führt laufend <strong>beide Schranken</strong> mit. Bricht man ihn nach einem Zeitlimit ab, liefert er die beste gefundene Lösung und eine gültige untere Schranke – auch wenn die Lücke noch nicht geschlossen ist. Ein einzelner Aufruf eines Solvers heißt in Fachartikeln oft einfach „ein <strong>Solve</strong>“.</p>
+
+  <h3>2.6 Dualität und Schattenpreise</h3>
+  <p>Zu jedem linearen Programm gehört ein zweites, das <a class="g" href="#g-dualitaet">duale Programm</a>. Seine Variablen sind Preise für die Nebenbedingungen. Ein solcher <a class="g" href="#g-schattenpreis">Schattenpreis</a> sagt, um wie viel sich der Optimalwert ändert, wenn man die rechte Seite einer Nebenbedingung um eine Einheit verschiebt – etwa: Wie viel Kosten spart eine zusätzliche Einheit Kapazität?</p>
+  <p>Zwei Sätze machen die Dualität so nützlich. Die <strong>schwache Dualität</strong>: Jede zulässige Lösung des dualen Programms liefert eine untere Schranke für das ursprüngliche Problem. Die <strong>starke Dualität</strong>: Im Optimum sind beide Werte gleich. Bei linearen Programmen beschreibt das duale Programm das ursprüngliche also vollständig. Bei ganzzahligen Programmen gilt nur die schwache Fassung; zwischen beiden Werten bleibt im Allgemeinen eine <strong>Dualitätslücke</strong>. Genau an dieser Stelle setzen später die Lagrange-Cuts an.</p>
+
+  <h3>2.7 Eine kleine Lesehilfe für Formeln</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Schreibweise</th><th>Bedeutung</th></tr>
+    <tr><td><strong><i>x</i> = (<i>x</i><sub>1</sub>, …, <i>x</i><sub>n</sub>)</strong></td><td>ein Vektor: eine Liste von <i>n</i> Zahlen, etwa eine Zahl je Standort</td></tr>
+    <tr><td><strong>{0, 1}<sup><i>n</i></sup></strong></td><td>alle Listen aus <i>n</i> Nullen und Einsen – die Ecken eines <i>n</i>-dimensionalen Würfels</td></tr>
+    <tr><td><strong>[0, 1]<sup><i>n</i></sup></strong></td><td>alle Listen aus <i>n</i> Zahlen zwischen 0 und 1 – der ganze Würfel samt Innerem</td></tr>
+    <tr><td><strong>μ<sup>⊤</sup><i>x</i></strong></td><td>Skalarprodukt: μ<sub>1</sub><i>x</i><sub>1</sub> + μ<sub>2</sub><i>x</i><sub>2</sub> + … + μ<sub>n</sub><i>x</i><sub>n</sub>; das hochgestellte ⊤ heißt „transponiert“</td></tr>
+    <tr><td><strong>min<sub><i>x</i> ∈ <i>X</i></sub> <i>f</i>(<i>x</i>)</strong></td><td>der kleinste Wert von <i>f</i> unter allen <i>x</i> aus der Menge <i>X</i></td></tr>
+    <tr><td><strong>Σ<sub><i>s</i></sub> <i>p</i><sub>s</sub> <i>Q</i><sub>s</sub></strong></td><td>Summe über alle Szenarien <i>s</i>: Wahrscheinlichkeit mal Kosten, also der Erwartungswert</td></tr>
+    <tr><td><strong><i>X</i> ⊆ {0, 1}<sup><i>n</i></sup></strong></td><td><i>X</i> ist eine Teilmenge der binären Vektoren: nur bestimmte Kombinationen sind erlaubt</td></tr>
+    <tr><td><strong><span class="ov"><i>x</i></span>, <i>x</i><sup>k</sup>, <i>x</i>*</strong></td><td>ein fester Punkt, der Vorschlag in Runde <i>k</i>, die optimale Lösung</td></tr>
+  </table></div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>LP</strong> sind leicht, <strong>MIP</strong> mit binären Variablen können exponentiell schwer werden.</li>
+      <li><strong>Relaxation</strong> = Regeln lockern → liefert eine untere Schranke.</li>
+      <li><strong>Obere Schranke</strong> = Kosten einer zulässigen Lösung; <strong>Lücke</strong> = Differenz; Lücke null = bewiesen optimal.</li>
+      <li><strong>Dualität:</strong> Schattenpreise; bei LP exakt, bei MIP bleibt eine Lücke.</li>
+      <li>Ein Solver liefert auch nach einem Zeitlimit eine <strong>gültige untere Schranke</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 3 ZWEISTUFIG ============ -->
+<section class="chapter" id="zweistufig">
+  <div class="chap-head"><div class="chap-num">3</div><div>
+    <span class="span-chip">Das Problem</span>
+    <h2>Entscheiden vor und nach dem Zufall</h2>
+  </div></div>
+  <p class="lead">Zweistufige stochastische Programme beschreiben eine Grundsituation des Planens: Man muss sich festlegen, bevor man die Zukunft kennt, und darf später nur noch nachsteuern. Ihre Struktur ist der Schlüssel zur Zerlegung.</p>
+
+  <h3>3.1 Heute entscheiden, morgen reagieren</h3>
+  <p>In der <a class="g" href="#g-erste-stufe">ersten Stufe</a> fällt eine Entscheidung <i>x</i>, die sich später nicht mehr ändern lässt: Standorte, Kraftwerke, Verträge. Dann tritt der Zufall ein – die Nachfrage, das Wetter, der Preis. In der <a class="g" href="#g-zweite-stufe">zweiten Stufe</a> wird mit Entscheidungen <i>y</i> darauf reagiert: Kunden werden zugeordnet, Kraftwerke hochgefahren, Fehlmengen zugekauft. Diese Reaktion heißt im Fachjargon auch <strong>Rekurs</strong> (englisch <em>recourse</em>).</p>
+  <p>Die erste Entscheidung soll so gewählt werden, dass ihre eigenen Kosten und die <strong>erwarteten</strong> Kosten der Reaktion zusammen möglichst klein sind. Sie muss also gegen alle möglichen Zukünfte zugleich bestehen – das macht sie anders als eine Planung für den Durchschnittsfall.</p>
+
+  <h3>3.2 Szenarien und Wahrscheinlichkeiten</h3>
+  <p>Der Zufall wird durch endlich viele <a class="g" href="#g-szenario">Szenarien</a> <i>s</i> = 1, …, <i>S</i> dargestellt, jedes mit einer Wahrscheinlichkeit <i>p</i><sub>s</sub>. Die Wahrscheinlichkeiten addieren sich zu eins. In der Praxis stammen die Szenarien aus historischen Daten oder werden aus einer Verteilung gezogen; mehr Szenarien bilden die Unsicherheit genauer ab, machen das Problem aber größer.</p>
+  <p>Die erwarteten Folgekosten sind dann ein gewichteter Durchschnitt: Folgekosten in Szenario 1 mal <i>p</i><sub>1</sub> plus Folgekosten in Szenario 2 mal <i>p</i><sub>2</sub> und so weiter – der <a class="g" href="#g-erwartungswert">Erwartungswert</a>.</p>
+
+  <h3>3.3 Die Formel und was sie sagt</h3>
+  <p>In Fachartikeln steht das zweistufige Problem meist in dieser Form:</p>
+  <div class="formel">min<sub><i>x</i> ∈ <i>X</i></sub> &nbsp; <i>c</i><sup>⊤</sup><i>x</i> + Σ<sub><i>s</i></sub> <i>p</i><sub>s</sub> <i>Q</i><sub>s</sub>(<i>x</i>), &nbsp;&nbsp; <i>X</i> ⊆ {0, 1}<sup><i>n</i></sup>, &nbsp;&nbsp; <i>Q</i><sub>s</sub>(<i>x</i>) = min<sub><i>y</i></sub> { <i>f</i><sub>s</sub>(<i>y</i>) : (<i>x</i>, <i>y</i>) ∈ <i>G</i><sub>s</sub> }</div>
+  <div class="tablewrap"><table>
+    <tr><th>Teil der Formel</th><th>Bedeutung</th><th>Im Beispiel</th></tr>
+    <tr><td><strong><i>x</i> ∈ <i>X</i> ⊆ {0, 1}<sup><i>n</i></sup></strong></td><td>erste Entscheidung, binär: <i>n</i> Ja-Nein-Fragen</td><td>welche der drei Standorte öffnen</td></tr>
+    <tr><td><strong><i>c</i><sup>⊤</sup><i>x</i></strong></td><td>direkte Kosten der ersten Entscheidung</td><td>Kosten der geöffneten Standorte</td></tr>
+    <tr><td><strong><i>p</i><sub>s</sub></strong></td><td>Wahrscheinlichkeit von Szenario <i>s</i></td><td>je 0,5 für „ruhig“ und „Spitze“</td></tr>
+    <tr><td><strong><i>y</i></strong></td><td>Entscheidungen der zweiten Stufe</td><td>welche Region von welchem Standort bedient wird</td></tr>
+    <tr><td><strong><i>f</i><sub>s</sub>(<i>y</i>)</strong></td><td>Kosten der Reaktion im Szenario <i>s</i></td><td>Übertragungskosten plus fremde Cloud</td></tr>
+    <tr><td><strong>(<i>x</i>, <i>y</i>) ∈ <i>G</i><sub>s</sub></strong></td><td>was in der zweiten Stufe erlaubt ist – darf ganzzahlige und nichtkonvexe Bedingungen enthalten</td><td>nur offene Standorte, Kapazitäten, Regionen unteilbar</td></tr>
+    <tr><td><strong><i>Q</i><sub>s</sub>(<i>x</i>)</strong></td><td>die besten Folgekosten bei gegebenem <i>x</i>: die <a class="g" href="#g-wertfunktion">Wertfunktion</a></td><td>Kapitel 4</td></tr>
+  </table></div>
+  <p>Gelesen: Wähle die erste Entscheidung so, dass ihre direkten Kosten plus die über alle Szenarien gemittelten besten Folgekosten möglichst klein werden. Die Folgekosten <i>Q</i><sub>s</sub>(<i>x</i>) sind selbst wieder das Ergebnis einer Optimierung – ein Problem im Problem.</p>
+
+  <h3>3.4 Das Beispiel: Server für eine Cloud</h3>
+  <p>Ein Cloud-Anbieter kann an drei Standorten Server aufstellen. Die Entscheidung <i>x</i> = (<i>x</i><sub>N</sub>, <i>x</i><sub>M</sub>, <i>x</i><sub>S</sub>) gibt an, ob Nord, Mitte und Süd geöffnet werden (1) oder nicht (0). Vier Kundenregionen R1 bis R4 brauchen im kommenden Jahr Rechenleistung, gemessen in Einheiten. Alle Beträge sind in Tausend Euro angegeben.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Standort</th><th>Kosten bei Öffnung</th><th>Kapazität</th><th>Kosten je Einheit für R1</th><th>R2</th><th>R3</th><th>R4</th></tr>
+    <tr><td><strong>Nord (N)</strong></td><td>18</td><td>4 Einheiten</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+    <tr><td><strong>Mitte (M)</strong></td><td>24</td><td>3 Einheiten</td><td>2</td><td>1</td><td>1</td><td>3</td></tr>
+    <tr><td><strong>Süd (S)</strong></td><td>9</td><td>6 Einheiten</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+    <tr><td><strong>fremde Cloud</strong></td><td>–</td><td>unbegrenzt</td><td>10</td><td>10</td><td>10</td><td>10</td></tr>
+  </table></div>
+  <div class="tablewrap"><table>
+    <tr><th>Szenario</th><th>Wahrscheinlichkeit</th><th>Bedarf R1</th><th>R2</th><th>R3</th><th>R4</th><th>Summe</th></tr>
+    <tr><td><strong>ruhig</strong></td><td>0,5</td><td>2</td><td>2</td><td>2</td><td>3</td><td>9</td></tr>
+    <tr><td><strong>Spitze</strong></td><td>0,5</td><td>4</td><td>4</td><td>4</td><td>4</td><td>16</td></tr>
+  </table></div>
+  <p>Die Regeln der zweiten Stufe: Jede Region wird <strong>als Ganzes</strong> genau einem geöffneten Standort zugeordnet oder ganz an die fremde Cloud abgegeben. Ein Standort darf nicht mehr Einheiten übernehmen, als seine Kapazität erlaubt. Die Kosten sind Bedarf mal Kosten je Einheit. Weil die fremde Cloud immer einspringen kann, gibt es zu jeder ersten Entscheidung eine zulässige Reaktion; man spricht von <strong>vollständigem Rekurs</strong>.</p>
+  <p>Die Regel „als Ganzes“ macht die zweite Stufe ganzzahlig, und sie hat Folgen. In der Spitze braucht jede Region 4 Einheiten. Mitte hat nur 3 Einheiten Kapazität und kann deshalb in der Spitze <strong>keine einzige</strong> Region übernehmen. Süd hat 6 Einheiten, kann aber nur eine Region zu 4 Einheiten aufnehmen; die übrigen 2 Einheiten bleiben ungenutzt. Diese Effekte sieht die LP-Relaxation nicht, die Regionen beliebig teilen darf.</p>
+    <figure class="fig" id="abb1"><figcaption class="fig-head"><span>Schaubild 1</span><b>Zwei Stufen, zwei Szenarien</b></figcaption><div class="wisch">Zum vollständigen Ansehen seitlich wischen</div><div class="fig-body"><svg viewBox="0 0 760 290" role="img" aria-label="Zwei Stufen: Heute werden Standorte gewählt, dann tritt eines von zwei Szenarien ein, danach werden die Regionen zugeordnet" style="min-width:640px"><defs><marker id="mb1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk"/></marker></defs><rect x="10" y="95" width="190" height="100" class="s-m"/><text x="105.0" y="120.0" class="tb" text-anchor="middle">Heute: erste Stufe</text><text x="105.0" y="140.0" class="ts" text-anchor="middle">Standorte öffnen</text><text x="105" y="158" class="tm" text-anchor="middle"><tspan font-style="italic">x</tspan> = (<tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="9">N</tspan>, <tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="9">M</tspan>, <tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="9">S</tspan>)</text><text x="105.0" y="178.0" class="tm" text-anchor="middle">Kosten 18 · 24 · 9</text><line x1="200" y1="145" x2="262" y2="145" class="ln" marker-end="url(#mb1)"/><circle cx="290" cy="145" r="26" class="s-n"/><text x="290.0" y="149.0" class="tb" text-anchor="middle">Zufall</text><path d="M314,135 L362,75" class="ln" marker-end="url(#mb1)"/><rect x="365" y="40" width="170" height="70" class="s-s"/><text x="450.0" y="64.0" class="tb" text-anchor="middle">Szenario „ruhig“</text><text x="450.0" y="82.0" class="ts" text-anchor="middle">Wahrscheinlichkeit 0,5</text><text x="450.0" y="99.0" class="tm" text-anchor="middle">Bedarf 2 · 2 · 2 · 3</text><line x1="535" y1="75" x2="568" y2="75" class="ln" marker-end="url(#mb1)"/><rect x="570" y="40" width="180" height="70" class="s-k"/><text x="660.0" y="64.0" class="tb" text-anchor="middle">Morgen: zweite Stufe</text><text x="660.0" y="82.0" class="ts" text-anchor="middle">Regionen zuordnen</text><text x="660" y="99" class="tm" text-anchor="middle">beste Kosten <tspan font-style="italic">Q</tspan><tspan baseline-shift="sub" font-size="9">ruhig</tspan>(<tspan font-style="italic">x</tspan>)</text><path d="M314,155 L362,215" class="ln" marker-end="url(#mb1)"/><rect x="365" y="180" width="170" height="70" class="s-s"/><text x="450.0" y="204.0" class="tb" text-anchor="middle">Szenario „Spitze“</text><text x="450.0" y="222.0" class="ts" text-anchor="middle">Wahrscheinlichkeit 0,5</text><text x="450.0" y="239.0" class="tm" text-anchor="middle">Bedarf 4 · 4 · 4 · 4</text><line x1="535" y1="215" x2="568" y2="215" class="ln" marker-end="url(#mb1)"/><rect x="570" y="180" width="180" height="70" class="s-k"/><text x="660.0" y="204.0" class="tb" text-anchor="middle">Morgen: zweite Stufe</text><text x="660.0" y="222.0" class="ts" text-anchor="middle">Regionen zuordnen</text><text x="660" y="239" class="tm" text-anchor="middle">beste Kosten <tspan font-style="italic">Q</tspan><tspan baseline-shift="sub" font-size="9">Spitze</tspan>(<tspan font-style="italic">x</tspan>)</text><text x="380" y="280" class="tm" text-anchor="middle">Gesamtkosten = Kosten der Standorte + 0,5 · <tspan font-style="italic">Q</tspan><tspan baseline-shift="sub" font-size="9">ruhig</tspan>(<tspan font-style="italic">x</tspan>) + 0,5 · <tspan font-style="italic">Q</tspan><tspan baseline-shift="sub" font-size="9">Spitze</tspan>(<tspan font-style="italic">x</tspan>)</text></svg></div></figure><p class="fig-cap">Erst wird über die Standorte entschieden, dann zeigt sich das Szenario, dann werden die Regionen zugeordnet. Die erste Entscheidung muss für beide Szenarien zugleich taugen. <span class="basis">Datenbasis:</span> Rechenbeispiel dieses Dossiers.</p>
+  <p>Im Beispiel ist die beste Wahl, Nord und Süd zu öffnen. Das kostet 27 für die Standorte und im Erwartungswert 50,5 für die zweite Stufe, zusammen <strong>77,5</strong>. Diese Antwort ist hier nur deshalb bekannt, weil man bei acht Kombinationen alle durchrechnen kann. Das Benders-Verfahren soll sie finden und beweisen, ohne alle Kombinationen zu prüfen.</p>
+
+  <h3>3.5 Die extensive Form: alles auf einmal</h3>
+  <p>Man kann das zweistufige Problem auch als ein einziges großes MIP aufschreiben. Dazu bekommt jedes Szenario eine eigene Kopie der Variablen der zweiten Stufe, und alle Kopien hängen an derselben ersten Entscheidung. Diese Fassung heißt <a class="g" href="#g-extensive-form">extensive Form</a> oder deterministisches Äquivalent.</p>
+  <p>Im Beispiel hat sie 3 Variablen der ersten Stufe und je Szenario 16 binäre Zuordnungsvariablen (vier Regionen mal vier Möglichkeiten), zusammen 35 – für jeden Solver eine Kleinigkeit. Mit 1000 Szenarien wären es schon über 16 000, mit mehreren Stufen oder nichtlinearen Zusammenhängen wird es schnell unlösbar. Die Zahl der Variablen wächst zwar nur linear mit den Szenarien, die Schwierigkeit eines MIP aber oft viel schneller.</p>
+    <figure class="fig" id="abb2"><figcaption class="fig-head"><span>Schaubild 2</span><b>Die Blockstruktur der extensiven Form</b></figcaption><div class="wisch">Zum vollständigen Ansehen seitlich wischen</div><div class="fig-body"><svg viewBox="0 0 760 250" role="img" aria-label="Blockstruktur der extensiven Form: Die Variablen der ersten Stufe stehen in allen Zeilen, jedes Szenario hat einen eigenen Block auf der Diagonale" style="min-width:600px"><text x="200.0" y="20.0" class="tb" text-anchor="middle">erste Stufe x</text><text x="290.0" y="20.0" class="tb" text-anchor="middle">y</text><text x="380.0" y="20.0" class="tb" text-anchor="middle">y</text><text x="470.0" y="20.0" class="tb" text-anchor="middle">y</text><text x="560.0" y="20.0" class="tb" text-anchor="middle"></text><text x="650.0" y="20.0" class="tb" text-anchor="middle">y</text><rect x="160" y="30" width="80" height="30" class="s-m"/><text x="150.0" y="50.0" class="tm" text-anchor="end">nur erste Stufe</text><rect x="160" y="66" width="80" height="30" class="s-m"/><rect x="250" y="66" width="80" height="30" class="s-k"/><text x="290.0" y="86.0" class="ts" text-anchor="middle">Szenario 1</text><text x="150.0" y="86.0" class="tm" text-anchor="end">Bedingungen Szenario 1</text><rect x="160" y="102" width="80" height="30" class="s-m"/><rect x="340" y="102" width="80" height="30" class="s-k"/><text x="380.0" y="122.0" class="ts" text-anchor="middle">Szenario 2</text><text x="150.0" y="122.0" class="tm" text-anchor="end">Bedingungen Szenario 2</text><rect x="160" y="138" width="80" height="30" class="s-m"/><rect x="430" y="138" width="80" height="30" class="s-k"/><text x="470.0" y="158.0" class="ts" text-anchor="middle">Szenario 3</text><text x="150.0" y="158.0" class="tm" text-anchor="end">Bedingungen Szenario 3</text><rect x="160" y="174" width="80" height="30" class="s-m"/><text x="560.0" y="194.0" class="tb" text-anchor="middle">…</text><text x="150.0" y="194.0" class="tm" text-anchor="end"></text><rect x="160" y="210" width="80" height="30" class="s-m"/><rect x="610" y="210" width="80" height="30" class="s-k"/><text x="650.0" y="230.0" class="ts" text-anchor="middle">Szenario S</text><text x="150.0" y="230.0" class="tm" text-anchor="end">Bedingungen Szenario S</text><rect x="156" y="26" width="538" height="218" class="ln-g" fill="none"/><text x="430.0" y="268.0" class="tm" text-anchor="middle">Leere Flächen: Die Szenarien hängen nur über die erste Stufe zusammen.</text></svg></div></figure><p class="fig-cap">Jede Zeile steht für die Nebenbedingungen eines Szenarios. Nur die Spalte der ersten Stufe reicht durch alle Zeilen. Wer sie festhält, erhält unabhängige Blöcke – die Teilprobleme der Benders-Dekomposition. <span class="basis">Datenbasis:</span> Darstellung dieses Dossiers.</p>
+  <div class="box warum"><div class="box-title">Warum man nicht immer zerlegt</div>
+    <p>Für kleine und mittlere Probleme ist die extensive Form mit einem modernen Solver oft der schnellste Weg, und sie ist der Maßstab, an dem sich jedes Zerlegungsverfahren messen lassen muss. Zerlegung lohnt sich dort, wo die extensive Form zu groß wird: bei vielen Szenarien, bei mehrstufigen Problemen mit Entscheidungen über viele Perioden und bei nichtkonvexen Teilproblemen.</p>
+  </div>
+
+  <h3>3.6 Die Struktur, die man ausnutzen kann</h3>
+  <p>Schaut man auf die Nebenbedingungen der extensiven Form, sieht man ein typisches Muster: Jedes Szenario bildet einen eigenen Block, und nur die Variablen der ersten Stufe tauchen in allen Blöcken auf. Man nennt sie die <strong>verbindenden</strong> oder <strong>komplizierenden Variablen</strong>. Hält man sie fest, zerfällt das große Problem in <i>S</i> kleine, voneinander unabhängige Probleme, die man einzeln und sogar gleichzeitig auf mehreren Rechnern lösen kann. Diese Beobachtung ist der Ausgangspunkt der Benders-Dekomposition.</p>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Erste Stufe</strong> <i>x</i>: vor dem Zufall, endgültig; <strong>zweite Stufe</strong> <i>y</i>: Reaktion je Szenario.</li>
+      <li><strong>Ziel:</strong> direkte Kosten plus erwartete beste Folgekosten minimieren.</li>
+      <li><strong>Extensive Form:</strong> alles in einem MIP – Maßstab, aber bei vielen Szenarien zu groß.</li>
+      <li><strong>Blockstruktur:</strong> Ist <i>x</i> fest, zerfällt das Problem in unabhängige Teilprobleme.</li>
+      <li><strong>Beispiel:</strong> Optimum ist „Nord und Süd öffnen“ mit Kosten 77,5.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 4 WERTFUNKTION ============ -->
+<section class="chapter" id="wertfunktion">
+  <div class="chap-head"><div class="chap-num">4</div><div>
+    <span class="span-chip">Der zentrale Begriff</span>
+    <h2>Die Wertfunktion und ihre Unterschätzer</h2>
+  </div></div>
+  <p class="lead">Alles dreht sich um eine Funktion, die niemand als Formel kennt: die Folgekosten jeder ersten Entscheidung. Benders nähert sie von unten durch Geraden an. Ob das gelingt, hängt an einer Eigenschaft namens Konvexität.</p>
+
+  <h3>4.1 Was die Wertfunktion misst</h3>
+  <p>Die <a class="g" href="#g-wertfunktion">Wertfunktion</a> <i>Q</i><sub>s</sub>(<i>x</i>) ordnet jeder ersten Entscheidung <i>x</i> die bestmöglichen Kosten der zweiten Stufe im Szenario <i>s</i> zu. Man kann sie nicht hinschreiben, sondern nur Punkt für Punkt ausrechnen: Für jedes <i>x</i> löst man das Problem der zweiten Stufe. Im Beispiel ergibt das folgende Tabelle.</p>
+  <div class="tablewrap"><table class="zahlen">
+    <tr><th>Offen</th><th><i>x</i> = <span class="nw">(N, M, S)</span></th><th><i>Q</i><sub>ruhig</sub>(<i>x</i>)</th><th>beste Zuordnung (ruhig)</th><th><i>Q</i><sub>Spitze</sub>(<i>x</i>)</th><th>beste Zuordnung (Spitze)</th></tr>
+    <tr><td><strong>keiner</strong></td><td><span class="nw">(0, 0, 0)</span></td><td>90</td><td>alles fremd</td><td>160</td><td>alles fremd</td></tr>
+    <tr><td><strong>Süd</strong></td><td><span class="nw">(0, 0, 1)</span></td><td>47</td><td>R3, R4 → S</td><td>124</td><td>R4 → S</td></tr>
+    <tr><td><strong>Mitte</strong></td><td><span class="nw">(0, 1, 0)</span></td><td>69</td><td>R4 → M</td><td>160</td><td>alles fremd</td></tr>
+    <tr><td><strong>Mitte, Süd</strong></td><td><span class="nw">(0, 1, 1)</span></td><td>27</td><td>R1, R2, R3 → S; R4 → M</td><td>124</td><td>R4 → S</td></tr>
+    <tr><td><strong>Nord</strong></td><td><span class="nw">(1, 0, 0)</span></td><td>56</td><td>R1, R2 → N</td><td>124</td><td>R1 → N</td></tr>
+    <tr class="hl"><td><strong>Nord, Süd</strong></td><td><span class="nw">(1, 0, 1)</span></td><td>13</td><td>R1, R2 → N; R3, R4 → S</td><td>88</td><td>R1 → N; R4 → S</td></tr>
+    <tr><td><strong>Nord, Mitte</strong></td><td><span class="nw">(1, 1, 0)</span></td><td>35</td><td>R1, R2 → N; R4 → M</td><td>124</td><td>R1 → N</td></tr>
+    <tr><td><strong>alle</strong></td><td><span class="nw">(1, 1, 1)</span></td><td>11</td><td>R1, R2 → N; R3 → M; R4 → S</td><td>88</td><td>R1 → N; R4 → S</td></tr>
+  </table></div>
+  <p>Ein Beispiel zum Nachrechnen: Sind Nord und Süd offen, übernimmt Nord im ruhigen Szenario die Regionen R1 und R2 (2 · 1 + 2 · 2 = 6) und Süd die Regionen R3 und R4 (2 · 2 + 3 · 1 = 7). Das ergibt <i>Q</i><sub>ruhig</sub><span class="nw">(1, 0, 1)</span> = 13. In der Spitze passt in Nord nur R1 (4 Einheiten, Kosten 4), in Süd nur R4 (Kosten 4); R2 und R3 gehen mit je 4 · 10 = 40 an die fremde Cloud: zusammen 88. Nicht genannte Regionen gehen in der Tabelle immer an die fremde Cloud.</p>
+
+  <h3>4.2 Warum man die Wertfunktion nicht einfach tabelliert</h3>
+  <p>Bei drei Standorten sind es acht Zeilen, also acht Rechnungen je Szenario. Bei zehn Standorten wären es 1024, bei fünfzig mehr als eine Billiarde – und jede Zeile ist ein eigenes MIP. Die Wertfunktion vollständig zu kennen, ist also hoffnungslos. Man braucht eine Näherung, die mit wenigen Rechnungen auskommt und trotzdem verlässlich ist. „Verlässlich“ heißt hier: Sie darf die Folgekosten <strong>nie überschätzen</strong>, sonst wäre die untere Schranke falsch.</p>
+
+  <h3>4.3 Cuts: Geraden unter der Wertfunktion</h3>
+  <p>Die einfachste verlässliche Näherung ist eine Gerade – bei mehreren Variablen genauer eine Ebene –, die nirgends über der Wertfunktion liegt. Mit einer neuen Variable θ<sub>s</sub> für die geschätzten Folgekosten schreibt man sie als</p>
+  <div class="formel">θ<sub>s</sub> ≥ <i>a</i><sup>⊤</sup><i>x</i> + <i>b</i></div>
+  <p>Die Zahlen <i>a</i> = (<i>a</i><sub>1</sub>, …, <i>a</i><sub>n</sub>) sind die <strong>Steigungen</strong>, <i>b</i> ist der <strong>Achsenabschnitt</strong>. Eine solche Ungleichung heißt <a class="g" href="#g-cut">Cut</a> (englisch für Schnitt), weil sie im Masterproblem einen Teil der bisher erlaubten Werte von θ<sub>s</sub> abschneidet. Zwei Eigenschaften sind entscheidend:</p>
+  <div class="grid">
+    <div class="card"><h4>Gültig</h4><p>Der Cut liegt nirgends über der Wertfunktion: <i>a</i><sup>⊤</sup><i>x</i> + <i>b</i> ≤ <i>Q</i><sub>s</sub>(<i>x</i>) für alle erlaubten <i>x</i>. Nur gültige Cuts erhalten die untere Schranke.</p></div>
+    <div class="card"><h4>Straff an einem Punkt</h4><p>Der Cut <a class="g" href="#g-straff">berührt</a> die Wertfunktion an einer Stelle <span class="ov"><i>x</i></span>: <i>a</i><sup>⊤</sup><span class="ov"><i>x</i></span> + <i>b</i> = <i>Q</i><sub>s</sub>(<span class="ov"><i>x</i></span>). Dort ist die Schätzung exakt.</p></div>
+  </div>
+  <p>Ein Beispiel mit Zahlen aus der Tabelle: Der Cut θ<sub>ruhig</sub> ≥ 27 − 16 <i>x</i><sub>N</sub> ergibt bei geschlossenem Nord den Wert 27 und bei offenem Nord den Wert 11. Ein Blick in die Tabelle zeigt: Alle Zeilen mit <i>x</i><sub>N</sub> = 0 haben mindestens 27, alle mit <i>x</i><sub>N</sub> = 1 mindestens 11. Der Cut ist also gültig. Er ist straff bei <span class="nw">(0, 1, 1)</span>, wo die Folgekosten genau 27 betragen, und zusätzlich bei <span class="nw">(1, 1, 1)</span> mit genau 11. Woher solche Cuts kommen, zeigen die Kapitel 6 bis 8.</p>
+  <p>Mehrere Cuts zusammen ergeben eine Treppe aus Ebenen: Für jedes <i>x</i> zählt der höchste Cut. Je mehr gute Cuts man sammelt, desto näher kommt diese Treppe der wahren Wertfunktion – jedenfalls dort, wo es darauf ankommt.</p>
+
+  <h3>4.4 Konvex oder nicht konvex</h3>
+  <p>Eine Funktion heißt <a class="g" href="#g-konvex">konvex</a>, wenn die Verbindungsstrecke zwischen zwei Punkten ihres Graphen nie unter dem Graphen verläuft – anschaulich: eine Schüssel ohne Dellen. Ist die zweite Stufe ein lineares Programm, ist die Wertfunktion konvex. Dann gilt etwas Bequemes: Jede Tangente liegt komplett unter der Funktion, ist also ein gültiger Cut, und aus genügend vielen Tangenten lässt sich die Funktion beliebig genau zusammensetzen.</p>
+  <p>Ist die zweite Stufe ganzzahlig, wird die Wertfunktion im Allgemeinen <strong>nichtkonvex</strong>: Sie springt, hat Stufen und Dellen. Eine Tangente an einer Stelle kann an anderer Stelle durch die Funktion hindurchschneiden – ein solcher Cut wäre ungültig. Das Schaubild zeigt einen Schnitt durch das Beispiel: Süd ist offen, Mitte geschlossen, und Nord wird schrittweise von 0 auf 1 „geöffnet“.</p>
+    <figure class="fig" id="abb3"><figcaption class="fig-head"><span>Schaubild 3</span><b>Wertfunktion, LP-Relaxation und konvexe Hülle</b></figcaption><div class="wisch">Zum vollständigen Ansehen seitlich wischen</div><div class="fig-body"><svg viewBox="0 0 760 380" role="img" aria-label="Schnitt durch die Wertfunktion im ruhigen Szenario: wahre Wertfunktion als Treppe von 47 auf 13, LP-Relaxation als konvexe Kurve darunter von 40 auf 13, konvexe Hülle als Strecke von 47 auf 13, dazu ein LP-Cut, der bei 40 beginnt" style="min-width:640px"><line x1="80" y1="320.0" x2="700" y2="320.0" class="ln-g"/><text x="72.0" y="324.0" class="tm" text-anchor="end">0</text><line x1="80" y1="264.0" x2="700" y2="264.0" class="ln-g"/><text x="72.0" y="268.0" class="tm" text-anchor="end">10</text><line x1="80" y1="208.0" x2="700" y2="208.0" class="ln-g"/><text x="72.0" y="212.0" class="tm" text-anchor="end">20</text><line x1="80" y1="152.0" x2="700" y2="152.0" class="ln-g"/><text x="72.0" y="156.0" class="tm" text-anchor="end">30</text><line x1="80" y1="96.0" x2="700" y2="96.0" class="ln-g"/><text x="72.0" y="100.0" class="tm" text-anchor="end">40</text><line x1="80" y1="40.0" x2="700" y2="40.0" class="ln-g"/><text x="72.0" y="44.0" class="tm" text-anchor="end">50</text><text x="80.0" y="340.0" class="tm" text-anchor="middle">0</text><text x="235.0" y="340.0" class="tm" text-anchor="middle">0,2</text><text x="390.0" y="340.0" class="tm" text-anchor="middle">0,5</text><text x="545.0" y="340.0" class="tm" text-anchor="middle">0,8</text><text x="700.0" y="340.0" class="tm" text-anchor="middle">1</text><text x="390" y="368" class="tm" text-anchor="middle">Öffnungsgrad von Nord, <tspan font-style="italic">x</tspan><tspan baseline-shift="sub" font-size="9">N</tspan> (Mitte geschlossen, Süd offen)</text><text x="20.0" y="24.0" class="tm">Folgekosten im Szenario „ruhig“</text><polyline points="80.0,96.0 142.0,128.5 204.0,158.7 266.0,187.3 328.0,205.8 390.0,219.2 452.0,225.9 514.0,232.6 576.0,238.2 638.0,242.7 700.0,247.2" class="ln" style="stroke-width:2"/><line x1="80.0" y1="56.8" x2="700.0" y2="247.2" class="ln-v" style="stroke:var(--c5);stroke-width:2"/><line x1="80.0" y1="96.0" x2="340.4" y2="251.2" class="ln-r"/><line x1="80.0" y1="56.8" x2="694.0" y2="56.8" class="ln-a" style="stroke-width:3"/><circle cx="700.0" cy="56.8" r="5" fill="var(--paper)" stroke="var(--accent)" stroke-width="2"/><circle cx="80.0" cy="56.8" r="5" class="mka"/><circle cx="700.0" cy="247.2" r="5" class="mka"/><text x="421.0" y="46.8" class="tca">wahre Wertfunktion: 47, bis Nord ganz offen ist</text><text x="464.4" y="168.4" class="ts" style="fill:var(--c5);font-weight:700">konvexe Hülle = bester Lagrange-Cut</text><text x="371.4" y="251.2" class="tm">LP-Relaxation (Regionen teilbar)</text><text x="90.0" y="269.6" class="tc4">LP-Cut am Punkt 0</text><line x1="94.0" y1="56.8" x2="94.0" y2="96.0" class="ln" /><text x="100.0" y="80.4" class="tm">7</text><text x="710.0" y="251.2" class="tb">13</text><text x="48.0" y="60.8" class="tb">47</text><line x1="390.0" y1="56.8" x2="390.0" y2="152.0" class="ln" style="stroke-dasharray:3 3"/><text x="396.0" y="104.4" class="tm">Lücke, die kein Cut schließt</text></svg></div></figure><p class="fig-cap">Schnitt durch das Beispiel: Süd ist offen, Mitte zu, Nord wird von 0 bis 1 „geöffnet“. An den binären Punkten 0 und 1 treffen sich wahre Wertfunktion und konvexe Hülle; die LP-Relaxation bleibt bei 0 um 7 darunter, und der LP-Cut berührt nur sie. <span class="basis">Datenbasis:</span> eigene Berechnung.</p>
+  <p>Drei Kurven sind zu sehen. Die <strong>wahre Wertfunktion</strong> ist eine Treppe: Solange Nord nicht ganz offen ist, darf keine Region dorthin, die Kosten bleiben bei 47; erst bei <i>x</i><sub>N</sub> = 1 fallen sie auf 13. Die <strong>LP-Relaxation</strong> darf Regionen teilen und auch einen „halb offenen“ Standort halb nutzen; sie liegt deshalb überall darunter, schon bei <i>x</i><sub>N</sub> = 0 mit 40 statt 47. Dazwischen liegt die <strong>konvexe Hülle</strong>: die höchste konvexe Funktion, die noch unter der Treppe bleibt – hier einfach die Strecke von 47 nach 13.</p>
+
+  <h3>4.5 Die konvexe Hülle und die Ecken des Würfels</h3>
+  <p>Jeder gültige Cut ist eine Ebene unter der Wertfunktion. Eine Ebene ist konvex, also kann kein gültiger Cut je über die <a class="g" href="#g-konvexe-huelle">konvexe Hülle</a> hinausragen. Die konvexe Hülle ist damit das Beste, was Cuts überhaupt erreichen können. Bei einer nichtkonvexen Funktion klafft dazwischen an manchen Stellen eine Lücke, die kein Cut schließen kann – im Schaubild etwa bei <i>x</i><sub>N</sub> = 0,5: Die Treppe steht bei 47, die Hülle bei 30.</p>
+  <p>Für binäre erste Stufen gibt es aber eine glückliche Fügung. Die binären Punkte sind die <strong>Ecken</strong> des Würfels [0, 1]<sup><i>n</i></sup>. Eine Ecke lässt sich nicht als Mischung anderer Punkte des Würfels schreiben. Deshalb stimmen konvexe Hülle und Wertfunktion an jeder Ecke überein: Im Schaubild treffen sich alle Kurven außer der LP-Relaxation bei 0 und bei 1. Weil das Masterproblem nur binäre Punkte vorschlagen darf, reicht das. An jedem binären Punkt gibt es einen gültigen Cut, der dort straff ist.</p>
+  <div class="box warum"><div class="box-title">Warum die binäre erste Stufe so wichtig ist</div>
+    <p>Wäre die erste Entscheidung kontinuierlich, könnte das Masterproblem auch einen Punkt wie <i>x</i><sub>N</sub> = 0,5 vorschlagen, an dem die Hülle unter der Wertfunktion liegt. Dann gäbe es dort keinen straffen Cut, und das Verfahren könnte die Lücke nicht schließen. Mit binärer erster Stufe tritt dieses Problem nicht auf. Deshalb verlangen viele Verfahren mit Lagrange-Cuts binäre Verbindungsvariablen – oder sie stellen allgemeine Variablen durch mehrere binäre Stellen dar, so wie man eine Zahl im Zweiersystem schreibt.</p>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Wertfunktion</strong> <i>Q</i><sub>s</sub>(<i>x</i>): beste Folgekosten je erster Entscheidung, nur punktweise berechenbar.</li>
+      <li><strong>Cut</strong> θ<sub>s</sub> ≥ <i>a</i><sup>⊤</sup><i>x</i> + <i>b</i>: <strong>gültig</strong>, wenn nirgends darüber; <strong>straff</strong> an <span class="ov"><i>x</i></span>, wenn er dort berührt.</li>
+      <li><strong>Konvex</strong> (LP in der zweiten Stufe): jede Tangente ist ein gültiger Cut.</li>
+      <li><strong>Nichtkonvex</strong> (ganzzahlige zweite Stufe): Cuts erreichen höchstens die konvexe Hülle.</li>
+      <li>An <strong>binären Punkten</strong> fallen Hülle und Wertfunktion zusammen → dort sind straffe Cuts möglich.</li>
+    </ul>
+  </div>
+</section>
+<!-- ============ 5 BENDERS ============ -->
+<section class="chapter" id="benders">
+  <div class="chap-head"><div class="chap-num">5</div><div>
+    <span class="span-chip">Die Zerlegung</span>
+    <h2>Das Benders-Verfahren</h2>
+  </div></div>
+  <p class="lead">Das Benders-Verfahren ist ein Gespräch zwischen zwei Ebenen: Das Masterproblem schlägt vor, die Teilprobleme antworten, und jede Antwort wird als Cut festgehalten. Zwei Schranken zeigen in jeder Runde, wie weit man noch vom Ziel entfernt ist.</p>
+
+  <h3>5.1 Die Idee: Unbekanntes durch Variablen ersetzen</h3>
+  <p>Jacques F. Benders, Mathematiker im Laboratorium von Shell in Amsterdam, entwickelte das Verfahren in seiner Doktorarbeit von 1960 und veröffentlichte es 1962 in der Zeitschrift <em>Numerische Mathematik</em>. Seine Idee: Man ersetzt die unbekannte Wertfunktion <i>Q</i><sub>s</sub>(<i>x</i>) im Ziel durch eine Variable θ<sub>s</sub> und beschränkt diese von unten durch Cuts. Das entstehende Problem heißt <a class="g" href="#g-masterproblem">Masterproblem</a>:</p>
+  <div class="formel">min<sub><i>x</i> ∈ <i>X</i>, θ</sub> &nbsp; <i>c</i><sup>⊤</sup><i>x</i> + Σ<sub><i>s</i></sub> <i>p</i><sub>s</sub> θ<sub>s</sub> &nbsp;&nbsp; unter &nbsp;&nbsp; θ<sub>s</sub> ≥ <i>a</i><sup>⊤</sup><i>x</i> + <i>b</i> &nbsp; für alle bisher gesammelten Cuts von Szenario <i>s</i></div>
+  <p>Am Anfang kennt das Masterproblem noch keinen Cut. Man gibt ihm eine einfache untere Grenze mit, im Beispiel θ<sub>s</sub> ≥ 0, denn Kosten sind nie negativ. Das Masterproblem glaubt dann zunächst, Folgekosten gäbe es nicht – und schlägt entsprechend naiv vor. Aus jeder Bewertung lernt es dazu.</p>
+
+  <h3>5.2 Der Kreislauf</h3>
+    <figure class="fig" id="abb4"><figcaption class="fig-head"><span>Schaubild 4</span><b>Der Kreislauf des Benders-Verfahrens</b></figcaption><div class="wisch">Zum vollständigen Ansehen seitlich wischen</div><div class="fig-body"><svg viewBox="0 0 760 320" role="img" aria-label="Kreislauf des Benders-Verfahrens: Das Masterproblem schickt einen Vorschlag an die Teilprobleme, diese liefern Folgekosten und Cuts zurück; daraus entstehen untere und obere Schranke" style="min-width:640px"><defs><marker id="mk4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mka"/></marker></defs><rect x="20" y="90" width="220" height="120" class="s-m"/><text x="130.0" y="118.0" class="th" text-anchor="middle">Masterproblem</text><text x="130.0" y="140.0" class="ts" text-anchor="middle">erste Stufe plus θ je Szenario</text><text x="130.0" y="158.0" class="ts" text-anchor="middle">und alle bisherigen Cuts</text><text x="130.0" y="190.0" class="tca" text-anchor="middle">liefert untere Schranke</text><rect x="520" y="40" width="220" height="48" class="s-k"/><text x="630.0" y="62.0" class="tb" text-anchor="middle">Teilproblem Szenario 1</text><text x="630.0" y="78.0" class="tm" text-anchor="middle">beste Reaktion auf den Vorschlag</text><rect x="520" y="102" width="220" height="48" class="s-k"/><text x="630.0" y="124.0" class="tb" text-anchor="middle">Teilproblem Szenario 2</text><text x="630.0" y="140.0" class="tm" text-anchor="middle">beste Reaktion auf den Vorschlag</text><text x="615.0" y="194.0" class="tb" text-anchor="middle">…</text><rect x="520" y="226" width="220" height="48" class="s-k"/><text x="630.0" y="248.0" class="tb" text-anchor="middle">Teilproblem Szenario S</text><text x="630.0" y="264.0" class="tm" text-anchor="middle">beste Reaktion auf den Vorschlag</text><path d="M240,110 C340,70 420,70 518,70" class="ln-a" marker-end="url(#mk4)"/><text x="380" y="62" class="tca" text-anchor="middle">Vorschlag <tspan font-style="italic">x</tspan><tspan baseline-shift="super" font-size="9">k</tspan></text><path d="M518,250 C420,250 340,250 242,195" class="ln-a" marker-end="url(#mk4)"/><text x="380.0" y="240.0" class="tca" text-anchor="middle">Cuts je Szenario</text><text x="380.0" y="274.0" class="tm" text-anchor="middle">untere Schranke steigt, Lücke schrumpft</text><text x="630.0" y="300.0" class="tc4" text-anchor="middle">Folgekosten → obere Schranke</text><text x="130.0" y="240.0" class="tm" text-anchor="middle">Stopp, wenn untere = obere Schranke</text></svg></div></figure><p class="fig-cap">In jeder Runde schlägt der Master eine erste Entscheidung vor. Die Teilprobleme bewerten sie, daraus folgt eine obere Schranke, und jedes liefert einen Cut zurück. Mit den Cuts wird der Master genauer, seine untere Schranke steigt. <span class="basis">Datenbasis:</span> Darstellung dieses Dossiers.</p>
+  <p>Eine Runde, in Fachartikeln <strong>Iteration</strong> genannt, läuft so ab:</p>
+  <ol class="schritte">
+    <li><strong>Master lösen.</strong> Das Masterproblem liefert einen Vorschlag <i>x</i><sup>k</sup> und seinen Optimalwert. Dieser Wert ist eine <strong>untere Schranke</strong> für das Gesamtproblem.</li>
+    <li><strong>Vorschlag bewerten.</strong> Für jedes Szenario wird das Teilproblem bei <i>x</i> = <i>x</i><sup>k</sup> gelöst; das ergibt <i>Q</i><sub>s</sub>(<i>x</i><sup>k</sup>). Die echten Kosten des Vorschlags, <i>c</i><sup>⊤</sup><i>x</i><sup>k</sup> + Σ <i>p</i><sub>s</sub> <i>Q</i><sub>s</sub>(<i>x</i><sup>k</sup>), sind eine <strong>obere Schranke</strong>. Man merkt sich die beste bisher.</li>
+    <li><strong>Prüfen.</strong> Ist die Lücke zwischen bester oberer und aktueller unterer Schranke klein genug, endet das Verfahren. Der beste Vorschlag ist dann bewiesen gut genug.</li>
+    <li><strong>Lernen.</strong> Für jedes Szenario wird ein Cut erzeugt, der möglichst bei <i>x</i><sup>k</sup> straff ist, und dem Masterproblem hinzugefügt.</li>
+    <li><strong>Wiederholen.</strong> Zurück zu Schritt 1.</li>
+  </ol>
+
+  <h3>5.3 Warum die Schranken stimmen</h3>
+  <p><strong>Die untere Schranke:</strong> Solange jeder Cut gültig ist, unterschätzt jedes θ<sub>s</sub> die wahren Folgekosten oder trifft sie genau. Das Masterproblem ist damit eine Relaxation des echten Problems und kann dessen Optimalwert nicht übersteigen. Woher die Cuts stammen, ist dabei gleichgültig – es kommt allein auf ihre Gültigkeit an.</p>
+  <p><strong>Die obere Schranke:</strong> Jeder Vorschlag <i>x</i><sup>k</sup> ist eine echte, umsetzbare Entscheidung. Seine tatsächlichen Kosten kann das Optimum nicht übertreffen.</p>
+  <p>Mit jedem Cut wird das Masterproblem strenger, die untere Schranke steigt oder bleibt gleich. Die beste obere Schranke fällt oder bleibt gleich. Die Lücke wird also nie größer.</p>
+
+  <h3>5.4 Warum das Verfahren endet</h3>
+  <p>Bei binärer erster Stufe gibt es nur endlich viele mögliche Vorschläge. Angenommen, an jedem Vorschlag <i>x</i><sup>k</sup> wird für jedes Szenario ein Cut erzeugt, der dort straff ist. Schlägt das Masterproblem denselben Punkt später ein zweites Mal vor, dann kennt es dessen Folgekosten bereits exakt. Sein Optimalwert ist dann gleich den echten Kosten dieses Punktes – und die sind mindestens so groß wie die beste obere Schranke. Untere und obere Schranke stimmen überein, das Verfahren endet.</p>
+  <p>Jeder Punkt wird also höchstens einmal „neu“ vorgeschlagen, und nach höchstens so vielen Runden, wie es Punkte gibt, plus einer weiteren ist Schluss. Das ist eine Garantie für den schlimmsten Fall; in der Praxis braucht ein gutes Verfahren nur einen winzigen Bruchteil davon. Die Voraussetzung ist aber wesentlich: <strong>Ohne straffe Cuts gibt es diese Garantie nicht.</strong> Kapitel 6 zeigt am Beispiel, was dann passiert.</p>
+  <div class="box warum"><div class="box-title">Was „ein Cut schneidet den Punkt ab“ bedeutet</div>
+    <p>In Fachartikeln heißt es oft, ein Cut „schneide den aktuellen Punkt ab“. Gemeint ist: Mit dem neuen Cut ist die Schätzung des Masterproblems am Punkt <i>x</i><sup>k</sup> gestiegen, die alte, zu optimistische Kombination aus <i>x</i><sup>k</sup> und θ ist nicht mehr erlaubt. Ein Cut, der das nicht leistet, bringt an dieser Stelle nichts Neues – das Masterproblem könnte denselben Vorschlag mit derselben Schätzung wiederholen.</p>
+  </div>
+
+  <h3>5.5 Varianten und Namen</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Begriff</th><th>Bedeutung</th></tr>
+    <tr><td><strong>Optimalitätscut</strong></td><td>der hier beschriebene Cut, der die Folgekosten von unten schätzt</td></tr>
+    <tr><td><strong>Zulässigkeitscut</strong></td><td>verbietet ein <i>x</i>, für das die zweite Stufe gar keine zulässige Reaktion hat; bei vollständigem Rekurs wie im Beispiel unnötig</td></tr>
+    <tr><td><strong>Single-Cut</strong></td><td>eine Variable θ für den gesamten Erwartungswert, ein gemittelter Cut je Runde</td></tr>
+    <tr><td><strong><a class="g" href="#g-multicut">Multi-Cut</a></strong></td><td>eine Variable θ<sub>s</sub> je Szenario, ein Cut je Szenario und Runde (Birge und Louveaux, 1988); so wird es in diesem Dossier gemacht</td></tr>
+    <tr><td><strong>L-shaped-Verfahren</strong></td><td>Benders für zweistufige stochastische LP, nach Van Slyke und Wets (1969); der Name kommt von der L-Form der Nebenbedingungsmatrix</td></tr>
+    <tr><td><strong>Verallgemeinerte Benders-Zerlegung</strong></td><td>Übertragung auf nichtlineare konvexe Probleme (Geoffrion, 1972)</td></tr>
+    <tr><td><strong>Verschachtelte Benders-Zerlegung</strong></td><td>mehrstufige Fassung: jede Stufe ist Master für die nächste und Teilproblem für die vorige</td></tr>
+  </table></div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>1962:</strong> Benders ersetzt die unbekannten Folgekosten durch Variablen θ<sub>s</sub>, die durch Cuts beschränkt werden.</li>
+      <li><strong>Master</strong> → Vorschlag und <strong>untere Schranke</strong>; <strong>Teilprobleme</strong> → Bewertung und <strong>obere Schranke</strong>.</li>
+      <li><strong>Gültige Cuts</strong> → korrekte Schranken, egal woher die Cuts stammen.</li>
+      <li><strong>Straffe Cuts</strong> an jedem Vorschlag → Ende nach endlich vielen Runden.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 6 LP-CUTS ============ -->
+<section class="chapter" id="lpcuts">
+  <div class="chap-head"><div class="chap-num">6</div><div>
+    <span class="span-chip">Der klassische Fall</span>
+    <h2>Cuts aus der LP-Dualität und ihre Grenze</h2>
+  </div></div>
+  <p class="lead">Ist die zweite Stufe ein lineares Programm, liefert die Dualität die Cuts gleichsam gratis mit. Bei ganzzahliger zweiter Stufe funktioniert das nicht mehr: Die Cuts bleiben gültig, aber sie berühren nicht – und das Verfahren bleibt stecken.</p>
+
+  <h3>6.1 Der Normalfall: lineare zweite Stufe</h3>
+  <p>Ist das Teilproblem ein LP, löst man es bei <span class="ov"><i>x</i></span> und liest die Schattenpreise π der Nebenbedingungen ab, die <i>x</i> enthalten. Sie geben an, wie stark sich die Folgekosten ändern, wenn man <i>x</i> ein wenig verschiebt. Daraus entsteht der klassische Benders-Cut</p>
+  <div class="formel">θ<sub>s</sub> ≥ <i>Q</i><sub>s</sub>(<span class="ov"><i>x</i></span>) + π<sup>⊤</sup>(<i>x</i> − <span class="ov"><i>x</i></span>)</div>
+  <p>Er ist eine Tangente an die Wertfunktion im Punkt <span class="ov"><i>x</i></span>. Weil die Wertfunktion eines LP konvex ist, liegt diese Tangente überall darunter: Der Cut ist gültig und bei <span class="ov"><i>x</i></span> straff. Ein einziger Solve des Teilproblems liefert beides, Funktionswert und Steigung. Das ist der Grund, warum Benders für lineare zweite Stufen so gut funktioniert.</p>
+  <p>Im Beispiel bedeutet ein Schattenpreis von −66 für Nord: In der Welt der LP-Relaxation würde ein „ein wenig mehr geöffnetes“ Nord die Folgekosten mit einer Rate von 66 senken. Negative Steigungen sind hier normal, denn ein zusätzlicher Standort senkt die Folgekosten.</p>
+
+  <h3>6.2 Ganzzahlige zweite Stufe: Es fehlt der Dual</h3>
+  <p>Ist das Teilproblem ein MIP, gibt es keine Schattenpreise, die die Wertfunktion exakt beschreiben. Der naheliegende Ausweg: Man löst statt des MIP seine LP-Relaxation und nimmt deren Schattenpreise. Der Cut ist dann eine Tangente an die Wertfunktion der Relaxation. Weil diese überall unter der wahren Wertfunktion liegt, ist der Cut <strong>gültig</strong>. Er ist aber im Allgemeinen <strong>nicht straff</strong>: Er berührt die tiefer liegende LP-Kurve, nicht die wahre Treppe.</p>
+  <p>Im Beispiel wird das an zwei Stellen deutlich:</p>
+  <div class="tablewrap"><table class="zahlen">
+    <tr><th>Punkt und Szenario</th><th>wahre Folgekosten</th><th>LP-Relaxation</th><th>Was die LP-Relaxation darf</th></tr>
+    <tr><td><strong>Nord, Süd offen; Spitze</strong></td><td>88</td><td>72</td><td>R3 aufteilen: 2 Einheiten nach Süd, um dessen freie Kapazität zu füllen</td></tr>
+    <tr><td><strong>Mitte, Süd offen; ruhig</strong></td><td>27</td><td>15</td><td>Regionen auf Mitte und Süd stückeln, sodass jede Kapazität voll ausgenutzt wird</td></tr>
+  </table></div>
+  <p>Am ersten Fall lässt es sich nachrechnen. In der Spitze nimmt Nord R1 auf (Kosten 4) und Süd R4 (Kosten 4). Süd hätte noch 2 Einheiten frei, aber R3 braucht 4 und ist unteilbar – also gehen R2 und R3 für je 40 an die fremde Cloud: 88. Darf man R3 teilen, gehen 2 Einheiten für 2 · 2 = 4 nach Süd und nur 2 Einheiten für 20 an die fremde Cloud; zusammen mit R2 sind es 4 + 4 + 4 + 20 + 40 = 72. Die LP-Relaxation unterschätzt die Folgekosten um 16.</p>
+
+  <h3>6.3 Was dann passiert: Das Verfahren bleibt stecken</h3>
+  <p>Mit Cuts aus der LP-Relaxation steigt die untere Schranke im Beispiel nur bis 69,5. Danach schlägt das Masterproblem immer wieder denselben Punkt vor – Nord und Süd –, und der neue Cut ist derselbe wie beim letzten Mal. Er lehrt das Masterproblem nichts Neues, weil er die echten Folgekosten an diesem Punkt (13 und 88) nicht erreicht, sondern nur die der Relaxation (13 und 72).</p>
+  <div class="tablewrap"><table class="zahlen">
+    <tr><th>Runde</th><th>Vorschlag <span class="nw">(N, M, S)</span></th><th>untere Schranke</th><th>beste obere Schranke</th><th>Lücke</th></tr>
+    <tr><td><strong>1</strong></td><td><span class="nw">(0, 0, 0)</span></td><td>0</td><td>125</td><td>125</td></tr>
+    <tr><td><strong>2</strong></td><td><span class="nw">(1, 0, 1)</span></td><td>27</td><td>77,5</td><td>50,5</td></tr>
+    <tr><td><strong>3</strong></td><td><span class="nw">(0, 1, 1)</span></td><td>37,5</td><td>77,5</td><td>40</td></tr>
+    <tr><td><strong>4</strong></td><td><span class="nw">(1, 1, 0)</span></td><td>46,5</td><td>77,5</td><td>31</td></tr>
+    <tr><td><strong>5</strong></td><td><span class="nw">(1, 1, 1)</span></td><td>55,5</td><td>77,5</td><td>22</td></tr>
+    <tr><td><strong>6</strong></td><td><span class="nw">(0, 0, 1)</span></td><td>60</td><td>77,5</td><td>17,5</td></tr>
+    <tr><td><strong>7, 8, …</strong></td><td><span class="nw">(1, 0, 1)</span></td><td>69,5</td><td>77,5</td><td>8 – für immer</td></tr>
+  </table></div>
+  <p>Die beste Lösung ist schon in Runde 2 gefunden – aber das Verfahren kann nicht beweisen, dass sie die beste ist. Es bleibt eine Lücke von 8, rund zehn Prozent. Der Satz aus Kapitel 5.4 greift nicht, weil seine Voraussetzung fehlt: Die Cuts sind am Vorschlag nicht straff.</p>
+  <div class="box achtung"><div class="box-title">Die Grenze der LP-Cuts</div>
+    <p>Cuts aus der LP-Relaxation sind <strong>nie falsch</strong>, aber oft <strong>zu schwach</strong>. Sie beschreiben ein Problem, in dem Kunden teilbar und Standorte halb offen sein dürfen. Je stärker die Ganzzahligkeit das Ergebnis prägt, desto größer ist die Lücke, die mit ihnen offen bleibt.</p>
+  </div>
+
+  <h3>6.4 Frühere Auswege</h3>
+  <p>Bevor Lagrange-Cuts verbreitet waren, gab es andere Antworten auf dieses Problem. Das <strong>ganzzahlige L-shaped-Verfahren</strong> von Laporte und Louveaux (1993) nutzt aus, dass die erste Stufe binär ist, und baut Cuts, die am Vorschlag straff sind – sie geben aber anderswo oft nur grobe Auskunft und lassen sich nur mit einer bekannten unteren Grenze der Folgekosten bilden. Andere Ansätze verschärfen die LP-Relaxation der Teilprobleme mit Schnittebenen, bis sie der Ganzzahligkeit näher kommt. Die <strong>duale Zerlegung</strong> von Carøe und Schultz (1999) gibt jedem Szenario eine eigene Kopie der ersten Entscheidung und relaxiert die Bedingung, dass alle Kopien übereinstimmen. Die Lagrange-Cuts des nächsten Kapitels sind damit eng verwandt: Chen und Luedtke zeigten 2022, dass alle Lagrange-Cuts zusammen genau die Schranke dieser dualen Zerlegung erreichen.</p>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>LP in der zweiten Stufe:</strong> Schattenpreise → Tangente → gültig und straff, mit einem Solve.</li>
+      <li><strong>MIP in der zweiten Stufe:</strong> kein exakter Dual; Cuts aus der LP-Relaxation sind gültig, aber nicht straff.</li>
+      <li><strong>Beispiel:</strong> Mit LP-Cuts bleibt die Lücke bei 69,5 zu 77,5 stehen.</li>
+      <li><strong>1993:</strong> ganzzahliges L-shaped-Verfahren; <strong>1999:</strong> duale Zerlegung mit Kopien der ersten Stufe.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 7 LAGRANGE ============ -->
+<section class="chapter" id="lagrange">
+  <div class="chap-head"><div class="chap-num">7</div><div>
+    <span class="span-chip">Das Kernstück</span>
+    <h2>Lagrange-Relaxation und Lagrange-Cuts</h2>
+  </div></div>
+  <p class="lead">Ein kleiner Trick macht ganzzahlige Teilprobleme zugänglich: Man gibt dem Teilproblem eine eigene Kopie der ersten Entscheidung und verlangt nicht mehr, dass sie mit dem Original übereinstimmt – sondern stellt Abweichungen in Rechnung. Heraus kommen Cuts, die für jeden Preis gültig sind.</p>
+
+  <h3>7.1 Die Idee der Lagrange-Relaxation</h3>
+  <p>Joseph-Louis Lagrange führte 1788 in seiner <em>Mécanique analytique</em> Multiplikatoren ein, um Nebenbedingungen in der Mechanik zu behandeln. In der ganzzahligen Optimierung wurde daraus ab etwa 1970 ein Standardwerkzeug: Michael Held und Richard Karp nutzten es 1970/71 für das Problem des Handlungsreisenden, Arthur Geoffrion prägte 1974 den Namen <a class="g" href="#g-lagrange-relaxation">Lagrange-Relaxation</a>.</p>
+  <p>Das Prinzip: Eine störende Nebenbedingung wird gestrichen und stattdessen mit einem Preis, dem <a class="g" href="#g-multiplikator">Lagrange-Multiplikator</a>, in die Zielfunktion übernommen. Wer sie verletzt, zahlt; wer sie übererfüllt, wird belohnt. Für jeden beliebigen Preis ist das Ergebnis eine untere Schranke für das ursprüngliche Problem. Die Kunst besteht darin, den Preis so zu wählen, dass diese Schranke möglichst hoch ausfällt.</p>
+
+  <h3>7.2 Der Trick mit der Kopie</h3>
+  <p>Für die Benders-Dekomposition wendet man das auf das Teilproblem an. Zunächst bekommt es eine eigene Kopie <i>z</i> der ersten Entscheidung. Die Kopie darf zwischen 0 und 1 liegen und muss mit <i>x</i> übereinstimmen:</p>
+  <div class="formel"><i>Q</i><sub>s</sub>(<i>x</i>) = min<sub><i>y</i>, <i>z</i></sub> { <i>f</i><sub>s</sub>(<i>y</i>) : (<i>z</i>, <i>y</i>) ∈ <i>G</i><sub>s</sub>, &nbsp;<i>z</i> ∈ [0, 1]<sup><i>n</i></sup>, &nbsp;<i>z</i> = <i>x</i> }</div>
+  <p>An der Wertfunktion ändert das nichts – die Kopie ist ja gleich dem Original. Aber die Verbindung zwischen Master und Teilproblem steckt jetzt in einer einzigen, übersichtlichen Gleichung: <i>z</i> = <i>x</i>. Alle schwierigen Bedingungen, Ganzzahligkeit und Nichtkonvexität, bleiben im Teilproblem. Nun relaxiert man <strong>nur diese eine Gleichung</strong>, mit einem Multiplikator μ = (μ<sub>1</sub>, …, μ<sub>n</sub>):</p>
+  <div class="formel"><i>v</i><sub>s</sub>(μ) = min<sub><i>y</i>, <i>z</i></sub> { <i>f</i><sub>s</sub>(<i>y</i>) − μ<sup>⊤</sup><i>z</i> : (<i>z</i>, <i>y</i>) ∈ <i>G</i><sub>s</sub>, &nbsp;<i>z</i> ∈ [0, 1]<sup><i>n</i></sup> }</div>
+  <p>In Worten: Das Teilproblem darf seine Kopie <i>z</i> jetzt frei wählen, unabhängig davon, was der Master entschieden hat. Dafür wird ihm für jeden Standort der Betrag μ<sub>j</sub> <i>z</i><sub>j</sub> von den Kosten abgezogen. Der Wert <i>v</i><sub>s</sub>(μ) ist das Ergebnis dieses gelockerten Problems. Ihn zu berechnen kostet <strong>einen Solve</strong> – ein MIP von der Größe des ursprünglichen Teilproblems.</p>
+
+  <h3>7.3 Der Lagrange-Cut und warum er immer gilt</h3>
+  <p>Der <a class="g" href="#g-lagrange-cut">Lagrange-Cut</a> zum Multiplikator μ lautet</p>
+  <div class="formel">θ<sub>s</sub> ≥ μ<sup>⊤</sup><i>x</i> + <i>v</i><sub>s</sub>(μ)</div>
+  <p>Er ist eine Ebene mit Steigung μ und Achsenabschnitt <i>v</i><sub>s</sub>(μ). Seine Gültigkeit lässt sich in drei Schritten zeigen. Man nehme irgendeine zulässige Lösung (<i>y</i>, <i>z</i>) des echten Teilproblems bei <i>x</i>; für sie gilt <i>z</i> = <i>x</i>. Dann ist</p>
+  <div class="formel"><i>f</i><sub>s</sub>(<i>y</i>) = <i>f</i><sub>s</sub>(<i>y</i>) − μ<sup>⊤</sup><i>z</i> + μ<sup>⊤</sup><i>x</i> &nbsp;≥&nbsp; <i>v</i><sub>s</sub>(μ) + μ<sup>⊤</sup><i>x</i></div>
+  <p>Die Gleichheit gilt, weil μ<sup>⊤</sup><i>z</i> und μ<sup>⊤</sup><i>x</i> sich wegheben. Die Ungleichung gilt, weil (<i>y</i>, <i>z</i>) auch im gelockerten Problem erlaubt ist und dessen Minimum <i>v</i><sub>s</sub>(μ) nicht unterschreiten kann. Das gilt für jede zulässige Lösung, also auch für die beste: <i>Q</i><sub>s</sub>(<i>x</i>) ≥ μ<sup>⊤</sup><i>x</i> + <i>v</i><sub>s</sub>(μ).</p>
+  <div class="box warum"><div class="box-title">Warum das bemerkenswert ist</div>
+    <p>Der Beweis braucht <strong>keine Konvexität</strong> und <strong>keine Linearität</strong>. Er gilt für jedes Teilproblem, wie verwickelt es auch sei, und für <strong>jeden</strong> Multiplikator μ. Ein schlecht gewählter Multiplikator liefert einen schwachen Cut, aber nie einen falschen. Das unterscheidet Lagrange-Cuts von Tangenten, die nur bei konvexen Funktionen gültig sind.</p>
+  </div>
+
+  <h3>7.4 Eine anschauliche Deutung: Miete für Standorte</h3>
+  <p>Im Beispiel sind die sinnvollen Multiplikatoren negativ. Man kann −μ<sub>j</sub> als <strong>Miete</strong> <i>r</i><sub>j</sub> lesen, die das Teilproblem für die Nutzung von Standort <i>j</i> zahlen muss. Das gelockerte Teilproblem lautet dann: „Nutze, welche Standorte du willst – ganz gleich, ob der Master sie geöffnet hat –, zahle aber für jeden genutzten Standort seine Miete.“ <i>v</i><sub>s</sub>(μ) sind die besten Gesamtkosten aus Zuordnung und Miete.</p>
+  <p>Der Cut θ<sub>s</sub> ≥ <i>v</i><sub>s</sub>(μ) − Σ <i>r</i><sub>j</sub> <i>x</i><sub>j</sub> sagt dann: „Für jeden Standort, den der Master wirklich öffnet, bekommst du die Miete zurück.“ Ist die Miete zu niedrig, nutzt das Teilproblem auch Standorte, die der Master geschlossen hat, und der Cut unterschätzt die Folgekosten. Ist sie hoch genug, verzichtet es darauf, und der Cut trifft.</p>
+
+  <h3>7.5 Ein Lagrange-Cut von Hand</h3>
+  <p>Betrachten wir den Vorschlag „Mitte und Süd offen, Nord zu“, also <span class="ov"><i>x</i></span> = <span class="nw">(0, 1, 1)</span>, im ruhigen Szenario. Die wahren Folgekosten sind 27. Wir verlangen Miete <i>r</i> nur für Nord; Mitte und Süd sind mietfrei (μ<sub>M</sub> = μ<sub>S</sub> = 0). Dann kommen für das gelockerte Teilproblem zwei Pläne in Frage:</p>
+  <div class="tablewrap"><table class="zahlen">
+    <tr><th>Plan</th><th>Zuordnung</th><th>Kosten der Zuordnung</th><th>Miete</th><th>zusammen</th></tr>
+    <tr><td><strong>Nord mitnutzen</strong></td><td>R1, R2 → N; R3 → M; R4 → S</td><td>11</td><td><i>r</i></td><td>11 + <i>r</i></td></tr>
+    <tr><td><strong>ohne Nord</strong></td><td>R1, R2, R3 → S; R4 → M</td><td>27</td><td>0</td><td>27</td></tr>
+  </table></div>
+  <p>Das Teilproblem nimmt den billigeren Plan, also ist <i>v</i>(<i>r</i>) = min(11 + <i>r</i>, 27), und der Cut lautet θ<sub>ruhig</sub> ≥ <i>v</i>(<i>r</i>) − <i>r</i> · <i>x</i><sub>N</sub>. Bei <span class="ov"><i>x</i></span> ist <i>x</i><sub>N</sub> = 0, der Cut hat dort also den Wert <i>v</i>(<i>r</i>).</p>
+  <div class="grid">
+    <div class="card"><div class="yr">Miete 8</div><h4>Gültig, aber nicht straff</h4><p><i>v</i> = min(19, 27) = 19. Cut: θ ≥ 19 − 8 <i>x</i><sub>N</sub>. Bei <span class="nw">(0, 1, 1)</span> ergibt er 19 statt 27. Das Teilproblem nutzt Nord, obwohl der Master es geschlossen hat.</p></div>
+    <div class="card"><div class="yr">Miete 16</div><h4>Gültig und straff</h4><p><i>v</i> = min(27, 27) = 27. Cut: θ ≥ 27 − 16 <i>x</i><sub>N</sub>. Bei <span class="nw">(0, 1, 1)</span> genau 27 – und bei <span class="nw">(1, 1, 1)</span> genau 11. Das ist der Cut aus Kapitel 4.3.</p></div>
+    <div class="card"><div class="yr">Miete 40</div><h4>Straff, aber steil</h4><p><i>v</i> = 27. Cut: θ ≥ 27 − 40 <i>x</i><sub>N</sub>. Bei <span class="nw">(0, 1, 1)</span> wieder 27, aber bei offenem Nord nur −13 – dort völlig nutzlos.</p></div>
+  </div>
+  <p>Dieses kleine Beispiel enthält schon die drei Lehren der nächsten Kapitel: Jede Miete liefert einen gültigen Cut. Erst ab einer bestimmten Miete ist er straff. Und unter den straffen Cuts gibt es bessere und schlechtere.</p>
+
+  <h3>7.6 Straff an binären Punkten</h3>
+  <p>Den besten Multiplikator für einen Punkt <span class="ov"><i>x</i></span> findet man, indem man die Höhe des Cuts an diesem Punkt maximiert:</p>
+  <div class="formel">max<sub>μ</sub> &nbsp; μ<sup>⊤</sup><span class="ov"><i>x</i></span> + <i>v</i><sub>s</sub>(μ)</div>
+  <p>Dieses Problem heißt <a class="g" href="#g-lagrange-dual">Lagrange-Dual</a>. Sein Optimalwert ist genau der Wert der konvexen Hülle der Wertfunktion an der Stelle <span class="ov"><i>x</i></span> – höher kann nach Kapitel 4.5 kein Cut kommen, und mit dem besten Multiplikator wird diese Höhe erreicht. An binären Punkten ist die konvexe Hülle gleich der Wertfunktion. Daraus folgt der zentrale Satz, den Zou, Ahmed und Sun 2019 für ihr Verfahren SDDiP bewiesen haben: <strong>An einem binären Punkt berührt der Lagrange-Cut mit dem besten Multiplikator die Wertfunktion.</strong> Damit ist die Voraussetzung aus Kapitel 5.4 erfüllt, und das Benders-Verfahren endet nach endlich vielen Runden – auch mit ganzzahligen und nichtkonvexen Teilproblemen.</p>
+
+  <h3>7.7 Der verstärkte Benders-Cut</h3>
+  <p>Den besten Multiplikator zu finden ist aufwendig (Kapitel 8). Eine billige Abkürzung liegt nahe: Man nimmt als Multiplikator einfach die Schattenpreise der LP-Relaxation – den klassischen Benders-Cut – und berechnet nur den Achsenabschnitt <i>v</i><sub>s</sub>(μ) neu, mit einem einzigen ganzzahligen Solve. Das Ergebnis heißt <a class="g" href="#g-verstaerkter-cut">verstärkter Benders-Cut</a> (englisch <em>strengthened Benders cut</em>). Er ist gültig, weil jeder Lagrange-Cut gültig ist, und immer mindestens so gut wie der LP-Cut mit derselben Steigung.</p>
+  <p>Oft ist er sogar straff. Im Beispiel liefert die LP-Relaxation am Punkt „Nord, Süd offen“ in der Spitze die Steigung −132 für Mitte und den Achsenabschnitt 72. Der neu berechnete Achsenabschnitt ist 88 – und der verstärkte Cut θ ≥ 88 − 132 <i>x</i><sub>M</sub> ist bei <span class="nw">(1, 0, 1)</span> straff. Am Punkt „Mitte, Süd offen“ im ruhigen Szenario dagegen ist die LP-Steigung für Nord −8: Das ist genau der Fall „Miete 8“ von oben, und der verstärkte Cut bleibt bei 19 statt 27 stehen. Dann muss man suchen.</p>
+
+  <h3>7.8 Ungenau gerechnet ist trotzdem gültig</h3>
+  <p>Der Achsenabschnitt <i>v</i><sub>s</sub>(μ) ist das Minimum eines MIP. Bricht man den Solver nach einem Zeitlimit ab, kennt man dieses Minimum vielleicht nicht genau, wohl aber eine gültige untere Schranke dafür (Kapitel 2.5). Setzt man diese Schranke statt <i>v</i><sub>s</sub>(μ) ein, rutscht der Cut ein Stück nach unten – er bleibt gültig, ist aber nicht mehr straff. Hätte der Solver im Beispiel bei Miete 16 nur die Schranke 24 statt 27 erreicht, lautete der Cut θ ≥ 24 − 16 <i>x</i><sub>N</sub>: korrekt, aber um 3 zu niedrig. Solche <a class="g" href="#g-ungenauer-cut">ungenauen Cuts</a> sind für lineare Teilprobleme seit der Arbeit von Zakeri, Philpott und Ryan (2000) gut untersucht; bei ganzzahligen Teilproblemen sind sie die Regel, sobald Rechenzeit knapp ist. Die Endlichkeitsgarantie aus Kapitel 5.4 gilt für sie aber nicht ohne Weiteres, weil sie die Straffheit voraussetzt.</p>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Kopie</strong> <i>z</i> der ersten Entscheidung im Teilproblem; nur <i>z</i> = <i>x</i> wird mit μ relaxiert.</li>
+      <li><strong>Lagrange-Cut</strong> θ<sub>s</sub> ≥ μ<sup>⊤</sup><i>x</i> + <i>v</i><sub>s</sub>(μ): gültig für <strong>jedes</strong> μ, ohne Konvexität; Achsenabschnitt kostet einen Solve.</li>
+      <li><strong>Bester Multiplikator</strong> → Cut erreicht die konvexe Hülle → an binären Punkten straff (Zou, Ahmed, Sun 2019).</li>
+      <li><strong>Verstärkter Benders-Cut:</strong> LP-Steigung, ganzzahliger Achsenabschnitt – billig, gültig, oft, aber nicht immer straff.</li>
+      <li><strong>Untere Schranke statt exaktem Wert</strong> → Cut bleibt gültig, wird schwächer.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 8 SUCHE ============ -->
+<section class="chapter" id="suche">
+  <div class="chap-head"><div class="chap-num">8</div><div>
+    <span class="span-chip">Der teure Teil</span>
+    <h2>Die Suche nach der besten Steigung</h2>
+  </div></div>
+  <p class="lead">Der beste Multiplikator ist der Gipfel einer Funktion, die man nur Punkt für Punkt abtasten kann – und jeder Punkt kostet einen Solve. Wie man diesen Gipfel findet und warum das die eigentliche Rechenlast ist, zeigt dieses Kapitel.</p>
+
+  <h3>8.1 Das Lagrange-Dual als Berglandschaft</h3>
+  <p>Für einen festen Punkt <span class="ov"><i>x</i></span> betrachtet man die Funktion</p>
+  <div class="formel"><i>L</i>(μ) = μ<sup>⊤</sup><span class="ov"><i>x</i></span> + <i>v</i><sub>s</sub>(μ)</div>
+  <p>Sie gibt an, wie hoch der Cut mit Steigung μ am Punkt <span class="ov"><i>x</i></span> liegt. Weil <i>v</i><sub>s</sub>(μ) ein Minimum über viele Pläne ist und jeder Plan linear von μ abhängt, ist <i>L</i> das Minimum vieler Ebenen: eine <strong>konkave, stückweise lineare</strong> Funktion – ein Dach aus ebenen Flächen mit Kanten, aber ohne Dellen. Konkav heißt: Es gibt keinen falschen Gipfel, jedes lokale Maximum ist auch das globale. Die Schwierigkeit liegt woanders: Man sieht das Dach nicht, man kann nur an einzelnen Stellen messen, und jede Messung ist ein MIP.</p>
+  <p>Im Beispiel aus Kapitel 7.5 ist das Dach eindimensional und lässt sich vollständig zeichnen: <i>L</i>(<i>r</i>) = min(11 + <i>r</i>, 27). Es steigt mit der Miete an und wird ab <i>r</i> = 16 flach. Mit dem Regler lässt sich die Miete verschieben.</p>
+    <figure class="fig" id="abb5"><figcaption class="fig-head"><span>Schaubild 5</span><b>Rechner: ein Lagrange-Cut und seine Miete</b></figcaption><div class="wisch">Zum vollständigen Ansehen seitlich wischen</div><div class="fig-body"><svg id="mi-svg" viewBox="0 0 760 300" role="img" aria-label="Höhe des Lagrange-Cuts am Punkt Mitte und Süd offen in Abhängigkeit von der Miete für Nord: steigt von 11 bis 27 bei Miete 16 und bleibt dann flach" style="min-width:600px"><line x1="70" y1="260.0" x2="700" y2="260.0" class="ln-g"/><text x="62.0" y="264.0" class="tm" text-anchor="end">0</text><line x1="70" y1="214.0" x2="700" y2="214.0" class="ln-g"/><text x="62.0" y="218.0" class="tm" text-anchor="end">10</text><line x1="70" y1="168.0" x2="700" y2="168.0" class="ln-g"/><text x="62.0" y="172.0" class="tm" text-anchor="end">20</text><line x1="70" y1="122.0" x2="700" y2="122.0" class="ln-g"/><text x="62.0" y="126.0" class="tm" text-anchor="end">30</text><line x1="70" y1="76.0" x2="700" y2="76.0" class="ln-g"/><text x="62.0" y="80.0" class="tm" text-anchor="end">40</text><line x1="70" y1="30.0" x2="700" y2="30.0" class="ln-g"/><text x="62.0" y="34.0" class="tm" text-anchor="end">50</text><text x="70.0" y="278.0" class="tm" text-anchor="middle">0</text><text x="196.0" y="278.0" class="tm" text-anchor="middle">8</text><text x="322.0" y="278.0" class="tm" text-anchor="middle">16</text><text x="448.0" y="278.0" class="tm" text-anchor="middle">24</text><text x="574.0" y="278.0" class="tm" text-anchor="middle">32</text><text x="700.0" y="278.0" class="tm" text-anchor="middle">40</text><text x="385" y="294" class="tm" text-anchor="middle">Miete <tspan font-style="italic">r</tspan> für Nord (Multiplikator μ<tspan baseline-shift="sub" font-size="9">N</tspan> = −<tspan font-style="italic">r</tspan>)</text><line x1="70.0" y1="209.4" x2="684.2" y2="30.0" class="ln" style="stroke-dasharray:4 4"/><text x="479.5" y="71.4" class="tm" text-anchor="end">Plan „Nord mitnutzen“: 11 + r</text><line x1="70.0" y1="135.8" x2="700.0" y2="135.8" class="ln" style="stroke-dasharray:4 4"/><text x="511.0" y="151.8" class="tm">Plan „ohne Nord“: 27</text><polyline points="70.0,209.4 322.0,135.8 700.0,135.8" class="ln-a" style="stroke-width:3"/><text x="85.8" y="241.6" class="tca">Höhe des Cuts L(r) = min(11 + r, 27)</text><line id="mi-v" x1="196.0" y1="260" x2="196.0" y2="30" class="ln-r"/><circle id="mi-dot" cx="196.0" cy="172.6" r="6" class="mkr"/></svg></div><div class="rechner" id="mi"><div><div class="zeile"><label for="mi-r">Miete für Nord: <span class="wert" id="mi-rw">8</span></label><input type="range" id="mi-r" min="0" max="40" step="1" value="8"></div><p class="hinweis">Punkt <span class="ov"><i>x</i></span> = (0, 1, 1), Szenario „ruhig“, wahre Folgekosten 27. Mitte und Süd sind mietfrei.</p><div class="ergebnis"><div class="gross" id="mi-cut">θ ≥ 19 − 8 <i>x</i><sub>N</sub></div><p class="hinweis" id="mi-txt"></p></div></div><div><table class="zahlen mi-tab"><thead><tr><th><i>x</i></th><th><i>Q</i><sub>ruhig</sub></th><th>Cut</th><th></th></tr></thead><tbody id="mi-body"></tbody></table></div></div></figure><p class="fig-cap">Die Höhe des Cuts am Punkt (0, 1, 1) wächst mit der Miete, bis das Teilproblem auf Nord verzichtet; ab Miete 16 ist der Cut straff. Die Tabelle prüft den Cut an allen acht Punkten: Er ist bei jeder Miete gültig. <span class="basis">Datenbasis:</span> eigene Berechnung.</p>
+
+  <h3>8.2 Die Richtung bergauf kommt gratis mit</h3>
+  <p>Löst man das gelockerte Teilproblem bei einem Multiplikator μ, erhält man neben dem Wert auch die gewählte Kopie <i>z</i>*(μ). Der Vektor</p>
+  <div class="formel"><i>g</i> = <span class="ov"><i>x</i></span> − <i>z</i>*(μ)</div>
+  <p>zeigt bergauf: Er ist ein <a class="g" href="#g-supergradient">Supergradient</a> der konkaven Funktion <i>L</i>. Die Deutung ist einfach. Nutzt das Teilproblem einen Standort, den der Master geschlossen hat (<i>z</i>*<sub>j</sub> = 1, <span class="ov"><i>x</i></span><sub>j</sub> = 0), ist <i>g</i><sub>j</sub> = −1: Man sollte μ<sub>j</sub> senken, also die Miete erhöhen. Verzichtet es auf einen Standort, den der Master geöffnet hat (<i>z</i>*<sub>j</sub> = 0, <span class="ov"><i>x</i></span><sub>j</sub> = 1), ist <i>g</i><sub>j</sub> = +1: Die Miete ist zu hoch. Stimmen Kopie und Vorschlag überein, ist <i>g</i> = 0 – und man steht auf dem Gipfel.</p>
+
+  <h3>8.3 Durchgerechnet: drei Schritte zum Gipfel</h3>
+  <div class="phase">
+    <div class="phase-head"><h4>Suche am Punkt <span class="nw">(0, 1, 1)</span>, Szenario ruhig</h4><span class="yr">3 Solves</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Schritt 1</span><span><strong>Start bei der LP-Steigung</strong> μ<sub>N</sub> = −8 (Miete 8). Das Teilproblem wählt „Nord mitnutzen“, <i>z</i>* = <span class="nw">(1, 1, 1)</span>. Höhe des Cuts: <i>L</i> = 19. Supergradient: <i>g</i> = <span class="nw">(0, 1, 1)</span> − <span class="nw">(1, 1, 1)</span> = (−1, 0, 0) → Miete erhöhen.</span></li>
+        <li><span class="d">Schritt 2</span><span><strong>Schrittweite 4:</strong> μ<sub>N</sub> = −12 (Miete 12). Das Teilproblem nutzt Nord immer noch, <i>L</i> = 23, <i>g</i> = (−1, 0, 0) → weiter.</span></li>
+        <li><span class="d">Schritt 3</span><span><strong>μ<sub>N</sub> = −16</strong> (Miete 16). Beide Pläne kosten 27; mit „ohne Nord“ ist <i>z</i>* = <span class="nw">(0, 1, 1)</span> und <i>g</i> = 0. Höhe <i>L</i> = 27 = <i>Q</i><sub>ruhig</sub><span class="nw">(0, 1, 1)</span>: Der Cut ist straff, die Suche endet.</span></li>
+      </ul>
+      <p><strong>Ergebnis:</strong> θ<sub>ruhig</sub> ≥ 27 − 16 <i>x</i><sub>N</sub>. Drei Solves für einen Cut – im Beispiel wenig, in der Praxis oft Dutzende.</p>
+    </div>
+  </div>
+
+  <h3>8.4 Drei Suchverfahren</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Verfahren</th><th>Wie es sucht</th><th>Stärken und Schwächen</th></tr>
+    <tr><td><strong>Subgradientenverfahren</strong><br>(Held, Wolfe, Crowder 1974)</td><td>Schritt in Richtung des Supergradienten, Schrittweite nach festem Plan kleiner werdend</td><td>sehr einfach; aber langsam, zickzackt und hat kein klares Abbruchkriterium</td></tr>
+    <tr><td><strong>Schnittebenenverfahren</strong><br>(Kelley 1960)</td><td>sammelt jede Messung als Ebene, die das Dach von oben begrenzt, und springt zum höchsten Punkt dieses Modells</td><td>nutzt alle bisherigen Messungen; springt aber oft weit und unruhig hin und her</td></tr>
+    <tr><td><strong><a class="g" href="#g-buendel">Bündelverfahren</a></strong><br>(Lemaréchal, Wolfe 1975)</td><td>wie Kelley, aber mit einem Strafterm, der in der Nähe des bisher besten Punktes hält</td><td>stabil, mit gutem Abbruchkriterium; Standard in der Praxis</td></tr>
+  </table></div>
+  <p>Alle drei teilen eine Eigenschaft: <strong>Jeder Schritt verlangt einen Solve</strong> des gelockerten Teilproblems. Man kann die Suche jederzeit abbrechen. Weil jeder Multiplikator einen gültigen Cut ergibt, verwendet man dann einfach den besten bisher gefundenen – gültig, nur vielleicht nicht straff. In der Praxis begrenzt man deshalb die Zahl der Schritte und die Rechenzeit je Solve.</p>
+
+  <h3>8.5 Was die Suche teuer macht</h3>
+  <p>Eine überschlägige Rechnung zeigt, wo die Rechenzeit bleibt. Bei 100 Szenarien, 20 Suchschritten je Cut und 50 Benders-Runden sind es 100 · 20 · 50 = <strong>100 000 Solves</strong> von MIP-Teilproblemen. Der Master selbst fällt daneben kaum ins Gewicht. Chen und Luedtke betonen in ihrer Arbeit von 2022 entsprechend, dass das Erzeugen von Lagrange-Cuts rechnerisch anspruchsvoll ist, und schlagen vor, die Suche zu normieren und die Steigungen auf einen kleinen Raum einzuschränken, der von früheren Benders-Cuts aufgespannt wird. So kommen sie mit weit weniger Schritten zu guten Cuts.</p>
+  <div class="box achtung"><div class="box-title">Das Grunddilemma</div>
+    <p>Wer die Suche verkürzt, spart viel Rechenzeit, riskiert aber schwächere Cuts und damit mehr Benders-Runden – und jede zusätzliche Runde kostet wieder Solves in allen Szenarien. Wer gründlich sucht, bekommt starke Cuts, zahlt aber mit vielen Solves je Cut. Wo das Gleichgewicht liegt, hängt vom Problem ab und ist eine der zentralen Fragen der Forschung zu diesem Thema.</p>
+  </div>
+
+  <h3>8.6 Viele Gipfel auf gleicher Höhe</h3>
+  <p>Das Dach im Beispiel ist ab Miete 16 flach: Jede Miete von 16 an aufwärts ist optimal, alle liefern bei <span class="nw">(0, 1, 1)</span> die Höhe 27. Für den Punkt selbst sind sie gleich gut. Für die übrigen Punkte nicht: Bei offenem Nord ergibt Miete 16 den Wert 11, Miete 40 den Wert −13. Das ist typisch. An binären Punkten ist die Menge der besten Multiplikatoren oft groß, manchmal sogar unbegrenzt, und welche man erwischt, hängt vom Suchverfahren und seinem Startpunkt ab. Ein Bündelverfahren, das beim LP-Multiplikator startet, bleibt in dessen Nähe; im Beispiel ist das die flache, nützliche Lösung mit Miete 16. Gezielt steuern lässt sich die Auswahl mit den Ideen aus Kapitel 10.</p>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Lagrange-Dual</strong> <i>L</i>(μ): konkav, stückweise linear; Maximum = Wert der konvexen Hülle am Punkt.</li>
+      <li><strong>Supergradient</strong> <span class="ov"><i>x</i></span> − <i>z</i>*(μ) fällt bei jedem Solve ab und zeigt bergauf.</li>
+      <li><strong>Suchverfahren:</strong> Subgradient (1974), Kelley (1960), Bündel (1975) – jeder Schritt ein Solve.</li>
+      <li><strong>Kosten:</strong> Szenarien × Suchschritte × Runden – die Suche ist der Engpass.</li>
+      <li><strong>Mehrdeutigkeit:</strong> Viele Multiplikatoren sind am Punkt gleich gut, aber anderswo verschieden nützlich.</li>
+    </ul>
+  </div>
+</section>
+<!-- ============ 9 BEISPIEL ============ -->
+<section class="chapter" id="beispiel">
+  <div class="chap-head"><div class="chap-num">9</div><div>
+    <span class="span-chip">Durchgerechnet</span>
+    <h2>Das Beispiel Schritt für Schritt</h2>
+  </div></div>
+  <p class="lead">Jetzt läuft das ganze Verfahren am Beispiel des Cloud-Anbieters durch – Runde für Runde, mit allen Zahlen. Wir tun dabei so, als kennten wir die Tabelle der Wertfunktion nicht: Das Verfahren erfährt nur die Folgekosten der Punkte, die es selbst vorschlägt.</p>
+
+  <h3>9.1 Die Spielregeln</h3>
+  <div class="grid">
+    <div class="card"><h4>Masterproblem</h4><p>min 18 <i>x</i><sub>N</sub> + 24 <i>x</i><sub>M</sub> + 9 <i>x</i><sub>S</sub> + 0,5 θ<sub>ruhig</sub> + 0,5 θ<sub>Spitze</sub>, anfangs nur mit θ ≥ 0. Bei acht Punkten kann man es durch Ausprobieren lösen; ein echter Solver behandelt es als MIP.</p></div>
+    <div class="card"><h4>Teilprobleme</h4><p>Je Szenario die Zuordnung der Regionen bei gegebenem Vorschlag. Ihr Wert ist die Folgekosten-Zahl aus der Tabelle in Kapitel 4.1.</p></div>
+    <div class="card"><h4>Cuts</h4><p>Ein Lagrange-Cut je Szenario und Runde, straff am Vorschlag. Die Suche startet beim LP-Multiplikator und bleibt so nah wie möglich daran.</p></div>
+    <div class="card"><h4>Abbruch</h4><p>Sobald die untere Schranke die beste obere Schranke erreicht. Dann ist die beste gefundene Lösung bewiesen optimal.</p></div>
+  </div>
+
+  <h3>9.2 Runde für Runde</h3>
+  <div class="phase iter">
+    <div class="phase-head"><h4>Runde 1: Der naive Vorschlag</h4><span class="yr">Lücke 125</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Master</span><span>Ohne Cuts glaubt der Master, Folgekosten gäbe es nicht. Am billigsten ist es dann, <strong>nichts zu öffnen</strong>: <i>x</i><sup>1</sup> = <span class="nw">(0, 0, 0)</span>, Wert 0. <strong>Untere Schranke: 0.</strong></span></li>
+        <li><span class="d">Teilprobleme</span><span>Alles geht an die fremde Cloud: <i>Q</i><sub>ruhig</sub> = 90, <i>Q</i><sub>Spitze</sub> = 160. Echte Kosten 0 + 0,5 · 90 + 0,5 · 160 = 125. <strong>Obere Schranke: 125.</strong></span></li>
+        <li><span class="d">Cuts</span><span>Die LP-Multiplikatoren sind hier schon die besten: θ<sub>ruhig</sub> ≥ 90 − 66 <i>x</i><sub>N</sub> − 73 <i>x</i><sub>M</sub> − 69 <i>x</i><sub>S</sub> und θ<sub>Spitze</sub> ≥ 160 − 120 <i>x</i><sub>N</sub> − 132 <i>x</i><sub>M</sub> − 120 <i>x</i><sub>S</sub>.</span></li>
+      </ul>
+      <p><strong>Gelernt:</strong> Wer nichts öffnet, zahlt 90 und 160. Die Cuts sind aber sehr steil: Schon bei einem offenen Standort sagen sie wenig, bei zwei offenen gar nichts mehr (sie werden negativ, und θ ≥ 0 greift).</p>
+    </div>
+  </div>
+  <div class="phase iter">
+    <div class="phase-head"><h4>Runde 2: Die beste Lösung – noch unbewiesen</h4><span class="yr">Lücke 50,5</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Master</span><span>Die Cuts aus Runde 1 machen einzelne Standorte unattraktiv, Paare aber nicht. Am billigsten erscheint <strong>Nord und Süd</strong>: <i>x</i><sup>2</sup> = <span class="nw">(1, 0, 1)</span>, Kosten 27, beide θ gleich 0. <strong>Untere Schranke: 27.</strong></span></li>
+        <li><span class="d">Teilprobleme</span><span><i>Q</i><sub>ruhig</sub> = 13, <i>Q</i><sub>Spitze</sub> = 88. Echte Kosten 27 + 50,5 = 77,5. <strong>Obere Schranke: 77,5</strong> – das ist bereits das Optimum, aber das weiß noch niemand.</span></li>
+        <li><span class="d">Cuts</span><span>θ<sub>ruhig</sub> ≥ 13 − 4 <i>x</i><sub>M</sub>. In der Spitze liefert die LP-Relaxation die Steigung −132 für Mitte, aber nur den Achsenabschnitt 72; ganzzahlig gerechnet ist er 88: θ<sub>Spitze</sub> ≥ 88 − 132 <i>x</i><sub>M</sub>. Beide Cuts sind straff, der zweite ist ein verstärkter Benders-Cut.</span></li>
+      </ul>
+      <p><strong>Gelernt:</strong> Solange Mitte geschlossen bleibt, kosten die Folgekosten mindestens 13 und 88 – egal, was sonst geöffnet ist. Der Spitzen-Cut ist bemerkenswert: Die LP-Welt hält Mitte für sehr wertvoll (Steigung −132), obwohl Mitte in der Spitze gar keine Region aufnehmen kann. Der Cut ist trotzdem gültig, denn bei offenem Mitte sagt er nur −44, also nichts.</p>
+    </div>
+  </div>
+  <div class="phase iter">
+    <div class="phase-head"><h4>Runde 3: Hier muss gesucht werden</h4><span class="yr">Lücke 40</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Master</span><span>Der Master kennt <span class="nw">(1, 0, 1)</span> jetzt genau (77,5) und sucht etwas Billigeres. <strong>Mitte und Süd</strong> erscheint günstig: <i>x</i><sup>3</sup> = <span class="nw">(0, 1, 1)</span>, Kosten 33, θ<sub>ruhig</sub> = 13 − 4 = 9, θ<sub>Spitze</sub> = 0. Wert 33 + 4,5 = 37,5. <strong>Untere Schranke: 37,5.</strong></span></li>
+        <li><span class="d">Teilprobleme</span><span><i>Q</i><sub>ruhig</sub> = 27, <i>Q</i><sub>Spitze</sub> = 124. Echte Kosten 33 + 75,5 = 108,5 – teurer als 77,5. Obere Schranke bleibt 77,5.</span></li>
+        <li><span class="d">Cuts</span><span>Ruhig: Die LP-Steigung −8 für Nord ergibt mit ganzzahligem Achsenabschnitt nur 19 statt 27. Die Suche aus Kapitel 8.3 erhöht die Miete auf 16: θ<sub>ruhig</sub> ≥ 27 − 16 <i>x</i><sub>N</sub>. Spitze: θ<sub>Spitze</sub> ≥ 124 − 120 <i>x</i><sub>N</sub>, schon mit dem LP-Multiplikator straff.</span></li>
+      </ul>
+      <p><strong>Gelernt:</strong> Ohne Nord kosten die Folgekosten mindestens 27 und 124. Diese Runde ist die einzige im Beispiel, in der der verstärkte Benders-Cut nicht genügt und wirklich gesucht werden muss.</p>
+    </div>
+  </div>
+  <div class="phase iter">
+    <div class="phase-head"><h4>Runde 4: Nord und Mitte</h4><span class="yr">Lücke 28</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Master</span><span><i>x</i><sup>4</sup> = <span class="nw">(1, 1, 0)</span>, Kosten 42, θ<sub>ruhig</sub> = 27 − 16 = 11, θ<sub>Spitze</sub> = 124 − 120 = 4. Wert 42 + 7,5 = 49,5. <strong>Untere Schranke: 49,5.</strong></span></li>
+        <li><span class="d">Teilprobleme</span><span><i>Q</i><sub>ruhig</sub> = 35, <i>Q</i><sub>Spitze</sub> = 124. Echte Kosten 42 + 79,5 = 121,5.</span></li>
+        <li><span class="d">Cuts</span><span>θ<sub>ruhig</sub> ≥ 35 − 55 <i>x</i><sub>S</sub> und θ<sub>Spitze</sub> ≥ 124 − 124 <i>x</i><sub>S</sub>.</span></li>
+      </ul>
+      <p><strong>Gelernt:</strong> Ohne Süd kosten die Folgekosten mindestens 35 und 124.</p>
+    </div>
+  </div>
+  <div class="phase iter">
+    <div class="phase-head"><h4>Runde 5: Alles öffnen</h4><span class="yr">Lücke 19</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Master</span><span><i>x</i><sup>5</sup> = <span class="nw">(1, 1, 1)</span>, Kosten 51, θ<sub>ruhig</sub> = 11, θ<sub>Spitze</sub> = 4. Wert 51 + 7,5 = 58,5. <strong>Untere Schranke: 58,5.</strong></span></li>
+        <li><span class="d">Teilprobleme</span><span><i>Q</i><sub>ruhig</sub> = 11, <i>Q</i><sub>Spitze</sub> = 88. Echte Kosten 51 + 49,5 = 100,5.</span></li>
+        <li><span class="d">Cuts</span><span>Flache Cuts, Steigung null: θ<sub>ruhig</sub> ≥ 11 und θ<sub>Spitze</sub> ≥ 88.</span></li>
+      </ul>
+      <p><strong>Gelernt:</strong> Selbst mit allen Standorten kostet die Spitze mindestens 88. Diese Zahl ist der Schlüssel: Sie gilt jetzt für jede Entscheidung.</p>
+    </div>
+  </div>
+  <div class="phase iter">
+    <div class="phase-head"><h4>Runde 6: Der Beweis</h4><span class="yr">Lücke 0</span></div>
+    <div class="phase-body">
+      <ul class="mini-tl">
+        <li><span class="d">Master</span><span>Mit allen zehn Cuts ist der niedrigste Wert 77,5 bei <span class="nw">(1, 0, 1)</span>. <strong>Untere Schranke: 77,5</strong> = obere Schranke.</span></li>
+        <li><span class="d">Ergebnis</span><span><strong>Nord und Süd öffnen</strong>, erwartete Gesamtkosten 77,5 – bewiesen optimal.</span></li>
+      </ul>
+      <p><strong>Gelernt:</strong> Für jede andere Wahl kennt der Master nun eine untere Schranke von mindestens 77,5 – etwa 84,5 für „nur Süd“ (wahr: 94,5) oder 97,5 für „nur Nord“ (wahr: 108). Die genauen Kosten dieser Alternativen musste das Verfahren nie ausrechnen. Für den Beweis genügt es zu wissen, dass sie nicht billiger sein können.</p>
+    </div>
+  </div>
+
+  <h3>9.3 Zum Durchklicken</h3>
+  <p>Das folgende Schaubild zeigt für jede Runde, was der Master über alle acht Entscheidungen weiß. Die Umrisse sind die wahren Gesamtkosten, die gefüllten Säulen die Schätzung des Masters – sie liegt nie darüber. Der Vorschlag der Runde ist hervorgehoben. Über die Schaltflächen lässt sich auch verfolgen, wie dasselbe Verfahren mit LP-Cuts stecken bleibt und wie es mit Cuts nach der Kernpunkt-Regel aus Kapitel 10 schon in Runde 2 endet.</p>
+    <figure class="fig" id="abb6"><figcaption class="fig-head"><span>Schaubild 6</span><b>Das Verfahren zum Durchklicken</b></figcaption><div class="umschalter" id="st-var" role="group" aria-label="Art der Cuts"><button type="button" data-v="near" class="on">Lagrange-Cuts</button><button type="button" data-v="lp">LP-Cuts</button><button type="button" data-v="mw">Lagrange mit Kernpunkt</button></div><div class="st-nav"><button type="button" id="st-prev">Zurück</button><span id="st-runde">Runde 1 von 6</span><button type="button" id="st-next">Weiter</button></div><div class="wisch">Zum vollständigen Ansehen seitlich wischen</div><div class="fig-body"><svg id="st-svg" viewBox="0 0 760 330" role="img" aria-label="Säulendiagramm: Schätzung des Masters und wahre Gesamtkosten für alle acht Entscheidungen in der gewählten Runde" style="min-width:640px"></svg></div><div class="legende"><span><i class="lg-m"></i>Schätzung des Masters</span><span><i style="border-color:var(--muted);background:transparent"></i>wahre Gesamtkosten</span><span><i class="lg-r"></i>Vorschlag der Runde</span><span><i style="height:0;border-width:2px 0 0;border-style:dashed;border-color:var(--accent)"></i>untere Schranke</span><span><i style="height:0;border-width:2px 0 0;border-style:dashed;border-color:var(--c4)"></i>beste obere Schranke</span></div><div class="st-info" id="st-info" aria-live="polite"></div><noscript><p class="hinweis" style="padding:0 14px">Dieses Schaubild braucht JavaScript. Alle Zahlen stehen auch in Kapitel 9.2 und in der Tabelle 9.4.</p></noscript></figure><p class="fig-cap">Für jede der acht Entscheidungen zeigt die gefüllte Säule die Schätzung des Masters in dieser Runde, der Umriss die wahren Gesamtkosten. Der Master wählt die niedrigste gefüllte Säule. Die gestrichelten Linien sind untere und beste obere Schranke. <span class="basis">Datenbasis:</span> eigene Berechnung.</p>
+
+  <h3>9.4 Die Schranken im Überblick</h3>
+  <div class="tablewrap"><table class="zahlen">
+    <tr><th>Runde</th><th>Vorschlag <span class="nw">(N, M, S)</span></th><th>Kosten des Vorschlags</th><th>untere Schranke</th><th>beste obere Schranke</th><th>Lücke</th><th>Solves für die Suche</th></tr>
+    <tr><td><strong>1</strong></td><td><span class="nw">(0, 0, 0)</span></td><td>125</td><td>0</td><td>125</td><td>125</td><td>–</td></tr>
+    <tr><td><strong>2</strong></td><td><span class="nw">(1, 0, 1)</span></td><td>77,5</td><td>27</td><td>77,5</td><td>50,5</td><td>–</td></tr>
+    <tr><td><strong>3</strong></td><td><span class="nw">(0, 1, 1)</span></td><td>108,5</td><td>37,5</td><td>77,5</td><td>40</td><td>2 zusätzlich</td></tr>
+    <tr><td><strong>4</strong></td><td><span class="nw">(1, 1, 0)</span></td><td>121,5</td><td>49,5</td><td>77,5</td><td>28</td><td>–</td></tr>
+    <tr><td><strong>5</strong></td><td><span class="nw">(1, 1, 1)</span></td><td>100,5</td><td>58,5</td><td>77,5</td><td>19</td><td>–</td></tr>
+    <tr class="hl"><td><strong>6</strong></td><td><span class="nw">(1, 0, 1)</span></td><td>77,5</td><td>77,5</td><td>77,5</td><td>0</td><td>Ende</td></tr>
+  </table></div>
+  <p>In jeder Runde mit Cuts kostet jedes Szenario mindestens einen ganzzahligen Solve für die Bewertung und einen für den Achsenabschnitt; „zusätzlich“ zählt nur die Suchschritte darüber hinaus. Das Schaubild vergleicht den Verlauf der unteren Schranke für drei Arten von Cuts.</p>
+    <figure class="fig" id="abb7"><figcaption class="fig-head"><span>Schaubild 7</span><b>Die untere Schranke Runde für Runde</b></figcaption><div class="wisch">Zum vollständigen Ansehen seitlich wischen</div><div class="fig-body"><svg viewBox="0 0 760 320" role="img" aria-label="Verlauf der unteren Schranke über die Runden: LP-Cuts bleiben bei 69,5 stehen, Lagrange-Cuts erreichen 77,5 in Runde 6, Kernpunkt-Cuts in Runde 2; die obere Schranke liegt ab Runde 2 bei 77,5" style="min-width:600px"><line x1="70" y1="280.0" x2="640" y2="280.0" class="ln-g"/><text x="62.0" y="284.0" class="tm" text-anchor="end">0</text><line x1="70" y1="231.9" x2="640" y2="231.9" class="ln-g"/><text x="62.0" y="235.9" class="tm" text-anchor="end">25</text><line x1="70" y1="183.8" x2="640" y2="183.8" class="ln-g"/><text x="62.0" y="187.8" class="tm" text-anchor="end">50</text><line x1="70" y1="135.8" x2="640" y2="135.8" class="ln-g"/><text x="62.0" y="139.8" class="tm" text-anchor="end">75</text><line x1="70" y1="87.7" x2="640" y2="87.7" class="ln-g"/><text x="62.0" y="91.7" class="tm" text-anchor="end">100</text><line x1="70" y1="39.6" x2="640" y2="39.6" class="ln-g"/><text x="62.0" y="43.6" class="tm" text-anchor="end">125</text><text x="70.0" y="298.0" class="tm" text-anchor="middle">1</text><text x="151.4" y="298.0" class="tm" text-anchor="middle">2</text><text x="232.9" y="298.0" class="tm" text-anchor="middle">3</text><text x="314.3" y="298.0" class="tm" text-anchor="middle">4</text><text x="395.7" y="298.0" class="tm" text-anchor="middle">5</text><text x="477.1" y="298.0" class="tm" text-anchor="middle">6</text><text x="558.6" y="298.0" class="tm" text-anchor="middle">7</text><text x="640.0" y="298.0" class="tm" text-anchor="middle">8</text><text x="355.0" y="314.0" class="tm" text-anchor="middle">Runde</text><polyline points="70.0,39.6 151.4,131.0 232.9,131.0 314.3,131.0 395.7,131.0 477.1,131.0 558.6,131.0 640.0,131.0" class="ln" style="stroke-dasharray:6 4;stroke-width:1.6"/><text x="648.0" y="125.0" class="tm">obere Schranke 77,5</text><polyline points="70.0,280.0 151.4,228.1 232.9,207.9 314.3,190.6 395.7,173.3 477.1,164.6 558.6,146.3 640.0,146.3" fill="none" stroke="var(--c4)" stroke-width="2.4"/><circle cx="70.0" cy="280.0" r="3.5" fill="var(--c4)"/><circle cx="151.4" cy="228.1" r="3.5" fill="var(--c4)"/><circle cx="232.9" cy="207.9" r="3.5" fill="var(--c4)"/><circle cx="314.3" cy="190.6" r="3.5" fill="var(--c4)"/><circle cx="395.7" cy="173.3" r="3.5" fill="var(--c4)"/><circle cx="477.1" cy="164.6" r="3.5" fill="var(--c4)"/><circle cx="558.6" cy="146.3" r="3.5" fill="var(--c4)"/><circle cx="640.0" cy="146.3" r="3.5" fill="var(--c4)"/><polyline points="70.0,280.0 151.4,228.1 232.9,207.9 314.3,184.8 395.7,167.5 477.1,131.0" fill="none" stroke="var(--accent)" stroke-width="2.4"/><circle cx="70.0" cy="280.0" r="3.5" fill="var(--accent)"/><circle cx="151.4" cy="228.1" r="3.5" fill="var(--accent)"/><circle cx="232.9" cy="207.9" r="3.5" fill="var(--accent)"/><circle cx="314.3" cy="184.8" r="3.5" fill="var(--accent)"/><circle cx="395.7" cy="167.5" r="3.5" fill="var(--accent)"/><circle cx="477.1" cy="131.0" r="3.5" fill="var(--accent)"/><polyline points="70.0,280.0 151.4,131.0" fill="none" stroke="var(--c5)" stroke-width="2.4"/><circle cx="70.0" cy="280.0" r="3.5" fill="var(--c5)"/><circle cx="151.4" cy="131.0" r="3.5" fill="var(--c5)"/><text x="648.0" y="160.3" class="ts" style="fill:var(--c4);font-weight:700">LP-Cuts: 69,5</text><text x="467.1" y="123.0" class="ts" text-anchor="end" style="fill:var(--accent);font-weight:700">Lagrange: Runde 6</text><text x="159.4" y="121.0" class="ts" style="fill:var(--c5);font-weight:700">Kernpunkt: Runde 2</text></svg></div></figure><p class="fig-cap">Alle drei Verfahren finden die beste Lösung in Runde 2 (obere Schranke 77,5). Beweisen können sie es nur mit straffen Cuts: Lagrange-Cuts nach sechs Runden, Kernpunkt-Cuts nach zwei; LP-Cuts nie. <span class="basis">Datenbasis:</span> eigene Berechnung.</p>
+
+  <div class="box kurz"><div class="box-title">Was das Beispiel zeigt</div>
+    <ol>
+      <li><strong>Finden ist leicht, Beweisen ist schwer.</strong> Die beste Lösung stand nach Runde 2 fest; vier weitere Runden dienten nur dem Beweis.</li>
+      <li><strong>LP-Cuts reichen nicht.</strong> Sie bleiben bei einer Lücke von 8 stehen, weil sie die Ganzzahligkeit der Regionen nicht kennen.</li>
+      <li><strong>Lagrange-Cuts schließen die Lücke.</strong> Meist genügt schon der verstärkte Benders-Cut; nur einmal musste gesucht werden.</li>
+      <li><strong>Die Wahl unter gleich guten Cuts zählt.</strong> Steile Cuts wie in Runde 1 helfen nur am eigenen Punkt; gut gewählte Cuts helfen überall (Kapitel 10).</li>
+    </ol>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Runde 2:</strong> Die optimale Lösung (Nord und Süd, 77,5) wird gefunden.</li>
+      <li><strong>Runde 3:</strong> Einziger Fall, in dem der Multiplikator gesucht werden muss (Miete 8 → 16).</li>
+      <li><strong>Runde 6:</strong> Untere gleich obere Schranke → bewiesen optimal.</li>
+      <li><strong>Vergleich:</strong> LP-Cuts bleiben bei 69,5 stecken; Kernpunkt-Cuts beweisen das Optimum schon in Runde 2.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 10 KERNPUNKT ============ -->
+<section class="chapter" id="kernpunkt">
+  <div class="chap-head"><div class="chap-num">10</div><div>
+    <span class="span-chip">Beschleunigung</span>
+    <h2>Welcher Cut hilft am meisten?</h2>
+  </div></div>
+  <p class="lead">Am selben Punkt können viele Cuts gleich straff sein, aber anderswo sehr verschieden viel verraten. Seit 1981 gibt es eine einfache Regel, um unter ihnen zu wählen: Man schaut nicht nur auf den aktuellen Punkt, sondern auf einen Punkt in der Mitte.</p>
+
+  <h3>10.1 Starke und schwache Cuts</h3>
+  <p>Ein Cut <strong>dominiert</strong> einen anderen, wenn er überall mindestens so hoch liegt und irgendwo höher. Ein Cut, der von keinem gültigen Cut dominiert wird, heißt <a class="g" href="#g-pareto">Pareto-optimal</a>. Thomas Magnanti und Richard Wong beobachteten 1981, dass die dualen Lösungen der Teilprobleme oft nicht eindeutig sind und dass die Wahl unter ihnen die Zahl der Benders-Runden stark beeinflusst. Bei Lagrange-Cuts tritt dieselbe Mehrdeutigkeit auf, wie Kapitel 8.6 gezeigt hat.</p>
+
+  <h3>10.2 Die Kernpunkt-Regel von Magnanti und Wong</h3>
+  <p>Ein <a class="g" href="#g-kernpunkt">Kernpunkt</a> ist ein Punkt im Inneren der konvexen Hülle aller erlaubten ersten Entscheidungen – bei drei binären Variablen ohne weitere Einschränkung etwa die Würfelmitte <span class="nw">(½, ½, ½)</span>. Die Regel lautet: <strong>Unter allen Cuts, die am aktuellen Vorschlag straff sind, wähle den, der am Kernpunkt am höchsten liegt.</strong> Magnanti und Wong zeigten, dass so gewählte Cuts Pareto-optimal sind. Der Preis ist ein zusätzliches Hilfsproblem je Cut.</p>
+  <p>Anschaulich: Ein Cut, der in der Mitte hoch liegt, ist eine flache, breit tragende Ebene statt einer steilen Rampe. Er ist am aktuellen Punkt genauso straff, sagt aber auch über die Nachbarschaft etwas Brauchbares.</p>
+
+  <h3>10.3 Am Beispiel: zwei Runden statt sechs</h3>
+  <p>In Runde 1 liegt der Vorschlag bei <span class="nw">(0, 0, 0)</span>. Die Suche nahe am LP-Multiplikator lieferte die steilen Mieten (66, 73, 69). Wählt man stattdessen unter allen straffen Cuts den, der bei <span class="nw">(½, ½, ½)</span> am höchsten liegt, ergeben sich die Mieten (34, 21, 43) im ruhigen Szenario und (36, 0, 36) in der Spitze. Die Tabelle vergleicht beide Cuts an allen acht Punkten mit der wahren Wertfunktion.</p>
+  <div class="tablewrap"><table class="zahlen">
+    <tr><th><i>x</i> = <span class="nw">(N, M, S)</span></th><th><i>Q</i><sub>ruhig</sub></th><th>steiler Cut</th><th>Kernpunkt-Cut</th><th><i>Q</i><sub>Spitze</sub></th><th>steiler Cut</th><th>Kernpunkt-Cut</th></tr>
+    <tr><td><strong><span class="nw">(0, 0, 0)</span></strong></td><td>90</td><td>90</td><td>90</td><td>160</td><td>160</td><td>160</td></tr>
+    <tr><td><strong><span class="nw">(0, 0, 1)</span></strong></td><td>47</td><td>21</td><td>47</td><td>124</td><td>40</td><td>124</td></tr>
+    <tr><td><strong><span class="nw">(0, 1, 0)</span></strong></td><td>69</td><td>17</td><td>69</td><td>160</td><td>28</td><td>160</td></tr>
+    <tr><td><strong><span class="nw">(0, 1, 1)</span></strong></td><td>27</td><td>−52</td><td>26</td><td>124</td><td>−92</td><td>124</td></tr>
+    <tr><td><strong><span class="nw">(1, 0, 0)</span></strong></td><td>56</td><td>24</td><td>56</td><td>124</td><td>40</td><td>124</td></tr>
+    <tr class="hl"><td><strong><span class="nw">(1, 0, 1)</span></strong></td><td>13</td><td>−45</td><td>13</td><td>88</td><td>−80</td><td>88</td></tr>
+    <tr><td><strong><span class="nw">(1, 1, 0)</span></strong></td><td>35</td><td>−49</td><td>35</td><td>124</td><td>−92</td><td>124</td></tr>
+    <tr><td><strong><span class="nw">(1, 1, 1)</span></strong></td><td>11</td><td>−118</td><td>−8</td><td>88</td><td>−212</td><td>88</td></tr>
+  </table></div>
+  <p>Der Unterschied ist verblüffend. Der steile Cut ist nur bei <span class="nw">(0, 0, 0)</span> straff. Der Kernpunkt-Cut ist im ruhigen Szenario an sechs von acht Punkten straff und in der Spitze sogar an allen acht. Insbesondere kennt der Master nach nur einer Runde die Folgekosten des Optimums <span class="nw">(1, 0, 1)</span> exakt: 13 und 88. In Runde 2 schlägt er <span class="nw">(1, 0, 1)</span> vor, untere und obere Schranke treffen sich bei 77,5, und das Verfahren endet.</p>
+  <p>In der Sprache der Mieten hat die Kernpunkt-Regel etwas sehr Natürliches gewählt: Jede Miete ist genau so hoch wie die Ersparnis, die der Standort allein bringt. Nord allein senkt die ruhigen Folgekosten von 90 auf 56, also um 34; Mitte um 21; Süd um 43. In der Spitze sparen Nord und Süd je 36, Mitte nichts.</p>
+  <div class="box achtung"><div class="box-title">Kein Allheilmittel</div>
+    <p>Im Beispiel ist die Wertfunktion fast „trennbar“: Die Ersparnisse der Standorte addieren sich weitgehend. Darum trägt ein einziger flacher Cut so weit. Bei stark verflochtenen Problemen ist der Gewinn kleiner, und das Hilfsproblem kostet zusätzliche Rechenzeit. In vielen Studien überwiegt der Nutzen dennoch deutlich.</p>
+  </div>
+
+  <h3>10.4 Kernpunkte in der Praxis</h3>
+  <p>Einen Punkt im Inneren der konvexen Hülle zu kennen, ist bei komplizierten erlaubten Mengen <i>X</i> selbst nicht leicht. Nikolaos Papadakos schlug 2008 zwei praktische Verbesserungen vor: eine unabhängige Fassung des Verfahrens von Magnanti und Wong, die nicht mehr an die Lösung des Teilproblems am aktuellen Vorschlag gebunden ist, und den Nachweis, dass für mehrere Anwendungen statt eines echten Kernpunkts auch andere Punkte genügen. Verbreitet ist seither, den Bezugspunkt im Lauf des Verfahrens aus den bisherigen Vorschlägen des Masters fortzuschreiben – etwa als Mischung aus altem Bezugspunkt und neuem Vorschlag oder als laufenden Mittelwert aller Vorschläge.</p>
+
+  <h3>10.5 Übertragen auf Lagrange-Cuts</h3>
+  <p>Bei Lagrange-Cuts lässt sich der Gedanke direkt übertragen. Statt die Höhe des Cuts am Vorschlag <i>x</i><sup>k</sup> zu maximieren, maximiert man sie an einem anderen Punkt <i>x̂</i>, der auch gebrochen sein darf:</p>
+  <div class="formel">max<sub>μ</sub> &nbsp; μ<sup>⊤</sup><i>x̂</i> + <i>v</i><sub>s</sub>(μ)</div>
+  <p>Der so gewonnene Cut berührt die konvexe Hülle der Wertfunktion an der Stelle <i>x̂</i> und trägt deshalb in deren Umgebung weit. Er muss aber am aktuellen Vorschlag nicht straff sein. Weil die Endlichkeitsgarantie aus Kapitel 5.4 straffe Cuts an den Vorschlägen verlangt, ergänzt man in solchen Verfahren bei Bedarf einen zweiten, am Vorschlag straffen Cut. In Fachartikeln wird der Punkt <i>x̂</i>, an dem das Lagrange-Dual maximiert wird, unterschiedlich benannt – als Kernpunkt, Referenzpunkt oder, in manchen Arbeiten, als Anker.</p>
+
+  <h3>10.6 Weitere Beschleuniger</h3>
+  <div class="grid">
+    <div class="card"><h4>Multi-Cut</h4><p>Ein Cut je Szenario statt eines gemittelten Cuts: mehr Information je Runde, dafür ein größerer Master (Birge und Louveaux 1988).</p></div>
+    <div class="card"><h4>Stabilisierung</h4><p>Vorschläge des Masters nicht wild springen lassen, sondern zwischen einem stabilen Punkt und dem neuen Vorschlag vermitteln, etwa mit der „In-out“-Methode von Ben-Ameur und Neto (2007).</p></div>
+    <div class="card"><h4>Parallelrechnen</h4><p>Die Teilprobleme der Szenarien sind unabhängig und lassen sich gleichzeitig auf vielen Prozessoren lösen.</p></div>
+    <div class="card"><h4>Cut-Verwaltung</h4><p>Lange nicht mehr bindende Cuts entfernen, damit der Master klein bleibt; bei Bedarf wieder aufnehmen.</p></div>
+    <div class="card"><h4>Warmstart</h4><p>Ergebnisse früherer Solves – Lösungen, Multiplikatoren, Schranken – als Startpunkt für die nächsten nutzen.</p></div>
+    <div class="card"><h4>Branch-and-Benders-Cut</h4><p>Den Master nicht in jeder Runde neu lösen, sondern Cuts während eines einzigen Branch-and-Bound-Laufs als nachgereichte Bedingungen einfügen.</p></div>
+  </div>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Pareto-optimaler Cut:</strong> von keinem gültigen Cut dominiert.</li>
+      <li><strong>1981, Magnanti und Wong:</strong> unter den straffen Cuts den wählen, der am Kernpunkt am höchsten liegt.</li>
+      <li><strong>2008, Papadakos:</strong> Kernpunkte praktikabel bestimmen und fortschreiben, etwa aus bisherigen Vorschlägen.</li>
+      <li><strong>Beispiel:</strong> Kernpunkt-Cuts beweisen das Optimum in 2 statt 6 Runden.</li>
+      <li><strong>Lagrange-Cuts:</strong> Dual an einem anderen Punkt maximieren; bei Bedarf zusätzlich ein straffer Cut am Vorschlag.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 11 GRENZEN ============ -->
+<section class="chapter" id="grenzen">
+  <div class="chap-head"><div class="chap-num">11</div><div>
+    <span class="span-chip">Ausblick</span>
+    <h2>Größere Probleme und offene Fragen</h2>
+  </div></div>
+  <p class="lead">Das kleine Beispiel löst jeder Solver in Sekundenbruchteilen auch ohne Zerlegung. Ihren Wert zeigen Benders-Verfahren mit Lagrange-Cuts erst bei Problemen, an denen die extensive Form scheitert: bei vielen Szenarien, vielen Stufen und nichtkonvexen Zusammenhängen.</p>
+
+  <h3>11.1 Mehrstufige Probleme</h3>
+  <p>Viele Planungen laufen über mehrere Perioden: Ein Wasserkraftbetreiber entscheidet jede Woche neu, wie viel Wasser er abläuft, und erfährt danach den Zufluss der nächsten Woche. Jede Stufe ist dann Teilproblem der vorigen und Master der nächsten. Die Zahl der Pfade durch den Szenariobaum wächst exponentiell mit der Zahl der Stufen; schon zehn Stufen mit je zehn Möglichkeiten ergeben zehn Milliarden Pfade.</p>
+  <div class="grid">
+    <div class="card"><div class="yr">1985</div><h4>Verschachtelte Zerlegung</h4><p>John Birge überträgt Benders auf mehrstufige stochastische LP: Cuts wandern von hinten nach vorn durch den Szenariobaum.</p></div>
+    <div class="card"><div class="yr">1991</div><h4>SDDP</h4><p>Mario Pereira und Leontina Pinto entwickeln für die brasilianische Wasserkraftplanung die <a class="g" href="#g-sddp">stochastische duale dynamische Programmierung</a>: Statt des ganzen Baums werden Stichproben von Pfaden durchlaufen, und Cuts werden zwischen gleichartigen Knoten geteilt.</p></div>
+    <div class="card"><div class="yr">2019</div><h4>SDDiP</h4><p>Jikai Zou, Shabbir Ahmed und Andy Sun erweitern SDDP auf ganzzahlige Probleme mit binären Zustandsvariablen und Lagrange-Cuts. Das Erzeugen der Lagrange-Cuts ist in diesem Verfahren der Hauptaufwand.</p></div>
+  </div>
+
+  <h3>11.2 Nichtkonvexe Probleme</h3>
+  <p>Noch schwieriger wird es, wenn die Teilprobleme nichtlinear und nichtkonvex sind, etwa durch physikalische Zusammenhänge in Strom- und Gasnetzen. Christian Füllner und Steffen Rebennack stellten 2022 die nichtkonvexe verschachtelte Benders-Zerlegung vor. Sie ersetzt nichtlineare Terme durch stückweise lineare Näherungen, die schrittweise verfeinert werden, stellt die Zustandsvariablen binär dar und erzeugt Lagrange-Cuts; eine Regularisierung stabilisiert das Verfahren. Es erreicht in endlich vielen Schritten eine Lösung, die bis auf eine vorgegebene Toleranz optimal ist. Auch hier ist das Erzeugen der Lagrange-Cuts der Engpass.</p>
+
+  <h3>11.3 Wie Verfahren verglichen werden</h3>
+  <p>Für die Forschung gibt es öffentliche Testsammlungen, etwa die SIPLIB mit Problemen der stochastischen ganzzahligen Optimierung. Darin sind die <strong>SSLP</strong>-Probleme nach Ntaimo und Sen (2005) enthalten: Server werden an möglichen Standorten aufgestellt (erste Stufe, binär), danach werden Kunden zugeordnet (zweite Stufe, gemischt-binär). Die Namen folgen dem Muster SSLP_<i>m</i>.<i>n</i>.<i>s</i> mit <i>m</i> Standorten, <i>n</i> Kunden und <i>s</i> Szenarien. Das Beispiel dieses Dossiers ist eine Miniatur solcher Probleme.</p>
+  <p>Typische Kennzahlen in Fachartikeln sind:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Kennzahl</th><th>Was sie misst</th></tr>
+    <tr><td><strong>Lücke über die Zeit</strong></td><td>wie schnell sich die Schranken annähern; oft auf logarithmischer Achse, weil sie über Größenordnungen fällt</td></tr>
+    <tr><td><strong>Relative Lücke</strong></td><td>Differenz der Schranken geteilt durch eine Bezugsgröße, etwa die obere Schranke oder die Größe der Kosten im Optimum; Werte über 100 Prozent sind dann möglich</td></tr>
+    <tr><td><strong>Zahl der Runden und Solves</strong></td><td>Iterationen des Benders-Verfahrens und Aufrufe des Solvers für Teilprobleme</td></tr>
+    <tr><td><strong>Anteil gelöster Instanzen</strong></td><td>bei wie vielen Testproblemen die Lücke innerhalb der Zeitgrenze geschlossen wurde</td></tr>
+    <tr><td><strong>Median über Instanzen</strong></td><td>der mittlere Wert, robust gegen einzelne Ausreißer</td></tr>
+    <tr><td><strong>Vergleich mit der extensiven Form</strong></td><td>die Rechenzeit eines kommerziellen Solvers für das ungeteilte Problem – der Maßstab, den eine Zerlegung schlagen muss</td></tr>
+  </table></div>
+
+  <h3>11.4 Offene Fragen der Forschung</h3>
+  <div class="grid">
+    <div class="card"><h4>Kosten der Cuts</h4><p>Wie kommt man mit wenigen Solves zu Lagrange-Cuts, die fast so gut sind wie die mit dem besten Multiplikator?</p></div>
+    <div class="card"><h4>Wahl der Multiplikatoren</h4><p>Welche der vielen gleich guten Steigungen hilft dem Master am meisten – und wie normiert man die Suche?</p></div>
+    <div class="card"><h4>Ungenaue Solves</h4><p>Wie viel Ungenauigkeit in den Teilproblemen verträgt das Verfahren, ohne die Endlichkeit zu verlieren?</p></div>
+    <div class="card"><h4>Wiederverwendung</h4><p>Szenarien und Runden ähneln sich oft. Wie nutzt man frühere Rechnungen, etwa durch Warmstarts oder gemeinsame Strukturen?</p></div>
+  </div>
+  <p>Ein jüngerer Forschungszweig verbindet Zerlegungsverfahren mit maschinellem Lernen, etwa um Dualwerte, gute Startpunkte oder ganze Cuts vorherzusagen und so Rechenzeit zu sparen. Wie gut solche Ansätze funktionieren und welche Garantien dabei erhalten bleiben, ist Gegenstand laufender Forschung.</p>
+
+  <div class="box merke"><div class="box-title">Merke</div>
+    <ul>
+      <li><strong>Zerlegung lohnt sich</strong> bei vielen Szenarien, vielen Stufen und nichtkonvexen Teilproblemen.</li>
+      <li><strong>1985 / 1991 / 2019:</strong> verschachtelte Zerlegung, SDDP, SDDiP mit Lagrange-Cuts.</li>
+      <li><strong>2022:</strong> nichtkonvexe verschachtelte Benders-Zerlegung (Füllner, Rebennack).</li>
+      <li><strong>SSLP:</strong> Standard-Testprobleme der Standortplanung, benannt nach Standorten, Kunden, Szenarien.</li>
+      <li><strong>Hauptfrage:</strong> gute Lagrange-Cuts mit wenig Rechenaufwand.</li>
+    </ul>
+  </div>
+</section>
+<!-- ============ 12 LESEHILFE ============ -->
+<section class="chapter" id="lesehilfe">
+  <div class="chap-head"><div class="chap-num">12</div><div>
+    <span class="span-chip">Zum Nachschlagen</span>
+    <h2>Lesehilfe für Fachartikel</h2>
+  </div></div>
+  <p class="lead">Fachartikel zu Benders-Verfahren und Lagrange-Cuts verwenden eine dichte, weitgehend einheitliche Schreibweise. Die beiden Tabellen übersetzen Symbole und typische Wendungen und verweisen auf das Kapitel, das sie erklärt.</p>
+
+  <h3>12.1 Symbole</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Symbol</th><th>Bedeutung</th><th>Kapitel</th></tr>
+    <tr><td><strong><i>x</i>, <i>X</i> ⊆ {0, 1}<sup><i>n</i></sup></strong></td><td>erste Entscheidung und Menge der erlaubten ersten Entscheidungen, binär</td><td>3.3</td></tr>
+    <tr><td><strong><i>c</i></strong></td><td>Kosten der ersten Entscheidung, je Komponente</td><td>3.3</td></tr>
+    <tr><td><strong><i>s</i>, <i>p</i><sub>s</sub></strong></td><td>Szenario und seine Wahrscheinlichkeit</td><td>3.2</td></tr>
+    <tr><td><strong><i>y</i>, <i>f</i><sub>s</sub>(<i>y</i>), <i>G</i><sub>s</sub></strong></td><td>Entscheidungen, Kosten und erlaubte Menge der zweiten Stufe im Szenario <i>s</i></td><td>3.3</td></tr>
+    <tr><td><strong><i>Q</i><sub>s</sub>(<i>x</i>)</strong></td><td>Wertfunktion: beste Folgekosten bei erster Entscheidung <i>x</i></td><td>4.1</td></tr>
+    <tr><td><strong>θ<sub>s</sub></strong></td><td>Schätzvariable des Masters für <i>Q</i><sub>s</sub></td><td>5.1</td></tr>
+    <tr><td><strong>θ<sub>s</sub> ≥ <i>a</i><sup>⊤</sup><i>x</i> + <i>b</i></strong></td><td>Cut mit Steigung <i>a</i> und Achsenabschnitt <i>b</i></td><td>4.3</td></tr>
+    <tr><td><strong><i>z</i></strong></td><td>Kopie der ersten Entscheidung im Teilproblem</td><td>7.2</td></tr>
+    <tr><td><strong>μ</strong></td><td>Lagrange-Multiplikator der Gleichung <i>z</i> = <i>x</i>; zugleich die Steigung des Lagrange-Cuts</td><td>7.2</td></tr>
+    <tr><td><strong><i>v</i><sub>s</sub>(μ)</strong></td><td>Wert des gelockerten Teilproblems; Achsenabschnitt des Lagrange-Cuts</td><td>7.2</td></tr>
+    <tr><td><strong><i>z</i>*(μ)</strong></td><td>Kopie in der Lösung des gelockerten Teilproblems</td><td>8.2</td></tr>
+    <tr><td><strong><span class="ov"><i>x</i></span> − <i>z</i>*(μ)</strong></td><td>Supergradient: Richtung, in der das Lagrange-Dual steigt</td><td>8.2</td></tr>
+    <tr><td><strong><i>x</i><sup>k</sup></strong></td><td>Vorschlag des Masters in Runde <i>k</i></td><td>5.2</td></tr>
+    <tr><td><strong><i>x</i>*</strong></td><td>optimale erste Entscheidung</td><td>3.4</td></tr>
+    <tr><td><strong><span class="ov"><i>x</i></span>, <i>x̂</i></strong></td><td>ein fester Punkt, an dem ein Cut berühren oder möglichst hoch liegen soll</td><td>7.6, 10.5</td></tr>
+    <tr><td><strong>LB, UB</strong></td><td>untere und obere Schranke (englisch <em>lower</em> und <em>upper bound</em>)</td><td>2.4, 5.3</td></tr>
+  </table></div>
+
+  <h3>12.2 Typische Wendungen</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Wendung</th><th>Gemeint ist</th><th>Kapitel</th></tr>
+    <tr><td><strong>„Der Cut ist gültig“</strong></td><td>Er liegt nirgends über der Wertfunktion; die untere Schranke bleibt korrekt.</td><td>4.3</td></tr>
+    <tr><td><strong>„Der Cut ist straff an <span class="ov"><i>x</i></span>“</strong></td><td>Er berührt die Wertfunktion dort; die Schätzung ist an dieser Stelle exakt.</td><td>4.3</td></tr>
+    <tr><td><strong>„Die Lücke ist ein Zertifikat“</strong></td><td>Die Differenz der Schranken beweist, wie weit die beste Lösung höchstens vom Optimum entfernt ist.</td><td>2.4</td></tr>
+    <tr><td><strong>„Extensive Form“</strong></td><td>das ganze zweistufige Problem als ein einziges MIP; Maßstab für Rechenzeiten</td><td>3.5</td></tr>
+    <tr><td><strong>„Ein Solve“</strong></td><td>ein Aufruf des Solvers für ein Teilproblem</td><td>2.5</td></tr>
+    <tr><td><strong>„Bester Multiplikator“</strong></td><td>ein μ, das das Lagrange-Dual am betrachteten Punkt maximiert</td><td>7.6</td></tr>
+    <tr><td><strong>„Verstärkter Benders-Cut“</strong></td><td>Steigung aus der LP-Relaxation, Achsenabschnitt ganzzahlig berechnet</td><td>7.7</td></tr>
+    <tr><td><strong>„Ungenauer Cut“</strong></td><td>Cut mit einem Achsenabschnitt, der nur eine untere Schranke ist, etwa nach einem Zeitlimit; gültig, aber nicht straff</td><td>7.8</td></tr>
+    <tr><td><strong>„Bündelverfahren schöpft seine Solves aus“</strong></td><td>Die Suche nach dem Multiplikator endet an der vorgegebenen Höchstzahl von Schritten statt am Abbruchkriterium.</td><td>8.4</td></tr>
+    <tr><td><strong>„Der Cut schneidet <i>x</i><sup>k</sup> ab“</strong></td><td>Mit dem Cut steigt die Schätzung des Masters am Punkt <i>x</i><sup>k</sup>; der alte, zu optimistische Wert ist ausgeschlossen.</td><td>5.4</td></tr>
+    <tr><td><strong>„Kernpunkt-Regel“</strong></td><td>unter gleich straffen Cuts den wählen, der an einem inneren Punkt am höchsten liegt (Magnanti–Wong, Papadakos)</td><td>10.2, 10.4</td></tr>
+    <tr><td><strong>„Gebrochener Punkt“</strong></td><td>ein Punkt mit Komponenten zwischen 0 und 1, etwa die Würfelmitte; kein umsetzbarer Vorschlag, aber als Bezugspunkt für Cuts nützlich</td><td>10.5</td></tr>
+    <tr><td><strong>„Konvergiert“</strong></td><td>Das Verfahren schließt die Lücke (bis auf eine Toleranz) innerhalb der Grenzen an Zeit oder Runden.</td><td>5.4</td></tr>
+    <tr><td><strong>„Instanz“</strong></td><td>ein konkretes Testproblem mit festen Daten</td><td>11.3</td></tr>
+    <tr><td><strong>„Median über Instanzen“</strong></td><td>mittlerer Wert über alle Testprobleme, unempfindlich gegen Ausreißer</td><td>11.3</td></tr>
+  </table></div>
+</section>
+
+<!-- ============ 13 ZEITLEISTE ============ -->
+<section class="chapter" id="zeitleiste">
+  <div class="chap-head"><div class="chap-num">13</div><div>
+    <span class="span-chip">Zum Nachschlagen</span>
+    <h2>Zeitleiste 1788–2022</h2>
+  </div></div>
+  <p class="lead">Von Lagranges Multiplikatoren bis zu den Lagrange-Cuts der Gegenwart: die wichtigsten Schritte der Methoden, die in diesem Dossier vorkommen.</p>
+  <div class="filters" id="filters">
+    <button class="on" data-f="alle">Alle</button>
+    <button data-f="reich">Grundlagen</button>
+    <button data-f="religion">Zerlegung</button>
+    <button data-f="europa">Lagrange &amp; Dualität</button>
+    <button data-f="krieg">Unsicherheit</button>
+    <button data-f="kultur">Rechnen &amp; Anwendung</button>
+  </div>
+  <ol class="tl" id="timeline"></ol>
+</section>
+
+<!-- ============ 14 GLOSSAR ============ -->
+<section class="chapter" id="glossar">
+  <div class="chap-head"><div class="chap-num">14</div><div>
+    <span class="span-chip">Wichtige Begriffe</span>
+    <h2>Glossar</h2>
+  </div></div>
+  <dl class="gloss" id="gloss">
+    <dt id="g-branch-and-bound">Branch-and-Bound</dt><dd>Grundverfahren für ganzzahlige Programme: Das Problem wird schrittweise in Fälle aufgeteilt, Fälle mit zu schlechter unterer Schranke werden verworfen.</dd>
+    <dt id="g-buendel">Bündelverfahren</dt><dd>Verfahren zur Maximierung nichtglatter konkaver Funktionen wie des Lagrange-Duals; sammelt Messungen als Ebenen und bleibt durch einen Strafterm nahe am bisher besten Punkt.</dd>
+    <dt id="g-cut">Cut</dt><dd>Lineare Ungleichung θ<sub>s</sub> ≥ <i>a</i><sup>⊤</sup><i>x</i> + <i>b</i>, die die Folgekosten im Masterproblem von unten abschätzt.</dd>
+    <dt id="g-dualitaet">Dualität</dt><dd>Zu jedem Optimierungsproblem gehört ein duales Problem über Preise der Nebenbedingungen; es liefert untere Schranken, bei linearen Programmen sogar den exakten Wert.</dd>
+    <dt id="g-erste-stufe">Erste Stufe</dt><dd>Die Entscheidungen, die vor dem Eintreten des Zufalls endgültig getroffen werden.</dd>
+    <dt id="g-erwartungswert">Erwartungswert</dt><dd>Mit den Wahrscheinlichkeiten gewichteter Durchschnitt über alle Szenarien.</dd>
+    <dt id="g-extensive-form">Extensive Form</dt><dd>Das gesamte stochastische Problem als ein einziges großes Optimierungsproblem, mit einer Kopie der zweiten Stufe je Szenario; auch deterministisches Äquivalent.</dd>
+    <dt id="g-mip">Gemischt-ganzzahliges Programm</dt><dd>Optimierungsproblem mit linearen Bedingungen, in dem ein Teil der Variablen ganzzahlig sein muss (MIP).</dd>
+    <dt id="g-kernpunkt">Kernpunkt</dt><dd>Punkt im Inneren der konvexen Hülle der erlaubten ersten Entscheidungen; dient bei Magnanti und Wong zur Auswahl Pareto-optimaler Cuts.</dd>
+    <dt id="g-konvex">Konvex</dt><dd>Eine Funktion ist konvex, wenn jede Verbindungsstrecke zweier Punkte ihres Graphen nicht unter dem Graphen liegt; anschaulich eine Schüssel ohne Dellen.</dd>
+    <dt id="g-konvexe-huelle">Konvexe Hülle</dt><dd>Bei einer Funktion: die höchste konvexe Funktion, die nirgends über ihr liegt. Kein Cut kann sie übersteigen.</dd>
+    <dt id="g-lagrange-cut">Lagrange-Cut</dt><dd>Cut θ<sub>s</sub> ≥ μ<sup>⊤</sup><i>x</i> + <i>v</i><sub>s</sub>(μ) aus der Lagrange-Relaxation der Kopiergleichung <i>z</i> = <i>x</i>; gültig für jedes μ.</dd>
+    <dt id="g-lagrange-dual">Lagrange-Dual</dt><dd>Die Aufgabe, den Multiplikator so zu wählen, dass die Schranke der Lagrange-Relaxation an einem Punkt möglichst hoch liegt; eine konkave, stückweise lineare Maximierung.</dd>
+    <dt id="g-multiplikator">Lagrange-Multiplikator</dt><dd>Preis, mit dem eine gestrichene Nebenbedingung in die Zielfunktion übernommen wird; bei Lagrange-Cuts zugleich deren Steigung.</dd>
+    <dt id="g-lagrange-relaxation">Lagrange-Relaxation</dt><dd>Eine störende Nebenbedingung wird gestrichen und mit einem Preis in die Zielfunktion übernommen; das Ergebnis ist für jeden Preis eine untere Schranke.</dd>
+    <dt id="g-lp">Lineares Programm</dt><dd>Optimierungsproblem mit linearer Zielfunktion und linearen Bedingungen und reellen Variablen (LP); auch in großer Dimension effizient lösbar.</dd>
+    <dt id="g-luecke">Lücke</dt><dd>Differenz zwischen bester oberer und unterer Schranke, absolut oder relativ angegeben.</dd>
+    <dt id="g-masterproblem">Masterproblem</dt><dd>Problem der ersten Stufe im Benders-Verfahren, in dem die Folgekosten durch Variablen θ<sub>s</sub> und Cuts ersetzt sind.</dd>
+    <dt id="g-multicut">Multi-Cut</dt><dd>Benders-Variante mit einer Schätzvariablen und einem Cut je Szenario statt eines gemittelten Cuts.</dd>
+    <dt id="g-pareto">Pareto-optimaler Cut</dt><dd>Gültiger Cut, den kein anderer gültiger Cut überall erreicht und irgendwo übertrifft.</dd>
+    <dt id="g-relaxation">Relaxation</dt><dd>Gelockerte Fassung eines Problems mit weniger strengen Bedingungen; ihr Optimalwert ist eine untere Schranke.</dd>
+    <dt id="g-schattenpreis">Schattenpreis</dt><dd>Duale Variable einer Nebenbedingung: Änderung des Optimalwerts, wenn ihre rechte Seite um eine Einheit wächst.</dd>
+    <dt id="g-sddp">SDDP</dt><dd>Stochastische duale dynamische Programmierung (1991): Benders-artiges Verfahren für mehrstufige Probleme, das Stichproben von Pfaden durchläuft; SDDiP ist die ganzzahlige Erweiterung mit Lagrange-Cuts.</dd>
+    <dt id="g-solver">Solver</dt><dd>Software, die Optimierungsprobleme löst, etwa Gurobi, CPLEX, SCIP oder HiGHS. Ein einzelner Aufruf heißt in Fachartikeln oft „Solve“.</dd>
+    <dt id="g-stochastische-optimierung">Stochastische Optimierung</dt><dd>Optimierung unter Unsicherheit, bei der der Zufall durch Wahrscheinlichkeiten oder Szenarien beschrieben wird; zweistufig, wenn auf eine erste Entscheidung genau eine Reaktion folgt.</dd>
+    <dt id="g-straff">Straff</dt><dd>Ein Cut ist straff an einem Punkt, wenn er dort den Wert der Wertfunktion genau erreicht.</dd>
+    <dt id="g-supergradient">Supergradient</dt><dd>Richtung, in der eine konkave, nicht überall glatte Funktion ansteigt; beim Lagrange-Dual der Vektor <span class="ov"><i>x</i></span> − <i>z</i>*(μ).</dd>
+    <dt id="g-szenario">Szenario</dt><dd>Eine mögliche Ausprägung der unsicheren Daten, mit einer Wahrscheinlichkeit versehen.</dd>
+    <dt id="g-ungenauer-cut">Ungenauer Cut</dt><dd>Cut, dessen Achsenabschnitt nur eine untere Schranke des exakten Werts ist, etwa nach einem Zeitlimit; gültig, aber schwächer.</dd>
+    <dt id="g-verstaerkter-cut">Verstärkter Benders-Cut</dt><dd>Lagrange-Cut mit der Steigung des klassischen LP-Cuts und einem ganzzahlig berechneten Achsenabschnitt; kostet einen zusätzlichen Solve.</dd>
+    <dt id="g-wertfunktion">Wertfunktion</dt><dd>Funktion <i>Q</i><sub>s</sub>(<i>x</i>), die jeder ersten Entscheidung die besten Kosten der zweiten Stufe im Szenario <i>s</i> zuordnet.</dd>
+    <dt id="g-zertifikat">Zertifikat</dt><dd>Nachweis der Lösungsgüte durch eine obere und eine untere Schranke; bei Lücke null ein Beweis der Optimalität.</dd>
+    <dt id="g-zweite-stufe">Zweite Stufe</dt><dd>Die Reaktion auf den eingetretenen Zufall, im Fachjargon Rekurs; ihre besten Kosten beschreibt die Wertfunktion.</dd>
+  </dl>
+</section>
+
+<!-- ============ 15 QUELLEN ============ -->
+<section class="chapter" id="quellen">
+  <div class="chap-head"><div class="chap-num">15</div><div>
+    <span class="span-chip">Zum Weiterlesen</span>
+    <h2>Quellen &amp; Weiterlesen</h2>
+  </div></div>
+  <p class="lead">Die Darstellung folgt den Standardwerken und Originalarbeiten des Gebiets. Das Rechenbeispiel wurde für dieses Dossier entworfen und vollständig nachgerechnet; seine Zahlen stammen nicht aus einer Veröffentlichung.</p>
+  <h3>Originalarbeiten und Übersichten online</h3>
+  <ul class="sources">
+    <li><a href="https://en.wikipedia.org/wiki/Benders_decomposition">Wikipedia: Benders decomposition</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Jacques_F._Benders">Wikipedia: Jacques F. Benders</a></li>
+    <li><a href="https://www.doi.org/10.1007/S10287-004-0020-Y">Benders: Partitioning procedures for solving mixed-variables programming problems (Nachdruck in Computational Management Science, 2005)</a></li>
+    <li><a href="https://epubs.siam.org/doi/10.1137/0117061">Van Slyke, Wets: L-Shaped Linear Programs with Applications to Optimal Control and Stochastic Programming (SIAM, 1969)</a></li>
+    <li><a href="https://www.cirrelt.ca/DocumentsTravail/CIRRELT-2016-30.pdf">Rahmaniani, Crainic, Gendreau, Rei: The Benders Decomposition Algorithm – A Literature Review (CIRRELT-Arbeitspapier)</a></li>
+    <li><a href="https://co-at-work.zib.de/berlin2020/slides/Donnerstag_24.9/Benders_decomposition-Fundamentals.pdf">Zuse-Institut Berlin, CO@Work 2020: Benders decomposition – Fundamentals (Vortragsfolien)</a></li>
+    <li><a href="https://ideas.repec.org/a/inm/oropre/v29y1981i3p464-484.html">Magnanti, Wong: Accelerating Benders Decomposition (Operations Research, 1981)</a></li>
+    <li><a href="https://iaorifors.com/paper/67061">Papadakos: Practical enhancements to the Magnanti–Wong method (Operations Research Letters, 2008)</a></li>
+    <li><a href="https://trid.trb.org/View/415085">Laporte, Louveaux: The integer L-shaped method for stochastic integer programs with complete recourse (1993)</a></li>
+    <li><a href="https://opus4.kobv.de/opus4-zib/frontdoor/index/index/year/1996/docId/256">Carøe, Schultz: Dual Decomposition in Stochastic Integer Programming (ZIB-Report)</a></li>
+    <li><a href="https://my.eng.utah.edu/~kalla/phy_des/lagrange-relax-tutorial-fisher.pdf">Fisher: The Lagrangian Relaxation Method for Solving Integer Programming Problems</a></li>
+    <li><a href="https://encyclopediaofmath.org/wiki/Lagrangean_relaxation">Encyclopedia of Mathematics: Lagrangean relaxation</a></li>
+    <li><a href="https://bipop.inrialpes.fr/people/lemarechal/publications.html">Claude Lemaréchal: Ausgewählte Veröffentlichungen (Bündelverfahren)</a></li>
+    <li><a href="https://optimization-online.org/2016/05/5436/">Zou, Ahmed, Sun: Stochastic Dual Dynamic Integer Programming (Optimization Online)</a></li>
+    <li><a href="https://arxiv.org/abs/2106.04023v1">Chen, Luedtke: On Generating Lagrangian Cuts for Two-Stage Stochastic Integer Programs (arXiv)</a></li>
+    <li><a href="https://publikationen.bibliothek.kit.edu/1000142408">Füllner, Rebennack: Non-convex nested Benders decomposition (KIT-Bibliothek)</a></li>
+    <li><a href="https://edoc.hu-berlin.de/18452/8963">Ntaimo, Sen: The million-variable „march“ for stochastic combinatorial optimization (edoc HU Berlin)</a></li>
+    <li><a href="https://www2.isye.gatech.edu/~sahmed/siplib/sslp/sslp.html">SIPLIB: The SSLP Test Problems</a></li>
+  </ul>
+  <h3>Bücher zum Vertiefen</h3>
+  <ul>
+    <li>John R. Birge, François Louveaux: <em>Introduction to Stochastic Programming</em>. 2. Auflage, Springer 2011.</li>
+    <li>Alexander Shapiro, Darinka Dentcheva, Andrzej Ruszczyński: <em>Lectures on Stochastic Programming. Modeling and Theory</em>. SIAM, 2. Auflage 2014.</li>
+    <li>Laurence A. Wolsey: <em>Integer Programming</em>. 2. Auflage, Wiley 2020.</li>
+    <li>Michele Conforti, Gérard Cornuéjols, Giacomo Zambelli: <em>Integer Programming</em>. Springer 2014.</li>
+    <li>Dimitris Bertsimas, John N. Tsitsiklis: <em>Introduction to Linear Optimization</em>. Athena Scientific 1997.</li>
+    <li>Wolfgang Domschke, Andreas Drexl, Robert Klein, Armin Scholl: <em>Einführung in Operations Research</em>. Springer Gabler, deutschsprachiges Lehrbuch in vielen Auflagen.</li>
+  </ul>
+</section>
+<!-- dossier-ende -->
+<style>
+.ph-ende{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:44px 0 8px;font-family:var(--serif)}
+.ph-kasten{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--accent);padding:22px 24px;display:grid;gap:10px;align-content:start;color:var(--ink)}
+.ph-kasten h2{font-family:var(--serif);font-size:1.25rem;font-weight:600;line-height:1.25;margin:0;color:var(--ink);border:none;padding:0}
+.ph-kasten p{margin:0;line-height:1.55;color:var(--muted);font-size:.98rem}
+.ph-etikett{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ph-mehr{font-family:var(--sans);font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+a.ph-kasten{text-decoration:none}
+a.ph-kasten:hover{background:var(--accent-soft)}
+a.ph-kasten:hover h2{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.ph-weiter{grid-column:1/-1;border-top-color:var(--c1)}
+.ph-weiter.ph-offen{background:transparent;border-style:dashed;border-top-style:solid}
+.ph-feedback label{font-family:var(--sans);font-size:.8rem;font-weight:600;color:var(--ink)}
+.ph-feedback textarea{width:100%;min-height:118px;resize:vertical;box-sizing:border-box;font:inherit;font-size:1rem;line-height:1.5;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:0;padding:10px 12px}
+.ph-feedback textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.ph-feedback button{justify-self:start;font-family:var(--sans);font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--accent);border:1px solid var(--accent);border-radius:0;padding:10px 18px;cursor:pointer}
+.ph-feedback button:hover{background:var(--ink);border-color:var(--ink)}
+.ph-feedback .ph-hinweis{font-family:var(--sans);font-size:.78rem;line-height:1.5}
+.ph-feedback .ph-hinweis a{color:inherit}
+.ph-ende-voll{grid-template-columns:1fr;margin-top:0}
+@media (max-width:700px){.ph-ende{grid-template-columns:1fr}.ph-kasten{padding:18px 18px}}
+@media print{.ph-ende{display:none}}
+</style>
+<div class="ph-ende" role="complementary" aria-label="Zum Schluss"><a class="ph-kasten" href="ueber.html#redaktion"><span class="ph-etikett">Redaktionelle Hintergründe</span><h2>So entstehen die Dossiers</h2><p>Wie die Dossiers recherchiert, geschrieben und geprüft werden – und wer dafür die Verantwortung trägt.</p><span class="ph-mehr">Mehr erfahren</span></a><form class="ph-kasten ph-feedback" action="mailto:der-philosopher@outlook.de" method="post" enctype="text/plain" data-betreff="Rückmeldung zu: Zerlegen und beweisen"><span class="ph-etikett">Rückmeldung</span><h2>Fehler entdeckt oder eine Anregung?</h2><p>Schreiben Sie uns direkt zu diesem Dossier.</p><label for="ph-nachricht">Ihre Nachricht</label><textarea id="ph-nachricht" name="Nachricht" required></textarea><button type="submit">Per E-Mail senden</button><p class="ph-hinweis">Der Klick öffnet Ihr E-Mail-Programm mit der fertigen Nachricht an <a href="mailto:der-philosopher@outlook.de">der-philosopher@outlook.de</a>. Über diese Seite selbst wird nichts gespeichert oder übertragen.</p></form></div>
+<script>(function(){document.querySelectorAll('form.ph-feedback').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var t=f.querySelector('textarea');var text=t.value.trim();if(!text){t.focus();return;}location.href='mailto:der-philosopher@outlook.de?subject='+encodeURIComponent(f.getAttribute('data-betreff'))+'&body='+encodeURIComponent(text);});});})();</script>
+<!-- /dossier-ende -->
+</main>
+</div>
+
+<footer>Mathematische Optimierung · Zerlegen und beweisen 1962–2026 · Zusammengestellt als Lern- und Überblicksdokument · Stand: Oktober 2026<span class="ph-foot"> · <a href="index.html">Der Philosopher</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></footer>
+<button id="top" aria-label="Nach oben">↑</button>
+
+<script>
+(function(){
+  // ---- Timeline data ----
+  var T = [
+    [
+    "1788",
+    "europa",
+    "Joseph-Louis Lagrange veröffentlicht die Mécanique analytique; Nebenbedingungen werden dort mit Multiplikatoren behandelt."
+    ],
+    [
+    "1939",
+    "reich",
+    "Leonid Kantorowitsch beschreibt Produktionsplanung als lineare Optimierungsaufgabe."
+    ],
+    [
+    "1947",
+    "reich",
+    "George Dantzig entwickelt das Simplex-Verfahren für lineare Programme."
+    ],
+    [
+    "1947",
+    "europa",
+    "John von Neumann erkennt im Gespräch mit Dantzig die Dualität linearer Programme."
+    ],
+    [
+    "1951",
+    "europa",
+    "Harold Kuhn und Albert Tucker formulieren Optimalitätsbedingungen für nichtlineare Programme."
+    ],
+    [
+    "1955",
+    "krieg",
+    "Dantzig und Martin Beale begründen unabhängig voneinander die lineare Optimierung unter Unsicherheit mit zwei Stufen."
+    ],
+    [
+    "1958",
+    "reich",
+    "Ralph Gomory stellt Schnittebenen für ganzzahlige lineare Programme vor."
+    ],
+    [
+    "1960",
+    "religion",
+    "Dantzig und Philip Wolfe veröffentlichen ihr Zerlegungsverfahren für große lineare Programme."
+    ],
+    [
+    "1960",
+    "reich",
+    "Ailsa Land und Alison Doig beschreiben Branch-and-Bound für ganzzahlige Programme."
+    ],
+    [
+    "1960",
+    "europa",
+    "James Kelley veröffentlicht das Schnittebenenverfahren für konvexe Probleme."
+    ],
+    [
+    "1960",
+    "religion",
+    "Jacques F. Benders verteidigt in Utrecht die Doktorarbeit, in der er seine Zerlegung entwickelt."
+    ],
+    [
+    "1962",
+    "religion",
+    "Benders veröffentlicht sein Verfahren in der Zeitschrift Numerische Mathematik."
+    ],
+    [
+    "1963",
+    "europa",
+    "Hugh Everett nutzt verallgemeinerte Lagrange-Multiplikatoren zur Verteilung knapper Mittel."
+    ],
+    [
+    "1969",
+    "krieg",
+    "Richard Van Slyke und Roger Wets übertragen Benders auf zweistufige stochastische LP: das L-shaped-Verfahren."
+    ],
+    [
+    "1970/71",
+    "europa",
+    "Michael Held und Richard Karp nutzen die Lagrange-Relaxation für das Problem des Handlungsreisenden."
+    ],
+    [
+    "1972",
+    "religion",
+    "Arthur Geoffrion verallgemeinert die Benders-Zerlegung auf nichtlineare Probleme."
+    ],
+    [
+    "1974",
+    "europa",
+    "Geoffrion prägt den Begriff Lagrange-Relaxation; Held, Wolfe und Crowder untersuchen das Subgradientenverfahren."
+    ],
+    [
+    "1975",
+    "europa",
+    "Claude Lemaréchal und Philip Wolfe stellen die ersten Bündelverfahren vor."
+    ],
+    [
+    "1981",
+    "religion",
+    "Thomas Magnanti und Richard Wong führen Pareto-optimale Cuts und Kernpunkte ein."
+    ],
+    [
+    "1981",
+    "europa",
+    "Marshall Fisher fasst die Lagrange-Relaxation für ganzzahlige Programme in einem viel zitierten Überblick zusammen."
+    ],
+    [
+    "1985",
+    "krieg",
+    "John Birge beschreibt die verschachtelte Zerlegung für mehrstufige stochastische LP."
+    ],
+    [
+    "1988",
+    "religion",
+    "Birge und François Louveaux schlagen die Multi-Cut-Variante vor."
+    ],
+    [
+    "1988",
+    "kultur",
+    "Mit CPLEX kommt einer der ersten kommerziellen Hochleistungs-Solver für lineare Programme auf den Markt."
+    ],
+    [
+    "1991",
+    "krieg",
+    "Mario Pereira und Leontina Pinto entwickeln SDDP für die Planung brasilianischer Wasserkraftwerke."
+    ],
+    [
+    "1993",
+    "religion",
+    "Gilbert Laporte und Louveaux stellen das ganzzahlige L-shaped-Verfahren vor."
+    ],
+    [
+    "1999",
+    "europa",
+    "Claus Carøe und Rüdiger Schultz veröffentlichen die duale Zerlegung für stochastische ganzzahlige Programme."
+    ],
+    [
+    "2000",
+    "religion",
+    "Golbon Zakeri, Andy Philpott und David Ryan zeigen, dass auch ungenaue Benders-Cuts zum Ziel führen."
+    ],
+    [
+    "2005",
+    "kultur",
+    "Lewis Ntaimo und Suvrajeet Sen lösen stochastische Standortprobleme mit Millionen Variablen; ihre SSLP-Probleme werden zu Standardtests."
+    ],
+    [
+    "2007",
+    "religion",
+    "Walid Ben-Ameur und José Neto stabilisieren Schnittebenenverfahren mit der In-out-Methode."
+    ],
+    [
+    "2008",
+    "religion",
+    "Nikolaos Papadakos macht die Kernpunkt-Regel von Magnanti und Wong praxistauglich."
+    ],
+    [
+    "2008",
+    "kultur",
+    "Gründung des Solver-Herstellers Gurobi Optimization."
+    ],
+    [
+    "2017",
+    "religion",
+    "Ragheb Rahmaniani und Kollegen veröffentlichen einen umfassenden Überblick über Benders-Verfahren."
+    ],
+    [
+    "2019",
+    "europa",
+    "Jikai Zou, Shabbir Ahmed und Andy Sun veröffentlichen SDDiP mit Lagrange-Cuts, die an binären Punkten straff sind."
+    ],
+    [
+    "2022",
+    "europa",
+    "Rui Chen und James Luedtke beschleunigen die Erzeugung von Lagrange-Cuts für zweistufige ganzzahlige Probleme."
+    ],
+    [
+    "2022",
+    "religion",
+    "Christian Füllner und Steffen Rebennack stellen die nichtkonvexe verschachtelte Benders-Zerlegung vor."
+    ]
+    ];
+  var names = {"reich": "Grundlagen", "religion": "Zerlegung", "europa": "Lagrange & Dualität", "krieg": "Unsicherheit", "kultur": "Rechnen & Anwendung"};
+  var tl = document.getElementById("timeline");
+  T.forEach(function(e){
+    var li = document.createElement("li");
+    li.className = e[1];
+    li.innerHTML = '<span class="y">'+e[0]+'</span><span class="tag '+e[1]+'">'+names[e[1]]+'</span><br>'+e[2];
+    tl.appendChild(li);
+  });
+  document.getElementById("filters").addEventListener("click", function(ev){
+    var b = ev.target.closest("button"); if(!b) return;
+    var f = b.getAttribute("data-f");
+    this.querySelectorAll("button").forEach(function(x){x.classList.toggle("on", x===b);});
+    tl.querySelectorAll("li").forEach(function(li){
+      li.classList.toggle("hide", f!=="alle" && !li.classList.contains(f));
+    });
+  });
+
+  // ---- Progress bar & top button ----
+  var prog = document.getElementById("progress"), topBtn = document.getElementById("top");
+  function onScroll(){
+    var h = document.documentElement;
+    var p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+    prog.style.width = (p*100) + "%";
+    topBtn.classList.toggle("show", h.scrollTop > 600);
+  }
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+  topBtn.addEventListener("click", function(){ window.scrollTo({top:0}); });
+
+  // ---- Active TOC ----
+  var links = {};
+  document.querySelectorAll("nav.toc a").forEach(function(a){ links[a.getAttribute("href").slice(1)] = a; });
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          Object.keys(links).forEach(function(k){ links[k].classList.remove("active"); });
+          var a = links[en.target.id]; if(a) a.classList.add("active");
+        }
+      });
+    }, {rootMargin:"-30% 0px -60% 0px"});
+    document.querySelectorAll("section.chapter").forEach(function(s){ io.observe(s); });
+  }
+
+  // ---- Mobile TOC toggle ----
+  var toc = document.getElementById("toc"), tt = document.getElementById("tocToggle");
+  tt.addEventListener("click", function(){
+    var open = toc.classList.toggle("open"); tt.setAttribute("aria-expanded", open);
+  });
+  toc.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toc.classList.remove("open"); tt.setAttribute("aria-expanded", false); }); });
+
+  // ---- Theme toggle ----
+  var root = document.documentElement;
+  document.getElementById("themeBtn").addEventListener("click", function(){
+    var dark = root.getAttribute("data-theme") ? root.getAttribute("data-theme")==="dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    root.setAttribute("data-theme", dark ? "light" : "dark");
+  });
+
+  // ---- Glossary links: tooltip with definition ----
+  document.querySelectorAll("a.g").forEach(function(a){
+    a.title = (function(){ var dt=document.querySelector(a.getAttribute("href")); return dt && dt.nextElementSibling ? dt.nextElementSibling.textContent : ""; })();
+  });
+})();
+
+</script>
+<script>
+(function(){
+  var D = {"near":[{"x":"000","LB":0.0,"UB":125.0,"UBk":125.0,"Q":{"ruhig":90.0,"Spitze":160.0},"th":{"ruhig":0.0,"Spitze":0.0},"ap":{"000":0.0,"001":9.0,"010":24.0,"011":33.0,"100":18.0,"101":27.0,"110":42.0,"111":51.0},"cuts":{"ruhig":{"mu":[-66.0,-73.0,-69.0],"b":90.0},"Spitze":{"mu":[-120.0,-132.0,-120.0],"b":160.0}}},{"x":"101","LB":27.0,"UB":77.5,"UBk":77.5,"Q":{"ruhig":13.0,"Spitze":88.0},"th":{"ruhig":0.0,"Spitze":0.0},"ap":{"000":125.0,"001":39.5,"010":46.5,"011":33.0,"100":50.0,"101":27.0,"110":42.0,"111":51.0},"cuts":{"ruhig":{"mu":[0.0,-4.0,0.0],"b":13.0},"Spitze":{"mu":[0.0,-132.0,0.0],"b":88.0}}},{"x":"011","LB":37.5,"UB":77.5,"UBk":108.5,"Q":{"ruhig":27.0,"Spitze":124.0},"th":{"ruhig":9.0,"Spitze":0.0},"ap":{"000":125.0,"001":63.5,"010":46.5,"011":37.5,"100":74.0,"101":77.5,"110":46.5,"111":55.5},"cuts":{"ruhig":{"mu":[-16.0,0.0,0.0],"b":27.0},"Spitze":{"mu":[-120.0,0.0,0.0],"b":124.0}}},{"x":"110","LB":49.5,"UB":77.5,"UBk":121.5,"Q":{"ruhig":35.0,"Spitze":124.0},"th":{"ruhig":11.0,"Spitze":4.0},"ap":{"000":125.0,"001":84.5,"010":99.5,"011":108.5,"100":74.0,"101":77.5,"110":49.5,"111":58.5},"cuts":{"ruhig":{"mu":[0.0,0.0,-55.0],"b":35.0},"Spitze":{"mu":[0.0,0.0,-124.0],"b":124.0}}},{"x":"111","LB":58.5,"UB":77.5,"UBk":100.5,"Q":{"ruhig":11.0,"Spitze":88.0},"th":{"ruhig":11.0,"Spitze":4.0},"ap":{"000":125.0,"001":84.5,"010":103.5,"011":108.5,"100":97.5,"101":77.5,"110":121.5,"111":58.5},"cuts":{"ruhig":{"mu":[0.0,0.0,0.0],"b":11.0},"Spitze":{"mu":[0.0,0.0,0.0],"b":88.0}}},{"x":"101","LB":77.5,"UB":77.5,"UBk":77.5,"Q":{"ruhig":13.0,"Spitze":88.0},"th":{"ruhig":13.0,"Spitze":88.0},"ap":{"000":125.0,"001":84.5,"010":103.5,"011":108.5,"100":97.5,"101":77.5,"110":121.5,"111":100.5},"cuts":{}}],"lp":[{"x":"000","LB":0.0,"UB":125.0,"UBk":125.0,"Q":{"ruhig":90.0,"Spitze":160.0},"th":{"ruhig":0.0,"Spitze":0.0},"ap":{"000":0.0,"001":9.0,"010":24.0,"011":33.0,"100":18.0,"101":27.0,"110":42.0,"111":51.0},"cuts":{"ruhig":{"mu":[-66.0,-73.0,-69.0],"b":90.0},"Spitze":{"mu":[-120.0,-132.0,-120.0],"b":160.0}}},{"x":"101","LB":27.0,"UB":77.5,"UBk":77.5,"Q":{"ruhig":13.0,"Spitze":88.0},"th":{"ruhig":0.0,"Spitze":0.0},"ap":{"000":125.0,"001":39.5,"010":46.5,"011":33.0,"100":50.0,"101":27.0,"110":42.0,"111":51.0},"cuts":{"ruhig":{"mu":[0.0,-4.0,0.0],"b":13.0},"Spitze":{"mu":[0.0,-132.0,0.0],"b":72.0}}},{"x":"011","LB":37.5,"UB":77.5,"UBk":108.5,"Q":{"ruhig":27.0,"Spitze":124.0},"th":{"ruhig":9.0,"Spitze":0.0},"ap":{"000":125.0,"001":55.5,"010":46.5,"011":37.5,"100":66.0,"101":69.5,"110":46.5,"111":55.5},"cuts":{"ruhig":{"mu":[-8.0,0.0,0.0],"b":15.0},"Spitze":{"mu":[-120.0,0.0,0.0],"b":81.0}}},{"x":"110","LB":46.5,"UB":77.5,"UBk":121.5,"Q":{"ruhig":35.0,"Spitze":124.0},"th":{"ruhig":9.0,"Spitze":0.0},"ap":{"000":125.0,"001":60.0,"010":73.0,"011":81.0,"100":66.0,"101":69.5,"110":46.5,"111":55.5},"cuts":{"ruhig":{"mu":[0.0,0.0,-55.0],"b":31.0},"Spitze":{"mu":[0.0,0.0,-124.0],"b":97.0}}},{"x":"111","LB":55.5,"UB":77.5,"UBk":100.5,"Q":{"ruhig":11.0,"Spitze":88.0},"th":{"ruhig":9.0,"Spitze":0.0},"ap":{"000":125.0,"001":60.0,"010":88.0,"011":81.0,"100":82.0,"101":69.5,"110":106.0,"111":55.5},"cuts":{"ruhig":{"mu":[0.0,0.0,0.0],"b":10.0},"Spitze":{"mu":[0.0,0.0,0.0],"b":45.0}}},{"x":"001","LB":60.0,"UB":77.5,"UBk":94.5,"Q":{"ruhig":47.0,"Spitze":124.0},"th":{"ruhig":21.0,"Spitze":81.0},"ap":{"000":125.0,"001":60.0,"010":88.0,"011":81.0,"100":82.0,"101":69.5,"110":106.0,"111":78.5},"cuts":{"ruhig":{"mu":[-66.0,-73.0,0.0],"b":40.0},"Spitze":{"mu":[-120.0,-132.0,0.0],"b":108.0}}},{"x":"101","LB":69.5,"UB":77.5,"UBk":77.5,"Q":{"ruhig":13.0,"Spitze":88.0},"th":{"ruhig":13.0,"Spitze":72.0},"ap":{"000":125.0,"001":83.0,"010":88.0,"011":81.0,"100":82.0,"101":69.5,"110":106.0,"111":78.5},"cuts":{"ruhig":{"mu":[0.0,-4.0,0.0],"b":13.0},"Spitze":{"mu":[0.0,-132.0,0.0],"b":72.0}}},{"x":"101","LB":69.5,"UB":77.5,"UBk":77.5,"Q":{"ruhig":13.0,"Spitze":88.0},"th":{"ruhig":13.0,"Spitze":72.0},"ap":{"000":125.0,"001":83.0,"010":88.0,"011":81.0,"100":82.0,"101":69.5,"110":106.0,"111":78.5},"cuts":{"ruhig":{"mu":[0.0,-4.0,0.0],"b":13.0},"Spitze":{"mu":[0.0,-132.0,0.0],"b":72.0}}}],"mw":[{"x":"000","LB":0.0,"UB":125.0,"UBk":125.0,"Q":{"ruhig":90.0,"Spitze":160.0},"th":{"ruhig":0.0,"Spitze":0.0},"ap":{"000":0.0,"001":9.0,"010":24.0,"011":33.0,"100":18.0,"101":27.0,"110":42.0,"111":51.0},"cuts":{"ruhig":{"mu":[-34.0,-21.0,-43.0],"b":90.0},"Spitze":{"mu":[-36.0,0.0,-36.0],"b":160.0}}},{"x":"101","LB":77.5,"UB":77.5,"UBk":77.5,"Q":{"ruhig":13.0,"Spitze":88.0},"th":{"ruhig":13.0,"Spitze":88.0},"ap":{"000":125.0,"001":94.5,"010":138.5,"011":108.0,"100":108.0,"101":77.5,"110":121.5,"111":95.0},"cuts":{}}],"tot":{"000":125.0,"001":94.5,"010":138.5,"011":108.5,"100":108.0,"101":77.5,"110":121.5,"111":100.5},"Qr":{"000":90.0,"001":47.0,"010":69.0,"011":27.0,"100":56.0,"101":13.0,"110":35.0,"111":11.0}};
+  var NAME = {"000":"keiner","001":"Süd","010":"Mitte","011":"Mitte, Süd","100":"Nord","101":"Nord, Süd","110":"Nord, Mitte","111":"alle"};
+  var KEYS = ["000","001","010","011","100","101","110","111"];
+  var IDX = ["N","M","S"];
+  function de(v){
+    var r = Math.round(v*10)/10;
+    var s = (Math.abs(r-Math.round(r))<1e-9) ? String(Math.round(r)) : r.toFixed(1);
+    return s.replace(".",",").replace("-","−");
+  }
+  function punkt(k){ return "(" + k.split("").join(", ") + ")"; }
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, txt){
+    var e = document.createElementNS(NS, tag);
+    for (var a in attrs) e.setAttribute(a, attrs[a]);
+    if (txt != null) e.textContent = txt;
+    return e;
+  }
+
+  // ---------- Rechner: Miete fuer Nord ----------
+  (function(){
+    var inp = document.getElementById("mi-r"); if(!inp) return;
+    var X0=70, X1=700, Y0=260, Y1=30;
+    function px(r){ return X0 + (X1-X0)*r/40; }
+    function py(v){ return Y0 - (Y0-Y1)*v/50; }
+    var body = document.getElementById("mi-body");
+    function upd(){
+      var r = +inp.value, v = Math.min(11 + r, 27);
+      document.getElementById("mi-rw").textContent = r;
+      document.getElementById("mi-cut").innerHTML = "θ ≥ " + de(v) + (r ? " − " + r + " <i>x</i><sub>N</sub>" : "");
+      var dot = document.getElementById("mi-dot"), vl = document.getElementById("mi-v");
+      dot.setAttribute("cx", px(r).toFixed(1)); dot.setAttribute("cy", py(v).toFixed(1));
+      vl.setAttribute("x1", px(r).toFixed(1)); vl.setAttribute("x2", px(r).toFixed(1));
+      var t;
+      if (r < 16) t = "Das gelockerte Teilproblem nutzt Nord trotz der Miete. Am Punkt (0, 1, 1) liegt der Cut bei " + de(v) + ", also " + de(27 - v) + " unter den wahren Folgekosten: gültig, aber nicht straff.";
+      else if (r === 16) t = "Bei Miete 16 sind beide Pläne gleich teuer. Der Cut ist bei (0, 1, 1) straff und zusätzlich bei (1, 1, 1) – unter den straffen Cuts der flachste und nützlichste.";
+      else t = "Der Cut ist bei (0, 1, 1) straff, sagt aber über Entscheidungen mit offenem Nord weniger als bei Miete 16: dort nur " + de(27 - r) + " statt 11.";
+      document.getElementById("mi-txt").textContent = t;
+      var h = "";
+      KEYS.forEach(function(k){
+        var q = D.Qr[k], c = v - r * (+k[0]);
+        var straff = Math.abs(q - c) < 1e-9;
+        h += "<tr" + (k === "011" ? ' class="hl"' : "") + "><td>" + punkt(k) + "</td><td>" + de(q) + "</td><td>" + de(c) + "</td><td" + (straff ? ' class="s">straff' : ">gültig") + "</td></tr>";
+      });
+      body.innerHTML = h;
+    }
+    inp.addEventListener("input", upd); upd();
+  })();
+
+  // ---------- Schaubild: Verfahren zum Durchklicken ----------
+  (function(){
+    var svg = document.getElementById("st-svg"); if(!svg) return;
+    var variante = "near", runde = 0;
+    var X0=60, X1=745, Y0=262, Y1=22, VMAX=140;
+    function py(v){ return Y0 - (Y0-Y1)*Math.max(0,v)/VMAX; }
+    var gw = (X1-X0)/8;
+    function cutText(name, c){
+      var s = "θ<sub>" + name + "</sub> ≥ " + de(c.b), any = false;
+      c.mu.forEach(function(m, j){
+        if (Math.abs(m) < 1e-9) return;
+        any = true;
+        s += (m < 0 ? " − " : " + ") + de(Math.abs(m)) + " <i>x</i><sub>" + IDX[j] + "</sub>";
+      });
+      return '<span class="cut">' + s + "</span>";
+    }
+    function zeichne(){
+      var L = D[variante], h = L[runde];
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      for (var v = 0; v <= VMAX; v += 20){
+        svg.appendChild(el("line", {x1:X0, x2:X1, y1:py(v), y2:py(v), "class":"ln-g"}));
+        svg.appendChild(el("text", {x:X0-8, y:py(v)+4, "class":"tm", "text-anchor":"end"}, de(v)));
+      }
+      KEYS.forEach(function(k, i){
+        var cx = X0 + gw*i + gw/2, bw = 46;
+        var wahr = D.tot[k], schaetz = h.ap[k], aktiv = (k === h.x);
+        svg.appendChild(el("rect", {x:cx-bw/2, y:py(schaetz), width:bw, height:Math.max(0.5, Y0-py(schaetz)), "class": aktiv ? "bar-k" : "bar-m"}));
+        svg.appendChild(el("rect", {x:cx-bw/2-4, y:py(wahr), width:bw+8, height:Y0-py(wahr), "class":"bar-w"}));
+        svg.appendChild(el("text", {x:cx, y:py(schaetz)-5, "class": aktiv ? "tc4" : "tca", "text-anchor":"middle"}, de(schaetz)));
+        svg.appendChild(el("text", {x:cx, y:Y0+17, "class": aktiv ? "tb" : "ts", "text-anchor":"middle"}, NAME[k]));
+        svg.appendChild(el("text", {x:cx, y:Y0+32, "class":"tm", "text-anchor":"middle"}, punkt(k)));
+      });
+      svg.appendChild(el("line", {x1:X0, x2:X1, y1:py(h.LB), y2:py(h.LB), "class":"ln-a", "stroke-dasharray":"6 4"}));
+      svg.appendChild(el("line", {x1:X0, x2:X1, y1:py(h.UB), y2:py(h.UB), "class":"ln-r"}));
+
+      document.getElementById("st-runde").textContent = "Runde " + (runde+1) + " von " + L.length + (variante === "lp" ? " …" : "");
+      document.getElementById("st-prev").disabled = runde === 0;
+      document.getElementById("st-next").disabled = runde === L.length - 1;
+
+      var luecke = h.UB - h.LB, t = "";
+      t += '<div class="zeile"><span>Vorschlag: <b>' + NAME[h.x] + " " + punkt(h.x) + "</b></span>";
+      t += "<span>untere Schranke: <b>" + de(h.LB) + "</b></span><span>beste obere Schranke: <b>" + de(h.UB) + "</b></span><span>Lücke: <b>" + de(luecke) + "</b></span></div>";
+      t += '<div class="zeile"><span>Folgekosten des Vorschlags: ruhig ' + de(h.Q.ruhig) + ", Spitze " + de(h.Q.Spitze) + " → Kosten des Vorschlags " + de(h.UBk) + "</span></div>";
+      if (luecke < 1e-6){
+        t += '<div class="zeile"><span><b>Untere gleich obere Schranke: Die Lösung ' + NAME[h.x] + " ist bewiesen optimal.</b></span></div>";
+      } else if (h.cuts && h.cuts.ruhig){
+        var wieder = false;
+        if (runde > 0 && variante === "lp"){
+          var vor = L[runde-1];
+          wieder = vor.x === h.x;
+        }
+        t += '<div class="zeile"><span>Neue Cuts' + (wieder ? " – dieselben wie in der Runde davor, das Verfahren lernt nichts mehr dazu" : "") + ":</span></div><ul>";
+        t += "<li>" + cutText("ruhig", h.cuts.ruhig) + "</li><li>" + cutText("Spitze", h.cuts.Spitze) + "</li></ul>";
+        if (variante === "lp" && runde === L.length - 1) t += '<div class="zeile"><span>Von hier an wiederholt sich diese Runde endlos; die Lücke von ' + de(luecke) + " bleibt.</span></div>";
+      }
+      document.getElementById("st-info").innerHTML = t;
+    }
+    document.getElementById("st-var").addEventListener("click", function(ev){
+      var b = ev.target.closest("button"); if(!b) return;
+      variante = b.getAttribute("data-v"); runde = 0;
+      this.querySelectorAll("button").forEach(function(x){ x.classList.toggle("on", x === b); });
+      zeichne();
+    });
+    document.getElementById("st-prev").addEventListener("click", function(){ if (runde > 0){ runde--; zeichne(); } });
+    document.getElementById("st-next").addEventListener("click", function(){ if (runde < D[variante].length - 1){ runde++; zeichne(); } });
+    zeichne();
+  })();
+})();
+
+</script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://der-philosopher.de/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://der-philosopher.de/ueber.html</loc>
@@ -19,6 +19,10 @@
   <url>
     <loc>https://der-philosopher.de/wirtschaft.html</loc>
     <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://der-philosopher.de/wissenschaft.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://der-philosopher.de/geschichte-1453-1648.html</loc>
@@ -47,6 +51,10 @@
   <url>
     <loc>https://der-philosopher.de/wirtschaft-zinsen-2008-2026.html</loc>
     <lastmod>2026-10-06</lastmod>
+  </url>
+  <url>
+    <loc>https://der-philosopher.de/wissenschaft-benders-lagrange-1962-2026.html</loc>
+    <lastmod>2026-10-14</lastmod>
   </url>
   <url>
     <loc>https://der-philosopher.de/zeitgeschichte-afd-strategie-2013-2026.html</loc>

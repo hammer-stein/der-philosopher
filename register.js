@@ -63,6 +63,28 @@ window.PHILOSOPHER = {
 
   artikel: [
     {
+      datei: "wissenschaft-benders-lagrange-1962-2026.html",
+      ressort: "wissenschaft",
+      dachzeile: "Mathematische Optimierung",
+      titel: "Zerlegen und beweisen",
+      teaser: "Wie die Benders-Dekomposition große Planungsprobleme unter Unsicherheit zerlegt, warum ganzzahlige Teilprobleme Lagrange-Cuts brauchen und wie zwei Schranken die beste Lösung beweisen – mit einem Schritt für Schritt durchgerechneten Beispiel.",
+      von: 1962, bis: 2026, kapitel: 15,
+      veroeffentlicht: "2026-10-14", stand: "Oktober 2026",
+      beigaben: "mit Rechenbeispiel, Rechner, Zeitleiste und Glossar",
+      inhalt: [
+        ["2",  "werkzeuge",    "Das Handwerkszeug der Optimierung"],
+        ["3",  "zweistufig",   "Entscheiden vor und nach dem Zufall"],
+        ["4",  "wertfunktion", "Die Wertfunktion und ihre Unterschätzer"],
+        ["5",  "benders",      "Das Benders-Verfahren"],
+        ["6",  "lpcuts",       "Cuts aus der LP-Dualität und ihre Grenze"],
+        ["7",  "lagrange",     "Lagrange-Relaxation und Lagrange-Cuts"],
+        ["8",  "suche",        "Die Suche nach der besten Steigung"],
+        ["9",  "beispiel",     "Das Beispiel Schritt für Schritt"],
+        ["10", "kernpunkt",    "Welcher Cut hilft am meisten?"],
+        ["11", "grenzen",      "Größere Probleme und offene Fragen"]
+      ]
+    },
+    {
       datei: "wirtschaft-energiemaerkte-1998-2026.html",
       ressort: "wirtschaft",
       dachzeile: "Energie und Märkte",
